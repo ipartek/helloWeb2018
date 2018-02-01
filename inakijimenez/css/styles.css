@@ -42,14 +42,14 @@ td {
     height: 2em;
 }
 
-li {
+ul {
     list-style: none;
     background-color: darkcyan;
     color:white;
     text-align: center;
 }
 
-ul {
+li {
     border: 2px solid black;
     display: inline-block;
     margin : 1em;
@@ -62,7 +62,8 @@ ul {
 a {
     color:white;
     text-decoration: none;
-
+    text-align: center;
+    margin: auto;
 }
 
 #elegirButton {

@@ -1,5 +1,6 @@
 /* Nuestra hoja de estilos */
 h1{
+    text-transform: uppercase;
     color: teal;
     text-align:center;
     font-size: 2em;
@@ -66,3 +67,9 @@ button {
 #lector{
     height: 25px;
 }
+
+span {
+    border: 5px dotted red;
+}
+
+

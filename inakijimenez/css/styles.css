@@ -1,0 +1,84 @@
+/* Hoja de estilos
+
+@author:
+@date:
+
+
+*/
+h1 {
+    color:darkcyan;
+    text-align: center;
+    font-size: 2em;
+}
+
+#precio {
+    text-align: center;
+}
+
+
+
+#selector {
+    text-align: center;
+}
+
+#imagen {
+    text-align: center;
+}
+
+table {
+    border: solid 2px black;
+    margin: auto;
+}
+
+tr {
+     border: solid 2px black;
+}
+
+td {
+    border: solid 2px black;
+    padding: 1em;
+    text-align: center;
+    width: 5em;
+    height: 2em;
+}
+
+ul {
+    list-style: none;
+    background-color: darkcyan;
+    color:white;
+    text-align: center;
+}
+
+li {
+    border: 2px solid black;
+    display: inline-block;
+    margin : 1em;
+    padding: :1em;
+    text-align: center;
+
+
+}
+
+a {
+    color:white;
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+}
+
+#elegirButton {
+    display: block;
+    margin: auto;
+    width: 15em;
+    height: 3em;
+    background-color: darkgray;
+    color: white;
+    font-weight:  bold;
+    font-size: 1.5em;
+    border-radius: .75em;
+}
+
+#elegido {
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+  <style>
+
+      /*no es lo mas correcto, pero para pruebas rapidas nos vale*/
+
+      h1 {
+
+          text-transform: uppercase
+      }
+
+      p{
+          text-align: justify;
+          font-size: 1.6em;
+          line-height: 1.6em;
+          text-indent: 1 em; /*Sangrado*/
+
+      }
+
+
+      p:first-letter{
+          text-transform: capitalize;
+          font-size: 3em;
+          color: red;
+          background-color: aqua;
+
+      }
+
+      span{
+          border: 5px dotted red;
+          padding: 5px;
+      }
+
+      .caja{
+          display: inline-block;
+          height: 150px;
+      }
+
+
+
+  </style>
+
+
+
+
+  <h1>Encabezado h1</h1>
+  <h2>Encabezado h2</h2>
+  <h3>Encabezado h3</h3>
+  <h4>Encabezado h4</h4>
+  <h5>Encabezado h5</h5>
+  <h6>Encabezado h6</h6>
+
+  <p>h1 solo puede haber uno y es obligatorio por accesibilidad.</p>
+  <p>el resto no se pueden repetir, pero deben mantener la jerarquia, es decir: No puedo tener un h3 si no existe un h2.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut maiores commodi accusantium iure hic tempora, illo animi sapiente aperiam fugiat recusandae libero ipsa, nisi ducimus similique odio quibusdam at illum?</p>
+
+
+
+</body>
+</html>

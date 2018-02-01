@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <title>Capítulo 4</title>
 </head>
+
 <body>
     <a href="index.html">&lt; Volver a Index</a>
     <!--<button onclick="goBack()">&lt; VOLVER</button> -->
+    <br><br>
 
     <style>
         /* ----- TAGS ----- */
+
         /*Lo correcto seria meter todos los estilos en una hoja de estilos.css*/
-        h1{
+
+        h1 {
             /*Transformar en mayúsculas*/
             text-transform: uppercase;
         }
+
         p {
             text-align: justify;
             font-size: 1.6em;
@@ -22,11 +27,18 @@
             /*SANGRADO*/
             text-indent: 1em;
         }
-        span {
+
+        p span {
             border: 5px dotted red;
             padding: 5px;
         }
-
+        span.separador {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        table {
+            margin: auto;
+        }
         /* ----- .IDs ----- */
         .caja {
             display: inline-block;
@@ -41,12 +53,17 @@
             margin: 10px;
         }
         /* ----- #CLASES -----*/
+        ol#navegacion {
+            background-color: #FF5722;
+            padding: 10px;
+        }
         /* ----- :SEUDO-SELECTORES -----*/
         p:first-letter {
             font-size: 3em;
             color: red;
             background-color: grey;
         }
+
         .caja:hover {
             background-color: red;
             border-radius: 50%;
@@ -54,20 +71,40 @@
         }
     </style>
 
-    <h1>Encabezado H1</h1>
-    <h2>Encabezado H2</h2>
-    <h3>Encabezado H3</h3>
-    <h4>Encabezado H4</h4>
-    <h5>Encabezado H5</h5>
-    <h6>Encabezado H6</h6>
+    <nav>
+        <h2>Secciones:</h2>
+        <ol id="navegacion">
+            <a href="#encabezados">ENCABEZADOS</a>
+            <span class="separador">|</span>
+            <a href="#cajas">CAJAS</a>
+            <span class="separador">|</span>
+            <a href="#parrafos">PÁRRAFOS</a>
+            <span class="separador">|</span>
+            <a href="#listas">LISTAS</a>
+            <span class="separador">|</span>
+            <a href="#tablas">TABLAS</a>
+        </ol>
+    </nav>
 
-    <div class="caja">1</div>
-    <div class="caja">2</div>
-    <div class="caja">3</div>
-    <div class="caja">4</div>
-    <div class="caja">5</div>
-
-    <h2>README:</h2>
+    <div id="encabezados">
+        <h1>Encabezado H1</h1>
+        <h2>Encabezado H2</h2>
+        <h3>Encabezado H3</h3>
+        <h4>Encabezado H4</h4>
+        <h5>Encabezado H5</h5>
+        <h6>Encabezado H6</h6>
+    </div>
+    <hr>
+    <div id="cajas">
+        <div class="caja">1</div>
+        <div class="caja">2</div>
+        <div class="caja">3</div>
+        <div class="caja">4</div>
+        <div class="caja">5</div>
+    </div>
+    <hr>
+    <div id="parrafos">
+        <h2>README:</h2>
     <p>H1 sólo puede haber uno y es obligatorio por accesibilidad.</p>
     <p>El resto se pueden repetir pero deben mantener la jerarquía, es decir: no puedo tener un <span>H3</span>, si no existe un <span>H2</span>.</p>
 
@@ -76,98 +113,244 @@
     <p>Eligendi voluptatibus reiciendis est voluptas incidunt maxime accusamus repellendus enim qui soluta, fugiat, quo, ducimus vero alias aperiam ut cumque placeat facere! Tenetur explicabo aliquam, incidunt expedita labore, cum ipsam.</p>
     <p>Sed a deleniti, cupiditate minima recusandae molestias ullam? Molestias ipsum consequatur animi, voluptates, dolorem debitis expedita mollitia tenetur nihil quisquam eaque laborum harum provident maiores placeat dicta ad, magni numquam!</p>
     <p>Quas dignissimos delectus dolor vel ad voluptates accusamus minus, vitae cupiditate sint saepe quasi illum rerum, incidunt voluptatem ipsam hic esse doloribus veniam quibusdam, impedit? Dolorem, adipisci. Nam, totam, illo.</p>
+    </div>
+
 
     <hr>
 
-    <h2>Listas:</h2>
+    <div id="listas">
+        <h2>Listas:</h2>
 
-    <!--Ejemplo de cada listas:
+        <!--Ejemplo de cada listas:
     - Listas ordenadas <ol>: Equipos de La Liga
     - Lista desordenada <ul>: pinchos de tortilla
     - Lista de definiciones <dl>: café cortado, café con leche, café con alegría
     - Lista anidada: Discografía de un autor + link de videoclip de youtube.com -->
 
-    <h3>LISTA ORDENADA</h3>
-    <h4>Clasificación de La Liga</h4>
-    <ol>
-        <li>FC Barcelona</li>
-        <li>Atlético Madrid</li>
-        <li>Valencia CF</li>
-        <li>Real Madrid</li>
-        <li>Villareal</li>
-        <li>Sevilla</li>
-        <li>Celta de Vigo</li>
-        <li>Eibar</li>
-        <li>Getafe</li>
-        <li>Girona</li>
-        <li>Leganés</li>
-        <li><strong>Athletic de Bilbao</strong></li>
-        <li>Betis</li>
-        <li>RCD Espanyol</li>
-        <li>Real Sociedad</li>
-        <li>Levante</li>
-        <li>Alavés</li>
-        <li>Desportivo</li>
-        <li>UD Las Palmas</li>
-        <li>Málaga</li>
-    </ol>
-
-    <h3>LISTA DESORDENADA</h3>
-    <h4>Pinchos de Tortilla</h4>
-    <ul>
-        <li>Normal</li>
-        <li>Con cebolla</li>
-        <li>Con champis</li>
-        <li>Jamón y queso</li>
-    </ul>
-
-    <h3>LISTA DE DEFINICIONES</h3>
-    <h4>Tipos de Cafés</h4>
-    <df>
-        <dt>Café cortado:</dt>
-        <dd>Café servido en taza o vaso pequeños que lleva solo un poco de leche.</dd>
-        <dt>Café con leche:</dt>
-        <dd>El café con leche o Latte es una de las bebidas más comunes que incluyen café. Consta básicamente de dos ingredientes: café (como infusión) y leche, con una proporción que varía de acuerdo a las costumbres locales, pero ronda la mezcla por partes iguales.</dd>
-        <dt>Café con alegría:</dt>
-        <dd></dd>
-    </df>
-    <h3>LISTAS ANIDADAS</h3>
-    <h4>Discografías</h4>
-
-    <ul>
-      <h5>Queen</h5>
+        <h3>LISTA ORDENADA</h3>
+        <h4>Clasificación de La Liga</h4>
         <ol>
-            <li>News of the World (1977)</li>
+            <li>FC Barcelona</li>
+            <li>Atlético Madrid</li>
+            <li>Valencia CF</li>
+            <li>Real Madrid</li>
+            <li>Villareal</li>
+            <li>Sevilla</li>
+            <li>Celta de Vigo</li>
+            <li>Eibar</li>
+            <li>Getafe</li>
+            <li>Girona</li>
+            <li>Leganés</li>
+            <li><strong>Athletic de Bilbao</strong></li>
+            <li>Betis</li>
+            <li>RCD Espanyol</li>
+            <li>Real Sociedad</li>
+            <li>Levante</li>
+            <li>Alavés</li>
+            <li>Desportivo</li>
+            <li>UD Las Palmas</li>
+            <li>Málaga</li>
+        </ol>
+
+        <h3>LISTA DESORDENADA</h3>
+        <h4>Pinchos de Tortilla</h4>
+        <ul>
+            <li>Normal</li>
+            <li>Con cebolla</li>
+            <li>Con champis</li>
+            <li>Jamón y queso</li>
+        </ul>
+
+        <h3>LISTA DE DEFINICIONES</h3>
+        <h4>Tipos de Cafés</h4>
+        <df>
+            <dt>Café cortado:</dt>
+            <dd>Café servido en taza o vaso pequeños que lleva solo un poco de leche.</dd>
+            <dt>Café con leche:</dt>
+            <dd>El café con leche o Latte es una de las bebidas más comunes que incluyen café. Consta básicamente de dos ingredientes: café (como infusión) y leche, con una proporción que varía de acuerdo a las costumbres locales, pero ronda la mezcla por partes iguales.</dd>
+            <dt>Café con alegría:</dt>
+            <dd></dd>
+        </df>
+        <h3>LISTAS ANIDADAS</h3>
+        <h4>Discografías</h4>
+
+        <ul>
+            <h5>Queen</h5>
+            <ol>
+                <li>News of the World (1977)</li>
                 <ul>
                     <li><a href="https://www.youtube.com/watch?v=-tJYN-eG1zk">We Will Rock You</a></li>
                     <li><a href="https://www.youtube.com/watch?v=04854XqcfCY">We Are The Champions</a></li>
                 </ul>
-            <li><a href="https://www.youtube.com/watch?v=raYJiTdAirk">A Night at the Opera (1975)</a></li>
-            <li><a href="https://www.youtube.com/watch?v=WNYv3WxpYxM">A Day at the Races (1976)</a></li>
-            <li><a href="https://www.youtube.com/watch?v=171skzi5BKc">Made in Heaven (1995)</a></li>
-        </ol>
-       <h5>Dair Straits</h5>
-        <ol>
-            <li><a href="https://www.youtube.com/watch?v=jhdFe3evXpk">Brothers in Arms (1985)</a></li>
-            <li><a href="https://www.youtube.com/watch?v=8Pa9x9fZBtY">Alchemy: Dire Straits Live (1984)</a></li>
-            <li><a href="https://www.youtube.com/watch?v=-5KpLRWY8sA">On Every Street (1991)</a></li>
-            <li><a href="https://www.youtube.com/watch?v=7gej3hLOLDU">Love Over Gold (1982)</a></li>
-            <li><a href="https://www.youtube.com/watch?v=LRoD6Vs9FzE">Communiqué (1979)</a></li>
-        </ol>
+                <li><a href="https://www.youtube.com/watch?v=raYJiTdAirk">A Night at the Opera (1975)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=WNYv3WxpYxM">A Day at the Races (1976)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=171skzi5BKc">Made in Heaven (1995)</a></li>
+            </ol>
+            <h5>Dair Straits</h5>
+            <ol>
+                <li><a href="https://www.youtube.com/watch?v=jhdFe3evXpk">Brothers in Arms (1985)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=8Pa9x9fZBtY">Alchemy: Dire Straits Live (1984)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=-5KpLRWY8sA">On Every Street (1991)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=7gej3hLOLDU">Love Over Gold (1982)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=LRoD6Vs9FzE">Communiqué (1979)</a></li>
+            </ol>
 
-        <h5>Hotel California</h5>
-        <ol>
-            <li><a href="https://www.youtube.com/watch?v=5w4d_mmJOGM">The Getaway (2016)</a></li>
-            <li><a href="https://www.youtube.com/watch?v=32T4CvR8uuM">Blood Sugar Sex Magik (1991)</a></li>
-            <li><a href="https://www.youtube.com/watch?v=VsSb-oX3ffo">Stadium Arcadium</a></li>
-            <li><a href="https://www.youtube.com/watch?v=JnfyjwChuNU">By The Way (2002)</a></li>
-            <li><a href="https://www.youtube.com/watch?v=a9eNQZbjpJk">Californication (1999)</a></li>
-        </ol>
-    </ul>
+            <h5>Hotel California</h5>
+            <ol>
+                <li><a href="https://www.youtube.com/watch?v=5w4d_mmJOGM">The Getaway (2016)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=32T4CvR8uuM">Blood Sugar Sex Magik (1991)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=VsSb-oX3ffo">Stadium Arcadium</a></li>
+                <li><a href="https://www.youtube.com/watch?v=JnfyjwChuNU">By The Way (2002)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=a9eNQZbjpJk">Californication (1999)</a></li>
+            </ol>
+        </ul>
+    </div>
 
+    <hr>
 
-    <!--TABLAS: Figura 4.11, 4.13, 4.15-->
-    <h2>TABLAS</h2>
+    <div id="tablas">
+        <!--TABLAS: Figura 4.11, 4.13, 4.15-->
+        <h2>TABLAS</h2>
+
+        <h3>Tabla Simple</h3>
+        <!--Figura 4.11: Tabla Simple-->
+        <table border="1px">
+            <caption>Películas bélicas</caption>
+            <tr>
+                <th>Película</th>
+                <th>Director</th>
+                <th>Puntuación</th>
+            </tr>
+            <tr>
+                <td>El Cazador</td>
+                <td>Michael Cimino</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Apocalypse Now</td>
+                <td>Francis Ford Coppola</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Platoon</td>
+                <td>Oliver Stone</td>
+                <td>7</td>
+            </tr>
+        </table>
+
+        <h3>Fusión de filas y columnas</h3>
+        <!--Figura 4.13: Fusion de filas (rowspan) y columan (colspan)-->
+        <table border="1px">
+            <caption>Horario Cine Clásico</caption>
+            <tr>
+                <th rowspan="2">SALA 1</th>
+                <th colspan="3">Pasión de los fuertes</th>
+            </tr>
+            <tr>
+                <td>18:00</td>
+                <td>20:00</td>
+                <td>22:00</td>
+            </tr>
+            <tr>
+                <th rowspan="2">SALA 2</th>
+                <th colspan="3">Juan Nadie</th>
+
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td>19:00</td>
+                <td>21:00</td>
+            </tr>
+            <tr>
+                <th rowspan="2">SALA 3</th>
+                <th colspan="3">Un tranvía llamado deseo</th>
+
+            </tr>
+            <tr>
+                <td>18:00</td>
+                <td>20:00</td>
+                <td>22:30</td>
+            </tr>
+        </table>
+
+        <h3>Fusión de filas y columnas</h3>
+        <!--Figura 4.15: Tablas Avanzadas-->
+        <table border="1px">
+            <caption>Factura detallada</caption>
+            <!--CABECERA DE LA TABLA-->
+            <thead>
+                <tr>
+                    <th colspan="5">EXTREMEÑA DE TELÉFONOS</th>
+                </tr>
+            </thead>
+            <!--PIE DE LA TABLA-->
+            <tfoot>
+                <tr>
+                    <td colspan="5" style="font-weight: bold"><em>Extremeña de Teléfonos le informa que puede llamar al número gratuito 666 para cualquier duda o sugerencia que tenga acerca de esta factura o de nuestros servicios.</em></td>
+                </tr>
+            </tfoot>
+            <!--CUERPO DE TABLA-->
+            <tbody>
+                <tr>
+                    <th colspan="5">Detalle de cuotas</th>
+                </tr>
+                <tr>
+                    <th>PERIODO</th>
+                    <th>CONCEPTO</th>
+                    <th>IMPORTE</th>
+                    <th colspan="2">DESCUENTO</th>
+                </tr>
+                <tr>
+                    <td rowspan="3">01/05/13 - 01/07/13</td>
+                    <td>Servicio de identificación de llamadas</td>
+                    <td style="text-align: center">12 €</td>
+                    <td colspan="2" style="text-align: center">0</td>
+                </tr>
+                <tr>
+                    <td>Línea individual</td>
+                    <td style="text-align: center">14 €</td>
+                    <td colspan="2" style="text-align: center">0</td>
+                </tr>
+                <tr>
+                    <td>Bono ciudad</td>
+                    <td style="text-align: center">10 €</td>
+                    <td colspan="2" style="text-align: center">0</td>
+                </tr>
+                <tr>
+                    <td colspan="2">TOTAL:</td>
+                    <td colspan="3" style="text-align: right">36 €</td>
+                </tr>
+                <tr>
+                    <th colspan="5">Detalle de consumos</th>
+                </tr>
+                <tr>
+                    <th>CONCEPTO</th>
+                    <th>LLAMADAS</th>
+                    <th>DURACIÓN</th>
+                    <th>IMPORTE</th>
+                    <th>DESCUENTO</th>
+                </tr>
+                <tr>
+                    <td><strong>Llamada internacional</strong></td>
+                    <td style="text-align: center">23</td>
+                    <td style="text-align: center">10m 23s</td>
+                    <td style="text-align: center">13 €</td>
+                    <td style="text-align: center">0</td>
+                </tr>
+                <tr>
+                    <td><strong>Llamada metropolitana</strong></td>
+                    <td style="text-align: center">23</td>
+                    <td style="text-align: center">10m 23s</td>
+                    <td style="text-align: center">3,5 €</td>
+                    <td style="text-align: center">0</td>
+                </tr>
+                <tr>
+                    <td colspan="2">TOTAL:</td>
+                    <td colspan="3" style="text-align: right; font-weight: bold">16,5 €</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<style>
+	/*No es lo mas correcto pero vale para pruebas*/
+	p{
+		text-align: justify;
+		font-size:1.6em;
+		line-height:1.6em;
+		text-indent: 1em; /*introdize sangría en primera linea*/
+
+		}
+
+
+		p:first-letter{
+			Font-size:3em;
+			color:red;
+			background-color:darkgrey;
+			text-transform:capitalize;/*Mayuscula en primera linea*/
+		}
+
+		span{
+			border: 5px dotted red;
+			padding:5px;
+		}
+
+		/*   punto es igual a class="caja"  */
+		.caja{
+			display: inline-block;
+   			height: 100px;
+   			width: 100px;
+			background-color: grey;
+			color: white;
+			margin: 10px;
+			font-size: 5em;
+			text-align: center;
+			font-family: arial;
+		}
+
+		.caja:hover{
+			background-color: red;
+			border-radius: 50px;
+			transition-duration:2s;
+		}
+
+
+	</style>
+	<h1>Encabezado H1</h1>
+	<h2>Encabezado H2</h2>
+	<h3>Encabezado H3</h3>
+	<h4>Encabezado H4</h4>
+	<h5>Encabezado H5</h5>
+	<h6>Encabezado H6</h6>
+
+	<div class="caja">1</div>
+	<div class="caja">2</div>
+	<div class="caja">3</div>
+	<div class="caja">4</div>
+	<div class="caja">5</div>
+
+	<p>h1 solo puede haber UNO y es obligatorio por ccesibilidad</p>
+	<p>el resto se pueden <span>repetir</span> pero deben mantener la jerarquía, es decir: no puedo tener un h3 si no existe un h2.</p>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium commodi dolorum, labore expedita quibusdam voluptatem modi corporis et, fugiat neque magnam dolores quos quam perferendis minus excepturi. Rem cum, alias.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, similique, voluptates. Nisi blanditiis exercitationem nemo nesciunt autem, nostrum nobis ducimus, tenetur, explicabo perferendis totam eius placeat ab incidunt praesentium vel!</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nesciunt quisquam suscipit eius voluptatibus voluptates, repellat. Tempore veritatis iure dolor aspernatur hic vel in quas, necessitatibus, illo repellendus voluptate ducimus.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit cupiditate, ipsam laboriosam. Cupiditate amet magni facilis accusantium, cumque. Assumenda porro deserunt cupiditate aut est voluptatem dolor mollitia omnis laboriosam quaerat.</p>
+
+	<hr>
+	<h2>Listas</h2>
+</body>
+</html>

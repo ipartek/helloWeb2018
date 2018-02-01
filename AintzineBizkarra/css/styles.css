@@ -1,0 +1,146 @@
+/* Nuestra hoja de estilos
+    @Autor: Aintziñe
+    @version:1.0
+    @Fecha: 30-01-2018
+*/
+
+
+*{
+    padding: 120;
+    margin: 120;
+}
+
+h1 {
+    color:teal;
+    text-align: center;
+    font-size: 2em;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    display:block;
+    margin:auto;
+
+}
+
+
+
+.boton {
+
+    border: 1px solid #2e518b;
+    padding: 10px;
+    background-color: #2e518b;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Helvetica', sans-serif;
+    border-radius: 50px;
+    float: none;
+    text-align: center;
+
+}
+
+#formulario {
+    text-align: center;
+}
+
+select{
+    margin: auto;
+    display: block;
+    margin-bottom: 25px;
+
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#tablaAlumnos td {
+    border: 3px solid #2e518b;
+    padding: 20px;
+    width: 80px;
+    text-align: center;
+
+}
+
+#tablaAlumnos .alumno{
+    background-color: #2e518b;
+    color: #fff;
+}
+#tablaAlumnos{
+    margin: auto;
+}
+/*.boton1 {
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+    background-color: gray;
+}*/
+
+#voluntario {
+    font-size: 2em;
+    text-align: center;
+    color: orange;
+}
+
+.boton1 {
+   border: 1px solid #2e518b; /*anchura, estilo y color borde*/
+    padding: 10px; /*espacio alrededor texto*/
+    background-color: #2e518b; /*color botón*/
+    color: #ffffff; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+    text-transform: uppercase; /*capitalización texto*/
+    font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+    border-radius: 50px; /*bordes redondos*/
+
+}
+
+
+
+canvas {
+    background: #eee;
+    display: block;
+
+}
+
+
+
+
+
+header {
+
+    width: 100%;
+    position: relative;
+
+}
+
+nav {
+    float: center;
+}
+nav ul{
+    list-style: none;
+    overflow: hidden;
+}
+nav ul li{
+    float: right;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+nav ul li a{
+    display: block;
+    padding: 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+nav ul li:hover{
+    background:#2e518b;
+}
+
+#contenido {
+    padding-top: 80px;
+}
+
+div {
+    text-align:center;
+}

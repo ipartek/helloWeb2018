@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitcoin Precio Actual</title>
+
+    <!-- Enlace a la hoja de estilos-->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+</head>
+<body>
+    <a class="boton" href="index.html" target="_blank">Volver</a>
+   <h1>Bitcoin Precio Actual</h1>
+    <img src="img/logo_bitcoin.png" id="logo" alt="Logo bitcoin">
+    <br><br>
+    <div id="formulario">
+        <select  id="moneda">
+            <option value="USD" selected="selected">Dolares</option>
+            <option value="EUR" >Euros</option>
+            <option value="GBP">Libras</option>
+        </select>
+        <p id="precio">Precio del Bitcoin</p>
+
+        <br>
+
+        <button class="boton" onclick="llamadaApi()">Consultar</button>
+   </div>
+    <!-- Enlaces a javascript-->
+    <script src="js/main.js"></script>
+</body>
+</html>

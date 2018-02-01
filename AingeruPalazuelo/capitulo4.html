@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Capítulo 4</title>
+</head>
+<body>
+    <a href="index.html">&lt; Volver a Index</a>
+    <!--<button onclick="goBack()">&lt; VOLVER</button> -->
+
+    <style>
+        /*Lo correcto seria meter todos los estilos en una hoja de estilos.css*/
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+        }
+        h1{
+            /*Transformar en mayúsculas*/
+            text-transform: uppercase;
+        }
+        p {
+            text-align: justify;
+            font-size: 1.2em;
+            line-height: 1.2em;
+            /*SANGRADO*/
+            text-indent: 1em;
+        }
+        /*Seudo-selector: primera-letra*/
+        p:first-letter {
+            font-size: 3em;
+            color: red;
+            background-color: grey;
+        }
+        span {
+            border: 5px dottet red;
+            padding: 5px;
+        }
+
+    </style>
+
+    <h1>Encabezado H1</h1>
+    <h2>Encabezado H2</h2>
+    <h3>Encabezado H3</h3>
+    <h4>Encabezado H4</h4>
+    <h5>Encabezado H5</h5>
+    <h6>Encabezado H6</h6>
+
+    <h2>README:</h2>
+    <p>H1 sólo puede haber uno y es obligatorio por accesibilidad.</p>
+    <p>El resto se pueden repetir pero deben mantener la jerarquía, es decir: no puedo tener un <span>H3</span>, si no existe un <span>H2</span>.</p>
+
+    <h2>LOREM IPSUM</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia velit molestiae, officia iste ducimus, sunt accusamus architecto beatae repellat rem quis minus dignissimos nam magnam, similique alias. Similique, explicabo, quibusdam.</p>
+    <p>Eligendi voluptatibus reiciendis est voluptas incidunt maxime accusamus repellendus enim qui soluta, fugiat, quo, ducimus vero alias aperiam ut cumque placeat facere! Tenetur explicabo aliquam, incidunt expedita labore, cum ipsam.</p>
+    <p>Sed a deleniti, cupiditate minima recusandae molestias ullam? Molestias ipsum consequatur animi, voluptates, dolorem debitis expedita mollitia tenetur nihil quisquam eaque laborum harum provident maiores placeat dicta ad, magni numquam!</p>
+    <p>Quas dignissimos delectus dolor vel ad voluptates accusamus minus, vitae cupiditate sint saepe quasi illum rerum, incidunt voluptatem ipsam hic esse doloribus veniam quibusdam, impedit? Dolorem, adipisci. Nam, totam, illo.</p>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <style>
+       h1{
+           text-transform: uppercase;
+       }
+    /*no es lo mas correcto, pero para pruebas rapidas nos vale*/
+       p{
+
+           text-align:justify;
+           font-size: 1.6em;
+           line-height:1.6em;
+           text-indent: 2em;/*sangrado*/
+
+
+       }
+       p:first-letter
+       {
+           text-transform: capitalize;
+           font-size: 3em;
+           color:red;
+           background-color: grey;
+
+       }
+       span{
+
+           border: 5px dotted red;
+           padding: 5px;
+
+       }
+       /* el . es igual a class="caja"*/
+       /* la # hace referencia al identificador*/
+
+       .caja{
+
+           display: inline-block;
+           height: 100px;
+           width: 100px;
+           background-color: grey;
+           border-color: aliceblue;
+           color: #FFF;
+           margin: 10px;
+           text-align: center;
+           font-size: 5em;
+
+
+
+       }
+
+       .caja:hover{
+           background-color: red;
+           border-radius: 50px;
+           transition-duration: 2s;
+
+       }
+
+
+    </style>
+
+    <div class="caja">1</div>
+    <div class="caja">2</div>
+    <div class="caja">3</div>
+    <div class="caja">4</div>
+    <div class="caja">5</div>
+    <h1>encabezado h1</h1>
+    <h2>encabezado h2</h2>
+    <h3>encabezado h3</h3>
+    <h4>encabezado h4</h4>
+    <h2></h2>
+    <h3></h3>
+    <p>solo puede haber uno y es obligatorio por accesibilidad</p>
+    <p>el resto se pueden repetir, pero deben mantener la jerarquia</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel dui lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lobortis metus. Nullam venenatis enim in urna mattis, eu posuere tellus lacinia. Ut pulvinar mauris id varius accumsan. Cras iaculis nibh sapien, in interdum ligula tristique a. Suspendisse quis quam nunc. Praesent consectetur vulputate sodales.</p>
+
+
+    <hr>
+
+    <h2>Listas</h2>
+
+    <h3>Clasificacion Liga</h3>
+    <ol>
+        <li>Barcelona</li>
+        <li>Atletico Madrid</li>
+        <li>Valencia</li>
+        <li>Espanyol</li>
+        <li>Real Madrid</li>
+        <li>Eibar</li>
+        <li>Athletic</li>
+        <li>Real Sociedad</li>
+        <li>Deportivo</li>
+        <li>Celta</li>
+        <li>Leganes</li>
+        <li>Getafe</li>
+        <li>Las Palmas</li>
+        <li>Levante</li>
+        <li>Betis</li>
+        <li>Sevilla</li>
+        <li>Villarreal</li>
+        <li>Girona</li>
+        <li>Malaga</li>
+        <li>Alaves</li>
+    </ol>
+
+    <h2>Pintxo Bar </h2>
+    <ul>
+        <li>Tortilla</li>
+        <li>Lomo</li>
+        <li>Pechuga</li>
+        <li>Txaka</li>
+        <li>Gilda</li>
+
+    </ul>
+ <h2>Tipos de cafe</h2>
+ <dl>
+     <dt>café con leche</dt>
+     <dd>al café se le añade leche</dd>
+     <dt>cafe cortado</dt>
+     <dd>al café se le echa un poco de leche</dd>
+     <dt>cafe con alegria</dt>
+     <dd>al café se le añade </dd>
+ </dl>
+ <h2>Discografia</h2>
+
+    <ul>
+    <li>
+     <h4>En tu camino Paio</h4>
+     <ul>
+     <li>Zapatero ortopedico</li>
+     <li>El Besolla</li>
+     <li>Oye Compai</li>
+     <li>Chacho</li>
+     <li>Amos chacho</li>
+     <li>Jambo Loco</li>
+     <li>Hoy Frescuni</li>
+     <li>Cachitos, Scratches y toallitas</li>
+     <li>No a la tala</li>
+     <li>Sin escalareras era mi escuela</li>
+        </ul>
+        </li>
+        <li>
+            <h4> Cata Cheli</h4>
+            <ul>
+            <li>Por Bule</li>
+            <li>Hoy Frescuni</li>
+            <li>Te vendo una tobillera</li>
+            <li>Nos late fuerte</li>
+            <li>Lo caten</li>
+            <li>Gorrión Bernardino</li>
+            <li>Se muera la madre</li>
+            <li>Alma de Molino</li>
+            <li>Petaos</li>
+            <li>3 chaborros y un destino</li>
+            <li>Y en frío</li>
+            <li>No se puede er primo</li>
+            <li>Chungo Petaca</li>
+            <li>Hoy</li>
+            </ul>
+
+        </li>
+ </ul>
+ <br>
+ <br>
+ <table border="1">
+     <tr>
+     <td><strong>Película</strong></td>
+     <td><strong>Director</strong></td>
+     <td><strong>Puntuación</strong></td>
+     </tr>
+     <tr>
+     <td>El Cazador</td>
+     <td>Michael Cimino</td>
+     <td>7</td>
+     </tr>
+     <tr>
+         <td>Apocalypse Now</td>
+         <td>Francis Ford Coppola</td>
+         <td>8</td>
+     </tr>
+     <tr>
+     <td>Platoon</td>
+     <td>Oliver Stone</td>
+     <td>7</td>
+     </tr>
+ </table>
+ <br>
+ <br>
+ <table border="1">
+     <caption>Películas bélicas</caption>
+     <tr>
+         <th>Película</th>
+         <th>Director</th>
+         <th>Puntuación</th>
+     </tr>
+     <tr>
+     <td>El Cazador</td>
+     <td>Michael Cimino</td>
+     <td>7</td>
+     </tr>
+     <tr>
+        <td>Apocalypse Now</td>
+         <td>Francis Ford Coppola</td>
+         <td>8</td>
+     </tr>
+     <tr>
+        <td>Platoon</td>
+     <td>Oliver Stone</td>
+     <td>7</td>
+     </tr>
+ </table>
+ <br>
+ <table border="1">
+    <caption>Horario Cine Clasico</caption>
+    <tr>
+        <th colspan="3">Pasión de los Fuertes</th>
+    </tr>
+    <tr>
+        <td>18:00</td>
+        <td>20:00</td>
+        <td>22:00</td>
+    </tr>
+    <tr>
+        <th colspan="3">Juan Nadie</th>
+    </tr>
+    <tr>
+        <td>15:00</td>
+        <td>19:00</td>
+        <td>21:00</td>
+    </tr>
+    <tr>
+        <th colspan="3">Un tranvía llamado deseo</th>
+    </tr>
+    <tr>
+        <td>18:00</td>
+        <td>20:00</td>
+        <td>22:00</td>
+    </tr>
+
+ </table>
+
+</body>
+</html>

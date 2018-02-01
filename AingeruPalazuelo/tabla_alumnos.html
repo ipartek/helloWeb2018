@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla de Alumnos</title>
+    <!--Icono de la Web-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- enlace a la hoja de estilos -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+</head>
+
+<body onload="init()">
+    <a href="index.html">&lt; Volver</a>
+    <!--<button onclick="goBack()">&lt; VOLVER</button> -->
+    <h1>Distribución Aula</h1>
+    <h2 id="txt_afortunado">AFORTUNAD@: </h2>
+    <table id="tabla_alumnos">
+        <!--Crear tabla de 7 filas y 3 columnas con comando de emmet: tr*7>td*3-->
+        <!--1.FILA-->
+        <tr>
+            <td class="alumno" id="15" value="Aintziñe">Aintziñe</td>
+            <td></td>
+            <td class="alumno" id="1" value="Izaskun">Izaskun</td>
+        </tr>
+        <!--2.FILA-->
+        <tr>
+            <td class="alumno" id="14" value="Joseba">Joseba</td>
+            <td></td>
+            <td class="alumno" id="2" value="Jon Ander">Jon Ander</td>
+        </tr>
+        <!--3.FILA-->
+        <tr>
+            <td class="alumno" id="13" value="Patri">Patri</td>
+            <td></td>
+            <td class="alumno" id="3" value="Iñigo">Iñigo</td>
+        </tr>
+        <!--4.FILA-->
+        <tr>
+            <td class="alumno" id="12" value="David">David</td>
+            <td></td>
+            <td class="alumno" id="4" value="Iñaki Aretxabaleta">Iñaki Aretxabaleta</td>
+        </tr>
+        <!--5.FILA-->
+        <tr>
+            <td class="alumno" id="11" value="Aingeru">Aingeru</td>
+            <td></td>
+            <td class="alumno" id="5" value="Javier">Javier</td>
+        </tr>
+        <!--6.FILA-->
+        <tr>
+            <td class="alumno" id="10" value="Alex">Alex</td>
+            <td></td>
+            <td class="alumno" id="6" value="Xabier">Xabier</td>
+        </tr>
+        <!--7.FILA-->
+        <tr>
+            <td class="alumno" id="9" value="Iñaki Jimenez">Iñaki Jimenez</td>
+            <td class="alumno" id="8" value="Leire">Leire</td>
+            <td class="alumno" id="7" value="Jorge">Jorge</td>
+        </tr>
+    </table>
+    <br>
+    <button id="btn_tocaLeer" class="button" onclick="tocaLeer()">SELECCIONAR ALUMNO</button>
+    <button id="btn_reiniciarTabla" class="button" onclick="reiniciarTablaAlumnos()">REINICIAR TABLA</button>
+
+    <!-- enlace al javascript -->
+    <script src="js/main.js" type="text/javascript"></script>
+    <script src="js/alumnos.js" type="text/javascript"></script>
+</body>
+</html>

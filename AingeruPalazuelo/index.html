@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <!--Icono de la Web-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- enlace a la hoja de estilos -->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+
+<!-- Ejecuta la función init() cuando la página Web esté cargada "onload" -->
+<body onload="init()">
+
+    <h1>Hello World</h1>
+
+    <nav>
+       <ul>
+           <li><a href="bitcoin.html">Ver valor del Bitcoin</a></li>
+           <li><a href="tabla_alumnos.html">Tabla de Alumnos</a></li>
+           <li><a href="arcanoid.html">Juego del Arcanoid</a></li>
+       </ul>
+
+        <!--<input type="button" onclick="location.href='tabla_alumnos.html'" value="TABLA DE ALUMNOS" name="boton_tabla_alumnos" />
+        <br><br><br>-->
+    </nav>
+    <br><br><br>
+    <input type="number" id="numero" placeholder="Escribe un número" />
+
+    <p id="texto">...</p>
+    <button id="botonParInpar" class="button" onclick="pulsador()">PULSAME</button>
+
+    <!-- enlace al javascript -->
+    <script src="js/main.js" type="text/javascript"></script>
+
+</body>
+</html>

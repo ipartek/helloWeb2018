@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitcoin Precio Actual</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+    <h1>Bitcoin Precio Actual</h1>
+    <img src="img/logo_bitcoin.png" alt="">
+    <br>
+    <select id="formato-precio">
+        <option value="Euros">Euros</option>
+        <option value="Libras">Libras</option>
+        <option value="Dolares">Dolares</option>
+    </select>
+    <p id="precio"></p>
+
+    <button onclick="llamadaApi()">Consultar</button>
+    <br>
+    <a href="index.html">Inicio</a>
+    <script src="js/main.js"></script>
+</body>
+</html>

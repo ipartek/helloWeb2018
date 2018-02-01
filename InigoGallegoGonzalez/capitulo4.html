@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Capítulo 4</title>
+</head>
+
+<body>
+    <style>
+        /*No es lo más correcto, pero para pruebas nos vale */
+
+        p {
+            text-align: justify;
+            font-size: 1.6em;
+            line-height: 1.6em;
+            text-indent: 2em;
+            /* sangrado */
+        }
+
+        p:first-letter {
+            font-size: 3em;
+            color: red;
+            background-color: grey;
+        }
+
+        h1 {
+            text-transform: uppercase;
+        }
+
+        span {
+            border: 5px dotted red;
+            padding: 5px;
+        }
+
+        /* . es igual a class="caja"*/
+
+        .caja {
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            background-color: grey;
+            margin-top: 5px;
+            text-align: center;
+            font-family: arial;
+            font-size: 5em;
+
+        }
+
+        .caja:hover {
+            border-radius: 50<<<%;
+            background-color: red;
+            color: white;
+            transition-duration: 1s;
+        }
+
+    </style>
+    <h1>Encabezado h1</h1>
+    <h2>Encabezado h2</h2>
+    <h3>Encabezado h3</h3>
+    <h4>Encabezado h4</h4>
+    <h5>Encabezado h5</h5>
+    <h6>Encabezado h6</h6>
+    <div class="caja">1</div>
+    <div class="caja">2</div>
+    <div class="caja">3</div>
+    <div class="caja">4</div>
+    <div class="caja">5</div>
+    <p>H1 sólo puede haber uno y es obligatorio en todas las páginas </p>
+
+    <p> El resto se pueden repetir, pero deben mantener la jerarquía, es decir, no se puede tener un <span>h3</span> si no existe un h2, y no son obligatiorios </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, fuga ipsum molestias magni eaque repellendus saepe at placeat nemo dolor quos, reiciendis possimus minus atque mollitia laudantium quidem. Rem, repellat.</p>
+    <p>Tempore quibusdam facilis doloremque, esse aliquam molestiae quia dolores optio ipsum, nostrum consectetur veritatis eveniet adipisci corporis eius. Odio iste ea in, sed maxime assumenda. Ratione odit dignissimos optio facilis.</p>
+    <p>Error, facere! Necessitatibus quaerat repellat veritatis eius officia veniam culpa nobis repellendus voluptatibus nostrum, sint minima assumenda odio officiis saepe dolore ad explicabo provident velit molestias? Sapiente amet, provident non.</p>
+    <p>Fugiat corporis tempora molestiae ipsum perspiciatis aliquam, incidunt aut, illo, ex itaque voluptatum, facilis. Quam eaque dolores dignissimos rerum ea asperiores molestias fugiat sunt, aperiam similique, veniam, vel omnis voluptatibus.</p>
+
+    <hr>
+
+    <h2>Listas</h2>
+    <!-- listas desordenadas los pinchos del imola, listas definición, café cortado, café con leche y café con alegría. y lista anidada de con la discografía de un grupo y un vídeo de youtube a la discografía -->
+    <h3>Alumnos</h3>
+    <ol>
+        <li>Izaskun</li>
+        <li>Jon ander</li>
+        <li>Iñigo</li>
+        <li>Iñaki Aritzabaleta</li>
+        <li>Javier</li>
+        <li>Xabier</li>
+        <li>Jorge</li>
+        <li>Leire</li>
+        <li>Iñaki Jiménez</li>
+        <li>Alex</li>
+        <li>Aingeru</li>
+        <li>David</li>
+        <li>Patri</li>
+        <li>Joseba</li>
+        <li>Aintzane</li>
+    </ol>
+    <h3>Pinchos de imola</h3>
+    <ul>
+        <li>Tortilla de chaca</li>
+        <li>Tortilla sin cebolla</li>
+        <li>Tortilla con jamón y queso</li>
+        <li>Sandwich mixto</li>
+        <li>Aire</li>
+        <li>Tortilla de champiñones</li>
+    </ul>
+    <h3>Cafés</h3>
+    <dl>
+        <dt>Café cortado</dt>
+        <dd>Café con menos café</dd>
+        <dt>Café con leche</dt>
+        <dd>Café con un toque de leche</dd>
+        <dt>Café con alegría</dt>
+        <dd>Café con un toque de whisky</dd>
+    </dl>
+    <h3>Discografía Green Day</h3>
+    <ul>
+        <li>
+            <h4>Smooth</h4>
+        </li>
+        <ul>
+            <li>Don't leave me</li>
+            <li>I was there</li>
+            <li>Green day</li>
+            <li>Rest</li>
+        </ul>
+        <li>
+            <h4>Kerplunk</h4>
+        </li>
+        <ul>
+            <li>One of My Lies</li>
+            <li>80</li>
+            <li>Android</li>
+            <li>No one knows</li>
+        </ul>
+        <li>
+            <h4>Dookie</h4>
+        </li>
+        <ul>
+            <li>Kerrang</li>
+            <li>Spin</li>
+            <li>Rolling stone</li>
+            <li>Loudwire</li>
+        </ul>
+        <li>
+            <h4>Insonmiac</h4>
+        </li>
+        <ul>
+            <li>Brat</li>
+            <li>Panic Song</li>
+            <li>Stuart and the Ave</li>
+            <li>Thight Wad Hill</li>
+        </ul>
+    </ul>
+    <h2>Tablas</h2>
+    <h3>V4.16</h3>
+    <table border="1">
+        <tr>
+            <td><strong>Pelicula</strong></td>
+            <td><strong>Director</strong></td>
+            <td><strong>Puntuacion</strong></td>
+        </tr>
+        <tr>
+            <td>El cazador</td>
+            <td>Michael Cimino</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Apocalypse Now</td>
+            <td>Francis Ford Coppola</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Platoon</td>
+            <td>Oliver Stone</td>
+            <td>7</td>
+        </tr>
+    </table>
+    <h3>4.17</h3>
+    <table border="1">
+        <caption>Películas bélicas</caption>
+        <tr>
+            <th>Pelicula</th>
+            <th>Director</th>
+            <th>Puntuacion</th>
+        </tr>
+        <tr>
+            <td>El cazador</td>
+            <td>Michael Cimino</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Apocalypse Now</td>
+            <td>Francis Ford Coppola</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Platoon</td>
+            <td>Oliver Stone</td>
+            <td>7</td>
+        </tr>
+    </table>
+    <h3>V4.18</h3>
+    <table border="1">
+        <caption>Horario cine clásico</caption>
+        <tr>
+            <th colspan="3">Pasion de los fuertes</th>
+        </tr>
+        <tr>
+            <td>8:00</td>
+            <td>20:00</td>
+            <td>22:00</td>
+        </tr>
+        <tr>
+            <th colspan="3">Juan nadie</th>
+        </tr>
+        <tr>
+            <td>15:00</td>
+            <td>19:00</td>
+            <td>21:00</td>
+        </tr>
+        <tr>
+            <th colspan="3">Un travía llamado deseo</th>
+        </tr>
+        <tr>
+            <td>18:00</td>
+            <td>20:00</td>
+            <td>22:30</td>
+        </tr>
+    </table>
+    <h3>V4.20</h3>
+    <table border="1">
+        <caption>Factura detallada</caption>
+        <thead>
+            <tr>
+                <th colspan="5">EXTREMEÑA DE TELÉFONOS</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <td colspan="5"><i>Extremeña de teléfonos le informa que puede llamar al número gratuito 666 para cualquier duda o sugerencia que tenga acerca de esta factura o de nuestros servicios</i></td>
+        </tfoot>
+        <tbody>
+            <tr>
+                <th colspan="5">Detalle de cuotas</th>
+            </tr>
+            <tr>
+                <th>PERIODO</th>
+                <th>CONCEPTO</th>
+                <th>IMPORTE</th>
+                <th colspan="2">DESCUENTO</th>
+            </tr>
+            <tr>
+                <td rowspan="3">01/05/13-01/07/13</td>
+                <td>Servicio de identificación de llamadas</td>
+                <td style="text-align: center">12&euro;</td>
+                <td style="text-align: center" colspan="2">0</td>
+            </tr>
+            <tr>
+                <td>Línea individual</td>
+                <td style="text-align: center">14&euro;</td>
+                <td style="text-align: center" colspan="2">0</td>
+            </tr>
+            <tr>
+                <td>Bono ciudad</td>
+                <td style="text-align: center">10&euro;</td>
+                <td style="text-align: center" colspan="2">0</td>
+            </tr>
+            <tr>
+                <td colspan="2">TOTAL:</td>
+                <th style="text-align: right" colspan="3">36 &euro;</th>
+            </tr>
+            <tr>
+                <th colspan="5">Detalle de consumos</th>
+            </tr>
+            <tr>
+                <th>CONCEPTO</th>
+                <th>LLAMADAS</th>
+                <th>DURACIÓN</th>
+                <th>IMPORTE</th>
+                <th>DESCUENTO</th>
+            </tr>
+            <tr>
+                <td>Llamada internacional</td>
+                <td style="text-align: center">23</td>
+                <td style="text-align: center">10m23s</td>
+                <td style="text-align: center">13&euro;</td>
+                <td style="text-align: center">0</td>
+            </tr>
+            <tr>
+                <td>Llamada metropolitana</td>
+                <td style="text-align: center">23</td>
+                <td style="text-align: center">10m 23s</td>
+                <td style="text-align: center">3,5&euro;</td>
+                <td style="text-align: center">0</td>
+            </tr>
+            <tr>
+                <td colspan="2">TOTAL:</td>
+                <th style="text-align: right" colspan="3">16,5 &euro;</th>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+
+</html>

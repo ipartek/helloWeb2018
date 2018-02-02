@@ -7,7 +7,7 @@
     <style>
         h1 {
             font-size: 26px;
-            color: firebrick;
+            color: peru;
         }
 
         .container {
@@ -21,14 +21,85 @@
             height: 100vh;
         }
 
+        .container h1 {
+            color: aqua;
+        }
+
+        .container header h1 {
+            color: red;
+        }
+
+        div.aviso {
+            background: grey;
+        }
+
+        input {
+            padding: 5px 10px;
+        }
+
+        input[type="text"] {
+            padding: 15px;
+        }
+
+        div p {
+            color: green;
+        }
+
+        div,
+        p {
+            color: green;
+        }
+
+        a {
+            font-size: 20px;
+        }
+
+        a.link {
+            font-size: 30px;
+        }
+
+        div div.capa1,
+        div p.texto {
+            color: red;
+        }
+
+        div.ejer2 p[class="texto"] {
+            color: blue;
+        }
+
+        div[class~="capa1"] {
+            font-size: 20px;
+        }
+
+        div.ejer2 a[href$=".com"] {
+            background: violet;
+        }
+
+        div.ejer2 a[href^="www"] {
+            background: yellow;
+        }
+
+        div.ejer2 div[class*="texto"] {
+            background: orange;
+        }
+        div>a{background-color: brown}
+        div a{background-color: olive}
+
     </style>
     <link rel="stylesheet" type="text/css">
     <!--href="css/styless.css"-->
 </head>
 
 <body>
+    <h1>Css Titular</h1>
     <div class="container">
+        <div class="aviso">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus id aliquam itaque laborum praesentium est, impedit aperiam sequi repudiandae non maxime mollitia beatae laudantium reprehenderit omnis sed, fuga modi distinctio.</p>
+        </div>
         <h1>Css</h1>
+        <header>
+            <h1>Triple de mal hecho</h1>
+        </header>
         <h2>Unidades Relativas</h2>
         <dl>
             <dt>px </dt>
@@ -45,9 +116,35 @@
             <dd>el ancho del viewport </dd>
         </dl>
 
-    <a href="index.html">Volver</a><br><br><br>
+        <a href="index.html">Volver</a><br><br><br>
     </div>
     <!-- div container -->
+
+    <!-- listado 8.7 pag 182, ejercicio con los atributos de la pag 185, selector de hijos 186, selector adyacente 187 -->
+    <h3>Lista 8.7 Pag 182</h3>
+    <div>
+        <p class="texto">Párrafo-1</p>
+        <div class="texto">Párrafo-2</div>
+        <h3><a href="" class="link">Enlace-1</a></h3>
+        <a href="">Enlace-2</a>
+        <div class="capa1">Párrafo-3</div>
+        <div>Párrado</div>
+    </div>
+    <h3>Selector atributos Pag 185</h3>
+    <div class="ejer2">
+        <p class="texto">Párrafo-1</p>
+        <div class="texto">Párrafo-2</div>
+        <h3><a href="er.com" class="link">Enlace-1</a></h3>
+        <a href="www.a.es">Enlace-2</a>
+        <div class="capa1">Párrafo-3</div>
+        <div>Párrado</div>
+    </div>
+    <h3>Selector de hijos Pag 186</h3>
+    <div class="ejer3">
+        <h3><a href="" class="link">Enlace-1</a></h3>
+        <a href="">Enlace-2</a>
+    </div>
+
 
 
     <script src="js/main.js" type="text/javascript">

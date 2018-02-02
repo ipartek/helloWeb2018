@@ -54,6 +54,51 @@
         input [type="text"] {
             padding: 15px
         }
+
+        div p {
+            color: green
+        }
+
+        div.selectores,
+        p {
+            color: green
+        }
+
+        a {
+            font-size: 20px
+        }
+
+        a.link {
+            font-size: 30px
+        }
+
+        div div.capa1,
+        div p.texto {
+            color: red
+        }
+
+        div.selectoresAvanzados p[class="texto"] {
+            color: blue
+        }
+
+        div.selectoresAvanzados p[class~="parrafo"] {
+            font-size: 20px
+        }
+
+        div.selectoresAvanzados p[class|="eu"] {
+            color:blueviolet
+        }
+        div.selectoresAvanzados a[href$=".html"] {
+            color:chartreuse
+        }
+        div.selectoresAvanzados a[href^="a"] {
+            font-size: 10px
+        }
+
+        div.selectoresAvanzados p[class="noticia"] {
+            font-size: 30px
+        }
+
     </style>
 
 
@@ -64,27 +109,45 @@
     <div class="container">
         <h1>CSS</h1>
         <div class="aviso">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore odio sunt nemo unde harum quasi! Suscipit facere odit accusantium, sunt, voluptatem aspernatur ex consectetur molestiae, perspiciatis, cum deserunt asperiores similique.</div>
-            <header>
-                <h1>triple mal hecho</h1>
-            </header>
-            <h2><a ref="https://franciscoamk.com/unidades-de-medida-en-css/"> Unidades relativas</a></h2>
-            <dl>
-                <dt>px</dt>
-                <dd>Tamaño relativo a la resolucion de la pantalla</dd>
-                <dt>%</dt>
-                <dd>Porcentaje relativo al elemento actual</dd>
-                <dt>em</dt>
-                <dd>Tamaño relativo de la fuente que tiene establecida el navegador</dd>
-                <dt>rem</dt>
-                <dd>La unidad de medida rem es muy similar a em, con la única diferencia de que no es escalable, esto quiere decir que no depende del elemento padre, sino del elemento raíz del documento, el elemento HTML. Rem significa “Root Em“, o sea, es un em basado en la raíz.</dd>
-                <dt><a ref="https://devcode.la/tutoriales/unidades-vh-vw-css/">vw</a></dt>
-                <dd>Tamaño relativo a la anchura del dispositivo</dd>
-                <dt>vh</dt>
-                <dd>Tamaño relativo a la altura del dispositivo</dd>
-            </dl>
-        </div>
-        <!-- class container -->
-        <!--ejercicio listado 8.7 -->
+        <header>
+            <h1>triple mal hecho</h1>
+        </header>
+        <h2><a ref="https://franciscoamk.com/unidades-de-medida-en-css/"> Unidades relativas</a></h2>
+        <dl>
+            <dt>px</dt>
+            <dd>Tamaño relativo a la resolucion de la pantalla</dd>
+            <dt>%</dt>
+            <dd>Porcentaje relativo al elemento actual</dd>
+            <dt>em</dt>
+            <dd>Tamaño relativo de la fuente que tiene establecida el navegador</dd>
+            <dt>rem</dt>
+            <dd>La unidad de medida rem es muy similar a em, con la única diferencia de que no es escalable, esto quiere decir que no depende del elemento padre, sino del elemento raíz del documento, el elemento HTML. Rem significa “Root Em“, o sea, es un em basado en la raíz.</dd>
+            <dt><a ref="https://devcode.la/tutoriales/unidades-vh-vw-css/">vw</a></dt>
+            <dd>Tamaño relativo a la anchura del dispositivo</dd>
+            <dt>vh</dt>
+            <dd>Tamaño relativo a la altura del dispositivo</dd>
+        </dl>
+    </div>
+    <!-- class container -->
+    <!--ejercicio listado 8.7 -->
+    <h2>Ejercicio listado 8.7. Selectores en CSS</h2>
+    <div class="selectores">
+        <p class="texto">Parrafo-1</p>
+        <div class="texto">Parrafo-2</div>
+        <h3><a class="link">Enlace-1</a></h3>
+        <a href="">Enlace-2</a>
+        <div class="capa1">Parrafo-3</div>
+        <div>Parrafo-4</div>
+    </div>
+    <p class="noticia">Noticia: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium consequuntur optio possimus totam, quisquam tempore reprehenderit, dolorum nisi deserunt quam blanditiis odio cupiditate saepe cumque placeat consequatur, voluptas perferendis corporis.</p>
+    <div class="selectoresAvanzados">
+        <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, velit earum optio esse, nostrum eius labore necessitatibus quis, quam corrupti quasi. Dolor dolores sed error veritatis fugit in, explicabo nemo.</p>
+        <p class="titulo parrafo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam id sapiente fugit accusantium esse libero voluptate, nisi! Fugiat amet, voluptates, ab nam a expedita quaerat modi facilis eos perspiciatis quasi.</p>
+        <p class="eu-EU">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium consequuntur optio possimus totam, quisquam tempore reprehenderit, dolorum nisi deserunt quam blanditiis odio cupiditate saepe cumque placeat consequatur, voluptas perferendis corporis.</p>
+        <a href="alumnos.html">Alumnos</a>
+        <a href="bitcoin.html">Alumnos2</a>
+        <p class="noticia">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium consequuntur optio possimus totam, quisquam tempore reprehenderit, dolorum nisi deserunt quam blanditiis odio cupiditate saepe cumque placeat consequatur, voluptas perferendis corporis.</p>
+    </div>
 </body>
 
 </html>

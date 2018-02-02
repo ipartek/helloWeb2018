@@ -5,9 +5,15 @@
     <meta charset="UTF-8">
     <title>CSS</title>
     <style>
+        html,
         body {
             margin: 0;
-            height: 100%;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+
         }
 
         .container {
@@ -16,28 +22,65 @@
             margin: 0 auto;
             border-left: solid 1px red;
             border-right: solid 1px red;
-            padding: 0 1%;
+            padding: 10px 1%;
             height: 100vh;
+            box-sizing: border-box;
         }
 
-         /*
+        h1 {
+            font-style: 2em;
+            color: peru;
+        }
+
+        .container h1 {
+            color: blue;
+        }
+
+        .container header h1 {
+            color: red;
+        }
+
+        div.aviso {
+            background-color: red;
+        }
+
+        div.aviso {
+            background-color: red;
+        }
+
+        p + a{
+            color : yellow;
+        }
+
+        /*
         Colores Surf Search Spot
         Azul Oscuro:     #2186A3  --  rgb(34, 134, 163)
         Azul Claro:      #00B5D6  --  rgb(0, 181, 214)
         Naranja:         #EB6D3B  --  rgb(235, 109, 59)
         */
-
-
     </style>
 </head>
 
 <body>
+    <h1>CSS TUTORIAL</h1>
 
     <div class="container">
-        <h1>CSS</h1>
+
+        <H1>CSS</H1>
+
+        <div class="aviso">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, sit dignissimos deserunt, quaerat nemo doloremque veritatis ducimus similique, unde optio voluptatum. Quibusdam culpa harum, omnis inventore atque accusantium repudiandae hic!</p>
+        </div>
+
+        <header>
+            <h1>Triple de mal hecho</h1>
+        </header>
+
+        <p>dfgsdfg</p>
+        <a href="">sdfgfds</a>
+        <a href="">dfsgdfgfgd</a>
 
         <h2>Unidades Relativas</h2>
-
 
         <dl>
             <dt>px</dt>

@@ -6,7 +6,6 @@
 </head>
 <body>
 
-<<<<<<< HEAD
   <style>
 
       /*no es lo mas correcto, pero para pruebas rapidas nos vale*/
@@ -38,9 +37,20 @@
           padding: 5px;
       }
 
+      /* punto es igual a class = "caja" */
+
       .caja{
           display: inline-block;
-          height: 150px;
+          height: 100px;
+          width: 100px;
+          background-color: grey;
+          color: red;
+      }
+
+      .caja:hover{
+          background-color: red;
+          border-radius: 50%;
+          transition-duration: 2s;
       }
 
 
@@ -57,154 +67,257 @@
   <h5>Encabezado h5</h5>
   <h6>Encabezado h6</h6>
 
+
+  <div class="caja">1</div>
+  <div class="caja">2</div>
+  <div class="caja">3</div>
+  <div class="caja">4</div>
+  <div class="caja">5</div>
+
+
   <p>h1 solo puede haber uno y es obligatorio por accesibilidad.</p>
   <p>el resto no se pueden repetir, pero deben mantener la jerarquia, es decir: No puedo tener un h3 si no existe un h2.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut maiores commodi accusantium iure hic tempora, illo animi sapiente aperiam fugiat recusandae libero ipsa, nisi ducimus similique odio quibusdam at illum?</p>
 
 
+  <hr>
 
-=======
-    <style>
-    /* No es lo mas correcto, pero para pruebas rapidas nos */
-        h1{
-            text-transform:uppercase;
-        }
-        p{
-        text-align:justify;
-        font-size: 1.6em;
-        line-height: 1.6em;
-        text-indent: 2em; /*sangrado */
-
-        }
-     /*   p:first-letter{
-            font-size: 3em;
-            color:red;
-            background-color:yellow;
-        }*/
-        span{
-            border: 5px dotted red;
-            padding: 5px;
-        }
-        /* punto es igual a class="caja" */
-        .caja{
-            display:inline-block;
-            height: 150px;
-            width:150px;
-            background-color: grey;
-            font-size: 5em;
-
-            color:red;
-            text-align: center;
-            font-family: arial;
-            margin:10px;
+  <h2>Listas</h2>
 
 
 
-        }
-        .caja:hover{
-            background-color: red;
-            border border-radius: 50%;
-            transition-duration: 2s;
+  <h3>Clasificacion de la liga</h3>
+  <ol>
+      <li>Barcelona</li>
+      <li>Atletico de Madrid</li>
+      <li>Valencia</li>
+      <li>Real Madrid</li>
+      <li>Sevilla</li>
+      <li>Villarreal</li>
+      <li>Celta</li>
+      <li>Leganes</li>
+      <li>Betis</li>
+      <li>Getafe</li>
+      <li>Athletic Club</li>
+      <li>Girona</li>
+      <li>Espanyol</li>
+      <li>Eibar</li>
+      <li>Real Sociedad</li>
+      <li>Levante</li>
+      <li>Alaves</li>
+      <li>Deportivo</li>
+      <li>Las Palmas</li>
+      <li>Malaga</li>
+  </ol>
 
-        }
-    </style>
-
-    <h1>Encabezado h1</h1>
-
-    <h3>Encabezado h3</h3>
-    <h4>Encabezado h4</h4>
-    <h5>Encabezado h5</h5>
-
-
-    <div class= "caja">1</div>
-    <div class= "caja">2</div>
-    <div class= "caja">3</div>
-    <div class= "caja">4</div>
-
-    <p>H1 solo puede haber uno y es obligatorio por accesibilidad</p>
-    <p>El resto se pueden repetir, pero deben mantener la jerarquia, es decir: No pueden</p>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sequi optio recusandae cum, quidem aut accusantium nisi dicta veniam voluptatem dolor ipsa dolorem eligendi voluptatum facere vero cumque magni illo.</p>
-    <p>Cumque animi est fugiat, dolorum inventore blanditiis quod, eveniet aut aperiam accusamus! Ut dolore, consequatur blanditiis. Sint voluptatem quia nesciunt, aliquam voluptate. Vel quaerat neque eligendi. Praesentium eveniet, saepe facilis.</p>
-    <p>Dolor nobis sunt dolorem nulla cupiditate, iusto officia. Nisi veniam beatae eligendi repudiandae animi reiciendis blanditiis velit vero provident commodi, mollitia, temporibus esse eius eos voluptatum sapiente sunt non nam.</p>
-    <p>Facere culpa magni corporis, porro nesciunt beatae aliquam ullam eos aut voluptates tempora, atque minus voluptatem, quos perferendis quisquam eius nobis vero. Animi repudiandae, nihil amet rem, beatae doloremque qui.</p>
-
-    <h2>Clasificación futbol<em> Primera Division</em></h2>
-    <ol>
-        <li>Barcelona</li>
-        <li>Atlético de Madrid</li>
-        <li>Valencia</li>
-        <li>Real Madrid</li>
-        <li>Villareal</li>
-        <li>Sevilla</li>
-        <li>Celta de Vigo</li>
-        <li>Eibar</li>
-        <li>Getafe</li>
-        <li>Girona</li>
-        <li>Leganes</li>
-        <li>Athletic de Bilbao</li>
-        <li>Betis</li>
-        <li>RCD Espanytol</li>
-        <li>Real Sociedad</li>
-        <li>Levante</li>
-        <li>Alavés</li>
-        <li>Deportivo</li>
-        <li>U.D.Las Palmas</li>
-        <li>Málaga</li>
-
-    </ol>
-    <p>PELICULAS RUSELL CROWE HASTA 1994</p>
-        <ol>
-            <li>Blood Oath: Prisoners of the Sun</li>
-            <li>The Crossing</li>
-            <li>Proof</li>
-            <li>Spotswood</li>
-            <li>Romper Stomper</li>
-            <li>Hammers Over the Anvil</li>
-            <li>The Silver Brumby</li>
-            <li>For the Moment</li>
-            <li>Love in Limbo</li>
-            <li>The Sum of Us</li>
-            <li>The Quick and the Dead</li>
-            <li>No Way Back	</li>
-        </ol>
-    <p>CAFES</p>
-    <dl>
-        <dt>Café con leche</dt>
-        <dt>Cafe cortado</dt>
-        <dt>Cafe con alegria</dt>
-        <dd>Tipos de Café</dd>
-    </dl>
-    <p>DISCOGRAFIA COMPLETA MELENDI</p>
-    <ul>
-        <li>
-            <p>Quítate las gafas</p>
-            <ol>
-                <li>FLORES DE AGUA Y PLOMO</li>
-                <li> DESTINO O CASUALIDAD</li>
-                <li>HIJOS DEL MAL</li>
-                <li>DESDE QUE ESTAMOS JUNTOS</li>
-                <li>LA CASA NO ES IGUAL</li>
-                <li>MI MAYOR FORTUNA – FEAT. CHOC QUIB TOWN</li>
-                <li>UN AMOR TAN GRANDE</li>
-                <li>SOY TU SUPERHÉROE</li>
-                <li>EXISTEN LOS ÁNGELES</li>
-                <li>QUITATE LAS GAFAS</li>
-                <li> YO ME VEO CONTIGO</li>
-
-            </ol>
-        </li>
+  <h4>Pintxos del bar Pernet</h4>
+  <ul>
+      <li>Tortilla de patata</li>
+      <li>Pulpo a la gallega</li>
+      <li>Sandwich de jamon y queso</li>
+      <li>Gilda</li>
+      <li>Tortilla especial</li>
+      <li>Anchoa con pimiento</li>
     </ul>
+
+   <h5>Cafes del bar Pernet</h5>
+   <dl>
+     <dt>Cafe con leche</dt>
+     <dd>Cafe grande con un chorro de leche</dd>
+     <dt>Cafe cortado</dt>
+     <dd>Cafe mediano con un poco de leche</dd>
+     <dt>Cafe solo</dt>
+     <dd>Cafe sin aditivos</dd>
+     <dt>Cafe con alegria</dt>
+     <dd>Cafe con un chorro de Bayleys</dd>
+    </dl>
+
+
+    <h6>Discografia de Parabellum</h6>
+    <ul>
+        <li><a href="https://www.youtube.com/watch?v=fHKFgnqnrEA&list=PLLqLzC5WSZHF-G7AwjHkbM0CnaDrB2mp2">Hace falta</a></li>
+        <li><a href="https://www.youtube.com/watch?v=MQo7H7E83Qw">Txarriboda</a></li>
+        <li><a href="https://www.youtube.com/watch?v=8woMxTqm_Ik">Envenenado</a></li>
+        <li><a href="https://www.youtube.com/watch?v=1WrEw1C0gHM">Bronka en el bar</a></li>
+    </ul>
+
+
+    <hr>
+
+    <h7>Tablas: ejemplos variados</h7>
+
+    <br>
+
+    <h8>Figura 4.10</h8>
+
     <table border="1">
-        <caption>Horario Cine Clásico</caption>
         <tr>
-            <th rowspan="2">SALA-1</th>
-            <th colspan="3">Pasión de los fuertes</th>
-
-
+            <td>Pelicula</td>
+            <td>Director</td>
+            <td>Puntuacion</td>
         </tr>
-        <tr><td>18:00</td></tr>
-    </table>
->>>>>>> origin/master
+
+        <tr>
+            <td>El Cazador</td>
+            <td>Michael Cimino</td>
+            <td>7</td>
+        </tr>
+
+        <tr>
+            <td>Apocalypse Now</td>
+            <td>Francis Ford Coppola</td>
+            <td>8</td>
+        </tr>
+
+        <tr>
+            <td>Platoon</td>
+            <td>Oliver Stone</td>
+            <td>7</td>
+        </tr>
+
+   </table>
+
+   <br>
+
+   <h9>Figura 4.11</h9>
+
+   <table border="1">
+        <tr>
+            <caption>Peliculas belicas</caption>
+            <th>Pelicula</th>
+            <th>Director</th>
+            <th>Puntuacion</th>
+        </tr>
+
+        <tr>
+            <td>El Cazador</td>
+            <td>Michael Cimino</td>
+            <td>7</td>
+        </tr>
+
+        <tr>
+            <td>Apocalypse Now</td>
+            <td>Francis Ford Coppola</td>
+            <td>8</td>
+        </tr>
+
+        <tr>
+            <td>Platoon</td>
+            <td>Oliver Stone</td>
+            <td>7</td>
+        </tr>
+
+   </table>
+
+
+   <br>
+
+   <h9>Figura 4.12</h9>
+
+   <table border="1">
+       <caption>Horario cine clasico</caption>
+        <tr>
+            <th colspan="3">Pasion de los fuertes</th>
+        </tr>
+        <tr>
+            <td>18:00</td>
+            <td>20:00</td>
+            <td>22:00</td>
+        </tr>
+        <tr>
+            <th colspan="3">Juan Nadie</th>
+        </tr>
+        <tr>
+            <td>15:00</td>
+            <td>19:00</td>
+            <td>21:00</td>
+        </tr>
+        <tr>
+            <th colspan="3">Un tranvia llamado deseo</th>
+        </tr>
+        <tr>
+            <td>18:00</td>
+            <td>20:00</td>
+            <td>22:30</td>
+        </tr>
+
+   </table>
+
+   <br>
+
+   <h10>Figura 4.13</h10>
+
+   <table border="1">
+       <caption>Horario cine clasico</caption>
+       <tr>
+           <th rowspan="2">SALA-1</th>
+           <th colspan="3"> Pasion de los fuertes</th>
+       </tr>
+       <tr>
+           <td>18:00</td>
+           <td>20:00</td>
+           <td>22:00</td>
+       </tr>
+       <tr>
+           <th rowspan="2">SALA-2</th>
+           <th colspan="3">Juan Nadie</th>
+       </tr>
+       <tr>
+           <td>15:00</td>
+           <td>19:00</td>
+           <td>21:00</td>
+       </tr>
+       <tr>
+           <th rowspan="2">SALA-2</th>
+           <th colspan="3"> Un tranvia llamado deseo</th>
+       </tr>
+       <tr>
+           <td>18:00</td>
+           <td>20:00</td>
+           <td>22:30</td>
+       </tr>
+
+   </table>
+
+   <br>
+
+   <h11>Figura 4.14</h11>
+
+
+   <table border="1">
+
+       <thead>
+           <tr>
+               <th>Cabecera 1</th>
+               <th>Cabecera 2</th>
+           </tr>
+       </thead>
+
+       <tfoot>
+           <tr>
+               <td>Pie 1</td>
+               <td>Pie 2</td>
+           </tr>
+       </tfoot>
+
+       <tbody>
+           <tr>
+               <td>Dato 1</td>
+               <td>Dato 2</td>
+           </tr>
+           <tr>
+               <td>Dato 3</td>
+               <td>Dato 4</td>
+           </tr>
+       </tbody>
+
+   </table>
+
+   <br>
+
+   <h12>Figura 4.15</h12>
+
+
+
 </body>
 </html>

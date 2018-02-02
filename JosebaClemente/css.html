@@ -31,6 +31,16 @@
 
 
 
+.container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+    border-right: 1px solid red;
+    border-left:  1px solid red;
+    padding: 0 1%;
+    height: 100vh;
+}
+
     </style>
 
 
@@ -38,11 +48,34 @@
 </head>
 <body>
 
+  <div class="container">
+
+
+
    <h1>CSS1</h1>
    <h2>CSS2</h2>
    <h3>CSS3</h3>
 
 
+<dl>
+    <h2>Unidades Relativas</h2>
+
+    <dt>px</dt>
+    <dd>Tamaño relativo respecto a la resolucion de la pantalla</dd>
+
+     <dt>Porcetanje - %</dt>
+    <dd>Porcentaje relativo al elemento actual en cual estamos aplicando el estilo</dd>
+
+
+     <dt>em</dt>
+    <dd>La unidad de medida rem es muy similar a em, con la única diferencia de que no es escalable, esto quiere decir que no depende del elemento padre, sino del elemento raíz del documento, el elemento HTML. Rem significa “Root Em“, o sea, es un em basado en la raíz.</dd>
+
+
+</dl>
+
+ </div>
+
+ <!-- Cierre del div -->
 
 
 </body>

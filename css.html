@@ -20,16 +20,81 @@
         }
         h1{
             font-size: 2em;
-            color: peru;
+            /*color: peru;*/
+             text-transform: uppercase;
+          /*      R G B     Red Green Blue       */
+          /* color: #150035; */
+          color: rgba(230, 10, 15, 0.5);
+            /* color: rgba(230, 10, 15, 0.5) !important; bloquea la ropiedad */
+
+
 
         }
 
+        .container h1{
+
+            color: blue;
+        }
+
+        .container header h1{
+            color: red;
+        }
+
+        div.aviso{
+            background: red;
+        }
+
+        input{
+            padding: 5px 10px;
+        }
+
+        input[type="text"]{
+            padding: 15px;
+        }
+
+        div p{color: green}
+        div, p{color: green}
+        a {font-size: 20px}
+        a.link {font-size: 30px}
+        div div.capa1, div p.texto {color:red;}
+
+        h5 {
+             font-size: 3em;
+             text-transform: uppercase;
+          color: rgba(50, 50, 50, 1);
+        }
+
+        h6 {
+             font-size: 2em;
+          color: rgba(100, 100, 100, 1);
+        }
+
+        input[type="text"]{
+            border: 5px solid red;
+        }
+
+
+
+
         </style>
+
+        <title>Selectores descendentes en CSS</title>
 </head>
 <body>
-
+    <h1>CSS TITULAR</h1>
    <div class="container">
     <h1>CSS</h1>
+    <div class="aviso">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima at quo cum eos nihil assumenda, impedit culpa dicta unde nostrum officia reiciendis voluptatem laudantium temporibus autem fugiat provident neque nemo.</p>
+    </div>
+
+    <header>
+        <h1>Triple de mal hecho</h1>
+    </header>
+
+    <div>
+        <p><a href=""></a></p>
+    </div>
 
     <h2>Unidades relativas</h2>
 
@@ -45,6 +110,30 @@
     </dl>
 
    </div>
+
+
+   <h3>EJERCICIO Listado 8.7</h3>
+
+   <div>
+       <p class="texto">Parrafo-1</p>
+       <div class="texto">Parrafo-2</div>
+       <h4><a href="" class="link">Enlace-1</a></h4>
+       <a href="">Enlace-2</a>
+       <div class="capa1">Parrafo-3</div>
+       <div>Parrafo-4</div>
+
+   </div>
+
+   <h5>Selectores avanzados</h5>
+
+   <h6>Selector de atributos</h6>
+
+   <input type="text">
+
+
+
+
+
 
 
 

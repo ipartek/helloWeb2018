@@ -1,48 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>CSS</title>
     <a href="index.html">Volver...</a>
     <style>
+        .container {
+            margin: 0 auto;
+            width: 90%;
+            max-width: 1200px;
+            background-color: beige;
+            border-right: 1px dashed black;
+            border-left: 1px solid black;
+            padding: 2em;
+            height: 100vh;
+
+        }
 
 
-.container {
-	margin: 0 auto;
-	width: 90%;
-	max-width: 1200px;
-    background-color: beige;
-    border-right: 1px dashed black;
-    border-left: 1px solid black;
-    padding: 2em;
-    height: 100vh;
-
-}
         h1 {
             font-size: 26px;
             color: peru;
+            /* RGB hexadecimal */
+            /* color: #FF0055;*/
+            /* RGB decimal*/
+            /* color: rgb(230, 10, 15);*/
+            /* RGBA decimal*/
+            /*color: rgb(230, 10, 15, 0.1);*/
+            /*PLUGIN COLORZILLA para añadir al navegador http://pages.colorzilla.com/chrome/welcome/new/?chrome/63.0.3239.132/-/2.0*/
+        }
+
+        /*todo h1 contenido en un contenedor ponerlo en azul*/
+
+        .container h1 {
+            color: blue;
+        }
+
+        /*todo h1 contenido en un contenedor y que este en un header ponerlo en rojo*/
+
+        .container header h1 {
+            color: red;
+        }
+
+        div.aviso {
+            background: red;
+        }
+
+        input {
+            padding: 5px, 10px;
+        }
+
+        input [type="text"] {
+            padding: 15px
         }
     </style>
+
+
 </head>
 
 <body>
-   <div class="container">
-    <h1>CSS</h1>
-       <h2><a ref="https://franciscoamk.com/unidades-de-medida-en-css/"> Unidades relativas</a></h2>
-    <dl>
-        <dt>px</dt>
-        <dd>Tamaño relativo a la resolucion de la pantalla</dd>
-        <dt>%</dt>
-        <dd>Porcentaje relativo al elemento actual</dd>
-        <dt>em</dt>
-        <dd>Tamaño relativo de la fuente que tiene establecida el navegador</dd>
-        <dt>rem</dt>
-        <dd>La unidad de medida rem es muy similar a em, con la única diferencia de que no es escalable, esto quiere decir que no depende del elemento padre, sino del elemento raíz del documento, el elemento HTML. Rem significa “Root Em“, o sea, es un em basado en la raíz.</dd>
-        <dt><a ref="https://devcode.la/tutoriales/unidades-vh-vw-css/">vw</a></dt>
-        <dd>Tamaño relativo a la anchura del dispositivo</dd>
-        <dt>vh</dt>
-        <dd>Tamaño relativo a la altura del dispositivo</dd>
-    </dl>
-    </div><!-- class container -->
+    <h1>CSS Titular</h1>
+    <div class="container">
+        <h1>CSS</h1>
+        <div class="aviso">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore odio sunt nemo unde harum quasi! Suscipit facere odit accusantium, sunt, voluptatem aspernatur ex consectetur molestiae, perspiciatis, cum deserunt asperiores similique.</div>
+            <header>
+                <h1>triple mal hecho</h1>
+            </header>
+            <h2><a ref="https://franciscoamk.com/unidades-de-medida-en-css/"> Unidades relativas</a></h2>
+            <dl>
+                <dt>px</dt>
+                <dd>Tamaño relativo a la resolucion de la pantalla</dd>
+                <dt>%</dt>
+                <dd>Porcentaje relativo al elemento actual</dd>
+                <dt>em</dt>
+                <dd>Tamaño relativo de la fuente que tiene establecida el navegador</dd>
+                <dt>rem</dt>
+                <dd>La unidad de medida rem es muy similar a em, con la única diferencia de que no es escalable, esto quiere decir que no depende del elemento padre, sino del elemento raíz del documento, el elemento HTML. Rem significa “Root Em“, o sea, es un em basado en la raíz.</dd>
+                <dt><a ref="https://devcode.la/tutoriales/unidades-vh-vw-css/">vw</a></dt>
+                <dd>Tamaño relativo a la anchura del dispositivo</dd>
+                <dt>vh</dt>
+                <dd>Tamaño relativo a la altura del dispositivo</dd>
+            </dl>
+        </div>
+        <!-- class container -->
+        <!--ejercicio listado 8.7 -->
 </body>
+
 </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        /* No es lo mas correcto, pero para pruebas rapidas nos vale */
+        h1{
+            text-transform: uppercase;
+        }
+
+        p{
+            text-align: justify;
+            font-size: 1.6em;
+            line-height: 1.6em;
+            text-indent: 2em; /* sangrado */
+        }
+
+        p:first-letter{
+            font-size: 3em;
+            color: red;
+            background-color: grey;
+        }
+
+        span{
+            border: 5px dotted red;
+            padding: 5px;
+        }
+
+        /*   punto es igual a  class="caja"   */
+        .caja{
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            background-color: grey;
+            color: #FFF;
+            margin: 10px;
+            font-size: 5em;
+            text-align: center;
+            font-family: arial;
+        }
+
+        .caja:hover{
+            background-color: red;
+            border-radius: 50%;
+            transition-duration: 2s;
+        }
+
+
+    </style>
+
+
+    <h1>Encabezado h1</h1>
+    <h2>Encabezado h2</h2>
+    <h3>Encabezado h3</h3>
+    <h4>Encabezado h4</h4>
+    <h5>Encabezado h5</h5>
+    <h6>Encabezado h6</h6>
+
+    <div class="caja">1</div>
+    <div class="caja">2</div>
+    <div class="caja">3</div>
+    <div class="caja">4</div>
+    <div class="caja">5</div>
+
+    <p>H1 solo puede haber uno y es obligatorio por accesibilidad.</p>
+    <p>El resto de pueden repetir, pero deben mantener la jerarqui, es decir: No puedeo tener un <span>h3</span> si no existe un <span>h2</span></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo ratione eaque id. Ipsa eaque dolore ullam necessitatibus, quis, perspiciatis at dignissimos nemo, hic earum impedit, est. Repellat veniam nemo eos.</p>
+    <p>Quis optio nulla quasi facere accusamus minima ipsam cum minus ea nesciunt ex iusto fugiat, quisquam deleniti quo. Quidem amet eaque sunt libero, ab provident quas. Magnam eius delectus cum?</p>
+    <p>Maiores iusto, sit eum ducimus dolore, architecto. Rerum explicabo iure adipisci repellat! Nemo iste molestiae doloremque explicabo dolorem, quo animi eos modi, officia eum ullam commodi veritatis obcaecati, alias facilis!</p>
+    <p>Ut corrupti commodi, explicabo consequuntur amet quasi iusto architecto dolor officiis iure facilis possimus animi nostrum tempore quisquam laboriosam, fugit maxime nam molestias, aspernatur. Repellat sequi nostrum quidem dolores suscipit.</p>
+
+
+    <hr>
+
+
+    <h2>Listas</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

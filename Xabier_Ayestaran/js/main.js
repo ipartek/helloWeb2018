@@ -48,7 +48,7 @@ function llamadaApi(){
      var xhr = new XMLHttpRequest();
      xhr.onreadystatechange = function() {
         //esperamos a que la respuesta sea correcta
-        if (this.readyState == 4 && this.status == 200) { /* 4 Es peticion finalizada 200 es una peticion activa */
+        if (this.readyState == 4 && this.status == 200) {
            var json = JSON.parse(this.responseText);
 
            //console.info(json.bpi.USD.rate);
@@ -70,7 +70,7 @@ function llamadaApi(){
         }
      };
      xhr.open("GET", url , true);
-     xhr.send(); /* Hacer que la web te envie los datos/*
+     xhr.send();
 
 }
 

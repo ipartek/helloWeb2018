@@ -5,55 +5,97 @@
     <title>CSS</title>
 
     <style>
-
-        h1{
+        h1 {
             font-size: 3em;
             color: peru;
         }
-        div h1{
+
+        div h1 {
             color: blue;
         }
 
-        .container header h1{
+        .container>h1 {
+            background-color: yellow;
+        }
+
+        .container header h1 {
             color: red;
         }
+
         .container {
-	        margin: 0 auto;
-	        width: 90%;
-	        max-width: 1200px;
+            margin: 0 auto;
+            width: 90%;
+            max-width: 1200px;
             border-right: 1px solid black;
             border-left: 1px solid black;
             height: 100vh;
         }
-        div.aviso{
+
+        div.aviso {
             background-color: red;
         }
 
+        p[id="igual"] {
+            color: red;
+        }
+
+        p[class~="alMenos"] {
+            color: blue;
+        }
+
+        p[class|=con] {
+            color: white;
+        }
+
+        p[class$=con] {
+            background-color: aqua;
+        }
+
+        p[class^=con] {
+            background-color: red;
+        }
+
+        p[class*=con] {
+            border: 3px dotted black;
+        }
     </style>
 </head>
+
 <body>
     <h1>TITULAR</h1>
     <div class="container">
 
         <a href="index.html">Volver al indice</a>
-        <h1>CSS</h1>
+        <h1>CSS es amarillo por elselector de hijos</h1>
 
         <header>
             <h1>Trimple de mal hecho</h1>
         </header>
         <p>En css solo se permiten comentarios de bloque /**/</p>
 
-        <p>Unidades de medida relativas</p>
+        <h2>Unidades de medidas relativas</h2>
         <p>em</p>
         <p>rem</p>
         <p>vh</p>
         <p>vw</p>
 
-    <div class="aviso">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores soluta deserunt aspernatur repellat maxime pariatur id tempora fugit in consequuntur, magni suscipit sint, eos perspiciatis hic nobis voluptate neque dolore.</p>
+        <div class="aviso">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores soluta deserunt aspernatur repellat maxime pariatur id tempora fugit in consequuntur, magni suscipit sint, eos perspiciatis hic nobis voluptate neque dolore.</p>
+
+        </div>
+
+        <h2>Selectores de atributos</h2>
+
+        <p id="igual">Att = Igual</p>
+        <p class="alMenos">Att ~ al menos un att igual</p>
+        <p class="con-guion">Att | contiene el att con guion</p>
+        <p class="terminacon">Att $ att termina con el el valor</p>
+        <p class="conEmpieza">Att ^ att empieza con el valor</p>
+        <p class="empiezacontermina">Att * att tiene el valor en cualquier posicion</p>
+
+
 
     </div>
-
-    </div><!--container-->
+    <!--container-->
 </body>
 </html>

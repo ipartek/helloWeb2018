@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectores De Atributos</title>
+    <style>
+        a[class="rojo"]{
+            background:red;
+        }
+        div[class~="verde"]{
+            background: green;
+        }
+
+        a[lang|="es"]{
+            display:inline-block;
+            margin-top:100px;
+        }
+        a[href$="html"]{
+            font-size:5em;
+        }
+        a[href^="css"]{
+            font-family: cursive;
+        }
+        a[href*="tm"]{
+            color:greenyellow
+        }
+    </style>
+</head>
+<body>
+    <a class="rojo" href="css.html">Volver</a>
+    <div class="container verde otro" >
+        <a class="enlace molo mucho" href="" lang="es-Es">Molo eeehhh</a>
+    </div>
+
+</body>
+</html>

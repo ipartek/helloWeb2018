@@ -9,7 +9,8 @@ HTML para explicar el uso del CSS3
 <head>
     <meta charset="UTF-8">
     <title>CSS</title>
-
+    <!--Icono de index-->
+    <link rel="icon" href="img/css3.ico" type="image/x-icon" />
     <style>
         .container {
             /* centrar el contenido */
@@ -59,9 +60,20 @@ HTML para explicar el uso del CSS3
             padding: 5px;
         }
 
-        dl > dt {
+        tr>td:not(:first-child) {
+            text-align: center;
+        }
+
+        dl>dt {
             font-weight: bold;
         }
+
+        em>span {
+            text-decoration: underline;
+            font-weight: bold;
+            font-family: monospace;
+        }
+
         /* EJERCICIOS SELECTORES*/
 
         /* Ejemplo de selector combinado: */
@@ -96,7 +108,6 @@ HTML para explicar el uso del CSS3
             padding: 2em;
             font-size: 1.2em;
         }
-
     </style>
 </head>
 
@@ -154,8 +165,8 @@ HTML para explicar el uso del CSS3
         </div>
         <br>
         <hr>
-       <div id="unidades">
-           <h2>UNIDADES RELATIVAS:</h2>
+        <div id="unidades">
+            <h2>UNIDADES RELATIVAS:</h2>
             <dl>
                 <dt>px:</dt>
                 <dd>Tamaño relativo respecto a la resolución de la pantalla.</dd>
@@ -188,12 +199,12 @@ HTML para explicar el uso del CSS3
 
             <a href="https://franciscoamk.com/unidades-de-medida-en-css/">Explicación de las unidades</a>
             <br><br>
-       </div>
+        </div>
         <hr>
         <div id="colores">
-           <h2>DEFINICIÓN DE COLORES:</h2>
+            <h2>DEFINICIÓN DE COLORES:</h2>
             <table id="tablaColores">
-                <caption>Colores corporativos de <a href="https://www.surfsearchspot.com/">Surf Search Spot</a></caption>
+                <caption>Colores corporativos de <a href="https://www.surfsearchspot.com/" target="_blank">Surf Search Spot</a></caption>
                 <tr>
                     <th>Color</th>
                     <th>Código Hexadecimal</th>
@@ -214,13 +225,15 @@ HTML para explicar el uso del CSS3
                     <td>#EF6B00</td>
                     <td>rgb(239, 107, 0)</td>
                 </tr>
-            </table>
-
+            </table><br>
+            <em>En esta tabla, todos los elementos están centrados excepto las celdas de la 1.columna que representan los colores. <br> Este estilo se puede aplicar mediante el siguiente selector: <span>tr>td:not(:first-child) { text-align: center; }</span><br>// Elementos td hijos de '>' tr excepto ':not' el primer hijo de cada tr ':first-child' //</em>
         </div>
         <br>
         <hr>
         <div id="selectores">
-           <h2>SELECTORES:</h2>
+            <h2>SELECTORES:</h2>
+
+            <a href="https://flukeout.github.io/" target="_blank">Juego con selectores CSS</a>
             <div id="selectoresCombinados">
                 <!-- elem1 elem2 {} : aplica estilos a todos los eleme1 y elem2-->
                 <h3>Ejemplo de selectores combinados:</h3>

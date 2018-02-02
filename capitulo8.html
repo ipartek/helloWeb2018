@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capitulo 8</title>
+
+    <style type="text/css">
+    /* Selector de etiqueta */
+        div{
+            color:blue;
+            font-size: 3em;
+        }
+
+    /* Selector descendente */
+        div h2{color: red;}
+        div p a{font-style: italic;}
+
+    /* Selector de clase */
+        p.prueba{background-color: red;}
+
+    /* Selector de identificador de elemento (id)*/
+        h4#textoprueba{
+            background-color: blue;
+            color: white;}
+    /* Selector de atributos*/
+        p [class="prueba"]{
+            color:black;
+        }
+
+    </style>
+</head>
+<body>
+   <h1> Ejemplo Selectores descendentes en CSS</h1>
+   <br>
+    <div>
+       <h2> Ejemplos del capítulo 8</h2>
+        <p class="texto">Párrafo-1</p>
+        <div  class="texto">Párrafo-2</div>
+        <p>
+            <a href="" class="link">Enlace-1</a>
+        </p>
+        <br>
+        <h3><a href="">Enlace-2</a></h3>
+        <div class="capa1">Párrafo-3</div>
+        <div>Párrafo-4</div>
+    </div>
+    <h4 id="textoprueba"> Texto prueba</h4>
+    <div class="prueba">Pruebas</div>
+    <p class="prueba">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, corrupti. Officia nam ab quisquam rem earum incidunt, architecto sint non quos quidem, illo harum delectus ipsam natus aut nemo, magni!</p>
+</body>
+</html>

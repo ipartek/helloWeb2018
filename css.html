@@ -5,6 +5,7 @@ HTML para explicar el uso del CSS3
     Fecha: 02/02/2018
 -->
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>CSS</title>
@@ -28,66 +29,226 @@ HTML para explicar el uso del CSS3
 
         h1 {
             font-size: 26px;
-            text-align: center
+            text-align: center;
+            color: peru;
+            /*
+            color: silver;  color predefinido
+            color: #C0C0C0;  HEX: #RRGGBB
+            color: rgb(192,192,192); RGB: RedGreenBlue
+            color: rgba(192,192,192,1); RGBA: RedGreenBlueAlpha; Alpha: transparencia [0: transparente - 1: opaco]
+            /*Pluging para detectar color: colorzilla chrome extension
+            */
         }
+
+        .container h1 {
+            color: blue;
+        }
+
+        .container header h1 {
+            color: red;
+        }
+
+        div#manual {
+            background-color: darkred;
+            padding: 10px;
+            color: orangered;
+        }
+
+        table#tablaColores {
+            border: 1px solid grey;
+            padding: 5px;
+        }
+
+        dl > dt {
+            font-weight: bold;
+        }
+        /* EJERCICIOS SELECTORES*/
+
+        /* Ejemplo de selector combinado: */
+
+        div#selectoresCombinados p {
+            background-color: darkviolet;
+            color: goldenrod;
+            padding: 2em;
+            font-size: 1.2em;
+        }
+
+        /* Ejemplo de selector de atributos */
+
+        p[class="pSelectorAttr"] {
+            background-color: skyblue;
+            padding: 2em;
+            font-size: 1.2em;
+        }
+
+        /* Ejemplo de selector de hijos */
+
+        div#selectoresHijos>p {
+            background-color: forestgreen;
+            padding: 2em;
+            font-size: 1.2em;
+        }
+
+        /* Ejemplo de selector de adyacentes */
+
+        strong+p {
+            background-color: orangered;
+            padding: 2em;
+            font-size: 1.2em;
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <a href="index.html">&lt; Volver a Index</a>
+    <!--<button onclick="goBack()">&lt; VOLVER</button> -->
+    <br><br>
+    <h1>Cascading Style Sheets (CSS)</h1>
 
-        <a href="index.html">&lt; Volver a Index</a>
-        <!--<button onclick="goBack()">&lt; VOLVER</button> -->
-        <br><br>
-        <h1>Cascading Style Sheets (CSS)</h1>
+    <div class="container">
+        <h1>Título dentro del container</h1>
+        <header>
+            <h1>Titulo Header</h1>
+        </header>
+
+        <nav>
+            <h2>Secciones:</h2>
+            <ol id="navegacion">
+                <a href="#manual">MINI-MANUAL</a>
+                <span class="separador">|</span>
+                <a href="#unidades">UNIDADES RELATIVAS</a>
+                <span class="separador">|</span>
+                <a href="#colores">COLORES</a>
+                <span class="separador">|</span>
+                <a href="#selectores">SELECTORES</a>
+            </ol>
+        </nav>
 
         <div id="manual">
-            <h2>Mini manual:</h2>
+            <h2>MINI MANUAL:</h2>
             <ul>
-                <li>Para referenciar IDs --> #id</li>
-                <li>Para referenciar clases --> .class</li>
-                <li>Elementos concretos dentro de elementos --> tag#id</li>
+                <li>Para referenciar IDs --> #id {}</li>
+                <li>Para referenciar clases --> .class {}</li>
+                <li>Elementos concretos dentro de elementos --> tag#id {}</li>
+                <li>Seleccionar varios elementos --> body, div, p {}</li>
+                <li>Selectores anidados --> header h1 {}</li>
             </ul>
 
-            <em>En los archivos.css sólo se permiten comentarios en bloque " /* COMENTARIO */ " </em>
+            <em>En los archivos.css sólo se permiten comentarios en bloque " /* COMENTARIO */ " </em><br><br>
+
+            <strong>Prioridad de selectores:</strong>
+            <ol>
+                <li>Selectores avanzados
+                    <ul>
+                        <li>Selectores combinados</li>
+                        <li>Selectores hijos</li>
+                        <li>Selectores adyacentes</li>
+                    </ul>
+                </li>
+                <li>Selectores de #id</li>
+                <li>Selectores de .class</li>
+                <li>Selectores de etiqueta</li>
+                <li>Selector universal</li>
+            </ol>
         </div>
+        <br>
+        <hr>
+       <div id="unidades">
+           <h2>UNIDADES RELATIVAS:</h2>
+            <dl>
+                <dt>px:</dt>
+                <dd>Tamaño relativo respecto a la resolución de la pantalla.</dd>
+                <dt>%:</dt>
+                <dd>Porcentaje relativo al elemento actual en el cual estamos aplicando el estilo.</dd>
+                <dt>em:</dt>
+                <dd>Tamaño relativo de la fuente que tiene establecido el navegador.</dd>
+                <dt>rem:</dt>
+                <dd>El tamaño de la fuente del elemento raíz.</dd>
+                <dt>vh:</dt>
+                <dd>1% Altura del dispositivo de visionado (variable dinámicamente).</dd>
+                <dt>vw:</dt>
+                <dd>1% Anchura del dispositivo de visionado (variable dinámicamente).</dd>
+                <dt>vmin (vm):</dt>
+                <dd>El menor de los valores, 1% altura o anchura, del dispositivo de visionado (variable dinámicamente).</dd>
+                <dt>vmax:</dt>
+                <dd>El mayor de los valores, 1% altura o anchura, del dispositivo de visionado (variable dinámicamente).</dd>
+            </dl>
 
-        <h2>Unidades relativas:</h2>
-        <dl>
-            <dt>px</dt>
-            <dd>Tamaño relativo respecto a la resolución de la pantalla.</dd>
-            <dt>%</dt>
-            <dd>Porcentaje relativo al elemento actual en el cual estamos aplicando el estilo.</dd>
-            <dt>em</dt>
-            <dd>Tamaño relativo de la fuente que tiene establecido el navegador.</dd>
-            <dt>rem</dt>
-            <dd>El tamaño de la fuente del elemento raíz.</dd>
-            <dt>vh</dt>
-            <dd>1% Altura del dispositivo de visionado (variable dinámicamente).</dd>
-            <dt>vw</dt>
-            <dd>1% Anchura del dispositivo de visionado (variable dinámicamente).</dd>
-            <dt>vmin (vm)</dt>
-            <dd>El menor de los valores, 1% altura o anchura, del dispositivo de visionado (variable dinámicamente).</dd>
-            <dt>vmax</dt>
-            <dd>El mayor de los valores, 1% altura o anchura, del dispositivo de visionado (variable dinámicamente).</dd>
-        </dl>
+            <div id="emVSrem">
+                <em>Diferencia entre EM y REM:</em>
+                <p> HTML = 1em (16px) <br> Body = 1.3em (16px x 1.3 = 20.8px) <br> Div = 1.3em (20.8px x 1.3 = 27.04px)</p>
 
-       <em>Ejemplo:</em>
-       <p>  HTML = 1em (16px) <br>
-            Body = 1.3em (16px x 1.3 = 20.8px) <br>
-            Div = 1.3em (20.8px x 1.3 = 27.04px)</p>
+                <p>La unidad "em" es relativa a la clase padre, por lo tanto, escalable.</p>
 
-        <p>La unidad "em" es relativa a la clase padre, por lo tanto, escalable.</p>
+                <p>HTML = 1em (16px) <br> Body = 1.3rem (16px x 1.3 = 20.8px) <br> Div = 1.3rem (16px x 1.3 = 20.8px)</p>
 
-        <p>HTML = 1em (16px) <br>
-           Body = 1.3rem (16px x 1.3 = 20.8px) <br>
-           Div = 1.3rem (16px x 1.3 = 20.8px)</p>
+                <p>La unidad "rem" sin embargo es relativa al elemento raiz, es decir, HTML</p>
+            </div>
 
-        <p>La unidad "rem" sin embargo es relativa al elemento raiz, es decir, HTML</p>
+            <a href="https://franciscoamk.com/unidades-de-medida-en-css/">Explicación de las unidades</a>
+            <br><br>
+       </div>
+        <hr>
+        <div id="colores">
+           <h2>DEFINICIÓN DE COLORES:</h2>
+            <table id="tablaColores">
+                <caption>Colores corporativos de <a href="https://www.surfsearchspot.com/">Surf Search Spot</a></caption>
+                <tr>
+                    <th>Color</th>
+                    <th>Código Hexadecimal</th>
+                    <th>Código RGB</th>
+                </tr>
+                <tr>
+                    <td>Azul oscuro</td>
+                    <td>#357997</td>
+                    <td>rgb(53, 121, 151)</td>
+                </tr>
+                <tr>
+                    <td>Azul claro</td>
+                    <td>#28B7E1</td>
+                    <td>rgb(40, 183, 225)</td>
+                </tr>
+                <tr>
+                    <td>Naranja</td>
+                    <td>#EF6B00</td>
+                    <td>rgb(239, 107, 0)</td>
+                </tr>
+            </table>
 
-        <a href="https://franciscoamk.com/unidades-de-medida-en-css/">Explicación de las unidades</a>
+        </div>
+        <br>
+        <hr>
+        <div id="selectores">
+           <h2>SELECTORES:</h2>
+            <div id="selectoresCombinados">
+                <!-- elem1 elem2 {} : aplica estilos a todos los eleme1 y elem2-->
+                <h3>Ejemplo de selectores combinados:</h3>
+                <strong>elem1 elem2 { estilos }</strong>
+                <p>Con <span>div#selectoresCombinados p { background-color: darkviolet; }</span> se aplican los estilos al p dentro del div con id="selectoresCombinados"</p>
+
+            </div>
+            <div id="selectoresAtributos">
+                <h3>Ejemplo de selectores con atributos:</h3>
+                <strong>elem1[attr="value"] { estilos }</strong>
+                <p class="pSelectorAttr">Mediante el selector de atributos, se aplican los estilos al elem1 que contenga el attr con el valor "value". <br> En este caso se aplica <em>background : "skyblue"</em> al elemento p con la class="pSelectorAttr".</p>
+            </div>
+            <div id="selectoresHijos">
+                <!-- <elem1> <elem2 /> </elem1>-->
+                <h3>Ejemplo de selector de hijos:</h3>
+                <strong>elem1 > elem2 { estilos }</strong>
+                <p>Mediante el selector de hijos, se aplican los estilos al elem2 perteneciente al elem1. <br> En este caso se aplica <em>background : "forestgreen"</em> al elemento p perteneciente a div#selectoresHijos.</p>
+            </div>
+            <div id="selectoresAdyacentes">
+                <!--elem1 + elem2 : inmediatamente después <elem1 /><elem2 />-->
+                <h3>Ejemplo de selector de adyacentes:</h3>
+                <strong>elem1 + elem2 { estilos }</strong>
+                <p>Mediante el selector de adyacentes, se aplican los estilos a elem2 inmediatamente posterior al elem1. <br> En este caso se aplica <em>background : "orangered"</em> al elemento p inmediatamente posterior al elemento strong.</p>
+            </div>
+        </div>
 
     </div>
     <!--FIN class="container"-->
 </body>
+
 </html>

@@ -5,10 +5,7 @@
 */
 
 
-*{
-    padding: 120;
-    margin: 120;
-}
+
 
 h1 {
     color:teal;
@@ -29,7 +26,7 @@ h1 {
 .boton {
 
     border: 1px solid #2e518b;
-    padding: 10px;
+    padding: 5px;
     background-color: #2e518b;
     color: #ffffff;
     text-decoration: none;

@@ -15,23 +15,103 @@
                 max-width: 1200px;
                 border-right: 1px solid teal;
                 border-left: 1px solid teal;
-                padding: 0 2%;
+                padding: 0 5%;
                 height: 100vh; /*view heigh, coge la altura del dispositivo*/
+            }
+            .boton {
+
+                border: 1px solid #2e518b;
+                padding:10px;
+                background-color: #2e518b;
+                color: #ffffff;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: 'Helvetica', sans-serif;
+                border-radius: 50px;
+                float: none;
+                text-align: center;
+
             }
             h1{
                 font-size: 2em;
-                color: peru;
+                color: peru /* para desesperación y ultimo recurso !important*/;
                 text-align: center;
              }
-        </style>
+            .container h1{
+                color:teal;
+            }
+
+            .container header h1{
+                color:red;
+            }
+
+            div.aviso{
+                background-color: rgba(255,0,0,0.2);
+            }
+            .bordeSeparador{
+                border: 5px solid black;
+            }
+           div p{
+               color: green;
+            }
+            #ejercicio, p{
+                color:green;
+            }
+            a{
+                font-size: 1.250em;
+                text-decoration: none;
+            }
+            a.link{
+                font-size: 1.875em;
+
+            }
+            #ejercicio div.capa1, div p.texto{
+                color:red;
+            }
+            p[class="texto1"]{
+                color: blue;
+            }
+            p[class~="principal"]{
+                font-size: 1.250em;
+            }
+            span[lang|="es"]{
+                color: orangered;
+            }
+            a[href$=.com]{
+                color: purple;
+            }
+            a[href^="www"]{
+                color:brown;
+            }
+            p[class*="noticia"]{
+                font-size:1.875em;
+            }
+            div.ejemplo2 > a {
+                color: blue;
+            }
+            div.ejemplo2 a{
+                color:blue;
+            }
+            div.ejemplo2 + a{
+                font-size: 1.875em;
+            }
+
+
+    </style>
 </head>
 <body>
+  <h1>CSS TITULAR</h1>
    <div class="container">
         <a class="boton" href="index.html" target="_blank">Volver</a>
         <h1>CSS (Cascading Style Sheets)</h1>
 
-
-         <h2>Unidades Relativas</h2>
+       <div class="aviso">
+           <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+        </div>
+        <header>
+            <h1>Triple de mal hecho</h1>
+        </header>
+        <h2>Unidades Relativas</h2>
             <dl>
              <dt>px (Pixel):</dt>
                  <dd>Tamaño relativo respecto a la resolución de la pantalla.</dd>
@@ -52,6 +132,33 @@
 
 
          </dl>
+         <hr class="bordeSeparador">
+         <h2>EJERCICIOS CSS</h2>
+         <h3>Combinar Selectores.</h3>
+         <div id="ejercicio">
+             <p class="texto">Párrafo 1</p>
+             <div class="texto">Párrafo 2</div>
+             <h3><a href="" class="link">Enlace 1</a></h3>
+             <div class="capa1">Párrafo 3</div>
+             <div>Párrafo 4</div>
+         </div>
+         <hr>
+         <h3>Selectorres avanzados</h3>
+         <h4>Selector de atributos</h4>
+          <p class="texto1">Elementos que tengan definido el atributo att con valor val</p>
+          <p class="principal">Selecciona los elementos cuyo atributo atrib tenga por valor una lista de palabras separadas por espacios, una de las cuales sea val.</p>
+          <span lang="es">Selecciona los elementos cuyo atributo atrib tenga exactamente el valor val o empiece por val seguido de un guión (“-” U+002D). Se puede usar para coincidencias de subcódigos en otros idiomas.</span>
+          <p><a href="https://developer.mozilla.org/es/docs/Web/CSS/Selectores_atributo">Selecciona los elementos cuyo atributo atrib tenga un valor terminado por val.</a></p>
+         <p><a href="www.ipartek.es">Selecciona los elementos cuyo atributo atrib tenga un valor empezado por val.</a></p>
+          <p class="noticia">Selecciona los elementos cuyo atributo atrib tenga un valor que contenga val en cualquier posición.</p>
+        <hr>
+        <h3>Selector hijo</h3>
+        <div class="ejemplo2">
+            <h3><a href="" class="link">Enlace-1</a></h3>
+            <a href="">Enlace-2</a>
+        </div>
+        <h3>Selector adyacente</h3>
+        <a href="">Enlace-3</a>
     </div> <!-- end class="container" -->
 </body>
 </html>

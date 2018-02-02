@@ -1,8 +1,8 @@
 //variable global para todos los alumnos
 
-var alumnos = ["Izaskun", "Jon Ander", "Iñigo", "Iñaki A", "Javier", "Xabier", "Jorge", "Leire", "Iñaki J", "Aingeru", "David","Patri","Joseba" "Aintzine"];
+var alumnos = ["Izaskun", "Jon Ander", "Iñigo", "Iñaki A", "Javier", "Xabier", "Jorge", "Leire", "Iñaki J", "Aingeru", "David","Patri","Joseba", "Aintzine"];
 
-function leer() {
+function leer(){
 
     //numero aleatorio
    var numero = Math.floor((Math.random() * alumnos.length));
@@ -12,7 +12,7 @@ function leer() {
 
     //mostrar en el html
     document.getElementById("voluntario").textContent=alumnos[numero];
-    var alumno =alumnos[numero]
+    var alumno =alumnos[numero];
     //marcar la celda en naranja
     var celdas = document.getElementsByClassName("alumno");
     for (i=0; i < celdas.length; i++)
@@ -24,3 +24,5 @@ function leer() {
             else celdas[i].style.backgroundColor ='darkcyan';
         }
 }
+
+

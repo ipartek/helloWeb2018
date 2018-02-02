@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Capitulo4</title>
@@ -50,6 +51,27 @@
             color: brown;
 
         }
+
+        table {
+            margin: auto;
+            text-align: center;
+        }
+
+        #centrado {
+            text-align: center;
+        }
+
+        ul,
+        ol,
+        dd,
+        dt,
+        dl {
+            text-align: center;
+            list-style-position: inside;
+            margin: 0;
+            padding: 0;
+        }
+
     </style>
 </head>
 
@@ -79,9 +101,9 @@
 
     <hr>
 
-    <h2>Listas</h2>
+    <h2 id="centrado">Listas</h2>
     <!-- Lista ordenada liga con posiciones de equipos, lista desordenada de pinxos de un bar,lista descriptiva de un cafe cortado, con lehce y alegria, Discografia de grupo x (lista anidada)con el disco con el como enlace -->
-    <h3>Clasificacion actual Liga</h3>
+    <h3 id="centrado">Clasificacion actual Liga</h3>
     <ol>
         <li>Barcelona - 51</li>
         <li>Atlético - 45</li>
@@ -104,7 +126,7 @@
         <li>Málaga - 11</li>
         <li>las Palmas - 11</li>
     </ol>
-    <h3>Lista de pintxos el bar</h3>
+    <h3 id="centrado">Lista de pintxos el bar</h3>
     <ul>
         <li>Pintxo tortilla con cebolla</li>
         <li>Pintxo tortilla sin con cebolla</li>
@@ -112,7 +134,7 @@
         <li>Bocata lomo</li>
         <li>Bocata beicon</li>
     </ul>
-    <h3>Lista de cafes</h3>
+    <h3 id="centrado">Lista de cafes</h3>
     <dl>
         <dt>Café solo</dt>
         <dd>Café solo sin café</dd>
@@ -123,7 +145,7 @@
         <dt>Cafe con Alegria</dt>
         <dd>Café con un toque de cicuta</dd>
     </dl>
-    <h3>Discografia linkin park</h3>
+    <h3 id="centrado">Discografia linkin park</h3>
     <ul>
         <li>Hybrid Theory (2000-2002)
             <ol>
@@ -160,12 +182,170 @@
     </ul>
 
 
-    <h2>Tablas</h2>
+    <h2 id="centrado">Tablas</h2>
     <!-- 4.16 hacerlo pag 93 4.18 96 || 4.19 98 || 4.20 101-->
+    <h3 id="centrado">Ejercicio 4.16</h3>
+    <table border="1">
+        <tr>
+            <td><strong>Peículas</strong></td>
+            <td><strong>Director</strong></td>
+            <td><strong>Puntuación</strong></td>
+        </tr>
+        <tr>
+            <td>Elcazador</td>
+            <td>Michael Cimino</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Apocalypse</td>
+            <td>Francis Ford Coopola</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Platoon</td>
+            <td>Oliver Stone</td>
+            <td>7</td>
+        </tr>
+    </table>
+
+    <h3 id="centrado">Ejercicio 4.18 Horario Cine</h3>
+    <table border="1">
+        <tr>
+            <th colspan="3">Pasión de los fuertes</th>
+        </tr>
+        <tr>
+            <td>18:00</td>
+            <td>20:00</td>
+            <td>22:00</td>
+        </tr>
+        <tr>
+            <th colspan="3">Juan Nadie</th>
+        </tr>
+        <tr>
+            <td>15:00</td>
+            <td>19:00</td>
+            <td>21:00</td>
+        </tr>
+        <tr>
+            <th colspan="3">Un trnvía llamado deseo</th>
+        </tr>
+        <tr>
+            <td>18:00</td>
+            <td>20:00</td>
+            <td>22:00</td>
+        </tr>
+
+    </table>
 
 
+    <h3 id="centrado">Ejercicio 4.19 Horario Cine</h3>
+    <table border="1">
+        <tr>
+            <th rowspan="2">SALA - 1</th>
+            <th colspan="3">Pasión de los fuertes</th>
+        </tr>
+        <tr>
+            <td>18:00</td>
+            <td>20:00</td>
+            <td>22:00</td>
+        </tr>
+        <tr>
+            <th rowspan="2">SALA - 2</th>
+            <th colspan="3">Juan Nadie</th>
+        </tr>
+        <tr>
+            <td>15:00</td>
+            <td>19:00</td>
+            <td>21:00</td>
+        </tr>
+        <tr>
+            <th rowspan="2">SALA - 3</th>
+            <th colspan="3">Un tranvía llamado deseo</th>
+        </tr>
+        <tr>
+            <td>18:00</td>
+            <td>20:00</td>
+            <td>22:00</td>
+        </tr>
+    </table>
 
+    <h3 id="centrado">Ejercicio 4.20 Factura de la luz</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <td colspan="5"><b>EXTREMEÑA DE TELEFONOS</b></td>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="5"><i>Extremeña de Teléfonos le ingorma que puede llamar al número gratuito 666 para cualquier duda o sugerencia que tenga acerca de esta factura o de nuestro sevicios.</i></td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td colspan="5"><b>Detalle de cuotas</b></td>
+            </tr>
+            <tr>
+                <th>PERIODICO</th>
+                <th>CONCEPTO</th>
+                <th>IMPORTE</th>
+                <th colspan="2">DESCUENTO</th>
+            </tr>
+            <tr>
+                <td rowspan="3">01/05/13 - 01/07/13</td>
+                <td>Servicio de identificación de llamadas</td>
+                <td>12 &euro;</td>
+                <td colspan="2">0</td>
+            </tr>
+            <tr>
+                <td>Línea individual</td>
+                <td>14 &euro;</td>
+                <td colspan="2">0</td>
+            </tr>
+            <tr>
+                <td>Bono ciudad</td>
+                <td>10 &euro;</td>
+                <td colspan="2">0</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: left">TOTAL:</td>
+                <td colspan="3" style="text-align: right">36 &euro;</td>
+            </tr>
+            <tr>
+                <td colspan="5"><b>Detalle de consumos</b></td>
+            </tr>
+            <tr>
+                <th>CONCEPTO</th>
+                <th>LLAMADAS</th>
+                <th>DURACION</th>
+                <th>IMPORTE</th>
+                <th>DESCUENTO</th>
+            </tr>
+            <tr>
+                <td>Llamada inernacional</td>
+                <td>23</td>
+                <td>10m 23s</td>
+                <td>13 &euro;</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Llamada metropolitana</td>
+                <td>23</td>
+                <td>10m 23s</td>
+                <td>3,5 &euro;</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: left">TOTAL:</td>
+                <td colspan="3" style="text-align: right">16.5 &euro;</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="index.html">Volver</a><br><br><br>
     <script src="js/main.js" type="text/javascript">
+
+
     </script>
 </body>
+
 </html>

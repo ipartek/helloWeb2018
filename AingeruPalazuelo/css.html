@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+HTML para explicar el uso del CSS3
+    Autor: Aingeru Palazuelo
+    Fecha: 02/02/2018
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+
+    <style>
+        .container {
+            /* centrar el contenido */
+            margin: 0 auto;
+            /* tomar un 100% del ancho */
+            width: 100%;
+            /* ancho máximo de 1200px */
+            max-width: 1200px;
+            border-right: 1px solid red;
+            border-left: 1px solid red;
+            /* Padding arriba y abajo del 0 y 2% en los laterales */
+            padding: 0 2%;
+            /* Con vw/vh se toma como unidad del 100% del tamaño del dispositivo
+                Por ejemplo, width: 100vw establecera un ancho del 100% del dispositivo */
+            /*height: 100vh;*/
+        }
+
+        h1 {
+            font-size: 26px;
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <a href="index.html">&lt; Volver a Index</a>
+        <!--<button onclick="goBack()">&lt; VOLVER</button> -->
+        <br><br>
+        <h1>Cascading Style Sheets (CSS)</h1>
+
+        <div id="manual">
+            <h2>Mini manual:</h2>
+            <ul>
+                <li>Para referenciar IDs --> #id</li>
+                <li>Para referenciar clases --> .class</li>
+                <li>Elementos concretos dentro de elementos --> tag#id</li>
+            </ul>
+
+            <em>En los archivos.css sólo se permiten comentarios en bloque " /* COMENTARIO */ " </em>
+        </div>
+
+        <h2>Unidades relativas:</h2>
+        <dl>
+            <dt>px</dt>
+            <dd>Tamaño relativo respecto a la resolución de la pantalla.</dd>
+            <dt>%</dt>
+            <dd>Porcentaje relativo al elemento actual en el cual estamos aplicando el estilo.</dd>
+            <dt>em</dt>
+            <dd>Tamaño relativo de la fuente que tiene establecido el navegador.</dd>
+            <dt>rem</dt>
+            <dd>El tamaño de la fuente del elemento raíz.</dd>
+            <dt>vh</dt>
+            <dd>1% Altura del dispositivo de visionado (variable dinámicamente).</dd>
+            <dt>vw</dt>
+            <dd>1% Anchura del dispositivo de visionado (variable dinámicamente).</dd>
+            <dt>vmin (vm)</dt>
+            <dd>El menor de los valores, 1% altura o anchura, del dispositivo de visionado (variable dinámicamente).</dd>
+            <dt>vmax</dt>
+            <dd>El mayor de los valores, 1% altura o anchura, del dispositivo de visionado (variable dinámicamente).</dd>
+        </dl>
+
+       <em>Ejemplo:</em>
+       <p>  HTML = 1em (16px) <br>
+            Body = 1.3em (16px x 1.3 = 20.8px) <br>
+            Div = 1.3em (20.8px x 1.3 = 27.04px)</p>
+
+        <p>La unidad "em" es relativa a la clase padre, por lo tanto, escalable.</p>
+
+        <p>HTML = 1em (16px) <br>
+           Body = 1.3rem (16px x 1.3 = 20.8px) <br>
+           Div = 1.3rem (16px x 1.3 = 20.8px)</p>
+
+        <p>La unidad "rem" sin embargo es relativa al elemento raiz, es decir, HTML</p>
+
+        <a href="https://franciscoamk.com/unidades-de-medida-en-css/">Explicación de las unidades</a>
+
+    </div>
+    <!--FIN class="container"-->
+</body>
+</html>

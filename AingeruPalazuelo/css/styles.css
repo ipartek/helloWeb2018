@@ -16,10 +16,14 @@ h1 {
     font-size: 2em;
 }
 
-h2 {
+h2#txt_afortunado {
     color: darkorange;
     text-align: center;
     font-size: 2em;
+}
+
+h2tituloParInpar {
+    color: red;
 }
 
 #logo_bitcoin {

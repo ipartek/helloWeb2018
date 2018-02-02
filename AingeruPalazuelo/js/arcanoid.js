@@ -226,7 +226,12 @@ function draw() {
     y += dy;
 
     // Volver a llamar recurrentemente a la misma función para simular el movimiento
-    requestAnimationFrame(draw);
+    if(!pausarJuego) {
+        // Continuar juego
+        requestAnimationFrame(draw);
+    } else {
+        // Pausar juego cambiando el canvas
+    }
 }
 
 // Intervalo de repintado de la bola para simular el movimiento

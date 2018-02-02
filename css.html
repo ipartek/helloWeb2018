@@ -14,10 +14,16 @@
 
         }
 
+        .container h1{
+
+            color: aqua;
+
+        }
+
         h2{
 
              font-size: 2em;
-          color: rgb(255, 0, 0)
+          color: rgb(230, 10, 15,1)
 
         }
 
@@ -29,6 +35,16 @@
 
         }
 
+        .container header h1{
+
+            color: red;
+        }
+
+        div.aviso{
+
+            background-color: red;
+        }
+
 
 
 .container {
@@ -38,24 +54,95 @@
     border-right: 1px solid red;
     border-left:  1px solid red;
     padding: 0 1%;
-    height: 100vh;
+
+
 }
 
+
+        div{
+
+            text-align: center;
+
+        }
+
+
+        div p.texto{
+
+            color: green;
+
+
+
+        }
+
+        div,p{
+
+            color:greenyellow;
+        }
+
+        a{
+
+            font-size: 20px;
+        }
+
+        a.link{
+
+
+            font-size: 30px;
+        }
+
+
+        div div.capa1,div p.texto{
+
+
+            color: red;
+
+        }
+
+        div > a{
+
+            color: blue;
+
+        }
+
+        div a{
+
+            color: skyblue;
+
+        }
+
+
+        .adyacentes + a{
+
+
+       font-size: 21px;
+            color: orange;
+
+        }
     </style>
+
 
 
 
 </head>
 <body>
 
+
+
+<h1>CSS</h1>
   <div class="container">
 
+<div class="aviso">
 
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa sunt ullam recusandae, iste amet labore fuga distinctio magnam, incidunt dignissimos quasi, tempore molestias placeat similique. Saepe et nam officia quibusdam.</p>
 
-   <h1>CSS1</h1>
+</div>
+
+   <h1>CSS Titular</h1>
    <h2>CSS2</h2>
    <h3>CSS3</h3>
 
+
+<header><h1>Esta mal poner 3 h1</h1></header>
 
 <dl>
     <h2>Unidades Relativas</h2>
@@ -73,9 +160,67 @@
 
 </dl>
 
+ <h1>Colores de la pagina Surfsearchspot</h1>
+
+<h2>Azul oscuro</h2>
+
+<h3>rgb(53, 121, 151) - (53,121,151)</h3>
+
+<h2>Naranja</h2>
+
+<h3>rgb(255, 134, 78) - (255,134,78)</h3>
+
+<h2>Azul clarito</h2>
+
+<h3>rgb(40, 183, 225) - (40,183,255)</h3>
+
  </div>
 
  <!-- Cierre del div -->
+
+
+
+ <br>
+
+ <h1>Ejercicio 8.7</h1>
+
+
+ <div>
+
+    <p class="texto">Parrafo1</p>
+    <div class="texto">Parrafo2</div>
+    <h3><a href="" class="link">Enlace-2</a></h3>
+    <a href="">Enlace-2</a>
+    <div class="capa1">Parrafo-3</div>
+    <div>Parrafo-4</div>
+
+ </div>
+
+<br>
+
+
+<h1>Ejercicio selector de atributos</h1>
+
+<h1>Ejercicio selectores de hijos</h1>
+
+<div>
+
+    <h3><a href="" class="link">Enlace-1</a></h3>
+    <a href="">Enlace-2</a>
+
+
+
+
+</div>
+
+<h1>Ejercicio selectores adyacentes</h1>
+
+
+<div class="adyacentes">
+    </div>
+    <a href="">TEXTO</a>
+
+
 
 
 </body>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+    <style>
+        body {
+            background: #333;
+            color: #fff;
+        }
+
+        .container {
+            margin: 0 auto;/* El elemento se centre en la página*/
+            width: 100%;/*tenga un ancho del 90% de la ventana*/
+            max-width: 1200px;/*su ancho nunca sea superior a 1200 pixeles.*/
+            padding:0 2%;/*para qeu deje una pequeña separación al verlo en los móviles*/
+            height: 100vh;/*para que coja la latura de todo del viwport*/
+            border:1px solid red;
+        }
+
+
+        h1{
+            font-size: 26px;
+            color:peru;
+        }
+        body {
+            background: #333;
+            color: #fff;
+        }
+
+
+
+    </style>
+</head>
+<body>
+  <div class="container">
+   <h1>CSS</h1>
+
+   <h2>Tipos de unidades de fuentes</h2>
+   <!--control ratom zoom cotrl + 0 volver a original-->
+   <h3>Unidades Relativas</h3>
+   <dl>
+       <dt>1 px</dt>
+       <dd>Tamaño relativo respecto a la resolución de la pantalla.</dd>
+
+       <dt>%</dt>
+       <dd>Porcentaje relativo al elemento actual, al que le aplicamos el estilo.</dd>
+
+       <dt>em (suele der de 16px)</dt>
+       <dd>Relativo al tamaño de la fuente que tiene el usuario configurado en su navegador por defecto.</dd>
+
+       <dt>rem</dt>
+       <dd>La unidad de medida rem es muy similar a em, con la única diferencia de que no es escalable, esto quiere decir que no depende del elemento padre, sino del elemento raíz del documento, el elemento HTML.</dd>
+   </dl>
+
+
+  </div>
+</body>
+</html>

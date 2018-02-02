@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+     <!-- Enlace a la hoja de estilos-->
+        <!--<link rel="stylesheet" href="css/styles.css">-->
+        <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/">
+
+        <style>
+            .container{
+                margin: 0 auto; /* Para centrar*/
+                width: 100%;
+                max-width: 1200px;
+                border-right: 1px solid teal;
+                border-left: 1px solid teal;
+                padding: 0 2%;
+                height: 100vh; /*view heigh, coge la altura del dispositivo*/
+            }
+            h1{
+                font-size: 2em;
+                color: peru;
+                text-align: center;
+             }
+        </style>
+</head>
+<body>
+   <div class="container">
+        <a class="boton" href="index.html" target="_blank">Volver</a>
+        <h1>CSS (Cascading Style Sheets)</h1>
+
+
+         <h2>Unidades Relativas</h2>
+            <dl>
+             <dt>px (Pixel):</dt>
+                 <dd>Tamaño relativo respecto a la resolución de la pantalla.</dd>
+            <dt>% (Porcentaje):</dt>
+                 <dd>Porcentaje relativo al elemento del contenedor.</dd>
+            <dt>em:</dt>
+                 <dd>Tamaño relativo de la fuente que tiene establecida el navegador.</dd>
+            <dt>rem:</dt>
+                 <dd>La unidad de medida rem es muy similar a em, con la única diferencia de que no es escalable, esto quiere decir que no depende del elemento padre, sino del elemento raíz del documento, el elemento HTML. Rem significa “Root Em“, o sea, es un em basado en la raíz.</dd>
+            <dt>ex:</dt>
+                 <dd>Valor relativo definido por el tamaño de la altura de la letra X.</dd>
+
+
+          <dt>vh:</dt>
+                 <dd>Valor relativo definido por el tamaño de la altura de la letra X.</dd>
+            <dt>vw:</dt>
+                 <dd>Valor relativo definido por el tamaño de la altura de la letra X.</dd>
+
+
+         </dl>
+    </div> <!-- end class="container" -->
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capítulo 4</title>
+
+     <!-- Enlace a la hoja de estilos-->
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/">
+</head>
+<body>
+
+ <!-- Estilos en línea, para pruebas rápidas-->
+
+<style>
+
+    .boton {
+
+        border: 1px solid #2e518b;
+        padding: 10px;
+        background-color: #2e518b;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: 'Helvetica', sans-serif;
+        border-radius: 50px;
+        float: none;
+        text-align: center;
+
+    }
+    p{
+        text-align: justify;
+        font-size: 1.6em;
+        line-height: 1.6em;
+        text-indent: 1em; /* sangrado */
+
+    }
+    h1{
+        text-transform: uppercase; /* todas las letras en mayusculas */
+    }
+
+    /* pseudo selectores*/
+    p:first-letter{
+        font-size: 3em;
+        color:red;
+        background:grey;
+    }
+    /*Elementos de línea*/
+    span{
+        border:5px dotted red; /*borde de puntos*/
+        padding: 5px;
+    }
+
+    .caja{
+        display:inline-block; /* de esta manera puedes tener una caja con anchura y altura*/
+        height: 100px;
+        width: 100px;
+        background-color: grey;
+       /* border-radius: 25px;*/
+        color: white;
+        margin: 10px;
+        font-size: 5em;
+        text-align: center;
+        font-family: arial;
+    }
+
+    .caja:hover{
+        background-color: red;
+        border-radius: 50%;
+        transition-duration: 2s; /*para que no se cambie tan rapido*/
+
+    }
+   /*CSS para listas Ordenadas*/
+    #listaOrdenada{
+        counter-reset: li;
+        list-style: decimal;
+        font: 15px 'trebuchet MS', 'lucida sans';
+
+        margin-bottom: 4em;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    }
+
+
+
+    #listaOrdenada li{
+        position: relative;
+        display: inline-block;
+        height: 50%;
+        width: 50%;
+        padding: .4em .4em .4em 2em;
+        margin: .5em 0;
+        background: #ddd;
+        color: #444;
+        font-family: Arial, sans-serif;
+        text-decoration: none;
+        border-radius: .3em;
+        text-align:
+      }
+
+    #listaOrdenada li:hover{
+        background: #eee;
+    }
+
+   /* #listaOrdenada li:hover:before{
+        transform: rotate(360deg);
+    }*/
+
+    #listaOrdenada li:before{
+        content: counter(li);
+        counter-increment: li;
+        position: absolute;
+        left: -1.3em;
+        top: 50%;
+        margin-top: -1.3em;
+        background: #87ceeb;
+        height: 2em;
+        width: 2em;
+        line-height: 2em;
+        border: .3em solid #fff;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 2em;
+
+      }
+    .titulo{
+        text-align: center;
+    }
+
+ /*CSS para listas Desordenadas*/
+
+     #listaDesordenada{
+        counter-reset: li;
+        list-style: circle;
+        font: 15px 'trebuchet MS', 'lucida sans';
+         margin-bottom: 4em;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    }
+    #listaDesordenada li{
+        position: relative;
+        width: 75px;
+        padding: .4em .4em .4em 2em;
+        margin: 0.5em 0;
+        background: #ddd;
+        color: #444;
+        font-family: Arial, sans-serif;
+        text-decoration:none;
+    }
+
+   #listaDesordenada li:hover{
+        background:#2e518b;
+    }
+
+    /*CSS para listas Anidadas*/
+   #listaAnidada{
+
+       list-style: none;
+        overflow: hidden;
+    }
+    #listaAnidada li{
+        position: relative;
+        display: inline-block;
+        width: 225px;
+        height: 20px;
+        padding: .4em .4em .4em 2em;
+        margin: 0.5em 0;
+        background: #ddd;
+        color: #444;
+        font-family: Arial, sans-serif;
+        text-decoration:none;
+    }
+    #listaAnidada li a{
+
+        padding: 20px;
+        color: #000;
+        text-decoration: none;
+    }
+
+    #listaAnidada li:hover{
+        background:#2e518b;
+    }
+
+
+    .bordeSeparador{
+        border: 5px solid black;
+    }
+    .importe{
+        text-align: right;
+    }
+    .precio{
+         text-align: center;
+    }
+
+</style>
+ <a class="boton" href="index.html" target="_blank">Volver</a>
+
+  <h1>Encabezado H1</h1>
+  <h2>Encabezado H2</h2>
+  <h3>Encabezado H3</h3>
+  <h4>Encabezado H4</h4>
+  <h5>Encabezado H5</h5>
+  <h6>Encabezado H6</h6>
+
+  <div class="caja">1</div>
+  <div class="caja">2</div>
+  <div class="caja">3</div>
+  <div class="caja">4</div>
+  <div class="caja">5</div>
+
+<p>H1 sólo puede haber 1 y es obligatorio por accesibilidad.</p>
+<p>El resto, se pueden repetir, pero deben mantener la jerarquia, es decir: No puedo tener un <span>H3</span> si no exite un <span>H2.</span> </p>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+
+<p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+
+<p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
+
+<p>Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.</p>
+
+ <hr class="bordeSeparador">
+ <!--
+ * Ordenada (equipos de futbol)
+ **  Desordenada (pintxos de un bar)
+ ***  Definición (tipos de cafe)
+ **** Anidada (Discografia con un enlace a video de youtube)
+ -->
+ <h2>Listas</h2>
+
+ <h3>Lista Ordenada</h3>
+ <h4>Equipos de Futbol</h4>
+ <ol id="listaOrdenada">
+     <li>Barcelona</li>
+     <li>Atlético Madrid</li>
+     <li>Valencia</li>
+     <li>Real Madrid</li>
+     <li>Villareal</li>
+     <li>Sevilla</li>
+     <li>Celta</li>
+     <li>Eibar</li>
+     <li>Getafe</li>
+     <li>Girona</li>
+     <li>Leganes</li>
+     <li>Athletic</li>
+     <li>Betis</li>
+     <li>Espanyol</li>
+     <li>Real Sociedad</li>
+     <li>Levante</li>
+     <li>Alavés</li>
+     <li>Deportivo</li>
+     <li>Las Palmas</li>
+     <li>Málaga</li>
+
+ </ol>
+ <hr>
+ <h3>Lista No Ordenada</h3>
+ <h4>Pintxos en Bilbao</h4>
+ <ul id="listaDesordenada">
+     <li>Charly</li>
+     <li>Sorginzulo</li>
+     <li>Baste</li>
+     <li>Berton</li>
+     <li>Charly</li>
+ </ul>
+ <hr>
+ <h3>Listas Anidadas</h3>
+ <h4>Discografia Fito &amp; Fitipaldis</h4>
+ <ul id="listaAnidada">
+     <li><a href="https://www.youtube.com/watch?v=8qz8FqmTsJY&list=PLEsRmcKdAKyCR0QyDA049qVeZQVyga-AF">Lo más lejos a tu lado</a></li>
+     <li><a href="https://www.youtube.com/watch?v=iUXs4Nt3Y7Y&list=PL-xethiRlA7NvgCuqmg-P_dgj8MIiQawP">Por la boca vive el pez</a></li>
+     <li><a href="https://www.youtube.com/watch?v=u-UEqYMg8Ao&list=PL11A8DC673A61A918">Vivo para contarlo</a></li>
+     <li><a href="https://www.youtube.com/watch?v=275IksF2fQM">Antes de que cuente diez</a></li>
+ </ul>
+
+ <hr class="bordeSeparador1">
+ <h2>Tablas</h2>
+ <h3>Tablas Simples</h3>
+ <table border="1">
+        <caption>Películas Bélicas</caption>
+        <tr>
+        <td><strong>Película</strong></td>
+         <td><strong>Director</strong></td>
+         <td><strong>Puntuación</strong></td>
+     </tr>
+     <tr>
+         <td>El Cazador</td>
+         <td>Michael Cimino</td>
+         <td>7</td>
+     </tr>
+     <tr>
+         <td>Apocalypse Now</td>
+         <td>Francis Ford Coppola</td>
+         <td>8</td>
+     </tr>
+     <tr>
+         <td>Platoon</td>
+         <td>Oliver Stone</td>
+         <td>7</td>
+     </tr>
+ </table>
+
+  <hr>
+  <h3>Tablas: Combinación de celdas</h3>
+  <table border="1">
+      <caption>Horario de Cine Clásico</caption>
+      <tr>
+          <th rowspan="2">SALA 1</th>
+          <th colspan="3" >Pasión de los fuertes</th>
+
+      </tr>
+      <tr>
+          <td>18:00</td>
+          <td>20:00</td>
+          <td>22:00</td>
+      </tr>
+      <tr>
+          <th rowspan="2">SALA 2</th>
+          <th colspan="3">Juan Nadie</th>
+
+      </tr>
+      <tr>
+          <td>15:00</td>
+          <td>19:00</td>
+          <td>21:00</td>
+      </tr>
+      <tr>
+          <th rowspan="2">SALA 3</th>
+          <th colspan="3">Un tranvía llado deseo</th>
+
+      </tr>
+      <tr>
+          <td>18:00</td>
+          <td>20:00</td>
+          <td>22:30</td>
+      </tr>
+
+  </table>
+  <hr>
+  <h3>Tablas Avanzadas</h3>
+      <h4 style="color: blue;">Extremeña de Teléfonos S.A</h4>
+     <table border="1">
+          <caption>Factura detallada</caption>
+          <!-- Cabecera de la tabla -->
+          <thead>
+              <tr>
+                  <th colspan="5">EXTREMEÑA DE TELÉFONOS</th>
+              </tr>
+          </thead>
+          <!-- Pie de la tabla-->
+          <tfoot>
+              <tr>
+                  <td colspan="5" style="font-size: 13px;"><em>Extremeña de teléfonos le informa que puede llamar al número gratuito 666 para cualquier duda o sugerencia que tenga acerca de está factura o nuestro servicio.</em></td>
+              </tr>
+          </tfoot>
+          <!-- cuerpo de la tabla -->
+          <tbody>
+              <tr>
+                  <td colspan="5" class="titulo" >Detalle de cuotas</td>
+              </tr>
+              <tr>
+                  <th>PERIODO</th>
+                  <th >CONCEPTO</th>
+                  <th>IMPORTE</th>
+                  <th colspan="2">DESCUENTO</th>
+              </tr>
+              <tr>
+                  <th rowspan="3">01/05/13 - 01/07/13</th>
+                  <td>Servicio identificación de llamadas</td>
+                  <td class="precio">12&euro;</td>
+                  <td colspan="2" class="precio">0</td>
+              </tr>
+              <tr>
+                  <td>Línea individual</td>
+                  <td class="precio">14&euro;</td>
+                  <td colspan="2" class="precio">0</td>
+              </tr>
+              <tr>
+                  <td>Bono ciudad</td>
+                  <td class="precio">10&euro;</td>
+                  <td colspan="2" class="precio">0</td>
+
+              </tr>
+              <tr>
+                  <td colspan="2">TOTAL:</td>
+                  <td colspan="3" class="importe" ><strong>36&euro;</strong></td>
+              </tr>
+
+               <tr>
+                  <th>CONCEPTO</th>
+                  <th >LLAMADAS</th>
+                  <th>DURACIÓN</th>
+                  <th>IMPORTE</th>
+                  <th>DESCUENTO</th>
+              </tr>
+              <tr>
+                  <td>Llamada internacional</td>
+                  <td class="precio">23</td>
+                  <td class="precio">10m 23s</td>
+                  <td class="precio">13&euro;</td>
+                  <td class="precio">0</td>
+              </tr>
+              <tr>
+                  <td>Llamada metropolitana</td>
+                  <td class="precio">23</td>
+                  <td class="precio">10m 23s</td>
+                  <td class="precio">3,5&euro;</td>
+                  <td class="precio">0</td>
+              </tr>
+              <tr>
+                  <td colspan="2">TOTAL:</td>
+                  <td colspan="3" class="importe"><strong>16,5&euro;</strong></td>
+              </tr>
+
+          </tbody>
+  </table>
+
+</body>
+</html>

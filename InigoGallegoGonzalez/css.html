@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+</head>
+<style>
+    h1 {
+        font-size: 2em;
+        color: peru;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        border-right: 1px solid red;
+        border-left: 1px solid red;
+        padding: 0 2%;
+        height:100vh;
+    }
+</style>
+
+<body>
+    <li><a href="index.html">Volver</a></li>
+
+    <h1>CSS</h1>
+    <div class="container">
+        <h2>Unidades Relativas</h2>
+        <dl>
+            <dt>px</dt>
+
+            <dd>Un tamaño relativo respecto a la resolución de la pantalla</dd>
+            <dt>%</dt>
+            <dd>Porcentaje relativo al elemento actual que lo contiene</dd>
+            <dt>em</dt>
+            <dd>Porcentaje relativo a la anchura de la letra "m" que tiene el navegador por defecto.</dd>
+            <dt>rem</dt>
+            <dd>Es muy similar a em, con la única diferencia de que no es escalable, esto quiere decir que no depende del elemento padre, sino del elemento raíz del documento, el elemento HTML. Rem significa "Root Em", o sea, es un em basado en la raíz.</dd>
+            <dt>ex</dt>
+            <dd>Porcentaje relativo al elemento actual que lo contiene</dd>
+        </dl>
+    </div>
+    <!-- class="container" -->
+</body>
+</html>

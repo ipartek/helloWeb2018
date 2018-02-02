@@ -14,6 +14,13 @@
 		line-height:1.6em;
 		text-indent: 1em; /*introdize sangría en primera linea*/
 
+
+		/* Negrita:
+		font-weight: 600;
+		   Cursiva:
+		font-style: italic;
+		*/
+
 		}
 
 
@@ -46,6 +53,25 @@
 			background-color: red;
 			border-radius: 50px;
 			transition-duration:2s;
+		}
+
+		table{
+			border: 1px solid;
+			border-color: #1868ad;
+		}
+		tr,td{
+			border: 1px solid;
+			border-color: aquamarine;
+			padding: 10px;
+    		width: 80px;
+
+		}
+		th{
+			border: 1px solid;
+			border-color: #1868ad;
+			padding: 10px;
+    		width: 80px;
+
 		}
 
 
@@ -160,11 +186,126 @@
 		</li>
 	</ul>
 
-	<br>
-	<br>
+	<hr>
 	<h2>Tablas</h2>
+	<h3>4.15 Tabla simple</h3>
+	<table>
+		<tr>
+			<td><strong>Peli</strong></td>
+			<td><strong>Director</strong></td>
+			<td><strong>Puntuacion</strong></td>
+		</tr>
+		<tr>
+			<td>Star Wars</td>
+			<td>George Lucas</td>
+			<td>8.5</td>
+		</tr>
+		<tr>
+			<td>E.T.</td>
+			<td>S. Spilberg</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>El Pdrino</td>
+			<td>Coppola</td>
+			<td>9</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<h3>4.16 Tabla con encabezado y Caption</h3>
+	<table>
+	<caption>Peliculas clasicas</caption>
+		<tr>
+			<th>Peli</th>
+			<th>Director</th>
+			<th>Puntuacion</th>
+		</tr>
+		<tr>
+			<td>Star Wars</td>
+			<td>George Lucas</td>
+			<td>8.5</td>
+		</tr>
+		<tr>
+			<td>E.T.</td>
+			<td>S. Spilberg</td>
+			<td>8</td>
+		</tr>
+		<tr>
+			<td>El Pdrino</td>
+			<td>Coppola</td>
+			<td>9</td>
+		</tr>
+	</table>
+
+	<h3>4.20 Tablas avanzadas</h3>
+	<table>
+	<caption>Factura detallada</caption>
+		<tr>
+			<th colspan="4">EXTREMEÑA DE TELÉFONOS</th>
+
+		</tr>
+		<tr>
+			<th colspan="4">Detalle de cuotas</th>
+		</tr>
+		<tr>
+			<th>PERIODO</th>
+			<th>CONCEPTO</th>
+			<th>IMPORTE</th>
+			<th colspan="2">DESCUENTO</th>
+		</tr>
+		<tr>
+			<td rowspan="3"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<td colspan="4"></td>
+		</tr>
+
+		<tr>
+			<th colspan="4">Detalle de consumos</th>
+		</tr>
+		<tr>
+			<th>CONCEPTO</th>
+			<th>LLAMADAS</th>
+			<th>DURACION</th>
+			<th>IMPORTE</th>
+			<th>DESCUENTO</th>
+		</tr>
+		<tr>
+			<td rowspan="3"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
 
 
+	</table>
 
 </body>
 </html>

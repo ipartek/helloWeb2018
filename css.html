@@ -118,6 +118,42 @@
             color: orange;
 
         }
+
+
+
+
+
+       div[class=myDiv] p{ /*Una nueva forma para coger lo que hay dentro de esa clase*/
+
+            color: rebeccapurple;
+
+        }
+
+        div[class~=segundaforma] p{
+
+            color: brown;
+
+        }
+
+        div[class|=terceraforma] p{
+
+            color: darkgreen;
+
+        }
+
+        div[class$=cuartaforma] p{
+        color: deepskyblue;
+}
+
+        div[class^=quintaforma] {
+        color: blue;
+}
+
+        div[class*=sextaforma] {
+        color: cadetblue;
+}
+
+
     </style>
 
 
@@ -201,6 +237,49 @@
 
 <h1>Ejercicio selector de atributos</h1>
 
+
+
+<div class="myDiv">
+
+    <p>Primer Selector</p>
+</div>
+
+
+
+<div class="segundaforma">
+
+    <p>Segundo Selector</p>
+</div>
+
+
+<div class="terceraforma">
+
+    <p>Tercer Selector</p>
+</div>
+
+<div class="cuartaforma">
+
+    <p>Cuarto Selector</p>
+</div>
+
+<div class="quintaforma">
+
+    Quinto Selector
+</div>
+
+
+<div class="sextaaforma">
+
+    Sexto Selector
+</div>
+
+
+
+
+
+
+
+
 <h1>Ejercicio selectores de hijos</h1>
 
 <div>
@@ -212,6 +291,9 @@
 
 
 </div>
+
+
+
 
 <h1>Ejercicio selectores adyacentes</h1>
 

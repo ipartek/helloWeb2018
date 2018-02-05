@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <title>CSS-Posicionamiento</title>
     <style>
+        body {}
 
-        body{}
         .desbordamiento {
             border: 1px solid red;
             display: inline-block;
             width: 210px;
             height: 100px;
             overflow: auto;
+        }
+
+        h2 {
+            background: #B8C1C8;
+            border-bottom: 1px solid #989EA4;
+            border-top: 1px solid #717D85;
+            color: #FFF;
+            margin: 0;
+            padding: 2px 0 0 12px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: -1px;
         }
 
         .box {
@@ -56,59 +68,99 @@
 
 
         }
+
         .ejercicio {
             text-align: center;
-            margin-bottom:50px;
-            border-bottom:1px solid #DDD;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #DDD;
         }
-        .ejercicio li{
-            border:1px solid grey;
-            display:inline-block;
-            width:30%;
-            height:2em;
-            background: linear-gradient(grey, #00FF64);
-            font-size:1em;
-            margin: 0 auto;
+
+
+        .ejercicio li {
+            border: 1px solid grey;
+            position: relative;
+            display: inline-block;
+            height: 2em;
+            min-width:20%;
+            background-color: cadetblue;
+            font-size: 1em;
+            margin: -3px;
+            padding:10px 15px;
         }
-        .ejercicio .numMensajes{
-            position:relative;
-            height:1em;
-            width:1em;
+
+        .ejercicio li:hover {
+            -webkit-box-shadow: inset 10px 10px 55px -12px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: inset 10px 10px 55px -12px rgba(0, 0, 0, 0.75);
+            box-shadow: inset 10px 10px 55px -12px rgba(0, 0, 0, 0.75);
+            transition-duration: 0.5s;
+        }
+
+        .ejercicio .burbuja {
+            position: absolute;
+            height: 1em;
+            width: 1em;
             text-align: center;
-            color:white;
+            color: white;
             border-radius: 50%;
-            background-color:grey;
-            border:1px solid black;
-            bottom:3.5em;
-            left:35%;
+            background-color: grey;
+            border: 1px solid black;
+            left: 90%;
 
         }
-        .ejercicio a{
-            display:inline-block;
+
+        .ejercicio a {
+            display: inline-block;
             text-decoration: none;
-            color:black;
-            margin-top:0.5em;
+            color: black;
+            margin-top: 0.5em;
+            position: relative;
         }
-        .imagen{
-            position:relative;
-            display:inline-block;
-            height:150px;
-            width:150px;
-            overflow:hidden;
+
+        .imagen {
+            position: relative;
+            display: inline-block;
+            height: 150px;
+            width: 150px;
+            overflow: hidden;
             background-image: url(img/mola.jpg)
         }
-        .imagen p{
-            color:white;
-            opacity:0.5;
-            position:absolute;
 
-            background-color:black;
-            top:115px;
-        }
-        .imagen p:hover{
+        .imagen p {
+            color: white;
+            opacity: 0.5;
+            position: absolute;
+            background-color: black;
+            top: 115px;
             transition-duration: 1s;
-            height:150px;
-            top:-15px;
+            height: 150px;
+        }
+
+        .imagen:hover p {
+            transition-duration: 1s;
+
+            top: -15px;
+        }
+
+        .derecha {
+            float: right;
+        }
+
+        .izquierda {
+            float: left;
+        }
+
+        #ejemplo .izquierda {
+            float: left;
+            border: 1px solid black;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .rango{
+            float:left;
         }
     </style>
 </head>
@@ -136,34 +188,69 @@
     <div class="fixed">
         <a href="#top">Arriba</a>
     </div>
+    <h2>Ejercicio prático</h2>
     <div class="ejercicio">
-        <h3>Ejercicio prático</h3>
+
         <nav>
             <ul>
-                <li><a href="">Mensajes</a>
+                <li><a href="">Mensajes</a><span class="burbuja">5</span></li>
 
-                </li>
+                <li><a href="">Usuarios</a><span class="burbuja">3</span></li>
+                <li><a href="">Otro</a><span class="burbuja">2</span></li>
 
-                <li><a href="">Usuarios</a></li>
-                <li><a href="">Otro</a></li>
             </ul>
-            <p class="numMensajes">5</p>
-            <div class="imagen">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis porro inventore quasi reprehenderit
-            </div>
         </nav>
-    </div>
 
+        <div class="imagen">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis porro inventore quasi reprehenderit
+        </div>
+
+    </div>
+    <h2>Flotamientos</h2>
+    <h3>Float right 2</h3>
+    <div class="box">1</div>
+    <div class="box derecha">2</div>
+    <div class="box">3</div>
+    <h3>Float left 2</h3>
+    <div id="ejemplo" class="clearfix">
+        <div class="box">1</div>
+        <div class="box izquierda">2</div>
+        <div class="box">3</div>
+    </div>
+    <h3>Float left todos</h3>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="box izquierda">1</div>
+    <div class="box izquierda">2</div>
+    <div class="box izquierda"><span>3</span></div>
+    <h3 class="clearfix"></h3>
+    <h3>Texto con imagen flotando</h3>
+    <img class="rango"src="img/rango.jpg" alt="Soy una imagen">
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt odit sint similique laudantium nobis ipsa officiis blanditiis, hic, veniam laborum rem non id. Neque odio, praesentium inventore ipsum libero tenetur.</span>
+    <span>Rerum possimus nam fugiat, distinctio! Consequuntur natus quidem consequatur maiores laborum ut dolor repudiandae quisquam cupiditate voluptatum error omnis, eaque provident facilis sunt ratione, nam. Obcaecati labore, aliquid eos consequuntur!</span>
+    <span>Amet exercitationem facilis veritatis omnis voluptates eaque vero pariatur, repellat praesentium, deleniti, ratione dolorum, tempore totam adipisci qui delectus. Odio aliquid laborum, obcaecati vel libero quia saepe molestiae ratione facere!</span>
+    <span>Voluptates, sunt, nam. Nulla quas vitae, cupiditate error vel hic, asperiores neque distinctio. Necessitatibus nam maxime cum, eligendi labore? Dignissimos, doloremque sint corporis perferendis aliquam sequi reiciendis consectetur accusamus. Itaque!</span>
+    <span>Pariatur nobis cum libero sunt ab aperiam maiores voluptate repudiandae deleniti, delectus quisquam, eum sequi enim saepe aspernatur suscipit nostrum aut ut dignissimos obcaecati facilis aliquam? Laudantium incidunt, at in.</span>
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic enim laudantium commodi. Sapiente expedita dolorum, temporibus impedit molestiae ratione reiciendis optio. Quas sunt officia voluptatibus, earum ea asperiores, cupiditate possimus.</span>
+    <span>Quae obcaecati aut, dolor aliquid iste velit, esse itaque at minima. Iusto, magnam magni quo perferendis adipisci voluptate vero a nihil cupiditate ex neque modi ut nobis consequuntur nesciunt eum.</span>
+    <span>Modi non quasi impedit tempore. Eos quod asperiores consectetur temporibus sed dolores a blanditiis magnam iure, odit quaerat dicta officia animi! Ducimus praesentium sint, repellat laudantium doloremque eum ea illum!</span>
+    <span>Asperiores voluptates, sit iste? Labore similique est quod quisquam. Blanditiis repudiandae eaque, laudantium voluptate! Omnis odit sint facilis minima perspiciatis dolorum repellendus dolor saepe consectetur reprehenderit quisquam odio, expedita nisi.</span>
+    <span>Maiores quo nisi, esse dicta animi, ab nulla maxime ipsum numquam, commodi laborum temporibus blanditiis culpa! Eos architecto incidunt, esse, similique magni consectetur aperiam iure suscipit ut vel rerum perspiciatis?</span>
+    <span>Praesentium aperiam, maiores natus necessitatibus tempore, ipsam voluptatibus exercitationem deserunt unde, dignissimos pariatur, saepe cupiditate esse! Voluptates perferendis, ut reprehenderit voluptate quibusdam natus, nam, facilis id at accusantium aliquam neque?</span>
+    <span>Facere voluptatibus quas ducimus deleniti facilis quia optio fugiat odio, consequuntur veniam ut cupiditate labore repellat nobis. Deserunt dolore odio explicabo minima quas aliquid doloribus dolores rerum. Repudiandae cupiditate, reiciendis.</span>
+    <span>Id laboriosam eos obcaecati repellendus illo necessitatibus, illum maxime vitae praesentium aperiam cum sed accusantium labore odit veritatis corporis inventore, tenetur quod voluptatem. Velit, debitis beatae unde labore, voluptatum temporibus.</span>
+    <span>Blanditiis, culpa eaque possimus asperiores alias rerum totam obcaecati repellat quae quos amet cumque ipsum doloribus impedit sed suscipit. Magnam officia beatae sed velit iure aspernatur, aut aperiam, nostrum dignissimos.</span>
+    <span>Omnis ab saepe natus nobis velit aut recusandae consequuntur commodi quae adipisci, optio quidem sint, voluptates id minus eligendi similique laboriosam, in, error blanditiis? Accusamus dolore numquam praesentium a ipsam!</span>
+    <span>Animi labore quos id omnis, saepe assumenda, debitis fuga. Porro aut expedita earum incidunt nostrum fugiat, laborum delectus placeat, dolore, blanditiis ipsam quam praesentium aliquam? Ab minus animi eligendi excepturi!</span>
+    <span>Enim aspernatur minus culpa quisquam accusantium voluptatem quos perspiciatis ipsam, nobis ducimus, nihil consectetur reiciendis repellat. Dolorem temporibus repellat, odio qui, rem assumenda blanditiis, ex sint ipsum alias minima, neque?</span>
+    <span>A similique animi aliquid amet, porro saepe excepturi dolores corrupti eaque assumenda illum rem iure nulla, omnis temporibus odit cupiditate velit, error! Distinctio natus neque, provident aut enim sint ea.</span>
+    <span>Fugiat excepturi labore et ratione reprehenderit quasi tenetur voluptas, nihil rerum nam aliquid, placeat eligendi aliquam praesentium aperiam perspiciatis enim officiis autem quibusdam natus commodi modi odio accusamus soluta architecto!</span>
+    <span>Recusandae non dolore perferendis voluptate, minus quam ullam totam, sequi quis fuga provident voluptatum cumque sint nemo excepturi nam nostrum cupiditate. Error, in. Odit, nam ad. Voluptates fuga atque cupiditate.</span>
+    <span>Itaque pariatur deserunt doloremque harum nihil veritatis, assumenda veniam non, quo repudiandae ab quisquam dolores error odio quos illum, velit alias earum, maiores aliquam ipsum sed tenetur adipisci porro! Aut!</span>
+    <span>Ipsum, error molestiae delectus, maxime voluptatem ducimus porro, nobis animi necessitatibus, sunt dignissimos totam quibusdam. Quia dignissimos commodi quibusdam architecto, sed illum, eum voluptatem maxime animi a distinctio fuga sint!</span>
+    <span>A eaque error asperiores deserunt, earum ducimus fugit doloremque molestias ipsum cumque tempora quis magnam nulla, nemo culpa tempore, expedita vitae, repudiandae illum dolorem accusantium explicabo. Impedit quae, nulla officiis!</span>
+    <span>Debitis necessitatibus impedit rerum dolores aperiam fugiat sequi itaque, repellat quod quae ducimus porro, laboriosam praesentium fugit, aut cum magni tenetur quidem doloremque accusantium. Libero veniam modi autem fugit eos!</span>
+    <span>Ipsum maiores voluptates neque? Asperiores reprehenderit eligendi quia nulla ex alias, molestias fuga dicta aliquid, et eaque, magnam sed, nemo distinctio! Vero ab error inventore suscipit quia, eaque molestiae quasi.</span></p>
 
 
 

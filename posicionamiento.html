@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Posicionamiento</title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/styless.css"> -->
+</head>
+
+<body id="top">
+    <style>
+        .desbordamiento {
+            border: 1px solid green;
+            overflow: auto;
+            width: 200px;
+            height: 100px;
+            display: inline-block;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            margin: 5px;
+            text-align: center;
+            font-size: 5em;
+            color: aliceblue;
+        }
+
+        .box-relative {
+            background-color: teal;
+            position: relative;
+            top: -40px;
+            left: 40px;
+            z-index: -1;
+        }
+
+        #absoluto {
+            position: relative;
+        }
+
+        .box-absoluto {
+            position: absolute;
+            bottom: -350px;
+            left: 55px;
+        }
+
+        #arriba {
+            position: fixed;
+            bottom: 15px;
+            right: 10px;
+        }
+
+        #cajita {
+            border: 1px red solid;
+        }
+
+        ul {
+            list-style-type: none;
+
+        }
+
+        li>a {
+            display: inline-block;
+            height: 50px;
+            width: 200px;
+            border: 2px solid black;
+            background-color: darkgoldenrod;
+            padding-top: 0.5em;
+            text-align: center;
+            font-size: 2em;
+            text-decoration: none;
+
+        }
+
+        #circulo {
+            position: relative;
+            border: 1px solid black;
+            background-color: red;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            left: -450px;
+            top: -25px;
+        }
+
+        #move {
+            display: inline-block;
+            height: 275px;
+            width: 500px;
+            background-image: url(https://lh3.googleusercontent.com/Wu31VprfOCSnjovyuJsbcVOYjGE2puKBdl5xk35SpnoqUYVoa1njZQPuy3pglgClh5Q=h900);
+            background-size: contain;
+            background-repeat: no-repeat;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        #oculto {
+            position: absolute;
+            top: 15em;
+            background-color: aqua;
+            opacity: 0.5;
+        }
+        #oculto:hover{
+            top:0em;
+            transition-duration: 1s;
+            height: 275px;
+        }
+    </style>
+
+    <h1>Posicionamiento - Capitulo 9</h1>
+
+    <h2>Overflow - Desbordamiento</h2>
+
+    <div class="desbordamiento">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio suscipit aperiam, consequuntur ducimus obcaecati nihil ipsum officia eaque, praesentium eligendi beatae reiciendis quaerat esse quos magni, incidunt velit harum placeat.
+    </div>
+
+    <h2>Posicionamiento relativo</h2>
+    <section id="relativo">
+        <h3>Relativo</h3>
+        <div class="box">1</div>
+        <div class="box box-relative">2</div>
+        <div class="box">3</div>
+    </section>
+
+
+
+
+    <!-- EJERCICIOS, PAG 198 hacer un elemento en bloque y que dentro tenga uno de linea, posicionamiento absoluto pag204, posicionamiento fijo, tecla subir arriba pegado abajo a la derecha, que es el stiky, hacer menu en linea de 3 secciones y hacer como que 1 tenga "mensajes por leer, una caja de 150x150 fondo de la caja es una imagen al hacer hower hacer un efecto que muestre algo"-->
+    <h2>In line - block</h2>
+    <div class="alien">
+        Lorem ipsum dolor sit amet, consectetur <span id="cajita">adipisicing elit.</span>adipisicing elit. Asperiores quam maiores et iure, at voluptate totam aliquam, quidem animi hic aspernatur quasi sunt dignissimos cupiditate veniam repellat ipsum officia consequuntur!
+    </div>
+
+    <h2>Posicionamiento absoluto</h2>
+    <section id="absoluto"> </section>
+    <h3>Absoluto</h3>
+    <div class="box">4</div>
+    <div class="box box-absoluto">5</div>
+    <div class="box">6</div>
+    <h2>Menu nav de librocara </h2>
+    <nav>
+        <ul>
+            <li>
+                <a href="">Mensajes</a>
+                <a href="">Usuarios</a>
+                <a href="">Otros</a>
+                <span id="circulo">2</span>
+            </li>
+        </ul>
+    </nav>
+    <h2>Imagen chula</h2>
+    <div id="move">
+        <p id="oculto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nam fugiat aperiam quos excepturi deleniti autem accusantium cum eum delectus minima maxime quae assumenda provident, ab expedita aspernatur iste accusamus.</p>
+    </div>
+
+    <div style="position: static;text-align: right"> <a id="arriba" href="#top">TOP</a></div>
+    <a href="index.html">Volver</a><br><br><br>
+    <script src="js/main.js" type="text/javascript">
+    </script>
+</body>
+
+</html>

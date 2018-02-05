@@ -27,11 +27,82 @@
             text-align: center;
         }
         .box-relative{
-            background-color:teal;
+            background-color:red;
             position:relative;
             top:-30px;
             left:40px;
         }
+        .box-absolute{
+            background-color:yellow;
+            position:absolute;
+            top:-30px;
+            left:40px;
+        }
+        }
+
+        .ejemplo{
+            display:inline-block;
+            border:1px solid green;
+        }
+        span{
+            display:inline-block;
+            border:1px dotted:blue;
+            padding:1px;
+        }
+        .absolute{
+            position:relative;
+        }
+        div#capa1{
+            position:relative;
+            font-size:25px;
+            border:2px solid #000000;
+            margin:10px;
+            padding:10px;
+            height:200px;
+            width:500px;
+            background-color:white;
+        }
+        div#capa2{
+            position:absolute;
+            top:20px;
+            left:100px;
+            height:150px;
+            width:150px;
+            background-color:blue;
+            color:white;
+        }
+
+          div#capa3{
+            position:relative;
+            font-size:25px;
+            border:2px solid #000000;
+            margin:10px;
+            padding:10px;
+            height:200px;
+            width:500px;
+            background-color:white;
+        }
+        li{
+            position:relative;
+            display:inline-block;
+            border:1px solid #000000;
+            height:50px;
+            width:100px;
+            text-align: center
+        }
+        .card{
+            position:relative;
+            width:300px;
+            height: 300px;
+        }
+        .card p{
+            position:absolute;
+                bottom:-80px;
+        }
+            .card p:hover{
+           bottom:-25px;
+            transition-duration:1s;
+            height: 300px;
 
 
     </style>
@@ -63,6 +134,56 @@
     <br>
     <a href="#relative">Relativo</a>
     <a href="#TOP">TOP</a>
+    <br>
+
+    <h4>Figura 9.2</h4>
+    <div class="ejemplo">
+        Marion Robert, de nombre artístico <span>Jhon Wayne</span> y conocido popularmente como The Duke.
+    </div>
+
+    <h4>Figura 9.5</h4>
+    <div class="absolute">
+         <section id="absolute">
+         <h3>Absolute</h3>
+         <div class="box">1</div>
+         <div class="box box-absolute">2</div>
+         <div class="box">3</div>
+    </section>
+    </div>
+
+     <h4>Figura 9.6</h4>
+
+    <div id="capa1">Capa-1
+    <div id="capa2">Capa-2</div> </div>
+    <div id="capa3">Capa-3</div>
+
+    <h4>Ejemplo Ander</h4>
+
+    <button id="pulsar"><a href="#TOP">TOP</a></button>
+     <br>
+     <br>
+      <nav id="Ejercicio">
+          <ul>
+              <li>
+                  <h4>Mensajes</h4>
+
+              </li>
+              <li>
+                  <h4>Usuarios</h4>
+              </li>
+              <li>
+                  <h4>Otro</h4>
+              </li>
+
+          </ul>
+      </nav>
+
+      <div class="card">
+         <img src="https://img.discogs.com/qGtCC8ruEjHn01O3KM9YREKZtAs=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-41441-1444396064-7860.jpeg.jpg" alt="texto alternativo">
+
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis sapiente doloribus recusandae voluptas necessitatibus provident. Nihil iste quo hic, minima, repellendus dolore nesciunt earum similique eaque id in vel commodi.</p>
+
+      </div>
 
 </body>
 </html>

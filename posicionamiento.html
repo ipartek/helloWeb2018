@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+
+    <style>
+
+
+     /* Texto que se desborda y tienes que hacer que se mantenga dentro de la caja*/
+        .desbordamiento{
+
+            border: 1px solid red;
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            overflow: auto;
+
+        }
+
+         /* Ejercicio de poner una caja en posicion relativa*/
+
+        .box{
+
+            height: 150px;
+            width: 150px;
+            background-color: grey;
+            color: white;
+            margin: 5px;
+            text-align: center;
+            font-size: 5em;
+
+        }
+
+        .box-relative{
+
+            position: relative;
+            background-color: brown;
+            top: -40px;
+            margin-left: 40px;
+            z-index: -1;
+        }
+
+
+        /* Ejercicio de poner una caja en posicion absoluta*/
+        .box-absoluto{
+
+            position: absolute;
+            background-color: brown;
+            margin-top: -140px;
+            margin-left: 120px;
+            z-index: 1;
+
+
+
+        }
+
+        /* Boton que se mantiene en la pantalla y que te lleve al inicio*/
+
+        .boton{
+
+
+            bottom: 10px;
+            top: auto;
+            position: fixed;
+            right: 20px;
+        }
+
+
+
+        /* Menu*/
+
+         nav ul li{
+
+
+            background-color: blue;
+            display: inline-block;
+            text-decoration: none;
+            z-index: 1;
+            padding: 5px;
+             position: relative;
+        }
+
+        nav{
+
+
+            background-color: blue;
+
+        }
+        nav ul li a{
+
+            font-size: 30px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .menu{
+
+            margin: auto;
+            height: 400px;
+            width: 390px;
+
+
+
+        }
+
+        /* Redondel rojo,que es una notificacion*/
+
+        .burbuja{
+
+
+            border-radius:50%;
+            position: absolute;
+            background-color: red;
+            height: 20px;
+            width: 20px;
+            text-align: center;
+                right: 0px;
+    top: -5px;
+            z-index: -1;
+
+        }
+
+        /* Ejercicio de poner un borde de botones*/
+
+        .span span{
+
+            border:1px dotted red;
+
+
+        }
+        .span{
+
+            text-align: center;
+        }
+
+        /*Marco de fotos*/
+
+
+
+        .marco{
+            position: relative;
+            height: 210px;
+            width: 250px;
+            border: 5px solid red;
+            overflow: hidden;
+
+
+        }
+
+        .marco p{
+            position: absolute;
+
+        }
+
+
+        .marco:hover img{
+
+        display: none;
+
+
+        }
+
+        .marco img{
+
+            height: 150px;
+            width: 250px;
+
+        }
+
+           .marco2 {
+            position: relative;
+            height: 210px;
+            width: 250px;
+            border: 5px solid red;
+            overflow: hidden;
+
+
+        }
+
+          .marco2 p{
+              color: white;
+            position: absolute;
+              font-size: 1,4em;
+            background-color: black;
+              margin-top: -20px;
+              padding: 0,10px;
+              transition: 2s;
+
+        }
+
+
+        .marco2 p:hover{
+
+       bottom: -200px;
+               background: rgba(0,0,0,.4);
+
+            height: 300px;
+
+        }
+
+        .marco2 img{
+
+            height: 170px;
+            width: 250px;
+
+        }
+
+
+
+
+    </style>
+</head>
+<body="top">
+
+   <h1>Posicionamiento Capitulo 9</h1>
+    <h2>Overflow - Desbordamiento</h2>
+
+    <div class="desbordamiento"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam hic quia rem dicta. Voluptatum minus recusandae, aliquam deleniti, quaerat maxime dicta. Dolorum cumque nisi repellat expedita ex voluptatibus dolores, amet.</div>
+
+    <hr>
+
+    <h2>Siguiente Ejercicio</h2>
+
+
+    <section id="relative">
+
+        <h3>Ejercicio Relativo</h3>
+
+        <div class="box">1</div>
+        <div class="box box-relative">2</div>
+        <div class="box">3</div>
+
+    </section>
+
+
+   <section id="absolute">
+
+        <h3>Ejercicio Absolute</h3>
+
+        <div class="box">1</div>
+        <div class="box box-absoluto">2</div>
+        <div class="box">3</div>
+
+    </section>
+
+
+    <div class="span">
+
+        <h3>Ejemplo de border Dotted</h3>
+        <p>Marion Robert Morrison, de nombre artistico <span>John Wayner</span> y conocido popularmente como The Duke</p>
+
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="boton">
+    <a href="#top">Top - Boton para subir</a>
+
+    </div>
+
+    <!--Hacer un menu que contenga una bola encima como una notificacion,el menu contiene menu,usuarios,otro  -->
+    <!--nav>ul>li*3>a  -->
+
+    <div class="menu">
+
+    <nav>
+        <ul>
+            <li> <span class="burbuja">1</span><a href="">Mensajes</a></li>
+            <li><a href="">Usuarios</a></li>
+            <li><a href="">Otro</a></li>
+        </ul>
+    </nav>
+
+
+
+    </div>
+     <!--una caja con 150px por 150px y que contenga una imagen dentro y debajo de la caja un lorem que se vea una linea,y con un hover que se vea todo inluyendo una transicion  -->
+
+
+
+     <div class="marco">
+
+
+         <img src="img/paisaje.jpg" alt="Imagen">
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, id est magni labore, odit amet accusamus aut excepturi illum nemo, error. Molestias accusamus sapiente libero minus, similique impedit ullam a!</p>
+     </div>
+
+      <div class="marco2">
+
+
+         <img src="img/paisaje.jpg" alt="Imagen">
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, id est magni labore, odit amet accusamus aut excepturi illum nemo, error. Molestias accusamus sapiente libero minus, similique impedit ullam a!</p>
+     </div>
+
+
+     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</body>
+</html>

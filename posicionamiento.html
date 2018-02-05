@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <title>Posicionamiento</title>
     <style>
-
         @import url("/css/reset.css");
         @import url("/css/clearfix.css");
+
+        h2{
+            font-size: 2em;
+            font-weight: bolder;
+            margin: 15px auto;
+        }
+
         div {
             border: 3px solid black;
             position: relative;
@@ -85,7 +91,7 @@
             font-size: .8em;
         }
 
-        div.card{
+        div.card {
             position: relative;
             background-color: white;
             height: 300px;
@@ -99,37 +105,50 @@
             width: 300px;
         }
 
-        .card p{
+        .card p {
             position: absolute;
             top: 250px;
             font-size: 1.2em;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255, 255, 255, 0.8);
             padding: 10px;
             transition-duration: 2s;
         }
 
-        .card:hover p{
-            top:100px;
+        .card:hover p {
+            top: 100px;
             transition-duration: 2s;
         }
 
-        .clear{
-            clear: both;
+        section {
+            width: 60%;
+            margin: auto;
         }
 
+        .float {
+            float: left;
+        }
 
+        section#float_section div {
+            float: left;
+        }
+
+        .float_right {
+            float: right;
+        }
     </style>
 </head>
 
 <body>
-   <a href="index.html">Volver al indice</a>
+    <a href="index.html">Volver al indice</a>
     <h1 id="top">POSICIONAMIENTO</h1>
 
-    <h2>Relativo</h2>
+    <section>
+        <h2>Relativo</h2>
 
-    <div id="capa1">Capa-1</div>
-    <div id="capa2">Capa-2</div>
-    <div id="capa3">Capa-3</div>
+        <div id="capa1">Capa-1</div>
+        <div id="capa2">Capa-2</div>
+        <div id="capa3">Capa-3</div>
+    </section>
 
     <section>
         <h2>Absoluto</h2>
@@ -167,6 +186,40 @@
         </div>
 
     </section>
+
+    <section id="float_section" class="clearfix">
+
+        <h2>Flotar imagen</h2>
+
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam asperiores doloribus veniam, voluptatum molestias voluptatibus unde alias eligendi illum maiores natus animi voluptatem officia praesentium esse, distinctio libero, sed minima.</span><span>Vel nulla consectetur est minima voluptate, odit deleniti architecto voluptas quas. Excepturi fugiat quaerat a sapiente impedit. Tenetur quam, ipsam, molestiae, cupiditate at possimus quo molestias corporis quisquam dolorem animi.</span>
+        </p>
+
+        <img class="float" src="https://vignette.wikia.nocookie.net/disney/images/f/f8/Mickey-Vamp-300x300.png/revision/latest?cb=20120730070434" alt="mickey">
+
+        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eos omnis ipsam excepturi, rem optio ex atque perspiciatis aut natus magnam voluptates, ullam. Cupiditate consectetur vitae veritatis sequi! Beatae, qui.</span>
+            <span>Soluta illum, temporibus possimus architecto quia ducimus esse repudiandae consequatur velit fugiat libero sequi suscipit quos perspiciatis sit. Dolores debitis beatae facilis neque dicta eligendi maxime molestias illum incidunt porro.</span>
+            <span>Eligendi, expedita! Quo corporis laborum dolorem laboriosam quia ratione distinctio sit deserunt ad explicabo tempora adipisci vitae quas cum neque officia et ipsum harum autem, consequuntur quidem! Suscipit, in, beatae.</span><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, velit, asperiores. Error maxime perspiciatis commodi perferendis atque at, corporis quam, quaerat doloremque eos eligendi illum voluptatibus voluptates. Quidem quibusdam, consequuntur.</span>
+            <span>Esse nostrum unde obcaecati totam harum magni enim autem facere cum corporis exercitationem optio accusantium illo, rerum odit repellat animi culpa odio. Tempore pariatur eligendi explicabo, vitae odit accusamus placeat.</span>
+            <span>Id eveniet iste corporis ducimus quibusdam culpa quis, facilis laudantium amet, quasi quia eum perferendis deleniti. Aut, excepturi veritatis, eum tempora cum nostrum quos facilis cumque a incidunt, libero illo.</span>
+            <span>Doloribus repellendus nemo harum quis sed voluptatum quod hic necessitatibus labore repudiandae voluptates ad pariatur adipisci in nobis numquam, dignissimos nostrum. Doloribus veritatis dolores maiores odit id pariatur qui eos.</span>
+            <span>Aut assumenda, itaque aspernatur, similique quibusdam dolorem, repellendus dolores voluptate necessitatibus rem unde. Porro aliquid repellat sed itaque ipsa eligendi aliquam, nobis consequatur! Enim, delectus non accusantium quos aperiam possimus?</span>
+            <span>Sint reprehenderit iure veniam voluptas, iusto expedita cupiditate dolorum ad dignissimos molestiae, soluta, cum temporibus aut quasi placeat quaerat voluptatum eos. Iste saepe non, itaque placeat suscipit accusantium, aut vitae.</span></p>
+
+        <div>Caja1</div>
+        <div>Caja2</div>
+        <div>Caja3</div>
+    </section>
+
+    <section id="section_right">
+        <h2>Float Right</h2>
+        <div>Caja1</div>
+        <div class="float_right">Caja2</div>
+        <div>Caja3</div>
+
+    </section>
+
+
+
 
 
     <a class="flecha" href="#top"><img id="flecha" src="/img/flecha_arriba.png" alt="Top"></a>

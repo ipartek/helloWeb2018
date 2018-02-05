@@ -1,0 +1,223 @@
+/* HOJA DE ESTILOS PARA EL ARCHIVO posicionamiento.html
+
+    @Author: Aingeru
+    @version: 1.0
+    @fecha: 2018-02-05
+
+*/
+
+section {
+    border: 1px solid black;
+    width: 90%;
+}
+.desbordamiento {
+    /* 'shorthands' es un método abreviado de aplicar estilos --> border: 1px solid red;*/
+    /* El método completo sería aplicar cada uno de los 3 atriburos: border-widht, border-style y border-color */
+    border: 1px solid red;
+    display: inline-block;
+    width: 300px;
+    height: 100px;
+    /*Con 'overflow:auto' si el contenido supera al continente, aplica un scroll*/
+    /*Con 'overflow:scroll' aplica un scroll en el eje x e y*/
+    overflow: auto;
+}
+
+#anidados {
+    border: 1px solid green;
+    padding: 10px;
+}
+
+div>span {
+    border: 2px dotted blue;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    color: white;
+    margin: 5px;
+    font-size: 5em;
+    text-align: center;
+    z-index: 1;
+}
+
+.box-relative {
+    background-color: teal;
+    position: relative;
+    bottom: 60px;
+    left: 50px;
+    z-index: -1;
+}
+
+section#absolute {
+    position: relative;
+}
+
+.box-absolute {
+    background-color: teal;
+    position: absolute;
+    top: 200px;
+    left: 50px;
+}
+
+.box-fixed {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.box-sticky {
+    position: sticky;
+    background-color: teal;
+    top: 20px;
+    bottom: 20px;
+}
+
+.navegation ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.navegation li {
+    background-color: teal;
+    display: inline-block;
+    text-align: center;
+    margin-right: 0.5px;
+    padding: 20px;
+}
+
+.navegation li a {
+    padding: 2px 7px 2px 7px;
+    color: white;
+    background-color: teal;
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+}
+
+.listaNavegacion {
+    list-style: none;
+}
+
+.notificacion {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -25px;
+    padding: 2px;
+    border-radius: 50%;
+    font-size: 17px;
+}
+
+#notiMensajes {
+    background-color: red;
+}
+
+#notiUsuarios {
+    background-color: green;
+}
+
+#flechaArriba {
+    width: 50px;
+    height: 50px;
+}
+
+p>span {
+    color: teal;
+    font-weight: bold;
+}
+
+/* ----- El texto se posiciona sobre la imagen ----- */
+
+/*.imageHover {
+    position: relative;
+    border: 2px solid orange;
+    width: 520px;
+}
+
+#imagenFondo {
+    width: 520px;
+    height: 250px;
+}
+
+.imageHover:hover > #textoImagen{
+    width: 500px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#textoImagen {
+    width: 500px;
+    height: 250px;
+    color: orangered;
+    padding: 5px 10px;
+    text-align: justify;
+}*/
+
+/* ----- El texto se posiciona sobre la imagen ----- */
+
+.imageHover {
+    position: relative;
+    border: 2px solid orange;
+    width: 520px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.imageHover p {
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    color: orange;
+    background-color: rgba(255, 0, 0, 0.6);
+    font-weight: bold;
+    padding: 5px 10px;
+    text-align: justify;
+    bottom: -250px;
+    transition-duration: 2s;
+}
+
+.imageHover:hover p {
+    position: absolute;
+    bottom: -25px;
+    transition-duration: 1s;
+    height: 250px;
+
+}
+
+#imagenFondo {
+    width: 520px;
+    height: 250px;
+}
+
+/* POSICIONAMIENTO CON FLOAT */
+.floatLeft {
+    float: left;
+}
+#boxFloatRight {
+    float: right;
+}
+
+#imgLorem {
+    width: 150px;
+    height: 200px;
+    float: left;
+    margin-right: 15px;
+}
+
+/************ CLEARFIX ***********/
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+div.clearfix {
+    background-color: darkblue;
+    color: orangered;
+    font-weight: bold;
+    font-size: 4em;
+    text-align: center;
+}

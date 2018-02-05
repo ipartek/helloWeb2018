@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Posicionamiento</title>
+    <!--Icono de index-->
+    <link rel="icon" href="img/css3.ico" type="image/x-icon" />
+    <!-- enlace a la hoja de estilos posicionamiento.css-->
+    <link rel="stylesheet" href="css/posicionamiento.css" type="text/css">
+</head>
+
+<body id="top">
+    <a href="index.html">&lt; Volver a Index</a>
+    <!--<button onclick="goBack()">&lt; VOLVER</button> -->
+    <br><br>
+    <h1>Posicionamiento CSS - Capítulo 9</h1>
+    <nav class="navegation">
+        <h2>Secciones:</h2>
+        <ul id="listaNavegacion">
+            <li><a href="#overflow">OVERFLOW</a></li>
+            <li><a href="#anidados">ELEM. ANIDADOS</a></li>
+            <li><a href="#relative">POS. RELATIVO</a></li>
+            <li><a href="#absolute">POS. ABSOLUTO</a></li>
+            <li><a href="#fixed">POS. FIJO</a></li>
+            <li><a href="#sticky">POS. STICKY</a></li>
+            <li><a href="#navegation">MENÚ NAVEGACIÓN</a></li>
+            <li><a href="#imageHover">IMAGE:HOVER</a></li>
+            <li><a href="#floatLeft">FLOAT: LEFT</a></li>
+            <li><a href="#floatBoth">FLOAT: LEFT &amp; RIGHT</a></li>
+            <li><a href="#floatImage">FLOATING IMAGE</a></li>
+
+        </ul>
+    </nav>
+
+    <div id="container">
+        <h2>Overflow - Desbordamiento</h2>
+        <div id="overflow" class="desbordamiento">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem voluptates nam ab itaque expedita, totam nostrum aliquam neque. Officia, tenetur! Vitae blanditiis quaerat harum aut possimus obcaecati atque fugiat quae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat debitis dolorum rem maxime unde architecto magnam vitae, asperiores. Odit voluptatem tenetur aliquam eaque ut minus modi et, ad esse quis!
+        </div>
+        <hr>
+        <h2>Elementos anidados</h2>
+        <!--TODO: Ejemplo Figura 9.2-->
+        <div id="anidados">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Dicta,</span> cupiditate odit eius laudantium optio nesciunt aliquid quo velit! Esse perspiciatis maiores omnis error, dignissimos harum quos, suscipit ullam repellendus vitae.
+        </div>
+        <hr>
+        <h2>POSICIONAMIENTO</h2>
+        <div id="posicionamiento">
+
+            <!--TODO: Ejemplo Figura 9.5-->
+            <section id="relative">
+                <h3>Posicionamiento Relativo</h3>
+                <p>Con el posicionamiento relativo, se puede ajustar la posición de un elemento a partir de su posición inicial (estática). <br><span>En este ejemplo, se a reposicionado la CAJA 2 para que mueva 60px desde el bottom (o -60px desde top) y 50px desde la izquierda (o -50px desde la derecha).</span><br>Mediante la propiedad '<strong>z-index</strong>' se pueden superponer unas capas sobre otras: <br><span>En este ejemplo hemos ajustado la CAJA 1 con un "z-index: 1" y a la CAJA 2 un "z-index: -1" .</span><br>*Las capas deben tener el mismo posicionamiento para ajustar la superposición correctamente.</p>
+                <div class="box">1</div>
+                <div class="box box-relative">2</div>
+                <div class="box">3</div>
+            </section>
+            <hr>
+
+            <!--TODO: Ejemplo Figura 9.6-->
+            <section id="absolute">
+                <h3>Posicionamiento Absoluto</h3>
+                <p>Con el posicionamiento absoluto, se puede ajustar la posición de un elemento a partir de la posición de su contenedor que no tenga una posición fija. <br><span>En este ejemplo, se a reposicionado la CAJA 2 para que mueva 200px desde el top y 50px desde la izquierda de su contenedor (una section#absolute). Por consecuencia del espacio que ha dejado libre, la CAJA 3 a ocupado su posición inicial bajo la CAJA 1.</span></p>
+                <div class="box">1</div>
+                <div class="box box-absolute">2</div>
+                <div class="box">3</div>
+            </section>
+            <hr>
+
+            <section id="fixed">
+                <h3>Posicionamiento Fijo (Fixed)</h3>
+                <p>Con el posicionamiento fijo (fixed), el desplazamiento se establece de la misma forma que en el posicionamiento absoluto, pero en este caso el elemento permanece inamovible en la pantalla. <br><span>En este ejemplo hemos posicionado una imagen con una flecha apuntando hacia arriba en la esquina inferior derecha de la página, que al pulsarla te manda al inicio de la página (del body en este caso).</span></p>
+                <div class="box-fixed">
+                    <a href="#top"><img id="flechaArriba" src="img/arrow-up.png" alt="Ir al inicio"></a>
+                </div>
+            </section>
+            <hr>
+            <!--TODO: position: sticky-->
+
+            <section id="sticky">
+                <h3>Posicionamiento sticky</h3>
+                <p>La posición de la caja se calcula de acuerdo con el flujo normal. Es un hibrido entre el posicionamiento relativo y absoluto.<br><span>En este ejemplo, la CAJA 2 se desplaza hacia arriba o abajo según te mueves arriba/abajo en la pantalla del navegador, siempre dentro de los límites de su contenedor y respetando los atributos top|bottom|left|right definidos (20px para top y bottom en este ejemplo).</span></p>
+                <div class="box">1</div>
+                <div class="box box-sticky">2</div>
+                <div class="box">3</div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </section>
+
+            <hr>
+            <!--TODO: MENSAJES(5) | USUARIOS | OTRO-->
+            <section class="navegation">
+                <h3>Menú de navegación</h3>
+                <nav>
+                    <ul class="listaNavegacion">
+                        <li><a href="#mensajes">MENSAJES<span class="notificacion" id="notiMensajes">5</span></a></li>
+                        <li><a href="#usuarios">USUARIOS<span class="notificacion" id="notiUsuarios">2</span></a></li>
+                        <li><a href="#otros">OTROS</a></li>
+                    </ul>
+                </nav>
+            </section>
+
+            <hr>
+            <!--TODO: img 150x150 superpuesta a un párrafo. Al hacer p:hover, superponerla el párrafo a la imagen-->
+            <h3>Image:hover > text</h3>
+            <section id="imageHover">
+                <div class="imageHover">
+                    <img id="imagenFondo" src="img/win_wallpaper.jpg" alt="Fondo de pantalla de Windows">
+                    <p id="textoImagen">
+                        Se crea una capa padre con <em>'position : relative'</em>. Dentro se crean una imagen y un párrafo, los 2 con el mismo ancho. Se define un seudo-selector de la imagen respecto al texto <em>'imagen:hover > texto { position: absolute }'</em>, de esta forma al colocar el mouse sobre la capa padre que contiene a la imagen y el párrafo, este segundo elemento (el párrafo) adquiere una posición absoluta y adquiere el sitio del contenedor padre.
+                    </p>
+                </div>
+            </section>
+            <hr>
+            <!--TODO: FLOAT (Figuras 9.8, 9.9 y 9.12)-->
+            <h2>Float: left</h2>
+            <p>Se ha aplicado un <strong>clearfix</strong> después de las 3 cajas flotando a la izquierda <em>'float: left'</em> para que las secciones posteriores no se superpongan a esta.</p>
+            <section id="floatLeft">
+                <div class="box floatLeft">1</div>
+                <div class="box floatLeft">2</div>
+                <div class="box floatLeft">3</div>
+            </section>
+            <div class="clearfix">CLEARFIX</div>
+            <hr>
+            <h2>Float: left y right</h2>
+            <section id="floatBoth">
+                <div class="box">1</div>
+                <div class="box" id="boxFloatRight">2</div>
+                <div class="box">3</div>
+            </section>
+            <hr>
+            <h2>Float image</h2>
+            <section id="floatImage">
+                <img id="imgLorem" src="img/lorem-ipsum.png" alt="Lorem Ipsum">
+                <p id="txtLorem"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur provident eligendi ea eius dolor nemo cum perferendis, itaque, possimus odit modi? Rerum similique eos perferendis ratione rem ipsum non quas.</span>
+                <span>Totam quo ad, mollitia reiciendis beatae quos earum, architecto ullam voluptatibus. Iusto vero ullam odio vel. Assumenda harum, aperiam! Dignissimos quia voluptatum consequatur expedita omnis et voluptas qui veritatis eveniet.</span>
+                <span>Facere recusandae dolor est ad neque, sapiente officia corporis dicta, delectus vero qui atque fuga eos, ut nemo. Quo, iste non ab consequatur at quia in fuga, dolorum esse eum.</span>
+                <span>Magnam, ut nesciunt officiis tempore blanditiis corporis aliquam amet! Aspernatur, inventore? Sint illo, perferendis mollitia similique sunt deserunt, reiciendis iste quos earum eaque voluptates. Totam vel rerum accusamus eaque distinctio!</span>
+                <span>Facere illum beatae tempore fuga eligendi explicabo possimus sunt nisi consequatur omnis quas animi ipsum perspiciatis magnam voluptatem officia cum, repellat a, rem voluptates dolorem tenetur iusto. Vitae facilis, eos.</span><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa aliquam adipisci, corporis provident delectus sapiente quae quibusdam fuga. Unde, et reprehenderit. Animi nobis, voluptatibus minus ducimus cupiditate illo, quibusdam atque!</span>
+                <span>Deserunt rerum error cumque ex soluta. Dicta voluptatibus perferendis amet accusantium nam nobis temporibus mollitia quae reprehenderit, sunt voluptatum libero provident doloremque fuga nesciunt, ea nihil. Qui tempore nemo ipsam!</span>
+                <span>Sit aperiam quidem dignissimos, quos voluptatibus impedit expedita nostrum accusamus! Consequatur nemo dignissimos fuga est assumenda repellat esse quia atque repellendus at harum consequuntur, sunt error incidunt molestiae, iure, perspiciatis.</span>
+                <span>Dicta labore numquam voluptas, pariatur, a mollitia voluptatum in ipsa, esse dolor cupiditate iste suscipit atque eaque quod nesciunt. Ab consequuntur unde quisquam, quod, vel omnis id voluptates deleniti voluptate!</span>
+                <span>Consequatur minima, dolores dolorum autem tenetur, pariatur numquam a ea beatae est praesentium doloremque temporibus. Qui vero ea voluptates ipsa totam temporibus necessitatibus architecto itaque officiis! Consequuntur officiis, non quibusdam!</span></p>
+            </section>
+            <hr>
+            <!--TODO: Clearfix con imagen a la izquierda-->
+            <h3>Clearfix</h3>
+            <p>Se ha colocado una div de clase <strong>clearfix</strong> después de la CAJA1 y CAJA2 para que no se posiciones la CAJA3 a la derecha de estas, aunque tenga espacio para ello. Con el "clearfix" limpiamos el espacio para que los siguientes elementos se posiciones después del elemento con clase clearfix.</p>
+            <p>Se ha colocado un 2. clearfix para respetar los límites de la sección (que tiene un width: 90%).</p>
+            <section id="clearfix">
+                <div class="box floatLeft">1</div>
+                <div class="box floatLeft">2</div>
+                <div class="clearfix">CLEARFIX</div>
+                <div class="box floatLeft">3</div>
+                <div class="clearfix">CLEARFIX</div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

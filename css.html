@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		h1 {
+			font-size: 2em;
+			color: peru!important;
+		}
+
+		/*  !important prevalece sobre cualquier otro estilo en caso de conflicto.*/
+
+		.container h1 {
+			color: blue;
+		}
+
+		.container header h1 {
+			color: red;
+		}
+
+		div.aviso {
+			background: red
+		}
+
+		div p {
+			Color: green;
+		}
+
+		div,
+		p {
+			Color: green;
+		}
+
+		a {
+			font-size: 20px;
+		}
+
+		a.link {
+			font-size: 30px;
+		}
+
+		div div.capa1,
+		div p.texto {
+			color: red;
+		}
+
+		p[class="at1"] {
+			color: yellow;
+		}
+
+		p[class~="at3"] {
+			color: blue;
+		}
+
+		p[class|="at3"] {
+			color: orangered;
+		}
+		div>p{
+			font-size:30px
+		}
+
+
+
+	</style>
+</head>
+
+<body>
+
+	<h1>CSS TiTULAR</h1>
+	<div class="container">
+
+
+		<h1>CSS</h1>
+		<div class="aviso">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati dolorem sint ipsam, necessitatibus! Amet vel temporibus, corrupti qui mollitia iure quis voluptates ullam dignissimos, culpa iusto enim quibusdam, modi saepe.</p>
+		</div>
+
+
+		<header>
+			<h1>Triple de mal hecho</h1>
+		</header>
+		<H2>Unidades relativas</H2>
+
+	</div>
+
+	<hr>
+	<h2>Ejercicios:</h2>
+	<br>
+	<br>
+	<br>
+	<h2>Ejemplo 8.7</h2>
+
+	<div>
+
+
+		<p class="texto">Parrafo-1</p>
+		<div class="texto">Parrafo-2</div>
+		<h3><a href="" class="link">Enlace-1</a></h3>
+		<a href="">Enlace-2</a>
+		<div class="capa1">Parrafo-3</div>
+		<div>Parrafo-4</div>
+	</div>
+
+	<div>
+		<p class="texto">Parrafo-1</p>
+		<div class="texto">Parrafo-2</div>
+		<h3><a href="" class="link">Enlace-1</a></h3>
+		<a href="">Enlace-2</a>
+		<div class="capa1">Parrafo-3</div>
+		<div>Parrafo-4</div>
+
+	</div>
+	<br><br><br>
+	<h2>Ejemplo Selector de atributos</h2>
+	<p class="at1">Parrafo-1</p>
+	<p class="at2 at3">Parrafo-2</p>
+	<p class="at3-at4">Parrafo-3</p>
+
+
+
+	<br><br><br>
+	<h2>Ejemplo Selector de hijos</h2>
+	<div>
+		<p><a href="">Parrafo-1</a></p>
+		<p>Parrafo-2</p>
+		<p class "prueba">Parrafo-3</p>
+	</div>
+
+	<br><br><br>
+	<h2>Ejemplo Selector adyacente</h2>
+	<div>
+		<p>Parrafo-1</p>
+		<p>Parrafo-2</p>
+		<p>Parrafo-3</p>
+	</div>
+
+
+</body>
+
+</html>

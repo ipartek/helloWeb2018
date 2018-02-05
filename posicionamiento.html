@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posicionamiento</title>
+    <a href="index.html">Volver...</a>
+</head>
+
+<body id="top">
+    <style>
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .desbordamiento {
+            border: 1px solid red;
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            overflow: auto;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: grey;
+            color: aquamarine;
+            margin: 5px;
+            font-size: 5em;
+            text-align: center;
+        }
+
+        .box-relative {
+            background-color: teal;
+            position: relative;
+            z-index: -1;
+            /*permite poner la capa detras*/
+            left: 40px;
+            bottom: 40px;
+
+        }
+
+        .box-absolute {
+            background-color: darksalmon;
+            position: absolute;
+            z-index: -1;
+            /*permite poner la capa detras*/
+            font-size: 2em;
+            left: 40px;
+            bottom: 40px;
+
+        }
+
+        a {
+            position: relative;
+            right: auto;
+        }
+
+        .caja {
+
+            background-color: darkcyan;
+            border-radius: 50%;
+            text-align: center;
+            width: 1em;
+        }
+
+        ul {
+            list-style-type: none;
+            background-color: cadetblue;
+        }
+
+        li {
+            display: inline;
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            background-color: antiquewhite;
+            border: 1px solid black
+        }
+
+        div#capa1 {
+            position: relative
+        }
+
+        div#capa2 {
+            position: absolute;
+            z-index: 2;
+            right: 5px;
+            top: 5px;
+
+        }
+
+        img {
+            width: 100%;
+            height: 90%;
+
+        }
+
+        div#imagen {
+            border: 1px solid black;
+            position: absolute display: inline-block;
+            background-image: url(img/fondo.jpg);
+            height: 200px;
+            width: 50%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        p#subir {
+            position: absolute;
+            top: 10em;
+            opacity: 100%;
+
+        }
+
+        p#subir:hover {
+            top: 0em;
+            height: 200px;
+        }
+
+        img {
+            height: 300px;
+            width: 300px
+        }
+
+        .card {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card p {
+            position: absolute;
+            bottom: 2px;
+            font-size: 1.4em;
+            background-color: (0, 0, 0, 0, 4);
+            color: azure;
+            padding: 0 10px;
+            transition-duration: 2s;
+
+        }
+
+        .card:hover p {
+            bottom: -25px;
+            transition-duration: 2s;
+            height: 300px;
+
+        }
+
+
+
+        div.capa {
+            border: 1px solid black;
+            font-size: 2em;
+               text-align: center;
+            /*height: 3em;
+            width: 3em;
+            margin: 2em;*/
+
+        }
+
+        div.float-right {
+            float: right
+        }
+
+        div.float-left {
+            float: left
+        }
+
+        div.float-none {
+            float: none;
+
+
+        }
+
+        div#contenedor {
+            border: 1px solid black;
+            padding: 2em;
+            margin: 2em;
+        }
+
+        img#foto {
+            float: left;
+            margin: 10px
+
+        }
+
+        p#parrafo {
+            text-align: justify;
+        }
+    </style>
+    <h1>Posicionamiento - Capitulo 9</h1>
+    <h2>Overflow -Desbordamiento</h2>
+    <div class="desbordamiento">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni eligendi deserunt dignissimos fugit, omnis recusandae rerum veniam sit ducimus minus eveniet molestias vero fugiat. Labore repudiandae ipsam molestiae voluptatum deserunt.</div>
+    <br>
+    <h2>Siguiente ejercicio: como ejercicio listado 9.1. Inline y block </h2>
+    <br>
+    <h2>Posicionamiento</h2>
+    <section id="relativo">
+        <h3>Relativo</h3>
+        <!-- div.box*3  quiero que me haga un div con la clase box 3 veces-->
+        <div class="box">1</div>
+        <div class="box box-relative">2</div>
+        <div class="box">3</div>
+    </section>
+
+    <section id="absoluto">
+        <h3>Absoluto</h3>
+        <!-- div.box*3  quiero que me haga un div con la clase box 3 veces-->
+        <div class="box">1</div>
+        <div class="box box-absolute">2 abs</div>
+        <div class="box">3</div>
+    </section>
+    <!--posicionar de forma fija y que suba al boton, mediante un enlace interno. Y Q -->
+    <!--anclam enlace interno #-->
+    <a href="#top">TOP</a>
+    <!--que es el stiky, hacer el efecto de google,-->
+    <!--menu de 3 secciones mensajes, con una bola dentro de la caja de mensajes indicando que hay 3 sin leer
+    nav>ul>li*3>a-->
+    <h3>Menu</h3>
+    <section id="menu">
+        <ul>
+            <li>
+                <div id="capa1">
+                    <a class="menu" href="">MENSAJES</a>
+                    <div id="capa2" class="caja">5</div>
+                </div>
+            </li>
+            <li><a class="menu" href="">USUARIOS</a></li>
+            <li><a class="menu" href="">OTRO</a></li>
+        </ul>
+
+    </section>
+
+    <!--caja de 150x150px el fondo de la caja es una imagen, debajo de la imagen poner un loreimspum que solo se ve una linea, y al dar el rator
+    con hoover se sube el texto con semitrasparencia -->
+    <br>
+    <br>
+    <h3>Imagen</h3>
+    <section>
+        <div id="imagen">
+
+            <p id="subir">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, nam, voluptatum. Illo dignissimos nihil reiciendis laudantium optio maxime temporibus deleniti eum, animi nostrum dolor eos iste fugiat rerum dolore ea.</p>
+
+        </div>
+    </section>
+
+    <h3>Imagen 2</h3>
+
+    <div class="card">
+        <img src="https://lh3.ggpht.com/ed2IQ1ml7drpOOTUgH98dFLCxD88N7c6sl-HdT-AN7dxQ2rCo9claMQaa0yxiK5iyeo=w300" alt="imagen love">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, nam, voluptatum. Illo dignissimos nihil reiciendis laudantium optio maxime temporibus deleniti eum, animi nostrum dolor eos iste fugiat rerum dolore ea.</p>
+
+    </div>
+    <section>
+        <h3>Propiedad float - figuras 9.8 y 9.9</h3>
+        <h4>Esta inicial</h4>
+        <div id="flotante">
+            <div class="box capa">Capa 1</div>
+            <div class="box capa">Capa 2</div>
+            <div class="box capa">Capa 3</div>
+        </div>
+        <h4>Capa 2 flota a la derecha y la capa 3 sube para ocupar si lugar</h4>
+        <div id="flotante">
+            <div class="box capa">Capa 1</div>
+            <div class="box capa float-right">Capa 2</div>
+            <div class="box capa">Capa 3</div>
+        </div>
+        <h4>Capa 2 flota a la izquierda y la capa 3 ocupa el lugarr</h4>
+        <div id="flotante">
+            <div class="box capa">Capa 1</div>
+            <div class="box capa float-left">Capa 2</div>
+            <div class="box capa float-none">Capa 3</div>
+        </div>
+        <h3 class="clearfix"></h3>
+        <h4>Las 3 cajas lotan a la izquierda respetando las posiciones</h4>
+        <div id="flotante">
+            <div class="box capa float-left">Capa 1</div>
+            <div class="box capa float-left">Capa 2</div>
+            <div class="box capa float-left">Capa 3</div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3 class="clearfix"></h3>
+    <section>
+        <h4  >figura 9.12</h4>
+        <div class="contenedor">
+            <img id="foto" src="img/love.png" alt="fondo">
+            <p id="parrafo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur possimus at nulla, alias quod ipsa, impedit quasi totam ab sed tempora deleniti maiores, assumenda autem est incidunt consequatur cupiditate nobis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex harum cumque placeat numquam ipsum eum quam natus consectetur? Laudantium dolores blanditiis quod, vitae tempore iure cum debitis magnam necessitatibus laboriosam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab id sequi, optio molestiae esse natus laborum voluptate harum tempora aperiam perferendis quis nostrum vero eum modi, provident, non impedit debitis! lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut possimus culpa at perferendis. Quam eius numquam consequuntur, iste porro eveniet. Aliquam labore sunt sapiente ullam sed repellendus facere? Quia, nesciunt?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quis unde, officiis similique nam sequi possimus ex quaerat. Iste id illum deleniti dolorem quae, doloribus repellendus hic reprehenderit numquam mollitia.</p>
+
+        </div>
+    </section>
+</body>
+</html>

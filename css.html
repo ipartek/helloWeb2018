@@ -1,3 +1,6 @@
+<!--Hacer ejercicios de todos los selectores de atributos avanzados, de hijos, adyacentes -->
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,15 +18,69 @@
         }
         h1{
             font-size: 2em;
-            color: peru;
+            color:peru !important;
+        }
+        .container h1{ /* los h1 que estén dentro de un elemento de la clase container*/
+            color:blue;
+        }
+
+        .container header h1{ /* los h1 que estén dentro de un header que a su vez este dentro de un elemento de la clase container*/
+            color:red;
+        }
+
+        /* Colores obtenidos de la página "surfsearchspot" con el plugin COLORZILLA
+                color:#00b5d6; rgb(0,181,214)Color azul claro
+                color:#357997; rgb(53, 121, 151); Azul oscuro
+                color:#E95B2A; rgb(233, 91, 42) Naranja*/
+
+        div .aviso{
+            background-color: red;
+        }
+
+        input{
+            padding: 5px 10px;
+        }
+        input[type="text"]{
+            padding:15px;
+        }
+
+
+        /*Selectores avanzados*/
+        p[class=atributo1]{ /*Es igual a*/
+            color:green;
+        }
+        p[class~=atributo2]{ /*Contine al menos*/
+            color:red;
+        }
+        p[lang^=d]{ /* Empieza por*/
+            background-color:yellow;
+        }
+        p[class|="aa"]{
+            color:chocolate;
+        }
+        p[class$=o]{ /*Acaba en*/
+            color:coral;
+        }
+        div+p{ /* Adyacente*/
+            color:fuchsia;
+        }
+        div.padre>p{
+            background-color:black;
+            color:white;
         }
     </style>
 </head>
 <body>
-   <div class="container">
+    <h1>CSS TITULAR</h1>
+    <div class="container">
         <h1>CSS</h1>
+        <div class="aviso">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure cumque error perspiciatis doloribus, non consectetur consequatur ullam dicta! Deleniti non quasi, at ipsa fuga nisi laboriosam minus maiores nemo, expedita.</p>
+        </div>
 
-
+        <header>
+            <h1>Triple de mal hecho</h1>
+        </header>
         <h2>Unidades relativas</h2>
         <dl>
             <dt>px</dt>
@@ -36,6 +93,45 @@
             <dd>La unidad de medida rem es muy similar a em, con la única diferencia de que no es escalable, esto quiere decir que no depende del elemento padre, sino del elemento raíz del documento, el elemento HTML. Rem significa “Root Em“, o sea, es un em basado en la raíz.</dd>
         </dl>
     </div>
+
+    <div>
+        <p class="atributo1" lang="en">
+            p[class=atributo1] </br>
+            Atributo = valor.Color verde
+        </p>
+        <p class="atrubuto1 atributo2">
+            p[class~=atributo2]</br>
+            Atributo class con 2 valores. Contiene uno de ellos. Color rojo.
+        </p>
+        <p class="aa-bb">
+            p[class|="aa"] </br>
+            Atributo con palabra y guiones. Color chocolate.
+        </p>
+        <p lang="de">
+            p[lang^=d]</br>
+            Atributo comience por un valor. Color amarillo.
+        </p>
+        <p class="atributo">
+            p[class$=o]</br>
+            Atributo acaba en. Color coral.
+        </p>
+    </div>
+    <p>
+        Primer p fuera de div (Adyacente).Color fuscia
+    </p>
+    <p>
+        Segundo p fuera de div (NO Adyacente).Color predefinido.
+    </p>
+    <div class="padre">
+        <p>
+        div.padre>p </br>
+        P dentro de div. Hijo 1. Fondo negro y letra blanca
+        </p>
+        <p>
+        P dentro de div. Hijo 2. Fondo negro y letra blanca
+        </p>
+    </div>
+
 
 </body>
 </html>

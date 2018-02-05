@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Posicionamiento</title>
+</head>
+<body id="top">
+   <style>
+       .desbordamiento{
+            border:1px solid red;
+            width: 200px;
+            height: 200px;
+            overflow: auto;
+       }
+
+       .relative{
+           position: relative;
+       }
+
+       .box{
+           width:100px;
+           height: 100px;
+           background-color:darkslategray;
+           color:#FFF;
+           margin:5px;
+           font-size: 5em;
+           text-align: center;
+           position: relative;
+           z-index: 20;
+       }
+
+       .box-relative{
+           background-color: teal;
+           position:absolute;
+           top:0px; /* pone px en la zona de arriba--> +(baja) y - (sube)*/
+           left: 40px; /* pone px en la zona de izda--> +(mueve a dcha) y - (mueve a izda)*/
+           z-index:12;
+       }
+
+       .ancla{
+           position: fixed;
+           border:1px solid blue;
+           bottom:20px;
+           right:20px;
+
+       }
+
+       li{
+           display: inline-block;
+           height: 30px;
+           width: 150px;
+           background-color: #BBB;
+           list-style: none;
+           text-align: left;
+           padding: 15px;
+       }
+
+       li:hover{
+           background-color: #999;
+       }
+
+       ul a{
+           color:#FFF;
+           text-decoration:none;
+       }
+
+       span.aviso{
+           width: 1em;
+           font-size: 1em;
+           text-align: center;
+           position: absolute;
+           top:5px;
+           right: 5px;
+           background-color: #F00;
+           color:#FFF;
+           border-radius: 50%;
+       }
+
+       .sticky{
+           position: sticky;
+           top:0;
+           background-color: #0A0;
+       }
+
+       .over{
+           position:relative;
+           border:1px solid black;
+           width: 450px;
+           height: 282px;
+           overflow: hidden;
+       }
+
+       /* SUBIR TEXTO SOBRE IMAGEN SEGUN SE PASA EL CURSOR
+       Forma mia */
+
+       .over p{
+           position: absolute;
+           background-color:rgba(255,255,255,0.5);
+           font-weight: bold;
+           top:230px;
+           transition-duration: 2s;
+       }
+       .over:hover > p{
+           top: 5px;
+           transition-duration: 2s;
+       }
+
+       /* Forma del profesor */
+        /*
+       .over p{
+           position: absolute;
+           background-color:rgba(255,255,255,0.5);
+           font-weight: bold;
+           top: 300px;
+           left:5px;
+           transition-duration: 2s;
+       }
+
+       .over:hover p{
+           top:5px;
+       }
+       */
+
+       .capa{
+           height: 150px;
+           width: 150px;
+           border: 2px solid black;
+           font-size: 3em;
+           font-family: fantasy;
+           display: block;
+           margin-bottom: 10px;
+       }
+       .flotanteizda{
+           float:left;
+           border: 2px solid red;
+       }
+       .flotantedcha{
+           float:right;
+           border: 2px solid red;
+       }
+
+       /*CODIGO DE CLEARFIX TUTORIAL CAMPUS*/
+       .clearfix:before, .clearfix:after {
+           content: "";
+           display: table;
+       }
+        .clearfix:after {
+        clear: both;
+       }
+        .clearfix {
+            *zoom: 1;
+       }
+
+       ul.clearfix{
+            list-style: none;
+            background: blue;
+        }
+        ul.clearfix li {
+            color:black;
+            float: left;
+            margin: 10px;
+        }
+       /**************************************************/
+
+       hr{
+           clear: both;
+       }
+    </style>
+
+    <!-- EJERCICIOS A HACER
+
+    Figura 9.2 (elementos en bloque y en linea)
+    Posicionamiento relativo
+    Posicionamiento fixed (boton para subir)
+    Qué es sticky
+    Hacer las "pestañas" Mensaje, Usuarios y Otros. Incluir una bola en la que indique como que hay mensajes sin leer
+    Recuadro de tamaño imagen y debajo un texto, que al hacer "hover" suba el texto hacia arriba
+    Ejercicios con cajas flotantes 9.8-9.12
+    Ejercicio tutorial clearflex
+    -->
+
+    <h1>Posicionamiento - Capítulo 9</h1>
+
+    <h2>Overflow - Desbordamiento</h2>
+    <div class="desbordamiento">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni illum aut ipsum sequi, porro dicta earum maxime laborum voluptate delectus minus, incidunt eos molestiae id eveniet. Autem architecto commodi aspernatur.
+    </div>
+
+    <hr>
+
+    <h2>Posicionamiento relativo</h2>
+
+    <section class="relative">
+        <h3>Relativo</h3>
+        <div class="box">
+            1
+        </div>
+        <div class="box box-relative">
+            2
+        </div>
+        <div class="box">
+            3
+        </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="ancla">
+        <a href="#top"> <img src="img/flecha_arriba.jpg" alt="arriba" width="35" height="35" border="0"></a>
+    </div>
+    </section>
+
+    <hr>
+
+    <h2>POSICIONAMIENTO STICKY</h2>
+
+    <div>
+        <h3 class="sticky">TITULO FIJADO CON STICKY</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam alias, quae qui voluptatum quis similique doloremque doloribus dolorum, unde tempore et ipsum consectetur illo vero quidem odio, nemo sint reprehenderit!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam alias, quae qui voluptatum quis similique doloremque doloribus dolorum, unde tempore et ipsum consectetur illo vero quidem odio, nemo sint reprehenderit!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam alias, quae qui voluptatum quis similique doloremque doloribus dolorum, unde tempore et ipsum consectetur illo vero quidem odio, nemo sint reprehenderit!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam alias, quae qui voluptatum quis similique doloremque doloribus dolorum, unde tempore et ipsum consectetur illo vero quidem odio, nemo sint reprehenderit!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam alias, quae qui voluptatum quis similique doloremque doloribus dolorum, unde tempore et ipsum consectetur illo vero quidem odio, nemo sint reprehenderit!</p>
+    </div>
+
+    <div>
+        <h3 class="sticky">QUEDA FIJADO MIENTRAS EL ELEMENTO SE MUESTRA</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam alias, quae qui voluptatum quis similique doloremque doloribus dolorum, unde tempore et ipsum consectetur illo vero quidem odio, nemo sint reprehenderit!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam alias, quae qui voluptatum quis similique doloremque doloribus dolorum, unde tempore et ipsum consectetur illo vero quidem odio, nemo sint reprehenderit!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam alias, quae qui voluptatum quis similique doloremque doloribus dolorum, unde tempore et ipsum consectetur illo vero quidem odio, nemo sint reprehenderit!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam alias, quae qui voluptatum quis similique doloremque doloribus dolorum, unde tempore et ipsum consectetur illo vero quidem odio, nemo sint reprehenderit!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam alias, quae qui voluptatum quis similique doloremque doloribus dolorum, unde tempore et ipsum consectetur illo vero quidem odio, nemo sint reprehenderit!</p>
+    </div>
+    <hr>
+
+    <h2>MENU NAVEGACION</h2>
+    <nav>
+        <ul>
+            <li class="relative">MENSAJES
+               <span class="aviso">5</span>
+            </li>
+            <li>USUARIOS</li>
+            <li>OTROS</li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <h2>OVERFLOW</h2>
+
+    <div class="over">
+        <img src="img/monte.jpg" alt="image">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque nesciunt amet dolore assumenda blanditiis laborum voluptas labore sapiente, excepturi recusandae esse pariatur possimus, fugiat harum aliquam! Veritatis neque consequatur minus.</p>
+    </div>
+
+    <hr>
+    <h2>ELEMENTOS FLOTANTES</h2>
+    <div>
+       <h3>NINGUN FLOTANTE</h3>
+        <div class="capa"><span>Capa 1</span></div>
+        <div class="capa"><span>Capa 2</span></div>
+        <div class="capa"><span>Capa 3</span></div>
+    </div>
+    <div>
+       <h3>CAPA 2 FLOTANTE IZDA</h3>
+        <div class="capa"><span>Capa 1</span></div>
+        <div class="capa flotanteizda"><span>Capa 2</span></div>
+        <div class="capa"><span>Capa 3</span></div>
+    </div>
+    <div>
+       <h3>CAPA 2 FLOTANTE DCHA</h3>
+        <div class="capa"><span>Capa 1</span></div>
+        <div class="capa flotantedcha"><span>Capa 2</span></div>
+        <div class="capa"><span>Capa 3</span></div>
+    </div>
+    <div>
+       <h3>CAPAS 1, 2 y 3 FLOTANTES IZDA</h3>
+        <div class="capa flotanteizda"><span>Capa 1</span></div>
+        <div class="capa flotanteizda"><span>Capa 2</span></div>
+        <div class="capa flotanteizda"><span>Capa 3</span></div>
+    </div>
+
+    <hr>
+
+    <div>
+      <h2>ELEMENTOS FLOTANTES RESPECTO IMAGEN</h2>
+       <img class="flotanteizda" src="img/coche.jpg" alt="coche" width="200px" height="200px">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In ducimus labore cumque, recusandae expedita quisquam totam aliquam earum iure eaque dolore autem commodi officiis ullam accusantium, consectetur ut necessitatibus sapiente?
+        Ab facere debitis in ipsum corporis repellat voluptatum saepe mollitia aliquam dolore, minus magni facilis dolorum blanditiis, assumenda velit eius quae accusamus soluta beatae. Voluptatum itaque corporis, mollitia ipsam in.
+        Hic voluptatibus quis aspernatur amet ipsam voluptate incidunt culpa totam accusamus, id magnam voluptatem dolorem iste molestiae autem. Alias quisquam vero commodi deserunt, consequuntur qui sed dolorum perferendis suscipit enim.
+        Labore recusandae velit nobis debitis dicta molestiae possimus nihil aut quia. Molestias est dolor eum repellat sequi, laudantium aut molestiae quas fugit enim tempora dolorem, a aperiam incidunt excepturi optio!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. In ducimus labore cumque, recusandae expedita quisquam totam aliquam earum iure eaque dolore autem commodi officiis ullam accusantium, consectetur ut necessitatibus sapiente?
+        Ab facere debitis in ipsum corporis repellat voluptatum saepe mollitia aliquam dolore, minus magni facilis dolorum blanditiis, assumenda velit eius quae accusamus soluta beatae. Voluptatum itaque corporis, mollitia ipsam in.
+        Hic voluptatibus quis aspernatur amet ipsam voluptate incidunt culpa totam accusamus, id magnam voluptatem dolorem iste molestiae autem. Alias quisquam vero commodi deserunt, consequuntur qui sed dolorum perferendis suscipit enim.
+        Labore recusandae velit nobis debitis dicta molestiae possimus nihil aut quia. Molestias est dolor eum repellat sequi, laudantium aut molestiae quas fugit enim tempora dolorem, a aperiam incidunt excepturi optio!</p>
+    </div>
+
+
+    <hr>
+    <!--CODIGO DE CLEARFIX TUTORIAL CAMPUS-->
+    <div>
+        <ul class="clearfix">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+</body>
+</html>

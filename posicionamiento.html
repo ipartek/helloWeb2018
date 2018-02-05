@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posicionamiento</title>
+    <style>
+        div {
+            border: 3px solid black;
+            position: relative;
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            background-color: blueviolet;
+            z-index: 2;
+            text-align: center;
+            padding: 10px;
+        }
+
+        div#capa2 {
+            position: relative;
+            bottom: 50px;
+            left: 50px;
+            background-color: blanchedalmond;
+            z-index: 1;
+        }
+
+        div#capa5 {
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            background-color: blanchedalmond;
+        }
+
+        div#capa6,
+        div#capa4 {
+            position: static;
+        }
+
+        section {
+            position: relative;
+        }
+
+        img#flecha {
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+        }
+
+        a.flecha {
+            position: fixed;
+            bottom: 1%;
+            right: 1%;
+        }
+
+        nav {
+            margin: 0px;
+        }
+
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li {
+            display: inline-block;
+            margin: -.5%;
+            padding: 15px;
+            background-color: blue;
+            color: white;
+            position: relative;
+            font-size: 2em;
+            border: 3px solid darkgrey;
+            text-decoration: none;
+        }
+
+        span.numero {
+            position: absolute;
+            background-color: black;
+            right: 1%;
+            top: 1%;
+            border-radius: 25%;
+            font-size: .8em;
+        }
+
+        div.card{
+            position: relative;
+            background-color: white;
+            height: 300px;
+            width: 300px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .card img {
+            height: 300px;
+            width: 300px;
+        }
+
+        .card p{
+            position: absolute;
+            top: 250px;
+            font-size: 1.2em;
+            color: rgba(255,255,255,0.8);
+            padding: 10px;
+            transition-duration: 2s;
+        }
+
+        .card:hover p{
+            top:100px;
+            transition-duration: 2s;
+        }
+
+
+    </style>
+</head>
+
+<body>
+   <a href="index.html">Volver al indice</a>
+    <h1 id="top">POSICIONAMIENTO</h1>
+
+    <h2>Relativo</h2>
+
+    <div id="capa1">Capa-1</div>
+    <div id="capa2">Capa-2</div>
+    <div id="capa3">Capa-3</div>
+
+    <section>
+        <h2>Absoluto</h2>
+
+        <div id="capa4">Capa-4</div>
+        <div id="capa5">Capa-5</div>
+        <div id="capa6">Capa-6</div>
+    </section>
+
+
+
+
+
+    <section>
+
+        <h2>Botonera</h2>
+        <nav>
+            <ul>
+                <li>Mensajes <span class="numero">1</span></li>
+                <li>Usuarios <span class="numero">2</span></li>
+                <li>Otro <span class="numero">3</span></li>
+            </ul>
+        </nav>
+
+
+    </section>
+
+    <section>
+
+        <h2>Imagen con Texto</h2>
+
+        <div class="card">
+            <img id="flor" src="/img/flor.jpg" alt="flor">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores assumenda repellat sapiente dolore, tempore officia laudantium nam corrupti sit, deleniti dolor earum doloribus in ad iusto architecto. A, animi possimus!</p>
+        </div>
+
+    </section>
+
+
+    <a class="flecha" href="#top"><img id="flecha" src="/img/flecha_arriba.png" alt="Top"></a>
+</body>
+</html>

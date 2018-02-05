@@ -32,8 +32,8 @@
             position: absolute;
             bottom: 50px;
             left: 55px;
-            background-color: chartreuse;
-        }
+            background-color: chartreuse ;
+       }
 
         #arriba {
             position: fixed;
@@ -50,7 +50,7 @@
 
         }
 
-        li > a {
+        li>a {
             display: inline-block;
             height: 50px;
             width: 200px;
@@ -76,8 +76,7 @@
             top: -25px;
         }
 
-        #move {
-            /*div*/
+        #move {/*div*/
             display: inline-block;
             height: 275px;
             width: 500px;
@@ -90,16 +89,14 @@
 
         }
 
-        #oculto {
-            /*p*/
+        #oculto {/*p*/
             position: absolute;
             top: 15em;
             background-color: aqua;
             opacity: 0.5;
         }
 
-        #oculto:hover {
-            /*p*/
+        #oculto:hover {/*p*/
             top: 0em;
             transition-duration: 1s;
             height: 275px;
@@ -110,10 +107,11 @@
             border-bottom: 1px solid #989EA4;
             border-top: 1px solid #717D85;
             color: #FFF;
-            margin-bottom: 2em;
+            margin-bottom: 2em;;
             padding: 2px 0 0 12px;
             position: -webkit-sticky;
             position: sticky;
             top: -1px;
+            z-index: 999;
 
         }

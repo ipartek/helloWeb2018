@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posicionamiento</title>
+</head>
+<body id="TOP">
+
+
+    <style>
+
+        .desbordamiento{
+            border: 1px solid red;
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            overflow: auto;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background: green;
+            margin: 5px;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .box-relative{
+            background-color: teal;
+            position: relative;
+            top: -30px;
+            left: 40px;
+        }
+
+        .figura92{
+            border: 1px solid red;
+            display: inline-block;
+        }
+
+        span{
+          display: inline-block;
+          border: 2px dotted red;
+          padding: 1px;
+      }
+
+        #absolute{
+            position: relative;
+        }
+
+        .box-absolute{
+            background-color: teal;
+            position: absolute;
+             width: 100px;
+            height: 100px;
+            margin: 5px;
+            font-size: 1em;
+            text-align: center;
+            left: 80px;
+            top: 50px;
+
+        }
+
+
+        .Capa_padre{
+            position: relative;
+            font-size: 25px;
+            border: 2px solid #000000;
+            margin: 10px;
+            padding: 10px;
+            height: 200px;
+            width: 500px;
+            background-color: white;
+        }
+
+        div#Capa2{
+            position: absolute;
+            top: 20px;
+            left: 100px;
+            height: 150px;
+            width: 150px;
+            background-color: blue;
+            color: white;
+        }
+
+
+
+        li{
+            position: relative;
+            display: inline-block;
+            border: 1px solid red;
+            float: left;
+            height: 50px;
+            width: 150px;
+            font-size: 2em;
+        }
+
+        .bubble{
+            position: absolute;
+            display: inline-block;
+            border: 1px solid red;
+            border-radius: 50%;
+            border-color: red;
+            right: 0px;
+            top: 0px;
+            font-size: 0.5em;
+        }
+
+
+        /* card *****/
+
+        .card{
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        .card p{
+            position: absolute;
+            bottom: -80px;
+            transition-duration: 2s;
+        }
+
+        .card p:hover{
+            bottom: -20px;
+            transition-duration: 5s;
+            height: 300px;
+        }
+
+        .capas{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            margin: 2px;
+        }
+
+
+
+        .capa_flotar_derecha{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            margin: 2px;
+            float: right;
+        }
+
+        .capa_flotar_izquierda{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            margin: 2px;
+            float: left;
+        }
+
+        #contenedor{
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+            width: 550px;
+        }
+
+        #foto{
+            float: left;
+            border: 1px solid black;
+            height: 180px;
+            width: 170px;
+            background-color: green;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        #parrafo{
+            font-size: 16px;
+            text-align: justify;
+        }
+
+
+
+    </style>
+
+
+    <h1>Posicionamiento - Capitulo 9</h1>
+
+    <h2>Overflow - Desbordamiento</h2>
+
+    <div class="desbordamiento">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laboriosam quo, ex, facere sunt in veniam voluptates omnis quis et nulla a, beatae, vero suscipit dolor dolore earum tempora. Assumenda.
+    </div>
+
+    <hr>
+
+
+    <h2>Posicionamiento</h2>
+
+    <section id="relative">
+        <h3>Relativo</h3>
+        <div class="box">1</div>
+        <div class="box box-relative">2</div>
+        <div class="box">3</div>
+    </section>
+
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+
+    <button>
+    <a href="#relative">Relativo</a>
+    </button>
+
+    <button>
+        <a href="#TOP">TOP</a>
+    </button>
+
+
+    <h4>Figura 9.2</h4>
+
+    <div class="figura92">
+        Marion Robert Morrison, de nombre artístico <span>John Wayne</span> y conocido popularmente como The Duke
+    </div>
+
+    <h5>Figura 9.6</h5>
+
+
+    <section id="absolute">
+       <h6>Absoluto</h6>
+        <div class="box">Capa-1</div>
+        <div class="box-absolute">Capa-2</div>
+        <div class="box">Capa-3</div>
+    </section>
+
+
+    <h7>Figura 9.7</h7>
+
+    <div class="Capa_padre">Capa-1
+        <div id="Capa2">Capa-2</div>
+    </div>
+    <div class="Capa_padre">Capa-3</div>
+
+
+    <nav id="Ejercicio">
+        <ul>
+            <li>
+                    <h8>Mensajes</h8>
+                    <span class="bubble">5</span>
+            </li>
+            <li>
+                    <h9>Usuarios</h9>
+                    <span class="bubble">3</span>
+            </li>
+            <li>
+                    <h10>Otro</h10>
+                    <span class="bubble">1</span>
+            </li>
+        </ul>
+    </nav>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+   <div class="card">
+
+      <img src="https://img.discogs.com/qGtCC8ruEjHn01O3KM9YREKZtAs=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-41441-1444396064-7860.jpeg.jpg" alt="texto alternativo">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In ducimus, obcaecati sed animi eum exercitationem recusandae maxime ipsum dolore commodi, veniam sequi neque fugiat fuga odit esse molestias architecto aspernatur.</p>
+
+   </div>
+
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+   <h11>ELEMENTOS FLOTANTES</h11>
+
+   <h12>Figura 9.8</h12>
+
+   <div class="capas">Capa-1</div>
+   <div class="capas">Capa-2</div>
+   <div class="capas">Capa-3</div>
+
+   <h13>Figura 9.9</h13>
+
+   <div class="capas">Capa-1</div>
+   <div class="capa_flotar_derecha">Capa-2</div>
+   <div class="capas">Capa-3</div>
+
+   <h14>Figura 9.10</h14>
+
+   <div class="capas">Capa-1</div>
+   <div class="capa_flotar_izquierda">Capa-2</div>
+   <div class="capas">Capa-3</div>
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+   <h15>Figura 9.11</h15>
+
+   <br>
+   <br>
+
+   <div class="capa_flotar_izquierda">Capa-1</div>
+   <div class="capa_flotar_izquierda">Capa-2</div>
+   <div class="capa_flotar_izquierda">Capa-3</div>
+
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+   <h16>Figura 9.12</h16>
+
+   <br>
+   <br>
+
+
+   <div id="contenedor">
+    <img id="foto" src="https://www.decathlon.es/media/835/8352835/classic_b982b27387d2466bb92fd90f988c5984.jpg" alt="punta de acero">
+    <div id="parrafo">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,
+    </div>
+    </div>
+
+
+</body>
+
+
+
+</html>
+

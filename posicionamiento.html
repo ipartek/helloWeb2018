@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posicionamiento</title>
+    <style>
+        body {
+            font-family: "Century Gothic";
+        }
+
+        section {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+        }
+
+        ul li {
+            list-style: none
+        }
+
+        .desbordamiento {
+            border: 1px solid red;
+            display: block;
+            width: 200px;
+            height: 100px;
+            overflow: auto;
+            margin: 0 auto;
+        }
+
+        #relativo {
+            position: relative;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: grey;
+            color: white;
+            margin: 5px;
+            font-size: 5em;
+            text-align: center
+        }
+
+        .box-relative {
+            background-color: teal;
+            position: relative;
+            top: -50px;
+            left: 50px;
+        }
+
+        .box-absolute {
+            background-color: teal;
+            position: absolute;
+            top: 60px;
+            left: 50px;
+        }
+
+        #imgtop {
+            position: fixed;
+            width: 50px;
+            right: 20px;
+            bottom: 20px;
+        }
+
+        #botonera {
+            margin-top: 200px;
+            margin: 0 auto;
+        }
+
+        #botonera ul {
+            padding: 0;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        #botonera ul li {
+            margin: 0 -1%;
+            width: 30%;
+            background-color: lightblue;
+            display: inline-block;
+            border: 1px solid cadetblue;
+            padding: 10px;
+            font-size: 1.5em;
+            color: white;
+            text-align: center
+        }
+
+        #botonera ul li a {
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+        }
+
+        #botonera span {
+            padding: 0px;
+            background-color: rgba(127, 127, 127, 0.7);
+            display: inline-block;
+            width: 2em;
+            height: 2em;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 0.5em;
+            position: absolute;
+            right: -15px;
+            top: -10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #fototexto {
+            width: 50%;
+            max-width: 300px;
+            border: 2px black solid;
+            border-radius: 5px;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        #fototexto p {
+            color: grey;
+            font-weight: bold;
+            padding: 10px;
+            text-align: justify;
+
+        }
+
+        #fototexto:hover img{
+            object-fit: cover;
+            width: auto;
+        }
+
+        #fototexto:hover p {
+            background-color: rgba(255, 255, 255, 0.6);
+            color: black;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        #fototexto img {
+            width: 100%;
+            transition: width 2s;
+        }
+    </style>
+</head>
+
+<body id="top">
+    <!-- caja 150*150, fondo imagen, al hacer hover sube el texto, con opacidad-->
+    <nav>
+        <ul>
+            <li><a href="bitcoin.html">Ver el valor del bitcoin</a></li>
+            <li><a href="sorteo.html">Sorteo</a></li>
+            <li><a href="index.html">Índice</a></li>
+        </ul>
+    </nav>
+
+    <h1>Posicionamiento - Capítulo 9</h1>
+
+    <h2>Overflow - Desbordamiento</h2>
+
+    <div class="desbordamiento">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta quidem aut ea obcaecati aperiam, ad. Aperiam ratione explicabo temporibus corporis fugit tenetur alias possimus. Quis incidunt culpa, voluptatem iure recusandae.
+    </div>
+
+    <hr>
+
+
+
+    <h2>Posicionamiento Relativo</h2>
+
+    <section id="relativo">
+        <h3>Relativo</h3>
+        <div class="box">1</div>
+        <div class="box box-relative">2</div>
+        <div class="box">3</div>
+    </section>
+
+    <hr>
+
+
+
+    <h2>Posicionamiento Absoluto</h2>
+
+    <section id="relativo">
+        <h3>Relativo</h3>
+        <div class="box">1</div>
+        <div class="box box-absolute">2</div>
+        <div class="box">3</div>
+    </section>
+
+    <hr>
+
+    <h2>Botonera</h2>
+
+    <nav id="botonera">
+        <ul>
+            <li><a href="#">Mensajes <span>5</span></a></li>
+            <li><a href="#">Usuarios <span>3</span></a></li>
+            <li><a href="#">Otros <span>1</span></a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <h2>Imagen con texto</h2>
+
+    <section id="fototexto">
+        <img src="https://picsum.photos/500/500" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque consequatur, fugit laudantium sit! Natus ducimus, sunt aliquid? Nisi quas illo velit nulla odio sint inventore dolorem, maiores molestias laudantium libero?</p>
+    </section>
+
+    <a href="#top"><img id="imgtop" src="img/top.png" alt=""></a>
+
+</body>
+</html>

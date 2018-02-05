@@ -37,7 +37,9 @@
     left: 40px;
     z-index: -1;
 }
-
+.box-raro{
+    color:white;
+}
 .box-float-right {
     float: right;
 }

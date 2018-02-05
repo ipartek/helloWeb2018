@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Posicionamiento CSS</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Encode+Sans+Expanded');
+
+        *{
+            font-family: 'Encode Sans Expanded', sans-serif;
+        }
+        /*título H2*/
+        h1{
+            color: #E66C7E;
+            border-bottom: 3px solid #E66C7E;
+            font-weight: 400;
+            margin-bottom: 57px;
+            text-align: center;
+            text-indent: 24px;
+            text-transform: uppercase;
+        }
+
+        h2{
+            color: #67BE9B;
+            letter-spacing: 10px;
+        }
+
+        .desbordamiento{
+            border: 1px solid #E66C7E;
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            overflow: auto;
+        }
+
+        /*cajas*/
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            color: white;
+            margin:5px;
+            font-size: 5em;
+            text-align: center;
+         }
+
+        .box-relative{
+            position: relative;
+            background-color: darkgrey;
+            top: 30px;
+            left: 120px;
+            z-index: -1;
+        }
+        /*elemento en bloque con elemento en línea en su interior*/
+        .elementito{
+            font-size: 20px;
+            border: 2px;
+            border-style: solid;
+            margin:10px;
+            padding:10px;
+        }
+
+        span{
+            border:3px dotted;
+        }
+
+        /*menú*/
+        ul.menu {
+            position: relative;
+            background: #fff;
+            margin: auto;
+            padding: 30px;
+            list-style: none;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow:  1px 1px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .menu li{
+            display: inline-block;
+        }
+
+        .menu li a {
+            width: 225px;
+            padding-left: 20px;
+            height: 50px;
+            line-height:50px;
+            display: block;
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: #686868;
+            transition: all 0.2s linear;
+        }
+
+        .menu li a:hover {
+            background: #EFEFEF;
+        }
+
+        .menu li.selected a {
+            background: #EFEFEF;
+        }
+
+        .menu li a.usuarios {
+            border-left: 5px solid #008747;
+        }
+        .menu li a.mensajes {
+            border-left: 5px solid #FECf54;
+        }
+
+        .menu li a.otros {
+            border-left: 5px solid #CD2130;
+        }
+
+        .menu li:first-child a:hover,
+        .menu li:first-child a {
+            border-radius: 5px 5px 0 0;
+        }
+
+        .menu li:last-child a:hover,
+        .menu li:last-child a {
+            border-radius: 0 0 5px 5px;
+        }
+
+        .menu li a:hover i {
+            color: #EA4F35;
+        }
+
+        .menu em {
+            font-size: 10px;
+            background: #EA4F35;
+            padding: 3px 5px;
+            border-radius: 10px;
+            font-style: normal;
+            color: #FFF;
+            margin-top: 17px;
+            margin-right: 15px;
+            line-height: 10px;
+            height: 10px;
+            float: right;
+        }
+
+        /*to top*/
+
+        #boton-fijo {
+            position: fixed;
+            bottom: 0px;
+            right: 10px;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 0 auto 40px;
+            background-color: #16A085;
+            text-decoration: none;
+        }
+
+        /*imagen con texto*/
+        .imagen{
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+        }
+
+       .imagen p{
+            position: absolute;
+            bottom: -14px;
+            font-size: 0.8em;
+            color:#fff;
+            padding: 0 10px;
+            background-color: rgba(255, 255, 255, 0.34);
+           transition-duration: 2s;
+        }
+
+        .imagen:hover p{
+           transition-duration: 2s;
+           bottom: 55px;
+        }
+
+        /*cajas flotantes*/
+        .cajas-flotantes div{
+            font-size:25px;
+            border:2px;
+            border-style:solid;
+            margin:10px;
+            padding:10px;
+            height:200px;
+            background-color:white;
+            width:300px;
+        }
+
+        #caja2{
+            float: right;
+            margin: 0px;
+        }
+
+        #caja2b{
+            float:left;
+        }
+
+        .cajas-flotantes div span{
+            float:left;
+            border:none;
+        }
+
+        .cajas-flotantes2 div{
+            float:left;
+            font-size:25px;
+            border:2px;
+            border-style:solid;
+            margin:10px;
+            padding:10px;
+            height:200px;
+            background-color:white;
+            width:300px;
+        }
+
+        hr{
+            clear: both;
+        }
+
+        #caja3{
+           display: none;
+        }
+
+
+        /*imagen con texto alrededor*/
+        div#contenedor{
+            border:1px solid black;
+            margin:5px;
+            padding:5px;
+            width:550px;
+            margin: 0px auto;
+        }
+
+        img#foto{
+            float: left;
+            margin-right: 10px;
+            margin-bottom: 10px;
+		}
+
+        div#texto-envolvente{
+            font-size:16px;
+            text-align:justify;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body id="top">
+  <!-- poner un recuadro con un boton que lleve al top pegarlo abajo a la drecha con fixed-->
+  <!-- Mirar que es el sticky-->
+
+<h1>Posicionamiento CSS - Capítulo 9</h1>
+<h2>Ejemplo OVERFLOW (desbordamiento)</h2>
+    <div class="desbordamiento">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam provident deserunt, nihil natus incidunt, quas exercitationem aliquam minima aliquid voluptatem distinctio sequi similique, laborum nisi qui sunt facilis quidem! Quasi.
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h2>Posicionamiento</h2>
+       <section id="relativo">
+           <h3>Relativo</h3>
+           <div class="box">1</div>
+           <div class="box box-relative">2</div>
+           <div class="box">3</div>
+        </section>
+   <br>
+  <hr>
+  <h2>Elemento en Bloque con elemento en línea en su interior</h2>
+  <div id="elementito">
+	Marion Robert Morrison, de nombre artístico <span>John Wayne</span> y conocido popularmente como The Duke
+	</div>
+<hr>
+
+<h2>Menú</h2>
+     <ul class="menu">
+        <li class="selected"><a class="mensajes" href="#">Mensajes <em>5</em></a></li>
+        <li><a class="usuarios" href="#">Usuarios</a></li>
+        <li><a class="otros" href="#">Otros</a></li>
+     </ul>
+<hr>
+
+<h2>Imagen con texto desplazable hacia arriba</h2>
+   <div class="imagen">
+        <img src="/img/img01.jpg">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, error eius, est magnam beatae autem saepe ab at excepturi repellat incidunt maxime consequuntur assumenda quibusdam! Quia, laboriosam nihil maxime dolorum.
+        </p>
+    </div>
+<hr>
+
+<h2>Tres cajas antes de "float"</h2>
+    <div class="cajas-flotantes">
+        <div>
+            Caja-1
+        </div>
+        <div>
+            Caja-2
+        </div>
+        <div>
+            Caja-3
+        </div>
+    </div>
+<hr>
+
+<h2>Tres cajas: CAJA 2 "float right"</h2>
+     <div class="cajas-flotantes">
+        <div>
+            Caja-1
+        </div>
+        <div id="caja2">
+            Caja-2
+        </div>
+        <div>
+            Caja-3
+        </div>
+    </div>
+<hr>
+
+<h2>Tres cajas:una caja se coloca encima de la otra</h2>
+     <div class="cajas-flotantes">
+        <div>
+           <span>Caja-1</span>
+        </div>
+        <div id="caja2b">
+            <span>Caja-2</span>
+        </div>
+        <div>
+           <span id="caja3">Caja-3</span>
+        </div>
+    </div>
+<hr>
+
+<h2>Tres cajas "float left"</h2>
+ <div class="cajas-flotantes2">
+        <div>
+            Caja-1
+        </div>
+        <div>
+            Caja-2
+        </div>
+        <div>
+            Caja-3
+        </div>
+    </div>
+<hr>
+
+<h2>Imagen con texto</h2>
+<div id="contenedor">
+	<img id="foto" src="img/img02.jpg" alt="imagen 2">
+	<div id="texto-envolvente">
+		 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat diam non urna cursus, sit amet rhoncus ligula venenatis. Mauris mollis quam sapien, vitae facilisis orci ornare id. Donec in pulvinar lectus. Sed sit amet libero sit amet eros luctus ullamcorper. Nam odio elit, aliquet quis tristique eu, consectetur nec leo. In ut nisi et lacus hendrerit facilisis non vel diam. Vestibulum pellentesque lacinia magna, et feugiat felis dictum vel. Praesent elementum urna feugiat volutpat mattis. Praesent sodales sapien id scelerisque viverra. Morbi vel mauris orci. Donec in egestas orci, vel placerat quam. Mauris euismod ut ipsum eget iaculis.Proin urna turpis, blandit vitae nisi ac, ultrices gravida nunc. Ut vehicula eros in ipsum egestas ultricies. Mauris ut mauris justo. Mauris ultricies magna sed mi rutrum sodales. Sed vitae venenatis nulla. Curabitur risus arcu, mattis feugiat malesuada tincidunt, sollicitudin sed nulla. Nullam vel est velit.Morbi vel mauris orci. Donec in egestas orci, vel placerat quam. Mauris euismod ut ipsum eget iaculis.Proin urna turpis, blandit vitae nisi ac, ultrices gravida nunc. Ut vehicula eros in ipsum egestas ultricies.</div>
+</div>
+<hr>
+
+<h2>Botón "to top"</h2>
+     <p>Lo puedes visualizar en la parte derecha  inferior de la pantalla</p>
+     <a href="#top" id="boton-fijo">subir</a>
+ </body>
+</html>

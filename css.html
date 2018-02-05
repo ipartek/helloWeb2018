@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>CSS</title>
+<meta charset="UTF-8">
+<title>CSS</title>
     <style>
+        @import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+
+
         body {
             background: #333;
-            color: #fff;
+            color: #DAC4C4;
         }
 
         .container {
@@ -15,26 +18,105 @@
             max-width: 1200px;/*su ancho nunca sea superior a 1200 pixeles.*/
             padding:0 2%;/*para qeu deje una pequeña separación al verlo en los móviles*/
             height: 100vh;/*para que coja la latura de todo del viwport*/
-            border:1px solid red;
+            border-right:1px solid peru;
+            border-left:1px solid peru;
         }
 
 
         h1{
             font-size: 26px;
             color:peru;
-        }
-        body {
-            background: #333;
-            color: #fff;
+            font-family: 'Julius Sans One', sans-serif;
         }
 
+        .container h1{
+            color: #7F7FD0;
+        }
+
+        .container header h1{
+            color: #F44336;
+        }
+        .colorSurf{
+            /*azul color:#00B5D6;*/
+            /*azul clarito color:#C7E6F0;*/
+            /*naranja color:#EB6B3C;*/
+        }
+
+        div.aviso{
+            background: #F44336;
+        }
+
+        div p{
+            color:aqua;
+        }
+
+        div, p{
+            color:greenyellow;
+        }
+
+        a{
+            font-size: 20px;
+        }
+
+        a.link{
+            font-size: 30px;
+        }
+
+        div div.cap1, div p.texto{
+            color: #F44336;
+        }
+
+       /*Selector hijos*/
+        p > span {
+            color: #7F7FD0;
+        }
+
+       /*Selector adyacente*/
+        h3 + h4 {
+            color: tomato;
+        }
+
+        /*Selectores de atributos*/
+
+        p[class="azuloso"]{
+            color: darkcyan;
+            font-size: 3em;
+        }
 
 
-    </style>
+        a[class~="marron"] {
+            color: brown;
+        }
+
+        span[lang|="es"] {
+            color: red;
+        }
+
+        a[href$=".cl"] {
+            border:1px solid white;
+        }
+
+        a[href^="#"] {
+            background-color: white;
+        }
+
+        a[href*="loli"] {
+            background-color: orange;
+        }
+
+     </style>
 </head>
 <body>
+
+ <h1>CSS REGULAR</h1>
   <div class="container">
    <h1>CSS</h1>
+
+   <div class="aviso">
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, magnam! Quasi minima, error quis ut cum. Itaque cum, architecto recusandae ducimus ut at aspernatur veniam, pariatur ipsa, facere commodi iste.</p>
+   </div>
+
+   <header><h1>triple de mal</h1></header>
 
    <h2>Tipos de unidades de fuentes</h2>
    <!--control ratom zoom cotrl + 0 volver a original-->
@@ -52,8 +134,36 @@
        <dt>rem</dt>
        <dd>La unidad de medida rem es muy similar a em, con la única diferencia de que no es escalable, esto quiere decir que no depende del elemento padre, sino del elemento raíz del documento, el elemento HTML.</dd>
    </dl>
-
-
+<hr>
+  <h1>EJERCICIOS</h1>
+  <h2>1. Selectores descendentes en CSS</h2>
+  <div>
+      <p class="texto">Párrafo-1</p>
+      <div class="texto">Párrafo-2</div>
+      <h3><a href="#" class="link">Enlace-1</a></h3>
+      <a href="#">Enlace-2</a>
+      <div class="capa1">Párrafo-3</div>
+      <div>Párrafo-4</div>
   </div>
+
+  <h2>2. Selector de hijos</h2>
+    <p>
+      <span>Bla, bla,blaaaaa</span>
+    </p>
+
+  <h2>3. Selectores adyacentes</h2>
+    <h3>Título h3</h3>
+    <h4>Título h4</h4>
+
+  <h2>4. Selectores de atributo</h2>
+    <p class="azuloso">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero repudiandae dolorem quaerat harum veniam minus deleniti explicabo iusto quos eum officia, eos rem voluptatum saepe labore, dignissimos sit laudantium deserunt.3</p>
+    <br>
+    <a href="#" class="marron">Enlace01</a>
+    <a href="#">Enlace02</a>
+    <a href="www.pepito.cl">Enlace03</a>
+    <a href="www.loli.cl">Enlace03</a>
+    <br>
+    <span lang="es">Hola</span>
+  </div><!--end container-->
 </body>
 </html>

@@ -25,7 +25,18 @@
 			margin: 5px;
 			font-size: 5em;
 			text-align: center;
+		}
 
+		.stickybox {
+			position: sticky;
+			top: 100px;
+			width: 100px;
+			height: 100px;
+			background-color: grey;
+			color: white;
+			margin: 5px;
+			font-size: 5em;
+			text-align: center;
 		}
 
 
@@ -36,10 +47,124 @@
 			left: 40px;
 			bottom: 40px;
 			z-index: -1;
+		}
+
+		#content-absolute {
+			position: relative;
+		}
+
+		.box-absolute {
+			background-color: orangered;
+			position: absolute;
+			top: -40px;
+			left: 40px;
+			bottom: 40px;
+			z-index: -1;
+		}
+
+		#gototop {
+			position: fixed;
+			bottom: 20px;
+			right: 5px;
 
 		}
+
+
+
+		#div1 {
+			border: 1px solid black;
+		}
+
+
+
+		#span1 {
+
+			display: inline-block;
+			border: 1px dotted black;
+			margin: 5px;
+		}
+
+		.span2 {
+			position: relative;
+			margin: 0px;
+			display: inline-block;
+			border: 1px solid black;
+			padding: 10px;
+			background-color: skyblue;
+			width: 100px;
+			text-align: center;
+		}
+
+		.burbuja {
+			display: inline-block;
+			font-size: 1em;
+			position: absolute;
+			border: 1px solid black;
+			/*padding: 5px 8px;*/
+			height: 20px;
+			width: 20px;
+			right: 5px;
+			top: 5px;
+
+			background-color: red;
+			text-align: center;
+			border-radius: 50%;
+			top: -15px;
+			left: 80px;
+
+		}
+
+		.texto {
+			position: absolute;
+			bottom: 0px;
+			top: 165px;
+			height: 200px;
+			background-color: black;
+			opacity: 0.5;
+			color: white;
+
+		}
+
+		.card:hover p {
+			top: -16px;
+			transition-duration: 1s;
+
+		}
+
+		.card img {
+
+			width: 300px;
+			height: 200px;
+
+
+		}
+
+		.card {
+			width: 300px;
+			height: 200px;
+			position: relative;
+			display: inline-block;
+			overflow: hidden;
+		}
+
+		.flotante {
+			width: 300px;
+			height: 200px;
+			float: left;
+		}
 	</style>
+
+
+
+
 	<h1>Posicionamiento - Capitulo 9</h1>
+
+	<h2>Elementos en linea-bloque (ejemplo 9.2)</h2>
+
+	<div id="div1">
+		Marion Robert Morrison, de nombre artístico
+		<span id="span1">John Wayne</span> y conocido popularmente como The Duke
+	</div>
 
 	<h2>Overflow - Desbordamiento</h2>
 
@@ -48,14 +173,106 @@
 
 
 	<hr>
-	<h2>Posicionamiento</h2>
-	<section id="relative">
-		<h3>Relativo</h3>
+	<h2>Posicionamiento relativo</h2>
+	<section>
 		<div class="box">1</div>
 		<div class="box box-relative">2</div>
 		<div class="box">3</div>
+	</section>
+
+	<br>
+	<br>
+	<br>
+
+	<h2>Posicionamiento absoluto</h2>
+	<section id="content-absolute">
+		<div class="box">1</div>
+		<div class="box box-absolute">2</div>
+		<div class="box">3</div>
+	</section>
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<h2 id="gototop">Posicionamiento fixed</h2>
+	<section>
+		<button id="gototop"><a href="#top">Top</a></button>
+
 
 	</section>
+
+	<h2>Posicionamiento sticky</h2>
+	<section>
+		<div class="stickybox">1</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="stickybox">2</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="stickybox">3</div>
+
+
+	</section>
+
+	<h2>Barra de navegacion</h2>
+	<nav>
+
+		<ul>
+			<li class="span2"><span class="burbuja">5</span>Mensajes</li>
+			<li class="span2">Usuarios</li>
+			<li class="span2"><span class="burbuja">45</span>Otro</li>
+		</ul>
+
+	</nav>
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+
+	<h2>Texto sobre imagen</h2>
+	<div class="card">
+		<img src="img/img_fjords.jpg" alt="fiordo">
+		<p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut commodi incidunt, placeat quo ex error expedita cum quas impedit qui quod debitis voluptatum, in, fuga provident odio neque nulla optio!</p>
+		<br>
+		<br>
+		<br>
+		<br>
+
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+	<h2>Float</h2>
+	<div>
+		<img class="flotante" src="img/img_fjords.jpg" alt="fiordo">
+		<p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae odio eveniet eligendi veritatis fugit accusantium laudantium vitae doloribus dolores obcaecati non temporibus, ex voluptate blanditiis in. Facere deserunt, dolore nemo.</span>
+			<span>Ex nam, quam numquam tempore nulla incidunt nostrum porro id laborum consectetur, fuga laboriosam officia alias, accusantium eius dicta ipsam. Pariatur obcaecati temporibus amet atque porro, nihil nulla nisi dolore!</span>
+			<span>Fugiat, cupiditate repellat qui doloribus autem quae quo sapiente maiores magnam minima dicta in. Reiciendis, dolor, error. Reiciendis corporis dicta labore nulla libero, fuga suscipit odit, nesciunt quibusdam animi quia?</span>
+			<span>Ea placeat expedita, vel numquam. Dolorum id inventore reprehenderit assumenda. Porro at sint eaque alias vero pariatur culpa ducimus quas. Iure dolorum non necessitatibus optio quae laboriosam voluptas sit odio?</span>
+			<span>Totam ad sequi pariatur, cumque quasi qui odio ipsam necessitatibus repellendus sit quod ipsum dolorum fugit aut consequatur, possimus dolore praesentium soluta eaque? Illum amet voluptate, natus ipsa quas tempore.</span>
+			<span>Veniam tempora exercitationem ea cum facere, reprehenderit, a provident ipsum eaque assumenda placeat aliquid ab, unde quidem consectetur totam, culpa possimus mollitia doloribus. Veritatis, accusantium nisi ducimus unde odit eaque.</span>
+			<span>Ex accusantium molestias minus, laudantium natus commodi omnis repudiandae quo. Optio, odit autem porro, enim sapiente consequatur dolor harum ratione ab distinctio eum molestiae laboriosam, voluptates suscipit placeat officiis dolore.</span>
+			<span>Maiores culpa commodi perferendis, iusto, sed necessitatibus ullam amet recusandae nesciunt illo qui provident fugit quae tenetur similique? Perferendis et laudantium quaerat laborum, eaque nostrum voluptatem nam expedita accusamus fugit?</span>
+			<span>Corporis, dolores, eos. Dignissimos consectetur inventore facere quidem in, perferendis totam possimus non soluta vitae tempora necessitatibus aliquam sint, doloribus iste consequatur voluptate sunt provident rerum officiis nesciunt quae sequi.</span>
+			<span>Minus, voluptates. Nulla reprehenderit illo, architecto facilis voluptatem ratione sunt error tenetur consequatur officia sed fugit molestias numquam perspiciatis quam cupiditate maiores alias natus explicabo autem nostrum. Ipsum, veniam id.</span></p>
+
+
+	</div>
+
 	<br>
 	<br>
 	<br>
@@ -65,18 +282,6 @@
 	<br>
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<a href="#top">top</a>
 
 </body>
 

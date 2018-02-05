@@ -69,6 +69,12 @@ select{
     text-align: center;
 }
 
+nav ul{
+	list-style: none;
+	background: grey;
+}
+
+
 /*
       # id
       . class

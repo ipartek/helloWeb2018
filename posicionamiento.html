@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS-Posicionamiento</title>
+    <style>
+
+        body{}
+        .desbordamiento {
+            border: 1px solid red;
+            display: inline-block;
+            width: 210px;
+            height: 100px;
+            overflow: auto;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            margin-top: 5px;
+            color: white;
+            font-size: 5em;
+            text-align: center;
+            bottom: 50px;
+            left: 75px;
+        }
+
+        #relativo .box-relative {
+            position: relative;
+            background-color: red;
+            z-index: -1;
+        }
+
+        #absoluto {
+            position: relative;
+        }
+
+        #absoluto .box-absolute {
+            position: absolute;
+            bottom: 75px;
+            left: 75px;
+            background-color: blue;
+            z-index: -1;
+        }
+
+        .fixed {
+            text-align: right;
+
+        }
+
+        .fixed a {
+            position: fixed;
+            bottom: 10px;
+            right: 20px;
+
+
+        }
+        .ejercicio {
+            text-align: center;
+            margin-bottom:50px;
+            border-bottom:1px solid #DDD;
+        }
+        .ejercicio li{
+            border:1px solid grey;
+            display:inline-block;
+            width:30%;
+            height:2em;
+            background: linear-gradient(grey, #00FF64);
+            font-size:1em;
+            margin: 0 auto;
+        }
+        .ejercicio .numMensajes{
+            position:relative;
+            height:1em;
+            width:1em;
+            text-align: center;
+            color:white;
+            border-radius: 50%;
+            background-color:grey;
+            border:1px solid black;
+            bottom:3.5em;
+            left:35%;
+
+        }
+        .ejercicio a{
+            display:inline-block;
+            text-decoration: none;
+            color:black;
+            margin-top:0.5em;
+        }
+        .imagen{
+            position:relative;
+            display:inline-block;
+            height:150px;
+            width:150px;
+            overflow:hidden;
+            background-image: url(img/mola.jpg)
+        }
+        .imagen p{
+            color:white;
+            opacity:0.5;
+            position:absolute;
+
+            background-color:black;
+            top:115px;
+        }
+        .imagen p:hover{
+            transition-duration: 1s;
+            height:150px;
+            top:-15px;
+        }
+    </style>
+</head>
+
+<body id="top">
+    <a href="index.html">Volver</a>
+    <h1>Posicionamiento - Capitulo 9</h1>
+    <h2>Overflow - Desbordamiento</h2>
+    <div class="desbordamiento">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis dignissimos fugiat placeat soluta dolores ullam, incidunt nulla velit nostrum harum ipsam recusandae consectetur animi quasi hic eaque perspiciatis provident facere.
+    </div>
+    <h2>Posicionamiento</h2>
+    <section id="relativo">
+        <h3>Relativo</h3>
+        <div class="box">1</div>
+        <div class="box box-relative">2</div>
+        <div class="box">3</div>
+    </section>
+    <section id="absoluto">
+        <h3>Absoluto</h3>
+        <div class="box">1</div>
+        <div class="box box-absolute">2</div>
+        <div class="box">3</div>
+    </section>
+    <div class="fixed">
+        <a href="#top">Arriba</a>
+    </div>
+    <div class="ejercicio">
+        <h3>Ejercicio prático</h3>
+        <nav>
+            <ul>
+                <li><a href="">Mensajes</a>
+
+                </li>
+
+                <li><a href="">Usuarios</a></li>
+                <li><a href="">Otro</a></li>
+            </ul>
+            <p class="numMensajes">5</p>
+            <div class="imagen">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis porro inventore quasi reprehenderit
+            </div>
+        </nav>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posicionamiento</title>
+</head>
+<body id="top">
+    <style>
+        .clearfix:before, .clearfix:after { content: ""; display: table; }
+        .clearfix:after { clear: both; }
+        .clearfix { *zoom: 1; }
+
+
+        .desbordamiento{
+            border: 1px solid red;
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            overflow: auto;
+        }
+
+        .box{
+            width:150px;
+            height:150px;
+            background-color: grey;
+            color:#FFF;
+            margin:5px;
+            font-size: 5em;
+            text-align: center;
+        }
+
+        .box-relative{
+            width:150px;
+            height:150px;
+            background-color: teal;
+            color:#FFF;
+            font-size: 5em;
+            position:relative;
+            text-align: center;
+            left:40px;
+            bottom: 40px;
+            z-index: -1;
+        }
+
+        .box-absolute{
+            width:150px;
+            height:150px;
+            background-color: teal;
+            color:#FFF;
+            font-size: 5em;
+            position:absolute;
+            text-align: center;
+            left:130px;
+            bottom: -40px;
+
+        }
+
+        .box1{
+            position: relative;
+            font-size: 5em;
+            border: 2 px solid #000000;
+            margin: 5px;
+            padding: 10px;
+            height: 200px;
+            width: 500px;
+            background-color: grey;
+            color:#FFF;
+            text-align:left;
+        }
+
+        .box2{
+            position:absolute;
+            top:20px;
+            left:100px;
+            width:150px;
+            height:150px;
+            background-color: blue;
+            color:#FFF;
+
+
+
+        }
+
+        .elementosbloque{
+            border: 2px solid red;
+            display: inline-block;
+
+        }
+
+        .card{
+           width:300px;
+           height:300px;
+           position:relative;
+           overflow: hidden;
+       }
+
+       .card p{
+           position:absolute;
+           bottom:-180px;
+           font-size:1.4em;
+           background-color: rgba(0,0,0,0.4);
+           color:#FFF;
+           padding:10px;
+
+       }
+
+       .card p:hoover{
+           bottom:-25px;
+           transition-duration: 1sg;
+           height:300px;
+       }
+
+        .caja1{
+            border:none;
+
+        }
+
+        .caja2{
+            border:none;
+
+        }
+
+        .caja3{
+            border:none;
+
+        }
+
+        span{
+           border: 2px dotted black;
+
+        }
+
+
+        div#top {
+            position:fixed;
+            width:100px;
+            height:100px;
+            left:10px;
+            top:100px;
+        }
+
+
+
+        li{
+           float:left;
+           list-style: none;
+            padding:10px;
+            border:2px solid black;
+            background-color: blue;
+            color: white;
+
+
+        }
+
+    </style>
+
+
+
+    <h1>Posicionamiento - Capítulo 9</h1>
+
+
+    <h2>Overflow - Desbordamiento</h2>
+
+    <div class="desbordamiento">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis laudantium velit blanditiis error enim, sunt, qui molestias vitae totam porro. Nemo ea perspiciatis earum natus expedita provident ipsam ab illum!
+    </div>
+
+    <hr>
+    <h2>Posicionamiento Relativo</h2>
+
+    <section id="relative">
+
+        <h3>Relativo</h3>
+
+        <div class="box">1</div>
+        <div class="box-relative">2</div>
+        <div class="box">3</div>
+    </section>
+    <hr>
+    <h3>Elemento en linea dentro de un elemento de bloque</h3>
+        <div class="elementosbloque">
+          Marion Robert Morrison, de nombre artistico <span>John Wayne </span>y conocido popularmente como The Duke
+        </div>
+    <hr>
+    <h2>Posicionamiento Absoluto</h2>
+
+    <section id="absolute">
+
+        <h3>Absoluto</h3>
+
+        <div class="box">1</div>
+        <div class="box-absolute">2</div>
+        <div class="box">3</div>
+    </section>
+ <hr>
+
+    <h2>Posicionamiento Absoluto respecto a su padre Capa-1</h2>
+
+    <section id="absolute">
+
+        <h3>Absoluto respecto a su padre</h3>
+
+        <div class="box1">1
+            <div class="box2">2</div>
+        </div>
+        <div class="box1">3</div>
+    </section>
+<hr>
+
+    <section id="menu">
+     <h3>Botones</h3>
+     <nav>
+         <ul class="clearfix">
+             <li><span class="caja1">Mensaje</span></li>
+             <li><span class="caja2">Usuarios</span></li>
+             <li><span class="caja3">Otro</span></li>
+         </ul>
+     </nav>
+
+    </section>
+<hr>
+
+    <h2>Elementos flotantes</h2>
+
+    <section id="float">
+
+        <h3>Elementos flotantes para fotografía incrustada en un párrafo</h3>
+
+        <div class="card">
+            <img src="img/paisaje1.png" alt="texto alternativo">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem inventore corporis maxime ratione, vel in voluptatum ullam velit dolore necessitatibus minus reiciendis animi, illum incidunt aliquid ex minima tempore suscipit.</p>
+        </div>
+    </section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="#top"><img src="img/flecha-arriba.png" alt="Top">Top</a>
+
+</body>
+</html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Posicionamiento</title>
     <style>
+
+        @import url("/css/reset.css");
+        @import url("/css/clearfix.css");
         div {
             border: 3px solid black;
             position: relative;
@@ -62,15 +65,15 @@
         }
 
         li {
-            display: inline-block;
-            margin: -.5%;
+            float: left;
+            margin: 0px;
             padding: 15px;
             background-color: blue;
             color: white;
             position: relative;
             font-size: 2em;
             border: 3px solid darkgrey;
-            text-decoration: none;
+            list-style: none;
         }
 
         span.numero {
@@ -110,6 +113,10 @@
             transition-duration: 2s;
         }
 
+        .clear{
+            clear: both;
+        }
+
 
     </style>
 </head>
@@ -140,7 +147,7 @@
 
         <h2>Botonera</h2>
         <nav>
-            <ul>
+            <ul class="clearfix">
                 <li>Mensajes <span class="numero">1</span></li>
                 <li>Usuarios <span class="numero">2</span></li>
                 <li>Otro <span class="numero">3</span></li>

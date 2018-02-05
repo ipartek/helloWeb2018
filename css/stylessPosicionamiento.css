@@ -71,24 +71,34 @@
 
 ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+     position: relative;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+
 
 }
 
-li > a {
-    display: inline-block;
-    height: 50px;
-    width: 200px;
-    border: 2px solid black;
-    background-color: darkgoldenrod;
-    padding-top: 0.5em;
-    text-align: center;
-    font-size: 2em;
-    text-decoration: none;
+/* Change the link color to #111 (black) on hover */
 
+li a:hover {
+    background-color: #111;
 }
 
 #circulo {
-    position: relative;
     border: 1px solid black;
     background-color: red;
     width: 20px;
@@ -96,8 +106,11 @@ li > a {
     border-radius: 50%;
     display: inline-block;
     text-align: center;
-    left: -450px;
-    top: -25px;
+    position: absolute;
+    z-index: 999;
+    top:0;
+    right: 0;
+
 }
 
 #move {

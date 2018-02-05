@@ -1,0 +1,119 @@
+        .desbordamiento {
+            border: 1px solid green;
+            overflow: auto;
+            width: 200px;
+            height: 100px;
+            display: inline-block;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: grey;
+            margin: 5px;
+            text-align: center;
+            font-size: 5em;
+            color: aliceblue;
+        }
+
+        .box-relative {
+            background-color: teal;
+            position: relative;
+            top: -40px;
+            left: 40px;
+            z-index: -1;
+        }
+
+        #absoluto {
+            position: relative;
+        }
+
+        .box-absoluto {
+            position: absolute;
+            bottom: 50px;
+            left: 55px;
+            background-color: chartreuse;
+        }
+
+        #arriba {
+            position: fixed;
+            bottom: 15px;
+            right: 10px;
+        }
+
+        #cajita {
+            border: 1px red solid;
+        }
+
+        ul {
+            list-style-type: none;
+
+        }
+
+        li > a {
+            display: inline-block;
+            height: 50px;
+            width: 200px;
+            border: 2px solid black;
+            background-color: darkgoldenrod;
+            padding-top: 0.5em;
+            text-align: center;
+            font-size: 2em;
+            text-decoration: none;
+
+        }
+
+        #circulo {
+            position: relative;
+            border: 1px solid black;
+            background-color: red;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            left: -450px;
+            top: -25px;
+        }
+
+        #move {
+            /*div*/
+            display: inline-block;
+            height: 275px;
+            width: 500px;
+            background-image: url(https://lh3.googleusercontent.com/Wu31VprfOCSnjovyuJsbcVOYjGE2puKBdl5xk35SpnoqUYVoa1njZQPuy3pglgClh5Q=h900);
+            background-size: contain;
+            background-repeat: no-repeat;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        #oculto {
+            /*p*/
+            position: absolute;
+            top: 15em;
+            background-color: aqua;
+            opacity: 0.5;
+        }
+
+        #oculto:hover {
+            /*p*/
+            top: 0em;
+            transition-duration: 1s;
+            height: 275px;
+        }
+
+        h2 {
+            background: #B8C1C8;
+            border-bottom: 1px solid #989EA4;
+            border-top: 1px solid #717D85;
+            color: #FFF;
+            margin-bottom: 2em;
+            padding: 2px 0 0 12px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: -1px;
+
+        }

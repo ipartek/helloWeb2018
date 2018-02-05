@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posicionamiento</title>
+</head>
+
+<body id="top">
+    <style>
+        .desbordamiento {
+            display: inline-block;
+            border: 1px solid red;
+            width: 200px;
+            height: 100px;
+            overflow: auto;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            color: white;
+            background-color: grey;
+            text-align: center;
+            font-size: 5em;
+            margin: 5px;
+        }
+
+        .box-relative {
+
+            background-color: teal;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            bottom: 40px;
+        }
+
+        .ejemplo {
+            display: block;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        span {
+            display: inline-block;
+            border: 1px dotted red;
+        }
+
+        button {
+            background: red;
+            border: 1px solid green;
+            text-align: right;
+        }
+
+        #boton-fijo {
+            position: fixed;
+            right: 10px;
+        }
+
+        #pos96 {
+            position: relative;
+        }
+
+        .capa {
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+            margin: 2px;
+
+            ;
+            background-color: white;
+        }
+
+        .capa-relative {
+            position: absolute;
+            top: 20px;
+            left: 75px;
+            background-color: white;
+            margin: 2px;
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            ;
+
+        }
+
+        #pos97 {
+            position: relative;
+        }
+
+        .capa97 {
+            border: 1px solid black;
+            display: block;
+            height: 200px;
+            ;
+            margin: 2px;
+
+            background-color: white;
+        }
+
+        .capa-relative97 {
+            position: absolute;
+            top: 20px;
+            left: 75px;
+            background-color: blue;
+            margin: 2px;
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+
+
+        }
+
+        #lista {
+            position: absolute;
+        }
+
+        li {
+            position: relative;
+            display: inline-block;
+            border: 1px solid black;
+            background-color: green;
+
+        }
+
+        .bubble {
+            border-radius: 50%;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: red;
+            padding: 0 3px;
+        }
+
+        .cuadr {
+
+            position: relative;
+            display: inline-block;
+            padding: 30px;
+            border: 1px solid red;
+            background: green;
+            z-index: -30px;
+
+        }
+
+        .imagen {
+            position: relative;
+            height: 300px;
+            width: 300px;
+            overflow: hidden;
+        }
+
+        .imagen img {
+            height: 300px;
+            width: 300px;
+            position: absolute;
+
+        }
+
+        .imagen p {
+            position: absolute;
+            font-size: 1em;
+            bottom: -35px;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 0 10px;
+            transition-duration: 10s;
+        }
+
+        .imagen:hover p {
+            transition-duration: 1s;
+            top: 0px;
+        }
+    </style>
+
+    <h1>Posicionamiento</h1>
+    <h2>Overflow-desbordamiento</h2>
+    <div class="desbordamiento">
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur minus, nihil vel? Facere nisi asperiores a obcaecati, pariatur neque, quasi consectetur dolor ab, quia praesentium expedita, distinctio architecto cupiditate molestiae?
+    </div>
+
+    <h2>Posicionamiento</h2>
+    <section id="relative">
+        <h3>Relativo</h3>
+        <div class="box">1</div>
+        <div class="box box-relative">2</div>
+        <div class="box">3</div>
+
+    </section>
+    <br>
+    <br>
+    <br>
+    <button id="boton-fijo"><a href="#top" onclick="Top" style="text-align:right">TOP</a></button>
+
+    <h2>Ejercicio Ejemplo 9.2</h2>
+
+    <div class="ejemplo">
+        Marion Robert Morrison, de nombre artístico
+        <span>John Wayne</span> y conocido popularmente como The Duke</div>
+
+    <h2>Figura 9.6</h2>
+    <div id="pos96">
+        <div class="capa">Capa-1</div>
+        <div class="capa-relative">Capa-2</div>
+        <div class="capa">Capa-3</div>
+    </div>
+
+    <h2>Figura 9.7</h2>
+    <div id="pos97">
+        <div class="capa97">Capa-1</div>
+        <div class="capa-relative97">Capa-2</div>
+        <div class="capa97">Capa-3</div>
+    </div>
+
+    <h2>Barra de navegación</h2>
+    <nav>
+        <ul id="lista">
+            <li class="cuadr"><span class="bubble">5</span>Mensajes</li>
+            <li class="cuadr"><span class="bubble">3</span>Usuarios</li>
+            <li class="cuadr"><span class="bubble">1</span>Otro</li>
+
+        </ul>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h2>Imagen con Texto</h2>
+    <div class="imagen">
+        <img src="http://www.komandokroketa.org/Anboto/a64-pico-anboto-se.jpg" alt="">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quaerat in, harum, accusantium, facere voluptatem ea laboriosam voluptas quisquam natus praesentium saepe libero iure quam, officia soluta velit. Fugit, illum.</p>
+    </div>
+</body>
+</html>

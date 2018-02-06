@@ -9,6 +9,7 @@ var alumnos = [
                 "Javier",
                 "Xavier",
                 "Jorge",
+                "Mikel",
                 "Leire",
                 "Iñaki Jimenez",
                 "Alex",

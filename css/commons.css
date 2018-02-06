@@ -1,0 +1,47 @@
+/*css para poder reutilizar en varias páginas*/
+
+.volver{
+    border-radius: 50px;
+    border: 3px solid #2ECC71;
+    color: #2ECC71;
+    overflow: hidden;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 15px 20px;
+    /* display: inline-block; */
+    margin: 20px auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.volver a{
+    text-decoration: none;
+    color: #2ECC71;
+}
+
+.contenedor_iconos{
+    text-align: center;
+}
+
+.lista-iconos .fa-li{
+    position: relative;
+    left: 0px;
+}
+
+.iconos-apilados .a {
+    color: #3F51B5D4;
+}
+
+.list-group-item{
+   color: #3F51B5D4;
+}
+}

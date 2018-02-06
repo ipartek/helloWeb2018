@@ -1,0 +1,38 @@
+#precio {
+    font-size: 3em;
+    text-align: center;
+}
+
+#tabla-alumnos td {
+
+    border: 1px solid #2f72cc;
+    padding: 20px;
+    width: 80px;
+    text-align: center;
+}
+
+#tabla-alumnos .alumno{
+    background-color: #2f72cc;
+    color: #FFF;
+}
+
+.clase_input{
+   text-align: center;
+   padding: 20px;
+}
+
+#voluntario{
+    text-align: center;
+    font-size: 3em;
+    font-family: 'roboto';
+}
+
+.page-header {
+    color: #E66C7E;
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+    text-transform: uppercase;
+    font-size: 2em;
+}
+

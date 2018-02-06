@@ -4,93 +4,16 @@
 	@año:
 */
 
-
-h1 {
-	color: cadetblue;
-	text-align: center;
-	font-size: 2em;
-}
-p{
-	font-size: 50px;
-	display: block;
-	margin: auto;
-	text-align: center;
-	margin-top:20px;
-	margin-bottom: 20px;
-}
-button{
-	display: block;
-	margin: auto;
-	text-align: center;
-	margin-top:20px;
-	margin-bottom: 20px;
-}
-img.mediana{
-	width: 75px;
-	height: 75px;
-	display: block;
-	margin: auto;
-}
-/*table,th,td{
-	border: 1px solid black;
-	text-align: center;
-}
-*/
-table {
-    border-collapse: collapse;
-	margin:auto;
-
-
-}
-
-th, td {
-    border: 1px solid black;
-	text-align: center;
-	margin:auto;
-	width:80px;
-	text-align: :center;
-	background-color: cornflowerblue;
-	color: white;
-}
-select{
-	font-size: 20px;
-	display: block;
-	margin: auto;
-	margin-bottom: 20px;
-}
-#tabla-alumnos{
-    margin: auto;
-}
-
-#tabla-alumnos td {
-    border: 1px solid #2f72cc;
-    padding: 20px;
-    width: 80px;
-    text-align: center;
-}
-
-nav ul{
-	list-style: none;
-	background: grey;
-}
-
-
-/*
-      # id
-      . class
-*/
-#tabla-alumnos .alumno{
-    background-color: #2f72cc;
-    color: #FFF;
-}
+@import url('reset.css');
+@import url('fonts.css');
+@import url('etiquetas.css');
+@import url('layout.css');
+@import url('custom.css');
+@import url('commons.css');
 
 
 
 
-#voluntario {
-    font-size: 2em;
-    text-align: center;
-    color: orange;
-}
-canvas { background: #eee; display: block; margin: 0 auto;
-}
+
+
+

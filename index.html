@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Hello World</title>
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />
 	<!-- enlace a la hoja de estilos -->
 	<link rel="stylesheet" href="css/styles.css">
+	<!--
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	-->
 
 </head>
 
 <body onload="init()">
-	<h1>Hello World</h1>
-	<nav>
-		<ul>
-			<li><a href="bitcoin.html">Ver valor Bitcoin</a></li>
-			<li><a href="aula.html">Ver Aula</a></li>
-			<li><a href="arcanoid.html">Juego Arcanoid</a></li>
-			<li><a href="capitulo4.html">Capitulo 4</a></li>
-			<li><a href="datatable.html">Dtatable</a></li>
-			<li><a href="css.html">CSS</a></li>
-			<li><a href="posicionamiento.html">Posicionamiento</a></li>
-		</ul>
-	</nav>
 
-	<br>
-	<br>
-	<br>
-
-	<input type="number" id="numero" placeholder="Escribe un número" />
-
-	<P id="texto">...</P>
-
-	<button id="boton" onclick="pulsador()">PULSAME!!</button>
-
-	<br>
-	<br>
-	<br>
+	<div class="container">
 
 
+
+		<nav id="main">
+			<ul>
+				<li><a href="index.html" class="active">Home</a></li>
+				<li><a href="bitcoin.html">Ver valor Bitcoin</a></li>
+				<li><a href="aula.html">Ver Aula</a></li>
+				<li><a href="arcanoid.html">Juego Arcanoid</a></li>
+				<li><a href="capitulo4.html">Capitulo 4</a></li>
+				<li><a href="datatable.html">Dtatable</a></li>
+				<li><a href="css.html">CSS</a></li>
+				<li><a href="posicionamiento.html">Posicionamiento</a></li>
+			</ul>
+		</nav>
+
+		<h1>Hello World</h1>
+
+		<br>
+		<br>
+		<br>
+
+		<input type="number" id="numero" placeholder="Escribe un número" />
+
+		<P id="texto">...</P>
+
+		<button id="boton" onclick="pulsador()">PULSAME!!</button>
+
+		<br>
+		<br>
+		<br>
+
+	</div>
+	<!-- <div class="container"> -->
 	<!--enlace al javascript-->
 	<script src="js/main.js"></script>
 </body>
+
 </html>

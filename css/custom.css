@@ -1,0 +1,41 @@
+img.mediana {
+	width: 75px;
+	height: 75px;
+	display: block;
+	margin: auto;
+}
+
+
+
+#tabla-alumnos {
+	margin: auto;
+}
+
+#tabla-alumnos td {
+	border: 1px solid #2f72cc;
+	padding: 20px;
+	width: 80px;
+	text-align: center;
+}
+
+
+
+
+/*
+      # id
+      . class
+*/
+
+#tabla-alumnos .alumno {
+	background-color: #2f72cc;
+	color: #FFF;
+}
+
+
+
+
+#voluntario {
+	font-size: 2em;
+	text-align: center;
+	color: orange;
+}

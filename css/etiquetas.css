@@ -1,0 +1,71 @@
+/*CSS para todas las etiquetas del html*/
+
+body{
+	font-family: 'roboto';
+}
+h1 {
+	color: cadetblue;
+	text-align: center;
+	font-size: 2em;
+	font-family: 'roboto';
+}
+
+h2 {
+	color:cornflowerblue;
+	text-align: center;
+	font-size: 2em;
+}
+
+p {
+	font-size: 50px;
+	display: block;
+	margin: auto;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+button {
+	display: block;
+	margin: auto;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+table {
+	border-collapse: collapse;
+	margin: auto;
+
+
+}
+
+th,
+td {
+	border: 1px solid black;
+	text-align: center;
+	margin: auto;
+	width: 80px;
+	text-align: :center;
+	background-color: cornflowerblue;
+	color: white;
+}
+
+select {
+	font-size: 20px;
+	display: block;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+nav ul {
+	list-style: none;
+	background: grey;
+}
+
+canvas {
+	background: #eee;
+	display: block;
+	margin: 0 auto;
+}

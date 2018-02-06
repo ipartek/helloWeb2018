@@ -6,96 +6,10 @@
 
 */
 
-body {
-  font-family: 'Roboto', sans-serif;
-}
+/* Importar otras hojas de estilos */
 
-h1 {
-    color: teal;
-    text-align: center;
-    font-size: 2em;
-}
-
-h2#txt_afortunado {
-    color: darkorange;
-    text-align: center;
-    font-size: 2em;
-}
-
-h2tituloParInpar {
-    color: red;
-}
-
-#logo_bitcoin {
-    width: 100px;
-    margin: auto;
-    display: block;
-}
-
-.button {
-    background-color: #f44336; /* RED */
-    border-radius: 4px;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: auto;
-    display: block;
-}
-
-p {
-    text-align: center;
-}
-
-select {
-    margin: auto;
-    display: block;
-}
-
-table {
-    margin: auto;
-}
-
-#tabla_alumnos td {
-    width: 80px;
-    height: 30px;
-    padding: 10px;
-}
-
-#tabla_alumnos .alumno {
-    text-align: center;
-    border: 5px solid orange;
-}
-
-#numero {
-    margin: auto;
-    display: block;
-}
-
-#tituloParInpar {
-    text-align: center;
-}
-
-/********************NAVEGACIÓN********************/
-
-nav ul {
-    background-color: cadetblue;
-    height: 32px;
-}
-
-nav ul li {
-    list-style: none;
-    border: 1px solid black;
-    padding: 5px 10px;
-    float: left;
-}
-
-a {
-    text-decoration: none;
-}
-
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { *zoom: 1; }
+@import url('reset.css');
+@import url('etiquetas.css');
+@import url('layouts.css');
+@import url('commons.css');
+@import url('custom.css');

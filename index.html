@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Hello World</title>
@@ -11,38 +12,37 @@
 </head>
 
 <!-- Ejecuta la función init() cuando la página Web esté cargada "onload" -->
+
 <body onload="init()">
 
-    <h1>Hello World</h1>
+    <div class="container">
 
-   <h2>Menú de navegación</h2>
-    <nav class="clearfix">
-       <ul>
-           <li><a href="bitcoin.html">Ver valor del Bitcoin</a></li>
-           <li><a href="tabla_alumnos.html">Tabla de Alumnos</a></li>
-           <li><a href="arcanoid.html">Juego del Arcanoid</a></li>
-           <li><a href="capitulo4.html">Capítulo 4: Encabezados, div, listas y tablas</a></li>
-           <li><a href="datatables.html">DataTable</a></li>
-           <li><a href="css.html">CSS - Cascading Style Sheets</a></li>
-           <li><a href="posicionamiento.html">Posicionamiento</a></li>
-       </ul>
+        <nav id="main" class="clearfix">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="bitcoin.html">Ver valor del Bitcoin</a></li>
+                <li><a href="tabla_alumnos.html">Tabla de Alumnos</a></li>
+                <li><a href="arcanoid.html">Juego del Arcanoid</a></li>
+                <li><a href="capitulo4.html">Capítulo 4: Encabezados, div, listas y tablas</a></li>
+                <li><a href="datatables.html">DataTable</a></li>
+                <li><a href="css.html">CSS - Cascading Style Sheets</a></li>
+                <li><a href="posicionamiento.html">Posicionamiento</a></li>
+            </ul>
+        </nav>
 
-        <!--<input type="button" onclick="location.href='tabla_alumnos.html'" value="TABLA DE ALUMNOS" name="boton_tabla_alumnos" />
-        <br><br><br>-->
-    </nav>
-    <br><br><br>
+        <h1>Hello World</h1>
 
-    <div id="divNumPar">
-        <h2 id="tituloParInpar">¿PAR o INPAR?</h2>
-        <input type="number" id="numero" placeholder="Escribe un número" />
+        <div id="divNumPar">
+            <h2 id="tituloParInpar">¿PAR o INPAR?</h2>
+            <input type="number" id="numero" placeholder="Escribe un número" />
 
-        <p id="texto">Resultado</p>
-        <button id="botonParInpar" class="button" onclick="pulsador()">PULSAME</button>
-    </div>
-
-
+            <p id="texto">Resultado</p>
+            <button id="botonParInpar" class="button" onclick="pulsador()">PULSAME</button>
+        </div>
+    </div><!-- END container -->
     <!-- enlace al javascript -->
     <script src="js/main.js" type="text/javascript"></script>
 
 </body>
+
 </html>

@@ -1,0 +1,51 @@
+/*
+    HOJA DE ESTILOS PARA LAYOUTS: SECCIONES PRINCIPALES DE LA WEB
+    container, encabezados, secciones, articulos, navegación, footer...
+*/
+
+/* Container que contiene todo el contenido dentro de BODY */
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Logo */
+#logo_bitcoin {
+    width: 100px;
+    margin: auto;
+    display: block;
+}
+
+/* Menú de navegación nav#main */
+nav#main {
+    margin-bottom: 45px;
+}
+
+nav#main ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav#main li {
+    float: left;
+}
+
+nav#main li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav#main li a:hover {
+    background-color: #111;
+}
+
+nav#main .active {
+    background-color: #4CAF50;
+}

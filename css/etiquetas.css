@@ -1,23 +1,28 @@
 
-
 h1 {
-    color:teal;
+    color: teal;
     text-align: center;
     font-size: 2em;
+    font-family: 'Roboto'
+
 }
 
-td{
-    width:30%;
+
+td {
+    width: 30%;
     border: 1px solid black;
 }
-tr{
 
-    height:50px;
+tr {
+
+    height: 50px;
 }
-table{
-    width:100%;
+
+table {
+    width: 100%;
     margin-bottom: 20px;
 }
+
 canvas {
     background: #eee;
     display: block;

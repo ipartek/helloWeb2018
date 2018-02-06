@@ -6,7 +6,7 @@
     height: 150px;
     width: 150px;
     overflow: hidden;
-    background-image: url(img/mola.jpg)
+    background-image: url("../img/mola.jpg");
 }
 
 .imagen p {
@@ -14,7 +14,7 @@
     opacity: 0.5;
     position: absolute;
     background-color: black;
-    top: 115px;
+    top: 130px;
     transition-duration: 1s;
     height: 150px;
 }

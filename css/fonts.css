@@ -6,4 +6,5 @@
 @font-face{
     font-family: "roboto";
     src: url('../fonts/roboto/Roboto-Thin.ttf');
+    /* seria interesante tener el mimso tipo de fuente pero con diferentes extensiones */
 }

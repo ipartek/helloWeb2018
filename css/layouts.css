@@ -9,6 +9,10 @@
 .container{
     max-width: 1200px;
     margin: auto;
+    background-color: #FFF;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 

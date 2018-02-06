@@ -1,0 +1,29 @@
+/*
+Etiquetas  HTML, no valen ni id ni class
+
+*/
+
+.container{
+    font-family: 'Archivo Black', sans-serif;
+}
+h1 {
+    color:teal;
+    text-align: center;
+    font-size: 2em;
+    font-family:"roboto";
+
+}
+
+table {
+    text-align: center;
+    margin: auto;
+
+}
+td {
+width: 10em; /*Aquí va el ancho de la Celda*/
+height: 5em; /*Aquí el Alto*/
+}
+p{
+    text-align: center;
+}
+

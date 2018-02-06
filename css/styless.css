@@ -6,26 +6,10 @@
 
 
 */
-h1 {
-    color:teal;
-    text-align: center;
-    font-size: 2em;
-}
 
-table {
-    text-align: center;
-    margin: auto;
-
-}
-.contenido{
-    border-spacing: 15px;
-    background: skyblue;
-    color: black;
-}
-td {
-width: 10em; /*Aquí va el ancho de la Celda*/
-height: 5em; /*Aquí el Alto*/
-}
-p{
-    text-align: center;
-}
+@import url('reset.css');
+@import url('etiquetas.css');
+@import url('layouts.css');
+@import url('commons.css');
+@import url('custom.css');
+@import url('fonts.css');

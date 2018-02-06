@@ -57,7 +57,7 @@ function llamadaApi(){
 
 /* VARIABLES */
 var premiados =[];//variable donde se guardan los premiados
-var alumnosT =15;//variable donde decimos cuantos alumnos tenemos
+var alumnosT =16;//variable donde decimos cuantos alumnos tenemos
 
 function dado(){
     reset();

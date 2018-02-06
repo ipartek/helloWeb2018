@@ -37,9 +37,11 @@
     left: 40px;
     z-index: -1;
 }
-.box-raro{
-    color:white;
+
+.box-raro {
+    color: white;
 }
+
 .box-float-right {
     float: right;
 }
@@ -81,7 +83,7 @@ ul {
 
 li {
     float: left;
-     position: relative;
+    position: relative;
 }
 
 li a {
@@ -110,7 +112,7 @@ li a:hover {
     text-align: center;
     position: absolute;
     z-index: 999;
-    top:0;
+    top: 0;
     right: 0;
 
 }

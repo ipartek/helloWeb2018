@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <meta charset="UTF-8">
     <title>Hello World</title>
     <link rel="stylesheet" type="text/css" href="css/styless.css">
+    <!-- font awesome 4.7 -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+
     <!-- enlace a la hoja de estilos -->
 </head>
-<body onload="init()" >
 
-   <h1>Hello World</h1>
-   <nav>
-      <ul>
-       <li><a href="bitcoib.html">Ver valor del bitcoin</a></li>
-       <li><a href="aula.html">Ver aula</a></li>
-       <li><a href="arcanoid.html">Arcanoid</a></li>
-       <li><a href="capitulo4.html">Capitulo4</a></li>
-       <li><a href="datatable.html">DataTable</a></li>
-       <li><a href="css.html">Css</a></li>
-       <li><a href="posicionamiento.html">Posicionamiento</a></li>
-      </ul>
-
-   </nav>
-
-   <input type="number" id="numero" placeholder="Escribe un numero"/>
-   <p id="texto">...</p>
-   <button id="boton" onclick="pulsador()">Pulsame!!</button>
+<body onload="init()">
+    <div class="container">
+        <nav id="main">
+            <ul>
+                <li><a href="bitcoib.html" class="active"><i class="fa fa-btc" aria-hidden="true"></i>
+ Ver valor del bitcoin</a></li>
+                <li><a href="aula.html"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+ Ver aula</a></li>
+                <li><a href="arcanoid.html"><i class="fa fa-gamepad" aria-hidden="true"></i>
+ Arkanoid</a></li>
+                <li><a href="capitulo4.html"><i class="fa fa-signal" aria-hidden="true"></i>
+ Capitulo4</a></li>
+                <li><a href="datatable.html"><i class="fa fa-table" aria-hidden="true"></i>
+ DataTable</a></li>
+                <li><a href="css.html"><i class="fa fa-css3" aria-hidden="true"></i>
+ Css</a></li>
+                <li><a href="posicionamiento.html"><i class="fa fa-trophy" aria-hidden="true"></i>
+ Posicionamiento</a></li>
+           <li><a href="awesome.html"><i class="fa fa-fort-awesome" aria-hidden="true"></i>Font-Awesome</a></li><li><a href="lupa.html"><i class="fa fa-search" aria-hidden="true"></i>
+ Lupa</a></li>
+            </ul>
+        </nav>
+                <h1><i class="fa fa-globe" aria-hidden="true"></i>
+ Hello World
+</h1>
+        <input type="number" id="numero" placeholder="Escribe un numero" />
+        <p id="texto"><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+<span class="sr-only">Loading...</span>
+</p>
+        <button id="boton" onclick="pulsador()"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+Pulsame!!</button>
+    </div>
+    <!-- div container -->
     <!-- enlace de javascript -->
-    <script src="js/main.js" type="text/javascript"> </script>
+    <script src="js/main.js" type="text/javascript">
+    </script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+/*
+CSS para todas las etiquetas de HTML, no valen ., #...
+*/
+
+h1 {
+    color: teal;
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+
+
+    font-family: 'Spicy Rice', cursive;
+
+
+}
+
+h2 {
+    color: teal;
+    text-align: center;
+    font-size: 1em;
+    text-transform: uppercase;
+
+   font-family:'chicle', cursive;
+
+}
+
+table {
+    border: 1 display:block;
+
+}
+
+select {
+    margin: auto;
+    display: block;
+    margin-bottom: 25px;
+    margin: auto;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}

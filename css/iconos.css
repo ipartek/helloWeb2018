@@ -1,0 +1,74 @@
+
+section{
+    margin-bottom: 10px;
+}
+
+.relativo{
+    position: relative;
+}
+.absoluta{
+    position: absolute}
+div#apocalipsis {
+    border: 1px solid black;
+    margin: 1em;
+    padding: 10px;
+    font-family: helvetica, verdana;
+    color: #000000;
+
+}
+
+
+div#apocalipsis p {
+    text-align: justify;
+    text-indent: 40px;
+    padding: 10px;
+}
+
+div#apocalipsis p.parrafo {
+
+    font-size: 14px;
+    padding: 0px;
+
+}
+
+div#apocalipsis .titulo {
+
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+
+}
+
+div#apocalipsis h2#titulo {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px #CCCCCC;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    font-family: helvetica, verdana;
+    color: #000000;
+
+}
+
+ .pie {
+    text-align: right;
+    font-size: 13px;
+    font-style: italic;
+    color: #646464;
+     margin-right: 30px;
+}
+
+img#foto {
+    float: left;
+    margin: 10px;
+    height: 160px;
+    width: 170px;
+    align-content: center;
+
+}
+
+
+

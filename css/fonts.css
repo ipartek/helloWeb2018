@@ -1,0 +1,19 @@
+/*Roboto
+https://fonts.googleapis.com/css?family=Roboto
+*/
+
+/*@font-face {
+  font-family: "roboto">;
+  src: url('../fonts/Roboto/Roboto-Thin.ttf');
+
+}*/
+/*chicle
+https://fonts.googleapis.com/css?family=Chicle
+*/
+@font-face {
+  font-family: "chicle">;
+  src:url ('../fonts/Chicle/Chicle-Regular.ttf');
+    /*sseria interesante tener el mismo tipo de fuente pero con diferentes extensiones */
+
+
+}

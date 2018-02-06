@@ -1,6 +1,6 @@
 //variable global para todos los alumnos
 
-var alumnos = ["Izaskun", "Jon Ander", "Iñigo", "Iñaki A", "Javier", "Xabier", "Jorge", "Leire", "Iñaki J", "Aingeru", "David","Patri","Joseba", "Aintzine"];
+var alumnos = ["Izaskun", "Jon Ander", "Iñigo", "Iñaki A", "Javier", "Xabier", "Jorge", "Mikel", "Leire", "Iñaki J", "Alex", "Aingeru", "David","Patri","Joseba", "Aintzine"];
 
 function leer(){
 

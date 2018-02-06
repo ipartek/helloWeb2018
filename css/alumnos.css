@@ -1,0 +1,17 @@
+#tablaAlumnos td {
+    height: 50px;
+    font: arial;
+
+
+    border: 1px solid black;
+    padding: 20px;
+    margin: auto;
+    width: 80px;
+    text-align: center;
+
+}
+
+#tablaAlumnos .alumno {
+    background-color: darkcyan;
+    color: #FFF
+}

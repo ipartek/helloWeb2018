@@ -2,48 +2,11 @@
 @version: 1.0
 */
 
-h1 { color: teal;
-    text-align: center;
-    font-size: 2em;
-
-}
-table {
-    border: 1
-    display:block;
-
-}
-#tablaAlumnos td {
-    height: 50px;
-    font: arial;
+@import url('reset.css'); /* importa la url en el que resetea el estilo de los navegadores */
+@import url('fonts.css');
+@import url('etiquetas.css');
+@import url('layout.css');
+@import url ('custom.css');
+@import url('commons.css');
 
 
-    border: 1px solid black;
-    padding: 20px;
-    margin: auto;
-    width: 80px;
-    text-align: center;
-
-}
-/*
-    # id
-    . class
-*/
-#tablaAlumnos .alumno{
-    background-color: darkcyan;
-    color:#FFF
-
-
-}
-
-
-select
-{
-    margin:auto;
-    display:block;
-    margin-bottom: 25px;
-    margin:auto;
-}
-body
-{
-    font-family: 'Roboto', sans-serif;
-}

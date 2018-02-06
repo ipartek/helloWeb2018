@@ -1,0 +1,9 @@
+/*
+    Roboto
+    https://fonts.google.com/specimen/Roboto?selection.family=Roboto
+*/
+
+@font-face{
+    font-family: "roboto";
+  src: url('../fonts/roboto/Roboto-Thin.ttf'); /* Seria interesante tener el mismo tipo de funte pero con diferentes extensiones para los distintos sistemas operativos */
+}

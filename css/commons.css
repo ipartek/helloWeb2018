@@ -1,0 +1,21 @@
+/* CSS para poder reutilizar en varias páginas */
+
+.cnt-img-zoom{
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+    background-color: #000;
+}
+div img{
+    max-width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+.cnt-img-zoom i{
+    position: absolute;
+    top: 28%;
+    left: 45%;
+    opacity: 0.6;
+    color:white;
+    font-size: 8em;
+}

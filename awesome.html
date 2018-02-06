@@ -1,0 +1,160 @@
+<!-- Ejercicios a hacer:
+Fonts awesome todos los ejemplos hasta bootstrap
+Poner uma imagen y un icono con una lupa encima centrada y opacity 0.6 que al puslar sobre la imagen saldrá una modal window con la imagen en pantalla completa
+10.4 con una imagen arriba a la izda que el texto flote. Debajo de la seccion "rodaje" incorporar un video de youtube con el trailer de la peli
+-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fuente Awesome</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        .container{
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1{
+            text-align: center;
+            color: darkblue;
+        }
+        nav{
+            margin-bottom: 45px;
+        }
+
+        nav {
+            list-style-type: none;
+            max-width: 20%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-bottom: 1px solid #FFF;
+        }
+        hr{
+            margin:40px auto;
+            clear:both;
+        }
+        .enmarcado{
+            width: 25%;
+            float: left;
+        }
+        .enmarcado p{
+            float: left;
+            text-align: justify;
+        }
+        div.listas{
+            margin:0 auto;
+            text-align: center;
+        }
+        div.listas i{ /* Si se centra la list, para que el icono siga al texto al centro*/
+            position: relative;
+            left: 0;
+        }
+        div.stacked{
+            background-color: #AAA;
+        }
+    </style>
+    <div class="container">
+        <h1>Utilizacion de iconos fuente AWESOME</h1>
+
+        <h2>Icono simple</h2>
+        <div>
+            <i class="fa fa-camera-retro"></i> fa-camera-retro
+        </div>
+        <hr>
+        <h2>Tamaños autos</h2>
+        <div>
+            <i class="fa fa-telegram fa-lg"></i> fa-lg
+            <i class="fa fa-telegram fa-2x"></i> fa-2x
+            <i class="fa fa-telegram fa-3x"></i> fa-3x
+            <i class="fa fa-telegram fa-4x"></i> fa-4x
+            <i class="fa fa-telegram fa-5x"></i> fa-5x
+        </div>
+        <hr>
+        <h2>Iconos fijos en ancho (fa-fw)</h2>
+        <nav>
+            <a class="list-group-item" href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
+            <a class="list-group-item" href="#"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library</a>
+            <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Applications</a>
+            <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Settings</a>
+        </nav>
+        <hr>
+        <h2>Iconos en listas (fa-ul y fa-li)</h2>
+        <div class="listas">
+            <ul class="fa-ul">
+                <li><i class="fa-li fa fa-check-square"></i>Lista iconos</li>
+                <li><i class="fa-li fa fa-spinner fa-spin"></i>En movimiento con fa-spin</li>
+                <li><i class="fa-li fa fa-square"></i>in lists</li>
+            </ul>
+        </div>
+        <hr>
+        <h2>Iconos enmarcados</h2>
+        <div class="enmarcado">
+            <p><i class="fa fa-quote-left fa-3x fa-pull-left fa-border" aria-hidden="true"></i>
+            Se usa el <b>fa-border</b> para ponerle un borde la icono. y <b>fa-pull-left</b> para colocarlo
+            En el otro caso, tambiñen se puede utilizar los contraios, es decir <b>fa-pull-right</b> para poner colocarlo en la esquina derecha del texto. No
+            <i class="fa fa-quote-right fa-3x fa-pull-right fa-border" aria-hidden="true"></i></p>
+        </div>
+
+        <hr>
+        <h2> Rotacion de iconos</h2>
+        <div>
+            <i class="fa fa-shield"></i> normal<br>
+            <i class="fa fa-shield fa-rotate-90"></i> fa-rotate-90<br>
+            <i class="fa fa-shield fa-rotate-180"></i> fa-rotate-180<br>
+            <i class="fa fa-shield fa-rotate-270"></i> fa-rotate-270<br>
+            <i class="fa fa-shield fa-flip-horizontal"></i> fa-flip-horizontal<br>
+            <i class="fa fa-shield fa-flip-vertical"></i> fa-flip-vertical
+        </div>
+        <hr>
+        <h2>Iconos dentro de otros</h2>
+            <div class="stacked">
+               <p>Para incrustar un icono dentro de otro, hay que usar la clase <b>fa-stack</b> en el elemento padre, y luego poner <b>fa-stack-1x</b> al elemento que va en el interior y  <b>fa-stack-2x</b> para el que lo contiene. <b>fa-inverse</b> se usa para inveritr los colores. </p>
+                <div class="fa-stack fa-lg">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x"></i>
+                </div>
+                fa-twitter on fa-square-o<br>
+                <div class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-flag fa-stack-1x"></i>
+                </div>
+                fa-twitter on fa-square-o  sin inverse<br>
+                <div class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                  <i class="fa fa-flag fa-stack-1x"></i>
+                </div>
+                fa-twitter on fa-square-o inverse circle<br>
+                <div class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+                </div>
+                fa-flag on fa-circle inverse flag<br>
+                <div class="fa-stack fa-lg">
+                    <i class="fa fa-square fa-stack-2x"></i>
+                    <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+                </div>
+                fa-terminal on fa-square<br>
+                <div class="fa-stack fa-lg">
+                    <i class="fa fa-camera fa-stack-1x"></i>
+                    <i class="fa fa-ban fa-stack-2x text-danger"></i>
+                </div>
+                fa-ban on fa-camera
+            </div>
+</div>
+</body>
+</html>

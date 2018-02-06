@@ -1,0 +1,48 @@
+/* CSS para todas las etiquetas de HTML */
+
+/* Aqui tambien iría body */
+
+
+
+
+h1 {
+    color:teal;
+    text-align:center;
+    font-size: 2em;
+    font-family: 'roboto';
+}
+
+img {
+    margin:auto;
+    display:block;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+select {
+    margin:auto;
+    display:block;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+}
+button{
+    background-color: cadetblue;
+    font-weight: bold;
+    margin:auto;
+    display:block;
+    font-size: 1.5em;
+    padding: 0.8em;
+    font-family: 'ubuntu';
+}
+i.fa{
+    font-size: 4em;
+    color:darkmagenta;
+    margin: auto;
+}
+
+h2{
+    font-weight: 800;
+    font-size: 2em;
+    margin:1em;
+    clear: both;
+}

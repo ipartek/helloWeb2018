@@ -1,0 +1,14 @@
+/* Para importar fuentes se puede hacer de 3 formas: con el font-face, con el @import o descargando la fuente (ttf) en el equipo */
+/* El font-face no hace falta si se hace mediante el link en el html, ya lo hace de forma automática
+/* Si se descarga la fuente si es necesario hacer el font-face
+
+*/
+@font-face {
+      font-family: "Roboto";
+      src: url('../fonts/roboto/Roboto-Thin.ttf');
+    }
+
+@font-face {
+      font-family: "ubuntu";
+      src: url('../fonts/ubuntu/Ubuntu-Regular.ttf');
+    }

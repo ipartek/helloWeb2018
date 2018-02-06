@@ -5,76 +5,10 @@
 
 */
 
+@import url('reset.css');/*Para resetear los estilos de los navegadores*/
+@import url('fonts.css');
+@import url('etiquetas.css');
+@import url('layout.css');
+@import url('custom.css');
+@import url('commons.css');
 
-h1 {
-    color:teal;
-    text-align:center;
-    font-size: 2em;
-}
-
-img {
-    margin:auto;
-    display:block;
-    margin-bottom: 10px;
-    font-size: 1.5em;
-}
-
-select {
-    margin:auto;
-    display:block;
-    margin-bottom: 25px;
-    font-size: 1.5em;
-}
-button{
-    background-color: gray;
-    font-weight: bold;
-    margin:auto;
-    display:block;
-    font-size: 1.5em;
-}
-#volver{
-    text-align: right;
-    align-items: center;
-}
-
-#tabla-alumnos{
-    margin:auto;
-}
-
-#tabla-alumnos td{
-    border: 1px solid #0b1667;
-    padding: 20px;
-    width: 80px;
-    text-align: center;
-}
-
-#tabla-alumnos .alumno{
-    background-color: #2f72cc;
-    color:#fff;
-}
-
-#voluntario {
-    font-size: 2em;
-    text-align: center;
-    color: orange;
-}
-
-nav ul a{
-    text-decoration: none;
-    color:white;
-}
-nav li:hover{
-    background-color: #BBB;
-    color:grey;
-}
-nav a:hover{
-    color:#000;
-}
-nav ul li{
-    list-style: none;
-    border: 1px solid black;
-    padding: 5px 10px;
-    float:left;
-    background-color: grey;
-
-}

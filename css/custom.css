@@ -1,0 +1,45 @@
+/**/
+
+#volver{
+    text-align: right;
+    align-items: center;
+}
+
+#tabla-alumnos{
+    margin:auto;
+}
+
+#tabla-alumnos td{
+    border: 1px solid #0b1667;
+    padding: 20px;
+    width: 80px;
+    text-align: center;
+}
+
+#tabla-alumnos .alumno{
+    background-color: #2f72cc;
+    color:#fff;
+}
+
+#voluntario {
+    font-size: 2em;
+    text-align: center;
+    color: orange;
+}
+
+img.apoc{
+    float: left;
+    max-width: 10%;
+    margin: 10px;
+}
+
+/* 2 formas de conseguir que un video de youtube se centre en la pantalla */
+div.video{
+    text-align: center;
+}
+
+i/*frame{
+    margin:auto;
+    display: block;
+}
+*/

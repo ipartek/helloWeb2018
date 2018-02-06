@@ -72,4 +72,8 @@ span {
     border: 5px dotted red;
 }
 
+.container{
+    min-width: 1200px;
+    margin: auto;
+}
 

@@ -12,6 +12,18 @@
 }
 
 @font-face {
+  font-family: "Roboto-Black";
+  src: url(../fonts/Roboto/Roboto-Black.ttf);
+  /* seria interesante tener el mismo tipo de fuente en varios formatos .woff/.ttf */
+}
+
+@font-face {
+  font-family: "Roboto-ThinItalic";
+  src: url(../fonts/Roboto/Roboto-ThinItalic.ttf);
+  /* seria interesante tener el mismo tipo de fuente en varios formatos .woff/.ttf */
+}
+
+@font-face {
   font-family: "Nanum Pen Script";
   src: url(../fonts/NanumPenScript/NanumPenScript-Regular.ttf);
   /* seria interesante tener el mismo tipo de fuente en varios formatos .woff/.ttf */

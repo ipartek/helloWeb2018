@@ -57,7 +57,7 @@ nav#main li a:hover {
 
 
 
-nav#main.active {
+nav#main ul li.active {
     background-color: #4CAF50;
 }
 

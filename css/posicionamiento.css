@@ -125,6 +125,10 @@ section#absolute {
     height: 50px;
 }
 
+#iconArrow {
+    color: darkcyan;
+}
+
 p>span {
     color: teal;
     font-weight: bold;

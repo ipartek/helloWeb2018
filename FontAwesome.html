@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>FontAwesome</title>
+    <!--Hojas de estilos-->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <!--FontAwesome v4.7-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <nav id="main" class="clearfix">
+            <ul>
+                <li><a href="#iconSize">Tamaños de iconos</a></li>
+                <li><a href="#fixedIcons">Iconos fijos</a></li>
+                <li><a href="#listIcons">Iconos de lista</a></li>
+                <li><a href="#borderedPulledIcons">Bordered &amp; Pulled Icons</a></li>
+                <li><a href="#animatedIcons">Iconos animados</a></li>
+                <li><a href="#rotatedFlippedIcons">Iconos rotados y volteados</a></li>
+                <li><a href="#stackedIcons">Iconos superpuestos</a></li>
+                <li><a href="#bootstrap3Examples">Ejemplos Bootstrap 3</a></li>
+                <li><a href="#modalImage">Ejemplo Modal Image</a></li>
+            </ul>
+        </nav>
+        <!--TODO 06/02/2018: Aplicar sombras al h1 con un generator
+            @see: http://css3generator.com/
+        -->
+        <h1>Font Awesome</h1>
+        <!--TODO 06/02/2018: Ejemplos de FontAwesome
+            @see: https://fontawesome.com/v4.7.0/examples/
+        -->
+        <section id="iconSize">
+            <h2>Tamaños de iconos:</h2>
+            <div>
+                <i class="fa fa-globe fa-lg" aria-hidden="true"></i>
+                <i class="fa fa-globe fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-globe fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-globe fa-4x" aria-hidden="true"></i>
+                <i class="fa fa-globe fa-5x" aria-hidden="true"></i>
+            </div>
+        </section>
+        <hr>
+        <section id="fixedIcons">
+            <h2>Iconos fijos (Fixed icons):</h2>
+            <div class="list-group">
+              <a class="list-group-item" href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
+              <a class="list-group-item" href="#"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library</a>
+              <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Applications</a>
+              <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Settings</a>
+            </div>
+        </section>
+        <hr>
+        <section id="listIcons">
+            <h2>Iconos de lista (List Icons):</h2>
+            <ul class="fa-ul">
+              <li><i class="fa-li fa fa-check-square"></i>Check</li>
+              <li><i class="fa-li fa fa-spinner fa-spin"></i>Spinner</li>
+              <li><i class="fa-li fa fa-square"></i>Recuadro</li>
+            </ul>
+        </section>
+        <hr>
+        <section id="borderedPulledIcons">
+            <h2>Bordered &amp; Pulled Icons:</h2>
+            <i class="fa fa-quote-left fa-3x fa-pull-left fa-border" aria-hidden="true"></i>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus quas accusamus culpa quam magnam magni tenetur modi. Iure ut voluptates consequatur, fuga repellendus voluptatem animi illum beatae labore, unde, reiciendis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, voluptate, minus. Assumenda pariatur ab sint esse omnis? Magnam consectetur quia ad, recusandae quidem nam eius explicabo consequuntur odit laborum accusamus.</p>
+        </section>
+        <hr>
+        <section id="animatedIcons">
+            <h2>Iconos animados (Animated Icons):</h2>
+            <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+
+            <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+
+            <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+
+            <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+
+            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <span class="sr-only">Loading...</span>
+        </section>
+        <hr>
+        <section id="rotatedFlippedIcons">
+            <h2>Iconos rotados y volteados (Rotated &and; Flipped Icons):</h2>
+            <i class="fa fa-shield"></i> normal<br>
+            <i class="fa fa-shield fa-rotate-90"></i> fa-rotate-90<br>
+            <i class="fa fa-shield fa-rotate-180"></i> fa-rotate-180<br>
+            <i class="fa fa-shield fa-rotate-270"></i> fa-rotate-270<br>
+            <i class="fa fa-shield fa-flip-horizontal"></i> fa-flip-horizontal<br>
+            <i class="fa fa-shield fa-flip-vertical"></i> fa-flip-vertical
+        </section>
+        <hr>
+        <section id="stackedIcons">
+            <h2>Iconos superpuestos (Stacked Icons):</h2>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-square-o fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+            fa-twitter sobre fa-square-o<br>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+            </span>
+            fa-flag sobre fa-circle<br>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-square fa-stack-2x"></i>
+              <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+            </span>
+            fa-terminal sobre fa-square<br>
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-camera fa-stack-1x"></i>
+              <i class="fa fa-ban fa-stack-2x text-danger"></i>
+            </span>
+            fa-ban sobre fa-camera
+        </section>
+        <hr>
+        <section id="bootstrap3Examples">
+            <h2>Ejemplos con Bootstrap 3:</h2>
+            <a class="btn btn-danger" href="#">
+              <i class="fa fa-trash-o fa-lg"></i> Delete</a>
+            <a class="btn btn-default btn-sm" href="#">
+              <i class="fa fa-cog"></i> Settings</a>
+
+            <a class="btn btn-lg btn-success" href="#">
+              <i class="fa fa-flag fa-2x pull-left"></i> Font Awesome<br>Version 4.7.0</a>
+
+            <div class="btn-group">
+              <a class="btn btn-default" href="#">
+                <i class="fa fa-align-left" title="Align Left"></i>
+              </a>
+              <a class="btn btn-default" href="#">
+                <i class="fa fa-align-center" title="Align Center"></i>
+              </a>
+              <a class="btn btn-default" href="#">
+                <i class="fa fa-align-right" title="Align Right"></i>
+              </a>
+              <a class="btn btn-default" href="#">
+                <i class="fa fa-align-justify" title="Align Justify"></i>
+              </a>
+            </div>
+
+            <div class="input-group margin-bottom-sm">
+              <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+              <input class="form-control" type="text" placeholder="Email address">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+              <input class="form-control" type="password" placeholder="Password">
+            </div>
+
+            <div class="btn-group open">
+              <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>
+              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+                <span class="fa fa-caret-down" title="Toggle dropdown menu"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
+                <li><a href="#"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
+                <li><a href="#"><i class="fa fa-ban fa-fw"></i> Ban</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa fa-unlock"></i> Make admin</a></li>
+              </ul>
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <!--TODO 06/02/2018: img cualquiera con una icono de 'lupa' semitransparente en el centro
+            Al pulsar en el icono de la 'lupa' abrir una "modal window" con un zoom de la img
+            @see: https://www.w3schools.com/howto/howto_css_modal_images.asp
+        -->
+        <section id="modalImage">
+           <h2>Modal Image:</h2>
+            <span class="fa-stack fa-lg">
+              <img id="imgPlaya" src="img/playa.jpg" alt="imagen playa">
+              <i id="iconoLupa" class="fa fa-search fa-2x" aria-hidden="true"></i>
+            </span>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+              <!-- The Close Button -->
+              <span class="close">&times;</span>
+
+              <!-- Modal Content (The Image) -->
+              <img class="modal-content" id="img01">
+
+              <!-- Modal Caption (Image Text) -->
+              <div id="caption">Foto de playa</div>
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById('imgPlaya');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    </script>
+</body>
+</html>

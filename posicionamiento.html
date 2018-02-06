@@ -8,6 +8,8 @@
     <link rel="icon" href="img/css3.ico" type="image/x-icon" />
     <!-- enlace a la hoja de estilos posicionamiento.css-->
     <link rel="stylesheet" href="css/posicionamiento.css" type="text/css">
+    <!--FontAwesome v4.7-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 <body id="top">
@@ -72,7 +74,8 @@
                 <h3>Posicionamiento Fijo (Fixed)</h3>
                 <p>Con el posicionamiento fijo (fixed), el desplazamiento se establece de la misma forma que en el posicionamiento absoluto, pero en este caso el elemento permanece inamovible en la pantalla. <br><span>En este ejemplo hemos posicionado una imagen con una flecha apuntando hacia arriba en la esquina inferior derecha de la página, que al pulsarla te manda al inicio de la página (del body en este caso).</span></p>
                 <div class="box-fixed">
-                    <a href="#top"><img id="flechaArriba" src="img/arrow-up.png" alt="Ir al inicio"></a>
+                    <!--TODO 06/02/2018: Meter icono 'arrow-up' de FontAwesome-->
+                    <a href="#top"><i class="fa fa-arrow-up fa-3x" aria-hidden="true" id="iconArrow"></i></a>
                 </div>
             </section>
             <hr>

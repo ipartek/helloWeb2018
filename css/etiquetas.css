@@ -3,19 +3,16 @@
     body, h1-h6, select, p, span, ul, ol, li, table...
 */
 
-body {
-    font-family: 'Roboto', sans-serif;
-}
-
 h1 {
+    font-family: 'Roboto', cursive;
     color: teal;
     text-align: center;
-    font-size: 2em;
+    font-size: 5em;
     margin-bottom: 20px;
 }
 
-p {
-    text-align: center;
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
 select {

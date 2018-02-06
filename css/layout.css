@@ -1,0 +1,46 @@
+/*CSS para las secciones principales de la Web, por ejemplo: container encabezados, main footer, sidebar, etc..........*/
+
+.container {
+
+    max-width: 1200px;
+    margin: auto;
+}
+    .logo {
+        width: 100px;
+        height: 100px;
+        display: block;
+        margin: auto;
+    }
+
+/**/
+
+nav#main {
+    margin-bottom: :45px;
+}
+nav#main ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav#main li {
+    float: left;
+}
+
+nav#main li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav#main li a:hover {
+    background-color: #111;
+}
+nav#main .active {
+    background-color: #4CAF50;
+}

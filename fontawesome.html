@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- enlace a la hoja de estilos -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <style>
+        body {
+            font-family: "Roboto";
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        hr {
+            margin: 20px;
+        }
+
+        #tamanoFijo a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .fa {
+            color: darkgreen;
+        }
+
+        .text-danger {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!--
+            - Utilizar font awesome
+            - Poner icono en la flecha de subir
+            ejemplo imagen: icono de lupa por encima centrado,
+            opacidad de 0.6%
+            alpulsar en la imagen, ventana modal(modal window)
+            Fondo semitransparente conla imagen en grande
+            Intentarlo sin JS
+            Ejercicio Apocalypsis now pag 216, con una imagen, con HTML5
+            metida arriba a la izquierda con el texto flotante
+            Meter el trailer el apartado de trailer ()
+
+        -->
+
+    <div class="container">
+
+        <h1>Tamaños fa por clase</h1>
+
+        <i class="fa fa-bath fa-lg"></i> fa-lg
+        <i class="fa fa-bath fa-2x"></i> fa-2x
+        <i class="fa fa-bath fa-3x"></i> fa-3x
+        <i class="fa fa-bath fa-4x"></i> fa-4x
+        <i class="fa fa-bath fa-5x"></i> fa-5x
+    </div>
+
+    <hr>
+
+    <h1>Anchura fija</h1>
+
+    <div id="tamanoFijo">
+        <a href="#"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp; Home</a>
+        <a href="#"><i class="fa fa-book fa-fw" aria-hidden="true"></i>&nbsp; Library</a>
+        <a href="#"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i>&nbsp; Applications</a>
+        <a href="#"><i class="fa fa-cog fa-fw" aria-hidden="true"></i>&nbsp; Settings</a>
+    </div>
+
+    <hr>
+
+    <h1>Iconos de lista</h1>
+
+    <dl>
+        <dd>La etiqueta <i>ul</i> debe tener la clase <i>fa-ul</i></dd>
+        <dd>Las etiquetas <i>li</i> deben tener la clase <i>fa-li</i></dd>
+    </dl>
+
+    <ul class="fa-ul">
+        <li><i class="fa-li fa fa-check-square"></i>List icons</li>
+        <li><i class="fa-li fa fa-check-square"></i>can be used</li>
+        <li><i class="fa-li fa fa-spinner fa-spin"></i>as bullets</li>
+        <li><i class="fa-li fa fa-square"></i>in lists</li>
+    </ul>
+
+    <hr>
+
+
+    <h1>Iconos como comienzo de párrafos (flotantes)</h1>
+
+    <i class="fa fa-envelope-open fa-2x fa-pull-left fa-border" aria-hidden="true"></i> ...tomorrow we will run faster, stretch out our arms farther... And then one fine morning&mdash; So we beat on, boats against the current, borne back ceaselessly into the past.
+
+    <hr>
+
+    <h1>Iconos animados</h1>
+
+    <i class="fa fa-handshake-o fa-spin fa-3x fa-fw"></i>
+    <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+    <i class="fa fa-podcast fa-spin fa-3x fa-fw"></i>
+    <i class="fa fa-microchip fa-spin fa-3x fa-fw"></i>
+
+    <hr>
+
+    <h1>Iconos volteados y rotados</h1>
+
+    <i class="fa fa-podcast fa-rotate-90 fa-3x fa-fw"></i>
+    <i class="fa fa-microchip fa-rotate-270 fa-3x fa-fw"></i>
+    <i class="fa fa-handshake-o fa-flip-horizontal fa-3x fa-fw"></i>
+    <i class="fa fa-spinner fa-flip-vertical fa-3x fa-fw"></i>
+
+    <hr>
+
+    <h1>Iconos apilados</h1>
+
+    <span class="fa-stack fa-lg">
+           <i class="fa fa-automobile fa-stack-1x"></i>
+        <i class="fa fa-ban fa-stack-2x  text-danger" ></i>
+     </span>
+
+    <span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-telegram fa-stack-1x"></i>
+        </span>
+
+
+    <hr>
+
+
+</body>
+
+</html>

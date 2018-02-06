@@ -1,24 +1,23 @@
-/* Nuestra hoja de estilos */
-h1{
+h1 {
     text-transform: uppercase;
     color: teal;
-    text-align:center;
+    text-align: center;
     font-size: 2em;
 }
 
-div{
-   display: flex;
-   justify-content: center;
+div {
+    display: flex;
+    justify-content: center;
 }
 
 #imagen img {
     display: block;
-   margin: 0 auto;
+    margin: 0 auto;
     width: 50%;
     display: block;
 }
 
-p{
+p {
     text-align: center;
     font-size: 25px;
 }
@@ -26,11 +25,12 @@ p{
 .button1 {
     background-color: white;
     color: black;
-    border: 2px solid #4CAF50; /* Green */
+    border: 2px solid #4CAF50;
+    /* Green */
     padding: 5px;
 }
 
-#volver{
+#volver {
     font-size: 20px;
     text-decoration: none;
     text-decoration: none;
@@ -49,9 +49,13 @@ p{
     text-align: center;
 }
 
-#alumnos tr:nth-child(even){background-color: #f2f2f2;}
+#alumnos tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
 
-#alumnos tr:hover {background-color: #ddd;}
+#alumnos tr:hover {
+    background-color: #ddd;
+}
 
 button {
     display: block;
@@ -60,20 +64,14 @@ button {
     font-size: 20px;
 }
 
-#btnreset{
+#btnreset {
     display: none;
 }
 
-#lector{
+#lector {
     height: 25px;
 }
 
 span {
     border: 5px dotted red;
 }
-
-.container{
-    min-width: 1200px;
-    margin: auto;
-}
-

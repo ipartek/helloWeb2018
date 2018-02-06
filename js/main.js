@@ -114,8 +114,8 @@ function sorteo() {
 
     //Pongo las celdas reales del numero recogido al azar
     var arrCeldas = [
-        [6, 0], [5, 0], [4, 0], [3, 0], [2, 0], [1, 0], [0, 0], [0, 1],
-        [0, 2], [1, 2], [2, 2], [3, 2], [4, 2], [5, 2], [6, 2]
+        [7,0], [6, 0], [5, 0], [4, 0], [3, 0], [2, 0], [1, 0], [0, 0],
+        [0, 2], [1, 2], [2, 2], [3, 2], [4, 2], [5, 2], [6, 2], [7,2]
     ];
 
     //Informo de la columna y celda recogida

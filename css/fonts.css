@@ -1,0 +1,13 @@
+/*
+
+roboto https://fonts.google.com/specimen/Roboto?selection.family=Roboto
+
+*/
+
+@font-face{
+    font-family: "Roboto";
+    src: url('../fonts/roboto/Roboto-Thin.ttf');
+
+}
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39');

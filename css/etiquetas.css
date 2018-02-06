@@ -18,6 +18,12 @@ h1 {
     /*font-family: 'Libre Barcode 39', cursive;*/
 }
 
+h2{
+    text-align: center;
+    margin: 10px;
+    font-size: 1.5em;
+}
+
 table {
     border: solid 2px black;
     margin: 10px auto;

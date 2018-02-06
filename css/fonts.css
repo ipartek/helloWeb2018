@@ -7,6 +7,7 @@ roboto https://fonts.google.com/specimen/Roboto?selection.family=Roboto
 @font-face{
     font-family: "Roboto";
     src: url('../fonts/roboto/Roboto-Thin.ttf');
+    /*Seria interesante tener el mismo tipo de fuente con diferentes extensiones para los diferentes sistemas operativos*/
 
 }
 

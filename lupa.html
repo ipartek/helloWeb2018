@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lupa</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+<style>
+    body {
+        font-family: roboto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    #wrapper-foto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    #foto {
+        width: 40%;
+        position: relative;
+    }
+
+    #foto img {
+        width: 100%;
+    }
+
+    #lupa {
+        width: 50%;
+        margin: -55% auto;
+        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    #modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 5;
+        border: 3px solid white
+    }
+
+    #modal img {
+        width: 100%;
+    }
+
+    #modal {
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0)
+        }
+        to {
+            transform: scale(1)
+        }
+    }
+
+</style>
+
+<body>
+
+    <div id="container">
+
+        <div id="modal">
+
+        </div>
+
+        <h1>Lupa Modal</h1>
+
+        <div id="wrapper-foto">
+            <div id="foto">
+                <a href="">
+                <img src="img/1080.jpg" alt="">
+                </a>
+                <div id="lupa">
+                    <img src="img/lupa.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    console.log("Hola!")
+
+    var lupa = document.getElementById("lupa");
+
+    lupa.onclick = function() {
+
+
+        //Creo un elemento imagen
+        var im = document.createElement("img");
+
+        //Creo un elemento imagen dentro de modal
+        var modal = document.getElementById("modal");
+        modal.appendChild(im);
+
+        //Cambio el display por si estuviera oculta
+        modal.style.display = "block";
+
+        //Visualizo la imagen
+        modal.getElementsByTagName("img")[0].src = "img/1080.jpg";
+
+        //Hago la animacion dandole la clase
+        modal.classList.add("zoom");
+
+        modal.getElementsByTagName("img")[0].onclick = function() {
+            //Al clikar la imagen la hago desaparecer
+            modal.style.display = "none";
+        }
+
+
+
+    }
+
+</script>

@@ -1,0 +1,9 @@
+/*
+    Roboto
+    https://fonts.google.com/specimen/Roboto?selection.family=Roboto
+*/
+/*Otra forma de hacer font-face*/
+@font-face{
+   font-family:"Roboto";
+    src:url('../fonts/roboto/Roboto-Thin.ttf');/*sería interesante tener el mismo tipo de fuente pero con diferentes extensiones, para los diferentes sistemas operativos*/
+}

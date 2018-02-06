@@ -3,28 +3,9 @@
     version:1.0
     fecha: 30-01-2018
 */
-h1 {
-    color:teal;
-    text-align: center;
-    font-size: 2em;
-}
-.presente{
-     background: linear-gradient(#6DCDDA, yellow);
-
-}
-td{
-    border: 1px solid black;
-}
-tr{
-
-    height:50px;
-}
-table{
-    width:100%;
-    margin-bottom: 20px;
-}
-
-.alumnos{
-    text-align: center;
-}
+@import url('reset.css');
+@import url('etiquetas.css');
+@import url('layouts.css');
+@import url('custom.css');
+@import url('common.css');
 

@@ -4,33 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello World</title>
-    <!-- enlace a la hoja de estilos -->
+    <!-- enlace a la hoja de estilos --->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
 </head>
 
 <body onload="init()">
-    <h1>Hello World</h1>
-    <nav>
-        <ul>
-            <li><a href="bitcoin.html">Ver valor del BitCoin</a></li>
-            <li><a href="aula.html">Ver aula y sortear lector</a></li>
-            <li><a href="arkanoid.html" S>Me aburro</a></li>
-            <li><a href="capitulo4.html" S>Capitulo 4</a></li>
-            <li><a href="datatables.html" S>Datatables</a></li>
-            <li><a href="css.html" S>CSS-Cascading Style Sheets</a></li>
-            <li><a href="posicionamiento.html" S>CSS-Posicionamiento</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <nav id="main">
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="bitcoin.html">Ver valor del BitCoin</a></li>
+                <li><a href="aula.html">Ver aula y sortear lector</a></li>
+                <li><a href="arkanoid.html" S>Me aburro</a></li>
+                <li><a href="capitulo4.html" S>Capitulo 4</a></li>
+                <li><a href="datatables.html" S>Datatables</a></li>
+                <li><a href="css.html" S>CSS-Cascading Style Sheets</a></li>
+                <li><a href="posicionamiento.html" S>CSS-Posicionamiento</a></li>
+            </ul>
+        </nav>
+        <h1>Hello World</h1>
 
-    <br>
-    <br>
-    <br>
-    <input type="number" id="numero" placeholder="escribe un número" />
 
-    <p id="texto">...</p>
-    <button id="boton" onclick="pulsador()">PULSAME!!!</button>
+
+        <br>
+        <br>
+        <br>
+        <input type="number" id="numero" placeholder="escribe un número" />
+
+        <p id="texto">...</p>
+        <button id="boton" onclick="pulsador()">PULSAME!!!</button>
+    </div>
+    <!-- se cierra container*********************************************************************************** -->
     <!-- enlace al javascript -->
     <script src="js/main.js"></script>
 

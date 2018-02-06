@@ -4,7 +4,7 @@
 //Ejecutamos esta función al cargar la página web
 
 function init() {
-    console.info('DOMd listo y cargado');
+    console.info('DOM listo y cargado');
 }
 
 function pulsador(){

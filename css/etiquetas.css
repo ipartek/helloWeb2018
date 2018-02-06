@@ -1,0 +1,26 @@
+
+
+h1 {
+    color:teal;
+    text-align: center;
+    font-size: 2em;
+}
+
+td{
+    width:30%;
+    border: 1px solid black;
+}
+tr{
+
+    height:50px;
+}
+table{
+    width:100%;
+    margin-bottom: 20px;
+}
+canvas {
+    background: #eee;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}

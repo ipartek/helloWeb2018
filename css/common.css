@@ -1,0 +1,26 @@
+/* css para poder reeutilizar en varias páginas */
+
+.imagen {
+    position: relative;
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    background-image: url(img/mola.jpg)
+}
+
+.imagen p {
+    color: white;
+    opacity: 0.5;
+    position: absolute;
+    background-color: black;
+    top: 115px;
+    transition-duration: 1s;
+    height: 150px;
+}
+
+.imagen:hover p {
+    transition-duration: 1s;
+
+    top: -15px;
+}

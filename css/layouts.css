@@ -1,0 +1,43 @@
+/*css para las secciones principales de la web, por ejemplo:
+container,encabezados, main, footer, sidebar, etc...*/
+.alumnos{
+    text-align: center;
+}
+.presente{
+     background: linear-gradient(#6DCDDA, yellow);
+
+}
+.container{
+    max-width: 1200px;
+    margin:auto;
+}
+
+nav#main ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+nav#main{
+    margin-bottom: 3em;
+}
+nav#main li {
+    float: left;
+}
+
+nav#main li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav#main li a:hover:not(.active) {
+    background-color: darkgreen;
+}
+
+nav#main .active {
+    background-color: #4CAF50;
+}

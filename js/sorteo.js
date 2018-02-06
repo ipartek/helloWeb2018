@@ -11,7 +11,7 @@ function aJugar(){
 }
 
 // Cambiar valor si viene nuevo alumno
-var numeroAlumnos =15;
+var numeroAlumnos =16;
 //
 var repetidos=[]
 function sortear(){

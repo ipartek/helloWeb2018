@@ -8,35 +8,45 @@
     <!-- enlace a la hoja de estilos -->
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+
 </head>
+
 <body onload="init()">
 
-    <h1>Hello World</h1>
 
-    <nav>
-       <ul>
-        <li><a href="bitcoin.html">Ver valor Bitcoin</a></li>
-        <li><a href="aula.html">Ver Aula</a></li>
-        <li><a href="capitulo4.html">Capitulo 4 </a></li>
-        <li><a href="datatable.html">Plugin data table </a></li>
-        <li><a href="css.html">Css Hoja de estilos </a></li>
-        <li><a href="posicionamiento.html">Posicionamiento</a></li>
+    <div class="container">
+        <h1>Hello World</h1>
 
-                    </ul>
-    </nav>
+        <nav id="main">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li class="active"><a href="bitcoin.html">Ver valor Bitcoin</a></li>
+                <li><a href="aula.html">Ver Aula</a></li>
+                <li><a href="capitulo4.html">Capitulo 4 </a></li>
+                <li><a href="datatable.html">Plugin data table </a></li>
+                <li><a href="css.html">Css Hoja de estilos </a></li>
+                <li><a href="posicionamiento.html">Posicionamiento</a></li>
+
+            </ul>
+        </nav>
 
 
-    <br>
-    <br>
-    <br>
+        <br>
+        <br>
+        <br>
 
-    <input type="number" id="numero" placeholder="Escribe un numero"/>
+        <input type="number" id="numero" placeholder="Escribe un numero" />
 
-    <p id="texto">...</p>
-    <button id="boton" onclick="pulsador()">PULSAME!!!</button>
+        <p id="texto">...</p>
+        <button id="boton" onclick="pulsador()">PULSAME!!!</button>
 
+
+
+    </div>
+    <!--  cierre de  /container -->
     <!-- enlace al javascript -->
-    <script src="js/main.js" type="text/javascript" ></script>
+    <script src="js/main.js" type="text/javascript"></script>
 
 
 

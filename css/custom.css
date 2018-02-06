@@ -1,0 +1,28 @@
+#precio {
+    text-align: center;
+}
+
+#selector {
+    text-align: center;
+}
+
+#imagen {
+    text-align: center;
+}
+
+#elegirButton {
+    display: block;
+    margin: auto;
+    width: 15em;
+    height: 3em;
+    background-color: darkgray;
+    color: white;
+    font-weight:  bold;
+    font-size: 1.5em;
+    border-radius: .75em;
+}
+
+#elegido {
+    text-align: center;
+    font-weight: bold;
+}

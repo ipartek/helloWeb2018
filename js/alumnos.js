@@ -1,5 +1,5 @@
 var leido = [];
-var alumno = ["izaskun", "jonander", "inigo", "inakia", "javier", "patri", "jorge", "leire", "inakij", "alex", "aingeru", "david", "xabier", "joseba", "aintzine"];
+var alumno = ["izaskun", "jonander", "inigo", "inakia", "javier", "patri", "jorge", "leire", "inakij", "alex", "aingeru", "david", "xabier", "joseba", "aintzine", "mikel"];
 
 function elegirAlumno(){
 

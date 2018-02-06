@@ -1,0 +1,52 @@
+/*
+
+CSS para las etiquetas de la web
+
+********************************/
+
+h1 {
+    color:darkcyan;
+    text-align: center;
+    font-size: 2em;
+    margin:20px;
+}
+
+table {
+    border: solid 2px black;
+    margin: 10px auto;
+}
+
+tr {
+     border: solid 2px black;
+}
+
+td {
+    border: solid 2px black;
+    padding: 1em;
+    text-align: center;
+    width: 4em;
+    height: 1em;
+}
+
+ul {
+    list-style: none;
+    background-color: darkcyan;
+    color:white;
+    text-align: center;
+}
+
+li {
+    border: 2px solid black;
+    display: inline-block;
+    margin : 1em;
+    padding: :1em;
+    text-align: center;
+}
+
+a {
+    color:green;
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+    background-color: black;
+}

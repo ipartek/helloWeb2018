@@ -1,0 +1,33 @@
+/*
+
+CSS para poder reutilizar en varias paginas
+
+*******************************/
+
+.card {
+    position: relative;
+    background-color: white;
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.card img {
+    height: 300px;
+    width: 300px;
+}
+
+.card p {
+    position: absolute;
+    top: 250px;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    transition-duration: 2s;
+}
+
+.card:hover p {
+    top: 100px;
+    transition-duration: 2s;
+}

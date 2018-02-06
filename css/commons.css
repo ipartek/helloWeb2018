@@ -12,6 +12,8 @@
     height: 300px;
     position: relative;
     overflow: hidden;
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .card p {
@@ -29,3 +31,37 @@
     transition-duration: 1s;
     height: 300px;
 }
+
+/*  cnt-img-zoom
+**************************************/
+
+
+.cnt-img-zoom{
+    position: relative;
+    display: inline-block;
+}
+
+.cnt-img-zoom img{
+    width: 300px;
+    height: 300px;
+}
+
+.cnt-img-zoom i{
+   position: absolute;
+   top: 30%;
+   left: 30%;
+   font-size: 8em;
+   opacity: 0.6;
+   color: #5a524f;
+   transition-duration: 0.5s;
+}
+
+.cnt-img-zoom i:hover{
+   transition-duration: 1s;
+   opacity: 1;
+   font-size: 9em;
+   top: 28%;
+   left: 28%;
+}
+
+

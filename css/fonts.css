@@ -1,0 +1,19 @@
+/*
+    HOJA DE ESTILOS PARA FUENTES DE LETRA
+*/
+
+/* Roboto: http://fonts.googleapis.com/css?family=Roboto */
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+  /* seria interesante tener el mismo tipo de fuente en varios formatos .woff/.ttf */
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Nanum Pen Script";
+  src: url(../fonts/NanumPenScript/NanumPenScript-Regular.ttf);
+  /* seria interesante tener el mismo tipo de fuente en varios formatos .woff/.ttf */
+  font-weight: bold;
+}

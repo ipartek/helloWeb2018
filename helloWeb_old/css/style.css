@@ -1,6 +1,7 @@
 /* Nuestra hoja de Estilos */
-h1 {
-    color:teal;
-    text-align: center;
-    font-size: 6em;
-}
+@import url('reset.css');
+@import url('fonts.css');
+@import url('etiquetas.css');
+@import url('layouts.css');
+@import url('custom.css');
+@import url(commons.cs);

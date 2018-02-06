@@ -7,13 +7,16 @@ var alumnos = [
                 "Iñigo",
                 "Iñaki Aretxabaleta",
                 "Javier",
+                "Xabi",
                 "Jorge",
+                "Mikel",
                 "Leire",
                 "Iñaki Jimenez",
                 "Alex",
                 "Aingeru",
                 "David",
                 "Patri",
+                "Joseba",
                 "Aintziñe"
               ];
 

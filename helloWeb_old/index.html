@@ -6,30 +6,36 @@
     <!-- enlace a la hoja de estilos-->
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="css/style.css">
+    <!--enlace a la hoja de estilos-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 </head>
 <body onload="init()">
+   <div class="container">
     <h1>Hello World</h1>
-    <nav>
+    <i class="fa fa-info-circle" aria-hidden="true"></i>
+    <nav id="main">
         <ul>
-            <li>
-                <a href="capitulo4.html">Capitulo 4</a>
-                <br>
-                <a href="datatable.html">Databases</a>
-                <br>
-                <a href="css.html">Cascading Style Sheets</a>
-                <br>
-                <a href="posicionamiento.html">Posicionamiento</a>
-            </li>
+
+             <li> <a href="#" class="active">Home</a></li>
+             <li> <a href="capitulo4.html" >Capitulo 4</a></li>
+             <li> <a href="datatable.html">Databases</a></li>
+             <li> <a href="css.html">Cascading Style Sheets</a></li>
+             <li> <a href="posicionamiento.html">Posicionamiento</a></li>
+             <li> <a href="elementosflotantes.html">Elementos Flotantes</a></li>
+             <li> <a href="bitcoin.html">Ver valor Bitcoin </a></li>
+             <li><a href="icono.html">Icono</a></li>
+
         </ul>
     </nav>
-    <a href="bitcoin.html">Ver valor Bitcoin </a>
+
     <br>
     <br>
     <br>
     <input type="number" id ="numero" placeholder="Escribe un numero"/>
     <p id="texto">...</p>
     <button id="boton" onclick="pulsado()">PULSAME!!!! </button>
-
+</div><!--fin div container-->
     <!-- enlace al javascript-->
     <script src="js/main.js"></script>
 </body>

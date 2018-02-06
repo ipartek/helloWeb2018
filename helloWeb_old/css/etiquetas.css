@@ -1,0 +1,7 @@
+/* Css para todas las etiquetas de HTML */
+h1 {
+    color:teal;
+    text-align: center;
+    font-size: 6em;
+    font-family: "roboto";
+}

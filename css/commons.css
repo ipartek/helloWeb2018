@@ -1,3 +1,83 @@
 /*
     HOJA DE ESTILOS PARA ESTILOS COMUNES ENTRE VARIAS PÁGINAS
 */
+
+/* VETANAS MODALES
+*********************************************/
+
+.modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 200ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    margin: 75px auto;
+    padding: 20px;
+    max-width: 400px;
+    /*
+    border: 1px solid #666;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+    */
+}
+
+.modal-content .close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 50px;
+    opacity: 0.8;
+    transition: all 200ms;
+    font-size: 4em;
+    font-weight: 600;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.modal-content .close:hover {
+    opacity: 1;
+}
+
+/*  cnt-img-zoom
+**************************************/
+
+.cnt-img-zoom {
+    position: relative;
+    display: inline-block;
+}
+
+.cnt-img-zoom img {
+    width: 500px;
+    height: 300px;
+}
+
+.cnt-img-zoom i {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    font-size: 8em;
+    opacity: 0.6;
+    color: #5a524f;
+    transition-duration: 0.5s;
+}
+
+.cnt-img-zoom i:hover {
+    transition-duration: 1s;
+    opacity: 1;
+    font-size: 9em;
+    top: 28%;
+    left: 28%;
+}

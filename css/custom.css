@@ -79,8 +79,8 @@ h2tituloParInpar {
 
 #iconoLupa {
     position: absolute;
-    top: 60px;
-    left: 105px;
+    top: 100px;
+    left: 200px;
     opacity: 0.6;
 }
 
@@ -155,7 +155,7 @@ h2tituloParInpar {
         width: 100%;
     }
 }
-
+/********** END Image Modal ***********/
 /********** ESTILOS PARA ApocalypseNow.html **********/
 #apocalipseNow h1 {
     font-family: "Roboto-Black";
@@ -204,3 +204,4 @@ h2tituloParInpar {
     font-size: 0.9em;
     color: grey;
 }
+/********** END ESTILOS PARA ApocalypseNow.html **********/

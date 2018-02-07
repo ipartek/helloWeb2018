@@ -1,0 +1,88 @@
+/*
+	#2 LAYOUT
+	  #2.1 Header
+	  #2.2 Wrapper
+	  #2.3 Footer
+      #2.4 Navigation (mobile)
+
+*/
+
+/* #2 LAYOUT */
+
+html,
+body {
+    min-height: 100%;
+    height: 100%;
+}
+
+body {
+    color: #315968;
+    font: 1em/1 Myriad Pro, Arial, Helvetica, sans-serif;
+    height: 100%;
+    background: #57adbc url(../img/fnd-body.jpg);
+    text-align: center;
+}
+
+/* #2.1 Header */
+
+header {
+    text-align: left;
+}
+
+/* #2.1 Wrapper */
+
+#wrapper {
+    width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* #2.3 Footer */
+
+footer {
+    width: 100%;
+    background: #509ead;
+    text-align: left;
+}
+
+/* #2.4 Mobile navigation sidebar */
+
+nav#main {
+    margin-bottom: 45px;
+    background-color: #5F5F5F;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: currentColor;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: aliceblue;
+    display: block;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}

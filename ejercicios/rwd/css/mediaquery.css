@@ -1,0 +1,50 @@
+/*
+    HOJA DE ESTILOS CON MEDIA QUERYS PAR RWD
+*/
+
+@media screen and (max-width: 425px) {
+
+    #wrapper {
+        width: 100%;
+        padding: 50px 5px 0 5px;
+
+    }
+
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+
+    header img[alt="colibri adventures"] {
+        display: none;
+    }
+
+    .navBar {
+        display: none;
+    }
+
+    img[src="img/dummy.jpg"] {
+        width: 100%;
+    }
+
+    article[data-type=cols] section {
+        text-align: justify;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    article[data-type=cols] section {
+        font-size: 1.2em;
+    }
+
+    .gallery li img{
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    .gallery li {
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+    }
+}

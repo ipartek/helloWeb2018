@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Colibri adventures</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+   <!--MENÚ DE NAVEGACIÓN MOBILE
+       @see: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav
+   -->
+    <div id="menuSuperior">
+        <span onclick="openNav()" id="btnNav">&#9776;</span>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" onclick="closeNav()">HOME</a>
+        <a href="#gallery" onclick="closeNav()">PACKS</a>
+        <a href="#footer" onclick="closeNav()">ABOUT US</a>
+    </div>
+    <!-- FIN MENÚ DE NAVEGACIÓN MOBILE -->
+
+    <header>
+        <img src="img/logo.png" alt="colibri adventures">
+    </header>
+    <div id="wrapper">
+
+        <nav class="navBar">
+            <a href="#home" class="active">home</a>
+            <a href="#packs">packs</a>
+            <a href="#about">about us</a>
+        </nav>
+
+        <section data-type="slider">
+            <img src="img/dummy.jpg">
+        </section>
+
+        <article data-type="cols">
+
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+
+        </article>
+
+        <nav class="gallery" id="gallery">
+
+            <h2>Packs</h2>
+
+            <ul>
+                <li><a href=""><img src="img/gallery01.jpg"></a></li>
+                <li><a href=""><img src="img/gallery02.jpg"></a></li>
+                <li><a href=""><img src="img/gallery03.jpg"></a></li>
+                <li><a href=""><img src="img/gallery04.jpg"></a></li>
+                <li><a href=""><img src="img/gallery05.jpg"></a></li>
+                <li><a href=""><img src="img/gallery06.jpg"></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <footer id="footer">
+
+        <h2>about</h2>
+
+        <article data-type="cols">
+
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+
+        </article>
+
+    </footer>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            // TODO 07/02/018: Crear opacity en el body
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
+</html>

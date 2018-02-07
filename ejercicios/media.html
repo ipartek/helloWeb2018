@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Query</title>
+    <!--MUY IMPORTANTE PARA RWD (Responsive Web Design): Diseño adaptativo-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Estilos-->
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+        }
+
+        /* MEDIA QUERYS */
+
+        /* Se aplican estos estilos en los dispositivos DE PANTALLA (@media screen and ...)que cumplan la media:
+            dispositivos que tengan hasta un MÁXIMO de 600px de ancho */
+
+        @media screen and (max-width: 600px) {
+            .box {
+                background-color: red;
+            }
+        }
+
+        /* Dispositivos hasta 800px de ancho y en orientacion apaisada */
+        @media (min-width: 600px) and (orientation: landscape) {
+            .box {
+                background-color: orange;
+                width: 600px;
+                transition-duration: 3s;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="content">
+        <nav id="main" class="clearfix">
+            <ul style="list-style: none">
+                <li><a href="/index.html">&lt; Home</a></li>
+            </ul>
+        </nav>
+
+        <h1>Media Query</h1>
+
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+</html>

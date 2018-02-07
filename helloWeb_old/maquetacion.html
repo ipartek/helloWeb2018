@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <link rel="stylesheet" href="css/commons.css">
 </head>
 <body>
    <style>
@@ -26,8 +27,8 @@
 img#foto{
             float:left;
             border:1px solid black;
-            height: 380px;
-            width: 370px;
+            height:500px;
+            width:700px;
             background-color: green;
             margin-right: 10px;
             margin-bottom:10px;
@@ -56,22 +57,31 @@ img#foto{
            left: 28%;
        }
        .cnt-img-zoom i:hover{
-   transition-duration: 1s;
-   opacity: 1;
-   font-size: 9em;
-   top: 28%;
-   left: 28%;
-}
+       transition-duration: 1s;
+       opacity: 1;
+       font-size: 9em;
+       top: 28%;
+       left: 28%;
+        }
     </style>
    <div class="zoom">Sombreado CSS
     </div>
     <div class="cnt-img-zoom">
 
-       <img src="https://www.miathletic.com/media/galeria/6/0/4/9/1/n_athletic_de_bilbao_fondos-2121940.jpg" alt="" />
-       <i class="fa fa-search-plus" aria-hidden="true"></i>
+       <img id="foto" src="https://www.miathletic.com/media/galeria/6/0/4/9/1/n_athletic_de_bilbao_fondos-2121940.jpg" alt="foto" />
+       <a href="#popup"><i class="fa fa-search-plus" ></i></a>
 
 
     </div>
-
+    <!--Ventana modal oculta-->
+ <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Info box</h2>
+            <a class="close" href="#close">&times;</a>
+            <div class="content">
+                  <img id="foto" src="https://www.miathletic.com/media/galeria/6/0/4/9/1/n_athletic_de_bilbao_fondos-2121940.jpg" alt="foto" />
+            </div>
+        </div>
+    </div>
 </body>
 </html>

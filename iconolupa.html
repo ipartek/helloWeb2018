@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- enlace a la hoja de estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- fonts awoseme -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <style>
+        .cnt-img-zoom {
+            position: relative;
+            display: inline-block;
+        }
+
+        .cnt-img-zoom i {
+            position: absolute;
+            opacity: 0.5;
+            top: 30%;
+            bottom: 30%;
+        }
+
+        .cnt-img-zoom i:hover {
+            position: absolute;
+            opacity: 1;
+            top: 20%;
+            bottom: 20%;
+        }
+
+        #foto {
+            width: 300px;
+        }
+
+    </style>
+    <h2>Icono de lupa de forma absoluta</h2>
+
+
+        <!-- https://www.w3schools.com/howto/howto_css_modal_images.asp-->
+        <div class="cnt-img-zoom" id="lupa">
+
+            <img id="foto" src="img/fondo.jpg" alt="fondo">
+           <a href="#popup1"> <i class="fa fa-search fa-5x"></i></a>
+
+        </div>
+        <!--cnt-img-zoom-->
+
+
+        <!-- ventana modal oculta -->
+        <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Info box</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                <img id="foto" src="img/fondo.jpg" alt="fondo">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

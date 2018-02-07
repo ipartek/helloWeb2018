@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -16,13 +17,14 @@
 			position: relative;
 
 		}
-		.cnt-img-zoom i{
+
+		.cnt-img-zoom i {
 			position: absolute;
-			top:30%;
-			left:30%;
+			top: 30%;
+			left: 30%;
 			font-size: 8em;
-			opacity:0.6;
-			color:#5a524f;
+			opacity: 0.6;
+			color: #5a524f;
 		}
 
 		#myImg:hover {
@@ -130,6 +132,57 @@
 				width: 100%;
 			}
 		}
+
+		/********************************************************/
+
+		.overlay {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: rgba(0, 0, 0, 0.7);
+			transition: opacity 200ms;
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		.overlay:target {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.popup {
+			margin: 75px auto;
+			padding: 20px;
+			position: relative;
+			width: max-content;
+			height: max-content;
+		}
+
+
+		.popup .close {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			top: 0px;
+			right: 55px;
+			opacity: 0.5;
+			transition: all 200ms;
+			font-size: 24px;
+			font-weight: bold;
+			text-decoration: none;
+			color: white;
+		}
+
+		.popup .close:hover {
+			opacity: 1;
+		}
+
+		.popup .content {
+			max-height: 400px;
+			overflow: auto;
+		}
 	</style>
 </head>
 
@@ -153,6 +206,29 @@
 		<img class="modal-content" id="img01">
 		<div id="caption"></div>
 	</div>
+
+
+	<h2>Ventana modal sin javascript</h2>
+
+	<div class="cnt-img-zoom">
+
+		<img id="myImg" src="img/img_fjords.jpg" alt="Trolltunga, Norway" width="300" height="200">
+		<a href="#popup1"><i class="fa fa-search" aria-hidden="true"></i></a>
+
+	</div>
+
+	<div id="popup1" class="overlay">
+		<div class="popup">
+
+			<a class="close" href="#">&times;</a>
+			<div class="content">
+				<img id="myImg" src="img/img_fjords.jpg" alt="Trolltunga, Norway" width="90%" height="90%">
+			</div>
+		</div>
+	</div>
+
+
+
 
 	<script>
 		// Get the modal
@@ -178,4 +254,5 @@
 	</script>
 
 </body>
+
 </html>

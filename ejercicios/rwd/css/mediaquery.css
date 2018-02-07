@@ -1,0 +1,76 @@
+ @media screen and (max-width: 425px) {
+     header {
+         display: none;
+
+     }
+
+     #wrapper {
+         width: 90%;
+
+     }
+
+     img {
+         max-width: 100%;
+         background-size: contain;
+     }
+
+     article[data-type=cols] section {
+
+    width: 388%;
+}
+     article[data-type=cols] section p {
+         float: left;
+         display: block;
+         margin: 0 -3px 0 0;
+         width: 25%;
+         font-size: 1em;
+         text-align: justify;
+
+
+     }
+
+     .navBar:after {
+         display: none;
+     }
+     .navBar:before {
+         display: none;
+     }
+
+     .navBar {
+         position: relative;
+         left: 10px;
+         list-style-type: none;
+         margin: 0px;
+         padding: 0;
+         width: 50%;
+         height: 150%;
+
+
+     }
+
+     .navBar a {
+
+         display: block;
+         margin: 0;
+         padding: 8px 16px;
+         width: 75%;
+     }
+
+     .gallery {
+         margin: 0 auto;
+         padding: 20px 0 0 0;
+         border-top: 1px solid #a5d3db;
+         display: inline-block;
+         width: 128%;
+
+     }
+
+
+     .gallery li {
+         display: block;
+         padding: 0em 8em 2em 0;
+         width: 80%;
+         float: left;
+     }
+
+ }

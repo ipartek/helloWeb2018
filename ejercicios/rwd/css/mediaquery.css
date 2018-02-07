@@ -1,7 +1,10 @@
 /*
     HOJA DE ESTILOS CON MEDIA QUERYS PAR RWD
+    1. Dispositivos móviles (width <= 425px)
+    2. Pantallas anchas (width >= 425px)
 */
 
+/* 1. Para dispositivos móviles (width <= 425px) */
 @media screen and (max-width: 425px) {
 
     #wrapper {
@@ -46,5 +49,11 @@
 
     footer {
         width: 100%;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    #menuSuperior {
+        display: none;
     }
 }

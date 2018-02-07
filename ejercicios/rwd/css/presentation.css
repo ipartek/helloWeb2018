@@ -1,18 +1,12 @@
 /*
-	#1 grid
-	#2 MEDIA QUERIES
+	#1 toolbar
+    #2 menú navegación lateral (mobile)
+    #3 grid
+	#4 MEDIA QUERIES
 
 */
 
-/* #1 presentation */
-
-header {
-    border-top: 4px solid #315968;
-}
-
-header img {
-    margin: 0 0 0 10%;
-}
+/* #1 toolbar */
 
 #menuSuperior {
     position: fixed;
@@ -23,13 +17,23 @@ header img {
     z-index: 1;
 }
 
-/* Botón de navegación lateral (mobile) */
+/* #2 Botón de menú de navegación lateral (mobile) */
 #btnNav {
-    font-size: 45px;
+    font-size: 40px;
     float: left;
     position: fixed;
     left: 5px;
+    top: 5px;
     color: aliceblue;
+}
+
+/* #3 grid */
+header {
+    border-top: 4px solid #315968;
+}
+
+header img {
+    margin: 0 0 0 10%;
 }
 
 .navBar {

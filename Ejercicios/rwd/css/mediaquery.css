@@ -1,0 +1,130 @@
+@media (max-width: 425px) {
+
+
+    header img,
+    .navBar {
+
+        display: none;
+
+    }
+
+    header {
+
+        margin-top: -9px;
+    }
+
+
+
+    .navnextBar {
+
+
+        position: relative;
+        width: 450px;
+        height: 90px;
+
+        background: url(../img/ribbon-fnd.png) repeat-x 0 0;
+        text-align: center;
+
+    }
+
+    .navnextBar a {
+
+        display: inline-block;
+        width: 25%;
+        margin: 4px 10px 0 0;
+        background: #4a7e08;
+        font: 20px/59px Times, serif;
+        text-transform: uppercase;
+        color: #000;
+        text-decoration: none;
+
+
+    }
+
+
+    .navnextBar a.active {
+
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+        background: #315968;
+        color: #fff;
+    }
+
+    .navnextBar {
+
+        background: url(../img/ribbon-fnd.png) repeat-x 0 0;
+    }
+
+
+    section[data-type=slider] img {
+margin-left: 22px;
+        width: 100%;
+margin-bottom: 20px;
+
+
+    }
+
+    article[data-type=cols] {
+
+        font-size: 16px;
+        text-align: justify;
+
+    }
+
+    article[data-type=cols] section {
+        width: 100%;
+        padding-bottom: 5%;
+
+    }
+
+    .gallery h2 {
+
+
+        text-align: center;
+    }
+
+    .gallery ul li {
+
+        display: block;
+        margin: auto;
+        width: 100%;
+        margin-left: 2%;
+        margin-right: 2%;
+
+    }
+    .gallery ul li a img {
+
+        width: 100%;
+    margin-left: 9px;
+
+
+    }
+
+    .gallery ul {
+        margin-left: 4%;
+        margin-right: 2%;
+
+
+
+    }
+
+    article[data-type=cols] section p {
+
+
+            margin-left: 25px;
+    }
+    footer article[data-type="cols"]{
+
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 426px) {
+
+    .navnextBar {
+
+        display: none;
+
+    }
+}

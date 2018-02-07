@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Querys</title>
+
+    <!-- MUY IMPORTANTE para RWD-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: teal;
+        }
+
+        /*
+        En este caso se aplican estos estilos para ddispositivos de pantalla como MAXIMO 600px.
+        Si va sin screen seria para CUALQUIER dispositivo
+        */
+
+        @media screen and (max-width: 600px){
+            .box {
+                background-color: red;
+            }
+        }
+
+        }
+
+         @media (orientation: landscape) {
+             .box{
+                 background-color: :orange;
+                 width:400px;
+                 transition-duration:1sg;
+             }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <h1>Media Query</h1>
+
+    <div class="box"></div>
+
+
+
+</body>
+</html>

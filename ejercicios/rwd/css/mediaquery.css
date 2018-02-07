@@ -11,6 +11,7 @@
 
      img {
          max-width: 100%;
+
          background-size: contain;
      }
 
@@ -26,8 +27,16 @@
          font-size: 1em;
          text-align: justify;
 
+     }
+
+     article[data-type=cols] section p {
+
+           font-size:1em;
+
+
 
      }
+
 
      .navBar:after {
          display: none;
@@ -71,6 +80,24 @@
          padding: 0em 8em 2em 0;
          width: 80%;
          float: left;
+     }
+
+
+     /*.navBar a{
+             margin: -59px 10px 0px 157px;
+     }*/
+     .navBar:after{
+          display: none;
+     }
+     .navBar:before{
+         /*visibility: hidden;*/
+         display: none;
+     }
+
+
+     .navBar a {
+         display:block;
+         width: 75%;
      }
 
  }

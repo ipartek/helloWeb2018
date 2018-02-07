@@ -1,0 +1,55 @@
+
+@media (max-width : 425px){
+    header img{
+        display: none;
+    }
+
+    .navBar{
+        display:none;
+    }
+    #wrapper{
+        padding: 0 15px;
+    }
+
+	section[data-type=slider] img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    article[data-type=cols] section{
+        display: inline;
+        margin: 0 -3px 0 0;
+        width: 100%;
+        text-align: justify;
+    }
+
+    .gallery li {
+        width: 100%;
+        padding: 0 0 2em 0;
+    }
+
+    .gallery li img {
+        width: 100%;
+
+    }
+
+    .gallery h2, footer h2 {
+        padding: 1em 0;
+        text-align: left;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 10px;
+    }
+
+    article[data-type=cols] section p {
+    padding: 0px;
+    }
+
+    footer{
+        text-align: justify;
+    }
+    /*MENÚ MOVIL*/
+
+
+
+}

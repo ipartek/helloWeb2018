@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>LUPA HECHA EN CLASE</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<style>
+
+      .cnt-img-zoom{
+            position: relative;
+            display: inline-block;
+        }
+
+        .cnt-img-zoom i{
+            position: absolute;
+            font-size: 5em;
+            top: 45%;
+            left: 40%;
+            opacity: 0.8;
+            color:grey;
+        }
+
+        .cnt-img-zoom i:hover{
+            transition-duration: 1s;
+            opacity: 1;
+            font-size: 9em;
+            top:28%;
+            left:28%;
+        }
+
+
+    /*_____________________ modal _____________________________*/
+        .popup {
+          margin: 75px auto;
+          padding: 60px;
+          background: #ffffff2E;
+          border: 1px solid #666;
+          width: 640px;
+          box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+          position: relative;
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: rgba(0, 0, 0, 0.7);
+          transition: opacity 200ms;
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        .overlay:target {
+          visibility: visible;
+          opacity: 1;
+        }
+
+
+        .popup .close {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          top: 20px;
+          right: 20px;
+          opacity: 0.8;
+          transition: all 200ms;
+          font-size: 4em;
+          font-weight: 700;
+          text-decoration: none;
+          color: #FFF;
+        }
+
+        .popup .close:hover {
+          opacity: 1;
+        }
+        .popup .content {
+          max-height: 400px;
+          overflow: auto;
+        }
+
+
+</style>
+</head>
+<body>
+   <h1>Ventana Popup/Modal sin JavaScript</h1>
+
+<div class="cnt-img-zoom">
+       <img src="../../img/barcos.jpg" alt="barcos veleros">
+       <a class="btn" href="#popup1"><i class="fa fa-search 5x"></i></a>
+    </div>
+<!--ventana modal oculto-->
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+                     <img src="../../img/barcos.jpg" alt="barcos veleros">
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>LUPA</title>
+    <link rel="stylesheet" href="../../css/styles.css" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <style>
+        .cnt-img-zoom{
+            position: relative;
+            display: inline-block;
+        }
+
+        .cnt-img-zoom i{
+            position: absolute;
+            font-size: 5em;
+            top: 45%;
+            left: 40%;
+            opacity: 0.8;
+            color:grey;
+        }
+
+        .cnt-img-zoom i:hover{
+            transition-duration: 1s;
+            opacity: 1;
+            font-size: 9em;
+            top:28%;
+            left:28%;
+        }
+
+        /*modal*/
+        .container {
+          display: table;
+          width: 100%;
+          height: 100%;
+        }
+
+        .btn {
+          background-color: #FFF;
+          padding: 1em 3em;
+          border-radius: 3px;
+          text-decoration: none;
+        }
+
+        .ventana-modal {
+          position: fixed;
+          background-color: rgba(255, 255, 255, 0.15);
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 999;
+          opacity: 0;
+          pointer-events: none;
+          -webkit-transition: all 0.3s;
+          -moz-transition: all 0.3s;
+          transition: all 0.3s;
+        }
+
+        .ventana-modal:target {
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        .ventana-modal>div {
+          width: 400px;
+          position: relative;
+          margin: 10% auto;
+          padding: 2rem;
+          background: #fff;
+          color: #444;
+        }
+
+        .ventana-modal header {
+          font-weight: bold;
+        }
+
+        .modal-cerrar {
+          color: #aaa;
+          line-height: 50px;
+          font-size: 80%;
+          position: absolute;
+          right: 0;
+          text-align: center;
+          top: 0;
+          width: 70px;
+          text-decoration: none;
+        }
+
+        .modal-cerrar:hover {
+          color: #000;
+        }
+
+    </style>
+</head>
+<body>
+   <h1>Lupa</h1>
+   <div class="container">
+
+   <div class="cnt-img-zoom">
+       <img src="img/barcos.jpg" alt="barcos veleros">
+       <a class="btn" href="#abrir-modal"><i class="fa fa-search 5x"></i></a>
+    </div>
+
+    <div id="abrir-modal" class="ventana-modal">
+        <div>
+                <a href="#modal-cerrar" title="Cerrar" class="modal-cerrar">Cerrar</a>
+
+                <div>
+                <img src="img/barcos.jpg" alt="barcos veleros">
+                </div>
+        </div>
+    </div>
+    </div><!--fin container-->
+
+
+
+
+</body>
+</html>

@@ -1,26 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Sorteo</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        p {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        #alumnos {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+
+        }
+
+        #alumnos td {
+            width: 30%;
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #alumnos tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #alumnos tr:hover {
+            background-color: #ddd;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        #btnreset {
+            display: none;
+        }
+
+        #lector {
+            height: 25px;
+        }
+    </style>
 </head>
 
 <body>
 
     <nav>
-        <a href="index.html">&larr; Volver</a>
+        <a href="../index.html">&larr; Volver</a>
     </nav>
     <br><br>
     <table id="alumnos">
-         <tr>
+        <tr>
             <td>Mikel</td>
             <td></td>
             <td>Leire</td>
         </tr>
-           <tr>
+        <tr>
             <td>Jorge</td>
             <td></td>
             <td>Iñaki J</td>
@@ -63,7 +105,7 @@
     <button id="btnreset" onclick="location.reload()">Reset</button>
 
     <!-- enlace al javascript -->
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
 
 </body>
 

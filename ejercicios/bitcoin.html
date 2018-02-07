@@ -4,18 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Bitcoin Precio Actual</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+        nav{
+            margin: 10px;
+        }
+        #precio {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+
 </head>
 
 <body>
     <nav>
-        <a  href="index.html">&larr; Índice</a><br>
+        <a href="index.html">&larr; Índice</a><br>
         <a href="sorteo.html">&larr; Sorteo</a>
     </nav>
     <h1>Bitcoin precio actual</h1>
     <div>
-        <img src="img/logo_bitcoin.jpg" alt="">
+        <img src="../img/logo_bitcoin.jpg" alt="">
     </div>
     <div>
         <select name="moneda" id="moneda">
@@ -30,7 +46,7 @@
         <button class="button1" onclick="llamadaApi()">Consultar</button>
     </div>
     <!-- enlace al javascript -->
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 </body>
 

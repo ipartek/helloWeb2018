@@ -23,26 +23,26 @@ nav#main ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    margin-bottom: 45px;
 }
 
 nav#main li {
     float: left;
-}
-
-nav#main li:last-child {
-    float: right;
+    width: 100%;
 }
 
 nav#main li a {
     display: block;
     color: white;
+    font-weight: bold;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    border-bottom: 1px solid black;
 }
 
 /* Change the link color to #111 (black) on hover */
-nav#main li a:hover {
+#main li a:not(.active):hover {
     background-color: #111;
 }
 

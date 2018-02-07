@@ -29,8 +29,7 @@ li{
 
 button {
     display: block;
-    margin: auto;
-    margin-bottom: 15px;
+    margin: 15px auto;
     background-color: #DDD;
     color: #000;
     border: 1px solid #000;

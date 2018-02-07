@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Colibri adventures</title>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+            background: url(../img/txori.png);
+            background-position: top right
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <header>
+        <img src="img/txori.png" alt="txori.icon">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Home</a>
+            <a href="#">Packs</a>
+            <a href="#">About us</a>
+
+        </div>
+
+
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
+
+    </header>
+    <div id="wrapper">
+
+        <!--   <nav class="navBar">
+            <a href="#home" class="active">home</a>
+            <a href="#packs">packs</a>
+            <a href="#about">about us</a>
+        </nav>-->
+
+        <section data-type="slider">
+            <img src="img/dummy.jpg">
+        </section>
+
+        <article data-type="cols">
+
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+
+        </article>
+
+        <nav class="gallery">
+
+            <h2>Packs</h2>
+
+            <ul>
+                <li><a href=""><img src="img/gallery01.jpg"></a></li>
+                <li><a href=""><img src="img/gallery02.jpg"></a></li>
+                <li><a href=""><img src="img/gallery03.jpg"></a></li>
+                <li><a href=""><img src="img/gallery04.jpg"></a></li>
+                <li><a href=""><img src="img/gallery05.jpg"></a></li>
+                <li><a href=""><img src="img/gallery06.jpg"></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <footer>
+
+        <h2>about</h2>
+
+        <article data-type="cols">
+
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac neque sed diam vulputate accumsan. Donec lacinia aliquet justo, ac convallis nunc tristique ut. In hac habitasse platea dictumst. Sed euismod malesuada nunc, eget venenatis turpis sodales ac. Aliquam aliquet dui quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ultrices urna eu erat placerat pellentesque. Phasellus tincidunt porttitor laoreet. Donec suscipit magna vitae turpis elementum quis facilisis metus congue. </p>
+            </section>
+
+        </article>
+
+    </footer>
+</body>
+</html>

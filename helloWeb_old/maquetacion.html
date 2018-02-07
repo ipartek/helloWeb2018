@@ -8,7 +8,7 @@
 <body>
    <style>
 
-            img {
+        <!--    img {
 			opacity: 0.7;
 			-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = 70);
 			filter: alpha(opacity = 70);
@@ -39,24 +39,35 @@ img#foto{
            display:inline-block;
        }
        .cnt-img-zoom i{
-           position:absolute;
-           top:30px;
-           left:30px;
-           font-size:8 em;
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            font-size: 8em;
            opacity: 0.6;
-           color:aqua;
+           color: #5a524f;
            transition-duration: 0.5s;
 
        }
        .cnt-img-zoom: i:hover{
-           transition-duration: 1s;
-           opacity:
+             transition-duration: 1s;
+            opacity: 1;
+               font-size: 9em;
+           top: 28%;
+           left: 28%;
        }
+       .cnt-img-zoom i:hover{
+   transition-duration: 1s;
+   opacity: 1;
+   font-size: 9em;
+   top: 28%;
+   left: 28%;
+}
     </style>
    <div class="zoom">Sombreado CSS
     </div>
     <div class="cnt-img-zoom">
-       <img id="foto" class="zoom"src="https://www.miathletic.com/media/galeria/6/0/4/9/1/n_athletic_de_bilbao_fondos-2121940.jpg" alt="" />
+
+       <img src="https://www.miathletic.com/media/galeria/6/0/4/9/1/n_athletic_de_bilbao_fondos-2121940.jpg" alt="" />
        <i class="fa fa-search-plus" aria-hidden="true"></i>
 
 

@@ -1,0 +1,52 @@
+@media screen and (max-width: 425px){
+
+            header{
+                visibility: hidden;
+            }
+
+        }
+
+@media screen and (max-width: 425px){
+    .navBar{
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 425px){
+
+     section[data-type=slider] img {
+    align-content: flex-end;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #333;
+    }
+}
+
+@media screen and (max-width: 425px){
+
+     p {
+    1em;
+    }
+}
+
+
+@media screen and (max-width: 425px){
+article[data-type=cols] section {
+    display: inline-block;
+    margin: 0 -3px 0 0;
+    width: 100%;
+    text-align: justify;
+}
+}
+
+
+@media screen and (max-width: 425px){
+.gallery li {
+    display: inline-block;
+    padding: 0 1em 2em 0;
+    width: 100%;
+}
+}
+
+
+
+

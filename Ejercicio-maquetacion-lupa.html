@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/commons.css">
 </head>
 <body>
 
@@ -12,8 +13,8 @@
     #foto{
             float: left;
             border: 1px solid black;
-            height: 200px;
-            width: 300px;
+            height: 400px;
+            width: 600px;
             background-color: green;
             margin-right: 10px;
             margin-bottom: 10px;
@@ -30,8 +31,8 @@
     .cnt-img-zoom i{
         position: absolute;
         opacity: 0.6;
-        top: 30%;
-        left: 30%;
+        top: 40%;
+        left: 40%;
         font-size: 8em;
         transition-duration: 0.5s;
         }
@@ -40,9 +41,10 @@
            opacity: 0.8;
            font-size: 9em;
            transition-duration: 1s;
-           top: 28%;
-            left: 28%;
+           top: 38%;
+            left: 38%;
        }
+
 
 
 
@@ -51,8 +53,19 @@
     <div class="cnt-img-zoom">
         <img id="foto" src="https://www.durango-udala.net/portalDurango/RecursosWeb/IMAGENES/1/0_1096_1_bis.gif" alt="Durango, Bizkaia">
 
-        <i class="fa fa-search-plus fa-4x" aria-hidden="true"></i>
+        <a href="#popup1"><i class="fa fa-search-plus fa-4x" aria-hidden="true"></i></a>
     </div>
+
+
+    <!-- Ventana modal oculta -->
+    <div id="popup1" class="modal">
+	<div class="modal-content">
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			<img id="foto" src="https://www.durango-udala.net/portalDurango/RecursosWeb/IMAGENES/1/0_1096_1_bis.gif" alt="Durango, Bizkaia">
+		</div>
+	</div>
+</div>
 
 
 

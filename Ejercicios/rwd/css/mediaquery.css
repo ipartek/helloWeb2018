@@ -18,11 +18,7 @@
     .navnextBar {
 
 
-        position: relative;
-        width: 450px;
-        height: 90px;
-
-        background: url(../img/ribbon-fnd.png) repeat-x 0 0;
+        display: none;
         text-align: center;
 
     }

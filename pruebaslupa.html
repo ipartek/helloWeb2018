@@ -1,29 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
- <title>Ejemplo Maquetacion Window Modal</title>
- <!-- lo en la web https://www.bootstrapcdn.com/fontawesome/ copiamos URL y pegamos aqui-->
+    <meta charset="UTF-8">
+    <title>Document</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-
-<style>
-
-    /*  cnt-img-zoom
+    <style>
+         /*  cnt-img-zoom
 **************************************/
 
 
     .cnt-img-zoom{
-        position: relative;
+       position: relative;
         display: inline-block;
+        opacity: 1;
 
 
     }
 
-    .cnt-img-zoom img{
+        .cnt-img-zoom:target{
+            visibility:visible;
+    display: block;
+   opacity: 1;
+   background-color: rgba(0,0,0,0.8);
+   position: fixed;
+   top:0;
+   left:0;
+   right:0;
+   bottom:0;
+   margin:0;
+   z-index: 999;
+   transition:all 1s;
+        }
+
+         .cnt-img-zoom img{
         width: 300px;
         height: 300px;
 
@@ -50,13 +61,14 @@
 
     }
 
-    #popup {
-   display: none;
+       #popup {
+   visibility: hidden;
+            display: none;
    opacity: 0;
-   margin-top: -300px;
-}
-    #popup:target {
-   display:block;
+        }
+#popup:target {
+   visibility:visible;
+    display: block;
    opacity: 1;
    background-color: rgba(0,0,0,0.8);
    position: fixed;
@@ -68,8 +80,7 @@
    z-index: 999;
    transition:all 1s;
 }
-
-    .popup-contenedor {
+.popup-contenedor {
    position: relative;
    margin:7% auto;
    padding:30px 50px;
@@ -89,21 +100,20 @@ a.popup-cerrar {
    line-height: 1;
    color:#fff;
 }
-
-
-
-</style>
+    </style>
 </head>
 <body>
-
-    <div class="cnt-img-zoom">
-       <div class="popup-contenedor">
-            <img src="img/paisaje2.jpg" alt="">
-            <a class="popup-cerrar" href="#">X</a>
-       </div>
-    </div>
+    <div class="modal-wrapper" id="popup">
+   <div class="popup-contenedor">
+      <img src="img/paisaje2.jpg" alt="">
+      <a class="popup-cerrar" href="#">X</a>
+   </div>
+</div>
+<div class="cnt-img-zoom">
     <img src="img/paisaje2.jpg" alt="">
     <i class="fa fa-search fa-4x"></i>
+</div>
+<a href="#popup" class="popup-link">Ver imagen modal</a>
 
 </body>
 </html>

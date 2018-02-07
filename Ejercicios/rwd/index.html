@@ -1,33 +1,49 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<title>Colibri adventures</title>
+    <title>Colibri adventures</title>
 
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <!--MENU DESPLEGABLE Fuentes de Google Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Lobster:400" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!--MENU DESPLEGABLE Fin Fuentes de Google Fonts -->
+
+
 
 </head>
 
 <body>
     <header>
-    	<img src="img/logo.png" alt="colibri adventures">
+        <img src="img/logo.png" alt="colibri adventures">
     </header>
-	<div id="wrapper">
+    <div id="wrapper">
+<!--Menu Desplegado Hack Para Desplegar el Menú activando un checkbox -->
+<input type="checkbox" class="checkbox" id="menu-toogle"/>
+<label for="menu-toogle" class="menu-toogle"></label>
+<nav class="nav">
+  <a href="#" class="nav__item current">Home</a>
+  <a href="#" class="nav__item">Pack</a>
+  <a href="#" class="nav__item">About</a>
+</nav>
+<!--Fin menu desplegado-->
 
         <nav class="navBar">
-        	<a href="#home" class="active">home</a>
+            <a href="#home" class="active">home</a>
             <a href="#packs">packs</a>
             <a href="#about">about us</a>
         </nav>
 
         <section data-type="slider">
-        	<img src="img/dummy.jpg">
+            <img src="img/dummy.jpg">
         </section>
 
         <article data-type="cols">
@@ -49,15 +65,15 @@
 
         <nav class="gallery">
 
-        	<h2>Packs</h2>
+            <h2>Packs</h2>
 
-        	<ul>
-            	<li><a href=""><img src="img/gallery01.jpg"></a></li>
-            	<li><a href=""><img src="img/gallery02.jpg"></a></li>
-            	<li><a href=""><img src="img/gallery03.jpg"></a></li>
-            	<li><a href=""><img src="img/gallery04.jpg"></a></li>
-            	<li><a href=""><img src="img/gallery05.jpg"></a></li>
-            	<li><a href=""><img src="img/gallery06.jpg"></a></li>
+            <ul>
+                <li><a href=""><img src="img/gallery01.jpg"></a></li>
+                <li><a href=""><img src="img/gallery02.jpg"></a></li>
+                <li><a href=""><img src="img/gallery03.jpg"></a></li>
+                <li><a href=""><img src="img/gallery04.jpg"></a></li>
+                <li><a href=""><img src="img/gallery05.jpg"></a></li>
+                <li><a href=""><img src="img/gallery06.jpg"></a></li>
             </ul>
         </nav>
     </div>

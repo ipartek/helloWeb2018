@@ -17,12 +17,12 @@
     display: block;
 }
 
-/* Menú de navegación nav#main */
-nav#main {
+/* Menú de navegación nav.mainNav */
+nav.mainNav {
     margin-bottom: 45px;
 }
 
-nav#main ul {
+nav.mainNav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -30,11 +30,11 @@ nav#main ul {
     background-color: #333;
 }
 
-nav#main li {
+nav.mainNav li {
     float: left;
 }
 
-nav#main li a {
+nav.mainNav li a {
     display: block;
     color: white;
     text-align: center;
@@ -43,10 +43,10 @@ nav#main li a {
 }
 
 /* Change the link color to #111 (black) on hover */
-nav#main li a:hover {
+nav.mainNav li a:hover {
     background-color: #111;
 }
 
-nav#main .active {
+nav.mainNav .active {
     background-color: #4CAF50;
 }

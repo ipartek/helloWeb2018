@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>FontAwesome</title>
+    <!--RWD-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Hojas de estilos-->
     <link rel="stylesheet" href="../css/styles.css" type="text/css">
     <!--FontAwesome v4.7-->
@@ -13,21 +15,22 @@
 </head>
 
 <body>
+
+    <nav id="navFontAwesome" class="mainNav clearfix">
+        <ul>
+            <li><a href="/index.html">&lt; Home</a></li>
+            <li><a href="#iconSize">Tamaños de iconos</a></li>
+            <li><a href="#fixedIcons">Iconos fijos</a></li>
+            <li><a href="#listIcons">Iconos de lista</a></li>
+            <li><a href="#borderedPulledIcons">Bordered &amp; Pulled Icons</a></li>
+            <li><a href="#animatedIcons">Iconos animados</a></li>
+            <li><a href="#rotatedFlippedIcons">Iconos rotados y volteados</a></li>
+            <li><a href="#stackedIcons">Iconos superpuestos</a></li>
+            <li><a href="#bootstrap3Examples">Ejemplos Bootstrap 3</a></li>
+            <li><a href="#modalImage">Ejemplo Modal Image</a></li>
+        </ul>
+    </nav>
     <div class="container">
-        <nav id="main" class="clearfix">
-            <ul>
-                <li><a href="/index.html">&lt; Home</a></li>
-                <li><a href="#iconSize">Tamaños de iconos</a></li>
-                <li><a href="#fixedIcons">Iconos fijos</a></li>
-                <li><a href="#listIcons">Iconos de lista</a></li>
-                <li><a href="#borderedPulledIcons">Bordered &amp; Pulled Icons</a></li>
-                <li><a href="#animatedIcons">Iconos animados</a></li>
-                <li><a href="#rotatedFlippedIcons">Iconos rotados y volteados</a></li>
-                <li><a href="#stackedIcons">Iconos superpuestos</a></li>
-                <li><a href="#bootstrap3Examples">Ejemplos Bootstrap 3</a></li>
-                <li><a href="#modalImage">Ejemplo Modal Image</a></li>
-            </ul>
-        </nav>
         <!--TODO 06/02/2018: Aplicar sombras al h1 con un generator
             @see: http://css3generator.com/
         -->
@@ -121,25 +124,25 @@
         <hr>
         <section id="bootstrap3Examples">
             <h2>Ejemplos con Bootstrap 3:</h2>
-            <a class="btn btn-danger" href="#">
+            <a class="btn btn-danger" href="#bootstrap3Examples">
               <i class="fa fa-trash-o fa-lg"></i> Delete</a>
-            <a class="btn btn-default btn-sm" href="#">
+            <a class="btn btn-default btn-sm" href="#bootstrap3Examples">
               <i class="fa fa-cog"></i> Settings</a>
 
-            <a class="btn btn-lg btn-success" href="#">
+            <a class="btn btn-lg btn-success" href="#bootstrap3Examples">
               <i class="fa fa-flag fa-2x pull-left"></i> Font Awesome<br>Version 4.7.0</a>
 
             <div class="btn-group">
-                <a class="btn btn-default" href="#">
+                <a class="btn btn-default" href="#bootstrap3Examples">
                 <i class="fa fa-align-left" title="Align Left"></i>
               </a>
-                <a class="btn btn-default" href="#">
+                <a class="btn btn-default" href="#bootstrap3Examples">
                 <i class="fa fa-align-center" title="Align Center"></i>
               </a>
-                <a class="btn btn-default" href="#">
+                <a class="btn btn-default" href="#bootstrap3Examples">
                 <i class="fa fa-align-right" title="Align Right"></i>
               </a>
-                <a class="btn btn-default" href="#">
+                <a class="btn btn-default" href="#bootstrap3Examples">
                 <i class="fa fa-align-justify" title="Align Justify"></i>
               </a>
             </div>
@@ -154,16 +157,16 @@
             </div>
 
             <div class="btn-group open">
-                <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>
-                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+                <a class="btn btn-primary" href="#bootstrap3Examples"><i class="fa fa-user fa-fw"></i> User</a>
+                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#bootstrap3Examples">
                 <span class="fa fa-caret-down" title="Toggle dropdown menu"></span>
               </a>
                 <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
-                    <li><a href="#"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
-                    <li><a href="#"><i class="fa fa-ban fa-fw"></i> Ban</a></li>
+                    <li><a href="#bootstrap3Examples"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
+                    <li><a href="#bootstrap3Examples"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
+                    <li><a href="#bootstrap3Examples"><i class="fa fa-ban fa-fw"></i> Ban</a></li>
                     <li class="divider"></li>
-                    <li><a href="#"><i class="fa fa-unlock"></i> Make admin</a></li>
+                    <li><a href="#bootstrap3Examples"><i class="fa fa-unlock"></i> Make admin</a></li>
                 </ul>
             </div>
         </section>
@@ -178,44 +181,32 @@
         <br>
         <br>
         <hr>
+
         <!--TODO 06/02/2018: img cualquiera con una icono de 'lupa' semitransparente en el centro
-            Al pulsar en el icono de la 'lupa' abrir una "modal window" con un zoom de la img
-            @see: https://www.w3schools.com/howto/howto_css_modal_images.asp
-        -->
+             Al pulsar en el icono de la 'lupa'/imagen abrir una "modal window" con un zoom de la img
+             @see: https://www.w3schools.com/howto/howto_css_modal_images.asp
+         -->
         <section id="modalImage">
             <h2>Modal Image:</h2>
+            <p>En este ejemplo usamos CSS para crear un 'modal' (cada de dialogo = "<i>dialog box</i>") que esta oculto por defecto.</p>
+            <p>Después usamos JS para que al pulsar la imagen se lanze el 'modal' con la imagen en su interior.</p>
+            <p><em>Nota: se usa el atributo "alt" de la imagen como subtítulo ("<i>caption</i>") de la imagen dentro del modal.</em></p>
+            <span class="fa-stack fa-lg">
+               <img id="imgPlaya" src="../img/playa.jpg" alt="imagen playa">
+               <i id="iconoLupa" class="fa fa-search fa-4x" aria-hidden="true"></i>
+             </span>
+            <br>
 
-            <div class="cnt-img-zoom">
-                <img src="../img/playa.jpg" alt="imagen playa">
-                <a href="#popup1"><i id="iconoLupa" class="fa fa-search fa-4x"></i></a>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- The Close Button -->
+                <span class="close">&times;</span>
+                <!-- Modal Content (The Image) -->
+                <img class="modal-content" id="img01" src="../img/everest.jpg">
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption">Foto de playa</div>
             </div>
-
-            <!--<span class="fa-stack fa-lg" id="modal">
-              <img id="imgPlaya" src="../img/playa.jpg" alt="imagen playa">
-            <a href=#popup1><i id="iconoLupa" class="fa fa-search fa-3x"></i></a>
-            </span>-->
-
-            <!--Ventana Modal oculta al inicio (sin JS)-->
-            <div id="popup1" class="modal">
-                <div class="modal-content">
-                    <a class="close" href="#close">&times;</a>
-                    <img src="../img/playa.jpg" alt="imagen playa">
-                </div>
-            </div>
-
-
-            <!-- The Modal with JS-->
-            <!--<div id="myModal" class="modal">-->
-
-            <!-- The Close Button -->
-            <!--<span class="close">&times;</span>-->
-
-            <!-- Modal Content (The Image) -->
-            <!--<img class="modal-content" id="img01">-->
-
-            <!-- Modal Caption (Image Text) -->
-            <!--<div id="caption">Foto de playa</div>
-            </div>-->
         </section>
         <br>
         <br>
@@ -227,38 +218,46 @@
         <br>
         <br>
         <br>
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
-    <!--<script>
-    // Get the modal
-    var modal = document.getElementById('myModal');
-
-    // Get the image and insert it inside the modal - use its "alt" text as a caption
-    var img = document.getElementById('imgPlaya');
-    var lupa = document.getElementById('iconoLupa');
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
-
-    img.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
-    // TODO 07/02/2018: llamar a la misma funcion desde 'lupa'
-    lupa.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = img.src;
-        captionText.innerHTML = img.alt;
-    }
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-    </script>-->
+    <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById('imgPlaya');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        // Al pulsar la imagen se hace visible la capa 'modal'
+        img.onclick = function() {
+            modal.style.display = "block";
+            modal.style.visibility = "visible";
+            modal.style.opacity = 9;
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+        iconoLupa.onclick = function() {
+            modal.style.display = "block";
+            modal.style.visibility = "visible";
+            modal.style.opacity = 9;
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    </script>
 </body>
 
 </html>

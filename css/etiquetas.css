@@ -3,6 +3,11 @@
     body, h1-h6, select, p, span, ul, ol, li, table...
 */
 
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
 h1 {
     font-family: 'Roboto', cursive;
     color: teal;
@@ -11,8 +16,8 @@ h1 {
     margin-bottom: 20px;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
+body > h2 {
+    margin: 5px 0 0 5px;
 }
 
 select {
@@ -23,21 +28,3 @@ select {
 table {
     margin: auto;
 }
-
-/********************NAVEGACIÓN********************/
-
-/*nav ul {
-    background-color: cadetblue;
-    height: 32px;
-}
-
-nav ul li {
-    list-style: none;
-    border: 1px solid black;
-    padding: 5px 10px;
-    float: left;
-}
-
-a {
-    text-decoration: none;
-}*/

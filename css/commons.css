@@ -2,6 +2,44 @@
     HOJA DE ESTILOS PARA ESTILOS COMUNES ENTRE VARIAS PÁGINAS
 */
 
+/* Botones
+**********/
+
+.button {
+    background-color: #f44336;
+    /* RED */
+    border-radius: 4px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: auto;
+    display: block;
+}
+
+/* END Botones */
+
+/* CLEARFIX
+****************/
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* END clearfix */
+
 /* VETANAS MODALES
 *********************************************/
 

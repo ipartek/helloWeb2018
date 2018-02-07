@@ -24,37 +24,43 @@
 
 <body onload="init()">
 
-    <div class="container">
-
-        <nav id="main" class="clearfix">
+        <nav class="mainNav clearfix">
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="ejercicios/bitcoin.html">Ver valor del Bitcoin</a></li>
                 <li><a href="ejercicios/tabla_alumnos.html">Tabla de Alumnos</a></li>
                 <li><a href="ejercicios/arcanoid.html">Juego del Arcanoid</a></li>
                 <li><a href="ejercicios/capitulo4.html">Capítulo 4: Encabezados, div, listas y tablas</a></li>
-                <li><a href="ejercicios/datatables.html">DataTable</a></li>
                 <li><a href="ejercicios/css.html">CSS - Cascading Style Sheets</a></li>
                 <li><a href="ejercicios/posicionamiento.html">Posicionamiento</a></li>
                 <li><a href="ejercicios/ApocalypseNow.html">Apocalypse Now</a></li>
-                <li><a href="ejercicios/FontAwesome.html">FontAwesome &amp; Modal Image</a></li>
-                <li><a href="ejercicios/modal.html">Modal Image sin JS</a></li>
                 <li><a href="ejercicios/media.html">Media Query</a></li>
                 <li><a href="ejercicios/rwd/index.html">RWD - Responsive</a></li>
-                <li><a href="ejercicios/sidenav.html">Sidenav</a></li>
+
             </ul>
         </nav>
 
+        <h2>Ejemplos:</h2>
+        <nav id="navEjemplos" class="mainNav clearfix">
+            <ul>
+                <li><a href="ejemplos/datatables.html">DataTable</a></li>
+                <li><a href="ejemplos/FontAwesome.html">FontAwesome &amp; Modal Image</a></li>
+                <li><a href="ejemplos/modal.html">Modal Image sin JS</a></li>
+                <li><a href="ejemplos/sidenav.html">Sidenav</a></li>
+            </ul>
+        </nav>
+    <div class="container">
         <h1>Hello World</h1>
 
         <div id="divNumPar">
             <h2 id="tituloParInpar">¿PAR o INPAR?</h2>
             <input type="number" id="numero" placeholder="Escribe un número" />
 
-            <p id="texto">Resultado</p>
+            <p id="txtResult">Resultado</p>
             <button id="botonParInpar" class="button" onclick="pulsador()">PULSAME</button>
         </div>
-    </div><!-- END container -->
+    </div>
+    <!-- END container -->
     <!-- enlace al javascript -->
     <script src="js/main.js" type="text/javascript"></script>
 

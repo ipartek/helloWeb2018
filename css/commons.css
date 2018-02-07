@@ -1,6 +1,118 @@
+/*
+    CSS para poder reutilizar en varias paginas
+*/
 
-@import url('reset.css');
-@import url('etiquetas.css');
-@import url('layouts.css');
-@import url('commons.css');
-@import url('custom.css');
+.border {
+    border: 1px solid #DDD;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ventanas modales
+************************************/
+
+.modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 200ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    margin: 75px auto;
+    padding: 20px;
+    max-width: 400px;
+    /*
+    border: 1px solid #666;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+    */
+}
+
+.modal-content .close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 50px;
+    opacity: 0.8;
+    transition: all 200ms;
+    font-size: 4em;
+    font-weight: 600;
+    text-decoration: none;
+    color: #FFF;
+}
+
+.modal-content .close:hover {
+    opacity: 1;
+}
+
+
+/** CARD
+************************************/
+
+.card {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.card p {
+    position: absolute;
+    bottom: -180px;
+    font-size: 1.4em;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #FFF;
+    padding: 0 10px;
+    transition-duration: 2s;
+}
+
+.card:hover p {
+    bottom: -25px;
+    transition-duration: 1s;
+    height: 300px;
+}
+
+/*  cnt-img-zoom
+**************************************/
+
+.cnt-img-zoom {
+    position: relative;
+    display: inline-block;
+}
+
+.cnt-img-zoom img {
+    width: 300px;
+    height: 300px;
+}
+
+.cnt-img-zoom i {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    font-size: 8em;
+    opacity: 0.6;
+    color: #5a524f;
+    transition-duration: 0.5s;
+}
+
+.cnt-img-zoom i:hover {
+    transition-duration: 1s;
+    opacity: 1;
+    font-size: 9em;
+    top: 28%;
+    left: 28%;
+}

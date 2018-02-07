@@ -1,15 +1,19 @@
-/*  CSS PARA LAS SECCIONES PRINCIPALES
-
+/*
+    CSS para las secciones principales de la Web, por ejmeplo:
+    container, encabezados, main, footer, sidebar, etc...
 */
 
-container{
+
+.container{
     max-width: 1200px;
-        margin:auto;
+    margin: auto;
+    background-color: #FFF;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-nav#main{
 
-}
 .logo {
     width: 100px;
     height: 100px;
@@ -17,29 +21,39 @@ nav#main{
     margin: auto;
 }
 
-na#vul {
+
+/* menu principal nav#main
+***********************************/
+
+nav#main{
+    margin-bottom: 45px;
+}
+
+nav#main ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
+    overflow: hidden;
+    background-color: #333;
 }
 
-nav#li a {
+nav#main li {
+    float: left;
+}
+
+nav#main li a {
     display: block;
-    color: #000;
-    padding: 8px 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
 }
 
-/* Change the link color on hover */
-nav#li a:hover {
-    background-color: #555;
-    color: white;
+/* Change the link color to #111 (black) on hover */
+nav#main li a:hover {
+    background-color: #111;
 }
 
-.active {
+nav#main .active {
     background-color: #4CAF50;
-    color: white;
 }
-

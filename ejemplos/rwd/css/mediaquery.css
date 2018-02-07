@@ -1,0 +1,29 @@
+  @media screen and (max-width: 425px) {
+      header{
+          visibility: hidden;
+      }
+      .navBar{
+          visibility: hidden;
+      }
+
+
+
+
+
+article[data-type=cols] section {
+    display: inline-block;
+    margin: 0 -3px 0 0;
+    width: 100%;
+}
+      article[data-type=cols] section p {
+    padding: 0 10px;
+    font-size: 2em;
+    line-height: 1.8em;
+}
+      .gallery li img {
+    max-width: 100%;
+    border: 5px solid #fff;
+    box-shadow: 0 0 5px #333;
+}
+}
+

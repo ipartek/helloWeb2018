@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <style>
+
+
+
+
+        .button {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            padding: 5px 10px;
+            border: 1px solid #aaa;
+            background-color: #eee;
+            background-image: linear-gradient(top, #fff, #f0f0f0);
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+            color: #666;
+            text-decoration: none;
+            text-shadow: 0 1px 0 #fff;
+            cursor: pointer;
+            transition: all 0.2s ease-out;
+        }
+
+        .button:hover {
+            border-color: #999;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        .button:active {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset;
+        }
+
+
+         #wrapper {
+            height: 200px;
+            width: 300px;
+        }
+
+        #wrapper a {
+            position: relative;
+            height: 300px;
+            top: -200px;
+            left: -1px;
+        }
+
+        #wrapper i {
+
+            opacity: 0;
+            color: white;
+
+            background-color: black;
+
+            padding: 60px 113px;
+        }
+
+        #myImg {
+            float: left;
+            cursor: pointer;
+            transition: 0.3s;
+            height: 200px;
+            width: 300px;
+        }
+
+        #wrapper:hover i {
+            opacity: 0.5;
+
+        }
+    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+    <a href="index.html">Volver</a><br>
+    <div id="wrapper">
+        <img id="myImg" src="img/guay.jpg" alt="guay">
+        <a href="#popup1"><i class="fa fa-search fa-5x" aria-hidden="true"></i></a>
+    </div>
+
+    <div id="popup1" class="overlay">
+       <a class="close" href="molona.html"><i class="fa fa-times fa-3x" aria-hidden="true"></i>
+</a>
+        <div class="popup">
+
+            <div class="content">
+                <img id="myImg2" src="img/guay.jpg" alt="guay">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

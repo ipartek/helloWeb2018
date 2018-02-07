@@ -6,16 +6,57 @@
     position: relative;
     background-color: #000;
 }
-div img{
+.cnt-img-zoom img{
     max-width: 50%;
     margin: 0 auto;
     display: block;
 }
-.cnt-img-zoom i{
+ .cnt-img-zoom i{
     position: absolute;
     top: 28%;
     left: 45%;
     opacity: 0.6;
     color:white;
     font-size: 8em;
+}
+/* Ventana modal */
+
+.modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 200ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-content {
+    margin: auto;
+    padding: 20px;
+    height: auto;
+}
+
+.modal-content .close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  right: 20px;
+  opacity: 0.8;
+  transition: all 200ms;
+  font-size: 4em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.modal-content .close:hover {
+  opacity: 1;
 }

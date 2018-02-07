@@ -1,0 +1,39 @@
+ @media screen and (max-width: 425px) {
+     header {
+         display: none;
+
+     }
+
+     #wrapper {
+         width: 90%;
+
+     }
+
+     img {
+         max-width: 100%;
+     }
+
+     article[data-type=cols] section p {
+
+           font-size:1em;
+
+
+     }
+
+     /*.navBar a{
+             margin: -59px 10px 0px 157px;
+     }*/
+     .navBar:after{
+          display: none;
+     }
+     .navBar:before{
+         /*visibility: hidden;*/
+         display: none;
+     }
+
+
+     .navBar a {
+         display:block;
+         width: 75%;
+     }
+ }

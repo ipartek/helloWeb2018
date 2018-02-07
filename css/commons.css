@@ -1,5 +1,64 @@
 /*CSS para poder reutilizar en varias páginas*/
 
+
+
+
+
+
+
+/* ventanas modales
+**************************************/
+
+ .modal {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        transition: opacity 200ms;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+.modal:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+  .popup .close {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 20px;
+        right: 20px;
+        opacity: 0.8;
+        transition: all 200ms;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #666;
+    }
+
+    .popup .close:hover {
+        opacity: 1;
+    }
+
+    .popup .content {
+        max-height: 400px;
+        overflow: auto;
+    }
+
+
+
+    .popup p:last-child {
+        margin: 0;
+    }
+
+
+
+
+
 /*Me falta esto, aqui van los CARD*/
 
    .card{

@@ -1,0 +1,27 @@
+@media (max-width: 425px) {
+
+    header {
+
+        visibility: hidden;
+    }
+
+    .slider {
+
+        max-width: 100%;
+    }
+    section[data-type=slider] img {
+
+        max-width: 900px;
+
+    }
+    section[data-type=cols] {
+
+        text-align: left;
+    }
+    article[data-type=cols] section p {
+        display: block;
+        padding: 0 10px;
+        font-size: 25px;
+    }
+
+}

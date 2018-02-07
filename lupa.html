@@ -5,10 +5,20 @@
     <meta charset="UTF-8">
     <title>Lupa</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/commons.css">
 </head>
 
 <body>
     <style>
+        h1 {
+            text-align: center;
+            color: aqua;
+            width: max-content;
+            margin: auto;
+            background-color: brown;
+
+        }
+
         .cnt-img-zoom {
 
             position: relative;
@@ -19,17 +29,16 @@
         .cnt-img-zoom i {
 
             position: absolute;
-            left:270px;
-            top:100px;
-             opacity: 0.6;
-            color:aqua;
+            left: 270px;
+            top: 100px;
+            opacity: 0.6;
+            color: aqua;
         }
-        .cnt-img-zoom i:hover{
+
+        .cnt-img-zoom i:hover {
             opacity: 1.4;
             transition-duration: 2s;
         }
-
-
     </style>
 
     <h1>Lupa</h1>
@@ -37,9 +46,22 @@
     <div class="cnt-img-zoom">
 
         <img src="https://media-exp2.licdn.com/media-proxy/ext?w=800&h=800&hash=9xy%2BMhAfgzW166uvDEAyAWDtv3A%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6nlh8Tw1Ek-L7T40O550NJC4HTDy_8DnHzq8jAIiihMNiKMfau41AQfCwXyAkweem-Fj2_BMvtaNLiBIU14uSMMZKWZykQRBMhvywdztgRChAwkZaEDNnCMGsd9qpXfy7gYvy7RFMZKAYDxeiCH4rIDnFD1UC9eP7DKf0ADJR60bdOwgtS6p33QsBt-dxe0nBi3Qrq7YmuZiEzvaSjOXuXBWwROSjOAN9prPeT9RSxnmf4nBHiobXdD6H7BA" alt="">
+        <a href="#popup1">
 
-        <i class="fa fa-search-plus fa-3x" aria-hidden="true"></i>
+            <i class="fa fa-search-plus fa-3x" aria-hidden="true"></i></a>
     </div>
+
+    <div id="popup1" class="overlay">
+        <div class="popup">
+
+            <a class="close" href="#">&times;</a>
+
+            <div class="content">
+                <img src="https://media-exp2.licdn.com/media-proxy/ext?w=800&h=800&hash=9xy%2BMhAfgzW166uvDEAyAWDtv3A%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R6nlh8Tw1Ek-L7T40O550NJC4HTDy_8DnHzq8jAIiihMNiKMfau41AQfCwXyAkweem-Fj2_BMvtaNLiBIU14uSMMZKWZykQRBMhvywdztgRChAwkZaEDNnCMGsd9qpXfy7gYvy7RFMZKAYDxeiCH4rIDnFD1UC9eP7DKf0ADJR60bdOwgtS6p33QsBt-dxe0nBi3Qrq7YmuZiEzvaSjOXuXBWwROSjOAN9prPeT9RSxnmf4nBHiobXdD6H7BA" alt="">
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

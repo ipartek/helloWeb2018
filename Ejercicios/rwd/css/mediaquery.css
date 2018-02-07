@@ -1,0 +1,51 @@
+@media(max-width: 600px) {
+    /* Icono de la cabecera */
+    header {
+        display: none;
+    }
+    /* Menu de la cabecera */
+    .navBar {
+        display: none;
+    }
+    /* Imagen del goblo de la cabecera */
+    section[data-type=slider] {
+        width: 100%;
+
+    }
+    /* Textos tanto de arriba como de abajo */
+    article[data-type=cols] section {
+        display: inline;
+        margin: 0 -3px 0 0;
+        padding: 20px;
+        width: 25%;
+    }
+
+    article[data-type=cols] section p {
+        padding: 15px;
+        font-size: 20px;
+        text-align: justify;
+    }
+    footer section p {
+        margin-left: -1px;
+        margin-right: -10px
+    }
+    footer{
+        margin-top: 2em;
+    }
+    /* Imagenes de la galeria */
+    .gallery li {
+        width: 100%;
+        padding: 0 0em 1em 0;
+
+    }
+
+    .gallery img {
+        width: 90%;
+    }
+    .gallery h2 {
+        text-align: center;
+    }
+
+
+
+}

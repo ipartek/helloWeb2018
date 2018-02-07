@@ -1,5 +1,6 @@
 @media (max-width: 425px) {
 
+
     header {
 
         visibility: hidden;
@@ -9,19 +10,42 @@
 
         max-width: 100%;
     }
-    section[data-type=slider] img {
+
+    #wrapper {
 
         max-width: 900px;
+    }
+    section[data-type=slider] img {
+
+        width: 900px;
 
     }
-    section[data-type=cols] {
-
-        text-align: left;
+    article[data-type=cols] section {
+        display: block;
+        margin: 0 -3px 0 0;
+        width: 100%;
     }
     article[data-type=cols] section p {
         display: block;
         padding: 0 10px;
         font-size: 25px;
+        line-height: 1em;
     }
 
+    .gallery li {
+        display: block;
+        padding: 0 1em 2em 0;
+        width: 100%;
+    }
+    .gallery li img {
+        margin: 2em;
+        width: 100%;
+        height: 70%;
+    }
+    footer {
+        position: relative;
+        color: #83c3ce;
+        padding: 2em 0;
+        width: 900px;
+    }
 }

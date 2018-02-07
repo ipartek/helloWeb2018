@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Muy importante para RWD -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Media Query</title>
+
+    <style>
+        .box {
+            width: 30px;
+            height: 30px;
+            background-color: teal;
+            border-radius: 30%;
+            transition-duration: 1s;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes reverse {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .box {
+                background-color: red;
+                animation-name: reverse;
+                animation-duration: 400ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+
+         @media (max-width: 600px) and (orientation: landscape){
+            .box {
+                background-color: orange;
+                animation-name: reverse;
+                animation-duration: 1000ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: ease;
+            }
+        }
+
+        @media (min-width: 600px) {
+            .box {
+                animation-name: spin;
+                animation-duration: 400ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Media Query</h1>
+
+    <div class="box"></div>
+
+</body>
+</html>

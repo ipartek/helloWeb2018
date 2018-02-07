@@ -1,0 +1,45 @@
+/*
+	#2 LAYOUT
+	  #2.1 Header
+	  #2.2 Wrapper
+	  #2.3 Footer
+
+*/
+
+
+/* #2 LAYOUT */
+
+	html, body {
+		min-height:100%;
+		height:100%;
+	}
+
+	body {
+		color: #315968;
+		font: 1em/1 Myriad Pro, Arial, Helvetica, sans-serif;
+		height:100%;
+		background:#57adbc url(../img/fnd-body.jpg);
+		text-align:center;
+	}
+
+/* #2.1 Header */
+
+	header {
+		text-align:left;
+	}
+
+/* #2.1 Wrapper */
+
+	#wrapper {
+		width:900px;
+		margin:0 auto;
+		text-align:left;
+	}
+
+/* #2.3 Footer */
+
+	footer {
+		width:100%;
+		background:#509ead;
+		text-align:left;
+	}

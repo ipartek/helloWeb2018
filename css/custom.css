@@ -3,7 +3,36 @@
     text-align: center;
 }
 
+#main-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    margin-bottom: 45px;
+}
 
+#main-menu li {
+    float: left;
+}
+
+#main-menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#main-menu li a:hover:not(.active) {
+    background-color: #111;
+}
+
+#main-menu .active {
+    background-color: #4CAF50;
+}
+
+/* end main-menu */
 
 #tabla-alumnos {
     margin: auto;
@@ -16,7 +45,10 @@
     text-align: center;
 }
 
-
+/*
+      # id
+      . class
+*/
 
 #tabla-alumnos .alumno {
     background-color: #2f72cc;

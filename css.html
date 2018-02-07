@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            height: 100vh;
+        }
+
+        /*?????????????????????????*/
+
+        body h1:first-child {
+            background-color: lightgrey;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+            border-left: solid 1px grey;
+            border-right: solid 1px grey;
+            padding: 10px 1%;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-style: 2em;
+            color: peru;
+            text-align: center;
+        }
+
+        .container h1 {
+            color: blue;
+        }
+
+        .container header h1 {
+            color: red;
+        }
+
+        .container:last-child{
+            margin: 0;
+        }
+
+        div.aviso {
+            padding: 5px;
+            background-color: lightcoral;
+        }
+
+        div>p {
+            margin: 0;
+        }
+
+        p+a {
+            color: yellow;
+        }
+
+        form {
+            width: 50%;
+            margin: 30px auto;
+        }
+
+        form input {
+            display: block;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        #enlaces {
+            margin: 10px;
+        }
+
+        form input:not([type="submit"]) {
+            width: 100%;
+        }
+
+        form input[type="submit"] {
+            margin: 0 auto;
+        }
+
+        /*Elementos input con clase a Y SOLO CLASE A*/
+
+        form input[rel="a"] {
+            box-shadow: 2px 2px 2px red;
+        }
+
+        /*Elementos input que ALGUNA DE SUS CLASES sea a*/
+
+        form input[rel~="a"] {
+            box-shadow: 2px 2px 2px black;
+        }
+
+        /*Elementos a con atributo href cuyo valor TERMINA en .com*/
+
+        a[href$=".com"] {
+            text-decoration: none;
+        }
+
+        /*Elementos a con atributo href cuyo valor COMIENZA por https*/
+
+        a[href^="https"] {
+            color: darkorange;
+        }
+
+        /*Elementos*/
+
+        input[rel*="nz"] {
+            border: 1px solid lightgreen;
+        }
+
+        /*
+        Colores Surf Search Spot
+        Azul Oscuro:     #2186A3  --  rgb(34, 134, 163)
+        Azul Claro:      #00B5D6  --  rgb(0, 181, 214)
+        Naranja:         #EB6D3B  --  rgb(235, 109, 59)
+        */
+    </style>
+</head>
+
+<body>
+    <h1>CSS TUTORIAL</h1>
+
+    <div class="container">
+
+        <H1>CSS</H1>
+
+
+cc
+        <form action="#">
+            <label>
+            <input rel="a onza" type="text" name="user" placeholder="Nombre">
+            </label>
+            <label>
+            <input rel="b a peonza" type="email" name="pass" placeholder="Email">
+            </label>
+            <input rel="c c tarta" type="submit" name="enviar">
+        </form>
+
+        <div id="enlaces">
+            <a href="https://www.google.es">Enlace 1</a>
+            <a href="http://github.com">Enlace 2</a>
+            <a href="https://www.awwwards.com">Enlace 3</a>
+        </div>
+
+        <div class="aviso">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, sit dignissimos deserunt, quaerat nemo doloremque veritatis ducimus similique, unde optio voluptatum. Quibusdam culpa harum, omnis inventore atque accusantium repudiandae hic!</p>
+        </div>
+
+        <h1>Triple de mal hecho</h1>
+    </div>
+</body>
+
+</html>

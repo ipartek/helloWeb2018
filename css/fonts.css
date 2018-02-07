@@ -1,10 +1,11 @@
 /*
-   Roboto
-   https://fonts.google.com/specimen/Roboto?selection.family=Roboto
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 */
 
-@font-face{
+@font-face {
     font-family: "roboto";
     src: url('../fonts/roboto/Roboto-Thin.ttf');
-    /* seria interesante tener el mimso tipo de fuente pero con diferentes extensiones */
+    /* Sería interesante tener el mismo tipo de fuente
+    pero con distintas extensiones para distintos sistemas
+    operativos */
 }

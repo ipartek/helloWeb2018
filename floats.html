@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posicionamiento</title>
+    <style>
+        body {
+            font-family: "Century Gothic";
+        }
+
+        #texto {
+            width: 80%;
+
+        }
+
+        #texto img {
+            float: left;
+            margin: 5px;
+        }
+
+        .caja {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            margin: 10px;
+            font-size: 5em;
+            text-align: center;
+
+        }
+
+        .caja:nth-child(2) {
+            float: right;
+
+        }
+
+        .caja2 {
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+            margin: 10px;
+            font-size: 5em;
+            text-align: center;
+            float: left;
+        }
+
+        .caja3 {
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+            margin: 10px;
+            font-size: 5em;
+            text-align: center;
+            float: left;
+        }
+
+        #cajas {
+            border: 1px red solid;
+            margin-bottom: 50px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        ul{
+            padding: 0;
+        }
+
+        ul li {
+           float: left;
+            /*display: inline-block;*/
+            margin: 10px;
+            list-style: none;
+            border: 1px blue solid;
+            padding: 10px;
+        }
+
+        #menu {
+            display: flex;
+            justify-content: center;
+        }
+
+        ul li a{
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body id="top">
+    <!-- caja 150*150, fondo imagen, al hacer hover sube el texto, con opacidad-->
+    <nav>
+        <ul>
+            <li><a href="bitcoin.html">Ver el valor del bitcoin</a></li>
+            <li><a href="sorteo.html">Sorteo</a></li>
+            <li><a href="index.html">Índice</a></li>
+        </ul>
+    </nav>
+
+    <div id="texto">
+        <p>
+            <img src="https://picsum.photos/150/150" alt=""> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas nostrum, aut! Incidunt vero animi harum provident corrupti, magnam libero ex suscipit ut, officia doloribus quas voluptates. Odit vel voluptate, perferendis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur repellat modi ullam rerum nisi quam, ipsa similique ad atque ut reprehenderit suscipit deserunt minus asperiores, dignissimos officia quidem illo. Quidem.
+        </p>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div id="cajas">
+        <div class="caja">1</div>
+
+        <div class="caja">2</div>
+
+        <div class="caja">3</div>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <hr>
+
+    <div id="cajas">
+        <div class="caja2">1</div>
+
+        <div class="caja2">2</div>
+
+        <div class="caja2 clearfix">3</div>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <hr>
+
+    <div id="menu">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contácto</a></li>
+        </ul>
+    </div>
+
+    <hr>
+
+</body>
+</html>

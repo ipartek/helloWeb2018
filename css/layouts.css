@@ -1,20 +1,10 @@
-/*
+/* CSS para las secciones principales de la web
+por ejemplo: container, encabezados, main, footer, sidebar...*/
 
-    CSS para las secciones principales de la Web, por ejmeplo:
-    container, encabezados, main, footer, sidebar, etc...
-
-*/
-
-
-.container{
+.container {
     max-width: 1200px;
     margin: auto;
-    background-color: #FFF;
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
 }
-
 
 .logo {
     width: 100px;
@@ -22,10 +12,6 @@
     display: block;
     margin: auto;
 }
-
-
-/* menu principal nav#main
-***********************************/
 
 nav#main{
     margin-bottom: 45px;
@@ -43,6 +29,10 @@ nav#main li {
     float: left;
 }
 
+nav#main li:last-child {
+    float: right;
+}
+
 nav#main li a {
     display: block;
     color: white;
@@ -56,26 +46,6 @@ nav#main li a:hover {
     background-color: #111;
 }
 
-nav#main .active {
+.active {
     background-color: #4CAF50;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

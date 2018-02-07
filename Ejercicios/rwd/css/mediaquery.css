@@ -38,4 +38,8 @@
         margin: 20px 0;
     }
 
+    .menu-desplegable{
+        display: inline-block;
+    }
+
 } /*  @media screen and (max-width: 425px)  */

@@ -19,10 +19,11 @@
 
     <nav id="main">
        <ul>
-        <li><a href="#" >Home</a></li>
-        <li><a href="bitcoin.html" class="active">Ver valor Bitcoin</a></li>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="bitcoin.html">Ver valor Bitcoin</a></li>
         <li><a href="aula.html">Ver Aula</a></li>
         <li><a href="capitulo4.html">Ver capitulo4</a></li>
+        <li><a href="ejercicios/modal.html">Modal</a></li>
        </ul>
     </nav>
 
@@ -38,18 +39,28 @@
 
     <div class="cnt-img-zoom">
         <img src="https://cdnhtml5hive.azureedge.net/wp-content/uploads/2014/03/css-beginners-tutorial.jpg" alt="">
-        <i class="fa fa-search fa-4x"></i>
+        <a href="#popup1"><i class="fa fa-search fa-4x"></i></a>
+    </div>
+
+    <!-- ventana modal oculta -->
+    <div id="popup1" class="modal">
+        <div class="modal-content">
+            <a class="close" href="#close">&times;</a>
+            <img src="https://cdnhtml5hive.azureedge.net/wp-content/uploads/2014/03/css-beginners-tutorial.jpg" alt="">
+        </div>
     </div>
 
 
+
     <br>
     <br>
     <br>
 
-    <input type="number" id="numero" placeholder="Escribe un numero"/>
-
-    <p id="texto">...</p>
-    <button id="boton" onclick="pulsador()">PULSAME!!!</button>
+   <div class="border">
+        <input type="number" id="numero" placeholder="Escribe un numero"/>
+        <p id="texto">...</p>
+        <button id="boton" onclick="pulsador()">PULSAME!!!</button>
+   </div>
 
 
 </div><!-- /container  -->

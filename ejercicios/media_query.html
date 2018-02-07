@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Media Query</title>
+
+    <!-- MUY IMPORTANTE PARA RMD -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .box {
+            height: 200px;
+            width: 20%;
+            background-color: blue;
+            transition-duration: 1s;
+        }
+
+        /* se aplica esta regla para dispositivos de pantalla de un maximo de 600px */
+
+        @media screen and (max-width: 600px){
+
+            .box {
+                background-color: red;
+                transition-duration: 1s;
+            }
+        }
+
+        @media screen and (max-width: 600px) and (orientation:landscape) {
+
+            .box {
+                background-color: orange;
+                width: 50%;
+                transition-duration: 1s;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <a href="/index.html"></a>
+    <h1>Media Query</h1>
+
+    <div class="box"></div>
+</body>
+
+</html>

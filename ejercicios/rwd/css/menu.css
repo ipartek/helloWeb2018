@@ -1,0 +1,60 @@
+.menu {
+
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    text-align: left;
+
+}
+
+
+
+.menu i {
+    color: black;
+    padding: 0 5px;
+    border-radius: 3px;
+    background-color: #63B2C1;
+
+}
+
+.menu ul {
+    background-color: #63B2C1;
+    border: 1px solid #8ec1cb;
+    width: 50%;
+    height: 100%;
+
+
+}
+
+.menu ul li {
+    display: block;
+    background-color: #63B2C1;
+    border: 1px solid #8ec1cb;
+    width: 100%;
+    padding: 10px;
+}
+
+.menu ul li a {
+    font-size: 2em;
+    color: black;
+    padding: 0;
+    text-decoration: none;
+}
+
+.menu #modal_menu {
+
+    position: absolute;
+    left:-50%;
+    transition-duration: .3s;
+}
+
+.menu #modal_menu:target {
+
+    left: 0;
+    transition-duration: .3s;
+
+}

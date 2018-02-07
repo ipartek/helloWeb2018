@@ -1,0 +1,67 @@
+@media (max-width:425px) {
+
+    header {
+        display: none;
+    }
+
+
+
+    nav.navBar {
+        display: none;
+    }
+
+    #wrapper {
+        width: 90%;
+
+    }
+
+    section[data-type=slider] img {
+        max-width: 900px;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 5px #333;
+    }
+
+    article[data-type=cols] {
+        margin: 0 auto;
+        padding: 0 0 20px 0;
+        border-bottom: 1px solid #8ec1cb;
+        font-size: .85em;
+        line-height: 1.05em;
+    }
+    article[data-type=cols] section {
+        display: block;
+        width: 100%;
+        text-align: justify;
+        margin: auto;
+        padding: 3px 0;
+    }
+
+    article[data-type=cols] section p {
+        padding: 0;
+    }
+
+    .gallery ul {
+        margin-bottom: 2em;
+
+    }
+
+    .gallery li {
+        display: block;
+        padding: 20px 0;
+        width: 100%;
+    }
+
+    .gallery li img {
+        width: 100%;
+
+    }
+
+    .menu {
+        display: block;
+
+
+    }
+
+
+}

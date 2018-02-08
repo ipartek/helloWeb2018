@@ -140,3 +140,13 @@
 			margin:0 auto;
 			border-bottom:0;
 		}
+
+
+/*menú movil*/
+        .side-menu{
+            display: none;
+        }
+
+        h1{
+            display:none;
+        }

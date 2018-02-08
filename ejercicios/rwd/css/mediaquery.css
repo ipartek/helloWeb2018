@@ -1,55 +1,193 @@
 
 @media (max-width : 425px){
-    header img{
+
+    /*para que el logo y el menu desaparezcan*/
+    header img,
+    .navBar{
         display: none;
     }
 
-    .navBar{
-        display:none;
-    }
-    #wrapper{
-        padding: 0 15px;
+    /*para que veamos el H! de la página*/
+    h1{
+        display:block;
+        font-size: 2em;
+        text-align:center;
+        margin-top:10px;
     }
 
+    /*para que la img ppal se agrande*/
 	section[data-type=slider] img {
         max-width: 100%;
         width: 100%;
     }
 
+    /*para que los p pasen de columnas a ocupar todo el ancho
+    y el texto sea justificado, y la letra con mayor tamaño*/
     article[data-type=cols] section{
         display: inline;
         margin: 0 -3px 0 0;
         width: 100%;
         text-align: justify;
+        font-size: 1.9em;
+        line-height: 0.9em;
+    }
+
+    footer{
+        text-align: justify;
+    }
+
+    /*para alinear p e img*/
+    #wrapper{
+        padding: 0 15px;
     }
 
     .gallery li {
-        width: 100%;
+        width: 100%;/*para que deje que la imagen crezca*/
         padding: 0 0 2em 0;
     }
 
     .gallery li img {
         width: 100%;
-
     }
 
+
+    article[data-type=cols] section p {
+        padding: 0px;
+    }
+
+    /*para los títtulos H"*/
     .gallery h2, footer h2 {
-        padding: 1em 0;
         text-align: left;
         font-size: 22px;
         font-weight: bold;
         padding: 10px;
     }
 
-    article[data-type=cols] section p {
-    padding: 0px;
+
+    /*MENÚ MOVIL
+
+     .mobileNavBar{
+        display: block;
+        background-color: black;
+        color:white;
+        height: 100vh;cógeme el alto del dipositivo
+        width:33%;
+        left:-135;
+        top:0;
+        position: fixed;
+        z-index:999;para que pise al z-index del footer
     }
 
-    footer{
-        text-align: justify;
+    Fin menú movil*/
+    .side-menu {
+      position: fixed;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      width: 200px;
+      height: 100vh;/*cógeme el alto del dipositivo*/
+      background: #292929;
+      -webkit-transition: all 300ms ease-in-out;
+      transition: all 300ms ease-in-out;
+      z-index: 999;/*;para que pise al z-index del footer*/
     }
-    /*MENÚ MOVIL*/
 
+    .side-menu .side-menu-header {
+      position: relative;
+      height: 10%;
+      background: #262626;
+    }
 
+    .side-menu .side-menu-header .close-menu {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      height: 45px;
+      width: 45px;
+    }
+
+    .side-menu .side-menu-header .close-menu .left,
+    .side-menu .side-menu-header .close-menu .right {
+      background: rgb(87, 173, 188);
+      height: 4.5px;
+      border-radius: 20px;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transition: all 300ms ease-in-out;
+      transition: all 300ms ease-in-out;
+    }
+
+    .side-menu .side-menu-header .close-menu .left {
+      -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+              transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .side-menu .side-menu-header .close-menu .right {
+      -webkit-transform: translate(-50%, -50%) rotate(45deg);
+              transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .side-menu .side-menu-body {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+    }
+
+    .side-menu .side-menu-body a {
+      text-align: center;
+      padding: 15% 0;
+      -webkit-transition: all 300ms ease-in-out;
+      transition: all 300ms ease-in-out;
+    }
+
+    .side-menu .side-menu-body a:hover {
+      background: #CCC;
+      color: #292929;
+    }
+
+    #side-menu:not(:target) {
+      left: -200px;
+    }
+
+    #side-menu:target {
+      left: 0;
+    }
+
+    .open-menu {
+      position: fixed;
+      height: 40px;
+      width: 40px;
+      top: 18px;
+      left: 20px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+    }
+
+    .open-menu .bar {
+      width: 100%;
+      height: 4px;
+      background: #CCC;
+      margin: 3px 0;
+    }
 
 }

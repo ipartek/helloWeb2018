@@ -1,0 +1,40 @@
+
+/*Eliminamos los margenes y paddings que agrega el navegador por defecto*/
+
+*{
+  padding: 0;
+  margin: 0;
+}
+.contenido {
+  padding-top: 80px;
+}
+
+/*logo*/
+#logo {
+ max-width: 100%;
+        height: 100%;
+}
+/*nav bar*/
+.navbar-default {
+    background-image:none;
+    background-color: rgba(114, 199, 220, 0.44);
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>li>a{
+    color:#000;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.columna{
+    width: 33.33333333%;
+        position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.thumbnail{
+    display: block;
+}

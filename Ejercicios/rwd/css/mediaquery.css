@@ -53,7 +53,7 @@
 
 
     section[data-type=slider] img {
-margin-left: 22px;
+
         width: 100%;
 margin-bottom: 20px;
 
@@ -91,7 +91,7 @@ margin-bottom: 20px;
     .gallery ul li a img {
 
         width: 100%;
-    margin-left: 9px;
+    margin-left: -4px;
 
 
     }
@@ -104,11 +104,7 @@ margin-bottom: 20px;
 
     }
 
-    article[data-type=cols] section p {
 
-
-            margin-left: 25px;
-    }
     footer article[data-type="cols"]{
 
         width: 100%;

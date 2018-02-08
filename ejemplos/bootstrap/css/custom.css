@@ -1,0 +1,23 @@
+/* Nav color azul ipartek */
+
+
+/*solucinar tema del H1 y navbar */
+
+
+/* 6 thumbails com pìntxos de bar y al pinchar"detalle" vamos a una nueva pagina con el detalle del pincho
+
+"detalle.html"
+todos al mismo pincho
+
+
+cuando pinchamos boton "Video", ventana modal con videos de youtube Responsive embed Launched demo
+
+boton
+*/
+.container-fluid{
+    background-color:#72C7DC;
+
+}
+h1{
+        margin-top: 100px;
+}

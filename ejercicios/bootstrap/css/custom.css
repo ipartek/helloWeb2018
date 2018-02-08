@@ -5,12 +5,18 @@
     1. Container
     2. Navbar
     3. Thumbnails
+    4. Modal
 */
 
 /********** 1. Content **********/
 /* TODO 08/02/2018: Soluciones visibilidad del H1 */
 body {
     padding-top: 70px;
+}
+
+section img {
+    width: 500px;
+    height: auto;
 }
 
 /********** 2. Navbar **********/
@@ -55,3 +61,21 @@ section {
 .myRow .thumbnail {
     height: 600px;
 }*/
+
+/********** 4. Modal **********/
+#modal-datatables .modal-dialog{
+    width: 90%; /* Full width */
+}
+
+/* centrar contenido en el modal */
+.modal-body {
+    text-align: center;
+}
+
+#modal-datatables .modal-dialog img{
+    width: 100%;
+}
+
+jQuery(".modal-backdrop, #myModal .close, #myModal .btn").live("click", function() {
+        jQuery("#myModal iframe").attr("src", jQuery("#myModal iframe").attr("src"));
+});

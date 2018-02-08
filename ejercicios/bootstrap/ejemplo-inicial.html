@@ -108,25 +108,25 @@
 
         <section id="thumbnails">
             <h2>Thumbnails:</h2>
-            <p>Sistema de posicionado de 12 columnas: https://www.youtube.com/watch?v=rdgcOA8i_co&index=6&list=PLhSj3UTs2_yWHrFIVoEkiaiEjDHt9lZAI</p>
             <!--TODO 08/02/2018: 6 thumbnails con pintcos de bar.
                 Botón DETALLE: Al pinchar redireccionar a la página 'detalle.html' con los detalles del pintxo pulsado.
                 Botón VIDEO: Abrir ventana modal con video de youtube.
             -->
             <div class="row row-eq-height myRow">
-                <div class="col-sm-4">
+                <!-- Thumbnail Messi -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="thumbnail" id="thumb-messi">
                       <img src="https://www.am.com.mx/san-luis/wp-content/uploads/2017/12/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg" alt="foto Lionel Messi">
                       <div class="caption">
                         <h3>Lionel Messi</h3>
                         <p>Lionel Andrés Messi Cuccittini (Rosario, 24 de junio de 1987), conocido como Leo Messi, es un futbolista argentino nacionalizado español, que juega como delantero en el F. C. Barcelona de la Primera División de España y en la selección argentina, de la que es capitán.</p>
                         <p><a href="https://es.wikipedia.org/wiki/Lionel_Messi" target="_blank" class="btn btn-primary" role="button">Detalle</a>
-                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modalMessi">Video</a></p>
+                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-messi">Video</a></p>
                       </div>
                     </div>
                 </div>
-                <!-- Modal -->
-                <div class="modal fade" id="modalMessi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <!-- Modal Messi-->
+                <div class="modal fade" id="modal-messi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -145,20 +145,20 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="col-sm-4">
+                <!-- Thumbnail Xavi -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="thumbnail" id="thumb-xavi">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/2012_2013_-_06_Xavi_Hern%C3%A1ndez.jpg" alt="foto Xavi Hernández">
                       <div class="caption">
                         <h3>Xavier Hernández</h3>
                         <p>Xavier Hernández Creus (Tarrasa, Barcelona, 25 de enero de 1980), conocido como Xavi, es un futbolista español que juega como mediocentro organizador en el Al-Sadd SC de la Liga de Catar.</p>
                         <p><a href="https://es.wikipedia.org/wiki/Xavi_Hern%C3%A1ndez" target="_blank" class="btn btn-primary" role="button">Detalle</a>
-                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modalXavi">Video</a></p>
+                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-xavi">Video</a></p>
                       </div>
                     </div>
                 </div>
-                <!-- Modal -->
-                <div class="modal fade" id="modalXavi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <!-- Modal Xavi -->
+                <div class="modal fade" id="modal-xavi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -177,20 +177,20 @@
                     </div>
                   </div>
                 </div>
-
-                <div class="col-sm-4">
+                <!-- Thumbnail Iniesta -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="thumbnail" id="thumb-iniesta">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/2015_UEFA_Super_Cup_104.jpg" alt="foto Andrés Iniesta">
                       <div class="caption">
                         <h3>Andrés Iniesta</h3>
                         <p>Andrés Iniesta Luján (Fuentealbilla, Albacete, España, 11 de mayo de 1984) es un futbolista español que juega como centrocampista en el Fútbol Club Barcelona de la Primera División de España, equipo del que es capitán.</p>
                         <p><a href="https://es.wikipedia.org/wiki/Andr%C3%A9s_Iniesta" target="_blank" class="btn btn-primary" role="button">Detalle</a>
-                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modalIniesta">Video</a></p>
+                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-iniesta">Video</a></p>
                       </div>
                     </div>
                 </div>
-                <!-- Modal -->
-                <div class="modal fade" id="modalIniesta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <!-- Modal Iniesta -->
+                <div class="modal fade" id="modal-iniesta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -209,71 +209,135 @@
                     </div>
                   </div>
                 </div>
-            </div>
-            <div class="row row-eq-height myRow">
-                <div class="col-sm-4">
-                    <div class="thumbnail" id="thumb-messi">
+
+                <!-- Thumbnail Puyol -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="thumbnail" id="thumb-puyol">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Carles_Puyol_18abr2007.jpg" alt="foto Carles Puyol">
                       <div class="caption">
                         <h3>Carles Puyol</h3>
                         <p>Carles Puyol i Saforcada (Puebla de Segur, Lérida, 13 de abril de 1978), conocido futbolísticamente como Puyol, es un exfutbolista español. Jugaba en la posición de defensa central y su único equipo durante su carrera fue el F. C. Barcelona, de la Primera División de España, del que fue capitán desde la temporada 2004/05. Además trabajó como parte del Área de Dirección Deportiva de Fútbol del F. C. Barcelona, cargo al cual renunció el 5 de enero de 2015.</p>
                         <p><a href="https://es.wikipedia.org/wiki/Carles_Puyol" target="_blank" class="btn btn-primary" role="button">Detalle</a>
-                        <a href="#" class="btn btn-danger" role="button">Video</a></p>
+                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-puyol">Video</a></p>
                       </div>
                     </div>
                 </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail" id="thumb-xavi">
+                <!-- Modal Puyol-->
+                <div class="modal fade" id="modal-puyol" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Mejores jugadas</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- 4:3 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-4by3">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/JqbG7q7UxzE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                          </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumbnail Busquets -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="thumbnail" id="thumb-busquets">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/2015_UEFA_Super_Cup_61.jpg" alt="foto Sergio Busquets">
                       <div class="caption">
                         <h3>Sergio Busquets</h3>
                         <p>Sergio Busquets Burgos (Sabadell, Provincia de Barcelona, España, 16 de julio de 1988) es un futbolista español que juega como mediocentro en el Fútbol Club Barcelona de la Primera División de España donde es el tercer capitán.</p>
                         <p><a href="https://es.wikipedia.org/wiki/Sergio_Busquets" target="_blank" class="btn btn-primary" role="button">Detalle</a>
-                        <a href="#" class="btn btn-danger" role="button">Video</a></p>
+                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-busquets">Video</a></p>
                       </div>
                     </div>
                 </div>
-
-                <div class="col-sm-4">
-                    <div class="thumbnail" id="thumb-iniesta">
+                <!-- Modal Busquets -->
+                <div class="modal fade" id="modal-busquets" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Mejores jugadas</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- 4:3 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-4by3">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/kkwQ9jBcMCs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                          </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Thumbnail Pep -->
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="thumbnail" id="thumb-pep">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Guardiola_2010.jpg" alt="foto Pep Guardiola">
                       <div class="caption">
                         <h3>Pep Guardiola</h3>
                         <p>Josep Guardiola i Sala [ʒuˈzɛp ɡwəɾðiˈɔɫə] (Sampedor, Barcelona; 18 de enero de 1971), conocido deportivamente como Pep Guardiola o simplemente Guardiola, es un exfutbolista y entrenador español. Actualmente dirige al Manchester City de la Premier League de Inglaterra.</p>
                         <p><a href="https://es.wikipedia.org/wiki/Pep_Guardiola" target="_blank" class="btn btn-primary" role="button">Detalle</a>
-                        <a href="#" class="btn btn-danger" role="button">Video</a></p>
+                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modal-pep">Video</a></p>
                       </div>
                     </div>
                 </div>
+                <!-- Modal Pep -->
+                <div class="modal fade" id="modal-pep" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Mejores jugadas</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- 4:3 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-4by3">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/YoihCUOrJXQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                          </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
             </div>
         </section>
 
         <section id="modal">
             <h2>Modal:</h2>
+            <p>Sistema de posicionado de 12 columnas: </p>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
               <i class="fa fa-youtube fa-3x" aria-hidden="true"></i>
             </button>
 
-            <!-- Modal -->
+            <!-- Modal Bootstrap Grid-->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                  </div>
-                  <div class="modal-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quae voluptatem dolorum, impedit vitae illum dicta atque? Et iure, nam unde architecto, hic soluta quidem nisi sit quia, voluptatum aliquam!
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Bootstrap Grid</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- 4:3 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-4by3">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/rdgcOA8i_co" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                          </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
         </section>
     </div>
     <br>

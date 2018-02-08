@@ -4,6 +4,19 @@
 
 */
 
+
+    .sal {
+        background: #000;
+        color: aliceblue;
+        width: 50%;
+        height: 100vh;
+        position: absolute;
+        display: block;
+        left: -50%;
+        top: 0;
+        z-index: 999;
+    }
+
 /* #1 presentation */
 
 
@@ -17,6 +30,7 @@ p{
 			margin:0 0 0 10%;
 		}
 
+.
 	.navBar {
 		position:relative;
 		width:65%;

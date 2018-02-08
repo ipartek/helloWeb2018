@@ -1,0 +1,48 @@
+/*
+
+Customizar bootstrap
+
+*/
+
+/* navbar azul corporativo ipartek */
+
+.navbar-default,
+.navbar-default ul,
+.navbar-default ul li {
+    background-color: #0099CC;
+    background-image: none;
+    background-repeat: no-repeat;
+    color: white;
+
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+    /*Change active text color here*/
+}
+
+.navbar-default li a {
+    color: white;
+}
+/*Solucionar tema del h1 */
+
+body {
+    padding-top: 40px;
+}
+
+
+/* 6 thumbnails con pintxos de bar
+
+cuando pinchamos detalle vamos al detalle.html
+boton ver video ventana modal con video de youtube
+*/
+
+.thumbnail a img {
+    height: 200px;
+    width: auto;
+
+}
+
+.thumbnail p, .thumbnail h3{
+    text-align: center;
+}

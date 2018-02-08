@@ -55,9 +55,11 @@
         top:0;
         bottom:0;
         width:200px;
+        z-index:999;
 
 
     }
+
 
     .navBarMobile a{
         display:block;
@@ -71,23 +73,40 @@
 
 
     }
-    .navBarMobile .icono{
-        visibility: visible;
+    .iconoOculto{
+        display:none;
+        visibility: hidden;
         color:white;
         position:fixed;
         margin-top:0px;
-        text-align: right;
+
         top:0px;
         left:0px;
-        transition-duration:2s;
+
+    }
+    .navBarMobile .icono{
+        display:inline-block;
+        visibility: visible;
+        opacity:1;
+        color:white;
+        position:fixed;
+        margin-top:0px;
+
+        top:0px;
+        left:0px;
+
 
     }
     #menu{
         display:inline-block;
+        text-transform: uppercase;
     }
     #menu:target .icono{
+        display:none;
+        visibility:hidden;
+        opacity:0;
         left:200px;
-        transition-duration: 2s;
+        transition-duration:2s;
     }
     #menu:target{
 
@@ -96,5 +115,12 @@
         float:left;
         position:fixed;
 
+    }
+    #menu:target .iconoOculto{
+        display: inline-block;
+        left:200px;
+        transition-duration:2s;
+        visibility:visible;
+        display:inline-block;
     }
 }

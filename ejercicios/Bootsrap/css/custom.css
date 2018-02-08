@@ -1,0 +1,16 @@
+body{
+    padding-top:50px;
+}
+.ipartek{
+    background-color: #72C7DC;
+}
+.thumbnail img{
+
+     height:200px;
+}
+.informacion{
+    text-align: justify;
+}
+h1{
+    text-align: center;
+}

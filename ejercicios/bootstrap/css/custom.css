@@ -1,0 +1,57 @@
+/*
+    Personalizaciones para customizar estilos de Bootstrap
+
+    ÍNDICE:
+    1. Container
+    2. Navbar
+    3. Thumbnails
+*/
+
+/********** 1. Content **********/
+/* TODO 08/02/2018: Soluciones visibilidad del H1 */
+body {
+    padding-top: 70px;
+}
+
+/********** 2. Navbar **********/
+#logo-ipartek {
+    width: 70px;
+    height: 25px;
+}
+/* Dejando el espacio superior en cada sección, se evita que el navbar oculpe el título de la sección */
+section {
+     padding-top: 50px;
+}
+
+/* TODO 08/02/2018: Color del navbar --> azul corporativo de Ipartek */
+.navbar-default {
+    background-image: none;
+    background-color: #0099cc;
+}
+
+.navbar-default a{
+    color: #0c2661 !important;
+}
+
+/********** 3. Thumbnails **********/
+/* misma altura para todas las imágenes */
+.thumbnail img {
+    height: 200px;
+    width: auto;
+}
+
+/* mostrar misma cantidad de texto */
+.thumbnail p {
+    height: 100px;
+    overflow: hidden;
+}
+/* al estar los botones bajo el texto en una <p>, aplicarles un estilo especifico al anterior */
+.thumbnail p:last-child {
+    height: 40px;
+    overflow: hidden;
+}
+
+/* Altura fija para los thumbnails
+.myRow .thumbnail {
+    height: 600px;
+}*/

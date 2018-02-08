@@ -1,0 +1,326 @@
+<!--
+    EJEMPLO INICIAL PARA USAR EL FRAMEWORK DE ESTILOS BOOTSTRAP 3.3
+    @see: http://getbootstrap.com/docs/3.3/getting-started/
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!--Fontawesome 4.7-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Estilos propios: css/custom.css-->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!--Bootstrap defaul navbar-->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                    <!--Logo Ipartek:-->
+                    <a class="navbar-brand" href="#">
+                        <img id="logo-ipartek" src="img/logo-ipartek.png" alt="logo ipartek">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ejemplos <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#glyphicons">Iconos</a></li>
+                                <li><a href="#buttons">Botones</a></li>
+                                <li><a href="#tables">Tablas</a></li>
+                                <li><a href="#thumbnails">Thumbnails</a></li>
+                                <li><a href="#modal">Ventana Modal</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Log out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav> <!--/.navbar .navbar-default-->
+
+        <h1 class="text-center">Bootstrap 3.3.7</h1>
+
+        <section id="glyphicons">
+            <h2>Iconos:</h2>
+            <p>Para la sección Iconos <i>"Glyphicon"</i> es más recomendable usar FontAwesome</p>
+        </section>
+
+
+        <section id="buttons">
+            <h2 class="botones">Botones:</h2>
+            <!-- Standard button -->
+            <button type="button" class="btn btn-default">Default</button>
+
+            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+            <button type="button" class="btn btn-primary">Primary</button>
+
+            <!-- Indicates a successful or positive action -->
+            <button type="button" class="btn btn-success">Success</button>
+
+            <!-- Contextual button for informational alert messages -->
+            <button type="button" class="btn btn-info">Info</button>
+
+            <!-- Indicates caution should be taken with this action -->
+            <button type="button" class="btn btn-warning">Warning</button>
+
+            <!-- Indicates a dangerous or potentially negative action -->
+            <button type="button" class="btn btn-danger">Danger</button>
+
+            <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+            <button type="button" class="btn btn-link">Link</button>
+        </section>
+
+        <section id="tables">
+            <h2>Tablas:</h2>
+            <p>Para la sección de Tablas usaremos <i>"DataTables for Bootstrap"</i>.</p>
+        </section>
+
+        <section id="thumbnails">
+            <h2>Thumbnails:</h2>
+            <p>Sistema de posicionado de 12 columnas: https://www.youtube.com/watch?v=rdgcOA8i_co&index=6&list=PLhSj3UTs2_yWHrFIVoEkiaiEjDHt9lZAI</p>
+            <!--TODO 08/02/2018: 6 thumbnails con pintcos de bar.
+                Botón DETALLE: Al pinchar redireccionar a la página 'detalle.html' con los detalles del pintxo pulsado.
+                Botón VIDEO: Abrir ventana modal con video de youtube.
+            -->
+            <div class="row row-eq-height myRow">
+                <div class="col-sm-4">
+                    <div class="thumbnail" id="thumb-messi">
+                      <img src="https://www.am.com.mx/san-luis/wp-content/uploads/2017/12/lionel_messi_photo_josep_lago_afp_getty_images_664928892_resizedjpg.jpg" alt="foto Lionel Messi">
+                      <div class="caption">
+                        <h3>Lionel Messi</h3>
+                        <p>Lionel Andrés Messi Cuccittini (Rosario, 24 de junio de 1987), conocido como Leo Messi, es un futbolista argentino nacionalizado español, que juega como delantero en el F. C. Barcelona de la Primera División de España y en la selección argentina, de la que es capitán.</p>
+                        <p><a href="https://es.wikipedia.org/wiki/Lionel_Messi" target="_blank" class="btn btn-primary" role="button">Detalle</a>
+                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modalMessi">Video</a></p>
+                      </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="modalMessi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Mejores jugadas</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- 4:3 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-4by3">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/Ybly9MlOySc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                          </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="thumbnail" id="thumb-xavi">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/2012_2013_-_06_Xavi_Hern%C3%A1ndez.jpg" alt="foto Xavi Hernández">
+                      <div class="caption">
+                        <h3>Xavier Hernández</h3>
+                        <p>Xavier Hernández Creus (Tarrasa, Barcelona, 25 de enero de 1980), conocido como Xavi, es un futbolista español que juega como mediocentro organizador en el Al-Sadd SC de la Liga de Catar.</p>
+                        <p><a href="https://es.wikipedia.org/wiki/Xavi_Hern%C3%A1ndez" target="_blank" class="btn btn-primary" role="button">Detalle</a>
+                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modalXavi">Video</a></p>
+                      </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="modalXavi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Mejores jugadas</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- 4:3 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-4by3">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/BQykm-LzEno" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                          </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="thumbnail" id="thumb-iniesta">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/2015_UEFA_Super_Cup_104.jpg" alt="foto Andrés Iniesta">
+                      <div class="caption">
+                        <h3>Andrés Iniesta</h3>
+                        <p>Andrés Iniesta Luján (Fuentealbilla, Albacete, España, 11 de mayo de 1984) es un futbolista español que juega como centrocampista en el Fútbol Club Barcelona de la Primera División de España, equipo del que es capitán.</p>
+                        <p><a href="https://es.wikipedia.org/wiki/Andr%C3%A9s_Iniesta" target="_blank" class="btn btn-primary" role="button">Detalle</a>
+                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#modalIniesta">Video</a></p>
+                      </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="modalIniesta" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Mejores jugadas</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- 4:3 aspect ratio -->
+                        <div class="embed-responsive embed-responsive-4by3">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/z-C3_32g2XM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                          </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="row row-eq-height myRow">
+                <div class="col-sm-4">
+                    <div class="thumbnail" id="thumb-messi">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Carles_Puyol_18abr2007.jpg" alt="foto Carles Puyol">
+                      <div class="caption">
+                        <h3>Carles Puyol</h3>
+                        <p>Carles Puyol i Saforcada (Puebla de Segur, Lérida, 13 de abril de 1978), conocido futbolísticamente como Puyol, es un exfutbolista español. Jugaba en la posición de defensa central y su único equipo durante su carrera fue el F. C. Barcelona, de la Primera División de España, del que fue capitán desde la temporada 2004/05. Además trabajó como parte del Área de Dirección Deportiva de Fútbol del F. C. Barcelona, cargo al cual renunció el 5 de enero de 2015.</p>
+                        <p><a href="https://es.wikipedia.org/wiki/Carles_Puyol" target="_blank" class="btn btn-primary" role="button">Detalle</a>
+                        <a href="#" class="btn btn-danger" role="button">Video</a></p>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="thumbnail" id="thumb-xavi">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/2015_UEFA_Super_Cup_61.jpg" alt="foto Sergio Busquets">
+                      <div class="caption">
+                        <h3>Sergio Busquets</h3>
+                        <p>Sergio Busquets Burgos (Sabadell, Provincia de Barcelona, España, 16 de julio de 1988) es un futbolista español que juega como mediocentro en el Fútbol Club Barcelona de la Primera División de España donde es el tercer capitán.</p>
+                        <p><a href="https://es.wikipedia.org/wiki/Sergio_Busquets" target="_blank" class="btn btn-primary" role="button">Detalle</a>
+                        <a href="#" class="btn btn-danger" role="button">Video</a></p>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="thumbnail" id="thumb-iniesta">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Guardiola_2010.jpg" alt="foto Pep Guardiola">
+                      <div class="caption">
+                        <h3>Pep Guardiola</h3>
+                        <p>Josep Guardiola i Sala [ʒuˈzɛp ɡwəɾðiˈɔɫə] (Sampedor, Barcelona; 18 de enero de 1971), conocido deportivamente como Pep Guardiola o simplemente Guardiola, es un exfutbolista y entrenador español. Actualmente dirige al Manchester City de la Premier League de Inglaterra.</p>
+                        <p><a href="https://es.wikipedia.org/wiki/Pep_Guardiola" target="_blank" class="btn btn-primary" role="button">Detalle</a>
+                        <a href="#" class="btn btn-danger" role="button">Video</a></p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="modal">
+            <h2>Modal:</h2>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
+              <i class="fa fa-youtube fa-3x" aria-hidden="true"></i>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quae voluptatem dolorum, impedit vitae illum dicta atque? Et iure, nam unde architecto, hic soluta quidem nisi sit quia, voluptatum aliquam!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- jQuery v2.2.4 minified (dado que no vamos a aplicar cambios en el código de jQuery, usamos la versión 'minified' que viene sin indentar) -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+    </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

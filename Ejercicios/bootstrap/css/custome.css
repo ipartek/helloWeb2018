@@ -1,0 +1,26 @@
+/*solucionar tema h1*/
+/*navbar color azul ipartek*/
+/*6 thubnails con pintxos de bar al pintxar boton detallevamos a una nueva página con el detalle del pintxo
+detalle.html, cuando pintxamos botón video, ventana modal con video de youtube
+*/
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #e7e7e7;
+    background-color: #72C7DC;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #777;
+    background-color: #72C7DC;
+}
+.navbar>.container-fluid .navbar-brand {
+    margin-left: -15px;
+    background-color: #72C7DC;
+}
+h1 {
+    font-size: 36px;
+    position: relative;
+    top: 30px;
+}
+img {
+    max-width: 540px;
+    max-height: 512px;
+}

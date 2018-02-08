@@ -6,6 +6,10 @@
 
 /* #1 presentation */
 
+
+p{
+    text-align: justify;
+}
 	header {
 		border-top:4px solid #315968;
 	}

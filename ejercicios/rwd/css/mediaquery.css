@@ -1,58 +1,89 @@
 /*
     HOJA DE ESTILOS CON MEDIA QUERYS PAR RWD
-    1. Dispositivos móviles (width <= 425px)
+    1. Dispositivos móviles: Nexus 5X (width <= 425px)
     2. Pantallas anchas (width >= 425px)
+
+    ÍNDICE:
+    1. Dispositivo móvil:
+        1.1 HEADER
+            1.1.1 sidenav
+            1.1.2 logotipo
+            1.1.3 nav web
+            1.1.4 imagen
+        1.2 CONTENT
+            1.2.1 wrapper (emboltorio)
+            1.2.2 párrafos de los artículos
+            1.2.3 galería
+                1.2.3.1 imágenes
+        1.3 FOOTER
+            1.3.1 párrafos
+    2. Navegador web
+        2.1 toolbar
+
 */
 
 /* 1. Para dispositivos móviles (width <= 425px) */
 @media screen and (max-width: 425px) {
 
+    /* 1.1 HEADER */
+    /* 1.1.1 sidenav */
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    /* 1.1.2 logotigo del header*/
+    header img[alt="colibri adventures"] {
+        display: none;
+    }
+    /* 1.1.3 menú de navegación web*/
+    .navBar {
+        display: none;
+    }
+    /* 1.1.4 imagen de header*/
+    section[data-type=slider] img {
+        max-width: 100%;
+    }
+    /* 1.2 CONTENT */
+    /* 1.2.1 contenedor del todo el contenido (not:(header, footer))*/
     #wrapper {
         width: 100%;
         padding: 50px 5px 0 5px;
 
     }
-
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-
-    header img[alt="colibri adventures"] {
-        display: none;
-    }
-
-    .navBar {
-        display: none;
-    }
-
-    img[src="img/dummy.jpg"] {
-        width: 100%;
-    }
-
+    /* 1.2.2 párrafos del artículo*/
     article[data-type=cols] section {
-        text-align: justify;
         width: 100%;
         margin-bottom: 10px;
-    }
-
-    article[data-type=cols] section {
         font-size: 1.2em;
+        line-height: 1.1em;
+        text-align: justify;
     }
-
-    .gallery li img{
-        width: 100%;
-        margin: 0 10px;
+    /* 1.2.3 galería*/
+    .gallery h2 {
+        text-align: left;
     }
-
+    /* 1.2.3.1 imágenes de la galería*/
+    .gallery ul {
+        padding: 0 10px;
+    }
     .gallery li {
         width: 100%;
     }
-
+    .gallery li img{
+        width: 100%;
+        height: auto;
+        margin: 0 10px;
+    }
+    /* 1.3 FOOTER */
     footer {
         width: 100%;
+    }
+    /* 1.3.1 footer párrafos */
+    footer p {
+        font-size: 0.9em;
     }
 }
 
 @media screen and (min-width: 425px) {
+    /* 2.1 toolbar */
     #menuSuperior {
         display: none;
     }

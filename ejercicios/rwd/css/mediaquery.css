@@ -82,6 +82,9 @@
         transition-duration:2s;
 
     }
+    #menu{
+        display:inline-block;
+    }
     #menu:target .icono{
         left:200px;
         transition-duration: 2s;

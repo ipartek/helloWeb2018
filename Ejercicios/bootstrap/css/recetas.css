@@ -1,0 +1,29 @@
+img{
+  display: block;
+    margin: auto;
+
+
+}
+
+ol{
+
+    width: 400px;
+
+      display: block;
+    margin: auto;
+}
+ol li{
+
+
+       padding: 20px;
+}
+
+
+
+
+ul li{
+
+
+    list-style: none;
+
+}

@@ -20,10 +20,4 @@ pagina estatica, para todos los pinchos la misma y se va a llamar la pagina deta
 Que abra una ventana modal que al pinchar boton "VER VIDEO" ( Responsive Embed en bootstrap)*/
 
 
-/* modificar esto para que se te ponga en 3 columnas???
-@media (min-width: 992px)
-bootstrap.css:1955
-.col-md-4 {
-    width: 33%;
 
-}*/

@@ -6,7 +6,9 @@
 /* #1 presentation */
 
 
-
+h1{
+	display:none;
+}
 
 header {
 	border-top: 4px solid #315968;
@@ -130,6 +132,7 @@ article[data-type=cols] section p {
 }
 
 footer {
+	margin-top:25px;
 	position: relative;
 	color: #83c3ce;
 	padding: 2em 0;

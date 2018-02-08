@@ -1,0 +1,69 @@
+/*Solucion al navabar fixed y h1*/
+
+body {
+    padding-top: 60px;
+}
+
+/*Navbar color azul ipartek */
+
+.navbar-default {
+    background-image: none;
+    background-color: #72C7DB;
+}
+
+.thumbnail {
+    min-height: 300px;
+}
+
+.descrip h3 {
+    /*    width: 100%;*/
+}
+
+#bot {
+    text-align: center;
+}
+
+body > div > div > div > div > p > a.btn.btn-primary {
+    margin: 10px;
+}
+
+.descrip p {
+    text-align: justify;
+}
+
+#descImg {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid black;
+}
+
+.thumbnail img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+/*    height: 100%;*/
+    width: 100%;
+    transform: translate(-50%, -50%);
+
+
+/*    object-fit: cover;*/
+}
+
+
+
+iframe {
+    width: 100%
+}
+
+/*6 thumbnails completos con pintxos*/
+
+/*Botón detalle y botón vídeo */
+
+/*Al pinchar vamos a una nueva pagina con
+el detalle del pintxo. Se llamará detalle.html*/
+
+/*Cuando pinchamos en "VIDEO" modal con vídeo de youtube
+Mediante modal de la partye de javascript del modal
+Icono de youtube en el boótn*/

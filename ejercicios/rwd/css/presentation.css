@@ -24,6 +24,7 @@
 
 		.navBar a {
 			display:inline-block;
+            /* En el menu en "About us" el width estaba a 29.9% y por eso salia abajo, lo modificamos a 29% y asi estan todos alineados*/
 			width:29%;
 			margin:4px 10px 0 0;
 			background:#4a7e08;

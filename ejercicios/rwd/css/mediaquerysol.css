@@ -1,0 +1,71 @@
+/*
+   Media Querys para Adapatar a un Nexus 5
+   solo orientación portrait
+*/
+
+
+@media only screen and (max-width: 425px){
+
+    /* ocultando elementos de pantalla grande 'desktop' */
+    header img, .navBar{
+        display: none;
+    }
+
+    /* mobileNavBar */
+    .mobileNavBar{
+        display: block;
+        background-color: #000;
+        color: #FFF;
+        width: 50%;
+        height: 100vh;
+        position: absolute;
+        left:-50%;
+    }
+
+
+    /* /mobileNavBar */
+
+    h1{
+        display: block;
+        font-size: 2em;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+
+    section[data-type=slider] img{
+        max-width: 100%;
+    }
+
+
+    p{
+        font-size: 1.3em;
+        line-height: 1.1em;
+    }
+
+    footer{
+        margin-top: 25px;
+    }
+
+    footer p{
+        font-size: 0.9em;
+    }
+
+    article[data-type=cols] section{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .gallery h2{
+        text-align: center;
+    }
+
+    .gallery ul{
+        padding: 0 10px;
+    }
+
+    .gallery li{
+        padding: 0;
+        width: 100%;
+    }
+
+} /* @media only screen and (max-width: 425px) */

@@ -1,0 +1,29 @@
+/* NavBar color azul corporativo Ipartek*/
+
+/*navbar-default .navbar-collapse, .navbar-default .navbar-form {*/
+
+.navbar-collapse {
+    background-color: #71C6db;
+}
+
+/* Solucionar el tema del h1 y navbar*/
+
+h1{
+    margin-top: 70px;
+}
+/*6 thumbnails con pintxos de bar. Foto y boton detalle y boton ver video y al pinchar
+
+al pinchar boton "DETALLE" vamos a una nueva página con el detalle del pincho
+pagina estatica, para todos los pinchos la misma y se va a llamar la pagina detalle.html...
+
+
+Que abra una ventana modal que al pinchar boton "VER VIDEO" ( Responsive Embed en bootstrap)*/
+
+
+/* modificar esto para que se te ponga en 3 columnas???
+@media (min-width: 992px)
+bootstrap.css:1955
+.col-md-4 {
+    width: 33%;
+
+}*/

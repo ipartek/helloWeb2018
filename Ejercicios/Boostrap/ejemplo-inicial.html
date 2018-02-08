@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Boostrap</title>
+</head>
+<!-- Latest compiled and minified CSS -->
+<!-- font awesome 4.7 -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/custom.css">
+
+<body>
+
+    <!-- ejercicios
+    Primer link boton inicio
+    Segundo link se borra
+    Drop down hacemos ejemplos (titulo ejemplo)
+    y en ejemplos metemos botones, ventana modal y el resto fuera
+    seach fuera
+    el ultimo link fuera
+    y el dropdwon ultimo fuera, ponga log out
+    Meter font awesome y un icono de cerrar
+
+    DONE ALL UPP
+
+
+
+
+    -->
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#">Logo</a>
+
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <a class="navbar-brand" href="../../index.html">Inicio</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ejemplos <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Botones</a></li>
+                            <li><a href="#">Ventana modal</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#">Log out <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <h1 class="text-center">Boostrap 3.3.7</h1>
+    <h2>Botones</h2>
+    <a class="btn btn-default" href="#" role="button">Link</a>
+    <button class="btn btn-default" type="submit">Button</button>
+    <!-- Standard button -->
+    <button type="button" class="btn btn-default">Default</button>
+
+    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+    <button type="button" class="btn btn-primary">Primary</button>
+
+    <!-- Indicates a successful or positive action -->
+    <button type="button" class="btn btn-success">Success</button>
+
+    <!-- Contextual button for informational alert messages -->
+    <button type="button" class="btn btn-info">Info</button>
+
+    <!-- Indicates caution should be taken with this action -->
+    <button type="button" class="btn btn-warning">Warning</button>
+
+    <!-- Indicates a dangerous or potentially negative action -->
+    <button type="button" class="btn btn-danger">Danger</button>
+
+    <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+    <button type="button" class="btn btn-link">Link</button>
+    <h2>Modal</h2>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+    <!-- Modal
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    -->
+    <h2>Personajitos del lol</h2>
+    <div class="row">
+        <div class=" col-md-4">
+            <div class="thumbnail">
+                <img src="img/thresh.jpg" alt="thresh1">
+                <div class="caption">
+                    <h3>Tresh</h3>
+                    <p>El carcelero</p>
+                    <p><a href="https://euw.leagueoflegends.com/es/game-info/champions/thresh/" class="btn btn-primary" target="_blank" role="button">Detalle</a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-default " data-toggle="modal" data-target="#myModal">
+  Ver video
+</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Thresh Video</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe width="450" height="253" src="https://www.youtube.com/embed/Sv95nBi7ulQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-4">
+            <div class="thumbnail">
+                <img src="img/lulu.jpg" alt="Lulu2">
+                <div class="caption">
+                    <h3>Lulu</h3>
+                    <p>El Hada Hechicera</p>
+                    <p><a href="https://euw.leagueoflegends.com/es/game-info/champions/thresh/" class="btn btn-primary" target="_blank" role="button">Detalle</a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-default " data-toggle="modal" data-target="#myModal">
+  Ver video
+</button>
+
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-4">
+            <div class="thumbnail">
+                <img src="img/nami.png" alt="thresh?">
+                <div class="caption">
+                    <h3>Nami</h3>
+                    <p>El pescao</p>
+                    <p><a href="https://euw.leagueoflegends.com/es/game-info/champions/thresh/" class="btn btn-primary" target="_blank" role="button">Detalle</a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-default " data-toggle="modal" data-target="#myModal">
+  Ver video
+</button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col-md-4">
+            <div class="thumbnail">
+                <img src="img/thresh.jpg" alt="thresh?">
+                <div class="caption">
+                    <h3>Tresh</h3>
+                    <p>El carcelero</p>
+                    <p><a href="https://euw.leagueoflegends.com/es/game-info/champions/thresh/" class="btn btn-primary" target="_blank" role="button">Detalle</a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-default " data-toggle="modal" data-target="#myModal">
+  Ver video
+</button>
+
+
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-4">
+            <div class="thumbnail">
+                <img src="img/thresh.jpg" alt="thresh?">
+                <div class="caption">
+                    <h3>Tresh</h3>
+                    <p>El carcelero</p>
+                    <p><a href="https://euw.leagueoflegends.com/es/game-info/champions/thresh/" class="btn btn-primary" target="_blank" role="button">Detalle</a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-default " data-toggle="modal" data-target="#myModal">
+  Ver video
+</button>
+
+
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-4">
+            <div class="thumbnail">
+                <img src="img/thresh.jpg" alt="thresh?">
+                <div class="caption">
+                    <h3>Tresh</h3>
+                    <p>El carcelero</p>
+                    <p><a href="https://euw.leagueoflegends.com/es/game-info/champions/thresh/" class="btn btn-primary" target="_blank" role="button">Detalle</a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-default " data-toggle="modal" data-target="#myModal">
+  Ver video
+</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Thresh Video</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe width="450" height="253" src="https://www.youtube.com/embed/Sv95nBi7ulQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

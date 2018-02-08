@@ -17,6 +17,8 @@
 }
 	.navBar {
 		position:relative;
+        width:auto;
+
 		height:96px;
 		margin:0 auto;
 		background:url(../img/ribbon-fnd.png) repeat-x 0 0;
@@ -25,7 +27,7 @@
 
 		.navBar a {
 			display:inline-block;
-			width:29.9%;
+			width:29%;
 			margin:4px 10px 0 0;
 			background:#4a7e08;
 			font:20px/59px Times, serif;

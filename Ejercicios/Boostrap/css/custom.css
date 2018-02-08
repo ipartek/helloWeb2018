@@ -1,0 +1,20 @@
+/* Color del navbar boostrap */
+.container-fluid{
+    background-color:#72C7DC ;
+}
+
+/* navbar h1 */
+
+body{
+padding-top: 2em;
+}
+.thumbnail a>img, .thumbnail>img{
+    max-height: 200px;
+}
+
+
+/* Botones con imagenes de pointxos *6
+al pinchar vamos a un nueva pagina con el detalle del pincho
+"detalle.html"
+*/
+

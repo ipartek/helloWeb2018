@@ -1,55 +1,40 @@
-@media (max-width: 425px) {
+/*NEXUS 5*/
+@media only screen and (max-width: 425px) {
 
-
-    header img,
-    .navBar {
-
-        display: none;
-
-    }
-
-    header {
-
-        margin-top: -9px;
-    }
-
-
-
-    .navnextBar {
-
-
-        display: none;
+    h1{
+        font-size: 2em;
         text-align: center;
 
     }
 
-    .navnextBar a {
+   header img, .navBar {
 
-        display: inline-block;
-        width: 25%;
-        margin: 4px 10px 0 0;
-        background: #4a7e08;
-        font: 20px/59px Times, serif;
-        text-transform: uppercase;
-        color: #000;
-        text-decoration: none;
-
+        display: none;
 
     }
 
+    /*Principio MENU*/
+    .movilnavbar{
 
-    .navnextBar a.active {
-
-        border-left: 1px solid #000;
-        border-right: 1px solid #000;
-        background: #315968;
-        color: #fff;
+       display: block;
+        background-color: #000;
+        color: #FFF;
+        width: 50%;
+        height: 100vh;
+        position: fixed;
+        z-index: 2;
+        left: -50%;
+        top: 0px;
+        bottom: 0px;
     }
 
-    .navnextBar {
 
-        background: url(../img/ribbon-fnd.png) repeat-x 0 0;
-    }
+
+    /*Final*/
+
+
+
+
 
 
     section[data-type=slider] img {
@@ -60,16 +45,22 @@ margin-bottom: 20px;
 
     }
 
-    article[data-type=cols] {
+    p {
 
-        font-size: 16px;
-        text-align: justify;
+        font-size: 1.4em;
 
+        line-height: 1.1em;
     }
+
+    footer p{
+
+        font-size: 0.9em;
+    }
+
 
     article[data-type=cols] section {
         width: 100%;
-        padding-bottom: 5%;
+        margin-bottom: 15px;;
 
     }
 
@@ -88,17 +79,15 @@ margin-bottom: 20px;
         margin-right: 2%;
 
     }
-    .gallery ul li a img {
+    .gallery li img {
 
         width: 100%;
-
-
+        height: auto;
 
     }
 
     .gallery ul {
-        margin-left: 2%;
-        margin-right: 2%;
+        padding: 15px;
 
 
 
@@ -119,4 +108,10 @@ margin-bottom: 20px;
         display: none;
 
     }
+
+    h1{
+
+    display: none;
+
+}
 }

@@ -1,0 +1,233 @@
+<!--Hacer un custom para modificar el CSS del Bottstrap
+    Cambiar el color del navBar con el azul corporativo de Ipartek
+    Solucionar el tema del H1 con el navBar
+    6 thumbnails con pinchos de bar con botones Detalle y Video.
+        - Al pinchar el boton "Detalle" vamos a una nueva página con el datella del pintxo (detalle.html). La misma para todos
+        - Cuando pinchamos el boton "Video" ventana modal con video de youtube
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap - Ejemplo inicial</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="../../img/logo-ipartek.png" alt="Ipartek"> </a> <!-- Aqui irá el logo Corporativo-->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ejemplos <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Botones</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Ventana Modal</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-sign-out"></i>Logout</a>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <h1 class="text-center"> BOOTSTRAP 3.3.7</h1>
+    <a class="btn btn-default" href="#" role="button">Link</a>
+
+    <h2>Botones</h2>
+    <!-- Standard button -->
+    <button type="button" class="btn btn-default">Default</button>
+
+    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+    <button type="button" class="btn btn-primary">Primary</button>
+
+    <!-- Indicates a successful or positive action -->
+    <button type="button" class="btn btn-success">Success</button>
+
+    <!-- Contextual button for informational alert messages -->
+    <button type="button" class="btn btn-info">Info</button>
+
+    <!-- Indicates caution should be taken with this action -->
+    <button type="button" class="btn btn-warning">Warning</button>
+
+    <!-- Indicates a dangerous or potentially negative action -->
+    <button type="button" class="btn btn-danger">Danger</button>
+
+    <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+    <button type="button" class="btn btn-link">Link</button>
+
+
+    <h2>Modal</h2>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
+      Ver video
+    </button>
+
+<!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Thumbnails</h2>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="img/Mustang.jpg" alt="Mustang">
+                    <div class="caption">
+                        <h3>Ford Mustang</h3>
+                        <p>El Ford Mustang es un automóvil deportivo de la casa estadounidense Ford.  Fue introducido al mercado el 17 de abril de 1964. El Mustang de 1965 fue el modelo más exitoso desde el Ford A., así mismo Mustang es la tercera saga de Ford más antigua, cuyos modelos han sufrido numerosas transformaciones hasta llegar a la actual sexta generación.</p>
+                        <p><a href="detales.html" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">Detalle</a>
+                        <a href="#" class="btn btn-danger" role="button">Video</a></p>
+                    </div>
+
+
+
+
+
+
+
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="img/Camaro.jpg" alt="Camaro">
+                    <div class="caption">
+                        <h3>Chevrolet Camaro</h3>
+                        <p>El Chevrolet Camaro es un auto deportivo producido por el fabricante estadounidense Chevrolet GM. Se clasifica como un pony car y en algunas versiones también como un muscle car. El Camaro surgió como la respuesta de General Motors a su rival más digno durante esta época: el Ford Mustang.</p>
+                        <p><a href="#" class="btn btn-primary" role="button">Detalle</a>
+                        <a href="#" class="btn btn-danger" role="button">Video</a></p>
+                    </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="img/Challenger.jpg" alt="Challenger">
+                    <div class="caption">
+                        <h3>Dodge Challenger</h3>
+                        <p>El Dodge Challenger es un automóvil de tipo muscle car fabricado por la compañía automovilística estadounidense Dodge, del grupo Chrysler, desde 1970. Desde entonces, se han producido dos generaciones del Challenger: 1970-1974 y 2008 hasta la fecha. Disponible a la venta en Estados Unidos, Canada y también en México.</p>
+                        <p><a href="#" class="btn btn-primary" role="button">Detalle</a>
+                        <a href="#" class="btn btn-danger" role="button">Video</a></p>
+                    </div>
+            </div>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="img/ferrari.jpg" alt="LaFerrari">
+                    <div class="caption">
+                        <h3>Ferrari LaFerrari</h3>
+                        <p>El Ferrari LaFerrari (también conocido por su nombre de proyecto, F150 o F70) es un automóvil superdeportivo híbrido de edición limitada del fabricante italiano Ferrari. El automóvil y su nombre definitivo fueron revelados oficialmente en el Salón del Automóvil de Ginebra de 2013. Es el sucesor del Ferrari Enzo, y se fabricarán 499 unidades del modelo; su precio inicial es de 2 millones de dólares.</p>
+                        <p><a href="#" class="btn btn-primary" role="button">Detalle</a>
+                        <a href="#" class="btn btn-danger" role="button">Video</a></p>
+                    </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="img/veyron.jpg" alt="Veyron">
+                    <div class="caption">
+                        <h3>Bugatti Veyron</h3>
+                        <p>El Bugatti Veyron EB 16.4 es un automóvil superdeportivo diseñado y desarrollado por el Grupo Volkswagen y producido en Molsheim, Francia por Bugatti Automobiles S.A.S. desde 2001. La versión básica del coche (Veyron 16.4) se fabricó hasta 2011, y más tarde las versiones Grand Sport y Super Sport se iniciaron en 2009 y 2010. </p>
+                        <p><a href="#" class="btn btn-primary" role="button">Detalle</a>
+                        <a href="#" class="btn btn-danger" role="button">Video</a></p>
+                    </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="img/Mclaren.jpg" alt="McLaren">
+                    <div class="caption">
+                        <h3>McLaren P1</h3>
+                        <p>El McLaren P1 es un automóvil superdeportivo híbrido de edición limitada por el fabricante automotriz británico McLaren Automotive. El coche de concepto debutó en el Salón de París de 2012,1​ y es el tan esperado sucesor del McLaren F1, utiliza energía híbrida y tecnología de la Fórmula 1. </p>
+                        <p><a href="#" class="btn btn-primary" role="button">Detalle</a>
+                        <a href="#" class="btn btn-danger" role="button">Video</a></p>
+                    </div>
+            </div>
+          </div>
+    </div>
+
+
+<!--    Ventanas modales-->
+    <div class="modal fade" tabindex="-1" role="dialog">
+       <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Ford Mustang</h4>
+          </div>
+          <div class="modal-body">
+            <!-- 16:9 aspect ratio -->
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=F2posT1sx_M"></iframe>
+            </div>
+
+            <!-- 4:3 aspect ratio -->
+            <div class="embed-responsive embed-responsive-4by3">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=F2posT1sx_M"></iframe>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <!-- CDN de jQuery 2.X minified. Con la version 2.X te aseguras de que Bootstrap sea compatible.
+    A partir de la 3.3.7 ya soporta la version de jQuery3.X -->
+
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</div> <!-- Fin div container-->
+</body>
+</html>

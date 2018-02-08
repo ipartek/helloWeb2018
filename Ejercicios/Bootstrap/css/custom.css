@@ -1,0 +1,27 @@
+/* NavBar color azul ipartek */
+
+/* Solucionar tema del h1 y navBar */
+
+.container-fluid{
+        background-color: #72C7DC;
+}
+
+h1{
+    margin-top: 60px;
+}
+
+/*
+
+6 thumbnails con fotos.
+
+Al pinchar boton ver detalle una pagina nueva con detalles. Una para todos. "detalle.html"
+
+Al pinchar boton ver video, enlace a video de youtube
+
+*/
+
+
+
+/* Launch demo que debe a video de youtube */
+
+

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Custom css -->
+
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+<body>
+
+   <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">LOGO</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Inicio<span class="sr-only">(current)</span></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ejemplos <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Botones</a></li>
+            <li><a href="#">Ventana modal</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#"><i class="fa fa-sign-out"></i> Log out</a>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <!-- Cierre de navBar -->
+
+   <h1 class="text-center">Bootstrap 3.3.7</h1>
+
+   <!-- Tipos de botones -->
+
+   <h2>Botones</h2>
+<button type="button" class="btn btn-default">Default</button>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-link">Link</button>
+
+
+   <h2>Modal</h2>
+
+   <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
+  Youtube
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+   <!-- Parte de Thumbnail -->
+
+   <h2>PDC Order of merit</h2>
+
+   <div class="row">
+   <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="https://pbs.twimg.com/profile_images/816080326120394753/pEuc2Wz0_400x400.jpg" alt="MvG">
+      <div class="caption">
+        <h3>1-Michael Van Gerwen</h3>
+        <p>Walk on music White Stripes - Seven Nation Army
+Date of birth April 25 1989
+Home town Vlijmen, Netherlands
+Darts Used 23g XQMax
+Website www.michaelvangerwen.com
+Twitter @MvG180
+Instagram mvg180</p>
+        <p><a href="detalle.html" class="btn btn-primary" role="button">Ver detalle</a>
+
+        <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal2">
+              Ver video
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal2Label">17 dardos perfectos de MvG</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pGNZ3GqYrVY"></iframe>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Acaba boton modal enlace youtube -->
+      </div>
+    </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+     <div class="thumbnail">
+      <img src="http://e2.365dm.com/17/10/16-9/20/skysports-wright-peter-german-masters-trophy_4134990.jpg?20171022132856" alt="The Snakebit">
+      <div class="caption">
+        <h3>2-Peter Wright</h3>
+        <p>Walk on music Pitbull - Don't Stop The Party
+Date of birth March 10 1970
+Home town Mendham, England
+Darts Used 22g Red Dragon
+Twitter @SnakebiteWright
+Instagram peter_snakebite_wright</p>
+        <p><a href="detalle.html" class="btn btn-primary" role="button">Ver detalle</a>
+
+        <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal2">
+              Ver video
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal2Label">Cristo reyes vs Toni Alcinas</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ihSGDzCIcv8"></iframe>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Acaba boton modal enlace youtube -->
+
+
+      </div>
+    </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="http://www.abc.net.au/news/image/9298192-3x2-940x627.jpg" alt="Voltage">
+      <div class="caption">
+        <h3>3-Rob Cross</h3>
+        <p>Walk on music Hot Hot Hot - Arrow
+Date of birth September 21 1990
+Home town Hastings, England
+Darts Used 21g Target
+Website caughtinthecrossfire.me.uk/
+Twitter @RobCross180</p>
+        <p><a href="detalle.html" class="btn btn-primary" role="button">Ver detalle</a>
+         <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal2">
+              Ver video
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal2Label">Rob Cross campeon del mundo 2018</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zumgaKbkibI"></iframe>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Acaba boton modal enlace youtube -->
+      </div>
+    </div>
+    </div>
+
+</div>
+
+    <div class="row">
+    <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="https://i2-prod.dailyrecord.co.uk/incoming/article5740234.ece/ALTERNATES/s810/JS64251165.jpg" alt="The flying Scotman">
+      <div class="caption">
+        <h3>4-Gary Anderson</h3>
+        <p>Walk on music Jump Around - House of Pain
+Date of birth December 22 1970
+Home town Burnham-on-Sea, England
+Darts Used 23g Unicorn
+Website www.dedarts.com
+Twitter @GaryAnderson180</p>
+        <p><a href="detalle.html" class="btn btn-primary" role="button">Ver detalle</a>
+        <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal2">
+              Ver video
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal2Label">Gary Anderson doble campeon del mundo</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LbFwj3QLTkA"></iframe>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Acaba boton modal enlace youtube -->
+      </div>
+    </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="http://e2.365dm.com/17/10/16-9/20/skysports-daryl-gurney_4122924.jpg?20171008093352" alt="Super Chin">
+      <div class="caption">
+        <h3>5-Daryl Gurney</h3>
+        <p>Walk on music Neil Diamond - Sweet Caroline
+Date of birth March 22 1986
+Home town Derry, Northern Ireland
+Darts Used 24g Winmau
+Website www.darylgurney180.co.uk/
+Twitter @Superchin180</p>
+        <p><a href="detalle.html" class="btn btn-primary" role="button">Ver detalle</a>
+        <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal2">
+              Ver video
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal2Label">Gurney gana el Grand prix</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BL8WY5Z9SkQ"></iframe>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Acaba boton modal enlace youtube -->
+      </div>
+    </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="http://e1.365dm.com/17/09/16-9/20/skysports-suljovic-darts_4103879.jpg?20170917233722" alt="The gentle">
+      <div class="caption">
+        <h3>6-Mensur Suljovic</h3>
+        <p>Walk on music Simply The Best - Tina Turner
+Date of birth March 05 1972
+Home town Vienna, Austria
+Darts Used 22g Bull's
+Website www.mensursuljovic.com/
+Twitter @MensurSuljovic</p>
+        <p><a href="detalle.html" class="btn btn-primary" role="button">Ver detalle</a>
+        <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal2">
+              Ver video
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modal2Label">Suljovic gana la champions league</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/rMWR6YkE_QI"></iframe>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Acaba boton modal enlace youtube -->
+      </div>
+    </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+    <!-- j query -->
+    <script
+  src="http://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+   <!-- Latest compiled and minified JavaScript -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

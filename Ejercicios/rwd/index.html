@@ -7,6 +7,10 @@
 	<title>Colibri adventures</title>
 
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link href="//fonts.googleapis.com/css?family=Lobster:400" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
 
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -16,6 +20,7 @@
 
 <body>
     <header>
+        <h1>Colibri Adventure</h1>
     	<img src="img/logo.png" alt="colibri adventures">
     </header>
 	<div id="wrapper">
@@ -26,11 +31,20 @@
             <a href="#about">about us</a>
         </nav>
 
-        <nav class="menu-desplegable">
-        	<a href="#home" class="active">home</a>
-            <a href="#packs">packs</a>
-            <a href="#about">about us</a>
-        </nav>
+
+        <!--    mobilenavBar  -->
+
+
+<input type="checkbox" class="checkbox" id="menu-toogle"/>
+<label for="menu-toogle" class="menu-toogle"></label>
+<nav class="nav">
+  <a href="#" class="nav__item current">HOME</a>
+  <a href="#" class="nav__item">PACKS</a>
+  <a href="#" class="nav__item">ABOUT US</a>
+</nav>
+
+         <!--    mobilenavBar  -->
+
 
         <section data-type="slider">
         	<img src="img/dummy.jpg">

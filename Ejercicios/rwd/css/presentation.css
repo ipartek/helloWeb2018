@@ -6,6 +6,27 @@
 
 /* #1 presentation */
 
+
+    h1{
+    display: none;
+    }
+
+.mobilenavBar{
+    display: none;
+}
+
+.nav{
+    display: none;
+}
+
+.checkbox{
+    display: none;
+}
+
+    p{
+    text-align: justify;
+    }
+
 	header {
 		border-top:4px solid #315968;
 	}
@@ -25,14 +46,13 @@
 
 		.navBar a {
 			display:inline-block;
-			width:29.9%;
+			width:29%;
 			margin:4px 10px 0 0;
 			background:#4a7e08;
 			font:20px/59px Times, serif;
 			text-transform:uppercase;
 			color:#000;
 			text-decoration:none;
-            float: left;
 		}
 
 		.navBar .active {
@@ -118,7 +138,8 @@
 			}
 
 				.gallery li img {
-					max-width:100%;
+					width:100%;
+                    height: auto;
 					border:5px solid #fff;
 					box-shadow:0 0 5px #333;
 				}

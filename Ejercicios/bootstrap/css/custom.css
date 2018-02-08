@@ -1,0 +1,52 @@
+/*Ejercicio de bootstrap*/
+
+/*Solucionar H1 para que se vea bien*/
+
+/*Hacer 6 Thumbnails con pintxos de barra*
+
+boton video y valorar al pinchar vamos a una pagina con el detalle del pincho,que va a ser detalle.html y que te lleve a ese pintxo
+
+Cuando pintxamos en el boton detalle vamos a una pagina de detalle,cuando pinchemos al boton video ventana modal con video de youtube
+*/
+
+
+/*Color de ipartek*/
+nav .navbar container-fluid{
+
+    background-color: rgb(120, 202, 222)
+
+
+}
+
+.thumbnail{
+
+
+   display: block;
+}
+
+.titulo{
+
+    top: 20px;
+
+}
+
+
+.thumbnail{
+
+
+    width: 100%;
+
+
+}
+
+div.row{
+
+
+
+}
+
+
+
+
+
+

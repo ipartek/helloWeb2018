@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <title>Bootstrap</title>
+    <meta charset="utf-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="text-center">Festivales de verano</h1>
+
+
+
+
+    </header>
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#">Logo</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ejemplos <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Botones</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Ventana modal</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <h2>Botones</h2>
+    <a class="btn btn-default" href="#" role="button">Link</a>
+    <!-- Standard button -->
+    <button type="button" class="btn btn-default">Default</button>
+
+    <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+    <button type="button" class="btn btn-primary">Primary</button>
+
+    <!-- Indicates a successful or positive action -->
+    <button type="button" class="btn btn-success">Success</button>
+
+    <!-- Contextual button for informational alert messages -->
+    <button type="button" class="btn btn-info">Info</button>
+
+    <!-- Indicates caution should be taken with this action -->
+    <button type="button" class="btn btn-warning">Warning</button>
+
+    <!-- Indicates a dangerous or potentially negative action -->
+    <button type="button" class="btn btn-danger">Danger</button>
+
+    <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+    <button type="button" class="btn btn-link">Link</button>
+
+
+    <h2>Modal </h2>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
+ Youtube
+</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thumbnails -->
+    <!-- 1bbk -->
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="http://premiosfest.com/wp-content/uploads/2014/11/bbk-502x350.jpg" alt="bbk.img">
+                <div class="caption">
+                    <h3>BBK Live</h3>
+                    <p>desde el 12 JUL al 14 JUL</p>
+                    <p><a href="detalle.html" class="btn btn-success" role="button">Detalle</a><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#bbkModal">Ver video</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="bbkModal" tabindex="-1" role="dialog" aria-labelledby="bbkModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="bbkModal">BBK Live</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/YWj8J9knIHw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 2arf -->
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="http://premiosfest.com/wp-content/uploads/2014/12/ARF.png" alt="arf.img">
+                <div class="caption">
+                    <h3>Azkena Rock Festival</h3>
+                    <p> desde el 22 JUN al 23 JUN</p>
+                    <p><a href="#" class="btn btn-success" role="button">Detalle</a><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#arfModal">Ver video</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="arfModal" tabindex="-1" role="dialog" aria-labelledby="arfModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="arfModal">Azkena Rock Festival</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lkMlSSrKrT8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3ehz -->
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="http://i.imgur.com/yizIuf0.jpg" alt="ehz.img">
+                <div class="caption">
+                    <h3>Euskal Herria Zuzenean</h3>
+                    <p>desde el 30 JUN a 2 JUL</p>
+                    <p><a href="detalle.html" class="btn btn-success" role="button">Detalle</a> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ehzModal">Ver video</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="ehzModal" tabindex="-1" role="dialog" aria-labelledby="ehzModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="ehzModal">Euskal Herria Zuzenean</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/NaONc7Hp3nI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- 4viña -->
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="http://www.dodmagazine.es/wp-content/uploads/2017/04/vina-rock-2018.jpg" alt="viña.img">
+                <div class="caption">
+                    <h3>Viña Rock</h3>
+                    <p>desde el 28 ABR al 30 ABR</p>
+                    <p><a href="detalle.html" class="btn btn-success" role="button">Detalle</a> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#viñaModal">Ver video</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="viñaModal" tabindex="-1" role="dialog" aria-labelledby="viñaModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="viñaModal">Viña Rock</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/X-gWcMyb4yI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 5sur -->
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="http://toofestival.es/wp-content/gallery/pirineos-sur/pirineos-sur-2017-cartel.jpg" alt="sur.img">
+                <div class="caption">
+                    <h3>Pirineos Sur</h3>
+                    <p>desde el 14 JUL al 30 JUL</p>
+                    <p><a href="detalle.html" class="btn btn-success" role="button">Detalle</a><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#surModal">Ver video</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="surModal" tabindex="-1" role="dialog" aria-labelledby="surModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="surModal">Pirineos Sur</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/il6OTHXBv44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6tom -->
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="http://elmed.io/wp-content/uploads/2015/08/logo-rototom-940x416.jpg" alt="tom.img">
+                <div class="caption">
+                    <h3>Pirineos Sur</h3>
+                    <p>desde el 12 AGO al 19 AGO</p>
+                    <p><a href="detalle.html" class="btn btn-success" role="button">Detalle</a> <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#tomModal">Ver video</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="tomModal" tabindex="-1" role="dialog" aria-labelledby="tomModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="tomModal">Rototom Sunsplash</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZKCc8n5IXgw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

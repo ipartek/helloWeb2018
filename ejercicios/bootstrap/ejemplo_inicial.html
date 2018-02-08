@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Inicial Bootstrap</title>
+
+    <!-- Bootstrap Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Bootstrap Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--Font awesome icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- CSS de customizacion-->
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#"><i class="fa fa-university fa-1x" aria-hidden="true"></i></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/index.html">Inicio <span class="sr-only">(current)</span></a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ejemplos <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ejercicios/alumnos.html">Alumnos</a></li>
+                            <li><a href="/ejercicios/modal_no_js.html">Ventana Modal</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"> Logout </i></a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <h1 class="text-center">Bootstrap 3.3.7</h1>
+
+    <h2>Botones</h2>
+    <p>
+        <a class="btn btn-default" href="#" role="button">Link</a>
+        <!-- Standard button -->
+        <button type="button" class="btn btn-default">Default</button>
+
+        <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+        <button type="button" class="btn btn-primary">Primary</button>
+
+        <!-- Indicates a successful or positive action -->
+        <button type="button" class="btn btn-success">Success</button>
+
+        <!-- Contextual button for informational alert messages -->
+        <button type="button" class="btn btn-info">Info</button>
+
+        <!-- Indicates caution should be taken with this action -->
+        <button type="button" class="btn btn-warning">Warning</button>
+
+        <!-- Indicates a dangerous or potentially negative action -->
+        <button type="button" class="btn btn-danger">Danger</button>
+
+        <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+        <button type="button" class="btn btn-link">Link</button>
+    </p>
+    <p>
+        <button type="button" class="btn btn-primary btn-lg">Large button</button>
+        <button type="button" class="btn btn-default btn-lg">Large button</button>
+    </p>
+    <p>
+        <button type="button" class="btn btn-warning">Default button</button>
+        <button type="button" class="btn btn-default">Default button</button>
+    </p>
+    <p>
+        <button type="button" class="btn btn-primary btn-sm">Small button</button>
+        <button type="button" class="btn btn-default btn-sm">Small button</button>
+    </p>
+    <p>
+        <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+        <button type="button" class="btn btn-default btn-xs">Extra small button</button>
+    </p>
+
+    <h2>Modal</h2>
+
+
+
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thumbnails -->
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a href="http://www.lamejorchuletadebilbao.com/echa-un-vistazo/mejor-tortilla-de-bilbao/" role="button"><img class="img-responsive" src="http://www.lamejorchuletadebilbao.com/wp-content/gallery/pintxos-de-tortilla/izaro.jpg" alt="Pintxo de Tortilla"></a>
+                <div class="caption">
+                    <h3>Pintxo de Tortilla</h3>
+
+                    <p><a href="http://www.lamejorchuletadebilbao.com/echa-un-vistazo/mejor-tortilla-de-bilbao/" role="button" class="btn btn-primary">DETALLES</a> <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#youtubeModal">Youtube</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a href="https://www.youtube.com/watch?v=KondFN7GndA" role="button"><img class="img-responsive" src="https://i.ytimg.com/vi/KondFN7GndA/maxresdefault.jpg" alt="Pintxo de Morcilla"></a>
+                <div class="caption">
+                    <h3>Pintxo de Morcilla</h3>
+
+                    <p><a href="https://www.youtube.com/watch?v=KondFN7GndA" role="button" class="btn btn-primary">DETALLES</a> <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#youtubeModal">Youtube</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a href="http://www.gastronosfera.com/es/rutas-y-jornadas/v-edicion-keler-pintxo-zinema-de-donostia" role="button"><img class="img-responsive" src="http://www.gastronosfera.com/sites/default/files/uploads/2017/09/xprontxio.jpg.pagespeed.ic.h4QyhjdKv_.jpg" alt="Pintxo de Donosti"></a>
+                <div class="caption">
+                    <h3>Pintxo de Donosti</h3>
+
+                    <p><a href="http://www.gastronosfera.com/es/rutas-y-jornadas/v-edicion-keler-pintxo-zinema-de-donostia" role="button" class="btn btn-primary">DETALLES</a> <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#youtubeModal">Youtube</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a href="http://www.anapeh.com/entregados-los-premios-de-la-12a-semana-del-pintxo-de-la-txantrea/" role="button"><img class="img-responsive" src="http://www.anapeh.com/wp-content/uploads/2013/10/25-ANIVERSARIO.jpg" alt="Pintxo Premio Txantrea"></a>
+                <div class="caption">
+                    <h3>Pintxo Premio Txantrea</h3>
+
+                    <p><a href="http://www.anapeh.com/entregados-los-premios-de-la-12a-semana-del-pintxo-de-la-txantrea/" role="button" class="btn btn-primary">DETALLES</a> <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#youtubeModal">Youtube</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a href="http://www.gastronosfera.com/es/propuestas-gastronomicas/el-mejor-pintxo-en-hondarribia" role="button"><img class="img-responsive" src="http://www.gastronosfera.com/sites/default/files/uploads/2012/10/540x336xpintxo.jpg.pagespeed.ic.EVHIjtCvbP.jpg" alt="Pintxo Creativo"></a>
+                <div class="caption">
+                    <h3>Pintxo Creativo</h3>
+
+                    <p><a href="http://www.gastronosfera.com/es/propuestas-gastronomicas/el-mejor-pintxo-en-hondarribia" role="button" class="btn btn-primary">DETALLES</a> <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#youtubeModal">Youtube</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a href="http://www.blogseitb.com/donostiasansebastian/2013/11/22/el-pintxo-pote-de-donostia-barrio-por-barrio/" role="button"><img class="img-responsive" src="http://www.blogseitb.com/donostiasansebastian/wp-content/uploads/sites/20/2013/11/pintxo1.jpg" alt="Pintxo Pote Donostia"></a>
+                <div class="caption">
+                    <h3>Pintxo Pote Donostia</h3>
+
+                    <p><a href="http://www.blogseitb.com/donostiasansebastian/2013/11/22/el-pintxo-pote-de-donostia-barrio-por-barrio/" role="button" class="btn btn-primary">DETALLES</a> <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#youtubeModal">Youtube</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="youtubeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Video</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jZP1FW3NAxM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Bootstrap Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

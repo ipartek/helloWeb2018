@@ -1,0 +1,22 @@
+#Abrir ventana de MSDos (cmd) y vamos hasta la carpeta deseada
+
+C:\Desarrollo
+
+
+#clonar el repositorio de Github a nuestro pc
+git clone https://github.com/ipartek/helloWeb2018.git
+
+
+
+#La rama actual seleccionada es 'Master' y queremos cambiar a otra
+
+#Entrar a la carpeta del proyecto
+cd helloWeb2018
+
+#Cambiar a otro Branch 'AintzineBizkarra'
+
+git checkout AintzineBizkarra
+
+#Abrir el Brackets y commit and push para subir los cambios
+
+#Para bajar cambios PULL

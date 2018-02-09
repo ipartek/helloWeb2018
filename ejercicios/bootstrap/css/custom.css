@@ -9,7 +9,7 @@
 */
 
 /********** 1. Content **********/
-/* TODO 08/02/2018: Soluciones visibilidad del H1 */
+/* TODO[X]: 08/02/2018: Soluciones visibilidad del H1 */
 body {
     padding-top: 70px;
 }
@@ -29,7 +29,7 @@ section {
      padding-top: 50px;
 }
 
-/* TODO 08/02/2018: Color del navbar --> azul corporativo de Ipartek */
+/* TODO[X]: 08/02/2018: Color del navbar --> azul corporativo de Ipartek */
 .navbar-default {
     background-image: none;
     background-color: #0099cc;
@@ -57,10 +57,17 @@ section {
     overflow: hidden;
 }
 
-/* Altura fija para los thumbnails
-.myRow .thumbnail {
-    height: 600px;
-}*/
+/*
+    Row with equal height columns
+    @see: http://getbootstrap.com.vn/examples/equal-height-columns/
+*/
+/*NOTE: deshabilita las columnas adaptativas*/
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
 /********** END 3. Thumbnails **********/
 /********** 4. Modal **********/
 #modal-datatables .modal-dialog{

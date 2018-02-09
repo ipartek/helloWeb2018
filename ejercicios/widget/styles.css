@@ -1,0 +1,83 @@
+body {
+
+	font-family: "roboto";
+	background-color: rgb(135, 224, 253);
+
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+
+#cnt-weather{
+	position:relative;
+
+	width: 200px;
+	background-color: white;
+	border-radius: 45px;
+	margin:auto;
+	height: 200px;
+
+	/*sombra*/
+	-webkit-box-shadow: 25px 24px 30px -12px rgba(69,68,69,1);
+-moz-box-shadow: 25px 24px 30px -12px rgba(69,68,69,1);
+box-shadow: 25px 24px 30px -12px rgba(69,68,69,1);
+
+}
+
+#cnt-weather .temp, #cnt-weather .city, #cnt-weather .icon{
+	position: absolute;
+	margin:0;
+
+}
+
+#cnt-weather .temp{
+	font-size: 6em;
+	color:#b8b8b8;
+	bottom:30px;
+	left:20px;
+
+}
+
+#cnt-weather .city{
+	font-size: 1.2em;
+	color:#b8b8b8;
+	bottom:15px;
+	left:25px;
+}
+
+#cnt-weather .icon{
+
+	right:15px;
+	top:10px;
+
+	/*ANIMATION:MOVE 5S EASE-IN-OUT INFINITE;*/
+
+	animation-name:move;
+	animation-duration: 5s;
+	animation-timing-function:ease-in-out;
+	animation-iteration-count:infinite;
+
+}
+
+[data-icon]:before {
+	font-family: 'MeteoconsRegular';
+	content: attr(data-icon);
+	font-size: 4em;
+	color:#b8b8b8;
+
+
+}
+
+@keyframes move{
+	0%{
+		font-size: 100%;
+	}
+	50%{
+		font-size: 90%;
+	}
+	100%{
+		font-size: 100%;
+	}
+}

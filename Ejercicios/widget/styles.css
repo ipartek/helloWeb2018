@@ -1,4 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+@keyframes move{
+    0%{
+        font-size: 100%;
+        transform: rotate(30deg);
+    }
+    50%{
+        font-size: 90%;
+        color:black;
+        transform: rotate(-30deg);
+    }
+    100%{
+        font-size: 100%;
+        transform: rotate(30deg);
+    }
+}
 body {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+18,05abe0+46,05abe0+83 */
     background: #87e0fd;
@@ -31,7 +46,13 @@ h1 {
 	content: attr(data-icon);
 
 }
-
+#cnt_widget .icon{
+    /*animation: move 5s ease-in-ot infinite*/
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function:  ease-in-out;
+    animation-iteration-count: infinite;
+}
 #cnt_widget .icon {
     top:10px;
     right: 10px;

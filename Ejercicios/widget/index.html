@@ -10,11 +10,13 @@
 <body>
       <h1>Widget Weather</h1>
    <div id="cnt_widget">
-       <span class="icon" data-icon="!"></span>
-       <p class="temp">6º</p>
-       <p class="city">Bilbao</p>
+       <span id="icon"class="icon" data-icon=""></span>
+       <p id="temp" class="temp">X</p>
+       <p id="city" class="city">X</p>
    </div>
-
+<input type="text" id="input_ciudad" placeholder="Introduce una cidudad">
+<p id="mensaje"></p>
+<button onclick="verTiempo()">Dime el Tiempo</button>
 <script src="main.js"></script>
 </body>
 </html>

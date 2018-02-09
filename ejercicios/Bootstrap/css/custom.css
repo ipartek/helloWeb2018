@@ -10,6 +10,7 @@
 - Cuando pinchas boton video: ventana modal con video de youtube (Responsive embed)
 */
 
+
 .container-fluid {
     background-color: #72C7DC;
 }
@@ -29,7 +30,6 @@ h1 {
     .btn-success{
         margin-right: 100px;
     }
-
 /*
 
 .thumbnail img {
@@ -47,5 +47,32 @@ h1 {
     width: 100%;
     height: auto;
 }
+
 */
+
+/**********************************************************************************
+EJERCICIO 12 COLUMNAS
 */
+header {
+	background:#2c3e50;
+	color:#fff;
+}
+
+.main {
+	background:#f2f2f2;
+}
+
+.color1 {
+	background: #34495e;
+	color:#fff;
+}
+
+aside {
+	background:#c0392b;
+	color:#fff;
+}
+
+footer {
+	background:#16a085;
+	color:#fff;
+}

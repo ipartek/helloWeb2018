@@ -1,0 +1,81 @@
+[data-icon]:before {
+    font-family: 'MeteoconsRegular';
+    content: attr(data-icon);
+    font-size: 10em
+}
+
+
+
+body {
+    font-family: "roboto";
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+0,53cbf1+60,05abe0+100 */
+    background: #87e0fd;
+    /* Old browsers */
+}
+
+h1 {
+    text-align: center;
+    color: #FFF;
+}
+
+#cnt_weather {
+    position: relative;
+    margin: auto;
+    width: 300px;
+    border-radius: 25px;
+    height: 300px;
+    background-color: #FFF;
+
+    /*Sombra*/
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+
+
+
+}
+
+#cnt_weather .temp,
+#cnt_weather .city,
+#cnt_weather .icon {
+    position: absolute;
+    margin: 0;
+}
+
+#cnt_weather .temp {
+    font-size: 5em;
+    color: #B8B8B8;
+    bottom: 30px;
+    left: 20px;
+
+}
+
+#cnt_cnt_weather .city {
+    font-size: 1.2em;
+    bottom: 15px;
+    left: 25px;
+
+}
+
+@keyframe move{
+    0% {
+        font-size: 100%;
+    }
+    50% {
+        font-size: 90%;
+    }
+    100% {
+        font-size: 100%;
+    }
+
+}
+
+#cnt_weather .icon {
+    /*animation:move */
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+
+  }

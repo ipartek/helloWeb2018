@@ -11,12 +11,14 @@ Cuando pintxamos en el boton detalle vamos a una pagina de detalle,cuando pinche
 
 
 /*Color de ipartek*/
-nav .navbar container-fluid{
+.container-fluid{
 
-    background-color: rgb(120, 202, 222)
+    background-color: rgb(120, 202, 222);
 
 
 }
+
+
 
 .thumbnail{
 

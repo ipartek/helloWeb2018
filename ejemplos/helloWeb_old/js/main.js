@@ -81,7 +81,7 @@ function llamadaApi(){
             var json= JSON.parse(this.responseText);
         //console.info(json.bpi.USD.rate);
         //mostrar en pantalla
-            document.getElementById("precio").textContent = json.bpi.GBP.rate + "Libras"
+            document.getElementById("precio").textContent = json.
 
     }
   };

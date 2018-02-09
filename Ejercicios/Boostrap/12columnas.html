@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Boostrap</title>
+</head>
+<!-- Latest compiled and minified CSS -->
+<!-- font awesome 4.7 -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/12columnnas.css">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Header</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="main row">
+            <article class="col-xs-8 col-sm-8 col-md-9 col-lg-9">
+
+                <h3>Articulo - Article</h3>
+                <h4 class="visible-xs">8 Columnas</h4>
+                <h4 class="visible-sm">8 Columnas</h4>
+                <h4 class="visible-md">9 Columnas</h4>
+                <h4 class="visible-lg">9 Columnas</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+
+            </article>
+
+            <aside class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
+
+                <h3>Sidebar - Aside</h3>
+                <h4 class="visible-xs">4 Columnas</h4>
+                <h4 class="visible-sm">4 Columnas</h4>
+                <h4 class="visible-md">3 Columnas</h4>
+                <h4 class="visible-lg">3 Columnas</h4>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </aside>
+        </div>
+
+        <div class="row">
+            <div class="color1 col-xs-6 col-sm-6 col-md-3">
+                <h4 class="visible-xs">6 Columnas</h4>
+                <h4 class="visible-sm">6 Columnas</h4>
+                <h4 class="visible-md">3 Columnas</h4>
+                <h4 class="visible-lg">3 Columnas</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione ab qui laudantium dolor, sit doloremque aliquid earum nesciunt vero ullam commodi, blanditiis numquam natus libero repellat odit cum, ipsa nostrum!</p>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <h4 class="visible-xs">6 Columnas</h4>
+                <h4 class="visible-sm">6 Columnas</h4>
+                <h4 class="visible-md">3 Columnas</h4>
+                <h4 class="visible-lg">3 Columnas</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione ab qui laudantium dolor, sit doloremque aliquid earum nesciunt vero ullam commodi, blanditiis numquam natus libero repellat odit cum, ipsa nostrum!</p>
+            </div>
+
+            <div class="color1 col-xs-6 col-sm-6 col-md-3">
+                <h4 class="visible-xs">6 Columnas</h4>
+                <h4 class="visible-sm">6 Columnas</h4>
+                <h4 class="visible-md">3 Columnas</h4>
+                <h4 class="visible-lg">3 Columnas</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione ab qui laudantium dolor, sit doloremque aliquid earum nesciunt vero ullam commodi, blanditiis numquam natus libero repellat odit cum, ipsa nostrum!</p>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <h4 class="visible-xs">6 Columnas</h4>
+                <h4 class="visible-sm">6 Columnas</h4>
+                <h4 class="visible-md">3 Columnas</h4>
+                <h4 class="visible-lg">3 Columnas</h4>
+                <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+  Loading state
+</button>
+
+                <script>
+                    $('#myButton').on('click', function() {
+                        var $btn = $(this).button('loading')
+                        // business logic...
+                        $btn.button('reset')
+                    })
+                </script>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione ab qui laudantium dolor, sit doloremque aliquid earum nesciunt vero ullam commodi, blanditiis numquam natus libero repellat odit cum, ipsa nostrum!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <h3>Pie de pagina - Footer</h3>
+            <h4>12 Columnas</h4>
+        </div>
+    </footer>
+
+
+
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

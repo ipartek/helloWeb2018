@@ -20,14 +20,18 @@
 
 </head>
 
-<body>
+<body onload>
 
     <h1>Weather Widget</h1>
     <div id="cnt-widget">
-        <span class="icon"></span>
-        <p class="temp">16º</p>
-        <p class="city">Bilbao</p>
+        <!--<span id="icono"class="icon" data-icon=""></span>-->
+        <img id="icono" class="icon"src="" alt="icono">
+        <p id="temperatura" class="temp">x</p>
+        <p id="ciudad" class="city">x</p>
     </div>
+    <input type="text" id="input_ciudad" placeholder="Dime tu ciudad">
+    <p id="mensaje"></p>
+    <button onclick="verTiempo()">Dime tu ciudad</button>
 
 
 

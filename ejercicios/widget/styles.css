@@ -55,12 +55,12 @@ h1{
 }
 @keyframes move{
     0%{
-        font-size:100%
+        width:50%
     }
     50%{
-        font-size:75%
+        width:25%
     }
     100%{
-        font-size:100%
+        width:50%
     }
 }

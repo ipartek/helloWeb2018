@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap - Ejemplo inicial</title>
+
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/12columnas.css" />
+
+</head>
+<body>
+
+    <header>
+        <div class="container"><!--container-fluid para que abarque todo. Al ser un header no hace falta, porque los header ya lo hace automaticamente-->
+            <h1>Header</h1>
+        </div>
+    </header>
+    <div class="container">
+        <section class="main row">
+            <article class="col-xs-12 col-sm-8 col-md-9 col-lg-9"><!-- Al estar diseñado en mobile-first si no le indicas las medidas superiores hereda las siguientes de la clase siguiente más pequeña que esté definida-->
+               <!-- Para tamaños más pequeños (XS) se adapta por defecto a 12 columnas</-->
+                <h4 class="visible-xs">12 columnas</h4>
+                <h4 class="visible-sm">8 columnas</h4>
+                <h4 class="visible-md">9 columnas</h4>
+                <h4 class="visible-lg">9 columnas</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum adipisci at ratione aperiam asperiores quas possimus iusto aliquid impedit placeat, fugiat voluptas doloremque ipsum rem! Sapiente tempore debitis deleniti fugiat.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis praesentium incidunt pariatur repellendus assumenda recusandae quibusdam doloremque atque aspernatur vitae ab nam ratione cum neque aliquam quis, eum id, saepe.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, adipisci, cupiditate. Nemo facilis numquam magnam dignissimos repellendus similique assumenda, reprehenderit rem voluptatum, sapiente optio corporis sint corrupti totam, illum facere?</p>
+            </article>
+            <aside class="col-xs-12 col-sm-4 col-md-3">
+               <h4 class="visible-xs">12 columnas</h4>
+                <h4 class="visible-sm">4 columnas</h4>
+                <h4 class="visible-md">3 columnas</h4>
+                <h4 class="visible-lg">3 columnas</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum adipisci at ratione aperiam asperiores quas possimus iusto aliquid impedit placeat, fugiat voluptas doloremque ipsum rem! Sapiente tempore debitis deleniti fugiat.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis praesentium incidunt pariatur repellendus assumenda recusandae quibusdam doloremque atque aspernatur vitae ab nam ratione cum neque aliquam quis, eum id, saepe.</p>
+            </aside>
+        </section>
+        <div class="row">
+        <div class="color1 col-sm-6 col-md-3">
+            <h4 class="visible-xs">12 columnas</h4>
+            <h4 class="visible-sm">6 columnas</h4>
+            <h4 class="visible-md">3 columnas</h4>
+            <h4 class="visible-lg">3 columnas</h4>
+            <h4>Columna 1</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum adipisci at ratione aperiam asperiores quas possimus iusto aliquid impedit placeat, fugiat voluptas doloremque ipsum rem! Sapiente tempore debitis deleniti fugiat.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis praesentium incidunt pariatur repellendus assumenda recusandae quibusdam doloremque atque aspernatur vitae ab nam ratione cum neque aliquam quis, eum id, saepe.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, adipisci, cupiditate. Nemo facilis numquam magnam dignissimos repellendus similique assumenda, reprehenderit rem voluptatum, sapiente optio corporis sint corrupti totam, illum facere?</p>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <h4 class="visible-xs">12 columnas</h4>
+            <h4 class="visible-sm">6 columnas</h4>
+            <h4 class="visible-md">3 columnas</h4>
+            <h4 class="visible-lg">3 columnas</h4>
+            <h4>Columna 2</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat quas ipsam eum hic eaque suscipit repudiandae dolorum voluptatibus, voluptatem illum maxime quam voluptates vero sequi rem iure tenetur? Similique, nemo.</p>
+        </div>
+        <!--Meter un div class="clearfix visible-md-block para conseguir que haga un salto de linea en tamaños medianos para que no se pongan las columnas donde no le toca.De esta manera cada fila dentro de las 4 columnas queda 2 y 2 -->
+        <div class="clearfix visible-sm-block"></div>
+        <div class="color1 col-sm-6 col-md-3">
+            <h4 class="visible-xs">12 columnas</h4>
+            <h4 class="visible-sm">6 columnas</h4>
+            <h4 class="visible-md">3 columnas</h4>
+            <h4 class="visible-lg">3 columnas</h4>
+            <h4>Columna 3</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat quas ipsam eum hic eaque suscipit repudiandae dolorum voluptatibus, voluptatem illum maxime quam voluptates vero sequi rem iure tenetur? Similique, nemo.</p>
+        </div>
+        <div class="color1 col-sm-6 col-md-3">
+            <h4 class="visible-xs">12 columnas</h4>
+            <h4 class="visible-sm">6 columnas</h4>
+            <h4 class="visible-md">3 columnas</h4>
+            <h4 class="visible-lg">3 columnas</h4>
+            <h4>Columna 4</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat quas ipsam eum hic eaque suscipit repudiandae dolorum voluptatibus, voluptatem illum maxime quam voluptates vero sequi rem iure tenetur? Similique, nemo.</p>
+        </div>
+    </div>
+    </div>
+
+    <!--
+    Para organizar 2 columnas, luego otra vacia, y una 3:
+          col-md-3 col-md-offset-3 en la columna que queremos mover -->
+
+    <footer>
+		<div class="container">
+			<h3>Pie de pagina - Footer</h3>
+			<h4>12 Columnas</h4>
+		</div>
+	</footer>
+
+
+    <!-- CDN de jQuery 2.X minified. Con la version 2.X te aseguras de que Bootstrap sea compatible.
+    A partir de la 3.3.7 ya soporta la version de jQuery3.X -->
+
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

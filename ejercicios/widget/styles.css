@@ -1,0 +1,81 @@
+[data-icon]:before {
+	font-family: 'MeteoconsRegular';
+	content: attr(data-icon);
+    font-size: 6em;
+}
+
+body{
+ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#050bd1+0,6b70fd+52,3e47f0+59,6b70fd+100 */
+background: #050bd1; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, #050bd1 0%, #6b70fd 52%, #3e47f0 59%, #6b70fd 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, #050bd1 0%,#6b70fd 52%,#3e47f0 59%,#6b70fd 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, #050bd1 0%,#6b70fd 52%,#3e47f0 59%,#6b70fd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050bd1', endColorstr='#6b70fd',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    font-family: "roboto";
+
+}
+
+h1{
+    color:#FFF;
+    text-align: center;
+}
+
+#cnt-weather{
+    margin:auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+    background-color: #FFF;
+    text-align: center;
+    position: relative;/* la posicion por defecto es static*/
+
+    /*sombra */
+    -webkit-box-shadow: 2px 6px 25px 6px rgba(207,195,224,0.82);
+    -moz-box-shadow: 2px 6px 25px 6px rgba(207,195,224,0.82);
+    box-shadow: 2px 6px 25px 6px rgba(207,195,224,0.82);
+}
+
+#cnt-weather .temp, #cnt-weather .city, #cnt-weather .icon{
+    position: absolute;
+    margin:0;
+}
+
+#cnt-weather .temp{
+    font-size: 5em;
+    color:#BBB;
+    bottom:20px;
+    left:20px;
+}
+#cnt-weather .city{
+    font-size: 1.2em;
+    color:#BBB;
+    bottom:15px;
+    left:25px;
+}
+#cnt-weather .icon{
+    top:10px;
+    right:10px;
+
+    animation-name:move;
+    animation-duration: 5s;
+    animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+    animation-iteration-count: infinite;
+}
+
+/* Animaciones */
+@keyframes move{
+    0%{
+        font-size: 100%;
+        transform: rotate(-30deg)
+    }
+    50%{
+        font-size: 80%;
+        transform: rotate(30deg)
+    }
+    100%{
+        font-size: 100%;
+        transform: rotate(-30deg)
+    }
+}
+

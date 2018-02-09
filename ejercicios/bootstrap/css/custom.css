@@ -15,5 +15,9 @@ body {
 }
 
 .thumbnail{
-    min-height: 500px;
+    min-height: 400px;
+}
+
+.thumbnail p.texto{
+    min-height: 180px;
 }

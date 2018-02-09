@@ -1,0 +1,17 @@
+#Clonar repositorio de github a nuestro PC
+
+#Abrir cmd y vamos hasta la carpeta que queramos en este caso c:/desarrollo
+
+git clone https://github.com/ipartek/helloWeb2018.git
+
+#Como bajas todo el proyecto la rama es master por eso hay que cambiarla desde brackets,pero esta vez lo cambiaremos 
+desde el cmd
+
+#Entrar a la carpeta del proyecto
+
+cd helloweb2018
+#cambiar de branch
+
+git checkout JosebaClemente
+
+#Abrir el Brackets y commit and push para subir los cambios,para bajar cambios un pull

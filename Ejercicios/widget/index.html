@@ -7,24 +7,28 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="meteocons/stylesheet.css">
 </head>
-<body>
+
+<body onload="">
     <h1>Widget Weather</h1>
 
 
-   <div id="cnt-weather">
+    <div id="cnt-weather">
 
-       <span class="icon" data-icon="W"></span>
-       <p class="temp">6º</p>
-       <p class="city">Bilbao</p>
-
-
-   </div>
+        <span id="icono" class="icon" data-icon=""></span>
+        <p id="temp" class="temp">X</p>
+        <p id="city" class="city">X</p>
 
 
+    </div>
 
 
-    <script> src="main.js">
+    <input type="text" id="input_ciudad" placeholder="Dime tu Ciudad">
+    <p id="mensaje"></p>
+    <button onclick="ver_Tiempo()">Dime el tiempo</button>
 
+
+
+    <script src="main.js">
     </script>
 </body>
 </html>

@@ -44,7 +44,7 @@ function llamadaApi(){
     var moneda = document.getElementById("moneda").value;
     //console.debug('Moneda seleccionada %s', moneda );
 
-    //lamada Ajax
+    //llamada Ajax
      var xhr = new XMLHttpRequest();
      xhr.onreadystatechange = function() {
         //esperamos a que la respuesta sea correcta

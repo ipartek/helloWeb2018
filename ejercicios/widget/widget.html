@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Widget weather</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="widget.css">
+     <link rel="stylesheet" href="meteocons/stylesheet.css">
+</head>
+<body onload="">
+    <h1>Widget Weather</h1>
+
+    <div id="cnt-widget">
+        <div class="icon">
+           <a class="icon" data-icon=""></a>
+        </div>
+        <p id="temp" class="temp">X</p>
+        <p id="city" class="city">X</p>
+    </div>
+
+    <input tipe="text" id="input_ciudad" placeholder="Dime tu ciudad">
+    <p id="mensaje"></p>
+    <button onclick="verTiempo()">Dime el tiempo</button>
+<script src="widget.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+
+
+body{
+    font-family:Roboto;
+    * Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffff88+0,ffff88+100;Yellow+Flat+%231 */
+    background: #ffff88; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffff88 0%, #ffff88 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffff88 0%,#ffff88 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffff88 0%,#ffff88 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='#ffff88',GradientType=0 ); /* IE6-9 */
+}
+
+h1{
+    text-align: center;
+    color:#424223;
+}
+
+#cnt-widget{
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    background: white;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow:
+        -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    position: relative;
+}
+
+#cnt-widget .icon,
+#cnt-widget .temp,
+#cnt-widget .city{
+    position: absolute;
+    margin: 0;
+}
+
+#cnt-widget .temp{
+    font-weight:300;
+    font-size: 3.5em;
+    color: grey;
+    bottom: 15px;
+    left: 20px;
+    top: 90px;
+}
+
+#cnt-widget .city{
+    font-size: 1.2em;
+    color: grey;
+    bottom: 15px;
+    left: 25px;
+}
+
+[data-icon]:before {
+	font-family: 'MeteoconsRegular';
+	content: attr(data-icon);
+    font-size:6em;
+
+}
+
+#cnt-widget .icon{
+       right: 10px;
+    left: 50px;
+    top: 10px;
+    color: darkgrey;
+    animation-name: animacionIcon;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes animacionIcon{
+    from{
+        font-size: 100%;
+    }
+
+    50%{
+        font-size: 90%;
+    }
+
+    to{
+        font-size: 100%;
+    }
+}
+
+

@@ -27,14 +27,214 @@
     text-transform: uppercase;
 }
 
-.columna{
-    width: 33.33333333%;
-        position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
 .thumbnail{
     display: block;
 }
+
+/*detalle*/
+body{
+	color: #333;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight:400;
+	background:#f7f7f7;
+}
+h1{font-size:32px;}h2{font-size:26px;}h3{font-size:20px;}h4{font-size:16px;}h5{font-size:12px;}
+h1,h2,h3{font-weight:700;}h4,h5{font-weight:400;}
+section.white{background: #fff;}section.default{background: transparent;}
+section,.slider{margin-bottom:30px;}
+.block-head{display: block;text-align: center;position: relative;margin: 40px 0;padding-bottom: 15px;}
+.block-head > .block-title{color: #333;font-size: 25px;font-family: 'Arvo', serif;}
+.block-head-line::before{content: '';position: absolute;bottom: 5px;width: 70px;height: 2px;background: #666;;margin: auto;left: 0;right: 0;}
+.block-head-line::after{content: '';position: absolute;bottom: 0;width: 40px;height: 1px;background: #666;;margin: auto;left: 0;right: 0;}
+.alignleft {
+    float: left;
+	margin: 20px 20px 20px 0;
+}
+.alignright {
+    float: right;
+	margin: 20px 0 20px 20px;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:20px;
+	}
+.responsive-attachment{
+	max-width: 100%;
+	height: auto;
+}
+/* HEADER */
+header{
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 999999;
+	background: #fff;
+}
+.flex{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header-navigation{
+line-height: 75px;
+}
+.header-navigation > ul {
+    list-style: none;
+    margin: 0;
+	padding: 0;
+}
+.header-navigation > ul > li{
+	display: inline-block;
+	position: relative;
+	padding: 0 20px;
+}
+.header-navigation > ul > li:first-child{
+	padding-left: 0;
+}
+.header-navigation > ul > li:last-child{
+	padding-right: 0;
+}
+
+.header-navigation > ul > li > a:hover{
+	color:#82b440;
+}
+
+
+/* 3. SLIDER LAYOUT */
+.slider-item{
+	position:relative;
+}
+.slider-item > .slider-item-thumb{
+	position:relative;
+}
+.slider-item > .slider-item-content{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateY(-50%);
+	width: 40%;
+	margin: auto;
+	text-align: center;
+	background:rgba(0,0,0,0.5);
+	padding: 20px;
+	border: 1px solid rgba(255, 255, 255, .5);
+	z-index:9999;
+	font-family: 'Arvo', serif;
+}
+.slider-item > .slider-item-content::before {
+	content: " ";
+	position: absolute;
+	z-index: -1;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	bottom: 5px;
+	border: 1px solid rgba(255, 255, 255, .2);
+}
+
+.slider-item > .slider-item-content > h2{
+	margin:15px 0 20px;
+    margin: 15px 0 20px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.8em;
+}
+.slider-item > .slider-item-content > h2 > a{
+	margin: 15px 0 20px;
+}
+.slider-item > .slider-item-content > h2 > a:hover{
+	color:#ddd;
+	text-decoration:none;
+}
+
+.soporte-caja{
+	margin-bottom:30px;
+}
+
+.caja-pincho{
+	padding: 15px;
+	border: 1px solid #f0f0f0;
+	background:#fff;
+}
+.caja-pincho > .foto-caja{
+	position:relative;
+}
+
+.caja-pincho > .caja-titulo > h3{
+	margin: 0;
+	max-height: 44px;
+	overflow: hidden;
+	font-family: 'Arvo', serif;
+}
+.caja-pincho > .caja-titulo > h3 > a{
+	color:#333;
+}
+.caja-pincho > .caja-titulo > h3 > a:hover{
+	color:#666;
+	text-decoration:none;
+}
+.caja-pincho > ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+	display:inline-block;
+}
+.caja-pincho > ul > li{
+	display:inline-block;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.caja-pincho > span{
+	float: right;
+	line-height: 22px;
+	color: #666;
+}
+.caja-pincho > .caja-ingredientes{
+	margin-top: 10px;
+	border-top: 1px solid #f1f1f1;
+}
+.caja-pincho > .caja-ingredientes > h4{
+	font-weight: 400;
+	text-align: center;
+	position: relative;
+	z-index: 99;
+	margin: 20px 0;
+}
+.caja-pincho > .caja-ingredientes > h4::before {
+    border-top: 1px solid #e6d79d;
+    content: " ";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.caja-pincho > .caja-ingredientes > ul{
+	list-style: none;
+	padding: 0;
+	max-height: 217px;
+	height: 217px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.caja-pincho > .caja-ingredientes > ul > li{
+	color: #666;
+	font-size: 14px;
+	line-height: 35px;
+	border-bottom: 1px solid #f2e8c2;
+}
+
+

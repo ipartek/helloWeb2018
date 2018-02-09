@@ -15,6 +15,21 @@ h1{
     text-align: center;
 }
 
+
+@keyframes move{
+    0%{
+        font-size: 100%;
+        /*transform: rotate(360deg);*/
+    }
+    50%{
+        font-size: 90%;
+    }
+    100%{
+        font-size: 100%;
+    }
+}
+
+
 #cnt-weather{
     position: relative;
 
@@ -25,7 +40,7 @@ h1{
     background-color: #FFF;
 
     /* sombra */
-   -webkit-box-shadow: 7px 7px 25px -1px rgba(87,79,87,0.62);
+    -webkit-box-shadow: 7px 7px 25px -1px rgba(87,79,87,0.62);
     -moz-box-shadow: 7px 7px 25px -1px rgba(87,79,87,0.62);
     box-shadow: 7px 7px 25px -1px rgba(87,79,87,0.62);
 }
@@ -49,15 +64,17 @@ h1{
     left: 25px;
 }
 #cnt-weather .icon{
+    /*animation: move 5s ease-in-out infinite;*/
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    /*animation-delay: 0;*/
+
     top:10px;
     right: 10px;
     color:#595959;
 }
-
-
-
-
-
 
 
 

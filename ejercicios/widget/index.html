@@ -20,6 +20,7 @@
     <div id="cnt-weather">
         <!--DIV para el icono-->
         <div class="icon">
+            <img id="owmIcon" src="//:0" alt="icono previsión">
             <span id="forecastIcon" data-icon=""></span>
         </div>
         <p class="temp" id="temp">&nbsp;</p>
@@ -28,9 +29,10 @@
     <!--FIN cnt-widget-->
 
     <div id="insert-data">
-        <input type="text" id="input_ciudad" placeholder="Introduce tu ciudad">
+        <input type="text" id="input_ciudad" placeholder="Introduce tu ciudad" onkeypress="pulsarEnter(event)">
     <p id="mensaje">&nbsp;</p>
-    <button onclick="verTiempo()">Dime el tiempo</button>
+    <!--TODO: gestionar al pulsar enter-->
+    <button onclick="verTiempo()" id="btnTiempo">Dime el tiempo</button>
     </div>
 
     <!--CARGA DE JS-->

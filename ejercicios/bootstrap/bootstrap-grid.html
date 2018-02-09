@@ -1,0 +1,112 @@
+<!--
+    EJEMPLO INICIAL PARA USAR EL FRAMEWORK DE ESTILOS BOOTSTRAP 3.3
+    @see: http://getbootstrap.com/docs/3.3/getting-started/
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Grid System</title>
+    <!-- meta para RWD -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CARGAS POR CDN -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Fontawesome 4.7 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- ESTILOS PROPIOS -->
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+</head>
+
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Header</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="main row">
+            <article class="col-xs-12 col-sm-8 col-md-9">
+                <h4 class="visible-xs">Columna 12</h4>
+                <h4 class="visible-sm">Columna 8</h4>
+                <h4 class="visible-md">Columna 9</h4>
+                <h4 class="visible-lg">Columna 9</h4>
+                <p>
+
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt tenetur alias hic laudantium, eligendi optio saepe quo delectus eum, non voluptates, eius natus pariatur. Sit officiis itaque quod, ipsa quae.
+                </p>
+            </article>
+
+            <aside class="col-xs-12 col-sm-4 col-md-3">
+                <h4 class="visible-xs">Columna 12</h4>
+                <h4 class="visible-sm">Columna 4</h4>
+                <h4 class="visible-md">Columna 3</h4>
+                <h4 class="visible-lg">Columna 3</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo, laudantium nihil quisquam ipsam ipsum cupiditate sequi. Consequuntur deleniti, sapiente aut reiciendis doloribus sed blanditiis harum, recusandae eveniet eaque aliquid. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure doloribus molestiae vel labore. Molestiae nemo rerum sint, mollitia tempora quia! Libero mollitia sint expedita cupiditate provident, ipsa harum architecto blanditiis!
+                </p>
+            </aside>
+        </section>
+
+        <section class="row">
+            <div class="color1 col-sm-6 col-md-3">
+                <h4 class="visible-xs">CAJA 1: Columna 12</h4>
+                <h4 class="visible-sm">CAJA 1: Columna 6</h4>
+                <h4 class="visible-md">CAJA 1: Columna 3</h4>
+                <h4 class="visible-lg">CAJA 1: Columna 3</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias reprehenderit illum autem, unde modi voluptate doloribus maiores amet assumenda ullam quisquam pariatur! Quod velit debitis dolor pariatur repellat reprehenderit veritatis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta maiores alias vitae cumque laudantium suscipit, quas incidunt consequuntur nam facere a exercitationem veritatis ipsa minus fugit perspiciatis explicabo. Modi, ex.</p>
+            </div>
+            <!--
+                Con la clase 'col-md-offset-3' te deja un hueco de 3 columnas en el tamaño 'md' antes de este div:
+                <div class="col-sm-6 col-md-3 col-md-offset-3">
+            -->
+            <div class="col-sm-6 col-md-3">
+                <h4 class="visible-xs">CAJA 2: Columna 12</h4>
+                <h4 class="visible-sm">CAJA 2: Columna 6</h4>
+                <h4 class="visible-md">CAJA 2: Columna 3</h4>
+                <h4 class="visible-lg">CAJA 2: Columna 3</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias reprehenderit illum autem, unde modi voluptate doloribus maiores amet assumenda ullam quisquam pariatur! Quod velit debitis dolor pariatur repellat reprehenderit veritatis?</p>
+            </div>
+            <!--Con el DIV "clearfix visible-sm-block" mete un clearfix que sólo es visible para el tamaño sm-->
+            <div class="clearfix visible-sm-block"></div>
+            <div class="color1 col-sm-6 col-md-3">
+                <h4 class="visible-xs">CAJA 3: Columna 12</h4>
+                <h4 class="visible-sm">CAJA 3: Columna 6</h4>
+                <h4 class="visible-md">CAJA 3: Columna 3</h4>
+                <h4 class="visible-lg">CAJA 3: Columna 3</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias reprehenderit illum autem, unde modi voluptate doloribus maiores amet assumenda ullam quisquam pariatur! Quod velit debitis dolor pariatur repellat reprehenderit veritatis?</p>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <h4 class="visible-xs">CAJA 4: Columna 12</h4>
+                <h4 class="visible-sm">CAJA 4: Columna 6</h4>
+                <h4 class="visible-md">CAJA 4: Columna 3</h4>
+                <h4 class="visible-lg">CAJA 4: Columna 3</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias reprehenderit illum autem, unde modi voluptate doloribus maiores amet assumenda ullam quisquam pariatur! Quod velit debitis dolor pariatur repellat reprehenderit veritatis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, a. Eveniet quia iste quo quis cupiditate quibusdam error debitis voluptate tempore rerum alias itaque, explicabo accusantium facilis. Officiis, accusamus fuga.</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="container">
+            <h3>Pie de pagina - Footer</h3>
+            <h4>12 Columnas</h4>
+        </div>
+    </footer>
+
+    <!-- CARGA DE SCRIPTS -->
+    <!-- jQuery v2.2.4 minified (dado que no vamos a aplicar cambios en el código de jQuery, usamos la versión 'minified' que viene sin indentar) -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+    </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+/*
+    Hoja de estilos para bootstrap-grid.html
+
+    ÍNDICE:
+    1. Color styles
+*/
+
+/********** 1. Color styles **********/
+header {
+	background:#2c3e50;
+	color:#fff;
+}
+
+.main {
+	background:#f2f2f2;
+}
+
+.color1 {
+	background: #34495e;
+	color:#fff;
+}
+
+aside {
+	background:#c0392b;
+	color:#fff;
+}
+
+footer {
+	background:#16a085;
+	color:#fff;
+}
+/********** END 1. Color styles **********/

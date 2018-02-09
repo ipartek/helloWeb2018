@@ -18,7 +18,7 @@ section img {
     width: 500px;
     height: auto;
 }
-
+/********** END 1. Content **********/
 /********** 2. Navbar **********/
 #logo-ipartek {
     width: 70px;
@@ -38,7 +38,7 @@ section {
 .navbar-default a{
     color: #0c2661 !important;
 }
-
+/********** END 2. Navbar **********/
 /********** 3. Thumbnails **********/
 /* misma altura para todas las imágenes */
 .thumbnail img {
@@ -61,7 +61,7 @@ section {
 .myRow .thumbnail {
     height: 600px;
 }*/
-
+/********** END 3. Thumbnails **********/
 /********** 4. Modal **********/
 #modal-datatables .modal-dialog{
     width: 90%; /* Full width */
@@ -75,7 +75,4 @@ section {
 #modal-datatables .modal-dialog img{
     width: 100%;
 }
-
-jQuery(".modal-backdrop, #myModal .close, #myModal .btn").live("click", function() {
-        jQuery("#myModal iframe").attr("src", jQuery("#myModal iframe").attr("src"));
-});
+/********** END 4. Modal **********/

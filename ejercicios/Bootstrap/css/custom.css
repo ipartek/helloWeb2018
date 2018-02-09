@@ -10,12 +10,42 @@
 - Cuando pinchas boton video: ventana modal con video de youtube (Responsive embed)
 */
 
-.container-fluid{
-   background-color:#72C7DC;
+.container-fluid {
+    background-color: #72C7DC;
 }
 
-h1{
+h1 {
     margin-top: 50px;
 
 }
 
+
+.thumbnail>img {
+    margin-right: auto;
+    margin-left: auto;
+    height: 200px;
+    width: 250px;
+}
+    .btn-success{
+        margin-right: 100px;
+    }
+
+/*
+
+.thumbnail img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.thumbnail img.portrait {
+    width: 100%;
+    height: auto;
+}
+*/
+*/

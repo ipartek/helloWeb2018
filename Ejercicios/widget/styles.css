@@ -1,0 +1,72 @@
+body {
+
+    font-family: "roboto";
+    background: #258dc8;
+
+
+}
+
+h1 {
+
+    color: #fff;
+    text-align: center;
+}
+
+
+#cnt-weather {
+
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+    background-color: #FFF;
+    margin: auto;
+
+
+    -webkit-box-shadow: 7px 7px 25px -1px rgba(87, 79, 87, 0.62);
+    -moz-box-shadow: 7px 7px 25px -1px rgba(87, 79, 87, 0.62);
+    box-shadow: 7px 7px 25px -1px rgba(87, 79, 87, 0.62);
+}
+
+
+#cnt-weather .temp,
+#cnt-weather .icon,
+#cnt-weather .city {
+
+    position: absolute;
+    margin: 0px;
+
+}
+
+#cnt-weather .temp {
+
+    font-size: 6em;
+    color: #B8B8B8;
+    bottom: 20px;
+    left: 20px;
+}
+
+
+
+#cnt-weather .icon {}
+
+
+
+#cnt-weather .city {
+
+    color: #B8B8B8;
+    bottom: 15px;
+    left: 25px;
+    font-size: 1.2em;
+
+}
+
+
+[data-icon]:before {
+    font-family: 'MeteoconsRegular';
+    content: attr(data-icon);
+    font-size: 5em;
+    position: absolute;
+    left: 110px;
+    top: 10px;
+}

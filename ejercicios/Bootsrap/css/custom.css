@@ -1,8 +1,8 @@
-body{
+.bodyConHeaderFixed{
     padding-top:50px;
 
 }
-.ipartek{
+.ipartek {
     background-color: #72C7DC;
 }
 .thumbnail img{
@@ -15,3 +15,57 @@ body{
 h1{
     text-align: center;
 }
+/* Ejercicio de 12 columnas
+************************************************************/
+header {
+	color:#fff;
+}
+
+.main {
+	background:#f2f2f2;
+}
+
+.color1 {
+	background: #34495e;
+	color:#fff;
+}
+
+
+aside {
+	background:#c0392b;
+	color:#fff;
+}
+
+
+footer {
+	background:#16a085;
+	color:#fff;
+}
+@media (max-width: 991px){
+        .color2{
+    background:#fff ;
+	color:black;
+    }
+    .color3{
+        background: #34495e;
+	color:#fff;
+    }
+}
+@media (max-width: 767px){
+    .color3{
+    background:#fff ;
+	color:black;
+    }
+    .color2{
+        background: #34495e;
+	color:#fff;
+    }
+}
+@media (min-width: 992px){
+    .alturaMinima{
+    min-height: 450px;
+    }
+}
+
+
+

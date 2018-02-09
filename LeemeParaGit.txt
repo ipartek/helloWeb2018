@@ -1,0 +1,12 @@
+#Abrir el cmd e ir a la carpeta deseada
+--cd C:\Desarrollo
+#clonar el repositorio de GitHub a nuestro pc
+--git clone https://github.com/ipartek/helloWeb2018.git
+#la rama actual seleccionada es 'master' y queremos cambiar a otra
+#entrar a la carpeta del proyecto
+--cd helloweb2018
+#cambiara otro branch 'InigoGallegoGonzalez
+--git checkout InigoGallegoGonzalez
+#Abrir el Brackets y commit and push para subir cambios
+
+#Para bajar cambios Pull.

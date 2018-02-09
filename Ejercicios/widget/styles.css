@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+body {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+18,05abe0+46,05abe0+83 */
+    background: #87e0fd;
+    /* Old browsers */
+    font-family: "roboto";
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+#cnt_widget .temp,
+#cnt_widget .city,
+#cnt_widget .icon {
+    position: absolute;
+    margin: 0;
+}
+
+#cnt_widget .temp {
+    font-size: 6em;
+    color: #b8b8b8;
+    bottom: 30px;
+    left: 25px;
+
+}
+[data-icon]:before {
+    font-size: 5em;
+	font-family: 'MeteoconsRegular';
+	content: attr(data-icon);
+
+}
+
+#cnt_widget .icon {
+    top:10px;
+    right: 10px;
+    color:#b8b8b8;
+}
+
+#cnt_widget .city {
+    font-size: 1.2em;
+    color: #b8b8b8;
+    bottom: 15px;
+    left: 25px;
+}
+
+#cnt_widget {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+    background-color: aliceblue;
+    box-shadow: 1px;
+    margin: auto;
+    /* Sombra */
+    -webkit-box-shadow: 21px 25px 30px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 21px 25px 30px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 21px 25px 30px -1px rgba(0, 0, 0, 0.75);
+}

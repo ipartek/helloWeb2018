@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+/*
+        Todos los parrafos se corresponden con la class="rojo",
+        que pone el color del texto en rojo.
+        El primer parrafo tiene un id="azul", que pone el parrafo
+        azul. (El valor del id debe ser único en el documento)
+
+
+        El selector #azul quiere poner el primer parrafo azul.
+        El selector .rojo lo quiere poner rojo.
+
+        En este caso el id tiene preferencia sobre la clase, por lo que
+        prevalece lo que mande el selector #.
+
+        Mira que tenemos también la clase .naranja, que lo quere poner
+        en naranja.
+
+        Para verlo descomenta, las lineas 34-38  y  52 .
+        Verás que como el orden del css primero pinta de color rojo y luego
+        de naranja, se sobreescribe y aplica lo último.
+        Si te fijas, la linea 52 tiene las dos clases
+*/
+
+
+        .rojo {
+            color: red;
+        }
+
+/*
+        .naranja{
+            color: orange;
+        }
+*/
+
+        #azul {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p class="rojo" id="azul">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eligendi, recusandae in vero iure facere unde. Laudantium praesentium tempore iusto, sit dicta officia fuga voluptatibus qui in, atque, perferendis ullam!</p>
+        <p class="rojo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae totam laudantium tenetur sed illo, est a, officiis qui officia facilis itaque nobis. Magnam quia consectetur harum doloribus quae vitae saepe?</p>
+        <p class="rojo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A beatae asperiores reprehenderit repellat illum qui eligendi ea, tempora nihil possimus unde, illo doloribus laborum minima ducimus aliquid voluptas fugiat excepturi!</p>
+        <p class="rojo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias autem porro iste ullam enim commodi quod, impedit accusantium sed consequuntur possimus odio recusandae, repellat corrupti mollitia provident, ipsa pariatur nam.</p>
+<!--        <p class="naranja rojo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo voluptatem quo eum deleniti rerum recusandae neque sint. Tenetur ratione quisquam dolor nemo quo distinctio cum, eum, fugit, nisi delectus autem?</p>-->
+    </div>
+</body>
+</html>

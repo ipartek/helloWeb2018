@@ -25,3 +25,19 @@ footer {
 	background:#16a085;
 	color:#fff;
 }
+
+.row{
+    min-height: 70vh;
+}
+
+.color1{
+    border: 3px solid orange;
+    height: 100%;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}

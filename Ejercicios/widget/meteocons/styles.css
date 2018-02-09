@@ -1,0 +1,75 @@
+[data-icon]:before {
+	font-family: 'MeteoconsRegular';
+	content: attr(data-icon);
+    font-size: 3em;
+}
+@keyframes move{
+    0%{
+        font-size: 100%
+    }
+    50%{
+        font-size: 90%
+    }
+    100%{
+        font-size:100%;
+    }
+}
+
+body {
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3b679e+0,2b88d9+50,207cca+77,7db9e8+100 */
+    background: #3b679e;
+
+
+    font-family: "roboto";
+
+}
+h1{
+    text-align: center;
+    color: white;
+}
+
+#cnt_weather{
+    position: relative;
+    background-color: white;
+    width:200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 45px;
+
+}
+
+#cnt_weather .icon, #cnt_weather .city, #cnt_weather .temp{
+
+    position: absolute;
+    margin: 0;
+
+}
+#cnt_weather .city{
+    font-size: 1em;
+    color:black;
+    bottom:15px;
+    left:27px;
+}
+
+#cnt_weather .temp{
+
+    font-size: 3em;
+    color: #b8b8b8;
+    bottom: 25px;
+    left: 20px;
+
+
+}
+
+#cnt_weather .icon{
+
+
+    color: yellow;
+    right: 20px;
+    top:10px;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}

@@ -1,0 +1,16 @@
+
+1- Abrir ventana de comandos y vamos hasta la carpeta deseada
+
+2- Clonar repositorio de GitHub a nuestro pc
+
+git clone url
+
+3- La rama actual seleccionada es master y queremos cambiar a otra
+
+4- cmd entrar en la carpeta del proyecto
+
+5- cambiar a otro branch
+
+git checkout NombreDelBranch
+
+6- abrir brackets y commit and push

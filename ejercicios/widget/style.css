@@ -1,0 +1,97 @@
+/*Para habilitar los iconos de la web http://www.alessioatzeni.com/meteocons/
+lo descargamos el segundo fichero, tiene que generar varios archivos*/
+[data-icon]:before {
+	font-family: 'MeteoconsRegular';
+	content: attr(data-icon);
+    font-size: 5em;
+}
+
+body {
+
+    /* Le ponemos color. Web: http://www.colorzilla.com/gradient-editor/ */
+
+    * Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#87e0fd+0,53cbf1+40,05abe0+100;Blue+3D+%23+16 */
+background: #87e0fd; /* Old browsers */
+background: -moz-linear-gradient(left, #87e0fd 0%, #53cbf1 40%, #05abe0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #87e0fd 0%,#53cbf1 40%,#05abe0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=1 ); /* IE6-9 */
+
+    /*aplicamos estilo de fuente Roboto*/
+    font-family: "roboto";
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+/*para hacer animaciones le das un nombre "move" y va de 0 a 100%*/
+@keyframes move{
+    0%{
+        font-size: 100%;
+    }
+    50%{
+        font-size: 90%;
+    }
+    100%{
+        font-size: 100%
+    }
+}
+
+
+
+#cnt-weather {
+    position: relative;
+
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+    background-color: #FFF;
+
+    /*sombra, https://www.cssmatic.com/es/box-shadow*/
+    -webkit-box-shadow: 10px 10px 39px 0px rgba(232, 229, 232, 1);
+    -moz-box-shadow: 10px 10px 39px 0px rgba(232, 229, 232, 1);
+    box-shadow: 10px 10px 39px 0px rgba(232, 229, 232, 1);
+
+}
+
+#cnt-weather.temp,
+#cnt-weather.icon,
+#cnt-weather.city {
+    position: absolute;
+    margin: 0;
+}
+
+
+#cnt-weather.temp {
+    font-size: 6em;
+    color: #B8B8B8;
+    bottom: 30px;
+    left: 20px;
+
+}
+
+#cnt-weather.city {
+    font-size: 1.2em;
+    color: #B8B8B8;
+    bottom:15px;
+    left:25px;
+
+}
+
+
+#cnt-weather.icon {
+    /*animation:move 5s ease-in.out infinite;*/
+    animation-name: move;
+    animation-duration:5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  /*animation-delay:0; por si quieres retrasarlo, hay muchas propiedades*/
+
+
+    top:10px;
+    right:10px;
+    color:blue;
+}

@@ -1,0 +1,16 @@
+#Abrir ventana de MsDos y vamos hasta la carpeta deseada: C:\desarrollo  :
+cd c:\desarrollo
+
+#Clonar el repositorio de GitHub a nuestro PC (para conseguir la url vamos a GitHub, mi perfil, ipartek, HelloWeb2018 y damos al boton clone or download :
+git clone https://github.com/ipartek/helloWeb2018.git
+
+#La rama actual seleccionada es 'master' y tenemos q cambiar a otro
+#Entrar a la carpeta del proyecto
+cd helloWeb2018
+
+#Cambiar a otro branch 'InakiAretxabaleta'
+git checkout InakiAretxabaleta
+
+#Abrir el Brackets y commit and push para subir cambios
+
+#Para bajar cambios se hace un pull.

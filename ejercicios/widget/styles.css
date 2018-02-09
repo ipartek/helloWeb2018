@@ -1,0 +1,112 @@
+/*
+    HOJA DE ESTILOS para index.html
+
+    INDEX:
+    1. Etiquetas
+    2. Class/ID
+    3. Meteocons
+    4. Animaciones (@keyframes)
+*/
+
+/******************** 1. ETIQUETAS ********************/
+
+body {
+
+    /* Estilos de fuente */
+    font-family: 'Roboto', sans-serif;
+
+    /* Color de fondo */
+    background-color: skyblue;
+}
+
+h1 {
+    color: aliceblue;
+    text-align: center;
+}
+
+/******************** END 1. ETIQUETAS ********************/
+
+/******************** 2. CLASS/ID ********************/
+
+#cnt-weather {
+    position: relative;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+    background-color: antiquewhite;
+    /* sombra */
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 25px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 25px 0px rgba(0, 0, 0, 0.75);
+}
+
+#cnt-weather .icon,
+#cnt-weather .temp,
+#cnt-weather .city {
+    position: absolute;
+    margin: 0;
+}
+
+#cnt-weather .icon {
+    top: 10px;
+    right: 20px;
+    font-size: 4em;
+    color: dimgrey;
+    /* animación */
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+}
+
+#cnt-weather .temp {
+    font-size: 6em;
+    color: #B8B8B8;
+    bottom: 30px;
+    left: 20px;
+}
+
+#cnt-weather .city {
+    font-size: 1em;
+    color: #B8B8B8;
+    bottom: 15px;
+    left: 25px;
+}
+
+#insert-data {
+    padding-top: 20px;
+    text-align: center;
+}
+/******************** END 2. CLASS/ID ********************/
+
+/******************** 3. METEOCONS ********************/
+
+[data-icon]:before {
+    font-family: 'MeteoconsRegular';
+    content: attr(data-icon);
+}
+
+/******************** END 3. METEOCONS ********************/
+
+/******************** 4. ANIMACIONES ********************/
+
+/* Método "move" para animaciones */
+/*TODO: investigar valores de 'transform'*/
+@keyframes move {
+    0% {
+        transform: scale(1);
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: scale(0.9);
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: scale(1);
+        transform: rotate(15deg);
+    }
+}
+
+/******************** END 4. ANIMACIONES ********************/

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Widget</title>
+
+    <!--CARGAR POR CDN-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <!--ESTILOS LOCALES-->
+    <link rel="stylesheet" href="styles.css">
+    <!--METEOICONS-->
+    <link rel="stylesheet" href="meteocons/stylesheet.css">
+</head>
+
+<body>
+
+    <h1>Weather Widget</h1>
+
+    <div id="cnt-weather">
+        <!--DIV para el icono-->
+        <div class="icon">
+            <span id="forecastIcon" data-icon=""></span>
+        </div>
+        <p class="temp" id="temp">&nbsp;</p>
+        <p class="city" id="city">&nbsp;</p>
+    </div>
+    <!--FIN cnt-widget-->
+
+    <div id="insert-data">
+        <input type="text" id="input_ciudad" placeholder="Introduce tu ciudad">
+    <p id="mensaje">&nbsp;</p>
+    <button onclick="verTiempo()">Dime el tiempo</button>
+    </div>
+
+    <!--CARGA DE JS-->
+    <script src="main.js"></script>
+</body>
+</html>

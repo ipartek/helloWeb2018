@@ -12,19 +12,36 @@ function verTiempo(){
     }else{
     mensaje.textContent = "Realizando peticion...";
 
-        // Llamada Ajax
+        // Llamada Ajax /////////////////////
         var xhr = new XMLHttpRequest();
+
         xhr.onreadystatechange = function() {
+
         //esperamos a que la respuesta sea correcta
-        if (this.readyState == 4 && this.status == 200) {
+
+        if (this.readyState == 4 && this.status == 200){
+
            var json = JSON.parse(this.responseText);
+
             console.debug("json %o", json);
 
-
-    }
-};
+            rellenarWidget(json);
+            }
+        };
 
         xhr.open("GET", url, true);
         xhr.send();
 
+    }
+}
+
+function rellenarWidget(json){
+
+    document.getElementById("city").textContent = json.name;
+    //TODO cambiar de Kelvins a Celsius
+    document.getElementById("temp").textContent = json.main.temp;
+
+
+
+}
 

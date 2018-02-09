@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+
+
+body {
+
+    background-color: skyblue;
+    font-family: "Lato";
+}
+
+h1 {
+    text-align: center;
+    color: white;
+
+}
+
+div#cnt-weather {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    margin: auto;
+
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.6);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.6);
+    box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.6);
+}
+
+div#cnt-weather img#icon, p.temp, p.city{
+    position: absolute;
+    margin: 0;
+}
+
+
+[data-icon]:before {
+	font-family: 'MeteoconsRegular';
+	content: attr(data-icon);
+}
+
+div#cnt-weather img#icon{
+
+
+    width: 90px;
+    height: auto;
+    top: 15px;
+    right: 15px;
+
+    animation-name: move;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+}
+
+div#cnt-weather p.temp{
+
+    font-size: 75px;
+    color: darkgray;
+    left: 20px;
+    bottom: 35px;
+}
+
+div#cnt-weather p.city{
+
+    font-size: 25px;
+    color: darkgray;
+    bottom: 15px;
+    left: 20px;
+
+
+}
+
+@keyframes move {
+    0% {
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

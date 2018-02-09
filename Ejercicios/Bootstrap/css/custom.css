@@ -1,3 +1,4 @@
+
 /* NavBar color azul ipartek */
 
 /* Solucionar tema del h1 y navBar */
@@ -8,6 +9,10 @@
 
 h1{
     margin-top: 60px;
+}
+
+img{
+    max-height: 220px;
 }
 
 /*

@@ -1,0 +1,79 @@
+[data-icon]:before {
+	font-family: 'MeteoconsRegular';
+	content: attr(data-icon);
+    font-size: 5em;
+}
+
+
+
+body {
+    background: #87e0fd;
+    /* Old browsers */
+    font-family: "roboto";
+}
+
+h1 {
+    color: #FFF;
+    text-align: center;
+}
+
+
+@keyframes move{
+    0%{
+        font-size: 100%;
+    }
+    50%{
+        font-size: 90%;
+    }
+    100%{
+        font-size: 100%;
+    }
+}
+
+
+#cnt-weather {
+    position: relative;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+    background-color: #FFF;
+
+    /* Sombra */
+    -webkit-box-shadow: 7px 7px 25px -1px rgba(87, 79, 87, 0.62);
+    -moz-box-shadow: 7px 7px 25px -1px rgba(87, 79, 87, 0.62);
+    box-shadow: 7px 7px 25px -1px rgba(87, 79, 87, 0.62);
+}
+
+#cnt-weather .temp, #cnt-weather .city, #cnt-weather .icon{
+    position: absolute;
+    margin: 0px;
+}
+
+
+#cnt-weather .temp{
+    font-size: 5em;
+    color: #B8B8B8;
+    bottom: 30px;
+    left: 20px;
+}
+
+#cnt-weather .city{
+    font-size: 1.2em;
+    color: #B8B8B8;
+    bottom: 15px;
+    left: 25px;
+}
+
+#cnt-weather .icon{
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+
+    top: 5px;
+    right: 5px;
+    color: black;
+}
+

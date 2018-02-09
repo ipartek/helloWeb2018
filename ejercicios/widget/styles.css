@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+
+    background: #87e0fd;
+    font-family: "roboto";
+}
+h1{
+    text-align:center;
+    color:white;
+}
+#cnt-widget {
+    position:relative;
+    height: 275px;
+    width: 275px;
+    border-radius: 45px;
+    background: #FFF;
+    margin: auto;
+    -webkit-box-shadow: 34px 28px 65px -6px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 34px 28px 65px -6px rgba(0, 0, 0, 1);
+    box-shadow: 34px 28px 65px -6px rgba(0, 0, 0, 1);
+}
+#cnt-widget .temp,#cnt-widget .city,#cnt-widget .icon{
+    position:absolute;
+}
+
+#cnt-widget .temp{
+    font-size:6em;
+    bottom:40px;
+    left:25px;
+    color:#B8B8B8;
+}
+#cnt-widget .city{
+    font-size:1.8em;
+    bottom:15px;
+    left:25px;
+    color:#B8B8B8;
+    color:#B8B8B8;
+}
+[data-icon]:before {
+	font-family: 'MeteoconsRegular';
+	content: attr(data-icon);
+    font-size:7em;
+
+}
+
+#cnt-widget .icon{
+    font-family: 'MeteoconsRegular';
+    top:-0px;
+    right:20px;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes move{
+    0%{
+        font-size:100%
+    }
+    50%{
+        font-size:75%
+    }
+    100%{
+        font-size:100%
+    }
+}

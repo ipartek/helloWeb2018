@@ -30,9 +30,9 @@ function rellenarWidget(json) {
     var celsius= Math.round(kelvin-273);
     document.getElementById("temp").textContent =celsius+"º";
     var tiempo="https://openweathermap.org/img/w/"
-    var detalle=json.weather.icon;
+    var detalle=json.weather[1].icon;
     var tiempo2=".png"
-    document.getElementById("icon").textContent =tiempo+detalle+tiempo2;
+    document.getElementById("icon").src=tiempo+detalle+tiempo2;
 
 }
 

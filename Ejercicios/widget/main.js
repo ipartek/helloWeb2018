@@ -59,8 +59,10 @@ function rellenarWidget(json){
     document.getElementById("city").textContent=json.name;
     var temperatura=document.getElementById("temp").textContent=json.main.temp;
 
-    temperatura_real= (temperatura -273.15) + "º";
-    document.getElementById("temp").textContent=temperatura_real;
+    temperatura_celsius= (temperatura -273.15);
+    temperatura_real=Math.round(temperatura_celsius);
+
+    document.getElementById("temp").textContent=temperatura_real + "º";
 
     imagen= document.getElementById("icono").textContent=json.weather.icon;
 }

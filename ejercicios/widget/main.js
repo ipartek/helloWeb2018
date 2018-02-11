@@ -41,9 +41,11 @@ function rellenarWidget(json) {
 
 
     //con iconos de la API
+
+    /*
     var url2 = "http://openweathermap.org/img/w/" + json.weather["0"].icon + ".png";
     document.getElementById("icono").setAttribute("src", url2);
-
+    */
 
     //con Meteocons:
 
@@ -72,7 +74,7 @@ function rellenarWidget(json) {
 
 
 
-    mensaje.textContent = "El tiempo en  " + json.name+" es: "+json.weather["0"].description;
+    mensaje.textContent = "El tiempo en  " + json.name + " es: " + json.weather["0"].description;
 
 
 

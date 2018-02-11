@@ -27,7 +27,13 @@ Cuando pintxamos en el boton detalle vamos a una pagina de detalle,cuando pinche
 
 }
 
+.row{
 
+    display: inline-block;
+    margin-left: 0.5%;
+     margin-right: 0.5%;
+
+}
 
 .thumbnail{
 

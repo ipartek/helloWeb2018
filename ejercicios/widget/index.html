@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Widget Weather</title>
-	<link rel="stylesheet" href="styles.css">
-	<link rel="stylesheet" href="meteocons/stylesheet.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Widget Weather</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="meteocons/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
+
 <body>
 
 
-<h1>Widget Weather</h1>
+    <h1>Widget Weather</h1>
 
-<div id="cnt-weather">
+    <div id="cnt-weather">
 
+        <!--
 	<span id="icon" class="icon" data-icon=""></span>
-	<p id="temp" class="temp">X</p>
-	<p id="city" class="city">X</p>
-</div>
+	-->
+        <span id="icon" class="icon" data-icon=""><img id="icono" src="" alt="icono"></span>
+        <p id="temp" class="temp">ºC</p>
+        <p id="city" class="city">Localidad</p>
+    </div>
 
-<input type="text" id="input_ciudad" placeholder="Introduce la ciudad">
-<p id="mensaje"></p>
-<button onclick="verTiempo()">Buscar</button>
+    <div class="busqueda">
+        <input type="text" id="input_ciudad" placeholder="Introduce la localidad">
+        <p id="mensaje"></p>
+        <button onclick="verTiempo()">Buscar</button>
+    </div>
 
 
 
 
-
-	<script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

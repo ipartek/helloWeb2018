@@ -26,6 +26,11 @@ box-shadow: 25px 24px 30px -12px rgba(69,68,69,1);
 
 }
 
+.busqueda{
+    text-align: center;
+    margin-top: 25px;
+}
+
 #cnt-weather .temp, #cnt-weather .city, #cnt-weather .icon{
 	position: absolute;
 	margin:0;
@@ -45,6 +50,9 @@ box-shadow: 25px 24px 30px -12px rgba(69,68,69,1);
 	color:#b8b8b8;
 	bottom:15px;
 	left:25px;
+}
+#icono{
+    width: 50px;
 }
 
 #cnt-weather .icon{

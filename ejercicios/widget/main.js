@@ -3,10 +3,11 @@ function verTiempo() {
     console.log("Quiero ver el tiempo");
 
     var ciudad = document.querySelector("#input_ciudad").value;
+    var mensaje = document.querySelector("#mensaje");
 
     if (!ciudad) {
-        document.querySelector("#mensaje").innerHTML = "Debe introducir una ciudad";
-        console.log("Debe introducir una ciudad");
+       mensaje.innerHTML = "Debe introducir una ciudad";
+//      console.log("Debe introducir una ciudad");
     } else {
         var url = "http://api.openweathermap.org/data/2.5/weather?q=";
         var url2 = "&APPID=bd5e378503939ddaee76f12ad7a97608";
@@ -28,6 +29,10 @@ function verTiempo() {
                 document.querySelector(".temp").innerHTML = temp;
                 document.querySelector(".city").innerHTML = city;
                 document.querySelector(".icon img").src = icon;
+            }
+
+            if(this.readyState == 4 && this.status == 404) {
+                       mensaje.innerHTML = "Ciudad no existente";
             }
         };
         xhr.open("GET", url, true);

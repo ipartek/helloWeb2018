@@ -6,127 +6,6 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="meteocons/stylesheet.css">
-    <style>
-        body {
-            background-color: #66cca8;
-            font-family: "Roboto";
-        }
-
-        h1 {
-            color: white;
-            text-align: center;
-        }
-
-        #cnt-weather {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin: auto;
-            border-radius: 45px;
-            background-color: #fff;
-            box-shadow: 5px 5px 20px grey;
-
-        }
-
-        #mensaje {
-              color: white;
-        }
-
-        #cnt-weather .temp,
-        #cnt-weather .city,
-        #cnt-weather .icon {
-            position: absolute;
-            margin: 0;
-        }
-
-        #cnt-weather .temp {
-            font-size: 6em;
-            color: #b8b8b8;
-            bottom: 30px;
-            left: 20px;
-        }
-
-        #cnt-weather .city {
-            font-size: 1.2em;
-            color: #b8b8b8;
-            bottom: 15px;
-            left: 26px;
-        }
-
-
-        [data-icon]:before {
-            font-family: 'MeteoconsRegular';
-            content: attr(data-icon);
-            font-size: 3em;
-            color: black;
-            text-decoration: none;
-        }
-
-        @keyframes anim {
-            0% {
-                transform: scale(1);
-                transform: rotate(-10deg);
-                opacity: 1;
-            }
-            25% {
-                /*                transform: scale(1.03);*/
-                /*                transform: rotate(15deg)*/
-                opacity: 0.7;
-            }
-            50% {
-                transform: scale(1);
-                transform: rotate(10deg);
-                opacity: 1;
-                color: blue;
-            }
-            75% {
-                /*                transform: scale(1.03);*/
-                /*                transform: rotate(-15deg)*/
-                opacity: 0.7;
-            }
-            100% {
-                transform: scale(1);
-                transform: rotate(-10deg);
-                opacity: 1;
-            }
-        }
-
-        #cnt-weather .icon {
-            width: 30%;
-            right: 20px;
-            top: 10px;
-            animation-name: anim;
-            animation-duration: 5s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
-            animation-timing-function: ease-in-out;
-        }
-
-        #cnt-weather .icon img {
-            width: 100%;
-        }
-
-        form {
-            margin: 30px auto;
-            width: 50%;
-            text-align: center;
-        }
-
-        form input {
-            /*            width: 100%;*/
-            border: 1px solid grey;
-            padding: 10px;
-            border-radius: 3px;
-            text-align: center;
-
-        }
-
-        form button {
-            padding: 10px;
-            font-family: "roboto";
-            font-weight: bold;
-        }
-    </style>
 </head>
 
 <body>
@@ -146,8 +25,6 @@
         <p id="mensaje"></p>
         <button onclick="verTiempo()" type="submit">Dime el tiempo</button>
     </form>
-
-
     <script src="main.js"></script>
 </body>
 </html>

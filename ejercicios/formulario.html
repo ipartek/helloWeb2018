@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="forms">
+    <h1>Formularios</h1>
+    <p>Todos los formularios deben tener un botón de Submit, además de un valor en el atributo action</p>
+    <p>*<strong>disabled</strong> no se envía el submitar el formulario</p>
+    <p>*<strong>readonly</strong> si se envía al submitar el formulario</p>
+    <p>*<strong>tabindex</strong> es necesario por accesibilidad</p>
+    <form action="#" method="post" id="formulario">
+
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <label for="id">Id:</label>
+            <input type="text" name="id" value="45" disabled>
+            <br>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Mínimo dos letras" required pattern="[A-Za-z]{2,10}" tabindex="1">
+            <br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" tabindex="2">
+            <br>
+            <label for="apellido">Sexo:</label>
+            <input type="radio" name="sexo" required><small>Masculino</small>
+            <input type="radio" name="sexo" required><small>Femenino</small>
+            <input type="radio" name="sexo" required><small>Otro</small>
+            <br>
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email">
+            <br>
+            <label for="pass">Password: </label>
+            <input type="password" name="pass" id="pass">
+            <label><i id="ojo" class="fa fa-eye"></i><small>&nbsp;Visualizar contaseña</small></label>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Dirección</legend>
+            <label for="direccion">Dirección: </label>
+            <input type="text" name="direccion" id="direccion">
+            <label for="cp">Código Postal: </label>
+            <input type="text" name="cp" id="cp" size="5" pattern="[0-9]{5,5}">
+            <br>
+            <label for="provincia">Provincia: </label>
+            <select name="provincia" id="provincia" required>
+<option value=''>Seleccione una provincia</option>
+<option value='alava'>Álava</option>
+<option value='albacete'>Albacete</option>
+<option value='alicante'>Alicante/Alacant</option>
+<option value='almeria'>Almería</option>
+<option value='asturias'>Asturias</option>
+<option value='avila'>Ávila</option>
+<option value='badajoz'>Badajoz</option>
+<option value='barcelona'>Barcelona</option>
+<option value='burgos'>Burgos</option>
+<option value='caceres'>Cáceres</option>
+<option value='cadiz'>Cádiz</option>
+<option value='cantabria'>Cantabria</option>
+<option value='castellon'>Castellón/Castelló</option>
+<option value='ceuta'>Ceuta</option>
+<option value='ciudadreal'>Ciudad Real</option>
+<option value='cordoba'>Córdoba</option>
+<option value='cuenca'>Cuenca</option>
+<option value='girona'>Girona</option>
+<option value='laspalmas'>Las Palmas</option>
+<option value='granada'>Granada</option>
+<option value='guadalajara'>Guadalajara</option>
+<option value='guipuzcoa'>Guipúzcoa</option>
+<option value='huelva'>Huelva</option>
+<option value='huesca'>Huesca</option>
+<option value='illesbalears'>Illes Balears</option>
+<option value='jaen'>Jaén</option>
+<option value='acoruña'>A Coruña</option>
+<option value='larioja'>La Rioja</option>
+<option value='leon'>León</option>
+<option value='lleida'>Lleida</option>
+<option value='lugo'>Lugo</option>
+<option value='madrid'>Madrid</option>
+<option value='malaga'>Málaga</option>
+<option value='melilla'>Melilla</option>
+<option value='murcia'>Murcia</option>
+<option value='navarra'>Navarra</option>
+<option value='ourense'>Ourense</option>
+<option value='palencia'>Palencia</option>
+<option value='pontevedra'>Pontevedra</option>
+<option value='salamanca'>Salamanca</option>
+<option value='segovia'>Segovia</option>
+<option value='sevilla'>Sevilla</option>
+<option value='soria'>Soria</option>
+<option value='tarragona'>Tarragona</option>
+<option value='santacruztenerife'>Santa Cruz de Tenerife</option>
+<option value='teruel'>Teruel</option>
+<option value='toledo'>Toledo</option>
+<option value='valencia'>Valencia/Valéncia</option>
+<option value='valladolid'>Valladolid</option>
+<option value='vizcaya'>Vizcaya</option>
+<option value='zamora'>Zamora</option>
+<option value='zaragoza'>Zaragoza</option>
+            </select>
+
+        </fieldset>
+
+
+        <fieldset id="hobbies">
+            <legend>Hobbies</legend>
+            <div id="hob_spans">
+                <span><input type="checkbox" name="hob_arr" value="1">Futbol</span>
+                <span><input type="checkbox" name="hob_arr" value="2">Natación</span>
+                <span><input type="checkbox" name="hob_arr" value="3">Pesca</span>
+                <span><input type="checkbox" name="hob_arr" value="4">PC</span>
+                <span><input type="checkbox" name="hob_arr" value="5">Pintxos</span>
+                <span><input type="checkbox" name="hob_arr" value="6">Youtube</span>
+                <span><input type="checkbox" name="hob_arr" value="7">Fotografía</span>
+                <span><input type="checkbox" name="hob_arr" value="8">Skate</span>
+                <span><input type="checkbox" name="hob_arr" value="9">Cerveza</span>
+            </div>
+        </fieldset>
+
+        <label for="obs">Observaciones: </label>
+        <textarea name="obs" id="obs"  rows="10" placeholder="Introduzca aquí su observación..."></textarea>
+
+
+        <input id="condiciones" type="checkbox" required>
+        <label for="check">Acepto las <a href="https://wikimediafoundation.org/wiki/Terms_of_Use/es" target="_blank">condiciones de uso</a></label>
+        <br><br>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Enviar" id="botenviar">
+    </form>
+</body>
+
+</html>
+
+<script>
+//    Selectores de los elementos
+    var pass = document.querySelector("#pass");
+    var ojo = document.querySelector("#ojo");
+    var botenviar = document.querySelector("#botenviar");
+
+
+//    Cuando hacen onousedown en el ojo cambio el tipo
+//    Al levantar el mouse vuelvo a ocultarlo
+    ojo.onmousedown = function(){
+        pass.type = "text";
+    }
+    ojo.onmouseup = function(){
+        pass.type = "password";
+    }
+
+    botenviar.onclick = function(e){
+//        console.log("hola")
+        arr_hobbies = document.getElementsByName("hob_arr");
+        arrChecked = 0;
+        for(var i = 0; i<arr_hobbies.length;i++){
+            if(arr_hobbies[i].checked){
+                arrChecked++;
+            }
+        }
+
+        var chkCond = document.querySelector("#condiciones");
+
+//        No es correcto, pero de momento obligará a checkear
+//        al menos 3 hobbies solo si se han aceptado las condidiones
+        if(arrChecked < 3 && chkCond.checked){
+            e.preventDefault();
+            alert("Debe seleccionar al menos 3 hobbies");
+            window.location.hash = '#hobbies';
+        }
+
+//        console.log("Número de checkeados: " + arrChecked)
+    }
+
+
+
+</script>
+
+event.target.setcustomvalidity
+
+<!--todo: cambiar los comentarios de validación-->
+<!--todo: [x] bajo direccion meter observaciones con un textarea-->
+<!--todo: [x] seleccionar hobbies mediante checkboxes -->
+<!--TODO: [x] radio button Sexo: maculino, femenino, otros.Se envia m,f, o -->
+<!--todo: [x] Controlar que esté marcado para poder enviar el formulario -->
+<!--TODO: [x] Acepto asl condiciones de uso. Tiene link a otro html "_blank" -->
+<!--todo: [x] Select options con todas las provincias de España -->
+<!--TODO: [x] Mostrar contraseña-->

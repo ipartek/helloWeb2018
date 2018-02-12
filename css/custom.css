@@ -21,6 +21,17 @@ input#numero{
 
 /* end main-menu */
 
+/*Bitcoin.html*/
+select#moneda{
+    width: 150px;
+    margin: 0 auto;
+}
+
+#wrap-mon{
+    text-align: center;
+}
+
+
 /*
 sorteo.html
 */
@@ -34,7 +45,7 @@ sorteo.html
     padding: 20px;
     width: 80px;
     text-align: center;
-}bold
+}
 
 #tabla-alumnos .alumno {
     background-color: #2f72cc;
@@ -46,4 +57,9 @@ sorteo.html
     font-size: 2em;
     text-align: center;
     color: orange;
+}
+
+/*Formularios.html*/
+#forms p{
+    margin: 10px 5%;
 }

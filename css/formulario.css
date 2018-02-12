@@ -1,0 +1,77 @@
+/*CSS para formularios*/
+
+form {
+    border: solid;
+    margin: 20px;
+    padding: 20px;
+    /*    display: flex;*/
+    /*    flex-wrap: wrap;    */
+}
+
+input,
+label,
+select,
+textarea {
+    margin: 10px;
+    font-family: "roboto";
+    font-weight: bold;
+    /*    display: block;*/
+    /*    width: 100%;*/
+    /*    flex-basis: 100%;*/
+}
+
+label {
+    text-align: center
+}
+
+input:invalid {
+    color: red;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    vertical-align: middle;
+}
+
+textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+input:not([type="submit"]):valid {
+    color: green;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    box-sizing: border-box;
+    display: inline;
+    width: 49%;
+    margin: 0px;
+}
+
+fieldset {
+    margin-bottom: 15px;
+    padding: 30px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+select {
+    font-size: 13.33px;
+    display: inline;
+}
+
+#hob_spans {
+/*    background-color: red;*/
+}
+
+#hobbies span {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 32%;
+}

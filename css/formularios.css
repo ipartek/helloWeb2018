@@ -1,0 +1,75 @@
+/*
+CSS para formularios
+*************************/
+
+form {
+    position: relative;
+    border: 1px solid black;
+    margin: 20px auto;
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+
+/* pseudoselectores para formularios */
+
+input[type="text"]:invalid,
+input[type="number"]:invalid,
+input[type="email"]:invalid,
+input[type="password"]:invalid {
+    color: red;
+}
+
+input[type="text"]:valid,
+input[type="number"]:valid,
+input[type="email"]:valid,
+input[type="password"]:valid {
+    border: 2px solid green;
+}
+
+input[type="submit"] {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+input[type="reset"] {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+input, select, label{
+    margin: 5px auto;
+}
+
+input[type="textarea"]{
+    display: block;
+    width:95%;
+    height: 5em;
+}
+
+label[for="aficion"]{
+    display: block;
+}
+
+input[name="aficion"]{
+    display: inline-block;
+    width: 1em;
+    height:1em;
+
+}
+
+div.checkbox {
+    display: inline-block;
+    width: 30%;
+    margin: 5px auto;
+
+}
+
+fieldset {
+    border: 2px solid black;
+    margin: 5px auto;
+    padding: 10px;
+}
+

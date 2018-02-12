@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="helloWeb_old/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Formulario</h1>
+        <p>Todos los formularios tienen que tener un boton de 'submit', además de un valor en el atributo 'action'.</p>
+        <p><b>disabled</b> no se enviar al submitar el formulario</p>
+        <p><b>readonly</b> si se envia al submitar el formulario</p>
+        <p><b>tabindex</b>es necesario por accesibilidad</p>
+        <br>
+        <form action="#URL_SERVIDOR" method="post">
+            <label for="id">Id:</label>
+            <input type="text" name="id" value="45" disabled>
+            <br>
+            <label for="nombre">Nombre:</label>
+            <input type="text"
+             name="nombre"
+             id="nombre"
+             autofocus
+             tabindex="1"
+             required="required"
+             pattern="[A-Za-z]{2,120}"
+             placeholder="Mínimo 2 letras por favor"
+            oninvalid="setCustomValidity('Mínimo 2 letras')">
+            <br>
+             <label for="apellido">Apellido:</label>
+            <input type="text"
+            name="apellido"
+            id="apellido"
+            tabindex="2"
+            required="required"
+            pattern="[A-Za-z]{2,120}"
+            placeholder="Mínimo 2 letras por favor"
+            oninvalid="setCustomValidity('Mínimo 2 letras')">
+            <br>
+              <label for="cp">Codigo Postal:</label>
+            <input type="text"
+            name="cp"
+            id="cp"
+            tabindex="3"
+            required="required"
+            pattern="[0-9]{5,5}"
+            placeholder="5 numeros"
+            maxlength="5"
+            size="5"
+            oninvalid="setCustomValidity('Mínimo 5 números')">
+            <br>
+              <label for="correo">Email: </label>
+            <input type="text"
+            name="correo"
+            id="email"
+            tabindex="4"
+            required="required"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
+            <br>
+              <label for="pass">Contraseña </label>
+            <input type="password"
+            id="password"
+            name="pass"
+            required
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+            placeholder="Mayusculas, minusculas y número"
+            size="30">
+            <button type="button" onclick="toggler" id="show_hide">
+            <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" />
+         </button>
+             <br>
+             <input type="reset" value="Reset">
+            <input type="submit" value="Enviar">
+            <br>
+
+
+        </form>
+    </div>
+     <script src="helloWeb_old/js/main.js"></script>
+</body>
+</html>

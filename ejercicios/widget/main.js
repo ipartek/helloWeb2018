@@ -3,7 +3,7 @@
     API Key para las peticiones JSON: http://api.openweathermap.org/data/2.5/weather?q=Bilbao&APPID=bd5e378503939ddaee76f12ad7a97608
 */
 
-// TODO: Método para lanzar verTiempo() al pulsar ENTER sobre el button
+// TODO[x]: Método para lanzar verTiempo() al pulsar ENTER sobre el button
 function pulsarEnter(e) {
     var char = e.which || e.keyCode;
     if(char == "13") {
@@ -39,7 +39,7 @@ function verTiempo() {
                 console.debug("json %o", json);
                 encontrado = true;
                 actualizarWidget(json, encontrado);
-            } else if (this.status == 404) {
+            } else if (this.readyState == 4 && this.status == 404) {
                 mensaje.innerHTML = "No se encuentra la ciudad: " + ciudad;
                 console.debug("No se encuentra la ciudad: " + ciudad);
                 encontrado = false;
@@ -54,25 +54,25 @@ function verTiempo() {
 function actualizarWidget(json, encontrado) {
     var temperatura = null;
     var ciudad = null;
-    var iconoPrevision = null;
+    var iconoURL = null;
     if (encontrado) {
         ciudad = json.name;
         // TODO[x]: cambiar de Kelvin a Celsius
-        temperatura = Math.round(json.main.temp - 270) + "º";
+        temperatura = Math.round(json.main.temp - 273.15) + "º";
         // Obtener el icono de OpenWeatherMap (OWM)
         var idIcono = json.weather[0].icon;
         // TODO[x]: Colocar icono
         // @see: https://openweathermap.org/weather-conditions
         var icono =  // Elemento del icono en el HTML
         // Conseguir el icono de openweathermap = "http://openweathermap.org/img/w/ + idIcono + ".png"
-        iconoPrevision = "http://openweathermap.org/img/w/" + idIcono + ".png";
+        iconoURL = "http://openweathermap.org/img/w/" + idIcono + ".png";
         console.debug("URL Icono: http://openweathermap.org/img/w/" + idIcono + ".png");
     } else {
         temperatura = "404";
         ciudad = "Not Found"
-        iconoPrevision = "http://openweathermap.org/img/w/50d.png" ;
+        iconoURL = "http://openweathermap.org/img/w/50d.png" ;
     }
     document.getElementById("temp").textContent = temperatura;
     document.getElementById("city").textContent = ciudad;
-    document.getElementById("owmIcon").src = iconoPrevision;
+    document.getElementById("owmIcon").src = iconoURL;
 }

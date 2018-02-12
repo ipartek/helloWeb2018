@@ -1,7 +1,7 @@
 // Para ciudad Bilbao en concreto var url = "http://api.openweathermap.org/data/2.5/weather?q=Bilbao&APPID=bd5e378503939ddaee76f12ad7a97608"
 
 //Para que sea cualquier ciudad
-var url = "http://api.openweathermap.org/data/2.5/weather?q="+ciudad+"APPID=bd5e378503939ddaee76f12ad7a97608"
+var url = "http://api.openweathermap.org/data/2.5/weather?q="+ciudad+"&APPID=bd5e378503939ddaee76f12ad7a97608"
 
 function verTiempo() {
     var ciudad = document.getElementById("input_ciudad").value;
@@ -15,7 +15,7 @@ function verTiempo() {
         mensaje.textContent = "Realizando peticion....";
 
         //TODO poner en la URL la ciudad
-
+var url = "http://api.openweathermap.org/data/2.5/weather?q="+ciudad+"&APPID=bd5e378503939ddaee76f12ad7a97608"
         // llamada Ajax/////////////////////////////////////////
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {

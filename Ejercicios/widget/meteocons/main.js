@@ -1,4 +1,4 @@
-var url = "http://api.openweathermap.org/data/2.5/weather?q=Bilbao&APPID=bd5e378503939ddaee76f12ad7a97608"
+var url = "http://api.openweathermap.org/data/2.5/weather?q=##city##&APPID=bd5e378503939ddaee76f12ad7a97608"
 
 
 function verTiempo() {
@@ -13,6 +13,7 @@ function verTiempo() {
     } else {
         mensaje.textContent = "Realizando peticion....";
 
+        url=url.replace("##city##", ciudad);
         //TODO poner en la URL la ciudad
 
         // llamada Ajax/////////////////////////////////////////
@@ -33,11 +34,21 @@ function verTiempo() {
 }
 
 
+
 function rellenarWidget(json) {
 
-
+var iconUrl="https://openweathermap.org/img/w/";
 
     document.getElementById("city").textContent = json.name;
-    //TODO cambiar de Kelvins a Celsius
-    document.getElementById("temp").textContent = json.main.temp;
+
+    var tempCelsius=parseInt(json.main.temp)-273;
+
+    document.getElementById("temp").textContent = tempCelsius + "º";
+
+    var icon=json.weather[0].icon;
+
+document.getElementById("icon").src=iconUrl + icon + ".png"
+
 }
+
+

@@ -1,0 +1,36 @@
+form {
+
+    border: 1px solid #000;
+    margin: 20px auto;
+    padding: 20px;
+
+
+}
+
+input{
+    margin-bottom:10px;
+}
+
+input[type="text"]:invalid, input[type="email"] {
+    color: red;
+
+}
+
+input[type="text"]:valid input[type="email"] {
+
+    color: green;
+}
+input[type="reset"]{
+
+    float:left;
+}
+input[type="submit"]{
+
+    float:right;
+}
+.provincia{
+     margin: auto;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1em;
+}

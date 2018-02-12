@@ -5,18 +5,20 @@
     max-width: 1200px;
     margin: auto;
 }
-    .logo {
-        width: 100px;
-        height: 100px;
-        display: block;
-        margin: auto;
-    }
+
+.logo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: auto;
+}
 
 /**/
 
 nav#main {
     margin-bottom: :45px;
 }
+
 nav#main ul {
     list-style-type: none;
     margin: 0;
@@ -38,9 +40,11 @@ nav#main li a {
 }
 
 /* Change the link color to #111 (black) on hover */
+
 nav#main li a:hover {
     background-color: #111;
 }
+
 nav#main .active {
     background-color: #4CAF50;
 }

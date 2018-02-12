@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diseño de formularios en CSS</title>
+
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <div id="contenedor">
+        <form id="formulario1" name="formulario1" method="post" action="data.php">
+            <fieldset id="grupo_datos">
+                <legend id="legend_datos">Datos Personales</legend>
+                <label for="nombre">Nombre:<input type="text" name="nombre" id="nombre"></label>
+                <label for="apellidos">Apellidos:<input type="text" name="apellidos" id="apellidos"></label>
+                <label for="dni">DNI:<input type="text" id="dni" name="dni" maxlength="9"></label>
+                <label for="edad">Edad:<input type="text" id="edad" name="edad" size="2" maxlength="2"></label>
+                <div>
+                    <label for="sexo">Sexo:</label>
+                    <select name="sexo" id="sexo">
+                        <option value="X" selected="selected">...</option>
+                        <option value="F">Femenino</option>
+                        <option value="M">Masculino</option>
+                    </select>
+                </div>
+                <fieldset id="grupo_fechas">
+                    <legend id="legend_fechas">Fecha de Nacimiento:</legend>
+                    <div class="fecha">
+                        <label for="dia">Día</label>
+                        <select name="dia" id="dia">
+                            <option value="X" selected="selected">...</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                        </select>
+                    </div>
+                        <div class="fecha">
+                            <label for="mes">Mes:</label>
+                            <select name="mes" id="mes">
+                                <option value="X" selected="selected">...</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                            </select>
+                        </div>
+                        <div class="fecha">
+                            <label for="anio">Año:</label>
+                            <select name="anio" id="anio">
+                                <option value="X" selected="selected">...</option>
+                                <option value="1970">1970</option>
+                                <option value="1971">1971</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+            </fieldset>
+            <fieldset id="grupo_sugerencias">
+                <legend>Sugerencias:</legend>
+                <textarea name="argumento" id="argumento" cols="50" rows="14"></textarea>
+            </fieldset>
+            <div id="capa_enviar">
+                <input type="submit" value="Enviar Datos" id="boton_enviar" name="boton_enviar">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

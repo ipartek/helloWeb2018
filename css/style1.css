@@ -1,0 +1,61 @@
+body{
+    font-family: Helvetica, Verdana;
+    color: #000;
+}
+
+div{
+    padding: 10px
+}
+
+#contenedor{
+    border: 1px solid #000;
+    margin: 30px 30px 0px 30px;
+}
+
+#titulo{
+    font-size: 2.1875em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px #CCC;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 0px;
+}
+
+p{
+    text-align: justify;
+    font-size: 0.875em;
+    text-indent: 40px;
+}
+
+.titulo_parrafo{
+    font-size: 1.125em;
+    font-weight: bold;
+    padding: 0px;
+}
+
+#pie{
+    margin-right: 30px;
+    text-align: right;
+    font-size: 13px;
+    font-style: italic;
+    color: #646464;
+}
+
+#foto{
+    float: left;
+    border: 1px solid #000;
+    margin: 14px 10px 0px 0px;
+    padding: 4px;
+    width: 350px;
+}
+
+a{
+    color: #4A64FF;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover{
+    border-bottom: 1px dotted #4A64FF;
+}

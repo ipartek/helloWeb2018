@@ -1,0 +1,45 @@
+/*
+	#1 BASE
+	  #1.1 Reset
+	  #1.2 Presets
+*/
+
+/* #1 BASE */
+
+/* #1.1 Reset */
+
+	/* http://meyerweb.com/eric/tools/css/reset/ v2.0 */
+	html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { border:0; font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit; vertical-align:baseline; margin:0; padding:0; }
+	table { border-collapse:separate; border-spacing:0; margin-bottom:1.4em; }
+	caption, th, td { text-align:left; font-weight:400; }
+	blockquote:before, blockquote:after, q:before, q:after { content:""; }
+	blockquote, q { quotes:none; }
+	a img { border:none; }
+	ul { list-style-position: inside; list-style-type: none; }
+
+	/* HTML5 display-role reset for older browsers */
+		article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+
+	/* Added from https://github.com/murtaugh/HTML5-Reset/blob/master/_/css/style.css */
+		html{ overflow-y:scroll; } /* force a vertical scrollbar to prevent a jumpy page */
+		button, input[type=button], input[type=submit], input[type="reset"] { width:auto; overflow:visible; } /* make buttons play nice in IE */
+		del { text-decoration:line-through; }
+		abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
+		.clickable, label, input[type=button], input[type=submit], button { cursor:pointer; } /* hand cursor on clickable elements */
+		pre, code, kbd, samp{font-family:monospace, sans-serif} /*standardize any monospaced elements */
+
+	/* Added to reset form elements */
+		input, textarea, select, option { margin:0; padding:0; border:1px solid #000; background:none; font:100%/100% Arial, san-serif; }
+
+	/* Added to reset strong, em*/
+		strong, b { font-weight:bold }
+		em, i { font-style:italic }
+
+	/* Micro Clearfix - http://nicolasgallagher.com/micro-clearfix-hack/ */
+		.cf:before, .cf:after { content:""; display:table; }
+		.cf:after { clear:both; }
+		.cf { zoom:1; } /* For IE 6/7 (trigger hasLayout) */
+
+	/* apply a natural box layout model to all elements
+		(if supporting <IE8, use a pollyfill: https://github.com/Schepp/box-sizing-polyfill ) */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }

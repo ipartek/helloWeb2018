@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diseño de tablas con CSS</title>
+    <style>
+        body{
+            font-family: helvetica, verdama;
+            font-size: 16px;
+        }
+        table{
+            border:1px solid #000;
+            border-spacing: 3px;
+            width: 400px;
+        }
+
+        table tr td{
+            border:1px solid #000;
+            width: 20px;
+        }
+
+        #tabla1{
+            table-layout: auto;
+        }
+
+        #tabla2{
+            table-layout: fixed;
+            empty-cells: hide;
+            caption-side: bottom;
+        }
+    </style>
+</head>
+<body>
+   <h1>DISÑO DE TABLAS CON CSS (II)</h1>
+   <h2>Tabla 1</h2>
+   <table id="tabla1">
+       <caption>Título de tabla en la parte superior</caption>
+       <tr>
+           <td>AAAAAAAAAAAAAAA</td>
+           <td>BBBBBBBBBBBBBBB</td>
+           <td>CCCCCCCCCCCCCCC</td>
+           <td>DDDDDDDDDDDDDDD</td>
+       </tr>
+       <tr>
+           <td>Celda 5</td>
+           <td>Celda 6</td>
+           <td>Celda 7</td>
+           <td>Celda 8</td>
+       </tr>
+       <tr>
+           <td>Celda 9</td>
+           <td>Celda 10</td>
+           <td>Celda 11</td>
+           <td>Celda 12</td>
+       </tr>
+   </table>
+   <h2>Tabla 2</h2>
+     <table id="tabla2">
+       <caption>Título de tabla en la arte inferior</caption>
+       <tr>
+           <td>AAAAAAAAAAAAAAA</td>
+           <td>BBBBBBBBBBBBBBB</td>
+           <td>CCCCCCCCCCCCCCC</td>
+           <td>DDDDDDDDDDDDDDD</td>
+       </tr>
+       <tr>
+           <td>Celda 5</td>
+           <td>Celda 6</td>
+           <td>Celda 7</td>
+           <td>Celda 8</td>
+       </tr>
+       <tr>
+           <td>Celda 9</td>
+           <td>Celda 10</td>
+           <td>Celda 11</td>
+           <td>Celda 12</td>
+       </tr>
+   </table>
+
+</body>
+</html>

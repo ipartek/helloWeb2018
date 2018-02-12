@@ -4,3 +4,28 @@
 
 
 /*end Ejercicio de 12 columnas*/
+/*navbar color azul ipartek*/
+.container-fluid {
+    background-image: none;
+	background-color: #72C7DC;
+    border-color: #E7E7E7;
+}
+
+/*Solucionar tema de h1*/
+
+body{
+	padding-top: 50px;
+}
+
+/*6 thumbnails */
+
+.thumbnail a>img, .thumbnail>img {
+    margin-right: auto;
+    margin-left: auto;
+	max-height: 150px;
+}
+
+.h3, h3 {
+    font-size: 24px;
+	text-align: center;
+}

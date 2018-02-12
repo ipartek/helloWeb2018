@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listas en CSS</title>
+
+    <style>
+        body{
+            font-family: helvetica, verdana;
+            font-size: 0.9375em;
+        }
+
+        #lista1{
+            list-style-type: square;
+        }
+
+        #lista2{
+            list-style-type: lower-roman;
+        }
+
+        #lista3{
+            list-style-image: url('img/star.png');
+        }
+
+        #lista4{
+            list-style-position: inside;
+
+        }
+
+        #lista5{
+            list-style-position: outside;
+        }
+
+        #lista_menu{
+            list-style-type: none;
+            border-bottom: 1px solid #FF4967;
+            padding-bottom: 5px;
+        }
+
+        #lista_menu li{
+            display: inline;
+            background-color: grey;
+            padding: #FFF;
+        }
+
+        #lista_menu li a{
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        table{
+            border: 1px solid #000;
+        }
+
+        table tr td{
+            border: 1px solid #000;
+        }
+
+        #tabla1{
+            border-collapse: collapse;
+        }
+
+        #tabla2{
+            border-spacing: 3px;
+        }
+
+        #tabla3{
+            border-spacing: 2px/*Separacion horizontal*/ 10px;/*Separación vertical*/
+        }
+    </style>
+</head>
+<body>
+  <ul id="lista_menu">
+        <li><a href="bitcoin.html">Ver valor del Bitcoin</a></li>
+        <li><a href="aula.html">Ver el Aula</a></li>
+        <li><a href="arcanoid.html">Juego de Arcanoid</a></li>
+        <li><a href="datatable.html">DataTable</a></li>
+        <li><a href="capitulo4.html">Capítulo 4</a></li>
+        <li><a href="css.html">CSS - Cascading Style Sheets</a></li>
+        <li><a href="capitulo9.html">Posicionamiento CSS</a></li>
+        <li><a href="formateado_parrafos.html">Formateado de párrafos</a></li>
+        <li><a href="enlaces.html">Enlaces e imágenes</a></li>
+        <li><a href="listas.html">Listas y Menús</a></li>
+  </ul>
+   <h1>LISTAS, MENÚS Y TABLAS EN CSS</h1>
+   <h2>list-style-type:square</h2>
+   <ul id="lista1">
+       <li>Jonh Wayne</li>
+       <li>Marlon Brando</li>
+       <li>James Steward</li>
+   </ul>
+   <h2>list-style:lower-roman</h2>
+    <ol id="lista2">
+        <li>Paul Newman</li>
+        <li>Robert Redford</li>
+        <li>Gregory Peck</li>
+    </ol>
+    <h2>list-style-image</h2>
+    <ul id="lista3">
+        <li>Cary Grant</li>
+        <li>Kirk Douglas</li>
+        <li>Burt Lancaster</li>
+    </ul>
+    <h2>list-style-position:inside</h2>
+    <ul id="lista4">
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</li>
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</li>
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</li>
+    </ul>
+    <h2>list-style-position:outside</h2>
+    <ul id="lista5">
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</li>
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</li>
+        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</li>
+    </ul>
+    <hr>
+    <h2>TABLAS</h2>
+    <h3>Tabla 1</h3>
+    <table id="tabla1">
+        <tr>
+            <td>Celda 1</td>
+            <td>Celda 2</td>
+            <td>Celda 3</td>
+            <td>Celda 4</td>
+        </tr>
+         <tr>
+            <td>Celda 5</td>
+            <td>Celda 6</td>
+            <td>Celda 7</td>
+            <td>Celda 8</td>
+        </tr>
+         <tr>
+            <td>Celda 9</td>
+            <td>Celda 10</td>
+            <td>Celda 11</td>
+            <td>Celda 12</td>
+        </tr>
+    </table>
+    <h3>Tabla 2</h3>
+    <table id="tabla2">
+        <tr>
+            <td>Celda 1</td>
+            <td>Celda 2</td>
+            <td>Celda 3</td>
+            <td>Celda 4</td>
+        </tr>
+         <tr>
+            <td>Celda 5</td>
+            <td>Celda 6</td>
+            <td>Celda 7</td>
+            <td>Celda 8</td>
+        </tr>
+         <tr>
+            <td>Celda 9</td>
+            <td>Celda 10</td>
+            <td>Celda 11</td>
+            <td>Celda 12</td>
+        </tr>
+    </table>
+    <h3>Tabla 3</h3>
+    <table id="tabla3">
+        <tr>
+            <td>Celda 1</td>
+            <td>Celda 2</td>
+            <td>Celda 3</td>
+            <td>Celda 4</td>
+        </tr>
+         <tr>
+            <td>Celda 5</td>
+            <td>Celda 6</td>
+            <td>Celda 7</td>
+            <td>Celda 8</td>
+        </tr>
+         <tr>
+            <td>Celda 9</td>
+            <td>Celda 10</td>
+            <td>Celda 11</td>
+            <td>Celda 12</td>
+        </tr>
+    </table>
+</body>
+</html>

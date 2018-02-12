@@ -14,6 +14,9 @@ function verTiempo() {
                 var json = JSON.parse(this.responseText);
                 rellenarWidget(json);
             }
+            if (this.readyState == 4 && this.status == 404) {
+               mensaje.textContent = ("No existe la ciudad");
+            }
         };
         xhr.open("GET", url+ciudad+url2, true);
         xhr.send();
@@ -30,7 +33,7 @@ function rellenarWidget(json) {
     var celsius= Math.round(kelvin-273);
     document.getElementById("temp").textContent =celsius+"º";
     var tiempo="https://openweathermap.org/img/w/"
-    var detalle=json.weather[1].icon;
+    var detalle=json.weather[0].icon;
     var tiempo2=".png"
     document.getElementById("icon").src=tiempo+detalle+tiempo2;
 

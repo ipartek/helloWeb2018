@@ -2,15 +2,18 @@
 @keyframes move{
     0%{
         font-size: 100%;
+        width: 50%
         transform: rotate(30deg);
     }
     50%{
         font-size: 90%;
+        width: 80%
         color:black;
         transform: rotate(-30deg);
     }
     100%{
         font-size: 100%;
+        width: 50%
         transform: rotate(30deg);
     }
 }
@@ -19,6 +22,10 @@ body {
     background: #87e0fd;
     /* Old browsers */
     font-family: "roboto";
+    text-align: center;
+}
+.tocar{
+    margin-top: 50px;
 }
 
 h1 {

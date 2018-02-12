@@ -1,0 +1,151 @@
+<!--
+Poner un ojo que muestre la contraseña solo mientras se pulsa
+Botón de reset alineado a la izda, submit a la dcha
+Personalizar el mensaje de validación
+Input de tipo radio button Sexo Masculino (M), femenino (F), otros (O)
+Checkbox: "Acepto condiciones de uso" -> link a un html externo "_blank". Validar que este marcado
+Checkbox: Intereses: cantar, nadar, jugar...
+Fierldset con datos personales
+Fieldset con direccion: calle cod postal provincia (select option)
+Textarea observaciones (no requeridas))
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- enlace a la hoja de estilos -->
+    <link rel="stylesheet" href="../css/styles.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formularios</h1>
+
+<!--        <p>Todos los formularios tienen que tener un boton de "submit" o "Enviar", además de un valor en el atributo "Action".</p>-->
+        <form action="#url_servidor" method="post">
+            <fieldset id="datos_personales">
+               <legend>Datos Personales</legend>
+               <label for="id">Id: </label> <!-- Ahora esto ya no se usa-->
+                <input type="text" name="id" id="id" value="" disabled><br>
+<!--            <p>* <b>disabled</b> NO se envia al submitar el formulario</p>-->
+<!--            <p>* <b>readonly</b> SÍ se envia</p>-->
+<!--            <p><b>tabindex</b> es necesario por accesibilidad</p>-->
+                <label for="nombre">Nombre: </label> <!-- Ahora esto ya no se usa-->
+                <input type="text" name="nombre" id="nombre" required="required" tabindex="1" autofocus pattern="[A-Za-z]+{3,120}" placeholder="Nombre" title="Mínimo 3 caracteres"><br>
+                <label for="apellido">Apellido: </label> <!-- Ahora esto ya no se usa-->
+                <input type="text" name="Apellido" id="apellido" required="required"  tabindex="2" pattern="[A-Za-z]+{2,120}" placeholder="Apellido" title="Mínimo 3 caracteres"><br>
+                <label for="email">Email: </label> <!-- Ahora esto ya no se usa-->
+                <input type="email" name="email" id="email" required="required" tabindex="3" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Correo Electrónico" title="Debe contener la arroba y el dominio"><br>
+<!--                <p>* input type="email" Hace un pattern en el que sólo te obliga a meter la arriba pero no es suficiente. Se tiene que poner un pattern</p>-->
+                <label for="pass">Contraseña: </label> <!-- Ahora esto ya no se usa-->
+                <input type="password" name="pass" id="pass" required="required" pattern="(?=^.{5,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" tabindex="4" placeholder="Mayús. minus y 5 caracteres" title="Debe tener mínimo 5 caracteres y contener al menos una mayúscula, una minúscula y un número">
+                <img id="ojo" src="../img/ojo.jpg" onmouseover="myFunction()"><br>
+
+                <input type="radio" id="sexo" name="sexo" value="M" required>Masculino
+                <input type="radio" id="sexo" name="sexo" value="F">Femenino
+                <input type="radio" id="sexo" name="sexo" value="O">Otros
+            </fieldset>
+
+            <fieldset id="direccion">
+                  <legend>Dirección</legend>
+                  <label for="calle">Calle: </label> <!-- Ahora esto ya no se usa-->
+                  <input type="text" name="calle" id="calle" required="required"  tabindex="5"><br>
+                  <label for="localidad">Localidad: </label> <!-- Ahora esto ya no se usa-->
+                  <input type="text" name="localidad" id="localidad" required="required"  tabindex="6"><br>
+                  <label for="Cp">Código Postal: </label> <!-- Ahora esto ya no se usa-->
+                  <input type="text" name="cp" id="cp" tabindex="3" size="5" maxlength="5" required="required" pattern="[0-9]{5}" placeholder="5 números"><br>
+                  <label for="provincia">Provincia: </label>
+                   <select id="provincia" name="provincia" required="required">
+                    <option value="">- selecciona provincia -</option>
+                    <option value="15">A coru&#241;a</option>
+                    <option value="1">&#193;lava</option>
+                    <option value="2">Albacete</option>
+                    <option value="3">Alicante</option>
+                    <option value="4">Almer&#237;a</option>
+                    <option value="33">Asturias</option>
+                    <option value="5">&#193;vila</option>
+                    <option value="6">Badajoz</option>
+                    <option value="7">Baleares</option>
+                    <option value="8">Barcelona</option>
+                    <option value="9">Burgos</option>
+                    <option value="10">C&#225;ceres</option>
+                    <option value="11">C&#225;diz</option>
+                    <option value="39">Cantabria</option>
+                    <option value="12">Castell&#243;n</option>
+                    <option value="51">Ceuta</option>
+                    <option value="13">Ciudad Real</option>
+                    <option value="14">C&#243;rdoba</option>
+                    <option value="16">Cuenca</option>
+                    <option value="99">Extranjero</option>
+                    <option value="17">Girona</option>
+                    <option value="18">Granada</option>
+                    <option value="19">Guadalajara</option>
+                    <option value="20">Guip&#250;zcoa</option>
+                    <option value="21">Huelva</option>
+                    <option value="22">Huesca</option>
+                    <option value="23">Ja&#233;n</option>
+                    <option value="26">La rioja</option>
+                    <option value="35">Las palmas</option>
+                    <option value="24">Le&#243;n</option>
+                    <option value="25">Lleida</option>
+                    <option value="27">Lugo</option>
+                    <option value="28">Madrid</option>
+                    <option value="29">M&#225;laga</option>
+                    <option value="52">Melilla</option>
+                    <option value="30">Murcia</option>
+                    <option value="31">Navarra</option>
+                    <option value="32">Ourense</option>
+                    <option value="34">Palencia</option>
+                    <option value="36">Pontevedra</option>
+                    <option value="37">Salamanca</option>
+                    <option value="38">Santa cruz de tenerife</option>
+                    <option value="40">Segovia</option>
+                    <option value="41">Sevilla</option>
+                    <option value="42">Soria</option>
+                    <option value="43">Tarragona</option>
+                    <option value="44">Teruel</option>
+                    <option value="45">Toledo</option>
+                    <option value="46">Valencia</option>
+                    <option value="47">Valladolid</option>
+                    <option value="48">Vizcaya</option>
+                    <option value="49">Zamora</option>
+                    <option value="50">Zaragoza</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Otros</legend>
+                <label for="hobby">Intereses: </label><br>
+                <input type="checkbox" name="hobby" value="1">Cantar
+                <input type="checkbox" name="hobby" value="2">Bailar
+                <input type="checkbox" name="hobby" value="3">Cine
+                <input type="checkbox" name="hobby" value="4">Televisión
+                <input type="checkbox" name="hobby" value="5">Música
+                <input type="checkbox" name="hobby" value="6">Montañismo<br>
+                <label for="obser">Obervaciones: </label><br>
+                <textarea rows="5"cols="100" name="obser"></textarea>
+            </fieldset>
+            <span class="condiciones">
+            <input type="checkbox" name="condiciones" required>Acepto <a href="../index.html" target="_blank"> las condiciones de uso.</a><br>
+            </span>
+            <input type="reset">
+            <div class="derecha"><input type="submit" value="Enviar"></div>
+        </form>
+    </div>
+    <script>
+    function show() {
+        var p = document.getElementById('pass');
+        p.setAttribute('type', 'text');
+    }
+
+    function hide() {
+        var p = document.getElementById('pass');
+        p.setAttribute('type', 'password');
+        }
+
+    </script>
+</body>
+</html>

@@ -66,15 +66,15 @@ h1{
 /* Animaciones */
 @keyframes move{
     0%{
-        font-size: 100%;
+        width: 25%;
         transform: rotate(-30deg)
     }
     50%{
-        font-size: 80%;
+        width: 35%;
         transform: rotate(30deg)
     }
     100%{
-        font-size: 100%;
+        width: 25%;
         transform: rotate(-30deg)
     }
 }

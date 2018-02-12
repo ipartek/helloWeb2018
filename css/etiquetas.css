@@ -3,13 +3,12 @@
 /* Aqui tambien iría body */
 
 
-
-
 h1 {
     color:teal;
     text-align:center;
     font-size: 2em;
     font-family: 'roboto';
+    margin: 1em;
 }
 
 img {

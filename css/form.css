@@ -1,0 +1,40 @@
+form{
+    border: 1px solid black;
+    margin: 20px auto;
+    padding: 20px;
+    line-height: 1.8em;
+    font-family: "roboto";
+    font-size: 1em;
+}
+
+input[type="text"]:invalid,input[type="email"]:invalid{
+    color:red;
+}
+input[type="text"]:valid,input[type="email"]:valid{
+    color:green;
+}
+
+input[type="checkbox"],input[type="radio"]{
+    margin-left: 25px;
+}
+form img {
+    max-width: 2%;
+    display: inline-block;
+    padding-top: 20px;
+}
+
+div.derecha{
+    float: right;
+}
+a{
+    text-decoration: none;
+}
+span.condiciones{
+    font-size: 0.8em;
+}
+
+form select{
+    margin: 0;
+    font-size: 1em;
+    display:inline-block;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Widget Weather</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="meteocons/stylesheet.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Widget Weather</h1>
+
+
+    <div id="cnt-weather">
+        <!-- <span id="icon" class="icon" data-icon=""></span> -->
+        <img id="icon" class="icon" src="http://openweathermap.org/img/w/09n.png" >
+        <p id="temp" class="temp"></p>
+        <p id="city" class="city">Ciudad</p>
+        <p id="maxMin" class="maxMin">maxMin</p></p>
+    </div>
+
+    <div class="center">
+        <input type="text" id="input_ciudad" placeholder="Dime Tu Ciudad">
+        <p id="mensaje"></p>
+        <button onclick="verTiempo()">Dime el Tiempo</button>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>

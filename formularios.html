@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Formularios</h1>
+        <p>Todos los formularios tienen que tener botón de 'submit', además de un valor en el atributo 'action'.</p>
+        <p><b>*disabled</b> no se envía al submitar el formulario.</p>
+        <p>*<b>readonly</b> si se envía al submitar el formulario.</p>
+        <p><b>tabindex</b> es necesario por accesibilidad.</p>
+        <form action="#URL_SERVIDOR" method="post">
+
+            <fieldset id="datos_personales">
+                <legend>Datos Personales</legend>
+                <label for="id">Id:</label>
+                <input type="text" name="id" value="45" disabled>
+                <br>
+                <br>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" autofocus tabindex="1" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" title="Debe introducir su nombre">
+                <br>
+                <br>
+                <label for="apellido">Apellidos:</label>
+                <input type="text" name="apellido" id="apellido" tabindex="2" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" title="Debe introducir sus apellidos">
+                <br>
+                <br>
+                <label for="correo">Email:</label> &nbsp;
+                <input type="text" name="correo" tabindex="4" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" title="Por favor introduzca un email válido">
+                <br>
+                <br>
+                <input type="radio" name="Sexo" value="m" checked>Masculino<br>
+                <input type="radio" name="Sexo" value="f">Femenino<br>
+                <input type="radio" name="Sexo" value="o">Otro<br>
+                <br>
+                <br>
+                <input type="checkbox" name="Hobbies" value="1">Bailar<br>
+                <input type="checkbox" name="Hobbies" value="2">Practicar deporte<br>
+                <input type="checkbox" name="Hobbies" value="3">Cine<br>
+                <input type="checkbox" name="Hobbies" value="4">Teatro<br>
+                <input type="checkbox" name="Hobbies" value="5">Pescar<br>
+                <input type="checkbox" name="Hobbies" value="6">Viajar<br>
+                <input type="checkbox" name="Hobbies" value="7">Escribir<br>
+                <input type="checkbox" name="Hobbies" value="8">Pintar<br>
+            </fieldset>
+            <br>
+            <br>
+            <fieldset id="direccion">
+                <legend>Dirección</legend>
+                <label for="calle">Calle:</label>
+                <input type="text" name="calle" id="calle" autofocus tabindex="1" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 5 letras por favor" title="Introduzca la calle">
+                <br>
+                <br>
+                <label for="cp">Codigo Postal:</label>
+                <input type="text" name="cp" id="cp" tabindex="2" required size="5" maxlength="5" pattern="[0-9]{5,5}" placeholder="5 números" title="Debe introducir el código postal">
+                <br>
+                <br>
+                <div class="provincia">
+                    <label for="provincia">Provincia:</label>
+                </div>
+                <div class="pais">
+                    <label for="pais">País:</label>
+                    <input type="text" name="pais" id="pais" required pattern="[A-Za-z]{4-16}" title="Debe introducir su país">
+                </div>
+                <select name="provincia" id="provincia" size="3">
+                    <option value="1">Albacete</option>
+                    <option value="2">Alicante</option>
+                    <option value="3">Almería</option>
+                    <option value="4">Alava</option>
+                    <option value="5">Asturias</option>
+                    <option value="6">Ávila</option>
+                    <option value="7">Badajoz</option>
+                    <option value="8">Baleares, Islas</option>
+                    <option value="9">Barcelona</option>
+                    <option value="10">Bizkaia</option>
+                    <option value="11">Burgos</option>
+                    <option value="12">Cáceres</option>
+                    <option value="13">Cádiz</option>
+                    <option value="14">Cantabria</option>
+                    <option value="15">Castellón</option>
+                    <option value="16">Ciudad Real</option>
+                    <option value="17">Córdoba</option>
+                    <option value="18">Coruña, A</option>
+                    <option value="19">Cuenca</option>
+                    <option value="20">Gipuzkoa</option>
+                    <option value="21">Girona</option>
+                    <option value="22">Granada</option>
+                    <option value="23">Guadalajara</option>
+                    <option value="24">Huelva</option>
+                    <option value="25">Huesca</option>
+                    <option value="26">Jaén</option>
+                    <option value="27">León</option>
+                    <option value="28">Lleida</option>
+                    <option value="29">Lugo</option>
+                    <option value="30">Madrid</option>
+                    <option value="31">Málaga</option>
+                    <option value="32">Murcia</option>
+                    <option value="33">Navarra</option>
+                    <option value="34">Ourense</option>
+                    <option value="35">Palencia</option>
+                    <option value="36">Palmas, Las</option>
+                    <option value="37">Pontevedra</option>
+                    <option value="38">Rioja, La</option>
+                    <option value="39">Salamanca</option>
+                    <option value="40">Santa Cruz de Tenerife</option>
+                    <option value="41">Segovia</option>
+                    <option value="42">Sevilla</option>
+                    <option value="43">Soria</option>
+                    <option value="44">Tarragona</option>
+                    <option value="45">Teruel</option>
+                    <option value="46">Toledo</option>
+                    <option value="47">Valencia</option>
+                    <option value="48">Valladolid</option>
+                    <option value="49">Zamora</option>
+                    <option value="50">Zaragoza</option>
+                    <option value="51">Ceuta</option>
+                    <option value="52">Melilla</option>
+
+                </select>
+            </fieldset>
+            <br>
+            <br>
+            <label for="observaciones">Observaciones:</label>
+            <br>
+            <textarea rows="16" cols="50">
+            </textarea>
+            <br>
+            <br>
+            <label for="pass">Contraseña:</label>
+            <input id="password" type="password" name="pass" tabindex="5" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Mínimo 5 caracteres" size="30" title="Introduzca una contraseña válida">
+            <br>
+            <!--<div class="ojoabierto">-->
+                <input type="image" name="btn_ojo_abierto" id="btn_ojo_abierto"><i class="fa fa-eye fa-2x"></i>
+           <!-- </div>-->
+           <!-- <div class="ojocerrado">
+                <input type="image" name="btn_ojo_cerrado" id="btn_ojo_cerrado"><i class="fa fa-eye-slash" fa-2x hidden></i>
+            </div>-->
+            <br>
+            <br>
+            <input type="checkbox" name="aceptar" value="1" required title="Debe aceptar las condiciones">Aceptar <a href="#cond" target="_blank" class="condiciones">condiciones de uso</a><br>
+            <br>
+            <br>
+            <input type="reset" name="btn_reset" id="btn_reset" value="Limpiar formulario">
+            <input type="submit" value="Enviar">
+            <br>
+            <br>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

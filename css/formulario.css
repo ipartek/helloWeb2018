@@ -1,16 +1,66 @@
 /* CSS para Formularios */
 
-form{
+form {
     border: 1px solid #000;
     margin: 20px auto;
     padding: 20px;
 
 }
 
-input[type="text"]:invalid,input[type="correo"]:invalid,input[type="pass"]:invalid{
-    color:red;
+input[type="text"]:invalid,
+input[type="correo"]:invalid,
+input[type="pass"]:invalid {
+    color: red;
 }
 
-input[type="text"]:valid,input[type="correo"]:valid,input[type="pass"]:valid{
-    color:green;
+input[type="text"]:valid,
+input[type="correo"]:valid,
+input[type="pass"]:valid {
+    color: green;
 }
+
+/*input[type="image"] {
+    width: 50px;
+    height: 50px;
+}*/
+
+input[type="submit"] {
+    float: right;
+}
+
+input[type="reset"] {
+    float: left;
+}
+
+fieldset {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+legend {
+    text-align: center;
+}
+
+select {
+   float: left;
+    font-size: 1em;
+    margin-left: -135px;
+}
+
+.provincia {
+    float: left;
+}
+
+.pais {
+    float: left;
+    margin-top: 70px;
+    margin-left: -65px;
+}
+
+.ojoabierto{
+     width: 50px;
+    height: 50px;
+    margin-left: 350px;
+    margin-top: -36px;
+}
+

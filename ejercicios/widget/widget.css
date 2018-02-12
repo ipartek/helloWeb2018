@@ -72,16 +72,16 @@ h1{
 }
 
 @keyframes animacionIcon{
-    from{
-        font-size: 100%;
+    0%{
+        transform: rotate(15deg);
     }
 
     50%{
-        font-size: 90%;
+        transform: rotate(25deg);
     }
 
-    to{
-        font-size: 100%;
+    100%{
+       transform: rotate(15deg);
     }
 }
 

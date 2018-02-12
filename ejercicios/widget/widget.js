@@ -1,9 +1,10 @@
 function verTiempo(){
     console.debug('Quiero ver el tiempo');
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=Bilbao&APPID=bd5e378503939ddaee76f12ad7a97608";
+
 
     var ciudad = document.getElementById("input_ciudad").value;
     console.debug('Quiero ver el tiempo');
+     var url = "http://api.openweathermap.org/data/2.5/weather?q="+ document.getElementById("input_ciudad").value +"&APPID=bd5e378503939ddaee76f12ad7a97608";
     var mensaje = document.getElementById("mensaje");
      mensaje.textContent = ciudad;
 
@@ -31,9 +32,21 @@ function verTiempo(){
     }
 
     function rellenarWidget(json){
-        document.getElementById("city").textContent =json.name;
+        var iconoUrl= "http://openweathermap.org/img/w/"; //09n.png;
 
-        document.getElementById("temp").textContent =json.main.temp;
+
+        document.getElementById("city").textContent =json.name;
+        //cambiar de kelvin a celsius
+        var celsius= json.main.temp - 273;
+        document.getElementById("temp").textContent =celsius.toFixed(2)+"º";
+
+        //imagen
+        var icon= json.weather[0].icon;
+
+      document.getElementById("icon").src=
+            iconoUrl + icon + ".png";
+
+
 
     }
 }

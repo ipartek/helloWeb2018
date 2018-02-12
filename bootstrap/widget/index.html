@@ -1,15 +1,31 @@
 
-<!--https://codepen.io/ajerez/pen/KwYNWZ?q=weather+widget&limit=all&type=type-pens pagina web -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Widget Weather</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="meteocons/stylesheet.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Widget weather</h1>
+    <h1>Widget Weather</h1>
+
+
+    <div id="cnt-weather">
+       <img id="icon" class="icon" src="http://openweathermap.org/img/w/10d.png" alt="icono del tiempo">
+        <!--<span id="icon" class="icon" data-icon=""></span>-->
+        <p id="temp" class="temp">X</p>
+        <p id="city" class="city">X</p>
+    </div>
+
+    <div class="center">
+        <input type="text" id="input_ciudad" placeholder="Dime Tu Ciudad">
+        <p id="mensaje"></p>
+        <button onclick="verTiempo()">Dime el Tiempo</button>
+    </div>
+
+
     <script src="main.js"></script>
 </body>
 </html>

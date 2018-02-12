@@ -8,6 +8,11 @@ input[type="text"]:invalid{
     color:red;
 
 }
-input[type="text"]:valid, input[type="email"]:valid {
+input[type="text"]:valid, input[type="email"]:validxº {
     color:green;
+}
+fieldset{
+   border: 1px solid #000;
+    margin: 20px auto;
+    padding: 20px;
 }

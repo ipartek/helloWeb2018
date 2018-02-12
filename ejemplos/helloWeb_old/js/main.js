@@ -92,14 +92,13 @@ function llamadaApi(){
 
 
 }
-function toggler(e) {
-        if( e.innerHTML == 'Show' ) {
-            e.innerHTML = 'Hide'
-            document.getElementById('password').type="text";
-        } else {
-            e.innerHTML = 'Show'
-            document.getElementById('password').type="password";
-        }
+    function myFunction() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
 }
 
 

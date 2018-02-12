@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -15,70 +16,134 @@
         <p><b>tabindex</b>es necesario por accesibilidad</p>
         <br>
         <form action="#URL_SERVIDOR" method="post">
-            <label for="id">Id:</label>
-            <input type="text" name="id" value="45" disabled>
-            <br>
-            <label for="nombre">Nombre:</label>
-            <input type="text"
-             name="nombre"
-             id="nombre"
-             autofocus
-             tabindex="1"
-             required="required"
-             pattern="[A-Za-z]{2,120}"
-             placeholder="Mínimo 2 letras por favor"
-            oninvalid="setCustomValidity('Mínimo 2 letras')">
-            <br>
-             <label for="apellido">Apellido:</label>
-            <input type="text"
-            name="apellido"
-            id="apellido"
-            tabindex="2"
-            required="required"
-            pattern="[A-Za-z]{2,120}"
-            placeholder="Mínimo 2 letras por favor"
-            oninvalid="setCustomValidity('Mínimo 2 letras')">
-            <br>
-              <label for="cp">Codigo Postal:</label>
-            <input type="text"
-            name="cp"
-            id="cp"
-            tabindex="3"
-            required="required"
-            pattern="[0-9]{5,5}"
-            placeholder="5 numeros"
-            maxlength="5"
-            size="5"
-            oninvalid="setCustomValidity('Mínimo 5 números')">
-            <br>
-              <label for="correo">Email: </label>
-            <input type="text"
-            name="correo"
-            id="email"
-            tabindex="4"
-            required="required"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <label for="id">Id:</label>
+                <input type="text" name="id" value="45" disabled>
+                <br>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" autofocus tabindex="1" required="required" pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('Mínimo 2 letras')" oninput="setCustomValidity('')">
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" id="apellido" tabindex="2" required="required" pattern="[A-Za-z]
+                ){15,15}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('Mínimo 2 letras')" oninput="setCustomValidity('')">
+                <br>
+                <label for="sexo">Sexo: </label><br>
+                <input type="radio" name="sexo" value="M">Masculino<br>
+                <input type="radio" name="sexo" value="F">Femenino<br>
+                <input type="radio" name="sexo" value="O">Otro
+                <br>
+            </fieldset>
+            <fieldset>
+                <legend>Direccion</legend>
+                <label for="calle">Calle:</label>
+                <input type="text" name="calle" id="calle" tabindex="3" required="required" pattern="[a-z|A-z|0-9|\s]{15,15}" placeholder="Minimo 2 letras" maxlength="30" size="30" oninvalid="setCustomValidity('Mínimo 2 letras')" oninput="setCustomValidity('')">
+                <label for="cp">Codigo Postal:</label>
+                <input type="text" name="cp" id="cp" tabindex="3" required="required" pattern="[0-9]{5,5}" placeholder="5 numeros" maxlength="5" size="5" oninvalid="setCustomValidity('Mínimo 5 números')" oninput="setCustomValidity('')">
+                <br>
+                <label for="provincia">Provincia:</label>
+                <select name="lista" id="lista">
+                    <option value='alava'>Álava</option>
+                    <option value='albacete'>Albacete</option>
+                    <option value='alicante'>Alicante/Alacant</option>
+                    <option value='almeria'>Almería</option>
+                    <option value='asturias'>Asturias</option>
+                    <option value='avila'>Ávila</option>
+                    <option value='badajoz'>Badajoz</option>
+                    <option value='barcelona'>Barcelona</option>
+                    <option value='burgos'>Burgos</option>
+                    <option value='caceres'>Cáceres</option>
+                    <option value='cadiz'>Cádiz</option>
+                    <option value='cantabria'>Cantabria</option>
+                    <option value='castellon'>Castellón/Castelló</option>
+                    <option value='ceuta'>Ceuta</option>
+                    <option value='ciudadreal'>Ciudad Real</option>
+                    <option value='cordoba'>Córdoba</option>
+                    <option value='cuenca'>Cuenca</option>
+                    <option value='girona'>Girona</option>
+                    <option value='laspalmas'>Las Palmas</option>
+                    <option value='granada'>Granada</option>
+                    <option value='guadalajara'>Guadalajara</option>
+                    <option value='guipuzcoa'>Guipúzcoa</option>
+                    <option value='huelva'>Huelva</option>
+                    <option value='huesca'>Huesca</option>
+                    <option value='illesbalears'>Illes Balears</option>
+                    <option value='jaen'>Jaén</option>
+                    <option value='acoruña'>A Coruña</option>
+                    <option value='larioja'>La Rioja</option>
+                    <option value='leon'>León</option>
+                    <option value='lleida'>Lleida</option>
+                    <option value='lugo'>Lugo</option>
+                    <option value='madrid'>Madrid</option>
+                    <option value='malaga'>Málaga</option>
+                    <option value='melilla'>Melilla</option>
+                    <option value='murcia'>Murcia</option>
+                    <option value='navarra'>Navarra</option>
+                    <option value='ourense'>Ourense</option>
+                    <option value='palencia'>Palencia</option>
+                    <option value='pontevedra'>Pontevedra</option>
+                    <option value='salamanca'>Salamanca</option>
+                    <option value='segovia'>Segovia</option>
+                    <option value='sevilla'>Sevilla</option>
+                    <option value='soria'>Soria</option>
+                    <option value='tarragona'>Tarragona</option>
+                    <option value='santacruztenerife'>Santa Cruz de Tenerife</option>
+                    <option value='teruel'>Teruel</option>
+                    <option value='toledo'>Toledo</option>
+                    <option value='valencia'>Valencia/Valéncia</option>
+                    <option value='valladolid'>Valladolid</option>
+                    <option value='vizcaya'>Vizcaya</option>
+                    <option value='zamora'>Zamora</option>
+                    <option value='zaragoza'>Zaragoza</option>
+            </select>
+            </fieldset>
+
+            <label for="correo">Email: </label>
+            <input type="text" name="correo" id="email" tabindex="4" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 
             <br>
-              <label for="pass">Contraseña </label>
-            <input type="password"
-            id="password"
-            name="pass"
-            required
-            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
-            placeholder="Mayusculas, minusculas y número"
-            size="30">
-            <button type="button" onclick="toggler" id="show_hide">
+            <label for="pass">Contraseña </label>
+            <input type="password" id="password" name="pass" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Mayusculas, minusculas y número" size="30">
+            <button type="button" onclick="myFunction()" id="show_hide">
             <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" />
          </button>
-             <br>
-             <input type="reset" value="Reset">
+            <br>
+
+
+
+            <br>
+            <label for="hobbies">Hobbies </label><br>
+            <input type="checkbox" name="opcion1" value="1">Ir al monte <br>
+            <input type="checkbox" name="opcion2" value="1">Piscina<br>
+            <input type="checkbox" name="opcion3" value="1">Frontenis<br>
+            <input type="checkbox" name="opcion1" value="1">Leer <br>
+
+            <br>
+            <br>
+
+            <input type="checkbox" name="condiciones" value="A">
+            <label for="condiciones">Acepto las <a href="condiciones.html" target="_blank">condiciones de uso</a></label>
+            <br>
+            <br>
+            <input type="reset" value="Reset">
             <input type="submit" value="Enviar">
             <br>
 
 
+
+
         </form>
     </div>
-     <script src="helloWeb_old/js/main.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
 </body>
+
 </html>

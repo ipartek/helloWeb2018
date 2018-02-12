@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <title>Formularios</title>
 
+    <!--
+        HOJAS DE ESTILO EXTERNAS
+        1. FontAwesome v5.0.6
+    -->
+    <!--1. FontAwesome v5.0.6-->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
     <!--HOJAS DE ESTILO LOCALES-->
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/formularios.css">
 </head>
 
 <body>
@@ -15,10 +21,40 @@
             <h1>FORMULARIOS</h1>
         </header>
 
-        <section>
+        <section id="input-types">
             <p>Todos los formularios deben tener un botón de 'submit' para enviar la información del formulario. También deben tener un valor en el atributo 'action' (el 'action' es donde vamos a especificar la URL a la que vamos a mandar la información).</p>
+            <hr>
+            <h2>Tipos de INPUT:</h2>
+            <dl>
+                <dt>text</dt>
+                <dd>valor por defecto. Define un campo de texto de una linea (ancho por defecto: 20 caracteres).</dd>
+                <dt>submit</dt>
+                <dd>todos los formularios deben tener un botón de 'submit' para enviar la información del formulario. Es el encargado de realizar la petición GET/POST a la URL definida en el ACTION de la etiqueta FORM.</dd>
+                <dt>reset</dt>
+                <dd>restablece todos los input del formulario.</dd>
+                <dt>button</dt>
+                <dd>botón generico (generalmente usado para llamadas JS).</dd>
+                <dt>checkbox</dt>
+                <dd>casilla checkeable (puede selecionarse varias opciones).</dd>
+                <dt>radio</dt>
+                <dd>"radiobutton"; algunas opciones de las que sólo se puede seleccionar una.</dd>
+                <dt>password</dt>
+                <dd>parecido al tipo "text" pero con los caracteres enmascarados. <br> <em>Ejemplo: ********</em></dd>
+                <dt>number</dt>
+                <dd>solo admite números.</dd>
+                <dt>email</dt>
+                <dd>valida el formato 'email' con una "@" y un final '.com' o similar.</dd>
+                <dt>tel</dt>
+                <dd>campo para números de teléfono.</dd>
+                <dt>file</dt>
+                <dd>campo para cargar archivo con botón "buscar".</dd>
+                <dt>hidden</dt>
+                <dd>campo invisible al usuario pero que se manda con el resto de datos del formulario.</dd>
+            </dl>
+        </section>
+        <hr>
+        <section id="atributos-input">
             <h2>Atributos de los INPUT:</h2>
-
             <dl>
                 <dt>name</dt>
                 <dd>Asigna un nombre al input que se usará en la parte servidor para acceder al valor del mismo. <br><em>En el atributo 'for' de los label se introduce el name del input con el que se queire relacionar.</em></dd>
@@ -29,7 +65,7 @@
                 <dt>placeholder</dt>
                 <dd>Valor por defecto de los input (aparece en un gris clarito y desaparece al editar el input).</dd>
                 <dt>pattern</dt>
-                <dd>Especifica los caracteres/valores aceptados en el input.<br><em>Ejemplo: [Caracteres validos]{min,max} -> pattern="[A-Za-z]{3,120}"</em></dd>
+                <dd>Especifica los caracteres/valores aceptados en el input.<br><em>Ejemplo: [Caracteres validos]{min,max} : pattern="[A-Za-z\s]{3,120}"</em></dd>
                 <dt>disabled</dt>
                 <dd>Bloquea la edición del input y no se envia con los datos del formulario.</dd>
                 <dt>readonly</dt>
@@ -43,7 +79,9 @@
                 <dt>required</dt>
                 <dd>Valor obligatorio para enviar el formulario.</dd>
             </dl>
-            <hr>
+        </section>
+        <hr>
+        <section id="formulario">
             <h2>Formulario de ejemplo:</h2>
             <!--con el atributo de form "novalidate": evita las validaciones html5-->
             <form action="#URL_SERVIDOR" method="post">
@@ -73,10 +111,15 @@
                     <br>
 
                     <label for="pass">Contraseña* </label>
-                    <input type="password" name="pass" id="pass" placeholder="contraseña" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required tabindex="7">
+                    <div class="password">
+                        <input type="password" name="pass" id="pass" placeholder="contraseña" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required tabindex="7">
+                        <!--FUTURE[x]: reimplementar con un icono 'eye':hover para mostrarlo con el evento 'onmousedown'-->
+                        <span class="fa fas fa-eye eyespan" onmouseover="mostrarPass()" onmouseout="mostrarPass()"></span>
+                    </div>
+
                     <!-- TODO[x]: dar opción para mostrar la contraseña: un icono del ojo que al pulsar se muestre la contraseña -->
-                    <!--FUTURE[]: reimplementar con un icono 'eye':hover para mostrarlo con el evento 'onmousedown'-->
-                    <input type="checkbox" onclick="mostrarPass()">Mostrar contraseña
+
+                    <!--<input type="checkbox" onclick="mostrarPass()">Mostrar contraseña-->
                 </fieldset>
                 <br>
                 <fieldset>
@@ -93,77 +136,90 @@
                     <label for="provincia">Provincia*</label>
                     <select id="provincia" required tabindex="10">
                      <option value="" disabled selected>Elegir provincia</option>
-                     <option value='alava'>Álava</option>
-                     <option value='albacete'>Albacete</option>
-                     <option value='alicante'>Alicante/Alacant</option>
-                     <option value='almeria'>Almería</option>
-                     <option value='asturias'>Asturias</option>
-                     <option value='avila'>Ávila</option>
-                     <option value='badajoz'>Badajoz</option>
-                     <option value='barcelona'>Barcelona</option>
-                     <option value='burgos'>Burgos</option>
-                     <option value='caceres'>Cáceres</option>
-                     <option value='cadiz'>Cádiz</option>
-                     <option value='cantabria'>Cantabria</option>
-                     <option value='castellon'>Castellón/Castelló</option>
-                     <option value='ceuta'>Ceuta</option>
-                     <option value='ciudadreal'>Ciudad Real</option>
-                     <option value='cordoba'>Córdoba</option>
-                     <option value='cuenca'>Cuenca</option>
-                     <option value='girona'>Girona</option>
-                     <option value='laspalmas'>Las Palmas</option>
-                     <option value='granada'>Granada</option>
-                     <option value='guadalajara'>Guadalajara</option>
-                     <option value='guipuzcoa'>Guipúzcoa</option>
-                     <option value='huelva'>Huelva</option>
-                     <option value='huesca'>Huesca</option>
-                     <option value='illesbalears'>Illes Balears</option>
-                     <option value='jaen'>Jaén</option>
-                     <option value='acoruña'>A Coruña</option>
-                     <option value='larioja'>La Rioja</option>
-                     <option value='leon'>León</option>
-                     <option value='lleida'>Lleida</option>
-                     <option value='lugo'>Lugo</option>
-                     <option value='madrid'>Madrid</option>
-                     <option value='malaga'>Málaga</option>
-                     <option value='melilla'>Melilla</option>
-                     <option value='murcia'>Murcia</option>
-                     <option value='navarra'>Navarra</option>
-                     <option value='ourense'>Ourense</option>
-                     <option value='palencia'>Palencia</option>
-                     <option value='pontevedra'>Pontevedra</option>
-                     <option value='salamanca'>Salamanca</option>
-                     <option value='segovia'>Segovia</option>
-                     <option value='sevilla'>Sevilla</option>
-                     <option value='soria'>Soria</option>
-                     <option value='tarragona'>Tarragona</option>
-                     <option value='santacruztenerife'>Santa Cruz de Tenerife</option>
-                     <option value='teruel'>Teruel</option>
-                     <option value='toledo'>Toledo</option>
-                     <option value='valencia'>Valencia/Valéncia</option>
-                     <option value='valladolid'>Valladolid</option>
-                     <option value='vizcaya'>Vizcaya</option>
-                     <option value='zamora'>Zamora</option>
-                     <option value='zaragoza'>Zaragoza</option>
+                     <option value="alava">Álava</option>
+                     <option value="albacete">Albacete</option>
+                     <option value="alicante">Alicante/Alacant</option>
+                     <option value="almeria">Almería</option>
+                     <option value="asturias">Asturias</option>
+                     <option value="avila">Ávila</option>
+                     <option value="badajoz">Badajoz</option>
+                     <option value="barcelona">Barcelona</option>
+                     <option value="burgos">Burgos</option>
+                     <option value="caceres">Cáceres</option>
+                     <option value="cadiz">Cádiz</option>
+                     <option value="cantabria">Cantabria</option>
+                     <option value="castellon">Castellón/Castelló</option>
+                     <option value="ceuta">Ceuta</option>
+                     <option value="ciudadreal">Ciudad Real</option>
+                     <option value="cordoba">Córdoba</option>
+                     <option value="cuenca">Cuenca</option>
+                     <option value="girona">Girona</option>
+                     <option value="laspalmas">Las Palmas</option>
+                     <option value="granada">Granada</option>
+                     <option value="guadalajara">Guadalajara</option>
+                     <option value="guipuzcoa">Guipúzcoa</option>
+                     <option value="huelva">Huelva</option>
+                     <option value="huesca">Huesca</option>
+                     <option value="illesbalears">Illes Balears</option>
+                     <option value="jaen">Jaén</option>
+                     <option value="acoruña">A Coruña</option>
+                     <option value="larioja">La Rioja</option>
+                     <option value="leon">León</option>
+                     <option value="lleida">Lleida</option>
+                     <option value="lugo">Lugo</option>
+                     <option value="madrid">Madrid</option>
+                     <option value="malaga">Málaga</option>
+                     <option value="melilla">Melilla</option>
+                     <option value="murcia">Murcia</option>
+                     <option value="navarra">Navarra</option>
+                     <option value="ourense">Ourense</option>
+                     <option value="palencia">Palencia</option>
+                     <option value="pontevedra">Pontevedra</option>
+                     <option value="salamanca">Salamanca</option>
+                     <option value="segovia">Segovia</option>
+                     <option value="sevilla">Sevilla</option>
+                     <option value="soria">Soria</option>
+                     <option value="tarragona">Tarragona</option>
+                     <option value="santacruztenerife">Santa Cruz de Tenerife</option>
+                     <option value="teruel">Teruel</option>
+                     <option value="toledo">Toledo</option>
+                     <option value="valencia">Valencia/Valéncia</option>
+                     <option value="valladolid">Valladolid</option>
+                     <option value="vizcaya">Vizcaya</option>
+                     <option value="zamora">Zamora</option>
+                     <option value="zaragoza">Zaragoza</option>
                     </select>
                 </fieldset>
                 <br>
                 <fieldset>
                     <legend>Otros</legend>
                     <!-- TODO[x]: checkbox multiopción: INTERESES. -->
-                    <!--FUTURE[]: Comprobar que ha escogido un mínimo de 3 intereses-->
-                    <label for="intereses">Intereses:</label><br>
-                    <input type="checkbox" name="intereses" value="Deportes" tabindex="11">Deportes <br>
-                    <input type="checkbox" name="intereses" value="Tecnología" tabindex="12">Tecnología <br>
-                    <input type="checkbox" name="intereses" value="Naturaleza" tabindex="13">Naturaleza <br>
-                    <input type="checkbox" name="intereses" value="Viajes" tabindex="14">Viajes <br>
+                    <!--FUTURE[x]: Comprobar que ha escogido un mínimo de 3 intereses-->
+                    <label for="interes">Intereses:</label><br>
+                    <div id="div-intereses">
+                        <div class="intereses">
+                            <input type="checkbox" name="interes" value="deportes" tabindex="11">Deportes <br>
+                            <input type="checkbox" name="interes" value="viajar" tabindex="12">Viajar <br>
+                            <input type="checkbox" name="interes" value="fiestas" tabindex="13">Fiestas <br>
+                        </div>
+                        <div class="intereses">
+                            <input type="checkbox" name="interes" value="tecnologia" tabindex="14">Tecnología <br>
+                            <input type="checkbox" name="interes" value="cine" tabindex="15">Cine <br>
+                            <input type="checkbox" name="interes" value="lectura" tabindex="16">Lectura <br>
+                        </div>
+                        <div class="intereses">
+                            <input type="checkbox" name="interes" value="playa" tabindex="17">Playa <br>
+                            <input type="checkbox" name="interes" value="montana" tabindex="18">Montaña <br>
+                            <input type="checkbox" name="interes" value="senderismo" tabindex="19">Senderismo <br>
+                        </div>
+                    </div>
                     <br>
                     <!-- TODO[x]: textarea: "OBSERVACIONES" NO required -->
                     <label for="observaciones">Observaciones:</label><br>
-                    <textarea name="observaciones" id="observaciones" placeholder="Obseraciones y sugerencias" tabindex="15"></textarea>
+                    <textarea name="observaciones" id="observaciones" placeholder="Obseraciones y sugerencias" tabindex="20"></textarea>
                     <br><br>
                     <!-- TODO[x]: checkbox: "Acepto condiciones de uso" que será un link a un html externo (target: "_blank") y debe ser REQUIRED-->
-                    <input type="checkbox" name="terminos" required tabindex="16"> Acepto los <a href="https://www.timeinc.net/subs/privacy/termsofservice/pptos.html" target="_blank">terminos y condiciones</a>*
+                    <input type="checkbox" name="terminos" required tabindex="21"> Acepto los <a href="https://www.timeinc.net/subs/privacy/termsofservice/pptos.html" target="_blank">terminos y condiciones</a>*
 
 
 
@@ -175,7 +231,7 @@
                 <br><br>
                 <!-- TODO[x]: Botón RESET para limpiar el valor de todos los input del formulario. Mostrar un confirm para confirmar el borrado de datos si pulsa 'Aceptar'. Alineado a la izquierda -->
                 <input type="reset" onclick="return confirmarReset();">
-                <input type="submit" value="Enviar" tabindex="17"><br>
+                <input type="submit" value="Enviar" onclick="return validarDatos()" tabindex="22"><br>
 
 
             </form>
@@ -187,7 +243,7 @@
         // Variables globales
         var pass = document.getElementById("pass");
 
-        // Método para mostrar la conseña
+        // Método para mostrar la contraseña
         function mostrarPass() {
 
             if (pass.type === "password") {
@@ -197,15 +253,37 @@
             }
         }
 
+        /* TODO[x]: cambiar comentarios de validación para la contraseña */
+        // Método para personalizar el mensaje de formato incorrecto de la contraseña
+        pass.oninvalid = function(event) {
+            event.target.setCustomValidity("Debe contener un mínimo de 8 caracteres con mayúsculas, minúsculas y números.");
+        }
+
         // Método para confirmar el reset de datos del formulario
         function confirmarReset() {
             return confirm("¿Esta seguro de que desea restablecer todo el formulario?");
         }
 
-        /* TODO[x]: cambiar comentarios de validación para la contraseña */
-        // Método para personalizar el mensaje de formato incorrecto de la contraseña
-        pass.oninvalid = function(event) {
-            event.target.setCustomValidity("Debe contener un mínimo de 8 caracteres con mayúsculas, minúsculas y números.");
+        // Método para validar datos antes de enviarlos al servidor
+        function validarDatos() {
+            var datosValidos = false;
+            var listaIntereses = document.getElementsByName("interes");
+            var numIntereses = 0;
+            var interes = 0;
+
+            while (numIntereses < 3 && interes < listaIntereses.length) {
+                if (listaIntereses[interes].checked) {
+                    numIntereses++;
+                }
+                interes++;
+            }
+            if (numIntereses >= 3) {
+                datosValidos = true;
+            } else {
+                alert('Debe elegir al menos 3 intereses');
+                document.getElementById("div-intereses").focus();
+            }
+            return datosValidos;
         }
     </script>
 </body>

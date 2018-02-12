@@ -4,46 +4,106 @@
     ÍNDICE:
     1. Etiquetas
     2. Selectores
+    3. Class/ID
 */
 
 /******************** 1. Etiquetas ********************/
+
 form {
     border: 1px solid black;
     margin: 20px auto;
     padding: 20px;
 }
-label, input, radio, checkbox, select {
+
+label,
+input,
+radio,
+checkbox,
+select {
     margin-bottom: 10px;
 }
+
 em {
     font-size: 0.8em;
 }
+
 select {
-    display: inline !important;
+    display: inline-block;
 }
+
 /******************** END 1. Etiquetas ********************/
+
 /******************** 2. Selectores ********************/
 
 fieldset > label {
     display: inline-block;
     width: 100px;
 }
+
 /* Color de letra del input, dependiente del pattern */
-input[type="text"]:invalid, input[type="email"]:invalid {
+
+input[type="text"]:invalid,
+input[type="email"]:invalid {
     color: red;
 }
-input[type="text"]:valid, input[type="email"]:valid {
+
+input[type="text"]:valid,
+input[type="email"]:valid {
     color: green;
 }
-dl>dt {
-    font-weight: 600 !important;
+
+dl > dt {
+    font-weight: bold;
 }
 
 input[type="submit"] {
     float: right;
 }
-textarea#observaciones {
+
+/******************** END 2. Selectores ********************/
+
+/******************** 3. Class/ID ********************/
+
+#observaciones {
     width: 400px;
     height: 100px;
 }
-/******************** END 2. Selectores ********************/
+
+#div-intereses {
+    margin: auto;
+}
+
+.intereses {
+    display: inline-block;
+    width: 30%;
+}
+
+.password {
+    display: inline-block;
+}
+
+#pass {
+    margin-left: -22px;
+}
+
+.eyespan {
+    float: left;
+    position: relative;
+    top: 1px;
+    left: 150px;
+    padding: 2px 2px;
+    z-index: 2;
+    /*background-color: red;*/
+}
+
+/*#iconEye {
+    position: absolute;
+    left: 235px;
+    padding: 1px 2px 4px 2px;
+}*/
+
+/*#pass {
+    background: url(../img/eye.png) no-repeat scroll 150px;
+}*/
+
+/******************** END 3. Class/ID ********************/

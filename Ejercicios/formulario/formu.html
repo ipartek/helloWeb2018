@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" href="../../css/styless.css">
+    <!-- font awesome 4.7 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+</head>
+
+<body>
+    <div class="conteiner">
+        <h1>Formularios</h1>
+        <p>Todos los formularios tienen que tener un boton de 'submit', ademas de un valor en el atributo 'action' </p>
+        <form action="#URL_SERVIDOR">
+            <label for="nombre">SAY MY NAME:</label>
+            <input type="text"
+            name="nombre"
+            method="post"
+            placeholder="Say your name"
+            required
+            pattern="[A-Za-z]{2,120}"
+            >
+            <br>
+            <input type="submit" value="Enviar">
+        </form>
+
+
+
+        <a href="../../index.html"><i class="fa fa-reply" aria-hidden="true"></i>
+
+</a><br><br><br>
+    </div>
+    <script src="js/main.js" type="text/javascript">
+    </script>
+</body>
+
+</html>

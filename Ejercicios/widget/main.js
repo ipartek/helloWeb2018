@@ -12,6 +12,7 @@ function verTiempo() {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var json = JSON.parse(this.responseText);
+                console.debug("json %o", json);
                 rellenarWidget(json);
             }
             if (this.readyState == 4 && this.status == 404) {

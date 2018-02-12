@@ -22,7 +22,7 @@ function verTiempo() {
                 var json = JSON.parse(this.responseText);
                 console.debug("jason %o", json);
                 rellenarWidget(json);
-            } else {
+            } else if (this.readyState === 4 && this.status === 404) {
                 mensaje.textContent = "No hemos encontrado la localidad " + ciudad;
             }
         };
@@ -52,21 +52,21 @@ function rellenarWidget(json) {
     var letra;
     if (json.weather["0"].icon == "01d") {
         letra = "B";
-    } else if (json.weather["0"].icon == "02d") {
+    } else if (json.weather["0"].icon == "02d"||json.weather["0"].icon == "02n") {
         letra = "H";
-    } else if (json.weather["0"].icon == "03d") {
+    } else if (json.weather["0"].icon == "03d"||json.weather["0"].icon == "03n") {
         letra = "N";
-    } else if (json.weather["0"].icon == "04d") {
+    } else if (json.weather["0"].icon == "04d"||json.weather["0"].icon == "04n") {
         letra = "Y";
-    } else if (json.weather["0"].icon == "09d") {
+    } else if (json.weather["0"].icon == "09d"||json.weather["0"].icon == "09n") {
         letra = "R";
-    } else if (json.weather["0"].icon == "10d") {
+    } else if (json.weather["0"].icon == "10d"||json.weather["0"].icon == "10n") {
         letra = "Q";
-    } else if (json.weather["0"].icon == "11d") {
+    } else if (json.weather["0"].icon == "11d"||json.weather["0"].icon == "11n") {
         letra = "P";
-    } else if (json.weather["0"].icon == "13d") {
+    } else if (json.weather["0"].icon == "13d"||json.weather["0"].icon == "13n") {
         letra = "W";
-    } else if (json.weather["0"].icon == "50d") {
+    } else if (json.weather["0"].icon == "50d"||json.weather["0"].icon == "50n") {
         letra = "M";
     }
 

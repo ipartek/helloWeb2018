@@ -1,0 +1,48 @@
+/*CSS para formularios*/
+
+form {
+	border: 1px solid #000;
+	margin: 20px auto;
+	padding: 20px;
+}
+
+
+input[type="text"]:invalid, input[type="email"]:invalid {
+	color: red;
+}
+
+input[type="text"]:valid, input[type="email"]:valid {
+	color: green;
+}
+
+fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove (internal value);
+}
+
+legend {
+    display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: none;
+}
+
+#reset{
+	display: inline-block;
+	float: right;
+}
+
+.field-icon {
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+
+

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario</title>
+
+	<link rel="stylesheet" href="../css/formulario.css">
+
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+
+	<div>
+		<h1>Formularios</h1>
+		<p>Todos los formularios tienen que tener un boton de 'Submit', además de un valor en el atributo 'action'.</p>
+		<p><b>*disabled</b> no se envía al submitar el formulario</p>
+		<p><b>*readonly</b> sí se envía al submitar el formulario</p>
+		<p><b>tabindex</b> es necesario por accesibilidad</p>
+
+
+		<form action="#URL_SERVIDOR" method="post">
+
+			<fieldset>
+				<legend>Datos personales:</legend>
+
+				<label for="id1">Id1:</label>
+				<input type="text" name="id1" value="45" disabled>
+				<br>
+				<label for="id2">Id2:</label>
+				<input type="text" name="id2" value="45" readonly>
+
+				<br>
+				<label for="nombre">Nombre:</label>
+
+				<!--
+				<input type="text" name="nombre" id="nombre" tabindex="1" autofocus required="required" pattern="[A-Za-z]{2,120}" placeholder="Nombre (minimo 2 letras)">
+				-->
+				<input type="text" name="nombre" id="nombre" tabindex="1" required placeholder="nombre" pattern="[A-Za-z]{2,120}">
+
+				<!-- el atributo required puede expresarse como required="required o simplemente como required(sin valor porque se sobreentiende) -->
+
+				<br>
+
+				<label for="apellido">Apellido:</label>
+				<input type="text" name="apellido" id="apellido" tabindex="2" required="required" pattern="[A-Za-z]{2,120}" placeholder="Apellido (minimo 2 letras)">
+				<br>
+
+				<label for="email">email:</label>
+				<input type="email" name="email" id="email" tabindex="3" required="required" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}">
+				<br>
+
+				<label for="pass">Password:</label>
+				<input type="password" class="form-control" name="password" id="pass" tabindex="4" required="required" size="30" placeholder="Mayusculas, minusculas y numeros" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+				<span onmousedown="mostrar()" onmouseup="ocultar()" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+				<br>
+
+				<label for="sex">Sexo:</label>
+				<br>
+				<input type="radio" name="sex" required="required" value="m">Masculino <br>
+				<input type="radio" name="sex" required="required" value="f">Femenino <br>
+				<input type="radio" name="sex" required="required" value="o">Otro <br>
+				<br>
+
+			</fieldset>
+
+				<br>
+
+			<fieldset>
+				<legend>Direccion:</legend>
+				<label for="calle">Calle:</label>
+				<input type="text" name="calle" id="calle" tabindex="6" required="required" placeholder="Calle" }>
+				<br>
+				<label for="cp">Codigo Postal:</label>
+				<input type="text" name="cp" id="cp" required="required" placeholder="5 numeros" size="5" maxlength="5" pattern="[0-9]{5,5}" }>
+				<br>
+
+				<label for="provincia">Provincia:</label>
+
+				<select id="provincia" required="required" }>
+					<option value='vacio'>Selecciona la provincia</option>
+					<option value='alava'>Álava</option>
+					<option value='albacete'>Albacete</option>
+					<option value='alicante'>Alicante/Alacant</option>
+					<option value='almeria'>Almería</option>
+					<option value='asturias'>Asturias</option>
+					<option value='avila'>Ávila</option>
+					<option value='badajoz'>Badajoz</option>
+					<option value='barcelona'>Barcelona</option>
+					<option value='burgos'>Burgos</option>
+					<option value='caceres'>Cáceres</option>
+					<option value='cadiz'>Cádiz</option>
+					<option value='cantabria'>Cantabria</option>
+					<option value='castellon'>Castellón/Castelló</option>
+					<option value='ceuta'>Ceuta</option>
+					<option value='ciudadreal'>Ciudad Real</option>
+					<option value='cordoba'>Córdoba</option>
+					<option value='cuenca'>Cuenca</option>
+					<option value='girona'>Girona</option>
+					<option value='laspalmas'>Las Palmas</option>
+					<option value='granada'>Granada</option>
+					<option value='guadalajara'>Guadalajara</option>
+					<option value='guipuzcoa'>Guipúzcoa</option>
+					<option value='huelva'>Huelva</option>
+					<option value='huesca'>Huesca</option>
+					<option value='illesbalears'>Illes Balears</option>
+					<option value='jaen'>Jaén</option>
+					<option value='acoruña'>A Coruña</option>
+					<option value='larioja'>La Rioja</option>
+					<option value='leon'>León</option>
+					<option value='lleida'>Lleida</option>
+					<option value='lugo'>Lugo</option>
+					<option value='madrid'>Madrid</option>
+					<option value='malaga'>Málaga</option>
+					<option value='melilla'>Melilla</option>
+					<option value='murcia'>Murcia</option>
+					<option value='navarra'>Navarra</option>
+					<option value='ourense'>Ourense</option>
+					<option value='palencia'>Palencia</option>
+					<option value='pontevedra'>Pontevedra</option>
+					<option value='salamanca'>Salamanca</option>
+					<option value='segovia'>Segovia</option>
+					<option value='sevilla'>Sevilla</option>
+					<option value='soria'>Soria</option>
+					<option value='tarragona'>Tarragona</option>
+					<option value='santacruztenerife'>Santa Cruz de Tenerife</option>
+					<option value='teruel'>Teruel</option>
+					<option value='toledo'>Toledo</option>
+					<option value='valencia'>Valencia/Valéncia</option>
+					<option value='valladolid'>Valladolid</option>
+					<option value='vizcaya'>Vizcaya</option>
+					<option value='zamora'>Zamora</option>
+					<option value='zaragoza'>Zaragoza</option>
+				</select>
+
+				<br>
+
+			</fieldset>
+			<br>
+			<fieldset>
+				<legend>Hobbies (selecciona al menos 3):</legend>
+				<input type="checkbox" name="hobbies" value="correr">Correr <br>
+				<input type="checkbox" name="hobbies" value="bailar">Bailar <br>
+				<input type="checkbox" name="hobbies" value="pintar">Pintar <br>
+				<input type="checkbox" name="hobbies" value="cocinar">Cocinar <br>
+				<input type="checkbox" name="hobbies" value="escribir">Escribir <br>
+				<input type="checkbox" name="hobbies" value="videojuegos">Videojuegos <br>
+				<input type="checkbox" name="hobbies" value="jardineria">Jardineria <br>
+				<input type="checkbox" name="hobbies" value="yoga">Yoga <br>
+
+			</fieldset>
+			<br>
+			<input type="checkbox" name="condiciones" id="condiciones" tabindex="5" required="required" value="acepto">Acepto las <a href="https://formaldocs.com/2014/12/Modelo-de-condiciones-de-uso-de-una-pagina-web" target="_blank">condiciones y términos de uso</a><br>
+
+				<input type="submit" value="Enviar">
+				<button id="reset" type="reset">Borrar formulario</button>
+
+
+
+		</form>
+	</div>
+
+
+
+<script>
+	function mostrar(){
+		 document.getElementById("pass").setAttribute("type", text);
+
+	}
+
+	function ocultar{
+		document.getElementById("pass").setAttribute("type", password);
+	}
+	</script>
+</body>
+
+</html>

@@ -52,6 +52,9 @@ box-shadow: 25px 24px 30px -12px rgba(69,68,69,1);
 	left:25px;
 }
 #icono{
+	position: absolute;
+	right:15px;
+	top:10px;
     width: 50px;
 }
 

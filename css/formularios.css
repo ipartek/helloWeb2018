@@ -1,0 +1,39 @@
+/* CSS para formularios */
+
+
+form{
+    border: 1px solid #000;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+input[type="text"]:invalid, input[type="email"]:invalid{
+    color: red;
+}
+
+input[type="text"]:valid, input[type="email"]:valid{
+    color: green;
+}
+
+a{
+    color: blue;
+}
+
+fieldset{
+    border: 1px solid #000;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+select {
+    display: inline-block;
+    font-size: 0.8em;
+    left: 0px;
+    margin: 0px;
+    margin-bottom: 0px;
+
+}
+
+img{
+    max-height: 1.5em;
+}

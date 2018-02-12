@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Segundo ejemplo de formularios</title>
+    <link rel="stylesheet" href="css/formulario.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>Segundo Formulario</h1>
+    <p>Todos los formularios tienen que tener un botón de 'submit' para enviar los datos, además de un valor en el atributo 'action'.</p>
+    <p><strong>*disabled:</strong> no se envia al submitar el formulario</p>
+    <p><strong>*readonly:</strong> si se envia al submitar el formulario</p>
+    <p><strong>*tabindex:</strong> necesario por accesibilidad </p>
+    <form action="#URL Servidor" method="post">
+       <fieldset id="datos_personales">
+           <legend id="legend_personales">Datos Personales</legend>
+                <label for="id">ID:</label>
+                <input type="text" name="id" value="45" disabled>
+                <label for="dni">DNI:<input type="text" id="dni" name="dni" maxlength="9" tabindex="1" required oninvalid="setCustomValidity('El campo DNI es obligatorio, introduce un DNI valido por favor')" oninput="setCustomValidity('')" ></label>
+                <br>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Mínimo 2 letras,por favor" tabindex="2" autofocus required="required" pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('Introduce tu nombre por favor')" oninput="setCustomValidity('')">
+
+                <label for="apellido">Apellidos:</label>
+                <input type="text" name="apellido" id="apellido" placeholder="Mínimo 2 letras,por favor"  tabindex="3" required="required" pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('Introduce tu apellido por favor')" oninput="setCustomValidity('')">
+
+                <br>
+                 <label for="edad">Edad:<input type="text" id="edad" name="edad" size="2" maxlength="2"></label>
+                 <label for="nacimiento">Fecha de Nacimiento:</label>
+                 <input type="date" name="fNac">
+                 <div>
+                     <label for="sexo">Sexo:</label>
+                     <input type="radio" id="sexo" name="sexo" value="M" checked>Masculino
+                     <input type="radio"id="sexo"  name="sexo" value="F">Femenino
+                     <input type="radio" id="sexo" name="sexo" value="O">Otros
+                 </div>
+                 <br>
+                 <label for="email">Dirección correo electrónico:</label>
+                 <input type="text" name="email" id="email" placeholder="email" tabindex="4" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                 <label for="password">Contraseña:</label>
+                 <input type="password" name="pass" id="password" placeholder="Introduce tu contraseña" tabindex="5" size="25" maxlength="8" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$
+        ">&nbsp;<i onclick="ver()" class="fa fa-eye"></i>
+
+        <br>
+        </fieldset>
+        <fieldset id="datos_direccion">
+            <legend id="legend_direccion">Dirección</legend>
+            <label for="direccion">Dirección:</label><input type="text" placeholder="Introduce tu calle, Avd, plaza,..." size="50" id="direccion" required>
+            <label for="numeroportal">Número:</label><input type="text" placeholder="Portal" id="numeroportal"  size="2" >
+            <label for="piso">Piso:</label><input type="text" placeholder="Piso" id="piso" size="2" maxlength="2" >
+            <label for="mano">Mano:</label><input type="text" placeholder="Mano" id="mano" size="3" maxlength="3" >
+            <br>
+            <label for="provincia">Provincia:</label>
+            <select name="provincia">
+                <option value='0'>(Seleccionar provincia)</option>
+                <option value='2'>Álava</option>
+                <option value='3'>Albacete</option>
+                <option value='4'>Alicante/Alacant</option>
+                <option value='5'>Almería</option>
+                <option value='6'>Asturias</option>
+                <option value='7'>Ávila</option>
+                <option value='8'>Badajoz</option>
+                <option value='9'>Barcelona</option>
+                <option value='10'>Burgos</option>
+                <option value='11'>Cáceres</option>
+                <option value='12'>Cádiz</option>
+                <option value='13'>Cantabria</option>
+                <option value='14'>Castellón</option>
+                <option value='15'>Ceuta</option>
+                <option value='16'>Ciudad Real</option>
+                <option value='17'>Córdoba</option>
+                <option value='18'>Cuenca</option>
+                <option value='19'>Girona</option>
+                <option value='20'>Las Palmas</option>
+                <option value='21'>Granada</option>
+                <option value='22'>Guadalajara</option>
+                <option value='23'>Guipúzcoa/Gipuzkoa</option>
+                <option value='24'>Huelva</option>
+                <option value='25'>Huesca</option>
+                <option value='26'>Illes Balears</option>
+                <option value='27'>Jaén</option>
+                <option value='28'>A Coruña</option>
+                <option value='29'>La Rioja</option>
+                <option value='30'>León</option>
+                <option value='31'>Lleida</option>
+                <option value='32'>Lugo</option>
+                <option value='33'>Madrid</option>
+                <option value='34'>Málaga</option>
+                <option value='35'>Melilla</option>
+                <option value='36'>Murcia</option>
+                <option value='37'>Navarra</option>
+                <option value='38'>Ourense</option>
+                <option value='39'>Palencia</option>
+                <option value='40'>Pontevedra</option>
+                <option value='41'>Salamanca</option>
+                <option value='42'>Segovia</option>
+                <option value='43'>Sevilla</option>
+                <option value='44'>Soria</option>
+                <option value='45'>Tarragona</option>
+                <option value='46'>Santa Cruz de Tenerife</option>
+                <option value='47'>Teruel</option>
+                <option value='48'>Toledo</option>
+                <option value='49'>Valencia</option>
+                <option value='50'>Valladolid</option>
+                <option value='51'>Vizcaya/Bizkaia</option>
+                <option value='52'>Zamora</option>
+                <option value='53'>Zaragoza</option>
+        </select>
+        <label for="cp">Código Postal:</label>
+        <input type="text" name="cp" id="cp" placeholder="5 números" size="5" tabindex="3"  maxlength="5" pattern="[0-9]{5,5}">
+        </fieldset>
+
+        <fieldset name="hobbies">
+            <legend id="legend_hobbies">Hobbies:</legend>
+            <label for="Tushobbies">Elige tus hobbies:</label> <br>
+            <input type="checkbox" name="opcion1" value="1">Cantar <br>
+            <input type="checkbox" name="opcion2" value="2">Bailar <br>
+            <input type="checkbox" name="opcion3" value="3">Saltar <br>
+            <input type="checkbox" name="opcion4" value="4">Correr <br>
+            <input type="checkbox" name="opcion5" value="5">Nadar <br>
+            <input type="checkbox" name="opcion6" value="6">Montar en bicicleta <br>
+            <input type="checkbox" name="opcion7" value="7">Montaña <br>
+            <input type="checkbox" name="opcion8" value="8">Leer <br>
+
+        </fieldset>
+        <fieldset id="grupo_sugerencias">
+                <legend>Observaciones:</legend>
+                <textarea name="observaciones" id="observaciones" cols="150" rows="14"></textarea>
+        </fieldset>
+        <br>
+        <input type="checkbox" name="condiciones">Aceptar <a href="https://wikimediafoundation.org/wiki/Terms_of_Use/es" target="_blank">condiciones de uso</a><br>
+        <input type="reset" value="Borrar">
+
+        <input type="submit" value="Enviar">
+    </form>
+    </div>
+
+    <script>
+        function ver() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+     <script src="js/mostrarcontrasena.js"></script>
+</body>
+</html>

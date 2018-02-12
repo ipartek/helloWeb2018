@@ -1,0 +1,19 @@
+/* CSS PARA NUESTROS FORMULARIOS*/
+
+form{
+    border: 1px solid black;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+
+input{
+    margin-bottom: 10px;
+}
+input[type="text"]:invalid, input[type="email"]:invalid{
+    color:red;
+}
+
+input[type="text"]:valid, input[type="email"]:valid{
+    color: green;
+}

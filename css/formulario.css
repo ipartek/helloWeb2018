@@ -1,0 +1,49 @@
+/*
+    HOJA DE ESTILOS PARA FORMULARIOS
+
+    ÍNDICE:
+    1. Etiquetas
+    2. Selectores
+*/
+
+/******************** 1. Etiquetas ********************/
+form {
+    border: 1px solid black;
+    margin: 20px auto;
+    padding: 20px;
+}
+label, input, radio, checkbox, select {
+    margin-bottom: 10px;
+}
+em {
+    font-size: 0.8em;
+}
+select {
+    display: inline !important;
+}
+/******************** END 1. Etiquetas ********************/
+/******************** 2. Selectores ********************/
+
+fieldset > label {
+    display: inline-block;
+    width: 100px;
+}
+/* Color de letra del input, dependiente del pattern */
+input[type="text"]:invalid, input[type="email"]:invalid {
+    color: red;
+}
+input[type="text"]:valid, input[type="email"]:valid {
+    color: green;
+}
+dl>dt {
+    font-weight: 600 !important;
+}
+
+input[type="submit"] {
+    float: right;
+}
+textarea#observaciones {
+    width: 400px;
+    height: 100px;
+}
+/******************** END 2. Selectores ********************/

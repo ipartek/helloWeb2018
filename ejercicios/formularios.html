@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+
+    <!--HOJAS DE ESTILO LOCALES-->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/formularios.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>FORMULARIOS</h1>
+        </header>
+
+        <section>
+            <p>Todos los formularios deben tener un botón de 'submit' para enviar la información del formulario. También deben tener un valor en el atributo 'action' (el 'action' es donde vamos a especificar la URL a la que vamos a mandar la información).</p>
+            <h2>Atributos de los INPUT:</h2>
+
+            <dl>
+                <dt>name</dt>
+                <dd>Asigna un nombre al input que se usará en la parte servidor para acceder al valor del mismo. <br><em>En el atributo 'for' de los label se introduce el name del input con el que se queire relacionar.</em></dd>
+                <dt>id</dt>
+                <dd>Identificador para acceder desde JS/CSS.</dd>
+                <dt>type</dt>
+                <dd>Tipo del input: text, number, tel, email, password...</dd>
+                <dt>placeholder</dt>
+                <dd>Valor por defecto de los input (aparece en un gris clarito y desaparece al editar el input).</dd>
+                <dt>pattern</dt>
+                <dd>Especifica los caracteres/valores aceptados en el input.<br><em>Ejemplo: [Caracteres validos]{min,max} -> pattern="[A-Za-z]{3,120}"</em></dd>
+                <dt>disabled</dt>
+                <dd>Bloquea la edición del input y no se envia con los datos del formulario.</dd>
+                <dt>readonly</dt>
+                <dd>Bloquea la edición del input pero si se envia junto a los datos del formulario.</dd>
+                <dt>tabindex</dt>
+                <dd>Indica el orden del focus de los input, es necesario por accesibilidad.</dd>
+                <dt>size</dt>
+                <dd>Tamaño de input.</dd>
+                <dt>maxlength</dt>
+                <dd>Tamaño máximo del valor de input.</dd>
+                <dt>required</dt>
+                <dd>Valor obligatorio para enviar el formulario.</dd>
+            </dl>
+            <hr>
+            <h2>Formulario de ejemplo:</h2>
+            <!--con el atributo de form "novalidate": evita las validaciones html5-->
+            <form action="#URL_SERVIDOR" method="post">
+
+                <fieldset id="datos-personales">
+                    <legend>Dator personales</legend>
+                    <label for="id">Id*</label>
+                    <input type="text" name="id" value="72" disabled><br>
+
+                    <label for="nombre">Nombre*</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" pattern="[A-Za-z]{3,120}" required tabindex="1">
+                    <br>
+
+                    <label for="apellido">Apellido* </label>
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" pattern="[A-Za-z\s]{3,120}" required tabindex="2">
+                    <br>
+
+                    <!-- TODO[x]: radio: SEXO: masculino(M), femenino(F), otro(O) -->
+                    <label for="sexo">Sexo*</label>
+                    <input type="radio" name="sexo" value="M" required tabindex="3"> Masculino
+                    <input type="radio" name="sexo" value="F" required tabindex="3"> Femenino
+                    <input type="radio" name="sexo" value="O" required tabindex="3"> Otro
+                    <br>
+
+                    <label for="email">Email* </label>
+                    <input type="email" name="email" id="email" placeholder="ejemplo@sevicio.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required tabindex="6">
+                    <br>
+
+                    <label for="pass">Contraseña* </label>
+                    <input type="password" name="pass" id="pass" placeholder="contraseña" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required tabindex="7">
+                    <!-- TODO[x]: dar opción para mostrar la contraseña: un icono del ojo que al pulsar se muestre la contraseña -->
+                    <!--FUTURE[]: reimplementar con un icono 'eye':hover para mostrarlo con el evento 'onmousedown'-->
+                    <input type="checkbox" onclick="mostrarPass()">Mostrar contraseña
+                </fieldset>
+                <br>
+                <fieldset>
+                    <!-- TODO[x]: nuevo fieldset para datos de dirección: calle, cp, provincia -->
+                    <legend>Dirección</legend>
+
+                    <label for="calle">Calle*</label>
+                    <input type="text" required tabindex="8">
+                    <br>
+                    <label for="cp">CP* </label>
+                    <input type="text" name="cp" id="cp" placeholder="cód. postal" pattern="[0-9]{5,5}" size="5" maxlength="5" required tabindex="9">
+                    <br>
+                    <!-- TODO[x]: select: con las provincias de España -->
+                    <label for="provincia">Provincia*</label>
+                    <select id="provincia" required tabindex="10">
+                     <option value="" disabled selected>Elegir provincia</option>
+                     <option value='alava'>Álava</option>
+                     <option value='albacete'>Albacete</option>
+                     <option value='alicante'>Alicante/Alacant</option>
+                     <option value='almeria'>Almería</option>
+                     <option value='asturias'>Asturias</option>
+                     <option value='avila'>Ávila</option>
+                     <option value='badajoz'>Badajoz</option>
+                     <option value='barcelona'>Barcelona</option>
+                     <option value='burgos'>Burgos</option>
+                     <option value='caceres'>Cáceres</option>
+                     <option value='cadiz'>Cádiz</option>
+                     <option value='cantabria'>Cantabria</option>
+                     <option value='castellon'>Castellón/Castelló</option>
+                     <option value='ceuta'>Ceuta</option>
+                     <option value='ciudadreal'>Ciudad Real</option>
+                     <option value='cordoba'>Córdoba</option>
+                     <option value='cuenca'>Cuenca</option>
+                     <option value='girona'>Girona</option>
+                     <option value='laspalmas'>Las Palmas</option>
+                     <option value='granada'>Granada</option>
+                     <option value='guadalajara'>Guadalajara</option>
+                     <option value='guipuzcoa'>Guipúzcoa</option>
+                     <option value='huelva'>Huelva</option>
+                     <option value='huesca'>Huesca</option>
+                     <option value='illesbalears'>Illes Balears</option>
+                     <option value='jaen'>Jaén</option>
+                     <option value='acoruña'>A Coruña</option>
+                     <option value='larioja'>La Rioja</option>
+                     <option value='leon'>León</option>
+                     <option value='lleida'>Lleida</option>
+                     <option value='lugo'>Lugo</option>
+                     <option value='madrid'>Madrid</option>
+                     <option value='malaga'>Málaga</option>
+                     <option value='melilla'>Melilla</option>
+                     <option value='murcia'>Murcia</option>
+                     <option value='navarra'>Navarra</option>
+                     <option value='ourense'>Ourense</option>
+                     <option value='palencia'>Palencia</option>
+                     <option value='pontevedra'>Pontevedra</option>
+                     <option value='salamanca'>Salamanca</option>
+                     <option value='segovia'>Segovia</option>
+                     <option value='sevilla'>Sevilla</option>
+                     <option value='soria'>Soria</option>
+                     <option value='tarragona'>Tarragona</option>
+                     <option value='santacruztenerife'>Santa Cruz de Tenerife</option>
+                     <option value='teruel'>Teruel</option>
+                     <option value='toledo'>Toledo</option>
+                     <option value='valencia'>Valencia/Valéncia</option>
+                     <option value='valladolid'>Valladolid</option>
+                     <option value='vizcaya'>Vizcaya</option>
+                     <option value='zamora'>Zamora</option>
+                     <option value='zaragoza'>Zaragoza</option>
+                    </select>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Otros</legend>
+                    <!-- TODO[x]: checkbox multiopción: INTERESES. -->
+                    <!--FUTURE[]: Comprobar que ha escogido un mínimo de 3 intereses-->
+                    <label for="intereses">Intereses:</label><br>
+                    <input type="checkbox" name="intereses" value="Deportes" tabindex="11">Deportes <br>
+                    <input type="checkbox" name="intereses" value="Tecnología" tabindex="12">Tecnología <br>
+                    <input type="checkbox" name="intereses" value="Naturaleza" tabindex="13">Naturaleza <br>
+                    <input type="checkbox" name="intereses" value="Viajes" tabindex="14">Viajes <br>
+                    <br>
+                    <!-- TODO[x]: textarea: "OBSERVACIONES" NO required -->
+                    <label for="observaciones">Observaciones:</label><br>
+                    <textarea name="observaciones" id="observaciones" placeholder="Obseraciones y sugerencias" tabindex="15"></textarea>
+                    <br><br>
+                    <!-- TODO[x]: checkbox: "Acepto condiciones de uso" que será un link a un html externo (target: "_blank") y debe ser REQUIRED-->
+                    <input type="checkbox" name="terminos" required tabindex="16"> Acepto los <a href="https://www.timeinc.net/subs/privacy/termsofservice/pptos.html" target="_blank">terminos y condiciones</a>*
+
+
+
+                </fieldset>
+
+
+
+                <em>Los campos con (*) son obligatorios</em>
+                <br><br>
+                <!-- TODO[x]: Botón RESET para limpiar el valor de todos los input del formulario. Mostrar un confirm para confirmar el borrado de datos si pulsa 'Aceptar'. Alineado a la izquierda -->
+                <input type="reset" onclick="return confirmarReset();">
+                <input type="submit" value="Enviar" tabindex="17"><br>
+
+
+            </form>
+        </section>
+    </div>
+
+    <!--JS-->
+    <script>
+        // Variables globales
+        var pass = document.getElementById("pass");
+
+        // Método para mostrar la conseña
+        function mostrarPass() {
+
+            if (pass.type === "password") {
+                pass.type = "text";
+            } else {
+                pass.type = "password";
+            }
+        }
+
+        // Método para confirmar el reset de datos del formulario
+        function confirmarReset() {
+            return confirm("¿Esta seguro de que desea restablecer todo el formulario?");
+        }
+
+        /* TODO[x]: cambiar comentarios de validación para la contraseña */
+        // Método para personalizar el mensaje de formato incorrecto de la contraseña
+        pass.oninvalid = function(event) {
+            event.target.setCustomValidity("Debe contener un mínimo de 8 caracteres con mayúsculas, minúsculas y números.");
+        }
+    </script>
+</body>
+</html>

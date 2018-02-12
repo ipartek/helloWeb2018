@@ -1,5 +1,5 @@
 /*
-    @Autor: Ander
+    @Autor: Leire
     @version: 1.0
     @fecha:  2018 01 30
 */
@@ -8,6 +8,7 @@
 /*el siguiente import es otra forma de hacer el font-face*/
 @import url('fonts.css');
 @import url('etiquetas.css');
+@import url('formulario.css');
 @import url('layout.css');
 @import url('custom.css');
 @import url('commons.css');

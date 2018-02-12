@@ -1,0 +1,16 @@
+/* CSS para Formularios */
+
+form{
+    border: 1px solid #000;
+    margin: 20px auto;
+    padding: 20px;
+
+}
+
+input[type="text"]:invalid,input[type="correo"]:invalid,input[type="pass"]:invalid{
+    color:red;
+}
+
+input[type="text"]:valid,input[type="correo"]:valid,input[type="pass"]:valid{
+    color:green;
+}

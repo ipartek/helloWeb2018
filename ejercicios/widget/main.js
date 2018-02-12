@@ -1,7 +1,7 @@
 // Para ciudad Bilbao en concreto var url = "http://api.openweathermap.org/data/2.5/weather?q=Bilbao&APPID=bd5e378503939ddaee76f12ad7a97608"
 
 //Para que sea cualquier ciudad
-var url = "http://api.openweathermap.org/data/2.5/weather?q="+ciudad+"&APPID=bd5e378503939ddaee76f12ad7a97608"
+var url = "http://api.openweathermap.org/data/2.5/weather?q=##CITY##&APPID=bd5e378503939ddaee76f12ad7a97608"
 
 function verTiempo() {
     var ciudad = document.getElementById("input_ciudad").value;
@@ -15,7 +15,8 @@ function verTiempo() {
         mensaje.textContent = "Realizando peticion....";
 
         //TODO poner en la URL la ciudad
-var url = "http://api.openweathermap.org/data/2.5/weather?q="+ciudad+"&APPID=bd5e378503939ddaee76f12ad7a97608"
+        url = url.replace("##CITY##", ciudad);
+        //  var url = "http://api.openweathermap.org/data/2.5/weather?q=" + ciudad + "&APPID=bd5e378503939ddaee76f12ad7a97608" //asi lo he hecho yo
         // llamada Ajax/////////////////////////////////////////
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
@@ -25,6 +26,12 @@ var url = "http://api.openweathermap.org/data/2.5/weather?q="+ciudad+"&APPID=bd5
                 console.debug("json %o", json);
                 rellenarWidget(json);
             }
+
+
+            if (this.readyState == 4 && this.status == 404) {
+                mensaje.textContent = "No existe la Ciudad";
+            }
+
         };
         xhr.open("GET", url, true);
         xhr.send();
@@ -32,13 +39,21 @@ var url = "http://api.openweathermap.org/data/2.5/weather?q="+ciudad+"&APPID=bd5
 }
 
 
-function rellenarWidget(json){
+function rellenarWidget(json) {
+
+    var iconUrl = "http://openweathermap.org/img/w/"; //09n.png;
 
     document.getElementById("city").textContent = json.name;
-    //TODO cambiar de Kelvins a Celsius.Este es en Kelvins
-    document.getElementById("temp").textContent = json.main.temp;
-    //Cambiado a ºC
-    document.getElementById("temp").textContent = ((json.main.temp).value)-273,15+"ºC";
+    // Cambiado a ºC Ander
+    var tempCelsius = parseInt(json.main.temp)-273;
+    document.getElementById("temp").textContent=tempCelsius+"º";
 
+    //cambiar imagen
+    var icon = json.weather[0].icon;
+    document.getElementById("icon").src = iconUrl + icon + ".png";
 
+ //TODO cambiar de Kelvins a Celsius.Este es en Kelvins
+    // document.getElementById("temp").textContent = json.main.temp; //este esen Kelvins
+    //Cambiado a ºC Mio
+    //document.getElementById("temp").textContent = (parseInt(json.main.temp))-273,15+"ºC";
 }

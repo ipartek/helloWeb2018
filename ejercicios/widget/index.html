@@ -12,15 +12,17 @@
 
 
     <div id="cnt-weather">
-        <span id="icon" class="icon" data-icon=""></span>
+        <!--<span id="icon" class="icon" data-icon=""></span>-->
+        <img id="icon" class="icon" src="" alt="icono del tiempo">
         <p id="temp" class="temp">X</p>
         <p id="city" class="city">X</p>
     </div>
 
-    <input type="text" id="input_ciudad" placeholder="Dime Tu Ciudad">
-    <p id="mensaje"></p>
-    <button onclick="verTiempo()">Dime el Tiempo</button>
-
+   <div class="center">
+        <input type="text" id="input_ciudad" placeholder="Dime Tu Ciudad">
+        <p id="mensaje"></p>
+        <button onclick="verTiempo()">Dime el Tiempo</button>
+    </div>
 
     <script src="main.js"></script>
 </body>

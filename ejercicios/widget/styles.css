@@ -33,7 +33,7 @@ h1{
 #cnt-weather{
     position: relative;
 
-    margin: auto;
+    margin: 20px auto;
     width: 200px;
     height: 200px;
     border-radius: 25px;
@@ -74,6 +74,24 @@ h1{
     top:10px;
     right: 10px;
     color:#595959;
+}
+.center{
+    margin: 20px auto;
+    max-width: 300px;
+}
+
+.center input, .center button{
+    display: block;
+    margin: auto;
+}
+
+.center input{
+    padding: 5px 10px;
+    font-size: 1.2em;
+}
+
+.center button{
+    font-size: 1.2em;
 }
 
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Formularios</h1>
+        <p>Todos los formularios tienen que tener botón de 'submit', además de un valor en el atributo 'action'.</p>
+        <p><b>*disabled</b> no se envía al submitar el formulario.</p>
+        <p>*<b>readonly</b> si se envía al submitar el formulario.</p>
+        <p><b>tabindex</b> es necesario por accesibilidad.</p>
+        <form action="#URL_SERVIDOR" method="post">
+
+
+            <label for="id">Id:</label>
+            <input type="text" name="id" value="45" disabled>
+            <br>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" autofocus tabindex="1" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor">
+            <br>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="apellido" id="apellido" tabindex="2" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor">
+            <br>
+
+            <label for="cp">Codigo Postal:</label>
+            <input type="text" name="cp" id="cp" tabindex="3" required size="5" maxlength="5" pattern="[0-9]{5,5}" placeholder="5 números">
+            <br>
+
+            <label for="correo">Email:</label>
+            <input type="text" name="correo" tabindex="4" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$">
+            <br>
+
+            <label for="pass">Contraseña:</label>
+            <input type="password" name="pass" tabindex="5" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Mínimo 5 caracteres" size="30">
+            <br>
+
+            <input type="submit" value="Enviar">
+
+        </form>
+
+
+    </div>
+
+</body>
+</html>

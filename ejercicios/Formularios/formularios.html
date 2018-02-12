@@ -26,15 +26,14 @@
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" id="nombre" autofocus tabindex="1" required="required" pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('El campo nombre no cumple con los criterios, reviselo por favor.')">
                 <br>
+                <br>
                 <label for="apellido">Apellido:</label>
                 <input type="text" name="apellido" id="apellido" tabindex="2" required="required" pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('El campo apellido no cumple con los criterios, reviselo por favor.')">
                 <br>
-                <label for="cp">Codigo Postal:</label>
-                <input type="text" name="cp" id="cp" tabindex="3" required="required" pattern="[0-9]{5,5}" placeholder="5 numeros" maxlength="5" size="5" oninvalid="setCustomValidity('El campo Codigo Postal no cumple con los criterios, reviselo por favor.')">
                 <br>
                 <label for="correo">Email: </label>
                 <input type="text" name="correo" id="email" tabindex="4" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" oninvalid="setCustomValidity('El campo email no cumple con los criterios, reviselo por favor.')">
-
+                <br>
                 <br>
                 <label for="pass">Contraseña: </label>
                 <input type="password" id="password" name="pass" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Mayusculas, minusculas y número" size="30" oninvalid="setCustomValidity('El campo contraseña no cumple con los criterios, reviselo por favor.')">
@@ -55,25 +54,27 @@
 
                 </script>
                 <br>
+                <br>
                 <label for="sexo">Sexo: </label>
                 <input type=radio name="sexo" value="M"> Masculino
                 <input type=radio name="sexo" value="F"> Femenino
                 <input type=radio name="sexo" value="O"> Otro
+                </fieldset>
                 <br>
-            </fieldset>
-
+                <br>
+                <br>
             <fieldset id="direccion">
                 <legend>Dirección</legend>
 
 
                 <label for="calle">Calle:</label>
                 <input type="text" name="calle" id="calle" autofocus tabindex="1" required="required" pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('El campo Calle no cumple con los criterios, reviselo por favor.')">
-
-
+                <br>
+                <br>
                 <label for="cp">Codigo Postal:</label>
                 <input type="text" name="cp" id="cp" tabindex="3" required="required" pattern="[0-9]{5,5}" placeholder="5 numeros" maxlength="5" size="5" oninvalid="setCustomValidity('El campo Codigo Postal no cumple con los criterios, reviselo por favor.')">
                 <br>
-
+                <br>
                 <label for="provincia">Provincia:</label>
                 <select id="provincia" name=provincia>
                     <option value="" selected=selected>- selecciona -</option>
@@ -131,18 +132,39 @@
                     <option value="49">Zamora</option>
                     <option value="50">Zaragoza</option>
                     </select>
-
-
-
             </fieldset>
+            <br>
+            <br>
+             <fieldset id="Aficiones">
+                <legend>Aficiones</legend>
+                    <input type="checkbox" name="leer" id="leer" value="leer">&nbsp;Leer<br>
+                    <input type="checkbox" name="musica" id="musica" value="musica">&nbsp;Escuchar música<br>
+                    <input type="checkbox" name="viajar" id="viajar" value="viajar">&nbsp;Viajar<br>
+                    <input type="checkbox" name="deporte" id="deporte" value="deporte">&nbsp;Practicar deporte<br>
+                    <input type="checkbox" name="internet" id="internet" value="internet">&nbsp;Navegar por internet<br>
+                    <input type="checkbox" name="dormir" id="dormir" value="dormir">&nbsp;Dormir<br>
+                    <input type="checkbox" name="cine" id="cine" value="cine">&nbsp;Cine<br>
+                    <input type="checkbox" name="videojuegos" id="videjuegos" value="videojuegos">&nbsp;Videojuegos<br>
+                    <input type="checkbox" name="leer" id="leer" value="leer">&nbsp;Leer<br>
+                    <input type="checkbox" name="cocinar" id="cocinar" value="cocinar">&nbsp;Cocinar<br>
+                    <input type="checkbox" name="tv" id="tv" value="tv">&nbsp;Ver la Tv<br>
+                    <input type="checkbox" name="amigos" id="amigos" value="amigos">&nbsp;Salir con los amigos<br>
+                    <input type="checkbox" name="concierto" id="concierto" value="concierto">&nbsp;Ir a conciertos<br>
+                    <input type="checkbox" name="playa" id="playa" value="playa">&nbsp;Ir a la playa<br>
+                    <input type="checkbox" name="monte" id="monte" value="monte">&nbsp;Ir al monte<br>
+
+              </fieldset>
+              <br>
+              <br>
+
 
             <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
 
-                <input type="checkbox" name="checkbox" value="check" id="agree" /> Acepto los términos de uso.
-                <input type="submit" name="condiciones" value="Ver las condiciones" src="formulario_condiciones.html" />
+                <input type="checkbox" name="checkbox" value="check" id="agree" /> Acepto los términos de uso. <a href="formulario_condiciones.html">(Ver condiciones)</a>
+
 
             </form>
-            <br>
+
 
             <input type="reset" value="Reset">
             <input type="submit" value="Enviar">

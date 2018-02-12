@@ -1,19 +1,26 @@
- @media (max-width: 425px) {
+@media (max-width: 425px) {
 
      /*1. Arreglar menu navegacion*/
-     /*2.NEXUS*/
+     /*2.NEXUS solo orientazion portrait*/
      /*2.1.Logo se oculta visibility hidden*/
      header img {
          display: none;
      }
+    h1{
+        display: block;
+        font-size: 2em;
+        text-align: center;
+        margin-top: 10px;
+    }
      /*2.2.Menu desaparece y saca otro menu con un icono de un colibri en el que de desplace hacia la derecha y que ocupe hasta abajo el icono y aparezca el en la izquierda home...*/
      .navBar {
          display: none;
 
      }
-
-
-
+    /*reactivas menu movil */
+    section[data-type="burger"]  {
+    display: block;
+}
 
      /*2.3.la imagen ocupa el 100%*/
      section[data-type=slider] img {
@@ -24,12 +31,13 @@
      /*2.4. subir tamaño texto hasta que se pueda leer*/
      /*2.5. cada parrrafo que ocupe todo el ancho de la pantalla y que esten uno debajo del otro*/
      article[data-type=cols] section {
-
          width: 100%;
      }
      article[data-type=cols] section p {
          text-align: justify;
          padding: 10px 10px;
+         font-size: 1.3em;
+         line-height: 1.1em;
 
      }
 
@@ -40,6 +48,7 @@
 
      .gallery ul {
          display: inline;
+         padding: 0px 10px;
      }
 
      .gallery li {
@@ -63,6 +72,10 @@
      footer {
          margin-top: 30px;
      }
+    footer  article[data-type="cols"] p{
+        font-size: 1em;
+         line-height: 1em;
+    }
 
 
 
@@ -91,6 +104,7 @@ a {
 
 /*Damos estilos al menú*/
 .nav {
+
   position:absolute;
   width:200px;
   height:100vh;

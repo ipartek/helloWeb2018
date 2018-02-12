@@ -49,8 +49,8 @@ h1 {
 
 
 #cnt-weather .icon {
-
-
+ left: 130px;
+    height: 70px;
     animation-name: move;
     animation-duration: 5s;
     animation-timing-function: ease-in-out;

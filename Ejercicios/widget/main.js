@@ -20,9 +20,12 @@ function ver_Tiempo(){
         mensaje.textContent="Realizando Peticion";
 
        var url = "http://api.openweathermap.org/data/2.5/weather?q=";
-        var url2 = "&APPID=bd5e378503939ddaee76f12ad7a97608";
+          var url2 = "&APPID=bd5e378503939ddaee76f12ad7a97608";
 
         url = url + ciudad + url2;
+
+        // O http://api.openweathermap.org/data/2.5/weather?q=$$ciudad$$&APPID=bd5e378503939ddaee76f12ad7a97608 y poner url= url.replace("$$ciudad$$",ciudad");
+
 
     //llamada Ajax
      var xhr = new XMLHttpRequest();
@@ -35,17 +38,16 @@ function ver_Tiempo(){
             console.debug("json %0",json);
             rellenarWidget(json);
 
+ }
 
-           //console.info(json.bpi.USD.rate);
 
            //mostrar en pantalla
 
+   if (this.readyState == 4 && this.status == 404) {
+               mensaje.textContent = "No existe la ciudad";
+            }
 
 
-
-
-
-        }
      };
      xhr.open("GET", url , true);
      xhr.send(); /* Hacer que la web te envie los datos*/
@@ -62,13 +64,26 @@ function rellenarWidget(json){
 
 
     var temperatura=textContent=json.main.temp; //Recoge el valor de la API//
-    temperatura_celsius= (temperatura -273.15); //Pasa la temperatura Fahrenheit  a Grados Celsius//
+    temperatura_celsius= (temperatura -273.15); /*Pasa la temperatura Kelvin  a Grados Celsius
+
+    Tambien se puede poner de otra manera :
+
+    var tempCelsius = parseInt(json.main.temp) - 273;
+
+    document.getElementById("temp").textContent = tempCelsius + "º";
+
+    */
     temperatura_real=Math.round(temperatura_celsius); //Una vez hecho la conversion,redondeamos esa temperatura//
 
     document.getElementById("temp").textContent=temperatura_real + "º"; //Añadimos el contenido
 
 
-    imagen=textContent=json.weather.icon;
+    var iconurl= "http://openweathermap.org/img/w/"; //10d.png
+    var icon= json.weather[0].icon;
+    // Cambiar imagen
+  document.getElementById("icon").src = iconurl + icon + ".png";
+
+
     console.log(imagen);/*Cogemos el valor del icono de la temperatura*/
 
 

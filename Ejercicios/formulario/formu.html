@@ -9,23 +9,153 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+
 </head>
 
 <body>
     <div class="conteiner">
         <h1>Formularios</h1>
         <p>Todos los formularios tienen que tener un boton de 'submit', ademas de un valor en el atributo 'action' </p>
+        <p><b>Disabled</b> no se envia al submitar el formulario</p>
+        <p><b>Readonly</b> si se envia al submitar el formulario</p>
+        <p><b>TABINDEX</b>es necesario por accesibilidad</p>
+        <br>
+        <br>
+        <br>
+        <br>
         <form action="#URL_SERVIDOR">
-            <label for="nombre">SAY MY NAME:</label>
-            <input type="text"
-            name="nombre"
-            method="post"
-            placeholder="Say your name"
-            required
-            pattern="[A-Za-z]{2,120}"
-            >
-            <br>
-            <input type="submit" value="Enviar">
+
+            <fieldset id="datos_personales">
+                <legend style="text-align: center;">Datos personales</legend>
+                <!-- ID  -->
+                <label for="id">ID</label>
+                <input type="text" name="id" value="45" readonly><br>
+                <!-- Nombre  -->
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" autofocus tabindex="1" method="post" placeholder="Nombre" required pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('El campo nombre es obligatorio')" oninput="setCustomValidity('')">
+                <br>
+                <!-- Apellido  -->
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" tabindex="2" method="post" placeholder="Apellido" required pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('El campo apellido es obligatorio')" oninput="setCustomValidity('')">
+                <br>
+
+                <!-- Email  -->
+
+                <label for="email">Email:</label>
+                <input type="text" name="email" tabindex="3" method="post" placeholder="algo@algomail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                <br>
+
+                <!-- Contraseña  -->
+                <label for="pwd">Contraseña:</label>
+                <input type="password" name="password" id="myInput" tabindex="4" method="post" placeholder="Mayus,minus,numeros +8carac" size="30" ; pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required oninvalid="setCustomValidity('El campo contraseña es obligatorio')" oninput="setCustomValidity('')">
+                <i class='fa fa-eye' aria-hidden='true' onmousedown="myFunction()" onmouseup="myReset()"></i><br/>
+                <br>
+
+                <!-- Sexo  -->
+                <fieldset class="radios">
+                    <legend style="text-align: center;">SEXO</legend>
+                    <input type="radio" name="sexo" value="M" required checked>Masculino<br/>
+                    <input type="radio" name="sexo" value="F">Femenino<br/>
+                    <input type="radio" name="sexo" value="O">Otros<br/>
+                </fieldset>
+                <!-- Hobbies  -->
+
+                <fieldset class="checkbox">
+                    <legend style="text-align: center;">Hobbies</legend>
+                    <input type="checkbox" name="option[]" value="option1" required/> Danza<br>
+                    <input type="checkbox" name="option[]" value="option2" required/> Videojuegos<br>
+                    <input type="checkbox" name="option[]" value="option3" required/> Cazar<br>
+                    <input type="checkbox" name="option[]" value="option4" required/> Deporte<br>
+                    <input type="checkbox" name="option[]" value="option5" required/> Deporte de riesgo<br>
+                    <input type="checkbox" name="option[]" value="option6" required/> Fotografia<br>
+                    <input type="checkbox" name="option[]" value="option7" required/> Cantar
+                </fieldset>
+
+                <!-- Direccion  -->
+
+            </fieldset>
+            <fieldset id="Direccion">
+                <legend style="text-align: center;">Direccion</legend>
+                <!-- Calle  -->
+                <label for="calle">Calle:</label>
+                <input type="text" name="calle" autofocus tabindex="5" method="post" placeholder="Nombre" required pattern="[A-Za-z-0-9]{3,120}" oninvalid="setCustomValidity('El campo Calle es obligatorio')" oninput="setCustomValidity('')">
+                <br>
+                <!-- Codigo postal  -->
+
+                <label for="CP">Codigo Postal:</label>
+                <input type="text" name="Cp" tabindex="6" max="5" size="5" method="post" placeholder="Postal Code" pattern="[0-9]{5,5}" required oninvalid="setCustomValidity('El campo Codipo Postal es obligatorio')" oninput="setCustomValidity('')">
+                <!-- Provincia  -->
+                <br>
+                <label>Provincia:</label><select id="busqueda_provincia">
+                     <!-- Opciones provincias -->
+                    <option value='alava'>Álava</option>
+                    <option value='albacete'>Albacete</option>
+                    <option value='alicante'>Alicante/Alacant</option>
+                    <option value='almeria'>Almería</option>
+                    <option value='asturias'>Asturias</option>
+                    <option value='avila'>Ávila</option>
+                    <option value='badajoz'>Badajoz</option>
+                    <option value='barcelona'>Barcelona</option>
+                    <option value='burgos'>Burgos</option>
+                    <option value='caceres'>Cáceres</option>
+                    <option value='cadiz'>Cádiz</option>
+                    <option value='cantabria'>Cantabria</option>
+                    <option value='castellon'>Castellón/Castelló</option>
+                    <option value='ceuta'>Ceuta</option>
+                    <option value='ciudadreal'>Ciudad Real</option>
+                    <option value='cordoba'>Córdoba</option>
+                    <option value='cuenca'>Cuenca</option>
+                    <option value='girona'>Girona</option>
+                    <option value='laspalmas'>Las Palmas</option>
+                    <option value='granada'>Granada</option>
+                    <option value='guadalajara'>Guadalajara</option>
+                    <option value='guipuzcoa'>Guipúzcoa</option>
+                    <option value='huelva'>Huelva</option>
+                    <option value='huesca'>Huesca</option>
+                    <option value='illesbalears'>Illes Balears</option>
+                    <option value='jaen'>Jaén</option>
+                    <option value='acoruña'>A Coruña</option>
+                    <option value='larioja'>La Rioja</option>
+                    <option value='leon'>León</option>
+                    <option value='lleida'>Lleida</option>
+                    <option value='lugo'>Lugo</option>
+                    <option value='madrid'>Madrid</option>
+                    <option value='malaga'>Málaga</option>
+                    <option value='melilla'>Melilla</option>
+                    <option value='murcia'>Murcia</option>
+                    <option value='navarra'>Navarra</option>
+                    <option value='ourense'>Ourense</option>
+                    <option value='palencia'>Palencia</option>
+                    <option value='pontevedra'>Pontevedra</option>
+                    <option value='salamanca'>Salamanca</option>
+                    <option value='segovia'>Segovia</option>
+                    <option value='sevilla'>Sevilla</option>
+                    <option value='soria'>Soria</option>
+                    <option value='tarragona'>Tarragona</option>
+                    <option value='santacruztenerife'>Santa Cruz de Tenerife</option>
+                    <option value='teruel'>Teruel</option>
+                    <option value='toledo'>Toledo</option>
+                    <option value='valencia'>Valencia/Valéncia</option>
+                    <option value='valladolid'>Valladolid</option>
+                    <option value='vizcaya'>Vizcaya</option>
+                    <option value='zamora'>Zamora</option>
+                    <option value='zaragoza'>Zaragoza</option>
+
+        </select>
+                <br>
+            </fieldset>
+            <fieldset id="observaciones" style="text-align: center;">
+                <legend>Observaciones</legend>
+                <!-- Observaciones  -->
+                <textarea name="message" rows="10" cols="30" placeholder="Si tienes algo que opinar este es tu sitio"></textarea>
+            </fieldset>
+            <!-- Condiciones de uso -->
+            <a href="condiciones.html" target="popup" onclick="window.open('condiciones.html','popup','width=600,height=600'); return false;">Acepto las condiciones de uso *(me vendes tu alma)</a><input type="checkbox" required><br>
+            <!-- Reset y enviar  -->
+
+            <input type="reset" style="text-align: left">
+            <input type="submit" value="Enviar" style="text-align: right"><br>
         </form>
 
 
@@ -34,7 +164,19 @@
 
 </a><br><br><br>
     </div>
-    <script src="js/main.js" type="text/javascript">
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+                x.type = "text";
+
+        }
+
+        function myReset() {
+            var x = document.getElementById("myInput");
+
+            x.type = "password";
+        }
     </script>
 </body>
 

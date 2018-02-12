@@ -1,6 +1,36 @@
-form{
-    border: 1px solid black;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: darkseagreen;
+
+fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove black;
+}
+input[type="text"]:invalid{
+    color:red;
+}
+input[type="text"]:valid{
+    color:green;
+}
+.radios{
+   margin: auto;
+}
+ form label
+{
+    clear: both;
+    float: left;
+    text-align: right;
+    padding: 10px;
+    margin-left: 35%;
+    width: 150px;
+}
+
+form input
+{
+    clear: both;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

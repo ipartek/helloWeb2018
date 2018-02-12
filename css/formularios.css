@@ -1,0 +1,31 @@
+/*CSS para Formularios*/
+
+form {
+    border: 1px solid #000;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+input[type="text"]:invalid, input[type="number"]:invalid,
+input[type="email"]:invalid, input[type="password"]:invalid
+{
+    color: red;
+}
+
+input[type="text"]:valid, input[type="number"]:valid,
+input[type="email"]:valid,
+input[type="password"]:valid {
+    color: green;
+}
+
+fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove black;
+}
+

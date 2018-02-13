@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Formularios</title>
 
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="css/styles.css">
 
@@ -140,13 +140,7 @@
             <br>
             <label for="pass">Contraseña:</label>
             <input id="password" type="password" name="pass" tabindex="5" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Mínimo 5 caracteres" size="30" title="Introduzca una contraseña válida">
-            <br>
-            <!--<div class="ojoabierto"> se hace con un button y el i de fontawesome-->
-                <input type="image" name="btn_ojo_abierto" id="btn_ojo_abierto"><i class="fa fa-eye fa-2x"></i>
-           <!-- </div>-->
-           <!-- <div class="ojocerrado">
-                <input type="image" name="btn_ojo_cerrado" id="btn_ojo_cerrado"><i class="fa fa-eye-slash" fa-2x hidden></i>
-            </div>-->
+            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
             <br>
             <br>
             <input type="checkbox" name="aceptar" value="1" required title="Debe aceptar las condiciones">Aceptar <a href="#cond" target="_blank" class="condiciones">condiciones de uso</a><br>

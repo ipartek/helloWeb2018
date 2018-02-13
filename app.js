@@ -8,7 +8,8 @@ http.createServer(function (request, response) {
     response.writeHead(200, {'Content-Type': 'text/html'}); //tex/plain para texto plano
 
     //Recibir parametros por GET: se envian parametros y se ven en URL
-    //Ejemplos de uso:http://localhost:8084/?nombre=Aintziñe&apellido=Bizkarra&edad=33
+    //Ejemplos de uso:http://localhost:8084/?nombre=Aintziñ
+    ne&apellido=Bizkarra&edad=33
     //el ? indica que va un par(ametro y se concatenan con & a todo ello se denomina queryParams
     var parametros = url.parse(request.url,true).query;
 

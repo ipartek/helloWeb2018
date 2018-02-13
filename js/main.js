@@ -4,7 +4,14 @@
 
 function init(){
 
-    console.info('DOM listo y cargado');
+    // 5 niveles de Logs o trazas ordenados por prioridad
+    console.debug('Debug DOM listo y cargado'); //saber la variable
+    console.log(' log DOM listo y cargado'); // de traceo. para saber de donde vienes
+    console.info('Info DOM listo y cargado'); // informativos
+    console.warn('Warning DOM listo y cargado'); //fallos pequeños
+    console.error('Error DOM listo y cargado');// error grave
+
+
 
 }
 

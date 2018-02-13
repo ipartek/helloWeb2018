@@ -14,11 +14,37 @@ function passToggle() {
 
 }
 
+function validar(element){
+
+    //Hay que resetear el CustomValidity para que ejecute checkValidity(), si no da error
+    element.setCustomValidity('');
+
+    if (!element.checkValidity()) {
+
+        // set custom validation message
+        //console.debug("if");
+        element.setCustomValidity("El campo no es correcto");
+
+    } else {
+
+        // reset the validation message - makes it valid for checkValidity function
+        //console.debug("else");
+        element.setCustomValidity('');
+
+    }
+
+/*
 function validate() {
 
 
+    console.debug("validate function");
     if (!document.getElementById('nombre').checkValidity()) {
         document.getElementById("nombre").setCustomValidity('Introduce un nombre valido');
+        console.debug("invalid name");
+    } else {
+
+        document.getElementById("nombre").setCustomValidity("");
+        console.debug("else");
     }
 
     if (!document.getElementById('apellido').checkValidity()) {
@@ -33,15 +59,19 @@ function validate() {
         document.getElementById("pass").setCustomValidity('Introduce una contraseña valida');
     }
 
-        if (!document.getElementById('address').checkValidity()) {
+    if (!document.getElementById('address').checkValidity()) {
         document.getElementById("address").setCustomValidity('Introduce una direccion');
     }
 
-        if (!document.getElementById('cp').checkValidity()) {
+    if (!document.getElementById('cp').checkValidity()) {
         document.getElementById("cp").setCustomValidity('Introduce un codigo postal valido');
     }
 
-            if (!document.getElementsByName('sexo').checkValidity()) {
-        document.getElementsByName("sexo").setCustomValidity('Elige un sexo');
-    }
+
+}
+*/
+
+
+
+
 }

@@ -4,7 +4,13 @@
 //Ejecutamos esta funcion al cargar la pagina Web
 function init(){
 
-    console.info('DOM listo y cargado');
+    // 5 niveles de logs o trazas ordenadas por prioridad
+
+    console.debug(' debug DOM listo y cargado');
+    console.log(' log DOM listo y cargado');
+    console.info(' info DOM listo y cargado');
+    console.warn(' warning DOM listo y cargado');
+    console.error(' error DOM listo y cargado');
 
 }
 
@@ -73,4 +79,15 @@ function llamadaApi(){
      xhr.send();
 
 }
+
+function ordenacionEnBurbuja(){
+
+    var numerosDesordenados = [3,0,1,8,7,2,5,4,6,9];
+    var numerosOrdenados;
+    var i = 0;
+    numerosOrdenados(0) = numerosDesordenados.min;
+
+
+}
+
 

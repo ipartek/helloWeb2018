@@ -3,7 +3,12 @@
 
 //Ejecutamos esta funcion al cargar la pagina Web
 function init(){
-    console.info('DOM listo y cargado');
+
+    console.debug('debug DOM listo y cargado');//valor variables
+    console.log('log DOM listo y cargado');//traceo entrar salis sitio
+    console.info('info DOM listo y cargado');//informativos
+    console.warn('warning DOM listo y cargado');//fallos no criticos
+    console.error('error DOM listo y cargado');//errores graves/criticos
 }
 
 function pulsador(){
@@ -98,4 +103,24 @@ function norepeat(num){
         reset();
     }
     return devolver;
+}
+//ordenar de > con la metodologia BubbleSort
+function ordenacionEnBurbuja(){
+    var romper=-1;
+    var numeroDesordenados= [3,0,1,8,7,2,5,4,6,9];
+    for (i=0;i++;i>0){
+        for (j=0;j++;j>numeroDesordenados.length){
+            var z=j++;
+            if(numeroDesordenados[j] >numeroDesordenados[z]){
+
+                var aux=numeroDesordenados[j];
+                numeroDesordenados[j]=numeroDesordenados[z];
+                numeroDesordenados[z]=aux;
+                romper=1;
+            }
+        }
+        if rom
+
+    }
+
 }

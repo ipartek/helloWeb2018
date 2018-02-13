@@ -88,6 +88,6 @@ Ordenar de menor a mayor con la metodologia BubbleSort
 function ordenacionEnBurbuja(){
     //Array, ejecutar por consola
     var numerosDesordenados=[2,4,5,6,6,0];
-
+//array 3018725469 a[3]=3 y [9]=9. Se hace con un for y dentro otro for
 
 }

@@ -84,7 +84,7 @@
         <section id="formulario">
             <h2>Formulario de ejemplo:</h2>
             <!--con el atributo de form "novalidate": evita las validaciones html5-->
-            <form action="#URL_SERVIDOR" method="post">
+            <form action="http://localhost:8084" method="post">
 
                 <fieldset id="datos-personales">
                     <legend>Dator personales</legend>
@@ -198,7 +198,7 @@
                     <label for="interes">Intereses:</label><br>
                     <div id="div-intereses">
                         <div class="intereses">
-                            <input type="checkbox" name="interes" value="deportes" tabindex="11">Deportes <br>
+                            <input type="checkbox" name="interes" value="deportes" id="focus-interes" tabindex="11">Deportes <br>
                             <input type="checkbox" name="interes" value="viajar" tabindex="12">Viajar <br>
                             <input type="checkbox" name="interes" value="fiestas" tabindex="13">Fiestas <br>
                         </div>
@@ -281,7 +281,7 @@
                 datosValidos = true;
             } else {
                 alert('Debe elegir al menos 3 intereses');
-                document.getElementById("div-intereses").focus();
+                document.getElementById("focus-interes").focus();
             }
             return datosValidos;
         }

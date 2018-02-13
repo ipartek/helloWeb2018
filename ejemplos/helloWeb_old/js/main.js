@@ -1,7 +1,13 @@
 /* JavaScript */
 //Ejecutamos esta funcion al cargar la pagina web
 function init(){
+
+    console.debug('Verbose DOM listo y cargado');
     console.info('DOM listo y cargado');
+    console.log('log DOM listo y cargado');
+    console.info('Info DOM listo y cargado');
+    console.warn('Warm DOM listo y cargado');
+    console.error('Error DOM listo y cargado');
 
 }
 
@@ -81,9 +87,11 @@ function llamadaApi(){
             var json= JSON.parse(this.responseText);
         //console.info(json.bpi.USD.rate);
         //mostrar en pantalla
-            document.getElementById("precio").textContent = json.
+            document.getElementById("precio").textContent = json+bpi.EUR.rate + " Euros"
 
-    }
+        }
+
+
   };
     xhr.open("GET", url, true);
     xhr.send();
@@ -92,13 +100,24 @@ function llamadaApi(){
 
 
 }
-    function myFunction() {
-    var x = document.getElementById("password");
-    if (x.type === "password") {
-        x.type = "text";
-    } else {
-        x.type = "password";
-    }
+
+function ordenacionEnBurbuja{
+    var numerosDesordenados = [3,0,1,8,7,2,5,4,6,9];
+    var i=0;
+    for(i=0;i<numerosDesordenados.length;i++)
+        {
+            for(i=numerosDesordenados.lenght();i=0;i--)
+                {
+                            if(numerosDesordenados[i] > numerosDesordenados[i+1])
+            {
+
+
+            numerosDesordenados[i]=numerosDesordenados[i+1];
+            numerosDesordenados[i+1]=numerosDesordenados[i];
+            }
+
+        }
+    console.log(numerosDesordenados);
 }
 
-
+}

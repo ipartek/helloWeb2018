@@ -4,7 +4,11 @@
 //Ejecutamos esta funcion al cargar la pagina Web
 function init(){
 
+    console.debug('Verbose DOM listo y cargado');
     console.info('DOM listo y cargado');
+    console.log();
+    console.warn('Warm DOM listo y cargado');
+    console.error('Err'Verbose DOM listo y cargado'or DOM listo y cargado');
 
 }
 
@@ -71,6 +75,7 @@ function llamadaApi(){
      };
      xhr.open("GET", url , true);
      xhr.send();
+
 
 }
 

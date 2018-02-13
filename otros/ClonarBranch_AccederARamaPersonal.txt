@@ -1,0 +1,10 @@
+1. clonar el repositorio de GitHub a nuestro PC:
+- gitHub seleccionar  nuestro repositorio clone or download -> copiar url
+- brackets, abrir el terminal del commit 
+- git blone y la ruta del repositorio (https://github.com/ipartek/helloWeb2018.git)
+
+2. La rama actual seleccionada por defecto es master, por lo tanto hay que cambiar de rama:
+- desde ms2 entrar a la carpeta del proyecto cd desarrollo/hello web2018
+
+3.Cambiar a otro branch (MikelAranburu):
+git checkout MikelAranburu

@@ -1,7 +1,14 @@
 /* JavaScript */
 // Ejecutamos esta funcion al cargar la pagina Web
 function init() {
-    console.info('DOM listo y cargando');
+
+    //ordenados por prioridad, 5 niveles de log o trazas
+    console.log('LOG(verbose): DOM listo y cargando'); //tracear, por donde va
+    console.debug('Debug: DOM listo y cargando');//valores de variable
+    console.info('Info: DOM listo y cargando');//informativos
+    console.warn('Warning: DOM listo y cargando');//fallos pequeños
+    console.error('Error: DOM listo y cargando');//errores graves
+
 }
 function pulsador (){
     console.info('Boton pulsado');
@@ -53,4 +60,22 @@ function llamadaApi() {
     /* get recoge datos del servidor, post envias datos al servidor */
   xhr.open("GET", url, true);
   xhr.send();
+}
+//ordenar de menor a mayor con el metodo de la burbuja
+
+function ordenacionEnBurbuja(){
+    var numerosDesordenados = [3,0,1,8,7,2,5,4,6,9]
+
+    do {
+    for (i=0;i++;numerosDesordenados.length-1)
+        {
+            var actual= numerosDesordenados[i];
+            var siguiente = numerosDesordenados[i++];
+            if (actual>siguiente)
+                {
+                    numerosDesordenados[i]=siguiente;
+                    numerosDesordenados[i++]=actual;
+                }
+        }
+    }while (numerosDesordenados[0]>numerosDesordenados[numerosDesordenados.length-1])
 }

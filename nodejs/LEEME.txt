@@ -1,0 +1,7 @@
+Para abrir el servidor tienes que poner en la terminal:
+
+cd desarrollo/helloweb2018/nodejs
+
+node app.js
+
+Para probarlo abrir navegador y poner localhost:8080

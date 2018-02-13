@@ -106,9 +106,10 @@ function norepeat(num){
 }
 //ordenar de > con la metodologia BubbleSort
 function ordenacionEnBurbuja(){
-    var romper=-1;
+
     var numeroDesordenados= [3,0,1,8,7,2,5,4,6,9];
     for (i=0;i++;i>0){
+        var romper=-1;
         for (j=0;j++;j>numeroDesordenados.length){
             var z=j++;
             if(numeroDesordenados[j] >numeroDesordenados[z]){

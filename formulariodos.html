@@ -38,7 +38,7 @@
                  </div>
                  <br>
                  <label for="email">Dirección correo electrónico:</label>
-                 <input type="text" name="email" id="email" placeholder="email" tabindex="4" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                 <input type="text" name="email" id="email" placeholder="email" tabindex="4" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" oninvalid="setCustomValidity('No has introducido una contraseña correcta.')" oninput="setCustomValidity('')">
                  <label for="password">Contraseña:</label>
                  <input type="password" name="pass" id="password" placeholder="Introduce tu contraseña" tabindex="5" size="25" maxlength="8" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$
         ">&nbsp;<i onclick="ver()" class="fa fa-eye"></i>

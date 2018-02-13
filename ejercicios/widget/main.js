@@ -27,7 +27,7 @@ function verTiempo() {
     }
 }
 function rellenarWidget(json){
-    var icono=json.weather[1].icon;
+    var icono=json.weather[0].icon;
     var url="http://openweathermap.org/img/w/"+icono+".png"
      document.getElementById("ciudad").textContent=json.name;
     document.getElementById("temperatura").textContent=Math.round(json.main.temp-273)+"º";

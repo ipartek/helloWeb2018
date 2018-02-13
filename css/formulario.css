@@ -1,0 +1,27 @@
+form {
+    border: 1px solid black;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: darkseagreen;
+}
+
+
+
+form input {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+input[type="text"]:invalid{
+    color:red;
+}
+input[type="text"]:valid{
+
+    color:green;
+}
+#envio-formulario{
+    float:right;
+}
+.ancha{
+    width:40%;
+}
+

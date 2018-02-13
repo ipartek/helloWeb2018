@@ -14,6 +14,8 @@ function passToggle() {
 
 }
 
+
+
 function validar(element){
 
     //Hay que resetear el CustomValidity para que ejecute checkValidity(), si no da error

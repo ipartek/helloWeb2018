@@ -3,7 +3,14 @@
 // Ejecutamos esta funcion al cargar la pagina web
 function init(){
 
-    console.info('DOM listo y cargado');
+    /*niveles de logs o trazas ordenados por prioridad*/
+    console.debug('debug listo y cargado'); /*valores de variables*/ /* activar verbose en la consola*/
+    console.log('log listo y cargado'); /*paso por aqu y por alli - para tracear*/
+
+    console.info('info listo y cargado'); /* informativos - usuario registrado*/
+    console.warn('warning listo y cargado'); /* fallos no criticos */
+    console.error('error listo y cargado'); /* errores graves -no se puede conectar a la api*/
+
 }
 
 function push(){
@@ -71,5 +78,31 @@ function llamadaAPI(){
 
 
 
+}
+
+function shortBubble(){
+
+    var array = [3, 0, 1, 8, 7, 2, 5, 4, 6, 9];
+    var cambiado = true;
+
+    do{
+        cambiado=false;
+
+        for(i=0; i<array.length-1;i++){
+            var cambiar;
+            if(array[i]>array[i+1]){
+                cambiar=array[i];
+                array[i]=array[i+1];
+                array[i+1]=cambiar;
+
+                cambiado=true;
+            }
+
+        }
+
+
+    }while(cambiado==true)
+
+        console.info(array);
 }
 

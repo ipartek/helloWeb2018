@@ -46,6 +46,21 @@
 
 
         }
+
+           @keyframes mostrar {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .box:last-child {
+            animation-name: mostrar;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in;
+        }
     </style>
 </head>
 
@@ -152,6 +167,7 @@
             if (numeroinput.value == "" || numeroinput.value == "0") {
 
                 document.getElementById('alertas').style.display = 'block';
+                 document.getElementById('alertas').className = 'alert alert-danger alert-dismissible';
                 document.getElementById("alertas").innerHTML = alerta.replace("$$$", "No seas vago y escribe algo");
 
             }
@@ -162,6 +178,7 @@
 
             if (arrDes.length >= 10) {
                 document.getElementById('alertas').style.display = 'block';
+                 document.getElementById('alertas').className = 'alert alert-danger alert-dismissible';
                 document.getElementById("alertas").innerHTML = alerta.replace("$$$", "No se puede procesar");
             } else { //Añadir numero
 
@@ -222,7 +239,7 @@
                 document.getElementById("alertas").innerHTML = alerta.replace("$$$", "Se necesitan 2 unidades para poder ordenar");
 
             } else {
-                cntNumOrd.value;
+
 
 
                 var len = arrDes.length;
@@ -245,6 +262,7 @@
                 }
                 console.debug("array ordenado" + arrDes);
 
+            return arrDes;
 
 
             }
@@ -264,8 +282,14 @@
 
         /*
         Alertas*/
+         /**
+        * Muestra una Alerta de Bootsratp
+        * id    = Identificador de elemento donde lo vamos a insertar con innerHTML
+        * texto = Texto a mostrar en la Alerta
+        * clase = clase para cambiar el color de la Alerta ( danger, success, ...)
+        */
 
-     function showAlert( id, texto, clase ){
+    /* function showAlert( id, texto, clase ){
             var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
             var contenedor = document.getElementById("alertas");
             contenedor.innerHTML = "";
@@ -273,7 +297,7 @@
             contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
             contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
         }
-
+*/
 
     </script>
 

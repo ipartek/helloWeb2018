@@ -8,6 +8,8 @@ var url  = require('url');
 http.createServer(function (request, response) {
     response.writeHead(200, {'Content-Type': 'text/html'});
 
+    console.log("request %o",request);
+
     //recibir paramatros por GET
     //ejemplo de uso: http://localhost:8084/?nombre=Ander&apellido=Uraga&edad=37
     var parametros = url.parse( request.url, true ).query;

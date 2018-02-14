@@ -13,6 +13,14 @@
             background-color: teal;
             color: #FFF;
         }
+        @keyframes mostrar {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
 
         .row {
             margin: 20px 0;
@@ -31,9 +39,11 @@
         }
 
 
-        .alert {
-            display: none;
-            visibility: hidden;
+
+           .box:last-child {
+            animation-name: mostrar;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in;
         }
     </style>
 
@@ -50,11 +60,10 @@
 
     </header>
     <div class="container">
-        <div class="alert alert-warning alert-dismissible" role="alert" id="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <strong>Warning!</strong> Better check yourself, you're not looking too good.
-        </div>
+
         <div class="row">
+           <div id="alert"></div>
+
             <form class="form-inline">
                 <div class="col-md-3">
                     <div class="form-group">
@@ -95,7 +104,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <input class="btn btn-primary btn-lg btn-block" type="reset" value="Reset">
+                <input class="btn btn-primary btn-lg btn-block" type="reset" value="Reset" onclick="reset()">
             </div>
         </div>
     </div>
@@ -110,22 +119,28 @@
 
     <script>
         var numeroInput = document.getElementById("numeroInput");
+        var numeroInput1 = document.getElementById("numeroInput").addEventListener("change",permitir);
         var cntNumDes = document.getElementById("cntNumDes");
         var cntNumO = document.getElementById("cntNumO");
-        var warning = document.getElementById("alert");
+        //var warning = document.getElementById("alert");
         var spanNumero = '<span class="box">##numero##</span>';
-        var boton= document.getElementById("añadir");
+        var boton= document.getElementById("añadir")
 
         var arrDes = []; // Array con numeros desordenados
         var aOrdenado = [];
         /**
          * recoger numero del input y meterlo en cntNumDes
          */
+        if(boton.disabled==true)
+            {
+                showAlert("alert","Introduce algún numero","warning");
+                // alert("ojoi");
+            }
+
         function nuevoNumero() {
 
 
-           if(numeroInput.value!=="")
-               {
+
                    boton.disabled="false"
             console.debug("Añadir nuevo numero %s", numeroInput.value)
 
@@ -136,16 +151,46 @@
             numeroInput.value = "";
             numeroInput.focus();
             var cont = 0;
-            cont = cont + 1;
-               }
-            else{
-                alert("OJO")
+             if(boton.disabled==true)
+            {
+                showAlert("alert","Introduce algún numero","warning");
+                // alert("ojoi");
             }
+            if(arrDes.length>=10)
+                {
+
+                showAlert("alert","No podemos introducir más de 10 numeros","danger");
+                boton.disabled=true;
+
+                }
+
         }
 
+            function permitir(){
+                if(numeroInput.value !== 0){
+                    boton.disabled=false;
+                    showAlert("alert","Perfecto!!!!!!","success");
+                }
+
+                else{
+
+                    boton.disabled=true;
+                     showAlert("alert","Introduce un numero","warning");
+                }
+
+                // alert("ojoi");
+            }
 
         function ordenar() {
+
            cntNumOr.innerHTML="";
+              if(arrDes.length < 2)
+                {
+                    showAlert("alert","No se puede hacer comparación con un sólo numero","danger");
+                }
+            else{
+
+
             var len = arrDes.length;
 
             for (var i = 0; i < len; i++) {
@@ -159,7 +204,7 @@
                     }
                 }
             }
-            {
+
                 for (var i = 0; i < len; i++) {
 
                     // cntNumOr.innerHTML += spanNumero.replace('##numero##', arrDes[i]);
@@ -170,9 +215,26 @@
                 }
 
 
-                // cambio
 
-        }}
+
+        }
+        }
+
+           function showAlert( id, texto, clase ){
+            var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
+            var contenedor = document.getElementById(id);
+            contenedor.innerHTML = "";
+           contenedor.innerHTML = alerta;
+            contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
+            contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
+
+        }
+        function reset(){
+            arrDes=[];
+            cntNumOr.innerHTML="";
+            cntNumDes.innerHTML="";
+            numeroInput.focus();
+        }
     </script>
 </body>
 </html>

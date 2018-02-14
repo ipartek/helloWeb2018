@@ -63,19 +63,44 @@ function llamadaApi() {
 }
 //ordenar de menor a mayor con el metodo de la burbuja
 
-function ordenacionEnBurbuja(){
+function ordenacionEnBurbuja2(){
     var numerosDesordenados = [3,0,1,8,7,2,5,4,6,9]
-
+    console.debug("array DESordenado " + numerosDesordenados );
     do {
-    for (i=0;i++;numerosDesordenados.length-1)
+    for (var contador=0;contador<=numerosDesordenados.length-1;contador++)
         {
-            var actual= numerosDesordenados[i];
-            var siguiente = numerosDesordenados[i++];
+            var actual= numerosDesordenados[contador];
+            var siguiente = numerosDesordenados[contador+1];
             if (actual>siguiente)
                 {
-                    numerosDesordenados[i]=siguiente;
-                    numerosDesordenados[i++]=actual;
+                    numerosDesordenados[contador]=siguiente;
+                    numerosDesordenados[contador+1]=actual;
                 }
         }
     }while (numerosDesordenados[0]>numerosDesordenados[numerosDesordenados.length-1])
+        console.debug("array ordenado " + numerosDesordenados );
 }
+
+/**
+     Ordenar de manor a mayor con el metodologia BubbleSort
+ */
+ function ordenacionEnBurbuja() {
+
+     var arr = [3, 0, 1, 8, 7, 2, 5, 4, 6, 9];
+     console.debug("array DESordenado " + arr );
+     var len = arr.length;
+
+     for (var i = 0; i < len; i++) {
+         for (var j = 0; j < len - i - 1; j++) {
+             if (arr[j] > arr[j + 1]) {
+                 // cambio
+                 var temp = arr[j];
+                 arr[j] = arr[j + 1];
+                 arr[j + 1] = temp;
+             }
+         }
+     }
+
+    console.debug("array ordenado " + arr );
+
+ }

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <style>
+        header {
+            background-color: teal;
+            color: #FFF;
+
+        }
+
+        .row {
+            margin: 20px 0px
+        }
+        @keyframes mostrar {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .box {
+            /* display: flex;*/
+            widows: 75px;
+            height: 75px;
+            background-color: grey;
+            color: #FFF;
+            font-size: 2em;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .box:last-child {
+            animation-name: mostrar;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in;
+        }
+
+        #alerta{
+            display: none;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <h1>Bublesort</h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-warning alert-dismissible" role="alert" id="alerta">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-inline">
+                    <div class="col-md-3">
+                        <!--formulario en linea, horizontal -->
+                        <div class="form-group">
+                            <input type="number" class="form-control" step="1" max="100" min="0" id="numeroInput" placeholder="Dime un numero">
+                            <!--step, indica de cuanto a cuanto es el aumento -->
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir Numero</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--fin row 1-->
+        <div class="row">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Numeros desordenados</div>
+                <div class="panel-body" id="cntNumDes">
+                    <!--propiedad innerHTML
+                    <span class="box">3</span>
+                    <span class="box">6</span>
+                   end innerHTML-->
+                </div>
+            </div>
+
+        </div>
+        <!-- row 2 -->
+        <div class="row">
+            <div class="panel panel-success">
+                <div class="panel-heading">Numeros ordenados</div>
+                <div class="panel-body" id="cntNumOrd">
+                    <!--<span class="box">3</span> -->
+                </div>
+            </div>
+        </div>
+        <!-- fin row 3-->
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" onclick="ordenar()" class="btn btn-default btn-lg btn-block">Ordenar</button>
+                <!-- boton de bloque, ocupa todo el bloque -->
+            </div>
+        </div>
+        <!--fin row 4-->
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" onClick="limpiar()" class="btn btn-default btn-lg btn-block">Limpiar</button>
+                <!-- boton de bloque, ocupa todo el bloque -->
+            </div>
+        </div>
+        <!--fin row 4-->
+    </div>
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+        //variables globales
+        var numeroInput = document.getElementById("numeroInput");
+        var cntNumDes = document.getElementById("cntNumDes");
+        var spanNumero = '<span class="box">##numero##</span>';
+        var alerta = document.getElementById("alerta");
+        var alertaTexto =
+            '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong>##alerta##.';
+        var aDesordenado = []; //array con numeros desordenados vacio
+        var aOrdenado = []; //array con numeros ordenados vacio
+        var sePuedeOrdenar = false;
+        /**
+         *recoger numero del input y meterlo en div#cntNumDes
+         */
+        function nuevoNumero() {
+            console.debug("Añadir nuevo numero %s", numeroInput.value);
+            //añadir numero
+            cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
+            aDesordenado.push(numeroInput.value);
+            //limpiar input
+            // numeroInput.nodeValue = "";
+            borrarNumero();
+            numeroInput.focus();
+
+        }
+
+        function limpiar() {
+            borrarNumero();
+            borrarAñadidos();
+            borrarArrayOrdenado();
+            borrarMemoria();
+            borrarAlerta();
+
+        }
+
+        function ordenar() {
+            alertas();
+            if (sePuedeOrdenar == true) {
+                borrarAlerta();
+                ordenacionEnBurbuja();
+                borrarArrayOrdenado();
+                escribirArray();
+            }
+
+
+        }
+
+        function escribirArray() {
+            var arr = aOrdenado;
+            var len = arr.length;
+            for (var i = 0; i < len; i++) {
+                cntNumOrd.innerHTML += spanNumero.replace('##numero##', arr[i]);
+            }
+        }
+        function borrarAlerta(){
+             document.getElementById("alerta").style.display = "none";
+        }
+
+        /**
+     Ordenar de manor a mayor con el metodologia BubbleSort
+ */
+        function ordenacionEnBurbuja() {
+
+            var arr = aDesordenado;
+            console.debug("array DESordenado " + arr);
+            var len = arr.length;
+
+            for (var i = 0; i < len; i++) {
+                for (var j = 0; j < len - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        // cambio
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+
+            aOrdenado = arr;
+
+        }
+
+        function borrarArrayOrdenado() {
+            cntNumOrd.innerHTML = "";
+        }
+
+        function borrarAñadidos() {
+            cntNumDes.innerHTML = "";
+        }
+
+        function borrarMemoria() {
+            aDesordenado = [];
+            aOrdenado = [];
+            borrarNumero();
+            sePuedeOrdenar = false;
+        }
+
+        function borrarNumero() {
+            numeroInput.value = "";
+
+        }
+
+        function alertas() {
+            var longitud = aDesordenado.length;
+            if (longitud > 10) {
+                sePuedeOrdenar = false;
+                showAlert(alerta,"No tengo tanta capacidad de procesacion","warning");
+                /*alerta.innerHTML = alertaTexto.replace('##alerta##', "No tengo tanta capacidad de procesacion");*/
+                showAlert();
+            } else if (longitud == 1) {
+                sePuedeOrdenar = false;
+                alerta.innerHTML = alertaTexto.replace('##alerta##', "por favor, necesito al menos 2 numeros para poder ordenar");
+            } else if (longitud == 0) {
+                sePuedeOrdenar = false;
+                alerta.innerHTML = alertaTexto.replace('##alerta##', "no seas vago y mete por lo menos 2 numeros");
+            } else
+                sePuedeOrdenar = true;
+            if (sePuedeOrdenar == false)
+                 document.getElementById("alerta").style.display = "block";
+
+        }
+        /** Muestra una alerta de bootstrap
+        */
+
+
+               /**
+        * Muestra una Alerta de Bootsratp
+        * id    = Identificador de elemento donde lo vamos a insertar con innerHTML
+        * texto = Texto a mostrar en la Alerta
+        * clase = clase para cambiar el color de la Alerta ( danger, success, ...)
+        */
+        function showAlert( id, texto, clase ){
+            var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
+            var contenedor = document.getElementById(id);
+            contenedor.innerHTML = "";
+            contenedor.innerHTML = alerta;
+            contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
+            contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
+        }
+
+    </script>
+</body>
+
+</html>

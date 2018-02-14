@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <title>Inserccion y ordenacion de numeros</title>
+    <meta charset="utf-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+    <style>
+        header {
+            background-color: teal;
+            color: #FFF;
+        }
+
+        .row {
+            margin: 20px 0;
+        }
+
+        @keyframes mostrar {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .box {
+            /*display: flex;*/
+            display: inline-block;
+            width: 75px;
+            height: 75px;
+            background-color: grey;
+            color: #FFF;
+            font-size: 3em;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .box:last-child {
+            animation-name: mostrar;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>BubbleSort</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <form class="form-inline">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="number" class="form-control" step="1" max="10" min="0" id="numeroInput" placeholder="Nº">
+                    </div>
+                </div>
+                <button type="button" onclick="nuevoNumero()" class="btn btn-default">Añadir número</button>
+            </form>
+
+        </div>
+
+        <div class="row">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Inserción de números</div>
+                <div class="panel-body">
+                    <div class="panel-body" id="cntNumDes">
+
+                        <!------ InnerHTML -------
+                         <span class="box">3</span>
+
+                        --- end InnerHTML ----->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="panel panel-success">
+                <div class="panel-heading">Ordenación de numeros</div>
+                <div class="panel-body">
+                    <div class="panel-body" id="cntNumOr">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-warning btn-lg btn-block" onclick="ordenar()">Ordenar números</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-warning btn-lg btn-block" onclick="reset()">Reset</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        //Variables globales
+        var numeroInput = document.getElementById("numeroInput");
+        var cntNumDes = document.getElementById("cntNumDes");
+        var cntNumOr = document.getElementById("cntNumOr")
+        var spanNumero = '<span class="box">##numero##</span>'
+
+        var arrDes = []; //Array con números desordenados
+        var arrOrdenado = []; //Array con números ordenados
+
+
+        /*
+         *Recoger numero del input y meterlo el div#cntNumDes
+         */
+
+
+        function nuevoNumero() {
+            console.debug("añadir nuevo numero %s", numeroInput.value);
+
+            if (numeroInput.value !== "") {
+                //Añadir numero
+                cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
+                arrDes.push(numeroInput.value);
+
+                //Limpiar input y mantener focus
+                numeroInput.value = "";
+                numeroInput.focus();
+
+                if(arrDes.length=9){
+                    alert
+                }
+
+
+            } else {
+                alert("Escribe un numero por favor");
+            }
+
+
+        }
+
+        function ordenar() {
+            var len = arrDes.length;
+
+            cntNumOr.innerHTML = "";
+
+
+            for (var i = 0; i < len; i++) {
+                for (var j = 0; j < len - i - 1; j++) {
+                    if (arrDes[j] > arrDes[j + 1]) {
+                        // cambio
+                        var temp = arrDes[j];
+                        arrDes[j] = arrDes[j + 1];
+                        arrDes[j + 1] = temp;
+                    }
+                }
+            }
+            for (var i = 0; i < len; i++) {
+                cntNumOr.innerHTML += spanNumero.replace('##numero##', arrDes[i]);
+            }
+
+
+
+
+        }
+
+            function showAlert( id, texto, clase ){
+            var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
+            var contenedor = document.getElementById(id);
+            contenedor.innerHTML = "";
+            contenedor.innerHTML = alerta;
+            contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
+            contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
+        }
+
+
+    </script>
+
+
+</body>
+
+
+</html>

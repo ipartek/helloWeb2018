@@ -1,79 +1,224 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Formulario</title>
-    <link href="../../css/form.css" rel="stylesheet">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<title>Formulario</title>
+
+	<link type="text/css" rel="stylesheet" href="font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="../../css/form.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
+
 <body>
-   <h1>Formulario</h1>
-   <div>
-    <p>Todos los formularios tienen  que tener un boton se <b>submit</b> (envío de los datos), además de un valor en el attr <b>action.</b></p>
+<div class="caja contenedor">
+	<div class="fila">
+		<div class="columna_grande">
+					<div class="panel panel_formulario">
 
-    <p><b>Disabled</b> no se envía al submitar el formulario.</p>
-    <p><b>readonly</b> sí se envía al submitar el formulario.</p>
-    <p><b>tabindex</b>es necesario por accesibilidad.</p>
-   </div>
+						<div class="panel_cabecera">
+							<h2 class="title">FORMULARIO</h2>
+						</div>
 
-      <!--form2-->
-      <div id="contenedor">
-          <div id="form-div">
-            <form class="form" id="form1">
+						<div class="panel_cuerpo">
+							<form role="form">
+						<fieldset>
+						<legend>Datos personales</legend>
+							<div class="columna">
+								<div class="form-group">
+									<label class="control-label"><i class="fa fa-user"></i> Nombre</label> <span class="rojo">*</span>
+									<input type="text" class="control_formulario" id="nombre" required  placeholder="Introduce tu nombre" tabindex="1"/>
+								</div>
+							</div>
 
-              <p class="nombre">
-                <label for="nombre">Nombre:</label>
-                <input
-                       name="nombre"
-                       type="text"
-                       placeholder="Mínimo dos letras, por favor"
-                       id="nombre"
-                       required="required"
-                       pattern="[A-Za-z]{2,120}"
-                       tabindex="1">
-              </p>
+							<div class="columna">
+								<div class="form-group">
+									<label class="control-label"><i class="fa fa-user"></i> Apellido</label> <span class="rojo">*</span>
+									<input type="text" class="control_formulario" id="usernombre" required placeholder="Introduce tu apellido" tabindex="2"/>
+								</div>
+							</div>
 
-              <p class="cp">
-                <label for="cp">Código Postal:</label>
-                <input name="cp"
-                       type="number"
-                       placeholder="Mínimo 5 números, por favor"
-                       id="cp"
-                       tabindex="2"
-                       size="5">
-              </p>
+							<div class="columna">
+								<div class="form-group">
+									<label class="control-label"><i class="fa fa-paper-plane-o"></i> Email</label> <span class="rojo">*</span>
+									<input type="email" class="control_formulario" id="email" required tabindex="3" />
+								</div>
+							</div>
 
 
-              <p class="mail">
-                <label for="mail">Email:</label>
-                <input
-                    name="email"
-                    type="email"
-                    id="mail"
-                    placeholder="Email"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
-              </p>
-
-               <p class="psw">
-                <label for="psw">Contraseña:</label>
-                <input
-                    name="psw"
-                    type="password"
-                    id="psw"
-                    placeholder="Mínimo 5 carácteres"
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
-              </p>
+							  <div class="columna">
+								<div class="form-group">
+									<label class="control-label"><i class="fa fa-lock"></i> Contraseña</label> <span class="rojo">*</span>
+									<input type="password" class="control_formulario" id="password" required tabindex="4" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+								</div>
+							  </div>
 
 
-             <!-- <p class="text">
-                <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Commentario"></textarea>
-              </p>-->
-            <div class="submit">
-                <input type="reset" value="Borrar" id="button-reset"/>
-                <input type="submit" value="Enviar" id="button-azul"/>
-              </div>
 
-            </form>
+							  <div class="columna">
+								<div class="form-group">
+									<label class="control-label"><i class="fa fa-square"></i> Género</label>
+									<div class="radio">
+
+										<label class="option button">
+										<input type="radio" name="genero" value="hombre"/>
+										<span class="button-radio"></span>
+										</label><label>Hombre</label>
+
+										<label class="option button">
+										<input type="radio" name="genero" value="mujer"/>
+										<span class="button-radio"></span>
+										</label><label>Mujer</label>
+
+										<label class="option button">
+										<input type="radio" name="genero" value="otro"/>
+										<span class="button-radio"></span>
+										</label><label>Otro</label>
+									</div>
+								</div>
+							  </div>
+
+						</fieldset>
+
+							<fieldset>
+							<legend>Domicilio</legend>
+
+									<div class="columna">
+										<div class="form-group">
+											<label class="control-label"><i class="fa fa-home"></i> Calle</label>
+											<input type="text" class="control_formulario" id="calle" />
+										</div>
+									</div>
+
+									<div class="columna">
+										<div class="form-group">
+											<label class="control-label"><i class="fa fa-envelope"></i> Código Postal</label>
+											<input type="text" class="control_formulario" id="cp" />
+										</div>
+									</div>
+
+									<div class="columna">
+										<div class="form-group">
+											<label class="control-label"><i class="fa fa-map-marker"></i> Provincia</label>
+											<select class="control_formulario" id="porvincia">
+												 <option value="-">- Selecciona -</option>
+											     <option value='alava'>Álava</option>
+												 <option value='albacete'>Albacete</option>
+												 <option value='alicante'>Alicante/Alacant</option>
+												 <option value='almeria'>Almería</option>
+												 <option value='asturias'>Asturias</option>
+												 <option value='avila'>Ávila</option>
+												 <option value='badajoz'>Badajoz</option>
+												 <option value='barcelona'>Barcelona</option>
+												 <option value='burgos'>Burgos</option>
+												 <option value='caceres'>Cáceres</option>
+												 <option value='cadiz'>Cádiz</option>
+												 <option value='cantabria'>Cantabria</option>
+												 <option value='castellon'>Castellón/Castelló</option>
+												 <option value='ceuta'>Ceuta</option>
+												 <option value='ciudadreal'>Ciudad Real</option>
+												 <option value='cordoba'>Córdoba</option>
+												 <option value='cuenca'>Cuenca</option>
+												 <option value='girona'>Girona</option>
+												 <option value='laspalmas'>Las Palmas</option>
+												 <option value='granada'>Granada</option>
+												 <option value='guadalajara'>Guadalajara</option>
+												 <option value='guipuzcoa'>Guipúzcoa</option>
+												 <option value='huelva'>Huelva</option>
+												 <option value='huesca'>Huesca</option>
+												 <option value='illesbalears'>Illes Balears</option>
+												 <option value='jaen'>Jaén</option>
+												 <option value='acoruña'>A Coruña</option>
+												 <option value='larioja'>La Rioja</option>
+												 <option value='leon'>León</option>
+												 <option value='lleida'>Lleida</option>
+												 <option value='lugo'>Lugo</option>
+												 <option value='madrid'>Madrid</option>
+												 <option value='malaga'>Málaga</option>
+												 <option value='melilla'>Melilla</option>
+												 <option value='murcia'>Murcia</option>
+												 <option value='navarra'>Navarra</option>
+												 <option value='ourense'>Ourense</option>
+												 <option value='palencia'>Palencia</option>
+												 <option value='pontevedra'>Pontevedra</option>
+												 <option value='salamanca'>Salamanca</option>
+												 <option value='segovia'>Segovia</option>
+												 <option value='sevilla'>Sevilla</option>
+												 <option value='soria'>Soria</option>
+												 <option value='tarragona'>Tarragona</option>
+												 <option value='santacruztenerife'>Santa Cruz de Tenerife</option>
+												 <option value='teruel'>Teruel</option>
+												 <option value='toledo'>Toledo</option>
+												 <option value='valencia'>Valencia/Valéncia</option>
+												 <option value='valladolid'>Valladolid</option>
+												 <option value='vizcaya'>Vizcaya</option>
+												 <option value='zamora'>Zamora</option>
+												 <option value='zaragoza'>Zaragoza</option>
+											</select>
+										</div>
+									</div>
+
+
+
+
+									<div class="columna">
+										<div class="form-group">
+										 <label class="control-label"><i class="fa fa-thumbs-o-up"></i> Aficiones</label>
+											<div class="checkbox">
+												<label>Dibujar
+													  <input type="checkbox">
+													  <span></span>
+													</label>
+													<label>Leer
+													  <input type="checkbox">
+													  <span></span>
+													</label>
+													<label>Escribir
+													  <input type="checkbox">
+													  <span></span>
+													</label>
+													<label>Pasear
+													  <input type="checkbox">
+													  <span></span>
+													</label>
+											</div>
+										</div>
+									</div>
+
+									<div class="columna">
+										<div class="form-group">
+											<label class="control-label"><i class="fa fa-pencil"></i> Observaciones</label>
+											<textarea class="control_formulario" id="txt"></textarea>
+										</div>
+									</div>
+
+							</fieldset>
+
+								<div class="form-group">
+									<div class="checkbox">
+										<label class="option button">
+											<input type="checkbox" id="remember" name="remember" value="remember" />
+											<span class="button-checkbox"></span>
+										</label>
+										<label>He leido y acepto los <a href="#">Términos y Condiciones</a>.</label>
+									</div>
+								</div>
+
+								<div class="form-group margin-top">
+									<button type="reset" class="estilo_boton btn-borrar">Borrar</button>
+									<button type="submit" class="estilo_boton btn-enviar">Enviar</button>
+									<hr>
+									<p><span class="rojo">*</span> Campos obligatorios.</p>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+        	</div>
+
         </div>
-   </div>
-</body>
+
+    </body>
+
 </html>

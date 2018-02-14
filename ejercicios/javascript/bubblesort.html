@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>BubbleSort</title>
+
+    <!--RWD-->
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <!--CARGAR ESTILOS EXTERNOS-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Bootstrap optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!--CARGAR ESTILOS LOCALES-->
+    <style>
+        /*HEADER*/
+
+        header.main {
+            background-color: teal;
+            color: #fff;
+        }
+
+        /*CUERPO*/
+
+        .row {
+            margin: 20px 0;
+        }
+
+        @keyframes mostrar {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .box {
+            display: inline-block;
+            width: 50px;
+            height: auto;
+            background-color: grey;
+            color: #fff;
+            font-size: 2em;
+            text-align: center;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        #cntNumDes .box:last-child {
+            animation-name: mostrar;
+            animation-duration: .5s;
+            animation-timing-function: ease-in;
+        }
+
+
+
+        .center-block {
+            margin-bottom: 10px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main">
+        <div class="container">
+            <h1>Bubble Sort</h1>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <section class="main">
+            <div class="row">
+                <form class="form-inline">
+                    <div class="col-xs-12 col-sm-2">
+                        <div class="form-group">
+                            <input type="number" min=0 max=300 class="form-control" id="inputNumber">
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-10">
+                        <button type="button" class="btn btn-primary" onclick="anadirNum()">Añadir número</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <div id="divAlertas"></div>
+
+            <div class="row col-sm-12">
+                <div class="panel panel-danger">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading" id="cntNumDesHeader">Números desordenados</div>
+                    <div class="panel-body" id="cntNumDes">
+
+                        <!--Ejemplo: <span class="box">72</span>-->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row col-sm-12">
+                <div class="panel panel-success">
+                    <div class="panel-heading">Números ordenados</div>
+                    <div class="panel-body" id="cntNumOrd">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row col-sm-12">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-success btn-lg center-block" onclick="ordenacionEnBurbuja()">ORDENAR</button>
+                    <button type="button" class="btn btn-danger btn-lg center-block" onclick="reset()">RESTABLECER</button>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+
+    <!-- CARGA DE SCRIPTS EXTERNOS -->
+    <!-- jQuery v2.2.4 minified (dado que no vamos a aplicar cambios en el código de jQuery, usamos la versión 'minified' que viene sin indentar) -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+    </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--SCRIPT LOCAL-->
+    <script>
+        // Variables del DOM
+        var inputNum = document.getElementById("inputNumber");
+        var cntNumDesHeader = document.getElementById("cntNumDesHeader");
+        var cntNumDes = document.getElementById("cntNumDes");
+        var cntNumOrd = document.getElementById("cntNumOrd");
+        var alerta = document.getElementById("alerta");
+        var txtAlerta = document.getElementById("txtAlerta");
+
+        // Constantes
+        const MIN = parseInt(inputNum.min); // Valor mínimo
+        const MAX = parseInt(inputNum.max); // Valor máximo
+        const MAX_ELEM = 10; // Máximo de elementos de las lista
+
+        // Códigos de alerta
+        const notMinLenth = "notMinLenth";
+        const outOfRange = "outOfRange";
+        const listaCompleta = "listaCompleta";
+
+        // Variables globales
+        var listNum = []; // Array de números
+        var spanNumero = '<span class="box">#newNum#</span>';
+
+
+        // FUNCIONES
+
+        /**
+         *   Método para añadir un nuevo número a la lista desordenada
+         **/
+        // FUTURE: Habrá que limpiar (sobrescribir) las listas con // lista.innerHTML = "" // al pulsar el botón ORDENAR
+        function anadirNum() {
+
+            // Mostrar en consola nuevo número
+            console.debug("Nuevo número %s", inputNum.value);
+
+            if (validarNumero(inputNum.value) && inputNum.value != "") {
+
+                if (listNum.length < MAX_ELEM) {
+                    // crear nuevo elemento <span> con el nuevo número
+                    // Forma simple: cntNumDes.innerHTML = "<span class='box'>" + inputNum.value + "</span>"
+                    cntNumDes.innerHTML += spanNumero.replace("#newNum#", inputNum.value);
+                    cntNumDesHeader.innerHTML = "Números desordenados: [" + (listNum.length + 1) + "]";
+                    // añadir número a la lista de números desordenada, SI tiene menos de 10 elementos
+                    listNum.push(inputNum.value);
+                } else {
+                    mostrarAlertas(listaCompleta);
+                }
+
+
+
+            }
+            // limpiar el input y devolver focus
+            inputNum.value = "";
+            inputNum.focus();
+
+        }
+
+
+        /*
+         *   Método para validar que el nuevo número a añadir está en el rango definido
+         */
+        function validarNumero(num) {
+
+            var esValido = true;
+
+            if (!(MIN <= num && num <= MAX)) {
+                //alert("Debe insertar un número entre " + MIN + " y " + MAX);
+                mostrarAlertas(outOfRange);
+                esValido = false;
+            }
+            console.info("Debe insertar un número entre " + MIN + " y " + MAX);
+            return esValido;
+        }
+
+
+        /*
+            Método para ordenar una lista de números: metodología de la burbuja "BubleSort"
+            PRE: obtiene una lista de números desordenados
+            POST: devuelve la misma lista de números ordenada
+        */
+        function ordenacionEnBurbuja() {
+
+            if (listNum.length < 2) {
+                mostrarAlertas(notMinLenth);
+            } else {
+                // variables de posiciones
+                var sig;
+                var ult_pos = listNum.length;
+                var iteracion = 0;
+                var temp;
+
+                // variables de stop
+                var stop = false;
+                var sin_cambios;
+
+                // pintar lista en su estado inicial:
+                console.debug("Lista inicial: " + listNum);
+
+                // iterar tantas veces como posiciones tiene el array o hasta que la lista este ordenada
+                while (iteracion < listNum.length && !stop) {
+                    // preparar las posición para la siguiente iteración
+                    sig = 1; // se compara el par de las posiciones 'sig-1' y su posterior 'sig'
+                    ult_pos--; // en cada iteración se comprar una posición menos, dado que la última posición ya está ocupara por el mayor valor
+                    sin_cambios = 0;
+                    // comparar las posiciones inmediatas y ordenarlas de menor a mayor
+                    for (var i = 0; i < ult_pos; i++) {
+                        if (listNum[sig - 1] > listNum[sig]) {
+                            // invertir orden el los valores
+                            temp = listNum[sig - 1];
+                            listNum[sig - 1] = listNum[sig];
+                            listNum[sig] = temp;
+                        } else {
+                            // contabilizar las comparaciones sin movimientos
+                            sin_cambios++;
+                        }
+                        // incrementar posicion para comparar el siguiente par
+                        sig++;
+                    }
+                    iteracion++;
+                    // comprobar si ha habido cambios en la iteración
+                    if (i - 1 < sin_cambios) {
+                        stop = true;
+                    } else {
+                        // mostrar por consola la iteración y el estado actual de la lista
+                        console.debug("ITERACIÓN Nº" + iteracion + " : " + listNum);
+                    }
+                }
+                // Mostrar resultado de la lista ordenada y el nº de iteraciones necesarias
+                console.debug("Lista ordenada: " + listNum + " en " + (iteracion - 1) + "º iteraciones");
+
+                //return listNum;
+
+                // Limpiar el contenido de la lista ordenada anterior
+                cntNumOrd.innerHTML = "";
+
+                // pintar lista ordenada
+                for (var j = 0; j < listNum.length; j++) {
+                    cntNumOrd.innerHTML += spanNumero.replace("#newNum#", listNum[j]);
+                }
+
+                // Mostrar el número de iteraciones necesitadas para ordenar la lista
+                //iteraciones.innerHTML = iteracion - 1;
+            }
+
+
+        }
+
+
+        /*
+        *   Método para mostrar diferentes tipos de alerta y sus mensajes dependiendo del código de error
+        *   errorCode: código de error para especificar el texto de la alerta
+        */
+        function mostrarAlertas(errorCode) {
+            switch (errorCode) {
+                case "outOfRange":
+                    tipoAlerta = "warning";
+                    mensajeAlerta = " Debe insertar un número en el rango [" + MIN + " - " + MAX + "].";
+                    break;
+                case "listaCompleta":
+                    tipoAlerta = "warning";
+                    mensajeAlerta = " La lista ya esta completa.";
+                    break;
+                case "notMinLenth":
+                    tipoAlerta = "warning";
+                    mensajeAlerta = " Introduzca al menos 2 números.";
+                    break;
+                default:
+                    break;
+            }
+
+            document.getElementById("divAlertas").innerHTML = '<div class="alert alert-' + tipoAlerta + ' alert-dismissible" role="alert"><button type="button" class="close"data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Atención!</strong>' + mensajeAlerta + '</div>';
+
+        }
+
+        /*
+         *   Método para restablecer las listas (variables de interzas y de JS)
+         */
+        function reset() {
+
+            // resetear las listas que se muestran en pantalla
+            cntNumDes.innerHTML = "";
+            cntNumOrd.innerHTML = "";
+            cntNumDesHeader.innerHTML = "Números desordenados";
+            // resetear las variables de las listas
+            listNum = [];
+
+            // Eliminar la alerta en caso de existir
+            document.getElementById("divAlertas").innerHTML = "";
+        }
+    </script>
+</body>
+</html>

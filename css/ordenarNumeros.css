@@ -1,0 +1,65 @@
+        header {
+            background-color: teal;
+            color: white;
+        }
+
+        .row {
+            margin: 20px 0;
+        }
+
+        .panel-body {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            flex-flow: row;
+            flex-wrap: wrap;
+
+        }
+
+        .no-padding {
+            padding: 0;
+        }
+
+        input[type="number"] {
+            display: inline-block;
+            width: 100%;
+
+        }
+
+        .btn[onclick="addNumber()"] {
+            width: 100%;
+        }
+
+        .box {
+
+            height: auto;
+            width: auto;
+            min-width: 9%;
+            font-size: 3em;
+            text-align: center;
+            background-color: darkgray;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+
+
+
+        @keyframes mostrar {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        div#divNumDes .box:last-child,
+        div#divNumOrd .box,
+        #alert {
+            animation-name: mostrar;
+            animation-duration: .5s;
+
+        }

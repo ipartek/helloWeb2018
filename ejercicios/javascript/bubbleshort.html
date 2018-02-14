@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ordenar</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/ordenarNumeros.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Bubble Short</h1>
+        </div>
+        <!-- end container -->
+    </header>
+
+    <div class="container">
+        <div class="row" id="alert">
+
+        </div>
+
+        <div class="row">
+            <form class="form-inline">
+                <div class="col-xs-3 no-padding">
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="inputNumero" step="1">
+                        <!-- step hace que los numero crezcan en incrementos de ese valor
+                        <input type="text" class="form-control" id="inputNumero">-->
+                    </div>
+                </div>
+                <div class="col-xs-9 no-padding">
+                    <button type="button" onclick="addNumber()" class="btn btn-default ">Add Number</button>
+                    <!-- input col-md-3 button 9 -->
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Numeros desordenados</div>
+                <div class="panel-body" id="divNumDes">
+
+                    <!-- innerHTML -->
+                    <!-- ejemplo
+                    <span class="box">1</span>
+                    -->
+                    <!-- end innerHTML -->
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="panel panel-success">
+                <div class="panel-heading">Numeros ordenados</div>
+                <div class="panel-body" id="divNumOrd">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <button type="button" class="btn btn-lg btn-primary btn-block" onclick="shortBubble()">Ordenar</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <button type="button" class="btn btn-lg btn-danger btn-block" onclick="limpiar()">Limpiar</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- end container -->
+
+    <!-- Jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <script src="/js/ordenarNumeros.js">
+    </script>
+</body>
+
+</html>

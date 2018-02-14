@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>BubbleSort</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- estilos -->
+	<style>
+		header {
+			background-color: teal;
+			color: #FFF;
+		}
+
+		.row {
+			margin: 20px 0;
+		}
+
+		.box {
+			display: inline-block;
+			width: 75px;
+			height: 75px;
+			background-color: grey;
+			color: #FFF;
+			font-size: 3em;
+			text-align: center;
+			padding-top: 10px;
+			margin-right: 10px;
+		}
+
+		.box:last-child {
+			animation-name: mostrar;
+			animation-duration: 1.5s;
+			animation-timing-function: ease-in;
+
+		}
+
+		@keyframes mostrar {
+			0% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+	</style>
+
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+	<header>
+
+		<div class="container">
+			<h1>BubbleSort</h1>
+		</div>
+	</header>
+
+	<div id="alerta"> </div>
+
+	<div class="container">
+
+		<div class="row">
+			<form class="form-inline">
+				<div class="form-group">
+					<input type="number" class="form-control" id="numeroInput" step="1" max="10" min="0">
+				</div>
+				<button type="button" class="btn btn-default" onClick="nuevoNumero()">Añadir número</button>
+			</form>
+		</div>
+
+		<div class="row">
+			<div class="panel panel-danger">
+				<div class="panel-heading">Números desordenados</div>
+				<div class="panel-body" id="cntNumDes">
+					<!--innerHTML-->
+
+
+					<!--
+					<span class="box">3</span>
+					-->
+
+
+					<!--end innerHTML-->
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="panel panel-success">
+				<div class="panel-heading">Numeros ordenados</div>
+				<div class="panel-body" id="cntNumOrd">
+
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="row">
+
+			<button type="button" class="btn btn-default btn-lg btn-block" onclick="ordenar()">Ordenar</button>
+
+		</div>
+		<div class="row">
+
+			<button type="button" class="btn btn-danger btn-lg btn-block" onclick="borrar()">Borrar todo</button>
+
+		</div>
+
+	</div>
+
+
+	<!-- jQuery -->
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+
+	<!-- Scripts -->
+
+	<script>
+		//variables globales
+		var numeroInput = document.getElementById("numeroInput");
+		var cntNumDes = document.getElementById("cntNumDes");
+		var spanNumero = '<span class="box">##numero##</span>';
+		var divAlerta = '<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong> ##mensaje##</div>';
+		var aDesordenado = []; //Array con numeros desordenados
+		var aOrdenado = []; //Array con numeros ordenados
+		var len = 0;
+		/**
+		 * recoger numero del input y mterlo en div#cntNumDes
+		 */
+
+		function nuevoNumero() {
+			if (numeroInput.value == "") {
+				mostrarAlerta();
+			} else {
+				alerta.innerHTML = "";
+
+				//añadir input
+				cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
+				aDesordenado.push(parseInt(numeroInput.value));
+				//limpiar input y poner focus
+				numeroInput.value = "";
+				numeroInput.focus();
+				len++;
+				if (len > 10) {
+					mostrarAlerta();
+				}
+			}
+			console.debug("Añadir nuevo numero %s lenght %i", numeroInput.value, len);
+		}
+
+		function ordenar() {
+
+			if (len < 2) {
+				mostrarAlerta();
+			} else {
+
+				cntNumOrd.innerHTML = "";
+				console.debug("array DESordenado " + aDesordenado);
+
+				for (var i = 0; i < len; i++) {
+					for (var j = 0; j < len - i - 1; j++) {
+						if (aDesordenado[j] > aDesordenado[j + 1]) {
+							// cambio
+							var temp = aDesordenado[j];
+							aDesordenado[j] = aDesordenado[j + 1];
+							aDesordenado[j + 1] = temp;
+						}
+					}
+				}
+				aOrdenado = aDesordenado;
+				console.debug("array Ordenado " + aOrdenado);
+
+				for (var i = 0; i < len; i++) {
+					cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
+				}
+				alerta.innerHTML = "";
+			}
+
+		}
+
+
+		/* Funcion ShowAlert hecha por Ander equivalente a mostrarAlerta pero con mas opciones:
+		*  Se le puede pasar el id del contenedor donde lo queremos poner, el tipo de alerta y el texto
+
+        * Muestra una Alerta de Bootsratp
+        * id    = Identificador de elemento donde lo vamos a insertar con innerHTML
+        * texto = Texto a mostrar en la Alerta
+        * clase = clase para cambiar el color de la Alerta ( danger, success, ...)
+        *
+        function showAlert( id, texto, clase ){
+            var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
+            var contenedor = document.getElementById(id);
+            contenedor.innerHTML = "";
+            contenedor.innerHTML = alerta;
+            contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
+            contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
+        }
+
+		*/
+
+
+		function mostrarAlerta() {
+			var mensaje;
+
+			if (numeroInput.value == "" && len == 1) {
+				mensaje = "Por favor necesito al menos otro numero para ordenar";
+			} else if (numeroInput.value == "" && len > 10) {
+				mensaje = "Maximo nivel de procesamiento alcanzado, NO SE PERMITEN MAS DE 10 numeros";
+			} else if (numeroInput.value == "") {
+				mensaje = "No has introducido nada";
+
+			}
+
+			alerta.innerHTML = divAlerta.replace('##mensaje##', mensaje);
+		}
+
+		function borrar() {
+			len = 0;
+			alerta.innerHTML = "";
+			cntNumOrd.innerHTML = "";
+			cntNumDes.innerHTML = "";
+			numeroInput.value = "";
+			numeroInput.focus();
+			aDesordenado = [];
+			aOrdenado = [];
+
+		}
+	</script>
+
+</body>
+
+</html>

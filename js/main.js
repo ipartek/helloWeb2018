@@ -79,6 +79,9 @@ Ordenar de menor a mayor con la metodologia BubbleSort
 
 */
 
+
+/* Mi version de la funcion:
+
 function ordenacionEnBurbuja() {
 	var numerosDesordenados = [3, 0, 1, 8, 7, 2, 5, 4, 6, 9];
 	var desordenado=true;
@@ -93,7 +96,28 @@ function ordenacionEnBurbuja() {
 			}
 		}
 	}
-
-
 	console.debug(numerosDesordenados);
 }
+
+*/
+
+//Version de Ander:
+
+function ordenacionEnBurbuja() {
+
+    var arr = [3, 0, 1, 8, 7, 2, 5, 4, 6, 9];
+    console.debug("array DESordenado " + arr );
+    var len = arr.length;
+
+    for (var i = 0; i < len; i++) {
+        for (var j = 0; j < len - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // cambio
+                var temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+

@@ -33,3 +33,30 @@ http.createServer(function (request, response) {
 // para probarlo abrir el navegador y pegar:
 // localhost:8084
 // Para parar el servidor en el cmd damos CTRL+C
+
+
+
+/**
+    Ordenar de menor a mayor con la metodologia BubbleSort
+*/
+function ordenacionEnBurbuja() {
+
+    var arr = [3, 0, 1, 8, 7, 2, 5, 4, 6, 9];
+    console.debug("array Desordenado " + arr );
+    var len = arr.length;
+
+    for (var i = 0; i < len; i++) {
+        for (var j = 0; j < len - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                // cambio
+                var temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    console.debug("array ordenado " + arr );
+
+}
+

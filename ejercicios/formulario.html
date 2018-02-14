@@ -24,18 +24,18 @@
             <input type="text" name="nombre" id="nombre" placeholder="Mínimo dos letras" required pattern="[A-Za-z]{2,10}" tabindex="1">
             <br>
             <label for="apellido">Apellido:</label>
-            <input type="text" name="apellido" tabindex="2">
+            <input type="text" name="apellido" id="apellido" required>
             <br>
             <label for="apellido">Sexo:</label>
             <input type="radio" name="sexo" required><small>Masculino</small>
-            <input type="radio" name="sexo" required><small>Femenino</small>
-            <input type="radio" name="sexo" required><small>Otro</small>
+            <input type="radio" name="sexo"><small>Femenino</small>
+            <input type="radio" name="sexo"><small>Otro</small>
             <br>
             <label for="email">Email: </label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" required>
             <br>
             <label for="pass">Password: </label>
-            <input type="password" name="pass" id="pass">
+            <input type="password" name="pass" id="pass" required>
             <label><i id="ojo" class="fa fa-eye"></i><small>&nbsp;Visualizar contaseña</small></label>
 
         </fieldset>
@@ -137,6 +137,7 @@
 </html>
 
 <script>
+
 //    Selectores de los elementos
     var pass = document.querySelector("#pass");
     var ojo = document.querySelector("#ojo");
@@ -169,17 +170,26 @@
         if(arrChecked < 3 && chkCond.checked){
             e.preventDefault();
             alert("Debe seleccionar al menos 3 hobbies");
-            window.location.hash = '#hobbies';
+            document.querySelector("input[name='hob_arr']").focus();
         }
-
 //        console.log("Número de checkeados: " + arrChecked)
     }
 
-
+    //Custom messages
+//    document.querySelector("#nombre").oninvalid = "Debeeeeeeeeeee";
+//    document.querySelector("#nombre").setCustomValidity("");
+//    document.querySelector("#nombre").setCustomValidity("Debe escribir el nombre");
+//    document.querySelector("#apellido").setCustomValidity("Debe escribir el apellido");
+//    document.querySelector("[name='sexo']").setCustomValidity("Debe marcar su sexo");
+//    document.querySelector("#email").setCustomValidity("Debe escribir un email válido");
+//    document.querySelector("#pass").setCustomValidity("Debe escribir una contraseña");
+//    document.querySelector("#nombre").setCustomValidity("Hola!");
+//    document.querySelector("#nombre").setCustomValidity("Hola!");
+//    document.querySelector("#nombre").setCustomValidity("Hola!");
 
 </script>
 
-event.target.setcustomvalidity
+<!--event.target.setcustomvalidity-->
 
 <!--todo: cambiar los comentarios de validación-->
 <!--todo: [x] bajo direccion meter observaciones con un textarea-->

@@ -3,7 +3,12 @@
 /* Ejecutamos esta función al cargar la página web */
 
 function init() {
-    console.info('DOM listo y cargado');
+    //5 niveles de logs o trazas ordenados por prioridad
+    //    console.debug('Verbose DOM listo y cargado');
+    //    console.log('Log DOM listo y cargado');
+    //    console.info('Info DOM listo y cargado');
+    //    console.warn('Warning DOM listo y cargado');
+    //    console.error('Error DOM listo y cargado');
 }
 
 function pulsador() {
@@ -88,7 +93,7 @@ function sorteo() {
         arrResultados = JSON.parse(localStorage.getItem("sorteo"));
 
         //Si ya está completo lo reinicio
-        if(arrResultados.length == 15)
+        if (arrResultados.length == 15)
             arrResultados = [];
 
         console.info("Su valor actual es: " + arrResultados);
@@ -114,8 +119,8 @@ function sorteo() {
 
     //Pongo las celdas reales del numero recogido al azar
     var arrCeldas = [
-        [7,0], [6, 0], [5, 0], [4, 0], [3, 0], [2, 0], [1, 0], [0, 0],
-        [0, 2], [1, 2], [2, 2], [3, 2], [4, 2], [5, 2], [6, 2], [7,2]
+        [7, 0], [6, 0], [5, 0], [4, 0], [3, 0], [2, 0], [1, 0], [0, 0],
+        [0, 2], [1, 2], [2, 2], [3, 2], [4, 2], [5, 2], [6, 2], [7, 2]
     ];
 
     //Informo de la columna y celda recogida
@@ -131,3 +136,27 @@ function sorteo() {
 
     console.info(document.getElementsByTagName("td")[0].textContent);
 }
+
+
+function ordenacionEnBurbuja() {
+    var numerosDesordenados = [3, 0, 1, 8, 7, 2, 5, 4, 6, 9]
+    var i;
+    var j;
+    var aux;
+    var limite = numerosDesordenados.length;
+    for (j = 0; j <limite; j++) {
+        for (i = 0; i < numerosDesordenados.length; i++) {
+//            console.log(i + " iteracion, array" + numerosDesordenados);
+            //Si la posicion actual es menor que la siguiente, lo cambio
+            if (numerosDesordenados[i] > numerosDesordenados[i + 1]) {
+                aux = numerosDesordenados[i];
+                numerosDesordenados[i] = numerosDesordenados[i + 1];
+                numerosDesordenados[i + 1] = aux;
+            }
+        }
+        limite--;
+        console.log(numerosDesordenados);
+    }
+}
+
+//ordenacionEnBurbuja();

@@ -88,7 +88,7 @@ function ordenacionEnBurbuja() {
 			if (numerosDesordenados[i] > numerosDesordenados[i + 1]) {
 				var memory = numerosDesordenados[i];
 				numerosDesordenados[i] = numerosDesordenados[i + 1]
-				numerosDesordenados[i + 1] = temp;
+				numerosDesordenados[i + 1] = memory;
 				desordenado = true;
 			}
 		}

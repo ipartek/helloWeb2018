@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <style>
+        @keyframes mostrar {
+            0%{
+                opacity:0;
+            }
+            100%{
+                opacity:1;
+            }
+        }
+        header {
+            background-color: teal;
+            color: white;
+            text-align: center;
+        }
+
+        .row {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .boxDesorden{
+            position:relative;
+            display:inline-block;
+            width:100px;
+            height:100px;
+            border: red solid 1px;
+            background-color:brown;
+            border-radius:10px;
+            color:white;
+            font-size:5em;
+            text-align:center;
+            margin-right:5px;
+        }
+        .boxDesorden:last-child {
+            animation-name:mostrar;
+            animation-duration:1s;
+            animation-timing-function: ease-in;
+        }
+        .boxOrden{
+            position:relative;
+            display:inline-block;
+            width:100px;
+            height:100px;
+            border: green solid 1px;
+            background-color:greenyellow;
+            border-radius:10px;
+            color:white;
+            font-size:5em;
+            text-align:center;
+            margin-right:5px;
+            animation-name:mostrar;
+            animation-duration:1s;
+            animation-timing-function: ease-in;
+
+        }
+        .boxOrden .fa{
+            position:absolute;
+            top:0;
+            right:0px;
+            color:black;
+            font-size:0.3em;
+        }
+        .boxDesorden .fa{
+            position:absolute;
+            top:0;
+            right:0px;
+            color:black;
+            font-size:0.3em;
+        }
+        .boxDesorden:hover,.boxOrden:hover{
+            border-radius:50%;
+            transition-duration: 1s;
+        }
+
+    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Optional theme -->
+
+    <!-- Latest compiled and minified JavaScript -->
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Ordenar números con Burbuja</h1>
+        </div>
+    </header>
+    <div id="alerta">
+
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <form class="form-inline">
+                <div class="form-group">
+                    <input type="number" class="form-control" id="numeroInput" step="5" min="0" max="99">
+                </div>
+                <button type="button" class="btn btn-info" onclick="aniadirNumero()">Añadir número</button>
+            </form>
+
+        </div>
+        <div class="row">
+            <div class="panel panel-danger">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Números desordenados</div>
+                <div class="panel-body" id="cntNumDes">
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="panel panel-success">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Números ordenados</div>
+                <div class="panel-body" id="cntNumOr">
+
+                </div>
+
+
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn btn-default btn-lg btn-block" onclick="ordenarEnBurbuja()">Ordenar</button>
+        </div>
+        <div class="row">
+            <button href="/ejercicios/Bootsrap/ordenarNumero.html" class="btn btn-danger btn-lg btn-block" onclick="limpiar()">Limpiar</button>
+        </div>
+    </div>
+    <a href="/ejercicios/ejercicios.html">Volver</a>
+    <!--JavaScript -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -6,8 +6,8 @@ function init(){
     console.info('DOM listo y cargado');
     console.log('log DOM listo y cargado');
     console.info('Info DOM listo y cargado');
-    console.warn('Warm DOM listo y cargado');
-    console.error('Error DOM listo y cargado');
+   // console.warn('Warm DOM listo y cargado');
+   // console.error('Error DOM listo y cargado');
 
 }
 
@@ -101,23 +101,32 @@ function llamadaApi(){
 
 }
 
-function ordenacionEnBurbuja{
+function ordenacionEnBurbuja(){
     var numerosDesordenados = [3,0,1,8,7,2,5,4,6,9];
     var i=0;
-    for(i=0;i<numerosDesordenados.length;i++)
+    var l=0;
+    /*for(i=0;i<numerosDesordenados.length();i++)
         {
-            for(i=numerosDesordenados.lenght();i=0;i--)
-                {
-                            if(numerosDesordenados[i] > numerosDesordenados[i+1])
-            {
+           if(numerosDesordenados[i]>numerosDesordenados[i+1])
+               {
+                   var numero = numerosDesordenados[i+1];
+                   numerosDesordenados[i+1]=numerosDesordenados[i];
+                   numerosDesordenados[i]= numero;
+               }
+            else{
 
-
-            numerosDesordenados[i]=numerosDesordenados[i+1];
-            numerosDesordenados[i+1]=numerosDesordenados[i];
             }
+        for(l=numerosDesordenados.length();l<0;i--)
+            {
+                if(numerosDesordenados[l]<numerosDesordenados[l-1]){
+                    var numero1=numerosDesordenados[l-1];
+                    numerosDesordenados[l]=numerosDesordenados[l-1];
+                    numerosDesordenados[l-1]=numerosDesordenados[l];
+                }
+            }
+        }*/
 
-        }
-    console.log(numerosDesordenados);
-}
+        console.log(numerosDesordenados.length);
+
 
 }

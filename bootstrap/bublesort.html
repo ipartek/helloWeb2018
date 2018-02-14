@@ -58,7 +58,7 @@
     </header>
     <!-- Mensaje de alerta. -->
 
-    <div class="alert alert-warning alert-dismissable" id="mensajeAlerta">
+    <div class="alert alert-warning alert-dismissable" id="alert">
         <!--<button type="button" class="close" data-dismiss="alert">&times;</button>
         <strong>¡Cuidado!</strong> Es muy importante que leas este mensaje de alerta.-->
     </div>
@@ -115,8 +115,6 @@
         var aOrdenado = [];
 
 
-
-
          /**
          * Muestar una alerta de bootstrap
          * id= identificador del elemento donde lo insertaremos con HTML
@@ -124,7 +122,7 @@
          * clase = color de la alerta
          */
 
-         fuction showAlert (id, texto, clase){
+         function showAlert (id, texto, clase){
              var alerta = '<div class="alert alert-##clase## alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button>##texto##.</div>';
              var contenedor = document.getElementById(id);
              contenedor.innerHTML = "";
@@ -140,6 +138,9 @@
         function nuevoNumero() {
             console.debug("Añadir nuevo numero %s", numeroInput.value);
 
+            if(aDesordenado.length < 2){
+
+            }
                //añadar numero
                 cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
                 aDesordenado.push(numeroInput.value);
@@ -166,6 +167,7 @@
             console.debug("array ordenado " + arr );
             return arr;
         }
+
         function pintarOrdenados() {
             console.debug("pintarOrdenados");
             aOrdenado = ordernar(aDesordenado);

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap</title>
+
+    <!-- MUY IMPORTANTE PARA RWD-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <!-- 12columnas css -->
+
+    <style>
+        header {
+            background-color: teal;
+            color: #FFF;
+        }
+
+        .row {
+            margin: 20px 0px;
+        }
+
+        @keyframes mostrar {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .box {
+            display: inline-block;
+            width: 75px;
+            height: 75px;
+            background-color: grey;
+            color: #FFF;
+            font-size: 3em;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .box:last-child {
+            animation-name: mostrar;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in;
+        }
+
+
+        .alert {
+            /*     display: none;
+            visibility: hidden;
+        } */
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>BubbleSort</h1>
+        </div>
+    </header>
+
+
+    <div class="container">
+
+    </div>
+
+
+    <div class="row">
+
+        <form class="form-inline">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="number" class="form-control" step="1" max="10" min="0" id="numeroInput">
+                </div>
+            </div>
+            <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir número</button>
+        </form>
+
+    </div>
+    <div class="row">
+
+        <div class="panel panel-danger">
+            <div class="panel-heading">Números Desordenados</div>
+            <div class="panel-body" id="cntNumDes">
+
+
+                <!--
+                    <span class="box">3</span>
+                    -->
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+
+        <div class="panel panel-success">
+            <div class="panel-heading">Números Ordenados</div>
+            <div class="panel-body" id="cntNumOrd">
+
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" onClick="ordenar()" class="btn btn-default btn-block">Ordenar</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <input class="btn btn-default btn-block" type="reset" value="Limpiar">
+        </div>
+    </div>
+
+
+    <!-- j query -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+        //Variables globales
+
+        var numeroInput = document.getElementById("numeroInput");
+        var cntNumDes = document.getElementById("cntNumDes");
+        var cntNumOrd = document.getElementById("cntNumOrd");
+        var spanNumero = '<span class="box">##numero##</span>'
+        var aDesordenado = []; // Array con numeros desordenados
+        var aOrdenado = [];
+
+
+        /*
+         * nuevoNumero recoge el numero del input y lo mete en div#cntNumDes
+         */
+
+        function nuevoNumero() {
+
+
+            console.debug("Añadir nuevo numero %s", numeroInput.value);
+
+            //Añadir numero
+            cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
+            aDesordenado.push(numeroInput.value);
+
+            //Limpiar Input y poner foco
+            numeroInput.value = "";
+            numeroInput.focus();
+
+        }
+
+
+
+        function ordenar() {
+
+            cntNumOrd.innerHTML = "";
+
+
+            console.debug("array DESordenado" + aDesordenado);
+            var len = aDesordenado.length;
+
+            for (var i = 0; i < len; i++) {
+                for (var j = 0; j < len - i - 1; j++) {
+                    if (aDesordenado[j] > aDesordenado[j + 1]) {
+                        var temp = aDesordenado[j];
+                        aDesordenado[j] = aDesordenado[j + 1];
+                        aDesordenado[j + 1] = temp;
+                    }
+                }
+            }
+
+            //Añadir numero
+            for (var i = 0; i < len; i++) {
+                cntNumOrd.innerHTML += spanNumero.replace('##numero##', aDesordenado[i]);
+
+
+            }
+
+        }
+
+        /**
+         * Muestra una alerta de bootstrap
+         *id = identificador del elemento donde lo vamos a insertar con innerHTML
+         *texto = Texto a mostrar en la alerta
+         *clase = clase para cambiar el color de la alerta
+         */
+
+        function showAlert(id, texto, clase) {
+            var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
+            var contenedor = document.getElementById(id);
+            var contenedor = document.getElementById(id);
+            contenedor.innerHTML = "";
+            contenedor.innerHTML = alerta.replace("##texto##", texto);
+            contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
+
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bubblesort</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        header {
+
+
+            background-color: teal;
+            color: #fff;
+        }
+
+        .row {
+
+            margin: 20px 0;
+            /*20 px de arriba y abajo y 0 de izquierda a derecha*/
+        }
+
+
+        .box {
+
+            display: inline-block;
+            width: 75px;
+            height: 100px;
+            background-color: grey;
+            color: #fff;
+            font-size: 3em;
+            text-align: center;
+            margin-right: 10px;
+            transition-delay: 2s;
+        }
+
+        #alertas {
+            width: 300px;
+            height: 100px;
+            font-size: 15px;
+            display: none;
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+
+            <h1>Bubblesort</h1>
+
+        </div>
+
+    </header>
+
+    <div class="container">
+
+        <div class="row">
+
+            <form class="form-inline">
+
+                <div class="col-md3">
+                    <div class="form-group">
+
+                        <div class="alert alert-warning alert-dismissible" role="alert" id="alertas">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                        </div>
+                        <button id="alertas" type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                        <input type="number" class="form-control" id="numeroinput" step="1" max="10" min="0">
+                    </div>
+                </div>
+                <div class="col-md9">
+                    <button onclick="nuevoNumero()" type="button" class="btn btn-default">Añadir Numero</button></div>
+            </form>
+
+        </div>
+
+        <div class="row">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Numeros Desordenados</div>
+                <div class="panel-body" id="cntNumDes">
+
+
+                    <!-- Innerhtml
+
+                    <span class="box">3</span>-->
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="panel panel-success">
+                <div class="panel-heading">Numeros Ordenados</div>
+                <div class="panel-body" id="cntNumOrd">
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <button onclick="ordenarNumeros()" type="button" class="btn btn-success btn-block">Ordenar</button>
+            <button onclick="borraNumeros()" type="button" class="btn btn-danger btn-block">Limpiar</button>
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- QUERY -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <script>
+        var numeroInput = document.getElementById("numeroinput");
+        var cntNumDes = document.getElementById("cntNumDes");
+        var cntNumOrd = document.getElementById("cntNumOrd");
+        var spanNumero = '<span class="box">$$$</span>';
+        var alertas = '<div class="alert">$$$</span>';
+        var arrDes = []; //Arrays con numeros desordenados
+        var arrOrdenado = [];
+        var alerta = '<div class="alert">$$$</div>';
+        /*
+
+    Recoger numero del input y meterlo en div#cntNumDes
+
+    */
+
+        function nuevoNumero() {
+
+            console.debug("Añadir nuevo numero %s", numeroinput.value);
+
+            console.debug("Valores del Array %s", arrDes.length);
+            //Alertas
+
+
+            if (numeroinput.value == "" || numeroinput.value == "0") {
+
+                document.getElementById('alertas').style.display = 'block';
+                document.getElementById("alertas").innerHTML = alerta.replace("$$$", "No seas vago y escribe algo");
+
+            }
+
+
+
+
+
+            if (arrDes.length >= 10) {
+                document.getElementById('alertas').style.display = 'block';
+                document.getElementById("alertas").innerHTML = alerta.replace("$$$", "No se puede procesar");
+            } else { //Añadir numero
+
+
+                if (numeroInput.value == "" || arrDes.length >= 10) {
+
+
+                } else {
+
+                    document.getElementById('alertas').style.display = 'none';
+                    cntNumDes.innerHTML += spanNumero.replace("$$$", numeroinput.value);
+                    arrDes.push(numeroInput.value);
+
+                    //Limpiar input y poner foco
+
+                    numeroInput.value = "";
+                    numeroInput.focus();
+                }
+            }
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+        /*Mostrar/Pintar Numeros Ordenados*/
+
+        function ordenarNumeros() {
+
+
+            console.debug("ordenarNumeros");
+            arrOrdenado = ordenar("arrDes");
+            cntNumOrd.innerHTML = "";
+
+            for (i = 0; i < arrDes.length; i++) {
+
+                cntNumOrd.innerHTML += spanNumero.replace("$$$", arrOrdenado);
+            }
+
+
+        }
+
+
+         /*Ordenar numeros */
+
+        function ordenar(arrDes) {
+
+            if (arrDes.length <= 1) {
+ document.getElementById('alertas').style.display = 'block';
+                document.getElementById("alertas").innerHTML = alerta.replace("$$$", "Se necesitan 2 unidades para poder ordenar");
+
+            } else {
+                cntNumOrd.value;
+
+
+                var len = arrDes.length;
+                console.debug("Arraydesordenad" + arrDes);
+                console.debug("Array" + arrDes.values);
+
+
+                for (var i = 0; i < len; i++) {
+
+                    for (var j = 0; j < len - i - 1; j++) {
+
+                        if (arrDes[j] > arrDes[j + 1]) {
+
+
+                            var temp = arrDes[j];
+                            arrDes[j] = arrDes[j + 1];
+                            arrDes[j + 1] = temp;
+                        }
+                    }
+                }
+                console.debug("array ordenado" + arrDes);
+
+
+
+            }
+        }
+
+        /*Borrar elementos*/
+
+        function borraNumeros() {
+
+
+            cntNumDes.innerHTML = "";
+            cntNumOrd.innerHTML = "";
+            arrDes.length = [""];
+            console.debug("Valores del Array %s", arrDes.length);
+        }
+
+
+        /*
+        Alertas*/
+
+     function showAlert( id, texto, clase ){
+            var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
+            var contenedor = document.getElementById("alertas");
+            contenedor.innerHTML = "";
+            contenedor.innerHTML = alerta;
+            contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
+            contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
+        }
+
+
+    </script>
+
+
+</body>
+</html>

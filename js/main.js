@@ -6,11 +6,11 @@ function init() {
 
     /*5 niveles de logs ordenados por prioridad*/
 
-    console.log('DOM listo y cargado'); /*Tracear*/
-    console.debug('DOM listo y cargado'); /*Saber la variable*/
-    console.info('Info DOM listo y cargado'); /*Informacion*/
-    console.warn('Warning DOM listo y cargado'); /*Fallos No Criticos*/
-    console.error('Error DOM listo y cargado'); /*Fallos Graves*/
+    //console.log('DOM listo y cargado'); /*Tracear*/
+    //console.debug('DOM listo y cargado'); /*Saber la variable*/
+    //console.info('Info DOM listo y cargado'); /*Informacion*/
+  //  console.warn('Warning DOM listo y cargado'); /*Fallos No Criticos*/
+    //console.error('Error DOM listo y cargado'); /*Fallos Graves*/
 
 }
 
@@ -77,35 +77,37 @@ function llamadaApi() {
     };
     xhr.open("GET", url, true);
     xhr.send(); /* Hacer que la web te envie los datos*/
-// Final llamada Ajax
+    // Final llamada Ajax
 }
 
 
-/*Ordenador de mayor a menor con la metodologia de BubbleSort*/
+/*Ordenador de menor a mayor con la metodologia de BubbleSort*/
 
-function ordenacionEnBurbuja(){
-
-
-    var numerosDesordenados=[3,0,1,8,7,2,5,4,6,9]; /*Hay que hacer dos for*/
+function ordenacionEnBurbuja() {
 
 
-    for(x=0;x=numerosDesordenados;x++){
+    var numerosDesordenados = [3, 0, 1, 8, 7, 2, 5, 4, 6, 9]; /*Hay que hacer dos for*/
+    console.debug("array desordenado"+numerosDesordenados)
+    var len= numerosDesordenados.length;
+
+    for(var i=0; i<len; i++){
+
+        for(var j=0; j<len -i -1; j++){
+
+            if(numerosDesordenados[j]>numerosDesordenados[j+1]){
 
 
-        for(x=0;x=numerosDesordenados;x++){
-
-             if(numerosDesordenados[x]>=x){
-
-
-
-
-                }
+                var temp=numerosDesordenados[j];
+                numerosDesordenados[j]=numerosDesordenados[j+1];
+                numerosDesordenados[j+1] = temp;
+            }
         }
-
-
-
     }
+    console.debug("array ordenado"+numerosDesordenados);
 
+
+
+
+
+ console.log(numerosDesordenados);
 }
-
-

@@ -34,21 +34,23 @@
             font-size: 3em;
             vertical-align: top;
             margin-right: 5px;
+            border-radius: 5px;
         }
 
-        #cntNumDes .box:last-child{
+        #cntNumDes .box:last-child {
             animation: mostrar;
-            animation-duration: 1s;
+            animation-duration: 0.5s;
             animation-timing-function: ease-in;
         }
 
-        #cntNumOrd .box{
+        #cntNumOrd .box {
             animation: mostrar;
-            animation-duration: 1s;
+            animation-duration: 0.5s;
             animation-timing-function: ease-in;
         }
 
-        #cntNumDes, #cntNumOrd {
+        #cntNumDes,
+        #cntNumOrd {
             display: flex;
             justify-content: center;
         }
@@ -59,12 +61,14 @@
             display: block;
         }
 
-        @keyframes mostrar{
-            0%{
-                opacity:0;
+        @keyframes mostrar {
+            0% {
+                opacity: 0;
+                transform: scale(0);
             }
-            100%{
-                opacity:1;
+            100% {
+                opacity: 1;
+                transform: scale(1);
             }
         }
     </style>
@@ -206,8 +210,9 @@
                         "</span>";
                 }
 
-                //Inhabilito el botón hasta resetear
+                //Inhabilito el botón Ordenar y Añadir númerohasta resetear
                 this.disabled = true;
+                butAnadir.disabled = true;
 
                 //Habilito el botón reset
                 butReset.disabled = false;

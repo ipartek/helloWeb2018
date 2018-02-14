@@ -173,6 +173,7 @@ var iteraciones = document.getElementById("iteraciones");
 var ordenados = [];
 var parar = false;
 var iteracion = 0;
+var reset = 0;
 var terminado = true;
 
 function recursiveBubbleSort(listaNumeros) {
@@ -196,6 +197,7 @@ function recursiveBubbleSort(listaNumeros) {
             }
         }
         iteracion++;
+        reset++;
         sinOrdenar = listaNumeros.splice(0, listaNumeros.length - 1);
         ordenados.unshift(listaNumeros);
         console.debug(
@@ -211,20 +213,24 @@ function recursiveBubbleSort(listaNumeros) {
         console.debug("LISTA ORDENADA:  [" + ordenados + "]");
     }
     //return ordenados;
-    /*FIXME: mostrar resultado una única vez y después resetear las variables*/
-    if (terminado) {
+    /*FIXME[x]: mostrar resultado una única vez y después resetear las variables*/
+
         listaOrdenada.innerHTML = ordenados;
         iteraciones.innerHTML = iteracion;
-        terminado = false;
+        reset--;
+    // 'reset' tiene el mismo valor que iteracion, así que le vas disminuyendo hasta llegar a '-1'
+    // Al llegar a '-1' es cuando termina la recursividad, entonces se ejecuta 'resetearVariables()'
+    if(reset===-1) {
         // reset de las variables
-        //resetearVariables();
+        resetearVariables();
     }
 }
 
 function resetearVariables() {
     ordenados = [];
-    parar = false;
     iteracion = 0;
+    reset = 0;
+    parar = false;
 }
 
 

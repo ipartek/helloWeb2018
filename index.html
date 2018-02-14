@@ -63,6 +63,17 @@
             <p id="txtResult">Resultado</p>
             <button id="botonParInpar" class="button" onclick="pulsador()">PULSAME</button>
         </div>
+
+        <section id="ordenarListas">
+            <h2>BubbleSort method</h2>
+
+            <!--FIXME: Validar que es una lista correcta: empieza/termina con números y están separados por comas-->
+            <input type="text" id="listaDesordenada" placeholder="Inserte una lista de números separados por ',' (coma)">
+            <button id="btnOrdenar" onclick="ordenacionEnBurbuja()" >BubbleSort</button>
+            <button id="btnOrdenarRecursivo" onclick="recursiveBubbleSort(transformarEnArray(document.getElementById('listaDesordenada').value))" >Recursive BubbleSort</button>
+            <p><strong>Lista ordenada: </strong> <span id="listaOrdenada"></span> </p>
+            <p>Nº de iteraciones: <span id="iteraciones"> </span></p>
+        </section>
     </div>
     <!-- END container -->
     <!-- enlace al javascript -->

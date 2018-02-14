@@ -1,8 +1,15 @@
 /*
     HOJA DE ESTILOS PARA ESTILOS COMUNES ENTRE VARIAS PÁGINAS
+
+    1. Botones
+    2. CLEARFIX
+    3. Modal Windows
+    4. cnt-img-zoom
+    5. CENTRADO
+
 */
 
-/* Botones
+/* 1. Botones
 **********/
 
 .button {
@@ -19,9 +26,9 @@
     display: block;
 }
 
-/* END Botones */
+/* END 1.Botones */
 
-/* CLEARFIX
+/* 2. CLEARFIX
 ****************/
 
 .clearfix:before,
@@ -38,9 +45,9 @@
     *zoom: 1;
 }
 
-/* END clearfix */
+/* END 2.clearfix */
 
-/* VETANAS MODALES
+/* 3. VETANAS MODALES
 *********************************************/
 
 .modal {
@@ -89,7 +96,7 @@
     opacity: 1;
 }
 
-/*  cnt-img-zoom
+/* 4. cnt-img-zoom
 **************************************/
 
 .cnt-img-zoom {
@@ -118,4 +125,9 @@
     font-size: 9em;
     top: 28%;
     left: 28%;
+}
+
+/********** 5. CENTRADO **********/
+.centrado {
+    text-align: center;
 }

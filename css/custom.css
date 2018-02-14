@@ -26,6 +26,10 @@ h2tituloParInpar {
 #tituloParInpar {
     text-align: center;
 }
+
+#listaDesordenada {
+    width: 400px;
+}
 /**************************/
 
 /* 1. Estilos de tabla_alumnos.html
@@ -225,4 +229,4 @@ h2#txt_afortunado {
     color: grey;
 }
 
-/* END ApocalypseNow.html ******************/
+

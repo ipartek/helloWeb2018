@@ -67,6 +67,9 @@
     <div class="container">
 
         <div class="row">
+
+            <div id="alert"></div>
+
             <form class="form-inline">
                 <div class="col-md-3">
                     <div class="form-group">
@@ -160,6 +163,23 @@
                 cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
             }
         }
+
+
+        /**
+        * Muestra una Alerta de Bootsratp
+        * id    = Identificador de elemento donde lo vamos a insertar con innerHTML
+        * texto = Texto a mostrar en la Alerta
+        * clase = clase para cambiar el color de la Alerta ( danger, success, ...)
+        */
+        function showAlert( id, texto, clase ){
+            var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
+            var contenedor = document.getElementById(id);
+            contenedor.innerHTML = "";
+            contenedor.innerHTML = alerta;
+            contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
+            contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
+        }
+
 
     </script>
 

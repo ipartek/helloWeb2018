@@ -5,43 +5,45 @@
 	<title>Document</title>
 
 </head>
+
 <body>
 
 	<style>
-	/*No es lo mas correcto pero vale para pruebas*/
-	p{
-		text-align: justify;
-		font-size:1.6em;
-		line-height:1.6em;
-		text-indent: 1em; /*introdize sangría en primera linea*/
+		/*No es lo mas correcto pero vale para pruebas*/
 
-
-		/* Negrita:
+		p {
+			text-align: justify;
+			font-size: 1.6em;
+			line-height: 1.6em;
+			text-indent: 1em;
+			/*introdize sangría en primera linea*/
+			/* Negrita:
 		font-weight: 600;
 		   Cursiva:
 		font-style: italic;
 		*/
-
 		}
 
 
-		p:first-letter{
-			Font-size:3em;
-			color:red;
-			background-color:darkgrey;
-			text-transform:capitalize;/*Mayuscula en primera linea*/
+		p:first-letter {
+			Font-size: 3em;
+			color: red;
+			background-color: darkgrey;
+			text-transform: capitalize;
+			/*Mayuscula en primera linea*/
 		}
 
-		span{
+		span {
 			border: 5px dotted red;
-			padding:5px;
+			padding: 5px;
 		}
 
 		/*   punto es igual a class="caja"  */
-		.caja{
+
+		.caja {
 			display: inline-block;
-   			height: 100px;
-   			width: 100px;
+			height: 100px;
+			width: 100px;
 			background-color: grey;
 			color: white;
 			margin: 10px;
@@ -50,32 +52,33 @@
 			font-family: arial;
 		}
 
-		.caja:hover{
+		.caja:hover {
 			background-color: red;
 			border-radius: 50px;
-			transition-duration:2s;
+			transition-duration: 2s;
 		}
 
-		table{
+		table {
 			border: 1px solid;
 			border-color: #1868ad;
 		}
-		tr,td{
+
+		tr,
+		td {
 			border: 1px solid;
 			border-color: aquamarine;
 			padding: 10px;
-    		width: 80px;
+			width: 80px;
 
 		}
-		th{
+
+		th {
 			border: 1px solid;
 			border-color: #1868ad;
 			padding: 10px;
-    		width: 80px;
+			width: 80px;
 
 		}
-
-
 	</style>
 	<h1>Encabezado H1</h1>
 	<h2>Encabezado H2</h2>
@@ -220,32 +223,43 @@
 
 	<h3>4.16 Tabla con encabezado y Caption</h3>
 	<table>
-	<caption>Peliculas clasicas</caption>
-		<tr>
-			<th>Peli</th>
-			<th>Director</th>
-			<th>Puntuacion</th>
-		</tr>
-		<tr>
-			<td>Star Wars</td>
-			<td>George Lucas</td>
-			<td>8.5</td>
-		</tr>
-		<tr>
-			<td>E.T.</td>
-			<td>S. Spilberg</td>
-			<td>8</td>
-		</tr>
-		<tr>
-			<td>El Pdrino</td>
-			<td>Coppola</td>
-			<td>9</td>
-		</tr>
+		<caption>Peliculas clasicas</caption>
+		<thead>
+			<tr>
+				<th>Peli</th>
+				<th>Director</th>
+				<th>Puntuacion</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td>pie1</td>
+				<td>pie2</td>
+				<td>pie3</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td>Star Wars</td>
+				<td>George Lucas</td>
+				<td>8.5</td>
+			</tr>
+			<tr>
+				<td>E.T.</td>
+				<td>S. Spilberg</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>El Pdrino</td>
+				<td>Coppola</td>
+				<td>9</td>
+			</tr>
+		</tbody>
 	</table>
 
 	<h3>4.20 Tablas avanzadas</h3>
 	<table>
-	<caption>Factura detallada</caption>
+		<caption>Factura detallada</caption>
 		<tr>
 			<th colspan="5">EXTREMEÑA DE TELÉFONOS</th>
 
@@ -307,7 +321,7 @@
 			<td colspan="2"></td>
 			<td colspan="3"></td>
 		</tr>
-			<tr>
+		<tr>
 			<td colspan="5"></td>
 
 		</tr>

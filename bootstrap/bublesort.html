@@ -114,35 +114,39 @@
         var aDesordenado = []; // Array con numeros desordenados
         var aOrdenado = [];
 
-        var spanAlerta = '<button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Cuidado!</strong> ##mensaje##';
-        var mesajeAlerta = document.getElementById('mesajeAlerta');
-        /**
+
+
+
+         /**
+         * Muestar una alerta de bootstrap
+         * id= identificador del elemento donde lo insertaremos con HTML
+         * texto = texto a mostrar en la alerta
+         * clase = color de la alerta
+         */
+
+         fuction showAlert (id, texto, clase){
+             var alerta = '<div class="alert alert-##clase## alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button>##texto##.</div>';
+             var contenedor = document.getElementById(id);
+             contenedor.innerHTML = "";
+             contenedor.innerHTML = alerta;
+             contenedor.innerHTML = contenedor.innerHTML.replace('##texto##', texto);
+             contenedor.innerHTML =contenedor.innerHTML.replace ('##clase##',clase);
+
+         }
+
+         /**
          *  recoger numero del input y meterlo en  div#cntNumDes
          */
         function nuevoNumero() {
             console.debug("Añadir nuevo numero %s", numeroInput.value);
 
-            if((aDesordenado.length < 2) && (cntNumDes.length < 2)){
-                mensajeAlerta.innerHTML = spanAlerta.replace('##mensaje##', "Debes introducir al menos 2 números.");
-                numeroInput.focus();
-               }
-            else if(aDesordenado.length > 10){
-                 mensajeAlerta.innerHTML = spanAlerta.replace('##mensaje##', "No se puede procesar, maximo 10 números.");
-            }else{
                //añadar numero
                 cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
                 aDesordenado.push(numeroInput.value);
                 //limpiar input y poner foco
                 numeroInput.value = "";
                 numeroInput.focus();
-            }
-            /*//añadar numero
-            cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
-            aDesordenado.push(numeroInput.value);
-            //limpiar input y poner foco
-            numeroInput.value = "";
-            numeroInput.focus();*/
-        }
+       }
         /**
          *  Ordena de menor a mayor el array pasado por parametro
          */

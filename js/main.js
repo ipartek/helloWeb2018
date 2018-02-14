@@ -69,22 +69,19 @@ function llamadaApi(){
 }
 function ordenacionEnBurbuja(){
     var numerosDesordenados=[3,0,1,8,7,2,5,4,6,9];
-    var numerosOrdenados=[numerosDesordenados.length];
+    var numerosOrdenados=[];
     var noHayCambios=false;
     var aux=0;
-    var numero1;
-    var numero2;
     var maximo;
     while(noHayCambios==false){
         noHayCambios=true;
-        for(var i=0;i==numerosDesordenados.length-2;i++){
-            numero1=numerosDesordenados[i];
-            numero2=numerosDesordenados[i+1];
-            if(numero1>numero2){
+        for(var i=0;i<numerosDesordenados.length-1;i++){
+            if(numerosDesordenados[i]<numerosDesordenados[i+1]){
                 noHayCambios=false;
-                aux=numero2;
-                numero2=numero1;
-                numero1=aux;
+                aux=numerosDesordenados[i+1];
+                numerosDesordenados[i+1]=numerosDesordenados[i];
+                numerosDesordenados[i]=aux;
+
             }
         }
         if(noHayCambios==true){
@@ -100,5 +97,6 @@ function ordenacionEnBurbuja(){
         
 
     }
+    console.debug(numerosOrdenados);
 
 }

@@ -90,6 +90,32 @@ function llamadaApi(){
         xhr.open("GET", url, true);
         xhr.send();
     }
+function ordenacionEnBurbuja(){
+
+    var arr = [3, 0, 1, 8, 7, 2, 5, 4, 6, 9];
+
+    console.debug("Array desordenado" + arr);
+
+    var len = arr.length;
+
+    for (var i = 0; i< i.len - 1; i++){
+        for(var j; j < len -1;j++){
+            if(arr[j] > arr[j + 1]){
+                var temp= arr[j];
+                arr[j]=arr[j + 1];
+                arr[j + 1]=temp;
+
+            }//end if
+        }//end for j
+
+
+    }// end for i
+
+    console.debug("array ordenado " +arr);
+
+
+}
+
 
 
 

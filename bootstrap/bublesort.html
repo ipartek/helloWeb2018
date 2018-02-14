@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BubleSort</title>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-----ESTILOS CSS----->
+    <style>
+            header {
+                background-color: teal;
+                color: #FFF;
+            }
+            .row {
+                margin: 20px 0;
+            }
+            @keyframes mostrar {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+            .box {
+                /*display: flex;*/
+                display: inline-block;
+                width: 75px;
+                height: 75px;
+                background-color: grey;
+                color: #FFF;
+                font-size: 3em;
+                text-align: center;
+                margin-right: 10px;
+            }
+            .box:last-child {
+                animation-name: mostrar;
+                animation-duration: 1.5s;
+                animation-timing-function: ease-in;
+            }
+        </style>
+
+    <!-- Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>BUBLESORT</h1>
+        </div>
+    </header>
+    <!-- Mensaje de alerta. -->
+
+    <div class="alert alert-warning alert-dismissable" id="mensajeAlerta">
+        <!--<button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>¡Cuidado!</strong> Es muy importante que leas este mensaje de alerta.-->
+    </div>
+    <div class="container">
+        <div class="row">
+            <form class="form-inline">
+                <div class="form-group">
+                    <!--step nos deja poner el incremento del numero, max y min son los numeros maximos que se pueden poner-->
+                    <input type="number" class="form-control" step="1" id="numeroInput" min="0" max="10">
+                </div>
+                <button type="button" class="btn btn-default" onclick="nuevoNumero()">Añadir Número</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Números Desordenados</div>
+                <div class="panel-body" id="cntNumDes">
+
+
+                    <!-- <span class="box">7</span>-->
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-success">
+                <div class="panel-heading">Números Ordenados</div>
+                <div class="panel-body" id="cntNumOrd">
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <button type="button" class="btn btn-default btn-lg btn-block" onclick="pintarOrdenados()">Ordenar</button>
+                <!--crea un botón en bloque. https://getbootstrap.com/docs/3.3/css/#buttons-->
+                <!-- btn: clase, btn_default es el color, btn-lg: el tamño, btn-block que es de bloque-->
+            </div>
+
+               <input type="reset" class="btn btn-danger btn-lg btn-block" value="Borrar">
+
+        </div>
+     </div>
+
+    <!-- *****************************JAVASCRIPT**************************************************************** -->
+     <script>
+        //variables globales
+        var numeroInput = document.getElementById("numeroInput");
+        var cntNumDes = document.getElementById("cntNumDes");
+        var cntNumOrd = document.getElementById("cntNumOrd");
+        var spanNumero = '<span class="box">##numero##</span>';
+        var aDesordenado = []; // Array con numeros desordenados
+        var aOrdenado = [];
+
+        var spanAlerta = '<button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Cuidado!</strong> ##mensaje##';
+        var mesajeAlerta = document.getElementById('mesajeAlerta');
+        /**
+         *  recoger numero del input y meterlo en  div#cntNumDes
+         */
+        function nuevoNumero() {
+            console.debug("Añadir nuevo numero %s", numeroInput.value);
+
+            if((aDesordenado.length < 2) && (cntNumDes.length < 2)){
+                mensajeAlerta.innerHTML = spanAlerta.replace('##mensaje##', "Debes introducir al menos 2 números.");
+                numeroInput.focus();
+               }
+            else if(aDesordenado.length > 10){
+                 mensajeAlerta.innerHTML = spanAlerta.replace('##mensaje##', "No se puede procesar, maximo 10 números.");
+            }else{
+               //añadar numero
+                cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
+                aDesordenado.push(numeroInput.value);
+                //limpiar input y poner foco
+                numeroInput.value = "";
+                numeroInput.focus();
+            }
+            /*//añadar numero
+            cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
+            aDesordenado.push(numeroInput.value);
+            //limpiar input y poner foco
+            numeroInput.value = "";
+            numeroInput.focus();*/
+        }
+        /**
+         *  Ordena de menor a mayor el array pasado por parametro
+         */
+        function ordernar(arr) {
+            var len = arr.length;
+            console.debug("array desordenado " + arr );
+            for (var i = 0; i < len; i++) {
+                for (var j = 0; j < len - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        // cambio
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            console.debug("array ordenado " + arr );
+            return arr;
+        }
+        function pintarOrdenados() {
+            console.debug("pintarOrdenados");
+            aOrdenado = ordernar(aDesordenado);
+            cntNumOrd.innerHTML = "";
+            for (i = 0; i < aOrdenado.length; i++) {
+                cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
+            }
+        }
+    </script>
+
+    <!--**********************************************************Bootstrap instrucciones *****************************************/ -->
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

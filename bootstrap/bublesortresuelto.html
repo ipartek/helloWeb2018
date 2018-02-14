@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BubbleSort</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <style>
+        header {
+            background-color: teal;
+            color: #FFF;
+        }
+        .row {
+            margin: 20px 0;
+        }
+        @keyframes mostrar {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .box {
+            /*display: flex;*/
+            display: inline-block;
+            width: 75px;
+            height: 75px;
+            background-color: grey;
+            color: #FFF;
+            font-size: 3em;
+            text-align: center;
+            margin-right: 10px;
+        }
+        .box:last-child {
+            animation-name: mostrar;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>BubbleSort</h1>
+        </div>
+    </header>
+
+
+    <div class="container">
+
+        <div class="row">
+            <form class="form-inline">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="number" class="form-control" step="1" max="10" min="0" id="numeroInput">
+                    </div>
+                </div>
+                <div class="clo-md-9">
+                    <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir Número</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Números Desordenados</div>
+                <div class="panel-body" id="cntNumDes">
+                    <!--  <span class="box">3</span>    -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-success">
+                <div class="panel-heading">Números Ordenados</div>
+                <div class="panel-body" id="cntNumOrd">
+                    .....
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button type="button" onclick="pintarOrdenados()" class="btn btn-success btn-block">Ordenar</button>
+        </div>
+
+    </div>
+
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+        //variables globales
+        var numeroInput = document.getElementById("numeroInput");
+        var cntNumDes = document.getElementById("cntNumDes");
+        var cntNumOrd = document.getElementById("cntNumOrd");
+        var spanNumero = '<span class="box">##numero##</span>';
+        var aDesordenado = []; // Array con numeros desordenados
+        var aOrdenado = [];
+        /**
+         *  recoger numero del input y meterlo en  div#cntNumDes
+         */
+        function nuevoNumero() {
+            console.debug("Añadir nuevo numero %s", numeroInput.value);
+            //añadar numero
+            cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
+            aDesordenado.push(numeroInput.value);
+            //limpiar input y poner foco
+            numeroInput.value = "";
+            numeroInput.focus();
+        }
+        /**
+         *  Ordena de menor a mayor el array pasado por parametro
+         */
+        function ordernar(arr) {
+            var len = arr.length;
+            console.debug("array desordenado " + arr );
+            for (var i = 0; i < len; i++) {
+                for (var j = 0; j < len - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        // cambio
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            console.debug("array ordenado " + arr );
+            return arr;
+        }
+        function pintarOrdenados() {
+            console.debug("pintarOrdenados");
+            aOrdenado = ordernar(aDesordenado);
+            cntNumOrd.innerHTML = "";
+            for (i = 0; i < aOrdenado.length; i++) {
+                cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

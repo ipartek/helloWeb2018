@@ -8,12 +8,18 @@
     <!--Logo -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-    <!-- enlace a la hoja de estilos -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- enlace a la hoja de estilos
+    <link rel="stylesheet" href="css/styles.css">-->
 
     <!--Font awesome icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
 
 <body onload="init()">
@@ -23,26 +29,43 @@
 
         <i class="fa fa-arrow-up" aria-hidden="true"></i>
 
-        <nav id="main">
-            <ul>
-                <li><a href="ejercicios/bitcoin.html">Ver valor del bitcoin</a></li>
-                <li><a href="ejercicios/alumnos.html" class="active">Alumn@s</a></li>
-                <li><a href="ejercicios/arkanoid.html">Arkanoid</a></li>
-                <li><a href="ejercicios/capitulo4.html">Capitulo 4</a></li>
-                <li><a href="ejercicios/datatable.html">Datatable</a></li>
-                <li><a href="ejercicios/css.html">CSS</a></li>
-                <li><a href="ejercicios/posicionamiento.html">Posicionamiento</a></li>
-                <li><a href="ejercicios/fontawesome.html">Font Awesome</a></li>
-                <li><a href="ejercicios/modal.html">Modal Foto</a></li>
-                <li><a href="ejercicios/modal_no_js.html">Modal sin js</a></li>
-                <li><a href="ejercicios/apocalipsis_now.html">Apocalipsis Now</a></li>
-                <li><a href="ejercicios/media_query.html">Media Query</a></li>
-                <li><a href="ejercicios/rwd/index.html">RWD</a></li>
-                <li><a href="ejercicios/bootstrap/ejemplo_inicial.html">Booststrap</a></li>
-                <li><a href="ejercicios/bootstrap/12columnas.html">Bootstrap Grid System</a></li>
-                <li><a href="ejercicios/formularios.html">Formularios</a></li>
-                <li><a href="ejercicios/javascript/bubbleshort.html">Funcion Ordenar</a></li>
-            </ul>
+        <nav class="navbar navbar-default main">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HTML <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="ejercicios/bitcoin.html">Ver valor del bitcoin</a></li>
+                                <li><a href="ejercicios/alumnos.html" class="active">Alumn@s</a></li>
+                                <li><a href="ejercicios/arkanoid.html">Arkanoid</a></li>
+                                <li><a href="ejercicios/capitulo4.html">Capitulo 4</a></li>
+                                <li><a href="ejercicios/datatable.html">Datatable</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CSS <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="ejercicios/css.html">CSS</a></li>
+                                    <li><a href="ejercicios/posicionamiento.html">Posicionamiento</a></li>
+                                    <li><a href="ejercicios/fontawesome.html">Font Awesome</a></li>
+                                    <li><a href="ejercicios/modal.html">Modal Foto</a></li>
+                                    <li><a href="ejercicios/modal_no_js.html">Modal sin js</a></li>
+                                    <li><a href="ejercicios/apocalipsis_now.html">Apocalipsis Now</a></li>
+                                    <li><a href="ejercicios/media_query.html">Media Query</a></li>
+                                    <li><a href="ejercicios/rwd/index.html">RWD</a></li>
+                                    <li><a href="ejercicios/bootstrap/ejemplo_inicial.html">Booststrap</a></li>
+                                    <li><a href="ejercicios/bootstrap/12columnas.html">Bootstrap Grid System</a></li>
+                                </ul>
+                                <li><a href="ejercicios/formularios.html">Formularios</a></li>
+                                <li><a href="ejercicios/javascript/bubbleshort.html">Funcion Ordenar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </nav>
 
 
@@ -56,6 +79,9 @@
 
         <!-- enlace al javascript -->
         <script src="js/main.js"></script>
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </div>
     <!--end container-->
 </body>

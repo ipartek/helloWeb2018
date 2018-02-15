@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicios basicos JS</title>
+	<style>
+	</style>
+
+</head>
+
+<body onload="verificarEdad()">
+
+	<h1>Ejercicios Basicos JS</h1>
+
+
+	<button action="button" onclick="sumar()">CALCULAR</button>
+	<p id="resultado"></p>
+
+
+	<script>
+		function sumar() {
+			var num1;
+			var num2;
+			var invalido;
+			document.getElementById("resultado").textContent = "";
+			do {
+				num1 = prompt("dame el primer numero", "");
+				if (num1 == null) {
+					alert("Necesito que introduzcas un numero");
+					invalido = true;
+
+				} else if (num1 == "") {
+					alert("No has introducido nada");
+					invalido = true;
+
+				} else if (isNaN(num1)) {
+					alert("Eso no es un número");
+					invalido = true;
+				} else {
+					invalido = false;
+				}
+			} while (invalido)
+
+			num1 = parseInt(num1);
+
+			do {
+				num2 = prompt("dame otro numero", "");
+				if (num2 == null) {
+					alert("Necesito que introduzcas un numero");
+					invalido = true;
+				} else if (num2 == "") {
+					alert("No has introducido nada");
+					invalido = true;
+				} else if (isNaN(num2)) {
+					alert("Eso no es un número");
+					invalido = true;
+				} else {
+					invalido = false;
+				}
+			} while (invalido)
+			num2 = parseInt(num2);
+			document.getElementById("resultado").textContent = num1 + num2;
+		}
+
+
+
+/*Verificar edad*/
+
+		function verificarEdad(){
+			var mayoriaEdad=confirm("Verifica que eres mayor de edad")
+			if(mayoriaEdad==false){
+
+
+			}
+		}
+	</script>
+</body>
+
+</html>

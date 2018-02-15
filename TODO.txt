@@ -1,0 +1,33 @@
+
+span X de cerrar cajas
+
+---------------------------
+
+boton calcular
+
+	prompt dame un numero a sumar
+	prompt dame un segundo numero
+*parseint
+sacar suma en el html
+
+si cancela mensaje de error no puedo sumar si no me das dos numeros
+<output>
+
+al cargar la pagina sacar una ventana de confirmacion que pregunte si eres mayor de edad
+si es que no redirigir a otro html
+
+
+---------------------------
+
+pagina de los pinchos
+
+cuando cargue y por consola mostrar el numero, extension y url (nombre y kb) de imagenes document.images 
+document.images[].src
+
+sacar los atributos del objeto location
+lo mismo para el objeto screen
+
+
+maquetar div
+
+---------------------------

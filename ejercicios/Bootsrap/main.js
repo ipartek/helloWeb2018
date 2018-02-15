@@ -73,6 +73,8 @@ function limpiar() {
     alerta.innerHTML = "";
     contenidoDes.innerHTML = "";
     contenidoOr.innerHTML = "";
+    numero.value="";
+    numero.focus();
 
 }
 

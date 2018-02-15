@@ -31,6 +31,7 @@
 
         .box {
             /* display:flex; */
+            position: relative;
             display: inline-block;
             width: 75px;
             height: 75px;
@@ -57,6 +58,47 @@
             animation-timing-function: ease-in;
         }
 
+
+        @keyframes shake {
+            10%,
+            90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+
+            20%,
+            80% {
+                transform: translate3d(2px, 0, 0);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+
+            40%,
+            60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+
+        .box:hover {
+            animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+
+        .box .close{
+            position: absolute;
+            top:-5px;
+            right:0px;
+            color:#FFF;
+            background-color: #000;
+            border-radius: 50%;
+            font-size: 0.5em;
+        }
+
     </style>
     <header>
         <div class="container">
@@ -69,13 +111,14 @@
 
 
         <div class="row">
+
             <form class="form-inline">
-                <div class="col-md-3">
+                <div class="col-md-3 col-xs-3">
                     <div class="form-group">
                         <input type="number" class="form-control" id="numeroInput" step="1" max="300" min="0">
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-9 col-xs-9">
                     <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir número</button>
                 </div>
             </form>
@@ -87,9 +130,9 @@
 
                     <!--innerHTML-->
                     <!-- document.getElementById("cntNumDes").innerHTML = "<span class='box'>3</span>";-->
-                    <!-- Ejemplo
-                    <span class="box">3</span>
-                    -->
+                    <!-- Ejemplo -->
+                    <!-- <span class="box">3<span class="close">x</span></span> -->
+                    <!--  ********  -->
 
                     <!-- end innerHTML -->
                 </div>
@@ -105,7 +148,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <button type="button" onclick=validarDatos() class="btn btn-primary btn-lg btn-block">Ordenar</button>
+                <button type="button" onclick=ordenar() class="btn btn-primary btn-lg btn-block">Ordenar</button>
             </div>
 
         </div>
@@ -122,7 +165,7 @@
         //Variables globales
         var numeroInput = document.getElementById("numeroInput");
         var cntNumDes = document.getElementById("cntNumDes");
-        var spanNumero = '<span class="box">##numero##</span>';
+        var spanNumero = '<span class="box">##numero##<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>';
         // ##numero## --> Poner como texto algo que se vaya a sustituir. Algo que no se vaya a utilizar
         var aDesordenado = []; // Array con numeros desordenados
         var aOrdenado = [];
@@ -130,12 +173,17 @@
         Recoger numero del input y meterlo en div#cntNumDesc
         */
 
-
-
         function nuevoNumero() {
-            console.debug("Añadir nuevo número %s", numeroInput.value);
-            cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
-            aDesordenado.push(numeroInput.value);
+            document.getElementById("alerta").innerHTML = "";
+            var numeroInteger = parseInt(numeroInput.value);
+            console.debug("Añadir nuevo número %s", numeroInteger);
+            if (numeroInput.value == "") {
+                document.getElementById("alerta").innerHTML += '<div class="alert alert-danger alert-dismissible" id="alert-warning" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><span id="alerta">No has introducido ningún número</span></div>'
+            } else {
+                cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInteger);
+
+                aDesordenado.push(numeroInteger);
+            }
 
             //limpiarInput
             numeroInput.value = "";
@@ -160,24 +208,18 @@
 
         }
 
-        function mostrarAlertas() {
+        function mostrarAlertas(numero) {
             document.getElementById("alerta").innerHTML = "";
             if (aDesordenado.length == 0) {
                 document.getElementById("alerta").innerHTML += '<div class="alert alert-warning alert-dismissible" id="alert-warning" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><span id="alerta">No has introducido ningún número</span></div>'
-                //document.getElementById("alerta").style.display = "block";
             } else if (aDesordenado.length < 2) {
                 document.getElementById("alerta").innerHTML += '<div class="alert alert-warning alert-dismissible" id="alert-warning" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><span id="alerta">Debes introducir al menos 2 números</span></div>'
-                //document.getElementById("alerta").style.display = "block";
             } else if (aDesordenado.length >= 10) {
                 document.getElementById("alerta").innerHTML += '<div class="alert alert-warning alert-dismissible" id="alert-warning" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><span id="alerta">Llegaste al límite de 10 números introducidos</span></div>'
-                //document.getElementById("alerta").style.display = "block";
-            } else {
-                document.getElementById("alerta").style.display = "none";
             }
         }
 
         function ordenacionEnBurbuja() {
-
             var auxiliar;
             for (var i = 0; i < aDesordenado.length - 1; i++) {
                 for (var j = 0; j < aDesordenado.length - 1 - i; j++) {
@@ -203,6 +245,10 @@
             for (var i = 0; i < aOrdenado.length; i++) {
                 cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
             }
+        }
+
+        function eleminarBox(pos){
+
         }
 
     </script>

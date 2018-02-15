@@ -1,0 +1,82 @@
+<!--
+boton y output
+Meter un numero, meter otro, al dar a calcular, mostrar la suma
+Al cargar, que salga un mensaje: "Eres mayor de 18 años?" Si no que mande a otra página
+
+
+* al ejecutar la pagina de los coches, cuando cargue, en la consola de javascript mostrar el numero de imagenes que salen, la extensión de la imagen y la url (nombre, peso kb)
+* barra con puntos y sacar todos los atributos del objeto location (host, puerto, pathname)
+* barra con puntos y sacar todos los atributos del objeto screen
+
+* en el index poner poner hora debajo del indice y un footer con copyrigth, ipatek formacion y empleo y año 2014 (con date)
+
+* ejemplos w3school arrays
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mensajes Javascript</title>
+
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+
+<body onload="comprobarEdad()">
+    <style>
+        form,
+        input {
+            margin: 20px;
+        }
+    </style>
+    <div class="container">
+        <h1> Suma de 2 Números</h1>
+
+        <form action="formulario">
+            <button type="button" class="btn btn-success" onclick="sumar()">Sumar</button>
+            <input type="number" id="resultado" disabled placeholder="Resultado">
+        </form>
+    </div>
+
+
+
+    <script>
+        function comprobarEdad() {
+            if (!confirm("¿Eres mayor de edad?")) {
+                location.href = "http://www.google.com";
+            }
+        }
+
+        function sumar() {
+            var num1 = parseInt(prompt("Introduce un número"));
+            while (isNaN(num1)) {
+                num1 = parseInt(prompt("Introduce un número"))
+            }
+            var num2 = parseInt(prompt("Introduce el segundo número"));
+            while (isNaN(num2)) {
+                num2 = parseInt(prompt("Introduce el segundo número"));
+            }
+            document.getElementById("resultado").value = num1 + num2;
+        }
+    </script>
+
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -9,7 +9,8 @@ function init() {
     //    console.info('info: DOM listo y cargado');
     //    console.warn('warn: DOM listo y cargado');
     //    console.error('error: DOM listo y cargado');
-
+    var hora new Date();
+    document.getElementById("hora").innerHTML=hora.get
 
 
 }
@@ -86,6 +87,11 @@ function ordenacionEnBurbuja() {
         }
         console.debug("Fin bucle externo");
     }
+}
+
+
+function mostrarHora{
+
 }
 
 /* Ordenar numeros

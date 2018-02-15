@@ -1,0 +1,23 @@
+#clonar el repositorio de GitHub a nuestro PC
+	git clone
+
+Buscar el repositorio (en este caso, dentro del perfil, Ipartek, HelloWeb2018) y darle a "Clone or download"
+
+Copiar la uRL. En este caso: https://github.com/ipartek/helloWeb2018.git
+
+****Eliminar el archivo del PC para sustituirlo para el nuevo proyecto de 0
+
+Ir a MS-DOS y vamos hasta la carpeta desaeda (en este caso C:\Desarrollo)
+
+Ejecutar git clone https://github.com/ipartek/helloWeb2018.git
+
+La rama actual seleccionada es "master" y queremos cambiar a otra
+
+Desde MS-DOS entrar a la carpeta del proyecto (C:\desarrollo\helloweb2018)
+
+Cambiar a otro branch ("DavidVico"): git checkout DavidVico
+ 
+Abrir el brackets y COMMIT and PUSH para subir cambios
+
+Para bajar cambios en casa hacer un PULL
+

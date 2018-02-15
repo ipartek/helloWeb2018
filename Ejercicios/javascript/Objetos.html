@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios de Objetos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .boton {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+
+        }
+
+        .box {
+            display: inline-block;
+            width: 100px;
+            height: 60px;
+            border: solid;
+            text-align: center;
+            font-size: 4em;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Suma de dos numeros</h1>
+        </header>
+    </div>
+
+    <br>
+    <p id="fecha"></p>
+
+    <br>
+
+    <div class="boton">
+        <button type="button" onClick="sumar()">SUMAR</button>
+    </div>
+
+    <div class="box">
+        <output id="suma"></output>
+    </div>
+
+
+
+    <script>
+        if (confirm("¿Es usted mayor de edad?")) {
+            alert("Continue");
+        } else {
+            alert("El usuario ha decidido cancelar");
+        }
+
+
+
+
+
+        var suma = document.getElementById("sumar");
+
+        function sumar() {
+            var respuesta = prompt("Introduzca dos numeros para sumarlos");
+            if (respuesta === "") {
+                alert("Introduzca numero");
+            }
+            if (respuesta === null) {
+                alert("No puedo sumar si no me das 2 numeros");
+            } else {
+                var numero;
+                numero1 = parseInt(respuesta);
+                if (respuesta != "") {
+                    var respuesta2 = prompt("Introduzca otro numero para sumar");
+                    numero2 = parseInt(respuesta2);
+                    var sumatotal = numero1 + numero2;
+                    suma.textContent = sumatotal;
+                }
+            }
+        }
+
+        document.getElementById("fecha").innerHTML = Date();
+
+    </script>
+</body>
+
+</html>

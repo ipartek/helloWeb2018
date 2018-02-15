@@ -47,6 +47,19 @@
             font-size: 3em;
             text-align: center;
             margin-right: 10px;
+            position: relative;
+        }
+
+        .box .close{
+            position: absolute;
+            top: -10px;
+            right: -5px;
+            color: #FFF;
+            background-color: #000;
+            font-size: 0.4em;
+            border-radius: 50%;
+            opacity: 1;
+            padding: 2px;
         }
 
         .box:last-child {
@@ -55,11 +68,37 @@
             animation-timing-function: ease-in;
         }
 
+        .box:hover {
+            animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
 
-        .alert {
-            /*     display: none;
-            visibility: hidden;
-        } */
+
+
+        @keyframes shake {
+            10%,
+            90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+
+            20%,
+            80% {
+                transform: translate3d(2px, 0, 0);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+
+            40%,
+            60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
 
     </style>
 
@@ -84,12 +123,14 @@
     <div class="row">
 
         <form class="form-inline">
-            <div class="col-md-3">
+            <div class="col-xs-3">
                 <div class="form-group">
                     <input type="number" class="form-control" step="1" max="10" min="0" id="numeroInput">
                 </div>
             </div>
-            <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir número</button>
+            <div class="col-xs-9">
+                <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir número</button>
+            </div>
         </form>
 
     </div>
@@ -98,12 +139,9 @@
         <div class="panel panel-danger">
             <div class="panel-heading">Números Desordenados</div>
             <div class="panel-body" id="cntNumDes">
-
-
-                <!--
-                    <span class="box">3</span>
-                    -->
-
+           <!--
+                    <span class="box">3<span class="close">x</span></span>
+             -->
 
             </div>
         </div>
@@ -127,7 +165,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <input class="btn btn-default btn-block" type="reset" value="Limpiar">
+            <button type="button" onClick="reset()" class="btn btn-danger btn-block">Limpiar</button>
         </div>
     </div>
 
@@ -145,14 +183,54 @@
         var numeroInput = document.getElementById("numeroInput");
         var cntNumDes = document.getElementById("cntNumDes");
         var cntNumOrd = document.getElementById("cntNumOrd");
-        var spanNumero = '<span class="box">##numero##</span>'
+        var spanNumero = '<span class="box">##numero##<span class="close">x</span></span>'
         var aDesordenado = []; // Array con numeros desordenados
         var aOrdenado = [];
+
+
+        /* Validaciones anyes de ordenar 0 o menos de numeros */
+
+        /* Validaciones al introducir numeros
+         * 1- Comprobar que sea vacio
+         * 2- No poder meter mas de 10 numeros
+         */
+
+        function validarNumerosOrdenados() {
+            if (aDesordenado.length < 2) {
+                showAlert("msg", "warning", "Al menos dime 2 numeros para ordenar");
+                return false;
+            }
+            return true;
+        }
+
+
+
+
+
+        function validarEntradaNumeros(numero) {
+            if (numero === "") {
+                showAlert("msg", "warning", "Escribe un numero, por favor");
+                return false;
+            }
+            if (aDesordenado.length == 10) {
+                showAlert("msg", "danger", "No puedes introducir mas de 10 numeros");
+                return false;
+            }
+            return true;
+        }
+
+
+
 
 
         /*
          * nuevoNumero recoge el numero del input y lo mete en div#cntNumDes
          */
+
+
+
+
+
 
         function nuevoNumero() {
 
@@ -161,12 +239,18 @@
 
             //Añadir numero
             cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
-            aDesordenado.push(numeroInput.value);
+            aDesordenado.push(parseInt(numeroInput.value));
 
             //Limpiar Input y poner foco
             numeroInput.value = "";
             numeroInput.focus();
 
+        }
+
+
+
+        function eliminarBox(pos){
+            console.debug("eliminarBox %s", pos);
         }
 
 
@@ -213,7 +297,23 @@
             contenedor.innerHTML = alerta.replace("##texto##", texto);
             contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
 
+        }
 
+        /**
+         *Limpia los contenedores
+         *Inicializa de nuevo los dos arrays
+         *Limpia el alert
+         *Pone el foco en el input
+         */
+
+        function reset() {
+
+            cntNumDes.innerHTML = "";
+            cntNumOrd.innerHTML = "";
+            aDesordenado = [];
+            aOrdenado = [];
+            document.getElementById("msg").innerHTML = "";
+            numeroInput.focus();
 
         }
 

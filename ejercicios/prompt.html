@@ -32,7 +32,7 @@
             }
         }
 
-        // TODO: lanzar prompt
+        // TODO[x]: lanzar prompt
         /** Método para sumar 2 números introducidos en un prompt por el usuario
          *
          **/
@@ -41,17 +41,21 @@
             // Variables
             var num1 = null;
             var num2 = null;
+            var mostrarResultado = "";
+            var suma = null;
 
             var resultadoSuma = document.getElementById("resultado");
+
+            // FIXME[x]: validación de entrada de números para la suma. Ya no acepta NaN, "", " " etc.
+            // NOTE: isNaN(parseInt("") == true --> porque el 'parseInt' lo entiende como un NaN
 
             do {
                 num1 = prompt("Inserte el 1.número de la suma");
                 if (num1 == null) {
                     break;
                 }
-            } while (isNaN(parseInt(num1)) || num1 == "") {
-                num1 = prompt("Inserte el 1.número de la suma");
-            }
+            } while (isNaN(parseInt(num1)) || num1 == "");
+
             if (num1 != null) {
                 console.log("Número 1: " + num1);
             }
@@ -59,14 +63,23 @@
 
             do {
                 num2 = prompt("Inserte el 2.número de la suma");
-            } while (isNaN(parseInt(num2)) || num2 == "" || num2 == null) {
-                num2 = prompt("Inserte el 2.número de la suma");
-            }
-            console.log("Número 2: " + num2);
+                if (num2 == null) {
+                    break;
+                }
+            } while (isNaN(parseInt(num2)) || num2 == "");
 
-            if (num1 !== null && num2 !== null) {
-                resultadoSuma.innerHTML = "Resultado: " + (parseInt(num1) + parseInt(num2));
+            if (num2 != null) {
+                console.log("Número 2: " + num1);
             }
+
+            if(num1 != null && num2 != null) {
+                suma = (parseInt(num1)+parseInt(num2));
+                mostrarResultado = "Resultado: " + suma;
+                console.debug(num1 + " + " + num2 + " = " + suma);
+            } else {
+                mostrarResultado = "No ha introducido números para sumar";
+            }
+            resultadoSuma.innerHTML = mostrarResultado;
 
         }
     </script>

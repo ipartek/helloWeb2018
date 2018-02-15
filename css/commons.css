@@ -131,3 +131,17 @@
 .centrado {
     text-align: center;
 }
+/********** END 5. CENTRADO **********/
+
+/********** 6. FOOTER **********/
+footer {
+    background-color: dimgrey;
+    color: aliceblue;
+    height: 100px;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+

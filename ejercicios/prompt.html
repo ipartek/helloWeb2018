@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Prompt</title>
 </head>
+
 <body onload="confirmarEdad()">
 
     <h1>Prompt</h1>
@@ -16,12 +17,11 @@
 
 
     <script>
-
         // TODO[x]: Al cargar la página confirmar que es mayor de edad
         /** Método para decidir si tiene acceso a la página preguntando por la mayoría de edad
-        *   confirm --> dar acceso
-        *   cancel  --> redirigir a otro HTML
-        **/
+         *   confirm --> dar acceso
+         *   cancel  --> redirigir a otro HTML
+         **/
         function confirmarEdad() {
 
             var respuesta = confirm("¿Eres mayor de edad?");
@@ -34,20 +34,41 @@
 
         // TODO: lanzar prompt
         /** Método para sumar 2 números introducidos en un prompt por el usuario
-        *
-        **/
+         *
+         **/
         function sumarNumeros() {
+
+            // Variables
+            var num1 = null;
+            var num2 = null;
 
             var resultadoSuma = document.getElementById("resultado");
 
-            var num1 = prompt("Inserte el 1.número de la suma");
-            console.log("Número 1: " + num1);
-            var num2 = prompt("Inserte el 2.número de la suma");
+            do {
+                num1 = prompt("Inserte el 1.número de la suma");
+                if (num1 == null) {
+                    break;
+                }
+            } while (isNaN(parseInt(num1)) || num1 == "") {
+                num1 = prompt("Inserte el 1.número de la suma");
+            }
+            if (num1 != null) {
+                console.log("Número 1: " + num1);
+            }
+
+
+            do {
+                num2 = prompt("Inserte el 2.número de la suma");
+            } while (isNaN(parseInt(num2)) || num2 == "" || num2 == null) {
+                num2 = prompt("Inserte el 2.número de la suma");
+            }
             console.log("Número 2: " + num2);
 
-            resultadoSuma.innerHTML = "Resultado: " + (parseInt(num1)+parseInt(num2));
-        }
+            if (num1 !== null && num2 !== null) {
+                resultadoSuma.innerHTML = "Resultado: " + (parseInt(num1) + parseInt(num2));
+            }
 
+        }
     </script>
 </body>
 </html>

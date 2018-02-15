@@ -510,6 +510,59 @@
             jQuery('#modal-video-pep iframe').attr("src", jQuery("#modal-video-pep  iframe").attr("src"));
             jQuery('#myModal iframe').attr("src", jQuery("#myModal  iframe").attr("src"));
         });
+
+        /** TODO[x]: Método para mostrar por consola atributos del objeto documento.images
+        **/
+        function mostrarInfoImagenes() {
+
+            // Variables informativas sobre las imágenes
+            var posImg = null;
+            var nombreImg = null;
+            var extImg = null;
+            var urlImg = null;
+
+            console.info("IMÁGENES:");
+            console.info("Nº   NOMBRE   EXTENSIÓN   URL");
+            var totalImagenes = document.images.length;
+            console.info("Número de imágenes: " + totalImagenes);
+            for(var indImg = 0; indImg < totalImagenes; indImg++) {
+
+                // Rellenar las variables a mostrar
+                posImg = indImg + 1;
+                nombreImg = document.images[indImg].currentSrc.replace(/^.*[\\\/]/, '').split('.')[0];
+                extImg = document.images[indImg].currentSrc.replace(/^.*[\\\/]/, '').split('.')[1];
+                urlImg = document.images[indImg].src;
+
+                // Mostrar todos los datos por consola
+                console.info(posImg + "   " +  nombreImg + "   " + extImg + "   " + urlImg);
+
+            }
+            // dibujar linea separadora horizontal
+            console.info("--------------------------------------------------");
+
+        }
+
+        /** TODO[]: Método para mostrar por consola atributos del objeto LOCATION
+        **/
+        function mostrarInfoLocation() {
+
+            // Variables informativas sobre location
+            var protocolo = null;
+            var anfitrion = null;
+            var puerto = null;
+            var direccion = null;
+
+            console.info("LOCATION:");
+            console.info("Nº   NOMBRE   EXTENSIÓN   URL");
+
+
+
+            // dibujar linea separadora horizontal
+            console.info("--------------------------------------------------");
+
+            // TODO: SCREEN (availHeight/Width, height/width ) y navigator.mimeType
+
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <style>
+        header {
+            background-color: teal;
+            color: #FFF;
+        }
+        @keyframes mostrar {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .row {
+            margin: 20px 0;
+        }
+        .box {
+            display: inline-block;
+            width: 75px;
+            height: 75px;
+            background-color: grey;
+            color: #FFF;
+            font-size: 3em;
+            text-align: center;
+            margin-right: 10px;
+        }
+           .box:last-child {
+            animation-name: mostrar;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+
+            <h1>BubbleSort</h1>
+
+
+        </div>
+
+    </header>
+    <div class="container">
+
+        <div class="row">
+           <div id="alert"></div>
+
+            <form class="form-inline">
+                <div class="col-md-3">
+                    <div class="form-group">
+
+                        <input type="number" class="form-control" step="1" max="10" min="0" id="numeroInput">
+                    </div>
+                </div>
+                <button type="button" onclick="nuevoNumero()" class="btn btn-default" id="añadir" disabled="true">Añadir numero</button>
+
+            </form>
+
+
+        </div>
+        <div class="row">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Números desordenados</div>
+                <div class="panel-body" id="cntNumDes">
+                    <!--innerHTML-->
+                    <!--
+                   <span class="box">3</span> -->
+
+                    <!-- end innerHTML-->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-success">
+                <div class="panel-heading">Números ordenados</div>
+                <div class="panel-body" id="cntNumOr">
+                    <!--  Panel content -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="ordenar()">Ordenar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input class="btn btn-primary btn-lg btn-block" type="reset" value="Reset" onclick="reset()">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+
+    <script>
+        var numeroInput = document.getElementById("numeroInput");
+        var numeroInput1 = document.getElementById("numeroInput").addEventListener("change",permitir);
+        var cntNumDes = document.getElementById("cntNumDes");
+        var cntNumO = document.getElementById("cntNumO");
+        //var warning = document.getElementById("alert");
+        var spanNumero = '<span class="box">##numero##</span>';
+        var boton= document.getElementById("añadir")
+        var arrDes = []; // Array con numeros desordenados
+        var aOrdenado = [];
+        /**
+         * recoger numero del input y meterlo en cntNumDes
+         */
+        if(boton.disabled==true)
+            {
+                showAlert("alert","Introduce algún numero","warning");
+                // alert("ojoi");
+            }
+        function nuevoNumero() {
+                   boton.disabled="false"
+            console.debug("Añadir nuevo numero %s", numeroInput.value)
+            cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
+            arrDes.push(numeroInput.value);
+            //Limpiar Input
+            numeroInput.value = "";
+            numeroInput.focus();
+            var cont = 0;
+             if(boton.disabled==true)
+            {
+                showAlert("alert","Introduce algún numero","warning");
+                // alert("ojoi");
+            }
+            if(arrDes.length>=10)
+                {
+                showAlert("alert","No podemos introducir más de 10 numeros","danger");
+                boton.disabled=true;
+                }
+        }
+            function permitir(){
+                if(numeroInput.value !== 0){
+                    boton.disabled=false;
+                    showAlert("alert","Perfecto!!!!!!","success");
+                }
+                else{
+                    boton.disabled=true;
+                     showAlert("alert","Introduce un numero","warning");
+                }
+                // alert("ojoi");
+            }
+        function ordenar() {
+           cntNumOr.innerHTML="";
+              if(arrDes.length < 2)
+                {
+                    showAlert("alert","No se puede hacer comparación con un sólo numero","danger");
+                }
+            else{
+            var len = arrDes.length;
+            for (var i = 0; i < len; i++) {
+                for (var j = 0; j < len - i - 1; j++) {
+                    if (arrDes[j] > arrDes[j + 1]) {
+                        // cambio
+                        var temp = arrDes[j];
+                        arrDes[j] = arrDes[j + 1];
+                        arrDes[j + 1] = temp;
+                    }
+                }
+            }
+                for (var i = 0; i < len; i++) {
+                    // cntNumOr.innerHTML += spanNumero.replace('##numero##', arrDes[i]);
+                    cntNumOr.innerHTML += spanNumero.replace('##numero##', arrDes[i]);
+                }
+        }
+        }
+           function showAlert( id, texto, clase ){
+            var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
+            var contenedor = document.getElementById(id);
+            contenedor.innerHTML = "";
+           contenedor.innerHTML = alerta;
+            contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
+            contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
+        }
+        function reset(){
+            arrDes=[];
+            cntNumOr.innerHTML="";
+            cntNumDes.innerHTML="";
+            numeroInput.focus();
+        }
+    </script>
+</body>
+</html>

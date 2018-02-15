@@ -130,7 +130,7 @@
             <div class="panel panel-danger">
                 <div class="panel-heading">Números Desordenados</div>
                 <div class="panel-body" id="cntNumDes">
-                    <!-- <span class="box">3<span class="close">x</span></span>-->
+                    <!-- <div class="box">3<span class="close">x</span></div>-->
                 </div>
             </div>
         </div>
@@ -157,11 +157,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
+
+        //TODO para que funcione la eliminacion
+        // 1. No borrar del array y sustituir por null
+        // 2. Crear un indice en comun para usar como ##posicion##
+
+
         //variables globales
         var numeroInput = document.getElementById("numeroInput");
         var cntNumDes = document.getElementById("cntNumDes");
         var cntNumOrd = document.getElementById("cntNumOrd");
-        var spanNumero = '<span class="box">##numero##<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>';
+        var spanNumero = '<div class="box">##numero##<span onclick="eliminarBox(##posicion##)" class="close">x</span></div>';
         var aDesordenado = []; // Array con numeros desordenados
         var aOrdenado = [];
 
@@ -195,6 +201,8 @@
          *                   false en caso contrario
          */
         function validarEntradaNumeros(numero) {
+
+
 
             if (numero == "") {
                 showAlert("msg", "warning", "Escribe un número por favor");
@@ -235,8 +243,15 @@
         *    Eliminamos la Caja del HTML
         *    Eliminamos el numero del Array desordenado
         */
-        function eliminarBox(pos){
+        function eliminarBox(pos, event){
             console.debug("eliminarBox %s", pos);
+            aDesordenado.splice(pos,1);
+
+            var boxes = cntNumDes.getElementsByTagName("div");
+            //console.debug("cajas " + boxes.length);
+            boxes[pos].style.display = "none";
+
+
         }
 
         /**

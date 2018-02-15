@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sumar Números</title>
+</head>
+
+<body>
+    <h1>Suma de Números</h1>
+
+    <button class="pulsar" onclick="sumamos()">Calcular</button>
+    <p id="sumandos">......</p>
+
+    <script>
+        function sumamos() {
+
+            var num1;
+            do {
+                num1 = prompt("introduzca un numero", "");
+                num1 = parseInt(num1);
+                alert("no es un numero");
+            } while (num1 == NaN);
+            /*
+                        var num2 = prompt("introduzca otro numero", "");
+
+                        document.getElementById("sumandos").textContent = parseInt(num1) + parseInt(num2);
+                    */
+        }
+    </script>
+
+</body>
+
+
+
+</html>

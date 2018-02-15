@@ -31,6 +31,22 @@
             color: #FFF;
             font-size: 3em;
             text-align: center;
+            position:relative;
+        }
+        .box.close{
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            color:#FFF;
+            background-color: black;
+            font-size:0.4em;
+            border-radius: 50%;
+            opacity:1;
+
+
+
+
         }
 
     </style>
@@ -62,10 +78,7 @@
             <div class="panel panel-danger">
                 <div class="panel-heading">Números Desordenados</div>
                 <div class="panel-body" id="cntNumDes">
-                    <!--innerHTML--
-                    <span class="box">3</span>
 
-            end inner-->
 
                 </div>
             </div>
@@ -94,7 +107,7 @@
     <script>
         var numeroInput = document.getElementById("numeroInput");
         var contNumDes = document.getElementById("cntNumDes");
-        var spanNumero = '<span class="box">##numero##</span>';
+        var spanNumero = '<span class="box">##numero##<span class="close">x</span></span>';
         var aDes = [];
 
         var aOrd = [];
@@ -138,6 +151,10 @@
 
         }
 */
+        function validarEntradaNumeros(numero){
+
+
+        }
 
     </script>
 

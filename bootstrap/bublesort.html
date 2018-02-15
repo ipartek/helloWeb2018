@@ -17,9 +17,11 @@
                 background-color: teal;
                 color: #FFF;
             }
+
             .row {
                 margin: 20px 0;
             }
+
             @keyframes mostrar {
                 0% {
                     opacity: 0;
@@ -28,6 +30,7 @@
                     opacity: 1;
                 }
             }
+
             .box {
                 /*display: flex;*/
                 display: inline-block;
@@ -38,12 +41,49 @@
                 font-size: 3em;
                 text-align: center;
                 margin-right: 10px;
+                position: relative;
+            }
+
+            .box .close{
+                position: absolute;
+                top: 0;
+                right: 0;
+                color: white;
+                background-color: #000;
+                font-size: 0.5em;
+                border-radius: 50%;
+            }
+
+            .box:hover{
+
+              animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+              transform: translate3d(0, 0, 0);
+              backface-visibility: hidden;
+              perspective: 1000px;
+
             }
             .box:last-child {
                 animation-name: mostrar;
                 animation-duration: 1.5s;
                 animation-timing-function: ease-in;
             }
+            @keyframes shake {
+                10%, 90% {
+                transform: translate3d(-1px, 0, 0);
+                }
+
+              20%, 80% {
+                transform: translate3d(2px, 0, 0);
+              }
+
+              30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+              }
+
+              40%, 60% {
+                transform: translate3d(4px, 0, 0);
+              }
+        }
         </style>
 
     <!-- Meta -->
@@ -66,10 +106,14 @@
         <div class="row">
             <form class="form-inline">
                 <div class="form-group">
+                   <div class="col-xs-3">
                     <!--step nos deja poner el incremento del numero, max y min son los numeros maximos que se pueden poner-->
-                    <input type="number" class="form-control" step="1" id="numeroInput" min="0" max="10">
+                        <input type="number" class="form-control" step="1" id="numeroInput" min="0" max="10">
+                    </div>
                 </div>
-                <button type="button" class="btn btn-default" onclick="nuevoNumero()">Añadir Número</button>
+                <div class="col-xs-9">
+                    <button type="button" class="btn btn-default" onclick="nuevoNumero()">Añadir Número</button>
+                </div>
             </form>
         </div>
         <div class="row">
@@ -78,7 +122,7 @@
                 <div class="panel-body" id="cntNumDes">
 
 
-                    <!-- <span class="box">7</span>-->
+                    <!--<span class="box">7<span class="close">x</span></span>-->
 
                 </div>
             </div>
@@ -99,7 +143,7 @@
                 <!-- btn: clase, btn_default es el color, btn-lg: el tamño, btn-block que es de bloque-->
             </div>
 
-               <input type="reset" class="btn btn-danger btn-lg btn-block" value="Borrar">
+                <button type="button" class="btn btn-danger btn-lg btn-block" onclick="reset()">Borrar</button>
 
         </div>
      </div>
@@ -110,11 +154,18 @@
         var numeroInput = document.getElementById("numeroInput");
         var cntNumDes = document.getElementById("cntNumDes");
         var cntNumOrd = document.getElementById("cntNumOrd");
-        var spanNumero = '<span class="box">##numero##</span>';
+        var spanNumero = '<span class="box">##numero##<span class="close">x</span></span>';
         var aDesordenado = []; // Array con numeros desordenados
         var aOrdenado = [];
 
-
+         function reset(){
+             cntNumDes.innerHTML ="";
+             cntNumOrd.innerHTML = "";
+             aDesordenado =[];
+             aOrdenado =[];
+             document.getElementById("alert").innerHTML ="";
+             numeroInput.focus();
+         }
          /**
          * Muestar una alerta de bootstrap
          * id= identificador del elemento donde lo insertaremos con HTML
@@ -132,13 +183,33 @@
 
          }
 
+         /** Validar que la entrada sea: <10 o no sea vacío.
+         *Retorna mensaje de error y un return
+         *
+         */
+
+         function validarEntradaNumeros ( numero ){
+
+         }
+
+         function validarNumerosOrdenados (){
+             if(aDesordenado.length<2){
+                 showAlert("msg", "warning", "Introduce al menos 2 números.")
+                 return false;
+             }
+
+             return true;
+         }
+
          /**
          *  recoger numero del input y meterlo en  div#cntNumDes
          */
         function nuevoNumero() {
+
+            var num = numeroImput.value;
             console.debug("Añadir nuevo numero %s", numeroInput.value);
 
-            if(aDesordenado.length < 2){
+            if(validarEntradaNumeros(num)){
 
             }
                //añadar numero

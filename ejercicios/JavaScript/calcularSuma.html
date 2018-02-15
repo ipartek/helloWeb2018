@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcular</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!----------------------ESTILOS CSS ------------------------------->
+
+    <style>
+        header {
+            background-color: #85929E;
+            color: #FFF;
+        }
+
+        .row {
+            margin: 20px 0;
+        }
+
+        h1 {
+            text-align: center;
+
+        }
+    </style>
+
+
+</head>
+
+<body onload="mayorEdad()">
+
+    <header>
+        <div class="container">
+            <h1>CALCULAR LA SUMA DE DOS NÚMEROS</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-9">
+                <button type="button" class="btn btn-default btn-lg btn-block" onclick="sumar()">Sumar</button>
+            </div>
+        </div>
+ </div>
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!-----------------JAVASCRIPT-------------------------->
+
+    <script>
+        function sumar() {
+            var n1 = prompt("Escribe un número");
+            //var n2 = prompt("Escribe otro número");
+            while (n1 == null){
+                alert ("Debes introducir el primer número para poder sumar.");
+                var n1 = prompt("Escribe un número");
+                var n2 = prompt("Escribe otro número");
+             }
+            if (n2 == null){
+                    alert ("Debes introducir el segundo número para poder sumar.");
+                    var n2 = prompt("Escribe un número");
+
+                }
+            else{
+                    var resultado = (parseInt(n1) + parseInt(n2));
+
+                }
+            return document.write("La suma de "+ n1 + " + "+ n2 + " es: " +resultado);
+           // if(n1!=null && n2!=null){
+
+            //}
+       }
+
+
+        function mayorEdad(){
+
+            var edad = confirm ("¿Eres mayor de edad?")
+            if (edad == false){
+                document.location.replace("avisoMenorEdad.html");
+
+            }
+        }
+    </script>
+
+</body>
+</html>

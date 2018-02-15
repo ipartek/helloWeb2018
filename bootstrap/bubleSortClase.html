@@ -62,6 +62,9 @@
     <div class="container">
 
         <div class="row">
+
+            <div id="msg"></div>
+
             <form class="form-inline">
                 <div class="col-md-3">
                     <div class="form-group">
@@ -91,6 +94,7 @@
         </div>
         <div class="row">
             <button type="button" onclick="pintarOrdenados()" class="btn btn-success btn-block">Ordenar</button>
+            <button type="button" onclick="reset()" class="btn btn-danger btn-block">Reset</button>
         </div>
 
     </div>
@@ -107,27 +111,68 @@
         var numeroInput = document.getElementById("numeroInput");
         var cntNumDes = document.getElementById("cntNumDes");
         var cntNumOrd = document.getElementById("cntNumOrd");
-        var spanNumero = '<span class="box">##numero##</span>';
+        var spanNumero = '<span class="box">##numero##<span class="close" onclick="eliminarBox(##posicion##)">x</span></span>';
         var aDesordenado = []; // Array con numeros desordenados
         var aOrdenado = [];
+        /*
+        *   Validaciones antes de Ordenar
+        *   0 o menor que dos numeros
+        */
+        function validarNumerosOrdenados(){
+            if ( aDesordenado.length < 2 ){
+                showAlert("msg","warning","Al menos dime 2 numeros para ordenar");
+                return false;
+            }else{
+                return true;
+            }
+        }
+        /**
+        *   Validaciones al introducir numeros
+        *       1. Comprobar que sea vacio
+        *       2. No poder meter > 10 numeros
+        *
+        *
+        *    Muestra mensajes en caso de no pasar la validación
+        *    @return boolean
+        *                   true si pasa todas las validaciónes
+        *                   false en caso contrario
+        */
+        function validarEntradaNumeros(numero){
+            if ( numero == "" ){
+                showAlert("msg","warning","Escribe un número por favor");
+                return false;
+            }
+            if ( aDesordenado.length == 10 ){
+                showAlert("msg","danger","No puedes introducir mas de 10 numeros");
+                return false;
+            }
+            return true;
+        }
         /**
          *  recoger numero del input y meterlo en  div#cntNumDes
          */
         function nuevoNumero() {
-            console.debug("Añadir nuevo numero %s", numeroInput.value);
-            //añadar numero
-            cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
-            aDesordenado.push(numeroInput.value);
-            //limpiar input y poner foco
-            numeroInput.value = "";
-            numeroInput.focus();
+            var num = numeroInput.value;
+            console.debug("Añadir nuevo numero %s", num);
+            if (validarEntradaNumeros(num)) {
+
+                //añadar numero
+                var span = spanNumero.replace('##numero##', num);
+                span += span.replace('##posicion##', aDesordenado.length);
+                cntNumDes.innerHTML += span;
+                aDesordenado.push(num);
+
+                //limpiar input y poner foco
+                numeroInput.value = "";
+                numeroInput.focus();
+            }
         }
         /**
          *  Ordena de menor a mayor el array pasado por parametro
          */
         function ordernar(arr) {
             var len = arr.length;
-            console.debug("array desordenado " + arr );
+            console.debug("array desordenado " + arr);
             for (var i = 0; i < len; i++) {
                 for (var j = 0; j < len - i - 1; j++) {
                     if (arr[j] > arr[j + 1]) {
@@ -138,16 +183,46 @@
                     }
                 }
             }
-            console.debug("array ordenado " + arr );
+            console.debug("array ordenado " + arr);
             return arr;
         }
         function pintarOrdenados() {
             console.debug("pintarOrdenados");
-            aOrdenado = ordernar(aDesordenado);
-            cntNumOrd.innerHTML = "";
-            for (i = 0; i < aOrdenado.length; i++) {
-                cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
+            if ( validarNumerosOrdenados() ){
+                aOrdenado = ordernar(aDesordenado);
+                cntNumOrd.innerHTML = "";
+                for (i = 0; i < aOrdenado.length; i++) {
+                    cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
+                }
             }
+        }
+        /**
+         * Muestra una Alerta de Bootsratp
+         *     id    = Identificador de elemento donde lo vamos a insertar con innerHTML
+         *     clase = clase para cambiar el color de la Alerta ( danger, success, ...)
+         *     texto = Texto a mostrar en la Alerta
+         */
+        function showAlert(id, clase, texto) {
+            var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
+            var contenedor = document.getElementById(id);
+            contenedor.innerHTML = "";
+            contenedor.innerHTML = alerta;
+            contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
+            contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
+        }
+        /**
+        *   Limpiar los dos contenedores
+        *   Inicializar de nuevo los dos arrays
+        *   Limpiar Alert
+        *   poner foco en input
+        */
+        function reset(){
+            cntNumDes.innerHTML = "";
+            cntNumOrd.innerHTML = "";
+            aDesordenado = [];
+            aOrdenado = [];
+            document.getElementById("msg").innerHTML = "";
+            numeroInput.focus();
         }
     </script>
 

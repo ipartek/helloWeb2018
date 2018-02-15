@@ -521,6 +521,9 @@
             var extImg = null;
             var urlImg = null;
 
+            // dibujar linea separadora horizontal
+            console.info("--------------------------------------------------");
+
             console.info("IMÁGENES:");
             console.info("Nº   NOMBRE   EXTENSIÓN   URL");
             var totalImagenes = document.images.length;
@@ -542,27 +545,65 @@
 
         }
 
-        /** TODO[]: Método para mostrar por consola atributos del objeto LOCATION
+        /** TODO[X]: Método para mostrar por consola atributos del objeto LOCATION
         **/
         function mostrarInfoLocation() {
-
-            // Variables informativas sobre location
-            var protocolo = null;
-            var anfitrion = null;
-            var puerto = null;
-            var direccion = null;
-
-            console.info("LOCATION:");
-            console.info("Nº   NOMBRE   EXTENSIÓN   URL");
-
-
 
             // dibujar linea separadora horizontal
             console.info("--------------------------------------------------");
 
-            // TODO: SCREEN (availHeight/Width, height/width ) y navigator.mimeType
+            console.info("LOCATION:");
+            console.info("Protocolo: " + location.protocol);
+            console.info("IP del host: " + location.hostname);
+            console.info("Puerto: " + location.port);
+            console.info("Direccón del recurso: " + location.pathname);
+
+            // dibujar linea separadora horizontal
+            console.info("--------------------------------------------------");
 
         }
+
+
+        /** TODO[X]: Método para mostrar por consola atributos del objeto SCREEN
+        **/
+        function mostrarInfoScreen() {
+
+            // dibujar linea separadora horizontal
+            console.info("--------------------------------------------------");
+
+            console.info("SCREEN:");
+            console.info("Tamaño disponible: " + screen.availWidth + " x " + screen.availHeight);
+            console.info("Tamaño: " + screen.width + " x " + screen.height);
+
+            // dibujar linea separadora horizontal
+            console.info("--------------------------------------------------");
+
+        }
+
+
+        /** TODO[X]: Método para mostrar por consola atributos del objeto NAVIGATOR
+        **/
+        function mostrarInfoNavigator() {
+
+            // Variables
+            var tamMIMETipes = navigator.mimeTypes.length;
+
+            // dibujar linea separadora horizontal
+            console.info("--------------------------------------------------");
+
+            console.info("NAVIGATOR:");
+            console.info("Tipos MIME aceptados: " + tamMIMETipes);
+
+            for(var indMimeTypes = 0; indMimeTypes < tamMIMETipes; indMimeTypes++) {
+                console.info(indMimeTypes+1 + ". Tipo: " + navigator.mimeTypes[indMimeTypes].type);
+            }
+
+            // dibujar linea separadora horizontal
+            console.info("--------------------------------------------------");
+
+        }
+
+
     </script>
 </body>
 </html>

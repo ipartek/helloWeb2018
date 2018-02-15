@@ -15,7 +15,6 @@
 
 
 <style>
-
     @keyframes mostrar {
         0% {
             opacity: 0;
@@ -44,20 +43,27 @@
         color: wheat;
         font-size: 3em;
         text-align: center;
-        margin: 5px;
+        margin: 8px;
     }
-    .box .fa{
+
+    .box .fa {
         position: absolute;
         font-size: 0.5em;
-        top:0;
-        right: 0;
+        top: -15px;
+        right: -15px;
+        color: black;
+        z-index: 999;
     }
+
 
     .box:last-child {
         animation-name: mostrar;
         animation-duration: 1s;
         animation-timing-function: ease-in;
     }
+
+
+
     .box2 {
         animation-name: mostrar;
         animation-duration: 0.5s;
@@ -76,7 +82,6 @@
         text-align: center;
         margin: 5px;
     }
-
 </style>
 
 
@@ -93,13 +98,13 @@
     <div class="container">
         <div class="row">
             <form class="form-inline">
-                <div class="col-md-3">
+                <div class="col-xs-3">
                     <div class="form-group">
                         <input type="number" class="form-control" step="1" max="300" min="0" id="numeroInput" required>
                     </div>
                 </div>
-                <div class="col-md-9">
-                    <button type="button" class="btn btn-default" onclick="add()">Add Numero</button>
+                <div class="col-xs-9">
+                    <button type="button" class="btn btn-default" onclick="add()">Añade Numero</button>
                 </div>
             </form>
         </div>
@@ -137,9 +142,9 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
-        var numeroInput = document.getElementById("numeroInput");
-        var cntNumDes = document.getElementById("cntNumDes");
-        var cntNumOrd = document.getElementById("cntNumOrd");
+        var numeroInput = document.getElementById("numeroInput"); //numero que ingresa en el input
+        var cntNumDes = document.getElementById("cntNumDes"); //contenedor de numeros desordenados
+        var cntNumOrd = document.getElementById("cntNumOrd"); //Contenedor de numeros
         //En este span tengo el borrar dentro del span un segundo span con una clase borrar antes del icono
         var spanNumero = '<span class="box" id="aparece">##numero##<span onclick="borrar(##posicion##)"> <i class="fa fa-times-circle" aria-hidden="true"></i></span>';
         var spanNumero2 = '<span class="box2">##numero##</span>';
@@ -161,8 +166,11 @@
                 //alerta si la longitud es mayor a 10 numeros
                 alerta.innerHTML = alertMsnDefault.replace('##alertText##', texto);
 
-            } else if (numeroInput.value == "") {
+
+
+            } else if (numeroInput.value === "") {
                 var texto = "Aun siendo pentium se distingir numeros de letras ¬¬";
+                //alerta si el valor es ""
                 alerta.innerHTML = alertMsnDefault.replace('##alertText##', texto);
             } else {
                 console.debug("Añadir nuevo numero %s", numeroInput.value);
@@ -175,6 +183,19 @@
                 //Limpiar input y poner foco
                 numeroInput.value = "";
                 numeroInput.focus();
+            }
+
+
+        }
+//Funcion borrar (sin probar si funciona) falta repintar tanto ordenar como desorden
+        function borrar(var num) {
+            var len = arrDes.length;
+            for (var i = num; i < len; i++) {
+                arrDes[i] = arrDes[i + 1];
+                if (i == len) {
+                    arrDes.pop();
+                }
+
             }
 
 
@@ -233,8 +254,9 @@
             cntNumOrd.innerHTML = ("");
             arrDes = [];
             arrOrd = [];
-        }
+            numeroInput.focus();
 
+        }
     </script>
 </body>
 

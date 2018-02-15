@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <!-- lo en la web https://www.bootstrapcdn.com/fontawesome/ copiamos URL y pegamos aqui-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Custom CSS-->
+    <!-- <link rel="stylesheet" href="css/custom.css">-->
+    <!-- link a font awesome 4.7 Iconos-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Ejercicio basico prompt</title>
+</head>
+
+<body onload="confirmedad()">
+    <h1>Ejercicio basico prompt</h1>
+
+    <div class="container">
+
+        <div class="row">
+            <form class="form-inline">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="numero">
+
+                    </div>
+                </div>
+                <div class="clo-md-9">
+                    <button type="button" onclick="calcular()" class="btn btn-success btn-block">Calcular</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+
+    <!-- Cargar JQuery 2.X minified -->
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+        function calcular() {
+            var respuesta = prompt("Dame un número a sumar", "");
+            // var numero=document.getElementById("numero");
+
+            do {
+                if (respuesta != null) {
+                    var respuesta2 = prompt("dame otro numero", "");
+                    if (respuesta2 != null) {
+                        var tot = numero.value;
+                        tot = parseInt(respuesta) + parseInt(respuesta2);
+                        alert("El resultado de los dos números es: " + tot);
+
+                    } else {
+                        alert("No puedo sumar si no me das un número");
+
+                    }
+
+
+                }
+            }
+            while (isNaN(respuesta));
+
+        }
+
+        function confirmedad() {
+
+            var edad = confirm("Eres mayor de edad?");
+            if (edad == false) {
+                window.location.href = "edad.html";
+
+            }
+        }
+    </script>
+
+
+</body>
+</html>

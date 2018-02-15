@@ -1,18 +1,19 @@
 var numeroInput= document.getElementById("numeroInput");
 var cntNumDes = document.getElementById("cntNumDes");
-var spanNumero='<span class="box">$$$</span>';
+var spanNumero='<span class="box" onclick="eliminarBox()">$$$<span class="close">X</span></span>';
 var aDesordenados = []; //array con números desordenados
 var aOrdenados = []; //array con números ordenados
+
 
 /**
 * recoge un número del input y lo introduce en el div co id #cntNumDes
 */
 function nuevoNumero(){
     console.debug("añadir nuevo número %s", numeroInput.value);
+    var numeroEntero = parseInt(numeroInput.value);
 
-
-    cntNumDes.innerHTML += spanNumero.replace('$$$', numeroInput.value);//le ponemos += para que no elimine los números que tenía
-    aDesordenados.push(numeroInput.value);//agregamos una posición al array con push
+    cntNumDes.innerHTML += spanNumero.replace('$$$', numeroEntero);//le ponemos += para que no elimine los números que tenía
+    aDesordenados.push(numeroEntero);//agregamos una posición al array con push
 
     numeroInput.value = "";//límpia el input
     numeroInput.focus();//devuelve el foco al input
@@ -20,18 +21,28 @@ function nuevoNumero(){
 
 function validacion(){
     if(aDesordenados.length == 0){
-        //document.getElementById("alerta01").style.display = "block";
-        mostrarTexto("alert","No seas vag@ introduce un elemento por lo menos.", "alert-warning")
+
+       mostrarTexto("alert","No seas vag@ introduce un elemento por lo menos.", "alert-warning")
+
     }else if(aDesordenados.length>10){
-        mostrarTexto("alert","No se puede metar mas de 10 números.", "alert-success")
+
+        mostrarTexto("alert","No se puede meter mas de 10 números.", "alert-success")
+
     }else if(aDesordenados.length < 2){
-         mostrarTexto("alert","No seas vag@ introduce más de un elemento.", "alert-warning")
+
+        mostrarTexto("alert","No seas vag@ introduce más de un elemento.", "alert-warning")
     }else{
 
-    ordenarBurbuja();
-    pintarBurbuja();
+        ordenarBurbuja();
+        pintarBurbuja();
 
     }
+}
+
+//eliminamos lacaja del html y eliminamos el número de array desordenado
+function eliminarBox{
+    console.debug("eliminar box %s",pos);
+
 }
 
 function ordenarBurbuja(){

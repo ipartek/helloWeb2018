@@ -8,13 +8,25 @@
 
 .box{
     display:inline-block;
+    position: relative;
     width: 75px;
     height: 75px;
     text-align: center;
     background-color: grey;
-    font-size:2em;
+    font-size:4em;
     margin: 10px;
     color: #FFF;
+    padding: 2px;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color:#FFF;
+    background-color:grey;
+    font-size:0.3em;
+    padding: 2px;
 }
 
 @keyframes mostrar{
@@ -31,4 +43,71 @@
     animation-name: mostrar;
     animation-duration: 2s;
     animation-timing-function: ease-in;
+}
+
+/*que la caja se sacuda*/
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.box:hover{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/*texto*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300);
+@import url(https://fonts.googleapis.com/css?family=Squada+One);
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  text-shadow: #EDEDED 3px 2px 0;
+  position: relative;
+}
+
+.panel-heading {
+
+  font-weight: 800;
+  display: block;
+  background: #FFF;
+  padding: 2px 10px;
+  color: #333;
+  font-size: 35px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+
+  background-size: 4px 4px;
+    box-shadow:
+        0 0 0 1px rgba(0,0,0,.4) inset,
+        0 0 20px -5px rgba(0,0,0,.4),
+        0 0 0px 3px #FFF inset;
+}
+
+.panel-danger>.panel-heading,
+.panel-success>.panel-heading{
+    color: rgba(0, 0, 0, 0.5);
 }

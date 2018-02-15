@@ -47,7 +47,15 @@
 
         }
 
-           @keyframes mostrar {
+
+        .close {
+
+            display: none;
+
+        }
+
+
+        @keyframes mostrar {
             0% {
                 opacity: 0;
             }
@@ -161,32 +169,34 @@
             console.debug("Añadir nuevo numero %s", numeroinput.value);
 
             console.debug("Valores del Array %s", arrDes.length);
-            //Alertas
+
+            /***************************Alertas*******************************/
 
 
             if (numeroinput.value == "" || numeroinput.value == "0") {
 
                 document.getElementById('alertas').style.display = 'block';
-                 document.getElementById('alertas').className = 'alert alert-danger alert-dismissible';
+
+                document.getElementById('alertas').className = 'alert alert-danger alert-dismissible';
                 document.getElementById("alertas").innerHTML = alerta.replace("$$$", "No seas vago y escribe algo");
 
             }
 
 
-
-
-
             if (arrDes.length >= 10) {
                 document.getElementById('alertas').style.display = 'block';
-                 document.getElementById('alertas').className = 'alert alert-danger alert-dismissible';
+                document.getElementById('alertas').className = 'alert alert-danger alert-dismissible';
                 document.getElementById("alertas").innerHTML = alerta.replace("$$$", "No se puede procesar");
             } else { //Añadir numero
 
 
                 if (numeroInput.value == "" || arrDes.length >= 10) {
 
+                    /********************Fin de Alertas*************************/
 
                 } else {
+
+                    /*******************Insertar numeros desordenados*************************/
 
                     document.getElementById('alertas').style.display = 'none';
                     cntNumDes.innerHTML += spanNumero.replace("$$$", numeroinput.value);
@@ -198,16 +208,8 @@
                     numeroInput.focus();
                 }
             }
-
-
-
-
-
-
-
-
         }
-
+        /********************Fin de Insertar numeros desordenados*************************/
 
 
 
@@ -216,26 +218,37 @@
 
         function ordenarNumeros() {
 
+            //Si el array tiene un numero no ordena los numeros
+            if (numeroinput.value == "1") {
 
-            console.debug("ordenarNumeros");
-            arrOrdenado = ordenar("arrDes");
-            cntNumOrd.innerHTML = "";
 
-            for (i = 0; i < arrDes.length; i++) {
 
-                cntNumOrd.innerHTML += spanNumero.replace("$$$", arrOrdenado);
+            } else {
+
+                console.debug("ordenarNumeros");
+                arrOrdenado = ordenar(arrDes); //Coge el array ordenado y lo muestra por pantalla
+                cntNumOrd.innerHTML = "";
+
+                for (i = 0; i < arrOrdenado.length; i++) {
+
+                    cntNumOrd.innerHTML += spanNumero.replace("$$$", arrOrdenado[i]);
+                }
             }
 
-
         }
+        /*Fin de la funcion de mostrar los numeros por pantalla*/
+
+        /*******************************************************************/
 
 
-         /*Ordenar numeros */
+
+
+        /*Ordenar numeros */
 
         function ordenar(arrDes) {
 
             if (arrDes.length <= 1) {
- document.getElementById('alertas').style.display = 'block';
+                document.getElementById('alertas').style.display = 'block';
                 document.getElementById("alertas").innerHTML = alerta.replace("$$$", "Se necesitan 2 unidades para poder ordenar");
 
             } else {
@@ -244,7 +257,7 @@
 
                 var len = arrDes.length;
                 console.debug("Arraydesordenad" + arrDes);
-                console.debug("Array" + arrDes.values);
+
 
 
                 for (var i = 0; i < len; i++) {
@@ -262,11 +275,14 @@
                 }
                 console.debug("array ordenado" + arrDes);
 
-            return arrDes;
+                return arrDes;
 
 
             }
         }
+        /*Fin de ordenacion de numeros*/
+        /**************************************************************/
+
 
         /*Borrar elementos*/
 
@@ -282,14 +298,14 @@
 
         /*
         Alertas*/
-         /**
-        * Muestra una Alerta de Bootsratp
-        * id    = Identificador de elemento donde lo vamos a insertar con innerHTML
-        * texto = Texto a mostrar en la Alerta
-        * clase = clase para cambiar el color de la Alerta ( danger, success, ...)
-        */
+        /**
+         * Muestra una Alerta de Bootsratp
+         * id    = Identificador de elemento donde lo vamos a insertar con innerHTML
+         * texto = Texto a mostrar en la Alerta
+         * clase = clase para cambiar el color de la Alerta ( danger, success, ...)
+         */
 
-    /* function showAlert( id, texto, clase ){
+        /* function showAlert( id, texto, clase ){
             var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
             var contenedor = document.getElementById("alertas");
             contenedor.innerHTML = "";
@@ -298,7 +314,6 @@
             contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
         }
 */
-
     </script>
 
 

@@ -16,6 +16,10 @@ La rama actual seleccionada es "master" y queremos cambiar a otra
 Desde MS-DOS entrar a la carpeta del proyecto (C:\desarrollo\helloweb2018)
 
 Cambiar a otro branch ("DavidVico"): git checkout DavidVico
+
+
+***********************************
+
  
 Abrir el brackets y COMMIT and PUSH para subir cambios
 

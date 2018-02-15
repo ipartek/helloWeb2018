@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="custom/custom.css">
 </head>
 
-<body>
+<body onload="visualizarImagenes();">
     <nav class="navbar navbar-default navbar-fixed-Top">
 
         <div class="container-fluid">
@@ -400,6 +400,17 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        function visualizarImagenes(){
+            var arr=document.images;
+            var len = arr.length;
+            for (var i = 0; i < len; i++){
+                var iimagen = arr[i];
+                console.info("Nº"+i+ ":"+iimagen.src );
+            }
+
+        }
+    </script>
 </body>
 
 </html>

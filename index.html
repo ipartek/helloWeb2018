@@ -46,6 +46,25 @@
         <script src="js/main.js" type="text/javascript"></script>
     </div>
     <!--end container-->
+
+        <div  id="cntFecha"></div>
+
+        <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+        var fecha = '<div>##anno##</div>';
+        var dfecha = new Date();
+       var anyo = dfecha.getFullYear();
+    var cntFecha = document.getElementById("cntFecha");
+        cntFecha.innerHTML="";
+        cntFecha.innerHTML = fecha;
+        cntFecha.innerHTML.replace("##anno##",anyo);
+        document.write("Año "+ parseInt(anyo));
+    </script>
 </body>
 
 </html>

@@ -24,6 +24,7 @@
         .row {
             margin: 20px 0px
         }
+
         @keyframes mostrar {
             0% {
                 opacity: 0;
@@ -32,6 +33,7 @@
                 opacity: 1;
             }
         }
+
 
         .box {
             /* display: flex;*/
@@ -43,6 +45,50 @@
             text-align: center;
             padding: 10px;
             margin: 10px;
+            position: relative;
+        }
+
+        .box .close {
+            position: absolute;
+            top: -10px;
+            right: -5px;
+            color: cadetblue;
+            background-color: aqua;
+            font-size: 0.5em;
+            border-radius: 50%;
+            opacity: 1;
+            padding: 2px;
+        }
+
+
+        .box:hover {
+            animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+
+        @keyframes shake {
+            10%,
+            90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+
+            20%,
+            80% {
+                transform: translate3d(2px, 0, 0);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+
+            40%,
+            60% {
+                transform: translate3d(4px, 0, 0);
+            }
         }
 
         .box:last-child {
@@ -51,10 +97,9 @@
             animation-timing-function: ease-in;
         }
 
-        #alerta{
+        /*#alerta{
             display: none;
-        }
-
+        }*/
     </style>
 
 
@@ -68,28 +113,28 @@
         </div>
     </header>
     <div class="container">
-        <div class="row">
+        <!--<div class="row">
             <div class="col-md-12">
                 <div class="alert alert-warning alert-dismissible" role="alert" id="alerta">
                 </div>
             </div>
-        </div>
+        </div>-->
+        <div id="alerta"></div>
 
         <div class="row">
-            <div class="col-md-12">
                 <form class="form-inline">
-                    <div class="col-md-3">
+                    <div class="col-xs-3">
                         <!--formulario en linea, horizontal -->
                         <div class="form-group">
                             <input type="number" class="form-control" step="1" max="100" min="0" id="numeroInput" placeholder="Dime un numero">
                             <!--step, indica de cuanto a cuanto es el aumento -->
                         </div>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-xs-9">
                         <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir Numero</button>
                     </div>
                 </form>
-            </div>
+
         </div>
         <!--fin row 1-->
         <div class="row">
@@ -97,7 +142,7 @@
                 <div class="panel-heading">Numeros desordenados</div>
                 <div class="panel-body" id="cntNumDes">
                     <!--propiedad innerHTML
-                    <span class="box">3</span>
+                    <span class="box">3<span class="close">x</span></span>
                     <span class="box">6</span>
                    end innerHTML-->
                 </div>
@@ -140,10 +185,10 @@
         //variables globales
         var numeroInput = document.getElementById("numeroInput");
         var cntNumDes = document.getElementById("cntNumDes");
-        var spanNumero = '<span class="box">##numero##</span>';
-        var alerta = document.getElementById("alerta");
-        var alertaTexto =
-            '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong>##alerta##.';
+        var spanNumero = '<span class="box">##numero##<span class="close" onclick=eliminarBox(##posicion##)>x</span></span>';
+        /*  var alerta = document.getElementById("alerta");
+          var alertaTexto =
+              '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong>##alerta##.';*/
         var aDesordenado = []; //array con numeros desordenados vacio
         var aOrdenado = []; //array con numeros ordenados vacio
         var sePuedeOrdenar = false;
@@ -152,13 +197,20 @@
          */
         function nuevoNumero() {
             console.debug("Añadir nuevo numero %s", numeroInput.value);
-            //añadir numero
-            cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
-            aDesordenado.push(numeroInput.value);
+            var numero = numeroInput.value;
+            if (validarEntradaNumeros(numero)) {
+                //añadir numero
+                numero = parseInt(numero);
+                var span = spanNumero.replace('##numero##', numero);
+                span = span.replace('##posicion##', aDesordenado.length);
+                cntNumDes.innerHTML += span;
+                aDesordenado.push(numero);
+
+            }
             //limpiar input
             // numeroInput.nodeValue = "";
             borrarNumero();
-            numeroInput.focus();
+
 
         }
 
@@ -190,8 +242,10 @@
                 cntNumOrd.innerHTML += spanNumero.replace('##numero##', arr[i]);
             }
         }
-        function borrarAlerta(){
-             document.getElementById("alerta").style.display = "none";
+
+        function borrarAlerta() {
+            /*document.getElementById("alerta").style.display = "none";*/
+            document.getElementById("alerta").innerHTML = "";
         }
 
         /**
@@ -235,6 +289,28 @@
 
         function borrarNumero() {
             numeroInput.value = "";
+            numeroInput.focus();
+
+        }
+        /*Validar entrada numeros
+        en caso de no pasar la validacion
+        @param numero:numero a validar
+        @return boolean
+            true si pasa la validacion
+            false si pasa la validacion
+            */
+
+        function validarEntradaNumeros(numero) {
+            if (numero === "") {
+                showAlert("alerta", "Escriba un numero por favor", "warning");
+                return false;
+
+            }
+            if (aDesordenado.length == 20) {
+                showAlert("alerta", "No puedes introducir mas de 10 numeros", "warning");
+                return false;
+            }
+            return true;
 
         }
 
@@ -242,32 +318,34 @@
             var longitud = aDesordenado.length;
             if (longitud > 10) {
                 sePuedeOrdenar = false;
-                showAlert(alerta,"No tengo tanta capacidad de procesacion","warning");
+                showAlert("alerta", "No tengo tanta capacidad de procesacion", "warning");
                 /*alerta.innerHTML = alertaTexto.replace('##alerta##', "No tengo tanta capacidad de procesacion");*/
                 showAlert();
             } else if (longitud == 1) {
                 sePuedeOrdenar = false;
-                alerta.innerHTML = alertaTexto.replace('##alerta##', "por favor, necesito al menos 2 numeros para poder ordenar");
+                showAlert("alerta", "por favor, necesito al menos 2 numeros para poder ordenar", "warning");
+                /* alerta.innerHTML = alertaTexto.replace('##alerta##', "por favor, necesito al menos 2 numeros para poder ordenar");*/
             } else if (longitud == 0) {
                 sePuedeOrdenar = false;
-                alerta.innerHTML = alertaTexto.replace('##alerta##', "no seas vago y mete por lo menos 2 numeros");
+                showAlert("alerta", "no seas vago y mete por lo menos 2 numeros", "warning");
+                /*alerta.innerHTML = alertaTexto.replace('##alerta##', "no seas vago y mete por lo menos 2 numeros");*/
             } else
                 sePuedeOrdenar = true;
-            if (sePuedeOrdenar == false)
-                 document.getElementById("alerta").style.display = "block";
+            /* if (sePuedeOrdenar == false)
+                  document.getElementById("alerta").style.display = "block";*/
 
         }
         /** Muestra una alerta de bootstrap
-        */
+         */
 
 
-               /**
-        * Muestra una Alerta de Bootsratp
-        * id    = Identificador de elemento donde lo vamos a insertar con innerHTML
-        * texto = Texto a mostrar en la Alerta
-        * clase = clase para cambiar el color de la Alerta ( danger, success, ...)
-        */
-        function showAlert( id, texto, clase ){
+        /**
+         * Muestra una Alerta de Bootsratp
+         * id    = Identificador de elemento donde lo vamos a insertar con innerHTML
+         * texto = Texto a mostrar en la Alerta
+         * clase = clase para cambiar el color de la Alerta ( danger, success, ...)
+         */
+        function showAlert(id, texto, clase) {
             var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
             var contenedor = document.getElementById(id);
             contenedor.innerHTML = "";
@@ -275,7 +353,23 @@
             contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
             contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
         }
+        /**eliminamos la caja del html y eliminamos el numero del array desordenado
+         */
+        function eliminarBox(pos) {
+             console.debug("eliminarBox %s", pos);
+            aDesordenado.pop(aDesordenado[pos]);
+            dibujarArray();
 
+        }
+        function dibujarArray()
+        {
+             var arr = aDesordenado;
+            var len = arr.length;
+            cntNumDes.innerHTML ="";
+            for (var i = 0; i < len; i++) {
+                cntNumDes.innerHTML += spanNumero.replace('##numero##', arr[i]);
+            }
+        }
     </script>
 </body>
 

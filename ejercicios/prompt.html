@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prompt</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        button {
+            font-family: "roboto";
+            background-color: azure;
+            border: solid 1px;
+            padding: 5px;
+            font-size: 2em;
+            margin: 0 auto;
+            width: 50%;
+            display: block;
+        }
+
+        output {
+            margin: 10px auto;
+            font-family: "roboto";
+            width: 60%;
+            display: block;
+            text-align: center;
+        }
+
+        output span {
+            font-size: 1.5em;
+        }
+
+        footer {
+            font-family: "roboto";
+            color: white;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            bottom: 0;
+            left: 0px;
+            background-color: chartreuse;
+        }
+
+
+        /*        IMPORTANTE para poder introducir código por JS utilizando
+        los pseudoselectores after , before*/
+
+        footer p:after {
+            content: attr(data-after);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ok  Pide un dato: Por favor dame un múmero a sumar-->
+    <!-- ok  Pide un dato: Dame el segundo número-->
+    <!-- ok  HTML muestra la usma d elos dos números (Parse INT)-->
+    <!-- ok  Si cancela: No puedo sumar si no me das dos nñumeros-->
+    <!-- ok  Mostrar la suma en un output-->
+    <!-- ok  Según carga la página, un confirm que pregunte si eres mayor de edad
+    cancelar el acceso si no esmayor de edad y redirigimos a otro html,
+    donde haya un afoto de un bebé y ponga qie no puede acceder a la página actual -->
+    <!--  Copyright Ipartek C(opyright) año actual con javascript -->
+
+    <p></p>
+    <button onclick="sumar()">Calcular</button>
+    <output>
+    </output>
+    <footer>
+
+        <p data-after="">Copyright Ipartek &copy; </p>
+    </footer>
+
+    <script>
+        document.body.onload = function() {
+            var edad = confirm("Eres mayor de 18 años");
+            if (!edad) {
+                location.href = "http://www.google.es"
+            }
+
+        }
+
+        //Copyright
+        document.querySelector("footer p").setAttribute("data-after", new Date().getFullYear());
+
+        //Función tiempo
+        function tiempo() {
+            var p = document.querySelector("p");
+            var f = new Date();
+            p.textContent = f.getDate() + "-" + f.getMonth() + 1 + "-" + f.getFullYear() + " " + f.getHours() + ":" + f.getMinutes() + ":" + f.getSeconds();
+            setInterval(tiempo, 1000)
+        }
+
+        //Pongo en marcha el reloj
+        tiempo();
+
+        //Selector del output
+        var output = document.querySelector("output");
+
+        //Suma los elemntos introducidos mediante el prompt
+        function sumar() {
+            a = prompt("Introduzca primer número a sumar");
+            if (a != "" && !isNaN(a) && a != null) {
+                console.log(a)
+                b = prompt("Introduzca el segundo número a sumar");
+                if (b != "" && !isNaN(a) && a != null) {
+                    console.log(a)
+                    output.innerHTML = "La suma de los valores es: <span>" + (parseInt(a) + parseInt(b)) + "</span>"
+                    console.log(output.textContent)
+                } else {
+                    alert("No puedo sumar si no me das dos NÚMEROS")
+                    sumar();
+                }
+            } else {
+                alert("No puedo sumar si no me das dos NÚMEROS")
+                sumar();
+            }
+        }
+    </script>
+
+
+
+</body>
+</html>

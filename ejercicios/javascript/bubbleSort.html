@@ -7,6 +7,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -35,7 +36,54 @@
             vertical-align: top;
             margin-right: 5px;
             border-radius: 5px;
+            position: relative
         }
+
+        .box .cross {
+            position: absolute;
+            font-size: 0.5em;
+            padding: 2px;
+            top: 0;
+            right: 0;
+            color: white;
+/*            background-color: rgba(0, 0, 0, 0.5);*/
+            border-radius: 5px;
+            line-height: 1.0em;
+            color: black;
+        }
+
+        /*
+
+        .box:hover {
+            animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+
+        @keyframes shake {
+            10%,
+            90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+
+            20%,
+            80% {
+                transform: translate3d(2px, 0, 0);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+
+            40%,
+            60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+*/
 
         #cntNumDes .box:last-child {
             animation: mostrar;
@@ -103,9 +151,9 @@
             <div class="panel panel-danger">
                 <div class="panel-heading">Números desordenados</div>
                 <div class="panel-body" id="cntNumDes">
+                    <span class="box">1 <span class="cross"><i class="fa fa-times-circle"></i></span></span>
                     <!--innerHTML-->
                     <!--
-                    <span class="box">1</span>
                     <span class="box">7</span>
                     <span class="box">5</span>
                     <span class="box">4</span>
@@ -213,7 +261,7 @@
                 //Inhabilito el botón Ordenar y Añadir númerohasta resetear
                 this.disabled = true;
                 butAnadir.disabled = true;
-                butAnadir.value="";
+                butAnadir.value = "";
 
                 //Habilito el botón reset
                 butReset.disabled = false;
@@ -285,4 +333,4 @@
        Con 11: Lo siento pero no tengo tanta capicidad de procesamiento, máximo 10 números-->
 <!--TODO input 3 y el botón el resto 9, en línea-->
 <!--TODO El número ha de salir con transición -->
-<!--TODO -->
+<!--TODO Click eliminar caja, se pasa la posicion de la caja-->

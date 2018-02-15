@@ -177,6 +177,41 @@
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</body>
 
+    <script>
+        document.body.onload = function() {
+
+            //IMAGES
+            console.log("-----------------IMAGES---------------------")
+            for (var i = 0; i < 6; i++) {
+                //                console.log(document.images[i].src)
+                //                console.log(document.images)
+                var nombre = document.images[i].src.substring(document.images[i].src.lastIndexOf("/") + 1);
+                //                console.log(result)
+                var extension = document.images[i].src.substring(document.images[i].src.lastIndexOf(".") + 1);
+                //                console.log(result)
+
+                console.log("Imagen " + (i + 1) + ": " + nombre.split(".")[0] + " - " + extension + " - " + document.images[i].src)
+            }
+
+            //LOCATION
+            console.log("-----------------LOCATION---------------------")
+            console.log("Host: " + location.host);
+            console.log("Hostname: " + location.hostname);
+            console.log("Port: " + location.port);
+            console.log("Protocol: " + location.protocol);
+            console.log("Href: " + location.href);
+            console.log("Pathname: " + location.pathname);
+
+            //SCREEN
+            console.log("-----------------SCREEN---------------------")
+            console.log("AvailHeight: " + screen.availHeight)
+            console.log("AvailWidth: " + screen.availWidth)
+            console.log("Width: " + screen.width)
+            console.log("Height: " + screen.height)
+            console.log("ColorDepth: " + screen.colorDepth)
+        }
+    </script>
+</body>
 </html>
+

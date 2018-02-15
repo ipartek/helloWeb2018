@@ -4,13 +4,13 @@ var divNumDes = document.getElementById("divNumDes");
 var divNumOrd = document.getElementById("divNumOrd");
 var divAlert = document.getElementById("divAlert");
 var alertText = document.getElementById('alertText');
-var spanNumero = '<span class="box">##numero##</span>'
+var spanNumero = '<span class="box">##numero##<span class="close" onclick="eleminarCaja(##posicion##)">x</span></span>'
 var arrDes = []; //array de numeros desordenados
 var arrOrd = []; //array de numeros ordenados
 var alerta = '<div class="alert alert-##clase## alert-dismissible fade in" role="alert"><button type="button" onclick="closeAlert()" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><h4>Vas de listo por lo visto!</h4><p id="alertText">##texto##</p><p> <button type="button" class="btn btn-##clase##" onclick="closeAlert()">Cerrar</button></p></div>'
 
 /**
- * recoger numero del input y meterlo en el div
+ * recoger numero del input, validar si es numero y meterlo en el div
  */
 function addNumber() {
 
@@ -19,10 +19,14 @@ function addNumber() {
         if (arrDes.length < 10) {
 
             if (inputNumber.value != '') {
-                divNumDes.innerHTML += spanNumero.replace('##numero##', inputNumber.value);
+                var span = spanNumero.replace('##numero##', inputNumber.value);
+
+                span = span.replace('##posicion##', arrDes.length);
 
                 arrDes.push(inputNumber.value);
                 console.log('arrDes' + arrDes);
+
+               divNumDes.innerHTML += span;
 
 
             }
@@ -32,6 +36,10 @@ function addNumber() {
             sacarMensaje();
 
         }
+    } else {
+
+        sacarAlerta('divAlert', 'Solo acepto numeros', 'danger');
+
     }
 
     inputNumber.value = '';
@@ -39,6 +47,10 @@ function addNumber() {
 
 }
 
+
+/**
+*Busca el motivo del error y lo envia a la funcion de pintar el mensaje
+*/
 function sacarMensaje() {
 
     divAlert.innerHTML = "";
@@ -68,6 +80,12 @@ function sacarMensaje() {
 
 }
 
+/**
+* pinta el mensaje de error por pantalla
+* @id id del elemento en el que se va a mostrar el error
+* @texto texto del mensaje de error
+* @clase tipo de error (warning, alert, success...)
+*/
 function sacarAlerta(id, texto, clase) {
 
     var contAlerta = document.getElementById(id);
@@ -80,6 +98,10 @@ function sacarAlerta(id, texto, clase) {
 
 }
 
+
+/**
+* ordena los nuemros del array
+*/
 function shortBubble() {
 
     if (arrDes.length > 1) {
@@ -115,6 +137,10 @@ function shortBubble() {
     }
 }
 
+
+/**
+* pinta los numero del array en el div
+*/
 function sacarNumeros() {
     divNumOrd.innerHTML = '';
     for (i = 0; i < arrDes.length; i++) {
@@ -122,13 +148,37 @@ function sacarNumeros() {
     }
 }
 
+
+/**
+* funcion para cerrar las alertas
+*/
 function closeAlert() {
     divAlert.innerHTML = "";
 
 }
 
+
+/**
+* funcion para limpiar la pagina
+* vacia los arrays
+*/
 function limpiar() {
     divNumDes.innerHTML = '';
     divNumOrd.innerHTML = '';
+    divAlert.innerHTML = '';
     arrDes = [];
+    arrOrd = [];
+
+    inputNumber.focus();
+
+}
+
+/**
+* funcion para eliminar caja del html
+* eliminar elemento del array
+*/
+function eliminarCaja(posicion) {
+
+    //TODO
+
 }

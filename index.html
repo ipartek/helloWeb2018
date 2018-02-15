@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <meta charset="UTF-8">
@@ -54,6 +55,21 @@
         </h1>
         <br>
         <br>
+        <br>
+        <script>
+            var f = new Date();
+            var meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+            document.write('<div class="container center">');
+            document.write('<div class="mifecha">');
+            document.write('<div class="ano">' + f.getFullYear() + '</div>');
+            document.write('<div class="dia">' + f.getDate() + '</div>');
+            document.write('<div class="mes">' + meses[f.getMonth()] + '</div>');
+            document.write('</div>');
+            document.write('</div>');
+
+        </script>
+        <br>
+        <br>
         <div class="center">
 
             <input type="number" id="numero" placeholder="Escribe un numero" style="margin: auto" />
@@ -68,12 +84,37 @@
             <br>
             <button id="boton" onclick="pulsador()"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
 Pulsame!!</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <button id="boton" onclick="calcular()"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+Ingresa numero</button>
+            <br>
+            <br>
+            <br>
 
         </div>
     </div>
     <!-- div container -->
     <!-- enlace de javascript -->
+    <footer style="background-color: black;color: white;text-align: center;">
+        <div class="container" id="copy">&copy;Ipartek
+            <script>
+                var f = new Date();
+                document.write('<span>' + f.getFullYear() + '</span>');;
+
+            </script>
+        </div>
+    </footer>
+
     <script src="js/main.js" type="text/javascript">
+
+
     </script>
 </body>
+
 </html>

@@ -1,3 +1,14 @@
+function mayor(){
+    if(confirm ("Eres mayor de edad?")){
+        alert("enyoy =D");
+    }else{
+
+        location.href="index.html";
+        alert('Lo siento pero esta web es pa gente mayor');
+
+
+    }
+}
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var ballRadius = 10;

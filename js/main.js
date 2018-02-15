@@ -110,11 +110,11 @@ function ordenacionEnBurbuja() {
 
     var numeroDesordenados = [3, 0, 1, 8, 7, 2, 5, 4, 6, 9];
     var len = numeroDesordenados.length;
-    console.debug("array desordenado"+numeroDesordenados);
+    console.debug("array desordenado" + numeroDesordenados);
     do {
         var romper = false;
         for (var i = 0; i < len; i++) {
-            var z = i+1;
+            var z = i + 1;
             if (numeroDesordenados[i] > numeroDesordenados[z]) {
 
                 var aux = numeroDesordenados[i];
@@ -125,6 +125,20 @@ function ordenacionEnBurbuja() {
 
         }
 
-    }while (romper);
-  console.debug("array ordenado"+numeroDesordenados);
+    } while (romper);
+    console.debug("array ordenado" + numeroDesordenados);
+}
+
+//Metodo que pide 2 numeros por pront y luego los suma
+
+function calcular() {
+    do {
+        var num1 = parseInt(window.prompt("Introduce Primer numero", 0));
+    } while (isNaN(num1));
+    do {
+        var num2 = parseInt(window.prompt("Introduce Segundo numero", 0));
+    } while (isNaN(num2));
+    var resul = num1 + num2;
+    alert("Tu resultado es: " + resul);
+
 }

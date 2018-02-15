@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../helloWeb_old/css/style.css">
+    <style>
+        .boton1 {
+            display: inline-block;
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            font-size: 5em;
+
+            color: red;
+            text-align: center;
+            font-family: arial;
+            margin: 10px;
+
+
+
+        }
+
+
+
+        .caja {
+            display: inline-block;
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            font-size: 5em;
+
+            color: red;
+            text-align: center;
+            font-family: arial;
+            margin: 10px;
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Ejercicios de Objetos </h1>
+        </header>
+    </div>
+
+    <div class="boton1">
+        <button type="button" id="boton" onclick="sumarNumeros()">Calcular</button>
+    </div>
+
+
+    <div class="caja">
+        <output id="Suma">X</output>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function sumarNumeros() {
+            var num1;
+            do {
+                var flag = true;
+                num1 = prompt("Introduzca un numero para sumar");
+                if (!isNaN(num1)) {
+                    num1 = parseInt(num1);
+                    flag = false;
+                }
+
+            } while (flag);
+
+            var output = document.getElementById("Suma");
+
+            function suma() {
+                var respuesta = prompt("Introduzca un numero para sumar");
+
+                if (respuesta === null) {
+                    output.textContent = "No puedo sumar si no son numeros";
+                } else {
+
+                    var numero;
+                    numero1 = parseInt(respuesta);
+
+
+                }
+                if (respuesta != "") {
+                    var respuesta2 = prompt("Introduzca otro numero para sumar");
+                }
+                if (respuesta2 === null) {
+
+                    output.textContent = "No puedo sumar si no son numeros";
+                }
+                numero2 = parseInt(respuesta2);
+                var sumaTotal = numero1 + numero2;
+                output.textContent = sumaTotal;
+
+            }
+        }
+    </script>
+</body>
+
+</html>

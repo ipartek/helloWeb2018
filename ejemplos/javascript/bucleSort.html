@@ -13,6 +13,7 @@
             background-color: teal;
             color: #FFF;
         }
+
         @keyframes mostrar {
             0% {
                 opacity: 0;
@@ -21,6 +22,7 @@
                 opacity: 1;
             }
         }
+
 
         .row {
             margin: 20px 0;
@@ -35,15 +37,36 @@
             font-size: 3em;
             text-align: center;
             margin-right: 10px;
+            position: relative;
+
+        }
+
+        .box .close {
+
+            position: relative;
+            top: 0;
+            right: 0;
+            background-color: #000;
+            font-size: 0.3em;
+            border-radius: 50%;
+            opacity: 1;
+            padding: 2px;
+            color: #FFF;
+        }
 
         }
 
 
 
-           .box:last-child {
+        .box:last-child {
             animation-name: mostrar;
             animation-duration: 1.5s;
             animation-timing-function: ease-in;
+        }
+
+
+
+
         }
     </style>
 
@@ -62,7 +85,7 @@
     <div class="container">
 
         <div class="row">
-           <div id="alert"></div>
+            <div id="alert"></div>
 
             <form class="form-inline">
                 <div class="col-md-3">
@@ -71,8 +94,11 @@
                         <input type="number" class="form-control" step="1" max="10" min="0" id="numeroInput">
                     </div>
                 </div>
-                <button type="button" onclick="nuevoNumero()" class="btn btn-default" id="añadir" disabled="true">Añadir numero</button>
+                <div class="col-xs-9">
 
+
+                    <button type="button" onclick="nuevoNumero()" class="btn btn-default" id="añadir" disabled="true">Añadir numero</button>
+                </div>
             </form>
 
 
@@ -82,9 +108,10 @@
                 <div class="panel-heading">Números desordenados</div>
                 <div class="panel-body" id="cntNumDes">
                     <!--innerHTML-->
+                    <!---->
                     <!--
-                   <span class="box">3</span> -->
-
+                    <span class="box">3<span class="close">x</span></span>
+                    -->
                     <!-- end innerHTML-->
                 </div>
             </div>
@@ -119,91 +146,86 @@
 
     <script>
         var numeroInput = document.getElementById("numeroInput");
-        var numeroInput1 = document.getElementById("numeroInput").addEventListener("change",permitir);
+        var numeroInput1 = document.getElementById("numeroInput").addEventListener("change", permitir);
         var cntNumDes = document.getElementById("cntNumDes");
         var cntNumO = document.getElementById("cntNumO");
         //var warning = document.getElementById("alert");
-        var spanNumero = '<span class="box">##numero##</span>';
-        var boton= document.getElementById("añadir")
+        var spanNumero = '<span class="box">##numero##<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>';
+        var boton = document.getElementById("añadir")
 
         var arrDes = []; // Array con numeros desordenados
         var aOrdenado = [];
         /**
          * recoger numero del input y meterlo en cntNumDes
          */
-        if(boton.disabled==true)
-            {
-                showAlert("alert","Introduce algún numero","warning");
-                // alert("ojoi");
-            }
+        if (boton.disabled == true) {
+            showAlert("alert", "Introduce algún numero", "warning");
+            // alert("ojoi");
+        }
 
         function nuevoNumero() {
+            var num= numeroInput.value;
+            var span= spanNumero.replace('##numero##', num);
+            span = span.replace('##posicion##', arrDes.length);
 
-
-
-                   boton.disabled="false"
+            boton.disabled = "false";
             console.debug("Añadir nuevo numero %s", numeroInput.value)
 
-            cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
-            arrDes.push(numeroInput.value);
+            //cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
+            cntNumDes.innerHTML += span;
+            arrDes.push(parseInt(numeroInput.value));
 
             //Limpiar Input
             numeroInput.value = "";
             numeroInput.focus();
             var cont = 0;
-             if(boton.disabled==true)
-            {
-                showAlert("alert","Introduce algún numero","warning");
+            if (boton.disabled == true) {
+                showAlert("alert", "Introduce algún numero", "warning");
                 // alert("ojoi");
             }
-            if(arrDes.length>=10)
-                {
+            if (arrDes.length >= 10) {
 
-                showAlert("alert","No podemos introducir más de 10 numeros","danger");
-                boton.disabled=true;
+                showAlert("alert", "No podemos introducir más de 10 numeros", "danger");
+                boton.disabled = true;
 
-                }
+            }
 
         }
 
-            function permitir(){
-                if(numeroInput.value !== 0){
-                    boton.disabled=false;
-                    showAlert("alert","Perfecto!!!!!!","success");
-                }
+        function permitir() {
+            if (numeroInput.value !== 0) {
+                boton.disabled = false;
+                showAlert("alert", "Perfecto!!!!!!", "success");
+            } else {
 
-                else{
-
-                    boton.disabled=true;
-                     showAlert("alert","Introduce un numero","warning");
-                }
-
-                // alert("ojoi");
+                boton.disabled = true;
+                showAlert("alert", "Introduce un numero", "warning");
             }
+
+            // alert("ojoi");
+        }
 
         function ordenar() {
 
-           cntNumOr.innerHTML="";
-              if(arrDes.length < 2)
-                {
-                    showAlert("alert","No se puede hacer comparación con un sólo numero","danger");
-                }
-            else{
+            cntNumOr.innerHTML = "";
+            if (arrDes.length < 2) {
+                showAlert("alert", "No se puede hacer comparación con un sólo numero", "danger");
+            } else {
 
 
-            var len = arrDes.length;
+                var len = arrDes.length;
 
-            for (var i = 0; i < len; i++) {
-                for (var j = 0; j < len - i - 1; j++) {
-                    if (arrDes[j] > arrDes[j + 1]) {
-                        // cambio
-                        var temp = arrDes[j];
-                        arrDes[j] = arrDes[j + 1];
-                        arrDes[j + 1] = temp;
+                for (var i = 0; i < len; i++) {
+                    for (var j = 0; j < len - i - 1; j++) {
+                        if (arrDes[j] > arrDes[j + 1]) {
+                            // cambio
+                            var temp = arrDes[j];
+                            arrDes[j] = arrDes[j + 1];
+                            arrDes[j + 1] = temp;
 
+                        }
                     }
                 }
-            }
 
                 for (var i = 0; i < len; i++) {
 
@@ -217,23 +239,27 @@
 
 
 
-        }
+            }
         }
 
-           function showAlert( id, texto, clase ){
+        function showAlert(id, texto, clase) {
             var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
             var contenedor = document.getElementById(id);
             contenedor.innerHTML = "";
-           contenedor.innerHTML = alerta;
+            contenedor.innerHTML = alerta;
             contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
             contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
 
         }
-        function reset(){
-            arrDes=[];
-            cntNumOr.innerHTML="";
-            cntNumDes.innerHTML="";
+
+        function reset() {
+            arrDes = [];
+            cntNumOr.innerHTML = "";
+            cntNumDes.innerHTML = "";
             numeroInput.focus();
+        }
+         function eliminarBox(pos){
+            console.debug("eliminarBox %s", pos);
         }
     </script>
 </body>

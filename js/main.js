@@ -10,6 +10,8 @@ function init() {
     console.info('info DOM listo y cargado');
     console.warn('warn DOM listo y cargado');
     console.error('error DOM listo y cargado');
+    var fecha = new Date();
+    document.getElementById("fecha").textContent= fecha.getDate()+"/"+fecha.getMonth()+"/"+fecha.getFullYear();
 }
 
 function pulsador() {

@@ -18,7 +18,7 @@
 
 </head>
 
-<body class="bodyConHeaderFixed">
+<body onload="cargarImagenes()" class="bodyConHeaderFixed">
 
     <a href="/ejercicios/ejercicios.html">Volver</a>
     <nav class="navbar navbar-default navbar-fixed-top ">
@@ -208,5 +208,31 @@ Tutorial para salir de bronce
     <!--JavaScript -->
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        function cargarImagenes(){
+            var imagenes=document.images;
+            var numImagenes=imagenes.length;
+            console.info("Hay "+numImagenes+" imagenes:");
+            for(var i=0;i<numImagenes;i++){
+                var source=imagenes[i].src;
+                var nombre=source.replace(/^.*[\\\/]/, '');
+                console.info(nombre);
+                var extension=source.split('.').pop();
+                console.info(extension);
+                console.info("...........................");
+                console.info(location.host);
+                console.info(location.hostname);
+                console.info(location.port);
+                console.info(location.protocol);
+                console.info(location.href);
+                console.info(location.pathname);
+                console.info(screen.availHeight);
+                console.info(screen.availWidth);
+                console.info(screen.width);
+                console.info(screen.height);
+                console.info(screen.colorDepth);
+            }
+        }
+    </script>
 </body>
 </html>

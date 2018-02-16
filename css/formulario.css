@@ -17,3 +17,8 @@ input[type="text"]:invalid, input[type="email"]:invalid{
 input[type="text"]:valid, input[type="email"]:valid{
     color: green;
 }
+
+.obligatorio{
+    color: red;
+    font-size: 0.8em;
+}

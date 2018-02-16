@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tercer Ejemplo de Formulario</title>
+    <!-- ********************************************BOOTSTRAP****************************************************************-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Formulario del Libro</h1>
+        </div>
+    </header>
+    <div class="container">
+        <form action="" name="datosPersonales" id="datosPersonales" method="post">
+
+            <legend>Datos Personales</legend>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre">
+
+            <label for="apellido">Apellidos:</label>
+            <input type="text" name="apellido" id="apellido">
+
+            <br>
+            <label for="estadoCivil">Estado Civil:</label>
+            <select name="estadoCivil" id="estadoCivil">
+                    <option value="0" selected>...</option>
+                    <option value="1">Soltero</option>
+                    <option value="2">Casado</option>
+                    <option value="3">Divorciado</option>
+                    <option value="4">Viudo</option>
+                </select>
+            <br>
+            <label for="idimas">Idiomas:</label><br>
+            <input type="checkbox" name="opcion1" value="1">Ingles <br>
+            <input type="checkbox" name="opcion2" value="1">Frances <br>
+            <input type="checkbox" name="opcion3" value="1">Castellano <br>
+            <br>
+            <label for="profesion">Profesión</label><br>
+            <input type="radio" id="profesion" name="profesion" value="autonomo" checked>Autonomo <br>
+            <input type="radio" id="profesion" name="profesion" value="ajena">Trabajador cuenta ajena <br>
+            <input type="radio" id="profesion" name="profesion" value="paro">Desempleado <br>
+            <input type="radio" id="profesion" name="profesion" value="jubilado">Jubilado <br>
+
+            <br>
+            <label for="comentarios">Comentarios</label>
+            <textarea name="comentarios" id="comentarios" cols="50" rows="14"></textarea><br>
+            <input type="submit" id="enviar_datos" name="enviar_datos" value="Enviar" >
+            <input type="button" id="mostrar_datos" name="mostrar_datos" value="Mostrar Datos" onclick="mostrarDatos()">
+
+
+        </form>
+    </div>
+
+    <!--**************************************JAVASCRIPT********************************************************************-->
+
+    <script>
+        function mostrarDatos() {
+            var nombreYApellidos = "Nombre: " + datosPersonales.nombre.value+ "\n";
+                nombreYApellidos += "Apellidos: " + datosPersonales.apellido.value;
+            var estadoCivil = "Estado Civil: " + datosPersonales.estadoCivil.options[datosPersonales.estadoCivil.selectedIndex].text;
+            var idiomas = "Idiomas";
+            if (datosPersonales.opcion1.checked){
+                idiomas += datosPersonales.opcion1.value + " , ";
+            }
+             if (datosPersonales.opcion2.checked){
+                idiomas += datosPersonales.opcion2.value + " , ";
+            }
+             if (datosPersonales.opcion3.checked){
+                idiomas += datosPersonales.opcion3.value;
+            }
+            var profesion ="Profesion: ";
+            var encontrado = false;
+            for(i=0;i<datosPersonales.profesion.length && !encontrado;i++){
+                if(datosPersonales.profesion[i].checked){
+                    profesion += datosPersonales.profesion[i].value;
+                    encontrado = true;
+                   }
+            }
+            var comentarios = "Comentarios: " + datosPersonales.comentarios.value;
+            var msgFinal = nombreYApellidos + "\n" + estadoCivil + "\n" + idiomas + "\n" + profesion + "\n" + comentarios;
+            alert (msgFinal);
+        }
+    </script>
+
+
+    <!-- ********************************************BOOTSTRAP****************************************************************-->
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

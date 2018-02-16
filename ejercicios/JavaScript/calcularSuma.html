@@ -29,6 +29,10 @@
             text-align: center;
 
         }
+
+        #resultado{
+            font-size: 1.2em;
+        }
     </style>
 
 
@@ -38,14 +42,14 @@
 
     <header>
         <div class="container">
-            <h1>CALCULAR LA SUMA DE DOS NÚMEROS</h1>
+            <h1>CALCULAR LA SUMA DE DOS NÚMEROS CON PROMPT</h1>
         </div>
     </header>
 
     <div class="container">
         <div class="row">
             <div class="col-xs-3">
-
+                <output id="resultado"></output>
             </div>
 
         </div>
@@ -67,9 +71,31 @@
 
     <script>
         function sumar() {
-            var n1 = prompt("Escribe un número");
-            //var n2 = prompt("Escribe otro número");
-            while (n1 == null){
+
+            var n1;
+            var n2;
+
+            var pedirOtro = false;
+            do{
+                n1 = parseInt(prompt("Escribe el primer número"));
+                pedirOtro = isNaN (n1); //Is Not a Number. Si lo niego me dice si es número o no
+
+            }while (pedirOtro);
+
+             do{
+                n2 = parseInt(prompt("Escribe el segundo número"));
+                pedirOtro = isNaN (n2); //Is Not a Number. Si lo niego me dice si es número o no
+
+            }while (pedirOtro);
+
+            var resultado = (parseInt(n1) + parseInt(n2));
+
+            document.getElementById("resultado").textContent = resultado;
+
+
+
+
+           /* while (n1 == null){
                 alert ("Debes introducir el primer número para poder sumar.");
                 var n1 = prompt("Escribe un número");
                 var n2 = prompt("Escribe otro número");
@@ -83,10 +109,10 @@
                     var resultado = (parseInt(n1) + parseInt(n2));
 
                 }
-            return document.write("La suma de "+ n1 + " + "+ n2 + " es: " +resultado);
-           // if(n1!=null && n2!=null){
+            return document.write("La suma de "+ n1 + " + "+ n2 + " es: " +resultado);*/
 
-            //}
+
+
        }
 
 

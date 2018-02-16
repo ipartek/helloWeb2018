@@ -1,12 +1,13 @@
 function validar(){
+        console.log("Validar formulario");
+        //Más seguro coger los formularios por id ya que de esta forma, aunque tengas varíos formularios te cogerá siempre el primero.
+        //var formulario = document.forms[0];
+        //return true;
+        var formulario = document.getElementById("datos");
+        var nombre = datos.nombre.value;
+        var apellido = datos.apellido.value;
+        var edad = datos.edad.value;
 
-
-            console.log("Validar formulario");
-            //Más seguro coger los formularios por id ya que de esta forma, aunque tengas varíos formularios te cogerá siempre el primero.
-            var formulario = document.forms[0];
-
-
-            return true;
 
     /*var nombreYApellido = "Nombre: " + datos.nombre.value + "\n";
         nombreYApellido += "Apellido: " + datos.apellido.value;

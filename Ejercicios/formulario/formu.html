@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="conteiner">
+    <div class="container">
         <h1>Formularios</h1>
         <p>Todos los formularios tienen que tener un boton de 'submit', ademas de un valor en el atributo 'action' </p>
         <p><b>Disabled</b> no se envia al submitar el formulario</p>
@@ -23,7 +23,7 @@
         <br>
         <br>
         <br>
-        <form action="#URL_SERVIDOR">
+        <form novalidate action="index.html" method="get" onsubmit="return validar()">
 
             <fieldset id="datos_personales">
                 <legend style="text-align: center;">Datos personales</legend>
@@ -51,26 +51,31 @@
                 <input type="password" name="password" id="myInput" tabindex="4" method="post" placeholder="Mayus,minus,numeros +8carac" size="30" ; pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required oninvalid="setCustomValidity('El campo contraseña es obligatorio')" oninput="setCustomValidity('')">
                 <i class='fa fa-eye' aria-hidden='true' onmousedown="myFunction()" onmouseup="myReset()"></i><br/>
                 <br>
+                <div class="row">
+                    <div class="col-xs-6">
 
-                <!-- Sexo  -->
-                <fieldset class="radios">
-                    <legend style="text-align: center;">SEXO</legend>
-                    <input type="radio" name="sexo" value="M" required checked>Masculino<br/>
-                    <input type="radio" name="sexo" value="F">Femenino<br/>
-                    <input type="radio" name="sexo" value="O">Otros<br/>
-                </fieldset>
-                <!-- Hobbies  -->
-
-                <fieldset class="checkbox">
-                    <legend style="text-align: center;">Hobbies</legend>
-                    <input type="checkbox" name="option[]" value="option1" required/> Danza<br>
-                    <input type="checkbox" name="option[]" value="option2" required/> Videojuegos<br>
-                    <input type="checkbox" name="option[]" value="option3" required/> Cazar<br>
-                    <input type="checkbox" name="option[]" value="option4" required/> Deporte<br>
-                    <input type="checkbox" name="option[]" value="option5" required/> Deporte de riesgo<br>
-                    <input type="checkbox" name="option[]" value="option6" required/> Fotografia<br>
-                    <input type="checkbox" name="option[]" value="option7" required/> Cantar
-                </fieldset>
+                        <!-- Sexo  -->
+                        <fieldset class="radios">
+                            <legend style="text-align: center;">SEXO</legend>
+                            <input type="radio" name="sexo" id="M" value="M" required checked>Masculino<br/>
+                            <input type="radio" name="sexo" id="F" value="F">Femenino<br/>
+                            <input type="radio" name="sexo" id="O" value="O">Otros<br/>
+                        </fieldset>
+                        <!-- Hobbies  -->
+                    </div>
+                    <div class="col-xs-6">
+                        <fieldset class="checkbox">
+                            <legend style="text-align: center;" id="hobbies">Hobbies</legend>
+                            <input type="checkbox" name="hobbies" value="option1" required/> Danza<br>
+                            <input type="checkbox" name="hobbies" value="option2" required/> Videojuegos<br>
+                            <input type="checkbox" name="hobbies" value="option3" required/> Cazar<br>
+                            <input type="checkbox" name="hobbies" value="option4" required/> Deporte<br>
+                            <input type="checkbox" name="hobbies" value="option5" required/> Deporte de riesgo<br>
+                            <input type="checkbox" name="hobbies" value="option6" required/> Fotografia<br>
+                            <input type="checkbox" name="hobbies" value="option7" required/> Cantar
+                        </fieldset>
+                    </div>
+                </div>
 
                 <!-- Direccion  -->
 
@@ -148,7 +153,8 @@
             <fieldset id="observaciones" style="text-align: center;">
                 <legend>Observaciones</legend>
                 <!-- Observaciones  -->
-                <textarea name="message" rows="10" cols="30" placeholder="Si tienes algo que opinar este es tu sitio"></textarea>
+                <textarea cols="40" rows="5" name="texto" ></textarea>
+                <p id="count"></p>
             </fieldset>
             <!-- Condiciones de uso -->
             <a href="condiciones.html" target="popup" onclick="window.open('condiciones.html','popup','width=600,height=600'); return false;">Acepto las condiciones de uso *(me vendes tu alma)</a><input type="checkbox" required><br>
@@ -166,9 +172,13 @@
     </div>
 
     <script>
+        document.getElementsByTagName('textarea')[0].onkeyup = function() {
+            document.getElementById('count').innerHTML = "Characters left: " + (500 - this.value.length);
+        };
+
         function myFunction() {
             var x = document.getElementById("myInput");
-                x.type = "text";
+            x.type = "text";
 
         }
 
@@ -176,6 +186,52 @@
             var x = document.getElementById("myInput");
 
             x.type = "password";
+        }
+
+        var formulario = document.forms[0];
+
+        function validar() {
+            console.log("Validar formulario");
+            var formulario = document.forms[0];
+            var hobies = document.getElementsByName('hobbies');
+            var checkedHobies = 0;
+
+            for (var i = 0; i < hobies.length; i++) {
+                if (hobies[i].checked) {
+                    checkedHobies = +1;
+                }
+            }
+            var salida = true;
+            var tsex = formulario.sexo.value;
+            switch (tsex) {
+                case "M":
+                    console.info("Eres chico");
+                    if (checkedHobies < 1) {
+                        console.info("minimo mete 1 campo de hobbie");
+                        salida = false;
+                    }
+
+                    break;
+
+
+                case "F":
+                    console.info("Eres chica");
+                    if (checkedHobies < 3) {
+                        console.info("minimo mete 3 campo de hobbie");
+                        salida = false
+                    };
+
+                    break;
+
+                default:
+                    console.info("Eres otro")
+                    break;
+
+            }
+
+
+            return salida;
+
         }
     </script>
 </body>

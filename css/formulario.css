@@ -18,6 +18,7 @@ input[type="text"]:valid{
 .radios{
    margin: auto;
 }
+/*
  form label
 {
     clear: both;
@@ -27,7 +28,7 @@ input[type="text"]:valid{
     margin-left: 35%;
     width: 150px;
 }
-
+*/
 form input
 {
     clear: both;

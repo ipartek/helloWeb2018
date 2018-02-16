@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selectores</title>
+</head>
+<!-- Latest compiled and minified CSS -->
+<!-- font awesome 4.7 -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<style>
+    span {
+        color: darkgrey;
+    }
+
+    .resultado {
+        color: teal;
+        font-size: 3em;
+
+    }
+
+    .text-rojo {
+        color: red;
+        font-size: 2em;
+
+    }
+
+    .text-verde {
+        color: green;
+        font-size: 2em;
+
+    }
+    .veerde{
+        background-color: green;
+
+    }
+    .roojo{
+        background-color: red;
+    }
+</style>
+
+
+<body>
+    <div class="container">
+        <h1>Selectores</h1>
+        <div class="row">
+            <div class="col-xs-6">
+                <h2>Grupo selectores</h2>
+                <ul>
+                    <li>document.getElementById<span> :Element</span></li>
+                    <li>document.getElementsByName<span> :NodeList</span></li>
+                    <li>document.getElementsByClassName<span> :NodeList</span></li>
+                    <li>document.getElementsByTagName<span> :NodeList</span></li>
+                    <li>document.querySelector<span> :Element</span></li>
+                    <li>document.querySelectorAll<span> :NodeList</span></li>
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <h2>ClassListApi</h2>
+                <ul>
+                    <li>add</li>
+                    <li>remove</li>
+                    <li>item</li>
+                    <li>toggle</li>
+                    <li>contains</li>
+                    <li>replace</li>
+                </ul>
+            </div>
+        </div>
+        <!-- row -->
+
+
+
+        <h2>Get Element by name</h2>
+        <div class="row">
+            <div class="col-xs-4">
+                <form action="">
+                    <input type="checkbox" name="vehicles" vale="0">bici<br>
+                    <input type="checkbox" name="vehicles" vale="1">coche<br>
+                    <input type="checkbox" name="vehicles" vale="2" checked>monopatin<br>
+                    <input type="checkbox" name="vehicles" vale="3">bus<br>
+                    <input type="checkbox" name="vehicles" vale="4">metro<br>
+                </form>
+            </div>
+            <div class="col-xs-4">
+                <a href="#" onclick="contarChecks()" class="btn btn-default">Calcular Opciones Checkeadas</a>
+            </div>
+            <div class="col-xs-4">
+                <p class="resultado" id="resultado"></p>
+            </div>
+        </div>
+        <!-- row -->
+
+        <script>
+            function contarChecks() {
+                var cVehiculos = document.getElementsByName("vehicles");
+                console.debug("checkbox: " + cVehiculos.length);
+                var cont = 0;
+                for (var i = 0; i < cVehiculos.length; i++) {
+
+                    if (cVehiculos[i].checked) {
+                        cont++
+                    }
+                }
+
+                document.getElementById("resultado").textContent = (cont);
+            }
+        </script>
+
+        <h2>Get Element By Tag Name</h2>
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <p id="rojo"><span>Lorem</span> ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolorem porro praesentium repellendus, alias tenetur minus hic fugiat reprehenderit ipsa vitae provident aliquid debitis aperiam eligendi, blanditiis fugit quasi sed.
+                    <span>A</span> ut iure illum modi id aperiam beatae, at? Ipsum beatae voluptatem accusantium ut et laboriosam id tempora eius tempore, dolores ullam distinctio sunt consequuntur dolor ratione quidem recusandae blanditiis! Voluptatem quod natus autem libero voluptas aliquid sapiente atque. Dolore ipsum et enim amet, eveniet necessitatibus, placeat doloribus vel nihil at animi, quae eos cumque, aliquam voluptas laborum facere <span>consequatur.</span>
+                    <span>Ducimus</span> facere nihil impedit beatae, voluptas et excepturi dicta, obcaecati necessitatibus placeat non, repellendus natus voluptate laborum atque labore veritatis velit. Asperiores modi aut unde, neque magni velit necessitatibus laudantium.</p>
+            </div>
+            <div class="col-xs-12">
+                <p id="verde">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dolorem porro praesentium repellendus, alias tenetur minus hic fugiat reprehenderit ipsa vitae provident aliquid debitis aperiam eligendi, blanditiis fugit quasi <span>sed.</span> A ut iure illum modi id aperiam beatae, at? Ipsum beatae voluptatem accusantium ut et laboriosam id tempora eius tempore, dolores ullam distinctio sunt consequuntur dolor ratione quidem recusandae <span>blanditiis!</span>
+                    <span>Voluptatem</span> quod natus autem libero voluptas aliquid sapiente atque. Dolore ipsum et enim amet, eveniet necessitatibus, placeat doloribus vel nihil at animi, quae eos cumque, aliquam voluptas laborum facere consequatur.
+                    <span>Ducimus</span> facere nihil impedit beatae, voluptas et excepturi dicta, obcaecati necessitatibus placeat non, repellendus natus voluptate laborum atque labore veritatis velit. Asperiores modi aut unde, neque magni velit necessitatibus laudantium.</p>
+            </div>
+        </div>
+        <!-- row -->
+        <script>
+            var pRojo = document.getElementById("rojo");
+            var aSpan = pRojo.getElementsByTagName("span");
+            for (var i = 0; i < aSpan.length; i++) {
+                aSpan[i].classList.add("text-rojo");
+            }
+            var spanVerde = document.querySelectorAll("#verde span");
+            for (var i = 0; i < spanVerde.length; i++) {
+                spanVerde[i].classList.add("text-verde");
+            }
+        </script>
+        <h2>Varias clases</h2>
+        <div class="row">
+            <div class="col-xs-12"><span class="lunes viernes pintxo"id="target"></span>=D</div>
+            <div class="col-xs-3">
+                <a href="#" onclick="contarclases()" class="btn btn-default">Cuantas clases tengo?</a><br>
+                <a href="#" onclick="cambiarcolor()" class="btn btn-default">Rojo/verdes</a>
+            </div>
+            <div class="col-xs-9">
+                <p class="veerde"id="mostrar"></p>
+            </div>
+        </div>
+        <!-- row -->
+        <script>
+            function contarclases() {
+                var ejemplo = document.getElementById("target");
+                var numClases=ejemplo.classList;;
+                var poner = document.getElementById("mostrar");
+                for (var i=0;i<numClases.length;i++){
+                    if (numClases[i]=="viernes"){
+                        var posicion=i+1;
+                    }
+                }
+                poner.textContent=("Tiene "+numClases.length+" de clases, ademas el viernes esta en la posicion "+posicion);
+            }
+            function cambiarcolor(){
+                var poner = document.getElementById("mostrar");
+                 poner.classList.toggle("roojo");
+            }
+        </script>
+
+    </div>
+    <!-- container -->
+</body>
+<!-- jquery-->
+<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</html>

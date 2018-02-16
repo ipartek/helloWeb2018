@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <!-- lo en la web https://www.bootstrapcdn.com/fontawesome/ copiamos URL y pegamos aqui
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+    <!--Custom CSS-->
+    <!-- <link rel="stylesheet" href="css/custom.css">-->
+    <!-- link a font awesome 4.7 Iconos-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<!--onload al cargar la Web activa el campo Nombre -->
+
+<body onload="datosPersonales.nombre.focus();">
+    <h1>Ejercicio 2</h1>
+
+    <form name="datosPersonales" id="datosPersonales" method="post" action="">
+
+        <label for="nombre">NOMBRE:</label>
+        <input type="text" id="nombre" name="nombre" value="">
+        <br>
+        <br>
+
+        <label for="apellidos">APELLIDOS:</label>
+        <input type="text" id="apellidos" name="apellidos" value="">
+        <br>
+        <br>
+
+        <label for="sexo">SEXO:</label>
+        <!-- onchange="activarEstadoCivil();" cuando cambie el valor de la lista llama a la función activarEstadoCivil -->
+        <select name="sexo" id="sexo" onchange="activarEstadoCivil();">
+            <option value="0" selected="selected">...</option>
+            <option value="1">Masculino</option>
+            <option value="2">Femenino</option>
+       </select>
+        <br>
+        <br>
+
+        <label for="estadoCivil">ESTADO CIVIL:</label>
+        <!-- disabled="disabled" Los controles inicialmente desactivados -->
+        <select name="estadoCivil" id="estadoCivil" disabled="disabled">
+            <option value="0" selected="selected">...</option>
+            <option value="1">Soltero</option>
+            <option value="2">Casado</option>
+            <option value="3">Divorciado</option>
+            <option value="4">Viudo</option>
+        </select>
+        <br>
+        <br>
+
+        <label>IDIOMAS:</label><br>
+        <input type="checkbox" name="idioma1" id="idioma1" value="Castellano">Castellano
+        <br>
+        <input type="checkbox" name="idioma2" id="idioma2" value="Ingles">Ingles
+        <br>
+        <input type="checkbox" name="idioma3" id="idioma3" value="Frances">Frances
+        <br>
+        <br>
+
+        <label>PROFESION:</label>
+        <br>
+        <!--onchange="calcularTasas();" Al cambiar estado de uno de los botonesse ejecuta funcion calcularTasas() -->
+        <input type="radio" name="profesion" id="profesion1" value="autónomo" onchange="calcularTasas();">Autónomo
+        <br>
+        <input type="radio" name="profesion" id="profesion2" value="ajena" onchange="calcularTasas();">Trabajador por cuenta ajena
+        <br>
+        <input type="radio" name="profesion" id="profesion3" value="paro" onchange="calcularTasas();">Desempleado
+        <br>
+        <input type="radio" name="profesion" id="profesion4" value="jubilado" onchange="calcularTasas();">Jubilado
+        <br>
+        <br>
+
+        <label for="tasas">TASAS:</label>
+        <input type="text" id="tasas" name="tasas" value="" disabled="disabled">
+        <br>
+        <br>
+        <label for="comentarios">COMENTARIOS:</label>
+        <br>
+        <textarea name="comentarios" id="comentarios" cols="50" rows="14"></textarea>
+        <br>
+        <br>
+
+        <input type="submit" id="enviar_datos" name="enviar_datos" value="Enviar">
+        <!-- al hacer click en boton MOSTRAR que se muestre un mensaje emergente con los datos del formulario. añadir al input button el evento onclick. Onclick enlazara con una funcion de JavaScript que recogerá la información.-->
+        <input type="button" id="mostrar_datos" name="mostrar_datos" value="Mostrar" onclick="mostrarMensaje();">
+    </form>
+
+
+
+
+
+    <!-- Cargar JQuery 2.X minified -->
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!-- los script deben estar en un formulario js-->
+    <script>
+        
+        /* Esta funcion analiza si se cumplen los requisitos para que se active la lista desplegable del estado civil */
+        function activarEstadoCivil() {
+            var valorSexo = datosPersonales.sexo.options[datosPersonales.sexo.selectedIndex].value;
+
+            if (valorSexo == 2) {
+                document.getElementById("estadoCivil").disabled = false;
+            }else{
+                    document.getElementById("estadoCivil").disabled = true;
+            }
+        }
+
+        /*Esta función establecerá un valor para el cuadro de texto de las tasas dependiendo de la profesión escogida*/
+        function calcularTasas(){
+            var valorProfesion = "";
+            var encontrado = false;
+
+            for (var i = 0; i < datosPersonales.profesion.length && !encontrado; i++) {
+                if (datosPersonales.profesion[i].checked) {
+                    valorProfesion = datosPersonales.profesion[i].value;
+                    encontrado = true;
+                }
+            }
+
+            switch (valorProfesion) {
+                case "autonomo":
+                    datosPersonales.tasas.value = "15€";
+                    break;
+                case "ajena":
+                    datosPersonales.tasas.value = "20€";
+                    break;
+                case "desempleado":
+                    datosPersonales.tasas.value = "2€";
+                    break;
+                case "jubilado":
+                    datosPersonales.tasas.value = "5€";
+                    break;
+
+            }
+        }
+        
+        /*Funcion mostrarMensaje() Muestra el mensaje en pantalla con el nombre, apellidos y tasas*/
+        function mostrarMensaje(){
+            
+            var nombreyApellidos="NOMBRE: "+datosPersonales.nombre.value+"\n";
+            nombreyApellidos+="APELLIDOS: "+datosPersonales.apellidos.value;
+            var mensajeFinal=nombreyApellidos+"\n TASAS: "+datosPersonales.tasas.value;
+            
+            alert(mensajeFinal);
+        }
+    </script>
+</body>
+</html>

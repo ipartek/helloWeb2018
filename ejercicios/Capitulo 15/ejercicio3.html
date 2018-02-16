@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <!-- lo en la web https://www.bootstrapcdn.com/fontawesome/ copiamos URL y pegamos aqui
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+    <!--Custom CSS-->
+    <!-- <link rel="stylesheet" href="css/custom.css">-->
+    <!-- link a font awesome 4.7 Iconos-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<!--onload al cargar la Web activa el campo Nombre -->
+
+<body>
+
+    <div id="contenedor">
+        <h1>Ejercicio 3</h1>
+
+        <form name="formulario1" id="formulario1" method="post" action="data.php">
+            <fieldset id="grup_datos">
+                <legend id="legend_datos">Datos Personales</legend>
+                
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre">
+                
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" name="apellidos" id="apellidos">
+                
+                <label for="dni">DNI:</label>
+                <input type="text" name="dni" id="dni" maxlength="9">
+                
+                <label for="edad">Edad:</label>
+                <input type="text" name="edad" id="edad" size="2" maxlength="2">
+                
+                <div>
+                    <label for="sexo">Sexo:</label>
+                    <select name="sexo" id="sexo">
+                        <option value="X" selected="selected">...</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                </div>
+                <fieldset id="grupo_fechas">
+                   <legend id="legend_fechas">Fecha de nacimiento</legend>
+                   <div class="fecha">
+                       <label for="dia">Dia</label>
+                       <select name="dia" id="dia">
+                           <option value="0" selected="selected">...</option>
+                           <option value="01">01</option>
+                           <option value="02">02</option>
+                       </select>
+                   </div>
+                   <div class="fecha">
+                       <label for="mes">Mes</label>
+                       <select name="mes" id="mes">
+                           <option value="0" selected="selected">...</option>
+                           <option value="01">01</option>
+                           <option value="02">02</option>
+                       </select>
+                   </div>
+                   <div class="fecha">
+                       <label for="anio">Año</label>
+                       <select name="anio" id="anio">
+                           <option value="0" selected="selected">...</option>
+                           <option value=""></option>
+                       </select>
+                   </div>
+                    
+                    
+                    
+                </fieldset>
+            </fieldset>
+
+        </form>
+    </div>
+    <!-- end div id="contenedor" -->
+
+
+
+
+    <!-- Cargar JQuery 2.X minified -->
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!-- los script deben estar en un formulario js-->
+    <script>
+        /* Esta funcion analiza si se cumplen los requisitos para que se active la lista desplegable del estado civil */
+        function activarEstadoCivil() {
+            var valorSexo = datosPersonales.sexo.options[datosPersonales.sexo.selectedIndex].value;
+
+            if (valorSexo == 2) {
+                document.getElementById("estadoCivil").disabled = false;
+            } else {
+                document.getElementById("estadoCivil").disabled = true;
+            }
+        }
+
+        /*Esta función establecerá un valor para el cuadro de texto de las tasas dependiendo de la profesión escogida*/
+        function calcularTasas() {
+            var valorProfesion = "";
+            var encontrado = false;
+
+            for (var i = 0; i < datosPersonales.profesion.length && !encontrado; i++) {
+                if (datosPersonales.profesion[i].checked) {
+                    valorProfesion = datosPersonales.profesion[i].value;
+                    encontrado = true;
+                }
+            }
+
+            switch (valorProfesion) {
+                case "autonomo":
+                    datosPersonales.tasas.value = "15€";
+                    break;
+                case "ajena":
+                    datosPersonales.tasas.value = "20€";
+                    break;
+                case "desempleado":
+                    datosPersonales.tasas.value = "2€";
+                    break;
+                case "jubilado":
+                    datosPersonales.tasas.value = "5€";
+                    break;
+
+            }
+        }
+
+        /*Funcion mostrarMensaje() Muestra el mensaje en pantalla con el nombre, apellidos y tasas*/
+        function mostrarMensaje() {
+
+            var nombreyApellidos = "NOMBRE: " + datosPersonales.nombre.value + "\n";
+            nombreyApellidos += "APELLIDOS: " + datosPersonales.apellidos.value;
+            var mensajeFinal = nombreyApellidos + "\n TASAS: " + datosPersonales.tasas.value;
+
+            alert(mensajeFinal);
+        }
+    </script>
+</body>
+</html>

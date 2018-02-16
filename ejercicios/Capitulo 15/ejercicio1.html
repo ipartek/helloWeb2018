@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+    
+    
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <!-- lo en la web https://www.bootstrapcdn.com/fontawesome/ copiamos URL y pegamos aqui
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+    <!--Custom CSS-->
+    <!-- <link rel="stylesheet" href="css/custom.css">-->
+    <!-- link a font awesome 4.7 Iconos-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+</head>
+
+<body>
+    <h1>Ejercicio 1</h1>
+
+    <form name="datosPersonales" id="datosPersonales" method="post" action="">
+
+        <label for="nombre">NOMBRE:</label>
+        <input type="text" id="nombre" name="nombre" value="">
+        <br>
+        <br>
+
+        <label for="apellidos">APELLIDOS:</label>
+        <input type="text" id="apellidos" name="apellidos" value="">
+        <br>
+        <br>
+
+        <label for="estadoCivil">ESTADO CIVIL:</label>
+        <select name="estadoCivil" id="estadoCivil">
+            <option value="0" selected="selected">...</option>
+            <option value="1">Soltero</option>
+            <option value="2">Casado</option>
+            <option value="3">Divorciado</option>
+            <option value="4">Viudo</option>
+        </select>
+        <br>
+        <br>
+
+        <label>IDIOMAS:</label><br>
+        <input type="checkbox" name="idioma1" id="idioma1" value="Castellano">Castellano
+        <br>
+        <input type="checkbox" name="idioma2" id="idioma2" value="Ingles">Ingles
+        <br>
+        <input type="checkbox" name="idioma3" id="idioma3" value="Frances">Frances
+        <br>
+        <br>
+
+        <label>PROFESION:</label>
+        <br>
+        <input type="radio" name="profesion" id="profesion1" value="autónomo">Autónomo
+        <br>
+        <input type="radio" name="profesion" id="profesion2" value="ajena">Trabajador por cuenta ajena
+        <br>
+        <input type="radio" name="profesion" id="profesion3" value="paro">Desempleado
+        <br>
+        <input type="radio" name="profesion" id="profesion4" value="jubilado">Jubilado
+        <br>
+        <br>
+
+        <label for="comentarios">COMENTARIOS:</label>
+        <br>
+        <textarea name="comentarios" id="comentarios" cols="50" rows="14"></textarea>
+        <br>
+        <br>
+
+        <input type="submit" id="enviar_datos" name="enviar_datos" value="Enviar">
+        <!-- al hacer click en boton MOSTRAR que se muestre un mensaje emergente con los datos del formulario. añadir al input button el evento onclick. Onclick enlazara con una funcion de JavaScript que recogerá la información.-->
+        <input type="button" id="mostrar_datos" name="mostrar_datos" value="Mostrar" onclick="mostrarDatos();">
+    </form>
+
+   
+   
+   
+   
+    <!-- Cargar JQuery 2.X minified -->
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    
+    <!-- los script deben estar en un formulario js-->
+    <script>
+        
+        function mostrarDatos(){
+
+            var nombreyApellidos = "NOMBRE: " + datosPersonales.nombre.value + "\n";
+            nombreyApellidos += "APELLIDOS: " + datosPersonales.apellidos.value;
+
+            var estadoCivil = "ESTADO CIVIL: " + datosPersonales.estadoCivil.options[datosPersonales.estadoCivil.selectedIndex].text;
+
+            var idiomas = "IDIOMAS:";
+
+            if (datosPersonales.idioma1.checked) {
+                idiomas += datosPersonales.idioma1.value + ", ";
+            }
+
+            if (datosPersonales.idioma2.checked) {
+                idiomas += datosPersonales.idioma2.value + ", ";
+            }
+
+            if (datosPersonales.idioma3.checked) {
+                idiomas += datosPersonales.idioma3.value + ", ";
+            }
+
+            var profesion = "PROFESION: ";
+            var encontrado = false;
+
+            for (var i = 0; i < datosPersonales.profesion.length && !encontrado; i++) {
+
+                if (datosPersonales.profesion[i].checked) {
+                    profesion +=datosPersonales.profesion[i].value;
+                    encontrado = true;
+                }
+            }
+
+            var comentarios="COMENTARIOS: "+datosPersonales.comentarios.value;
+            
+            var msgFinal=nombreyApellidos+"\n"+estadoCivil+"\n"+idiomas+"\n"+profesion+"\n"+comentarios;
+            alert(msgFinal);
+        }
+    </script>
+</body>
+</html>

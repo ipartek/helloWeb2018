@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../../../css/styles.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <p><b>readonly</b> si se envia al submitar el formulario</p>
         <p><b>tabindex</b>es necesario por accesibilidad</p>
         <br>
-        <form action="#URL_SERVIDOR" method="post">
+        <form novalidate action="index.html" method="get" onsubmit="return validar()">
 
             <fieldset id="datos personales">
                 <legend>Datos personales</legend>
@@ -51,7 +51,6 @@
                             x.type = "password";
                         }
                     }
-
                 </script>
                 <br>
                 <br>
@@ -59,10 +58,10 @@
                 <input type=radio name="sexo" value="M"> Masculino
                 <input type=radio name="sexo" value="F"> Femenino
                 <input type=radio name="sexo" value="O"> Otro
-                </fieldset>
-                <br>
-                <br>
-                <br>
+            </fieldset>
+            <br>
+            <br>
+            <br>
             <fieldset id="direccion">
                 <legend>Dirección</legend>
 
@@ -135,39 +134,49 @@
             </fieldset>
             <br>
             <br>
-             <fieldset id="Aficiones">
+            <fieldset id="Aficiones">
                 <legend>Aficiones</legend>
-                    <input type="checkbox" name="leer" id="leer" value="leer">&nbsp;Leer<br>
-                    <input type="checkbox" name="musica" id="musica" value="musica">&nbsp;Escuchar música<br>
-                    <input type="checkbox" name="viajar" id="viajar" value="viajar">&nbsp;Viajar<br>
-                    <input type="checkbox" name="deporte" id="deporte" value="deporte">&nbsp;Practicar deporte<br>
-                    <input type="checkbox" name="internet" id="internet" value="internet">&nbsp;Navegar por internet<br>
-                    <input type="checkbox" name="dormir" id="dormir" value="dormir">&nbsp;Dormir<br>
-                    <input type="checkbox" name="cine" id="cine" value="cine">&nbsp;Cine<br>
-                    <input type="checkbox" name="videojuegos" id="videjuegos" value="videojuegos">&nbsp;Videojuegos<br>
-                    <input type="checkbox" name="leer" id="leer" value="leer">&nbsp;Leer<br>
-                    <input type="checkbox" name="cocinar" id="cocinar" value="cocinar">&nbsp;Cocinar<br>
-                    <input type="checkbox" name="tv" id="tv" value="tv">&nbsp;Ver la Tv<br>
-                    <input type="checkbox" name="amigos" id="amigos" value="amigos">&nbsp;Salir con los amigos<br>
-                    <input type="checkbox" name="concierto" id="concierto" value="concierto">&nbsp;Ir a conciertos<br>
-                    <input type="checkbox" name="playa" id="playa" value="playa">&nbsp;Ir a la playa<br>
-                    <input type="checkbox" name="monte" id="monte" value="monte">&nbsp;Ir al monte<br>
+                <input type="checkbox" name="leer" id="leer" value="leer">&nbsp;Leer<br>
+                <input type="checkbox" name="musica" id="musica" value="musica">&nbsp;Escuchar música<br>
+                <input type="checkbox" name="viajar" id="viajar" value="viajar">&nbsp;Viajar<br>
+                <input type="checkbox" name="deporte" id="deporte" value="deporte">&nbsp;Practicar deporte<br>
+                <input type="checkbox" name="internet" id="internet" value="internet">&nbsp;Navegar por internet<br>
+                <input type="checkbox" name="dormir" id="dormir" value="dormir">&nbsp;Dormir<br>
+                <input type="checkbox" name="cine" id="cine" value="cine">&nbsp;Cine<br>
+                <input type="checkbox" name="videojuegos" id="videjuegos" value="videojuegos">&nbsp;Videojuegos<br>
+                <input type="checkbox" name="cocinar" id="cocinar" value="cocinar">&nbsp;Cocinar<br>
+                <input type="checkbox" name="tv" id="tv" value="tv">&nbsp;Ver la Tv<br>
+                <input type="checkbox" name="amigos" id="amigos" value="amigos">&nbsp;Salir con los amigos<br>
+                <input type="checkbox" name="concierto" id="concierto" value="concierto">&nbsp;Ir a conciertos<br>
+                <input type="checkbox" name="playa" id="playa" value="playa">&nbsp;Ir a la playa<br>
+                <input type="checkbox" name="monte" id="monte" value="monte">&nbsp;Ir al monte<br>
 
-              </fieldset>
-              <br>
+            </fieldset>
+            <br>
 
             <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
 
                 <input type="checkbox" name="checkbox" value="check" id="agree" /> Acepto los términos de uso. <a href="formulario_condiciones.html">(Ver condiciones)</a>
 
 
+
+                <br>
+
+
+                <input type="reset" value="Reset">
+                <input type="submit" value="Enviar">
+                <br>
             </form>
-            <br>
 
+            <script>
+                function validar() {
+                    //Mas seguro coger por ID
+                    console.log("Validar formulario");
+                    var formulario = document.forms[0];
+                    return true;
 
-            <input type="reset" value="Reset">
-            <input type="submit" value="Enviar">
-            <br>
+                }
+            </script>
 
 
         </form>

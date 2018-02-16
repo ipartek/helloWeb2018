@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cap15_Pag354_Ejercicio1</title>
+    <link rel="stylesheet" href="../../../../css/styles.css">
+</head>
+
+<body onload="datosPersonales.nombre.focus();">
+    <h1>Cap15_Pag360_Ejercicio2</h1>
+    <form name="datosPersonales" id="datosPersonales" method="post" action="">
+        <label for="nombre">NOMBRE:</label>
+            <input type="text" id="nombre" name="nombre" value="">
+            <br>
+            <br>
+        <label for="apellidos">APELLIDOS:</label>
+            <input type="text" id="apellidos" name="apellidos" value="">
+            <br>
+            <br>
+        <label for="sexo">SEXO:</label>
+        <select name="sexo" id="sexo" onchange="activarEstadoCivil();">
+            <option value="0" selected="selected">...</option>
+            <option value="1">Masculino</option>
+            <option value="2">Femenino</option>
+            <option value="3">Otro</option>
+        </select>
+        <br>
+        <br>
+        <label for="estadoCivil">ESTADO CIVIL:</label>
+        <select id="estadoCivil" name="estadoCivil" disabled="disabled">
+            <option value="0" selected="selected">...</option>
+            <option value="1">Soltero</option>
+            <option value="2">Casado</option>
+            <option value="3">Divorciado</option>
+            <option value="4">Viudo</option>
+        </select>
+            <br>
+            <br>
+
+         <label>IDIOMAS:</label><br>
+            <input type="checkbox" name="idioma1" id="idioma1" value="Euskera">Euskera<br>
+            <input type="checkbox" name="idioma2" id="idioma2" value="Ingles">Ingles<br>
+            <input type="checkbox" name="idioma3" id="idioma3" value="Frances">Frances<br><br>
+
+        <label>PROFESION:</label><br>
+            <input type="radio" name="profesion" id="profesion1" value="autonomo" onchange="calcularTasas();">Autonomo<br>
+            <input type="radio" name="profesion" id="profesion2" value="ajena" onchange="calcularTasas();">Trabajador por cuenta ajena<br>
+            <input type="radio" name="profesion" id="profesion3" value="paro" onchange="calcularTasas();">Desempleado<br>
+            <input type="radio" name="profesion" id="profesion4" value="jubilado" onchange="calcularTasas();">Jubilado<br><br>
+
+        <label for="tasas">TASAS:</label><br>
+            <input type="text" id="tasas" name="tasas" value=""><br>
+            <input type="submit" id="enviar_datos" name="enviar_datos" value="Enviar">
+            <input type="button" id="mostrar_datos" name="mostrar_datos" value="Mostrar" onclick="mostrarMensaje()">
+
+    </form>
+    <script>
+        function activarEstadoCivil(){
+            var valorSexo=datosPersonales.sexo.options[datosPersonales.sexo.selectedIndex].value;
+
+            if (valorSexo==2){
+                document.getElementById("estadoCivil").disabled=false;
+            } else{
+                document.getElementById("estadoCivil").disabled=true;
+                }
+            }
+
+
+        function calcularTasas(){
+            var valorProfresion="";
+            var encontrado=false;
+
+            for (var i=0; i<datosPersonales.profesion.length && !encontrado; i++){
+                if (datosPersonales.profesion[i].checked){
+                    valorProfresion=datosPersonales.profesion[i].value;
+                }
+            }
+        }
+
+        switch (valorProfresion){
+            case "autonomo": datosPersonales.tasas.value="15€";
+                break;
+            case "ajena": datosPersonales.tasas.value="20€";
+                break;
+            case "desempledo": datosPersonales.tasas.value="2€";
+                break;
+            case "jubilado": datosPersonales.tasas.value="5€";
+                break;
+           }
+
+        function mostrarMensaje(){
+            var nombreyApellidos="NOMBRE: "+datosPersonales.nombre.value+"\n";
+                nombreyApellidos +="APELLIDOS: "+datosPersonales.apellidos.value;
+
+
+            var mensajeFinal=nombreyApellidos+"\nTASAS: "+datosPersonales.tasas.value;
+                alert(mensajeFinal);
+
+        }
+    </script>
+
+
+</body>
+
+</html>

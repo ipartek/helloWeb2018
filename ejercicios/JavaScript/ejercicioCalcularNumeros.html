@@ -3,43 +3,102 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Calcular numeros</title>
-
-    <link rel="stylesheet" href="/css/styles.css" type="text/css">
-
+    <title>Document</title>
+    <link rel="stylesheet" href="../helloWeb_old/css/style.css">
     <style>
-        .button {
-            width: 10px;
-            height: 10px;
-        }
+.boton1 {
+    font-size: 8em;
+    width: 285px;
+    height: 200px;
+}
+        .caja {
+            display: inline-block;
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            font-size: 5em;
+            color: red;
+            text-align: center;
+            font-family: arial;
+            margin: 10px;
+                position: absolute;
+    margin-left: 334px;
+    margin-top: -165px;
+}
+#boton {
+    font-size: 0.2em;
+    width: 75%;
+    height: 25%;
+    text-align: center;
+    margin-left: 21px;
+}
+        #Suma{
+    font-size: 0.2em;
+}
     </style>
-
 </head>
 
 <body>
-     <h3>Suma 2 numeros</h3>
     <div class="container">
         <header>
+            <h1>Calcular suma numeros por prompt </h1>
+        </header>
+    </div>
 
-         </header>
-
-           <button type="button" onclick="suma()" >Calcular</button>
-            <br>
-            <output id="suma">HOLA</output>
+    <div class="boton1">
+        <button type="button" id="boton" onclick="suma()">Calcular</button>
 
     </div>
 
+   <div class="caja">
+        <output id="Suma">X</output>
+    </div>
+
+
+
+
+
+
+
+
     <script>
-    function suma(){
-        var respuesta=prompt("Introduzca un numero para sumar");
-        if(respuesta===""){
-           alert("numero inválido"):
-           }
-    }
+            var cadena = "No puedo sumar si no son numeros"
+            var numero1;
+            var numero2;
+            var output = document.getElementById("Suma");
+            function suma() {
+                  do {
+                var flag = true;
+                respuesta = prompt("Introduzca un numero para sumar");
+                if (respuesta !== null && !isNaN(respuesta)) {
+                    numero1 = parseInt(respuesta);
+                    flag = false;
+                }
+                else if (respuesta === null) {
+                    alert("");
+                    output.value = "No puedo sumar si no son numeros";
+                }
+                  }while (flag);
+                    do{
+                    var flag1=true;
+                     respuesta2 = prompt("Introduzca otro numero para sumar");
+                        if(isNaN(respuesta2)){
+                            flag1=true;}
+                        else{
+                                flag1=false;}
+                    }while (flag1);
+                if (respuesta2 === null) {
+                    output.textContent = "No puedo sumar si no son numeros";
+                }
+                else{
+                numero2 = parseInt(respuesta2);
+                var sumaTotal = numero1 + numero2;
+                output.textContent = sumaTotal;
+                }
+        }
+
+
     </script>
-
-
-
 </body>
 
 </html>

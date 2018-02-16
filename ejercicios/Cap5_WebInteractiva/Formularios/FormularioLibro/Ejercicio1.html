@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cap15_Pag354_Ejercicio1</title>
+    <link rel="stylesheet" href="../../../../css/styles.css">
+</head>
+
+<body>
+    <h1>Cap15_Pag354_Ejercicio1</h1>
+    <form name="datosPersonales" id="datosPersonales" method="post" action="">
+        <label for="nombre">NOMBRE:</label>
+            <input type="text" id="nombre" name="nombre" value="">
+            <br>
+            <br>
+        <label for="apellidos">APELLIDOS:</label>
+            <input type="text" id="apellidos" name="apellidos" value="">
+            <br>
+            <br>
+        <label for="estadoCivil">ESTADO CIVIL:</label>
+        <select id="estadoCivil" name="estadoCivil">
+            <option value="0" selected="selected">...</option>
+            <option value="1">Soltero</option>
+            <option value="2">Casado</option>
+            <option value="3">Divorciado</option>
+            <option value="4">Viudo</option>
+        </select>
+            <br>
+            <br>
+
+         <label>IDIOMAS:</label><br>
+
+            <input type="checkbox" name="idioma1" id="idioma1" value="Euskera">Euskera<br>
+            <input type="checkbox" name="idioma2" id="idioma2" value="Ingles">Ingles<br>
+            <input type="checkbox" name="idioma3" id="idioma3" value="Frances">Frances<br><br>
+        <label>PROFESION:</label><br>
+            <input type="radio" name="profesion" id="profesion1" value="autonomo">Autonomo<br>
+            <input type="radio" name="profesion" id="profesion2" value="ajena">Trabajador por cuenta ajena<br>
+            <input type="radio" name="profesion" id="profesion3" value="paro">Desempleado<br>
+            <input type="radio" name="profesion" id="profesion4" value="jubilado">Jubilado<br><br>
+        <label for="comentarios">COMENTARIOS:</label><br>
+            <textarea id="comentarios" name="comentarios" cols="50" rows="14"></textarea><br>
+            <input type="submit" id="enviar_datos" name="enviar_datos" value="Enviar" >
+            <input type="button" id="mostrar_datos" name="mostrar_datos" value="Mostrar" onclick="mostrarDatos()">
+
+    </form>
+    <script>
+        function mostrarDatos(){
+            var nombreyApellidos="NOMBRE: "+datosPersonales.nombre.value+"\n";
+            nombreyApellidos += "APELLIDOS: "+datosPersonales.apellidos.value;
+
+            var estadoCivil="ESTADO CIVIL: "+datosPersonales.estadoCivil.options[datosPersonales.estadoCivil.selectedIndex].text;
+
+            var idiomas="IDIOMAS: ";
+                if (datosPersonales.idioma1.checked){
+                    idiomas +=datosPersonales.idioma1.value+", ";
+                    }
+                 if (datosPersonales.idioma2.checked){
+                    idiomas +=datosPersonales.idioma2.value+", ";
+                    }
+                 if (datosPersonales.idioma3.checked){
+                    idiomas +=datosPersonales.idioma3.value+", ";
+                    }
+
+                var profesion="PROFESIÓN: ";
+                var encontrado=false;
+            for (var i=0; i<datosPersonales.profesion.length && !encontrado; i++){
+                if (datosPersonales.profesion[i].checked){
+                    profesion +=datosPersonales.profesion[i].value;
+                    encontrado=true;
+                }
+            }
+            var comentarios="COMENTARIOS :"+datosPersonales.comentarios.value;
+            var msgFinal=nombreyApellidos+"\n"+estadoCivil+"\n"+idiomas+"\n"+profesion+"\n"+comentarios;
+                alert(msgFinal);
+
+
+        }
+    </script>
+
+
+</body>
+
+</html>

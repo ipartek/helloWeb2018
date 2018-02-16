@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contenedores</title>
+    <meta charset="utf-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!--    <link rel="stylesheet" href="../css/custom.css"> -->
+
+    <style>
+        li span{
+            color: darkgray
+        }
+
+        .textrojo{
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Contenedores HTML</h1>
+        <ul>
+            <li>document.getElementById<span>: Element</span></li>
+            <li>document.getElementByName<span>: Node List</span></li>
+            <li>document.getElementByClassName: Nodelist</li>
+            <li>document.getElementByTagName: NodeList</li>
+            <li>document.getSelection<span>: funcion</span></li>
+
+        </ul>
+
+        <div class="row">
+            <div class="col-xs-4">
+
+
+                <form action="">
+                    <input type="checkbox" name="vehicle" value="1"> Bici<br>
+                    <input type="checkbox" name="vehicle" value="0" checked> Coche<br>
+                    <input type="checkbox" name="vehicle" value="15"> Andando<br>
+                    <input type="checkbox" name="vehicle" value="20"> Bus<br>
+                    <input type="checkbox" name="vehicle" value="57" checked> Metro<br>
+                </form>
+            </div>
+            <div class="col-xs-4">
+                <a href="#" class="btn btn-default" onclick="contarCheck()">Calcular opciones checkeadas</a>
+            </div>
+
+            <div class="col-xs-4">
+                <p id="resultado1" class="resultado">1</p>
+            </div>
+        </div>
+
+        <script>
+            function contarCheck() {
+                var cVehiculos = document.getElementsByName("vehicle");
+                console.debug("checkbox" + cVehiculos.length);
+
+                var cont = 0;
+
+                for (var i = 0; i < cVehiculos.length++)
+                    if (cVehiculos[i].checked) {
+                        cont++;
+                        S
+                    }
+
+            }
+
+            document.getElementById("resultado").textContent = cont;
+            }
+        </script>
+
+        <hr>
+        <h2>getElementByTagName</h2>
+        <div class="row">
+            <p class="rojo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at massa sed purus lobortis laoreet. Maecenas dui lorem, eleifend id fermentum ac, <span>fermentum</span> id ipsum. Donec vestibulum augue enim, ac varius ipsum gravida fermentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eget elit vitae lorem blandit egestas. Nulla nec nisi et sem aliquet maximus vitae vel erat. Aliquam erat volutpat. Nunc dictum at lectus ut vestibulum. Nunc sed diam turpis. Ut non mi lacinia diam fringilla laoreet sed et lacus. <span>Donec ut enim volutpat, pulvinar mauris quis,</span> consequat turpis. Sed at volutpat turpis. In hac habitasse platea dictumst. Curabitur vel felis commodo, semper nunc ut, hendrerit felis. Phasellus et venenatis mauris.</p>
+            <p class="verde">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at massa sed purus lobortis laoreet. Maecenas dui lorem, eleifend id fermentum ac, fermentum id ipsum. Donec vestibulum augue enim, ac varius ipsum gravida fermentum. Interdum et malesuada fames ac <span> ante ipsum primis in </span>faucibus. Aliquam eget elit vitae lorem blandit egestas. Nulla nec nisi et sem aliquet maximus vitae vel erat. Aliquam erat volutpat. Nunc dictum at lectus ut vestibulum. Nunc sed diam turpis. Ut non mi lacinia diam fringilla laoreet sed et lacus. Donec ut enim volutpat, pulvinar mauris quis, consequat turpis. Sed at volutpat turpis. In hac habitasse platea dictumst. Curabitur vel felis commodo, semper nunc ut, hendrerit felis. Phasellus et venenatis mauris.</p>
+        </div>
+        <script>
+            var pRojo= document.getElementById("Rojo");
+            var aSpan = parrafoRojo.getElementsByName("span");
+
+            for(i=0; i< aSpan.length; i++){
+                aSpan[i].classList.add("textRojo");
+            }
+        </script>
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</body>
+</html>

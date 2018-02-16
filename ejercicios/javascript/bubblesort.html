@@ -158,16 +158,12 @@
 
     <script>
 
-        //TODO para que funcione la eliminacion
-        // 1. No borrar del array y sustituir por null
-        // 2. Crear un indice en comun para usar como ##posicion##
-
 
         //variables globales
         var numeroInput = document.getElementById("numeroInput");
         var cntNumDes = document.getElementById("cntNumDes");
         var cntNumOrd = document.getElementById("cntNumOrd");
-        var spanNumero = '<div class="box">##numero##<span onclick="eliminarBox(##posicion##)" class="close">x</span></div>';
+        var spanNumero = '<div class="box">##numero##<span onclick="eliminarBox(##posicion##, event)" class="close">x</span></div>';
         var aDesordenado = []; // Array con numeros desordenados
         var aOrdenado = [];
 
@@ -243,13 +239,16 @@
         *    Eliminamos la Caja del HTML
         *    Eliminamos el numero del Array desordenado
         */
-        function eliminarBox(pos, event){
+        function eliminarBox(pos, e){
             console.debug("eliminarBox %s", pos);
-            aDesordenado.splice(pos,1);
+            console.debug("Antes Eliminar: " + aDesordenado );
+            //aDesordenado.splice(pos,1);
+            aDesordenado[pos] = null;
+            console.debug("Despues Eliminar: " + aDesordenado );
 
-            var boxes = cntNumDes.getElementsByTagName("div");
-            //console.debug("cajas " + boxes.length);
-            boxes[pos].style.display = "none";
+            //ocultar
+            var boxEliminar = e.target.parentElement;
+            boxEliminar.style.display = "none";
 
 
         }
@@ -280,7 +279,10 @@
                 aOrdenado = ordernar(aDesordenado);
                 cntNumOrd.innerHTML = "";
                 for (i = 0; i < aOrdenado.length; i++) {
-                    cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
+                    //evitar null
+                    if ( aOrdenado[i] != null ){
+                        cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
+                    }
                 }
             }
 

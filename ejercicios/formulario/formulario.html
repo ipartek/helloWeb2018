@@ -1,106 +1,106 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-	<title>Formulario</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Formulario</title>
 
-	<link type="text/css" rel="stylesheet" href="font-awesome.min.css">
-	<link type="text/css" rel="stylesheet" href="../../css/form.css">
+    <link type="text/css" rel="stylesheet" href="font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="../../css/form.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 <body>
-<div class="caja contenedor">
-	<div class="fila">
-		<div class="columna_grande">
-					<div class="panel panel_formulario">
+    <div class="caja contenedor">
+        <div class="fila">
+            <div class="columna_grande">
+                <div class="panel panel_formulario">
 
-						<div class="panel_cabecera">
-							<h2 class="title">FORMULARIO</h2>
-						</div>
+                    <div class="panel_cabecera">
+                        <h2 class="title">FORMULARIO</h2>
+                    </div>
 
-						<div class="panel_cuerpo">
-							<form role="form">
-						<fieldset>
-						<legend>Datos personales</legend>
-							<div class="columna">
-								<div class="form-group">
-									<label class="control-label"><i class="fa fa-user"></i> Nombre</label> <span class="rojo">*</span>
-									<input type="text" class="control_formulario" id="nombre" required  placeholder="Introduce tu nombre" tabindex="1"/>
-								</div>
-							</div>
+                    <div class="panel_cuerpo">
+                        <form novalidate action="../../index.html" role="form" id="formulario" onsubmit="return validar()">
+                            <fieldset>
+                                <legend>Datos personales</legend>
+                                <div class="columna">
+                                    <div class="form-group">
+                                        <label class="control-label"><i class="fa fa-user"></i> Nombre</label> <span class="rojo">*</span>
+                                        <input type="text" class="control_formulario" id="nombre" required placeholder="Introduce tu nombre" tabindex="1" />
+                                    </div>
+                                </div>
 
-							<div class="columna">
-								<div class="form-group">
-									<label class="control-label"><i class="fa fa-user"></i> Apellido</label> <span class="rojo">*</span>
-									<input type="text" class="control_formulario" id="usernombre" required placeholder="Introduce tu apellido" tabindex="2"/>
-								</div>
-							</div>
+                                <div class="columna">
+                                    <div class="form-group">
+                                        <label class="control-label"><i class="fa fa-user"></i> Apellido</label> <span class="rojo">*</span>
+                                        <input type="text" class="control_formulario" id="apellido" required placeholder="Introduce tu apellido" tabindex="2" />
+                                    </div>
+                                </div>
 
-							<div class="columna">
-								<div class="form-group">
-									<label class="control-label"><i class="fa fa-paper-plane-o"></i> Email</label> <span class="rojo">*</span>
-									<input type="email" class="control_formulario" id="email" required tabindex="3" />
-								</div>
-							</div>
-
-
-							  <div class="columna">
-								<div class="form-group">
-									<label class="control-label"><i class="fa fa-lock"></i> Contraseña</label> <span class="rojo">*</span>
-									<input type="password" class="control_formulario" id="password" required tabindex="4" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
-								</div>
-							  </div>
+                                <div class="columna">
+                                    <div class="form-group">
+                                        <label class="control-label"><i class="fa fa-paper-plane-o"></i> Email</label> <span class="rojo">*</span>
+                                        <input type="email" class="control_formulario" id="email" required tabindex="3" />
+                                    </div>
+                                </div>
 
 
+                                <div class="columna">
+                                    <div class="form-group">
+                                        <label class="control-label"><i class="fa fa-lock"></i> Contraseña</label> <span class="rojo">*</span>
+                                        <input type="password" class="control_formulario" id="password" required tabindex="4" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                                    </div>
+                                </div>
 
-							  <div class="columna">
-								<div class="form-group">
-									<label class="control-label"><i class="fa fa-square"></i> Género</label>
-									<div class="radio">
 
-										<label class="option button">
+
+                                <div class="columna">
+                                    <div class="form-group">
+                                        <label class="control-label"><i class="fa fa-square"></i> Género</label>
+                                        <div class="radio">
+
+                                            <label class="option button">
 										<input type="radio" name="genero" value="hombre"/>
 										<span class="button-radio"></span>
 										</label><label>Hombre</label>
 
-										<label class="option button">
+                                            <label class="option button">
 										<input type="radio" name="genero" value="mujer"/>
 										<span class="button-radio"></span>
 										</label><label>Mujer</label>
 
-										<label class="option button">
+                                            <label class="option button">
 										<input type="radio" name="genero" value="otro"/>
 										<span class="button-radio"></span>
 										</label><label>Otro</label>
-									</div>
-								</div>
-							  </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-						</fieldset>
+                            </fieldset>
 
-							<fieldset>
-							<legend>Domicilio</legend>
+                            <fieldset>
+                                <legend>Domicilio</legend>
 
-									<div class="columna">
-										<div class="form-group">
-											<label class="control-label"><i class="fa fa-home"></i> Calle</label>
-											<input type="text" class="control_formulario" id="calle" />
-										</div>
-									</div>
+                                <div class="columna">
+                                    <div class="form-group">
+                                        <label class="control-label"><i class="fa fa-home"></i> Calle</label>
+                                        <input type="text" class="control_formulario" id="calle" />
+                                    </div>
+                                </div>
 
-									<div class="columna">
-										<div class="form-group">
-											<label class="control-label"><i class="fa fa-envelope"></i> Código Postal</label>
-											<input type="text" class="control_formulario" id="cp" />
-										</div>
-									</div>
+                                <div class="columna">
+                                    <div class="form-group">
+                                        <label class="control-label"><i class="fa fa-envelope"></i> Código Postal</label>
+                                        <input type="text" class="control_formulario" id="cp" />
+                                    </div>
+                                </div>
 
-									<div class="columna">
-										<div class="form-group">
-											<label class="control-label"><i class="fa fa-map-marker"></i> Provincia</label>
-											<select class="control_formulario" id="porvincia">
+                                <div class="columna">
+                                    <div class="form-group">
+                                        <label class="control-label"><i class="fa fa-map-marker"></i> Provincia</label>
+                                        <select class="control_formulario" id="porvincia">
 												 <option value="-">- Selecciona -</option>
 											     <option value='alava'>Álava</option>
 												 <option value='albacete'>Albacete</option>
@@ -155,70 +155,141 @@
 												 <option value='zamora'>Zamora</option>
 												 <option value='zaragoza'>Zaragoza</option>
 											</select>
-										</div>
-									</div>
+                                    </div>
+                                </div>
 
 
 
 
-									<div class="columna">
-										<div class="form-group">
-										 <label class="control-label"><i class="fa fa-thumbs-o-up"></i> Aficiones</label>
-											<div class="checkbox">
-												<label>Dibujar
+                                <div class="columna">
+                                    <div class="form-group">
+                                        <label class="control-label"><i class="fa fa-thumbs-o-up"></i> Aficiones</label>
+                                        <div class="checkbox" id="aficiones">
+                                            <label>Dibujar
+													  <input type="checkbox" name="aficiones" id="leer">
+													  <span></span>
+													</label>
+                                            <label>Leer
+													  <input type="checkbox" name="aficiones" id="escribir">
+													  <span></span>
+													</label>
+                                            <label>Escribir
+													  <input type="checkbox" name="aficiones" id="pasear">
+													  <span></span>
+													</label>
+                                            <label>Pasear
+													  <input type="checkbox" name="aficiones" id="cantar">
+													  <span></span>
+													</label>
+                                            <label>Cantar
+													  <input type="checkbox" name="aficiones" id="escalar">
+													  <span></span>
+													</label>
+                                            <label>Escalar
+													  <input type="checkbox" name="aficiones" id="bailar">
+													  <span></span>
+													</label>
+                                            <label>Bailar
+													  <input type="checkbox" name="aficiones" id="tricotar">
+													  <span></span>
+													</label>
+                                            <label>Tricotar
+													  <input type="checkbox" name="aficiones" id="coser">
+													  <span></span>
+													</label>
+                                            <label>Coser
+													  <input type="checkbox" name="aficiones" id="dormir">
+													  <span></span>
+													</label>
+                                            <label>Dormir
 													  <input type="checkbox">
 													  <span></span>
 													</label>
-													<label>Leer
-													  <input type="checkbox">
-													  <span></span>
-													</label>
-													<label>Escribir
-													  <input type="checkbox">
-													  <span></span>
-													</label>
-													<label>Pasear
-													  <input type="checkbox">
-													  <span></span>
-													</label>
-											</div>
-										</div>
-									</div>
+                                        </div>
+                                    </div>
+                                </div>
 
-									<div class="columna">
-										<div class="form-group">
-											<label class="control-label"><i class="fa fa-pencil"></i> Observaciones</label>
-											<textarea class="control_formulario" id="txt"></textarea>
-										</div>
-									</div>
+                                <div class="columna">
+                                    <div class="form-group">
+                                        <label class="control-label"><i class="fa fa-pencil"></i> Observaciones</label>
+                                        <textarea class="control_formulario" id="txt"></textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
 
-							</fieldset>
-
-								<div class="form-group">
-									<div class="checkbox">
-										<label class="option button">
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label class="option button">
 											<input type="checkbox" id="remember" name="remember" value="remember" />
 											<span class="button-checkbox"></span>
 										</label>
-										<label>He leido y acepto los <a href="#">Términos y Condiciones</a>.</label>
-									</div>
-								</div>
+                                    <label>He leido y acepto los <a href="#">Términos y Condiciones</a>.</label>
+                                </div>
+                            </div>
 
-								<div class="form-group margin-top">
-									<button type="reset" class="estilo_boton btn-borrar">Borrar</button>
-									<button type="submit" class="estilo_boton btn-enviar">Enviar</button>
-									<hr>
-									<p><span class="rojo">*</span> Campos obligatorios.</p>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-
-        	</div>
-
+                            <div class="form-group margin-top">
+                                <button type="reset" class="estilo_boton btn-borrar">Borrar</button>
+                                <button type="submit" class="estilo_boton btn-enviar">Enviar</button>
+                                <hr>
+                                <p><span class="rojo">*</span> Campos obligatorios.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-    </body>
+    <!-- SCRIPT-->
+    <script>
+        function validar() {
+            console.log("validar formulario");
 
+            //más seguro coger por id
+            validarSexo();
+
+
+
+
+        }
+
+        function validarSexo(){
+
+            var radioButtons = document.getElementsByName("genero");
+
+            for(var i=0; i< radioButtons.length; i++){
+
+                //falta
+            }
+            var contadorAfic = 0;
+
+            for(var i=0;i<formulario.aficiones.length-1; i++){
+                if(formulario.aficiones[i].checked){
+                    contadorAfic++;
+                }
+            }
+
+
+            switch(radioButtons){
+                case "hombre" :
+                    if( contadorAfic < 1 ) { //si el género es masculino por lo menos seleccionar una afición
+                          return false;
+                    }
+                    break;
+
+
+                case "mujer" :
+                    if( contadorAfic < 3 ) { //si el género es femenino por lo menos seleccionar tres aficiones                          return false;
+                    }
+                    break;
+
+
+                default :
+                  return true;
+              }
+        }
+
+    </script>
+
+</body>
 </html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectores </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap-->
+    <!-- compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!--Font Awesome-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!--Custom -->
+    <link rel="stylesheet" href="selectores.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+           <div class="col-xs-6">
+                <h1>Selectores</h1>
+                 <ul>
+                    <li>document.getElementById : Element</li>
+                    <li>document.getElementsByClassName :NodeList</li>
+                    <li>document.getElementsByName: Element</li>
+                    <li>document.getElementsByTagName: NodeList</li>
+                    <li>document.getElementsByTagNameNS: NodeList</li>
+                    <li>document.querySelectorAll: devuelve todos</li>
+                    <li>document.querySelector: devuelve el primero</li>
+                </ul>
+            </div>
+             <div class="col-xs-6">
+                <h1>ClassList API</h1>
+                 <ul>
+                    <li>add( String [, String] )</li>
+                    <li>remove( String [, String] )</li>
+                    <li>item( Number )</li>
+                    <li>toggle( String [, force] )</li>
+                    <li>contains( String )</li>
+                    <li>replace( oldClass, newClass )</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <h2>getElementsByName</h2>
+        <div class="row">
+            <div class="col-xs-4">
+                <form action="">
+                    <input type="checkbox" name="vehicle" value="1"> Bici<br>
+                    <input type="checkbox" name="vehicle" value="2"> Coche<br>
+                    <input type="checkbox" name="vehicle" value="3"> Andando<br>
+                    <input type="checkbox" name="vehicle" value="4"> Bus<br>
+                    <input type="checkbox" name="vehicle" value="5"> Metro<br>
+                </form>
+            </div>
+
+            <div class="col-xs-4">
+                <a href="#" class="button" onclick="contarChecks()">Calcular Opciones checkeadas</a>
+            </div>
+
+            <div class="col-xs-4">
+                <p id="resultado"></p>
+            </div>
+        </div>
+        <hr>
+        <h2>document.getElementsByTagName</h2>
+        <div class="row">
+            <div class="col-xs-6">
+                <p id="rojo">
+                    Lorem ipsum dolor sit amet, <span>consectetur</span> adipisicing elit. Molestias minima, perspiciatis beatae ab iusto ut delectus ex animi itaque in assumenda cumque, aliquid facilis dolor facere at similique odio reprehenderit.
+                    Lorem ipsum dolor sit amet, consectetur <span>adipisicing</span> elit. Ullam, quidem, minus natus minima ex nisi eligendi saepe molestias, eum ab vel <span>atque</span> culpa hic ad possimus maiores ut soluta ducimus.
+                </p>
+            </div>
+            <div class="col-xs-6">
+                <p id="verde">
+                    Lorem ipsum dolor sit amet, <span>consectetur</span> adipisicing elit. Molestias minima, perspiciatis beatae ab iusto ut delectus ex animi itaque in assumenda cumque, aliquid facilis dolor facere at similique odio reprehenderit.
+                    Lorem ipsum dolor sit amet, consectetur <span>adipisicing</span> elit. Ullam, quidem, minus natus minima ex nisi eligendi saepe molestias, eum ab vel <span>atque</span> culpa hic ad possimus maiores ut soluta ducimus.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolores, ipsa quae odit possimus aut corporis eos, vel iure quia <span>quaerat</span> saepe in perspiciatis quasi quos ut <span>necessitatibus</span> expedita aliquid.
+                </p>
+            </div>
+        </div>
+
+        <script>
+
+        //párrafos rojos
+        var pRojo = document.getElementById("rojo");
+        var aSpan = document.getElementsByTagName("span");
+
+        for(var i=0; i < aSpan.length;i++){
+            aSpan[i].classList.add("textoRojo");
+        }
+
+         //párrafos verdes
+
+        var pVerde= document.getElementById("verde");
+        var aSpanverde = document.getElementsByTagName("span");
+
+        for(var i=0; i < aSpanverde.length;i++){
+                aSpanverde[i].classList.add("textoVerde");
+        }
+
+        </script>
+
+    </div><!-- fin container-->
+
+
+<script type="text/javascript" src="selectores.js"></script>
+
+</body>
+</html>

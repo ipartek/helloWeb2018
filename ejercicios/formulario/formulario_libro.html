@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario del libro - Ejerc. 1</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+   	<link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+   	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--Bootstrap-->
+    <!-- compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!--Font Awesome-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!--Custom -->
+    <link type="text/css" rel="stylesheet" href="formulario_libro.css">
+</head>
+
+<body>
+
+
+<section id="contact">
+			<div class="section-content">
+				<h1 class="section-header">Ejercicio 1 <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Formulario del libro</span></h1>
+
+			</div>
+			<div class="contact-section">
+			<div class="container">
+				<form name="datosPersonales" id="datosPersonales" method="post" action="">
+					<div class="col-md-6 form-line">
+			  			<div class="form-group">
+			  				<label for="nombre">Nombre</label>
+					    	<input type="text" class="form-control" id="nombre" name="nombre" value="" placeholder=" Introduce nombre">
+				  		</div>
+				  		<div class="form-group">
+					    	<label for="apellidos">Apellidos</label>
+					    	<input type="text" class="form-control" id="apellidos" name="apellidos" value="" placeholder=" Introduce tu apellido">
+					  	</div>
+					  	<div class="form-group">
+					    	<label for="estadoCivil">Estado civil</label>
+					    	<select class="form-control" id="estadoCivil" name="estadoCivil">
+                              <option value="0" selected>Seleccionar</option>
+                              <option value="1">Soltero/a</option>
+                              <option value="2">Casado/a</option>
+                              <option value="3">Divorciado/a</option>
+                              <option value="4">Viudo/a</option>
+                            </select>
+			  			</div>
+			  			 <div class="form-group">
+			  				<label for ="idiomas"> Idiomas</label>
+			  			 	<div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" name="idioma1" id="idioma1" value="castellano">
+                              <label class="custom-control-label" for="idioma1">Castellano</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" name="idioma2" id="idioma2" value="ingles">
+                              <label class="custom-control-label" for="idioma2">Inglés</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" name="idioma3" id="idioma3" value="frances">
+                              <label class="custom-control-label" for="idioma3">Francés</label>
+                            </div>
+			  			</div>
+			  		</div>
+			  		<div class="col-md-6">
+                      <div class="form-group">
+			  				<label for ="profesion" id="profesion"> Profesión</label>
+			  			 	<div class="custom-control custom-radio">
+                              <input type="radio" id="profesion1" name="profesion" value="autonomo" class="custom-control-input">
+                              <label class="custom-control-label" for="customRadio1">Autónomo</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="profesion2" name="profesion"  value="ajena" class="custom-control-input">
+                              <label class="custom-control-label" for="profesion2">Trabajador por cuenta ajena</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="profesion3" name="profesion" value="desempleado" class="custom-control-input">
+                              <label class="custom-control-label" for="customRadio3">Desempleado</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="profesion4" name="profesion" value="jubilado" class="custom-control-input">
+                              <label class="custom-control-label" for="customRadio4">Jubilado</label>
+                            </div>
+			  			</div>
+
+			  			<div class="form-group">
+			  				<label for ="comentarios"> Comentarios</label>
+			  			 	<textarea  class="form-control" id="comentarios" name="comentarios" placeholder="Cuentame algo"></textarea>
+			  			</div>
+			  			<div>
+
+			  				<button type="button" id="enviar_datos" name="enviar_datos" value="enviar" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Enviar</button>
+			  				<button type="button" id="mostrar_datos" name="mostrar_datos" class="btn btn-default submit"  value="Mostrar" onclick="mostrarDatos();">
+                                Mostrar</button>
+			  			</div>
+
+					</div>
+
+				</form>
+				</div>
+			</div><!--fin contact section-->
+		</section><!-- fin  seccion contato-->
+  <script src="formulario_libro.js" type="text/javascript"></script>
+</body>
+
+</html>

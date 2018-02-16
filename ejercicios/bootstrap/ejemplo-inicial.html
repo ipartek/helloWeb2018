@@ -58,6 +58,7 @@
 
 <section class="contenido container">
  <h1 class="text-center">Bootstrap 3.3.7</h1>
+ <h2 id="#fecha">Fecha </h2>
 <!--
 
     <h2>TIPOS DE BOTONES</h2>
@@ -257,14 +258,22 @@
     <script>
     function mostrar() {
          var imagenes = document.images.length;
-        console.info(imagenes);
+            console.info(imagenes);
 
         for (i=0;i<document.images.length;i++){
 
-             console.log(document.images.src + images[i] + "imagen " +i);
+             console.log(document.images.src + document.images[i] + "imagen " +i);
 
              }
          }
+
+    function fechaActual(){
+        var f = new Date();
+        f = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+        document.getElementById("fecha").innerHTML = f;
+    }
+
+    document.get
 
 
 

@@ -144,7 +144,7 @@
                     <div class="panel-body" id="cntNumDes">
 
                         <!--Ejemplo: -->
-                        <span class="box">72<i class="boxClose fas fa-times-circle fa-xs"></i></span>
+                        <!--<span class="box">72<i class="boxClose fas fa-times-circle fa-xs" data-index="0" onclick="borrarNum()"></i></span>-->
 
                     </div>
                 </div>
@@ -202,7 +202,8 @@
 
         // Variables globales
         var listNum = []; // Array de números
-        var spanNumero = '<span class="box">#newNum#<i class="boxClose fas fa-times-circle fa-xs"></i></span>';
+        var contNum = 0;
+        var spanNumero = '<span class="box" data-index="##indiceNum##">#newNum#<i class="boxClose fas fa-times-circle fa-xs" onclick="borrarNum()"></i></span>';
 
 
         // FUNCIONES
@@ -222,6 +223,9 @@
                     // crear nuevo elemento <span> con el nuevo número
                     // Forma simple: cntNumDes.innerHTML = "<span class='box'>" + inputNum.value + "</span>"
                     cntNumDes.innerHTML += spanNumero.replace("#newNum#", inputNum.value);
+                    // Insertar el index de la posición para el método de borrado
+                    cntNumDes.innerHTML += spanNumero.replace("##indiceNum##", contNum);
+                    contNum++;
                     cntNumDesHeader.innerHTML = "Números desordenados: [" + (listNum.length + 1) + "]";
                     // añadir número a la lista de números desordenada, SI tiene menos de 10 elementos
                     listNum.push(inputNum.value);
@@ -256,7 +260,20 @@
         }
 
 
-        /*
+        /**
+            Método para borrar el número de la lista ordenada
+            PRE: se pulsa en el icono de eliminar 'x' de un elemento de la lista ordenada
+            POST: se elimina ese número, se reordena el array con el resto de números y se organizan sus indices
+        **/
+        function borrarNum() {
+
+            // TODO: al crear el objeto de FontAwesome, convierte el elemento <i> en un <svg> y se carga las etiquetas como el onclick
+            console.log(this);
+            this.getAttribute("data-index");
+            //var posNum = document.getElementById
+        }
+
+        /**
             Método para ordenar una lista de números: metodología de la burbuja "BubleSort"
             PRE: obtiene una lista de números desordenados
             POST: devuelve la misma lista de números ordenada
@@ -370,6 +387,9 @@
             // Eliminar la alerta en caso de existir
             document.getElementById("divAlertas").innerHTML = "";
         }
+
+
+
     </script>
 </body>
 </html>

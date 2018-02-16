@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selectores DOM</title>
+
+    <!--ESTILOS EXTERNOS-->
+    <!--BOOTSTRAP 3.3.7-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+</head>
+
+<body onload="pintarPalabras()">
+
+    <style>
+        header {
+            background-color: teal;
+            color: antiquewhite;
+        }
+
+        section {
+            margin-top: 50px;
+        }
+
+        .txt-center {
+            text-align: center;
+        }
+
+        .return {
+            color: grey;
+            font-style: italic;
+        }
+
+        #listaGets {
+            font-weight: 600;
+        }
+
+        #btnChekedReadme {
+            font-style: italic;
+            text-align: justify;
+        }
+
+        .resultado {
+            font-size: 4em;
+            text-align: center;
+        }
+    </style>
+
+    <header class="container-fluid">
+        <h1>Selectores JS</h1>
+    </header>
+
+    <div class="container">
+        <section id="selectores">
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <h2>Selectores DOM</h2>
+                    <ul id="listaGets">
+                        <li>document.getElementById() :<span class="return"> Element</span></li>
+                        <li>document.getElementsByName() :<span class="return"> NodeList</span></li>
+                        <li>document.getElementsByClassName() :<span class="return"> NodeList</span></li>
+                        <li>document.getElementsByTagName() :<span class="return"> NodeList</span></li>
+                        <li>document.querySelector(~selector CSS) :<span class="return"> Element</span></li>
+                        <li>document.querySelectorAll(~selector CSS) :<span class="return"> NodeList</span></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-6">
+                    <h2>ClassList API</h2>
+                    <ul id="listaGets">
+                        <li>add: <span class="return">añade una clase al elemento</span></li>
+                        <li>remove: <span class="return">eliminar una clase al elemento</span></li>
+                        <li>item: <span class="return">obtiene el indice del elemento</span></li>
+                        <li>toggle: <span class="return">intercambia la clase del elemento</span></li>
+                        <li>contains: <span class="return">devuelve true si contiene la clase indicada en el elemento</span></li>
+                        <li>replace: <span class="return">reemplaza una clase del elemento</span></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <hr>
+
+            <article id="byName">
+                <h3>GetElementsByName():</h3>
+
+                <div class="row">
+                    <div class="col-xs-4">
+                        <form action="">
+                            <input type="checkbox" name="vehiculo" value="0" checked> Andando <br>
+                            <input type="checkbox" name="vehiculo" value="1"> Bici <br>
+                            <input type="checkbox" name="vehiculo" value="2"> Coche <br>
+                            <input type="checkbox" name="vehiculo" value="3"> Autobus <br>
+                            <input type="checkbox" name="vehiculo" value="4"> Metro <br>
+                        </form>
+                    </div>
+
+
+                    <div class="col-xs-4">
+                        <a href="#" class="btn btn-default" onclick="chkSeleccionados()">Calcular opciones seleccionadas</a>
+                        <p id="btnChekedReadme">Si el nº de opciones es 3 o menos, el resultado se mostrará de color rojo; si es mayor, será de color verde.</p>
+                    </div>
+
+
+
+                    <div class="col-xs-4">
+                        <h4 class="txt-center">Resultado:</h4>
+                        <p id="resultadoChk" class="resultado"></p>
+                    </div>
+                </div>
+            </article>
+
+            <hr>
+
+            <article id="byTagName">
+                <h3>GetElementsByTagName():</h3>
+
+                <p id="pRojo">Lorem ipsum <span>dolor</span> sit amet, consectetur adipisicing <span>elit</span>. Harum inventore suscipit quaerat ipsam recusandae, <span>necessitatibus</span> eveniet officiis, <span>natus</span> repellendus exercitationem dolorem. Quod <span>dolore</span> sit ipsa ea, tempora iste ipsam <span>quibusdam</span>!</p>
+
+                <p id="pVerde">Lorem ipsum dolor sit amet, consectetur <span>adipisicing</span> elit. Harum sed ipsam <span>sint</span> suscipit maiores <span>provident</span> voluptates consequatur molestiae esse. Dolor eveniet <span>aut</span> voluptatem nam. Fugit repellat <span>commodi</span> enim tempora <span>deserunt</span>.</p>
+            </article>
+
+            <hr>
+
+            <style>
+                .spanPruebas {
+                    padding: 5px;
+                    border: 2px dotted blue;
+                }
+
+                .statusOFF {
+                    color: red;
+                }
+
+                .statusON {
+                    color: green;
+                }
+
+                .div-block {
+                    display: block;
+                    margin: auto;
+                }
+                .negrita {
+                    font-weight: 600;
+                }
+                .cursiva {
+                    font-style: italic;
+                }
+                .tachado {
+                    text-decoration:line-through !important;
+                }
+                .subrayado {
+                    text-decoration: underline !important;
+                }
+                .mayusculas {
+                    text-transform: uppercase;
+                }
+
+            </style>
+            <p>Muestra la palabra en color rojo hasta que se le aplica la clase 'statusON'</p>
+            <span id="spanToggle" class="spanPruebas pVerde statusOFF div-block txt-center">Elemento con clases</span>
+            <output id="outClases">Clases:</output><br>
+            <button onclick="mostrarClases(spanToggle)">Mostrar clases</button>
+            <button id="replaceClass" onclick="replaceClass(spanToggle)">Reemplazar clase</button>
+            <br><br>
+            <p>Intercambia la clase statusON por statusOFF y viceversa:</p>
+            <button id="btnToggle" onclick="toggleClass(spanToggle)">Toggle</button>
+            <br>
+            <br>
+            <label for="selClase">Clases para añadir:</label>
+            <select name="selClase" id="selClase">
+                <option value="negrita">Negrita</option>
+                <option value="cursiva">Cursiva</option>
+                <option value="tachado">Tachado</option>
+                <option value="subrayado">Subrayado</option>
+            </select>
+            <br>
+            <button id="addClass" onclick="addClass(spanToggle)">Añadir Clase</button> <br><br>
+
+            <p>1. Muestre las clases que tiene el elemento Toggle mediante el botón MOSTRAR CLASES <br> 2. Introduza una de esas clases en la siguiente caja de texto <br> 3. Pulse el botón BORRAR CLASE para eliminarla del elemento <br> 4. Vuelva a mostrar las clase del elemento para verificar que ya no está esa clase</p>
+            <input type="text" id="inputRemoveClass" placeholder="clase a borrar">
+            <button id="removeClass" onclick="removeClass(spanToggle)">Borrar clase</button>
+
+
+
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        </section>
+    </div>
+    <!--container-->
+
+
+
+
+
+    <!--SCRIPTS EXTERNOS-->
+    <!--jQuery for Bootstrap-->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!--LÓGICA LOCAL-->
+    <script>
+        /**
+         *   Método para contabilizar el número de chk seleccionados (checked)
+         **/
+        function chkSeleccionados() {
+
+            // Variables que acceden a elementos del DOM
+            var listVehiculos = document.getElementsByName("vehiculo");
+            console.debug(listVehiculos);
+            var pResultado = document.getElementById("resultadoChk");
+
+            // var locales
+            var contChecked = 0;
+
+            for (var indVehiculos = 0; indVehiculos < listVehiculos.length; indVehiculos++) {
+                if (listVehiculos[indVehiculos].checked == true) {
+                    contChecked++;
+                }
+            }
+
+            if (contChecked > 3) {
+                pResultado.style.color = "green";
+            } else {
+                pResultado.style.color = "red";
+            }
+
+            pResultado.textContent = contChecked;
+            console.debug("Nº de opciones seleccionadas: " + contChecked);
+
+            // reset de las variables
+            contChecked = 0;
+
+        }
+
+
+        // PINTAR PALABRAS: Las siguientes sentencias ponen los <span> del p#rojo en color verde y los p#verde en color verde
+        function pintarPalabras() {
+            // variables del acceso al DOM
+            var pRojo = document.getElementById("pRojo");
+            var spanRojo = pRojo.getElementsByTagName("span");
+            // seleccion con querySelector
+            var spanVerde = pVerde.querySelectorAll("#pVerde span");
+
+
+            for (var indSpanRojo = 0; indSpanRojo < spanRojo.length; indSpanRojo++) {
+                spanRojo[indSpanRojo].style.color = "red";
+                spanRojo[indSpanRojo].style.fontWeight = "600";
+            }
+
+            for (var indSpanVerde = 0; indSpanVerde < spanVerde.length; indSpanVerde++) {
+                spanVerde[indSpanVerde].style.color = "green";
+                spanVerde[indSpanVerde].style.fontWeight = "600";
+            }
+        }
+
+        /**
+         *   Método que muestras las clases de un elemento
+         *   IN: elemento
+         *   OUT: clases del elemento("#id")
+         **/
+        function mostrarClases(elem) {
+
+            // Variables del acceso al DOM
+            var outResult = document.getElementById("outClases");
+            // inicializar el output
+            outResult.textContent = "Clases: ";
+
+            for (var iClases = 0; iClases < elem.classList.length; iClases++) {
+                outResult.textContent += "   "
+                    + (iClases+1) + ". " + elem.classList[iClases];
+            }
+
+
+        }
+
+        /**
+         *   Método que reemplazar una clase del elemento por otra
+         *   IN: elemento
+         *
+         *   POST: reemplaza una de las clases del elemento
+         **/
+        function replaceClass(elem) {
+
+            elem.classList.replace('statusOFF', 'statusON');
+        }
+
+
+        /**
+         *   Método que intercambia una clase del elemento por otra
+         *   IN:
+         *        @elem: elemento al que se le va a intercambiar la clase
+         *
+         *   POST: intercambia una de las clases del elemento
+         **/
+        function toggleClass(elem) {
+
+            if(elem.classList.contains('statusOFF')){
+                elem.classList.toggle('statusON', !elem.classList.contains('statusON'));
+            } else {
+                elem.classList.toggle('statusOFF', true);
+            }
+
+
+        }
+
+        /**
+         *   Método que eliminar una clase del elemento
+         *   IN:
+         *        @elem: elemento al que se le va a eliminar la clase
+         *
+         *   POST: reemplaza una de las clases del elemento
+         **/
+        function removeClass(elem) {
+
+            // Variables de acceso al DOM
+            var clase = document.getElementById("inputRemoveClass").value;
+
+            elem.classList.remove(clase);
+        }
+
+        /**
+         *   Método que añadir una clase al elemento
+         *   IN:
+         *        @elem: elemento al que se le va a eliminar la clase
+         *
+         *   POST: añade la clase seleccionada en el selector "#selClase"
+         **/
+        function addClass(elem) {
+            // Variables de acceso al DOM
+            var clase = document.getElementById("selClase").value;
+
+            elem.classList.add(clase);
+        }
+    </script>
+
+</body>
+
+</html>

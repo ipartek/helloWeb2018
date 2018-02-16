@@ -40,7 +40,8 @@
         <p>*<b>disabled</b> no se envia al submitar el formulario</p>
         <p>*<b>readonly</b> si se envia al submitar el formulario</p>
         <p><b>tabindex</b> es necesario por accesibilidad</p>
-        <form action="#URL_SERVIDOR" method="post">
+        <!-- <form novalidate action="#URL_SERVIDOR" method="post">-->
+        <form novalidate action="index.html" method="get" onsubmit="return validar();">
             <fieldset id="datos_personales">
                 <legend>Datos Personales:</legend>
 
@@ -142,17 +143,19 @@
             <!--check de hobbies-->
             <fieldset id="hobbies">
                 <legend>Hobbies:</legend>
-                <input type="checkbox" name="cantar" value="cantar">Cantar <br>
-                <input type="checkbox" name="senderismo" value="senderismo">Senderismo <br>
-                <input type="checkbox" name="pintar" value="pintar">Pintar <br>
-                <input type="checkbox" name="leer" value="leer">Leer <br>
+                <input type="checkbox" name="hobbies" value="cantar">Cantar <br>
+                <input type="checkbox" name="hobbies" value="senderismo">Senderismo <br>
+                <input type="checkbox" name="hobbies" value="pintar">Pintar <br>
+                <input type="checkbox" name="hobbies" value="leer">Leer <br>
             </fieldset>
             <fieldset id="observaciones">
                 <legend>Observaciones:</legend>
 
 
                 <!--text area de observaciones, no requerida -->
-                <textarea name="observaciones" id="observaciones" cols="30" rows="10"></textarea>
+                <textarea name="observaciones" id="txtObservaciones" cols="30" rows="10" onkeydown="escribirNumCaracteres();validarObservaciones();" onkeyup="escribirNumCaracteres();validarObservaciones();"></textarea>
+                <br>
+                <label id="numCaracteres" for="observaciones"></label>
             </fieldset>
 
 
@@ -176,6 +179,100 @@
 
         </form>
     </div>
+    <script>
+        const MIN = 25;
+        const MAX = 500;
+
+        function validar() {
+            console.log("Validar formulario");
+            var formulario = document.forms[0]; //mas seguro cogerlo por id
+            validarHobbies();
+        }
+
+        function contarChecks() {
+            var cHobbies = document.getElementsByName("hobbies");
+            console.debug("checkbox " + cHobbies.length);
+
+            var cont = 0;
+            var len = cHobbies.length;
+            for (var i = 0; i < len; i++) {
+                if (cHobbies[i].checked) {
+                    cont++;
+                }
+            }
+            return cont;
+
+        }
+
+        function obtenerSexo() {
+            return document.forms[0].sexo.value;
+        }
+
+        function validarHobbies() {
+            //si es hombre al menos 2 hobbies
+            // si es mujer al menos 3 hobbies
+            //  si es otro no es necesario
+            var numHobbies = contarChecks();
+            var queSexo = obtenerSexo();
+
+            switch (queSexo) {
+                case "M":
+                    if (numHobbies >= 2) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+                case "F":
+                    if (numHobbies >= 3) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                    break;
+                default:
+                    return true;
+            }
+
+        }
+
+        function validarObservaciones() {
+            //como minimo 25 caracteres y maximo 500
+
+            var texto = document.forms[0].txtObservaciones.value;
+            var len = texto.length;
+
+            if (len >= MAX || len < 25) {
+
+                document.forms[0].txtObservaciones.style.color = "#ff0000"
+
+            } else {
+                document.forms[0].txtObservaciones.style.color = "#000000";
+
+            }
+
+
+        }
+
+        function escribirNumCaracteres() {
+            //escribir en numero que le quedan y numero de caracteres que lleva escritos /
+
+            var escritos;
+            var faltan;
+
+            var texto = document.forms[0].txtObservaciones.value;
+            escritos = texto.length;
+            faltan = MAX - escritos;
+
+            document.getElementById("numCaracteres").innerHTML = "Numero de caracteres: " + escritos + "/" + faltan;
+            if (MAX < escritos) {
+                document.getElementById("numCaracteres").innerHTML = "Numero de caracteres: " + escritos + " El maximo son" + MAX;
+
+            } else {
+                document.getElementById("numCaracteres").innerHTML = "Numero de caracteres: " + escritos + "/" + faltan;
+            }
+        }
+    </script>
 
 </body>
 

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        p {
+            text-align: justify;
+        }
+
+        .textoRojo {
+            color: red;
+            font-size: 1.5em;
+
+        }
+
+        .textoVerde {
+            color: greenyellow;
+            font-size: 1.5em;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <div class="container">
+
+            <h1>Selectores</h1>
+
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <h2>Selectores</h2>
+                <ul>
+                    <li>document.getElementsByName:<span>Nodelist</span></li>
+                    <li>document.getElementById: <span>Element</span></li>
+                    <li>document.getElementsByClassName :<span>Nodelist</span></li>
+                    <li>document.getElementsByTagName<span>Nodelist</span></li>
+                    <li>document.querySelector:<span>Element</span><span>(Devuelve el 1º que encuentra)</span></li>
+                    <li>document.querySelectorAll:<span>Nodelist</span><span> (Devuelve todos los que encuentra)</span></li>
+
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <h2>ClasList API</h2>
+                <ul>
+                    <li>add</li>
+                    <li>remove</li>
+                    <li>item</li>
+                    <li>toggle</li>
+                    <li>contains</li>
+                    <li>replace</li>
+                </ul>
+            </div>
+        </div>
+        <h2>getElementById</h2>
+        <div class="row">
+            <div class="col-xs-4">
+                <form action="">
+                    <input type="checkbox" name="vehicle" value="1"> Bici<br>
+                    <input type="checkbox" name="vehicle" value="0" checked> Coche<br>
+                    <input type="checkbox" name="vehicle" value="20"> Andando<br>
+                    <input type="checkbox" name="vehicle" value="45"> Bus<br>
+                    <input type="checkbox" name="vehicle" value="67"> Metro<br>
+                </form>
+            </div>
+            <!-- col3 -->
+            <div class="col-xs-4">
+
+                <a href="#" onclick="contarChecks()" class="btn btn-default">Calcular opciones checkeadas</a>
+            </div>
+            <!-- col2 -->
+            <div class="col-xs-4">
+                <p id="resultado1" class="resultado">1</p>
+            </div>
+            <!-- col 3 -->
+        </div>
+        <!-- row -->
+        <script>
+            function contarChecks() {
+                var cVehiculos = document.getElementsByName("vehicle");
+                console.debug("checkbox " + cVehiculos.length);
+
+                var cont = 0;
+                var len = cVehiculos.length;
+                for (var i = 0; i < len; i++) {
+                    if (cVehiculos[i].checked) {
+                        cont++;
+                    }
+                }
+                document.getElementById("resultado1").textContent = cont;
+                console.info("Seleccionados: " + cVehiculos.item)
+            }
+
+        </script>
+        <hr>
+        <h2>getElementByTagName</h2>
+        <div class="row">
+            <div class="col-xs-6">
+                <p id="rojo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolorum iusto, fuga nostrum voluptatibus. Aspernatur id possimus tempore quod error numquam, debitis ea doloribus distinctio maiores quae eos illum asperiores. <span>Lorem</span> ipsum dolor sit amet, consectetur adipisicing elit. Commodi, similique aspernatur vitae excepturi laborum quae repellendus quos non veritatis alias deserunt sed quaerat ab in numquam <span>molestiae</span> officia ducimus reiciendis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores rerum sequi temporibus qui fugit impedit voluptates voluptatum, nisi accusantium dolorum praesentium placeat autem cumque a incidunt saepe asperiores non id.
+                </p>
+                <p id="verde">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Amet</span> quis reiciendis tempora assumenda voluptas, a, sapiente eos provident alias sequi cumque eius aspernatur fuga, itaque. Expedita dignissimos, quia tempore quod. Lorem ipsum dolor sit amet, consectetur <span>adipisicing</span> elit. Amet ducimus libero aspernatur quo nihil! Voluptatibus iste accusamus ullam dolores quibusdam ipsum, numquam, laudantium omnis sint, aut quas ducimus? Corporis, inventore.
+                </p>
+            </div>
+        </div>
+        <!--row-->
+        <script>
+            var pRojo = document.getElementById("rojo");
+            var aSpan = pRojo.getElementsByTagName("span");
+            var len = aSpan.length;
+            for (var i = 0; i < len; i++) {
+                aSpan[i].classList.add("textoRojo");
+            }
+            var spansVerde = document.querySelectorAll("#verde span"); //coge solo los span verdes
+            var len = spansVerde.length;
+            for (var i = 0; i < len; i++) {
+                spansVerde[i].classList.add("textoVerde");
+            }
+
+        </script>
+        <hr>
+        <h2>querySelector</h2>
+        <div class="row">
+            <div class="col-xs-6">
+            <span id="ejemplo3" class="lunes viernes pintxo">1</span>
+            <button id="boton" onclick="verDatos()">Ver</button>
+            <button id="boton" onclick="cambiarColor()">Rojo/Verde</button>
+            </div>
+        </div>
+        <script>
+           function cambiarColor(){
+               //usando toggle cambiar de color
+
+            }
+            function verDatos(){
+              //var spans=  document.getElementsByTagName("span");
+               // var spansVerde = document.querySelectorAll("#verde span")
+            }
+        </script>
+
+    </div>
+    <!--contenedor-->
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

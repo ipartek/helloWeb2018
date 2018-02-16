@@ -23,6 +23,7 @@
         .row {
             margin: 20px 0px
         }
+
     </style>
 </head>
 
@@ -31,19 +32,24 @@
     <header>
 
         <div class="container">
+
             <h1>Introducir Numero</h1>
+
         </div>
     </header>
     <div class="container">
         <div class="row">
             <form class="form-inline">
-
-                <div class="col-xs-9">
-                    <button type="button" onClick=" introducirNumero()" class="btn btn-default">Acceder</button>
-                </div>
-            </form>
-
+                <div="col-xs-3">
+                    <output id="resultado"></output>
         </div>
+
+        <div class="col-xs-9">
+            <button type="button" onClick=" introducirNumero()" class="btn btn-default">Acceder</button>
+        </div>
+        </form>
+
+    </div>
 
     </div>
 
@@ -60,8 +66,8 @@
 
         function esMayorEdad() {
             if (!confirm("¿Es mayor de edad?")) {
-               //alert("Eres menor");
-                window.open("http://www.rtve.es/infantil/","Clan","heigth=600px");
+                //alert("Eres menor");
+                window.open("http://www.rtve.es/infantil/", "Clan", "heigth=600px");
                 //window.location="http://www.rtve.es/infantil/";
             }
         }
@@ -70,27 +76,84 @@
             if (numero === "")
                 return false;
             var num = parseInt(numero);
-            if (!/^([0-9])*$/.test(num))
+            /* if (!isNaN)
+                 return false;
+             return true;*/
+
+
+
+            if (!/^([0-9])*$/.test(num)) // es lo mismo que isNaN(numero) si
                 return false;
             return true;
+
+
         }
 
         function introducirNumero() {
-            var num1 = 0;
+            var num1;
+            var suma;
             var respuesta = prompt("Introduzca un numero")
+
             if (validarNumero(respuesta)) {
                 num1 = respuesta;
-                var respuesta = prompt("Introduzca un numero")
-                if (validarNumero(respuesta))
-                    alert(parseInt(num1) + parseInt(respuesta));
-                else
+                var respuesta = prompt("Introduzca un segundo numero")
+                if (validarNumero(respuesta)) {
+                    suma = parseInt(num1) + parseInt(respuesta)
+                    alert(suma);
+                    document.getElementById("resultado").textContent = suma;
+
+                } else
                     alert("No es un numero")
             } else {
                 alert("No es un numero")
-
             }
-
         }
+
+
+       function introducirNumero() {
+            var num1;
+            var suma;
+            var respuesta = prompt("Introduzca un numero")
+
+            if (validarNumero(respuesta)) {
+                num1 = respuesta;
+                var respuesta = prompt("Introduzca un segundo numero")
+                if (validarNumero(respuesta)) {
+                    suma = parseInt(num1) + parseInt(respuesta)
+                    alert(suma);
+                    document.getElementById("resultado").textContent = suma;
+
+                } else
+                    alert("No es un numero")
+            } else {
+                alert("No es un numero")
+            }
+        }
+
+        /*function introducirNumero{
+            var num1;
+            var num2;
+            var respuesta;
+            do{
+                num1 = prompt("Introduzca un numero")
+
+            }while validarNumero(num1)
+
+            do{
+                num2 = prompt("Introduzca segundo numero")
+
+            }while validarNumero(num2)
+
+            suma(num1,num2);
+        }*/
+        function suma (num1, num2)
+
+        {
+            suma = parseInt(num1) + parseInt(respuesta)
+                    alert(suma);
+                    document.getElementById("resultado").textContent = suma;
+        }
+
     </script>
 </body>
 

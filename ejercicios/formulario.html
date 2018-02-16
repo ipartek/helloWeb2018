@@ -13,7 +13,8 @@
     <p>*<strong>disabled</strong> no se envía el submitar el formulario</p>
     <p>*<strong>readonly</strong> si se envía al submitar el formulario</p>
     <p>*<strong>tabindex</strong> es necesario por accesibilidad</p>
-    <form action="#" method="post" id="formulario">
+
+    <form novalidate action="/index.html" method="get" id="formulario" onsubmit="return validar()">
 
         <fieldset>
             <legend>Datos Personales</legend>
@@ -27,9 +28,9 @@
             <input type="text" name="apellido" id="apellido" required>
             <br>
             <label for="apellido">Sexo:</label>
-            <input type="radio" name="sexo" required><small>Masculino</small>
-            <input type="radio" name="sexo"><small>Femenino</small>
-            <input type="radio" name="sexo"><small>Otro</small>
+            <input type="radio" name="sexo" value="m" checked><small>Masculino</small>
+            <input type="radio" name="sexo" value="f"><small>Femenino</small>
+            <input type="radio" name="sexo" value="o"><small>Otro</small>
             <br>
             <label for="email">Email: </label>
             <input type="email" name="email" id="email" required>
@@ -123,8 +124,8 @@
         </fieldset>
 
         <label for="obs">Observaciones: </label>
-        <textarea name="obs" id="obs"  rows="10" placeholder="Introduzca aquí su observación..."></textarea>
-
+        <textarea name="obs" id="obs" rows="10" placeholder="Introduzca aquí su observación..."></textarea>
+        <span id="contador">0/500</span>
 
         <input id="condiciones" type="checkbox" required>
         <label for="check">Acepto las <a href="https://wikimediafoundation.org/wiki/Terms_of_Use/es" target="_blank">condiciones de uso</a></label>
@@ -144,8 +145,8 @@
     var botenviar = document.querySelector("#botenviar");
 
 
-//    Cuando hacen onousedown en el ojo cambio el tipo
-//    Al levantar el mouse vuelvo a ocultarlo
+//   Cuando hacen onousedown en el ojo cambio el tipo
+//   Al levantar el mouse vuelvo a ocultarlo
     ojo.onmousedown = function(){
         pass.type = "text";
     }
@@ -153,8 +154,16 @@
         pass.type = "password";
     }
 
-    botenviar.onclick = function(e){
-//        console.log("hola")
+    var formulario = document.querySelector("#formulario");
+    var cHobby = document.querySelector("#hob_spans");
+
+    function validar(){
+        console.log("Validar formulario");
+        var valido = true;
+
+        var sex = formulario.sexo.value;
+
+        //Cuento el número de checkboxes checkeados
         arr_hobbies = document.getElementsByName("hob_arr");
         arrChecked = 0;
         for(var i = 0; i<arr_hobbies.length;i++){
@@ -163,17 +172,49 @@
             }
         }
 
+        //Tengo todos los elementos chequeados
+        if(sex == "m" && arrChecked<1){
+            alert("Debe seleccionar al menos un hobby");
+            cHobby.querySelector("span input:first-child").focus();
+            valido = false;
+        }else if(sex == "f" && arrChecked<2){
+            alert("Debe seleccionar al menos dos hobbies");
+            cHobby.querySelector("span input:first-child").focus();
+            valido = false;
+        }
+
+        //Observaciones tiene que tener almenos 25 caracteres y máximo 500
+        if(obs.value.length < 25 || obs.value.length > 500 ){
+            alert("Las observaciones deben tener entre 25 y 500 caracteres");
+            valido = false;
+            obs.focus();
+        }
+
         var chkCond = document.querySelector("#condiciones");
 
-//        No es correcto, pero de momento obligará a checkear
-//        al menos 3 hobbies solo si se han aceptado las condidiones
-        if(arrChecked < 3 && chkCond.checked){
-            e.preventDefault();
-            alert("Debe seleccionar al menos 3 hobbies");
-            document.querySelector("input[name='hob_arr']").focus();
-        }
-//        console.log("Número de checkeados: " + arrChecked)
+
+        return valido;
     }
+
+
+
+    //Contador de caracteres a medida que va escribiendo
+    var obs =  document.querySelector("#obs");
+    var contador =  document.querySelector("#contador");
+    //Asigno aquí el evento
+    obs.onkeyup = caracteres;
+
+    function caracteres(){
+        var tamano = obs.value.length;
+        if (tamano > 500){
+            alert("Ha alcanzado el tamaño máximo");
+            obs.value = obs.value.substring(0, 500);
+            contador.textContent =  "500/500"; //En realidad siempre es 500/505
+        }else{
+            contador.textContent =  tamano + "/500";
+        }
+    }
+
 
     //Custom messages
 //    document.querySelector("#nombre").oninvalid = "Debeeeeeeeeeee";
@@ -199,3 +240,10 @@
 <!--TODO: [x] Acepto asl condiciones de uso. Tiene link a otro html "_blank" -->
 <!--todo: [x] Select options con todas las provincias de España -->
 <!--TODO: [x] Mostrar contraseña-->
+
+
+
+<!-- TODO []: Si el sexo es masculino un hobbie, si es femenino 2 hobbies, otro no es necesario-->
+<!-- TODO []: Observaciones, mínimo 25 caracteres. Si no, mensaje informativo. min 25, max 500-->
+<!-- TODO []: Script que vaya poniendo el contador de caracteres-->
+<!-- TODO []: -->

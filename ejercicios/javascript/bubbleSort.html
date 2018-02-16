@@ -183,7 +183,6 @@
             <button type="button" id="butOrdenar" class="btn btn-success btn-lg btn-block">Ordenar</button>
             <button type="button" id="butReset" class="btn btn-danger btn-lg btn-block" disabled>Reset</button>
         </div>
-
     </div>
 
     <!-- Latest compiled and minified JavaScript -->
@@ -191,7 +190,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <script>
-
         //Defino los selectores
         var numeroInput = document.querySelector("#numeroInput");
         var butAnadir = document.querySelector("#butAnadir");
@@ -227,7 +225,7 @@
                 if (numero == "" || numero < 1) {
                     alertas(2)
                 } else {
-                    console.log(numero);
+                    //                    console.log(numero);
 
                     //Hay crear el elemento mediante createElement para
                     //que el DOM lo pueda reconocer para los eventos
@@ -242,7 +240,7 @@
                     //querySelector solo selecciona el primero, por lo que hay que seleccionarlos
                     //todos, recorrer el array, y asignarle el onclick a cada uno de ellos
                     cross = document.querySelectorAll("span.box span.cross");
-//                    console.log(cross)
+                    //                    console.log(cross)
 
                     for (var i = 0; i < cross.length; i++) {
                         cross[i].onclick = borrar;
@@ -259,6 +257,8 @@
             }
             numeroInput.value = "";
             numeroInput.focus();
+
+            console.log(aDesordenado);
         }
 
         //Ordeno los valores desordenados, y los muestro ordenados
@@ -368,8 +368,8 @@
 
 
         function borrar() {
-            console.log("Función borrar");
-            console.log(this)
+            //            console.log("Función borrar");
+            //            console.log(this)
 
             //Recojo el índice del propio atributo
             var index = this.parentElement.getAttribute("data-index");
@@ -385,7 +385,6 @@
             //Si se borra uno solo funciona bien,
             //cuando hay varios da problemas porque se crean saltos
             cross = document.querySelectorAll("span.box");
-            console.log(cross)
 
             for (var i = 0; i < cross.length; i++) {
                 cross[i].setAttribute("data-index", i);

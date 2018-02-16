@@ -75,3 +75,9 @@ select {
     display: inline-block;
     width: 32%;
 }
+
+#contador, #contador+span {
+    display: block;
+    float: right;
+    font-size: 0.8em;
+}

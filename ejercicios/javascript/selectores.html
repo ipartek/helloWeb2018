@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <style>
+        li span {
+            color: darkgrey;
+        }
+
+        p#resultado1 {
+            color: teal;
+            font-size: 4em;
+            text-align: center;
+        }
+
+        .textoRojo {
+            color: red;
+            font-size: 2em;
+        }
+
+        .textoVerde {
+            color: green;
+            font-size: 2em;
+        }
+
+        #dClassList {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #dClassList div:nth-child(3) .btn {
+            background-color: indianred;
+        }
+
+        #dClassList span:first-child,
+        #dClassList p {
+            display: block;
+            margin: 15px 0;
+            border: solid
+        }
+
+        .targetRed{
+            color: red;
+        }
+
+        .targetGreen{
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <h1>Selectores</h1>
+                <ul>
+                    <li>document.getElementById<span> : Element</span></li>
+                    <li>document.getElementsByName<span> : NodeList</span></li>
+                    <li>document.getElementsByClassName<span> : NodeList</span></li>
+                    <li>document.getElementsByTagNAme<span> : NodeList</span></li>
+                    <li>document.querySelector<span> : Element</span></li>
+                    <li>document.querySelectorAll<span> : NodeList</span></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-6">
+                <h1>ClassList</h1>
+                <ul>
+                    <li>add</li>
+                    <li>remove</li>
+                    <li>item</li>
+                    <li>toggle</li>
+                    <li>contains</li>
+                    <li>replace</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+
+        <h2>getElementsByName</h2>
+
+        <div class="row">
+            <div class="col-xs-4">
+                <form action="">
+                    <input type="checkbox" name="vehicle" value="1">Bici<br>
+                    <input type="checkbox" name="vehicle" value="0">Coche<br>
+                    <input type="checkbox" name="vehicle" value="20" checked>Andando<br>
+                    <input type="checkbox" name="vehicle" value="45">Bus<br>
+                    <input type="checkbox" name="vehicle" value="67">Metro<br>
+                </form>
+            </div>
+
+            <div class="col-xs-4">
+                <a href="#" class="btn btn-default" onclick="contarChecks()">Calcular Opciones Checkeadas</a>
+            </div>
+
+            <div class="col-xs-4">
+                <p id="resultado1" class="resultado">1</p>
+            </div>
+
+        </div><!--        row-->
+        <script>
+            function contarChecks() {
+                var cVehiculos = document.getElementsByName("vehicle");
+                console.debug("Checkbox: " + cVehiculos.length)
+
+                var cont = 0;
+
+                for (var i = 0; i < cVehiculos.length; i++) {
+                    if (cVehiculos[i].checked) {
+                        cont++;
+                    }
+                }
+                document.getElementById("resultado1").textContent = cont;
+            }
+        </script>
+
+        <hr>
+
+        <h2>getElementsByTagName</h2>
+        <div class="row">
+            <p id="rojo">Lorem ipsum dolor sit amet, <span>consectetur</span> adipisicing elit. Recusandae voluptatum a nemo praesentium <span>quibusdam</span> nostrum incidunt aliquam, qui odit illum quasi in, dolore <span>itaque</span> temporibus aut officia ipsam quam cum!</p>
+            <p id="verde">Lorem ipsum dolor sit amet, consectetur adipisicing <span>elit</span>. Recusandae voluptatum a nemo praesentium quibusdam nostrum incidunt <span>aliquam</span>, qui odit illum quasi in, dolore itaque <span>temporibus</span> aut officia ipsam quam cum!</p>
+        </div>
+
+        <div class="row" id="dClassList">
+            <div class="col-xs-12">
+                <span id="target" class="lunes viernes pintxo targetRed">TARGET</span>
+            </div>
+            <div class="col-xs-6">
+                <button id="bClases" class="btn btn default">Clases</button>
+            </div>
+            <div class="col-xs-6">
+                <button id="bRV" class="btn btn default">Rojo/Verde</button>
+            </div>
+
+            <div class="col-xs-12">
+                <p></p>
+            </div>
+        </div>
+
+        <script>
+            //Parrafo rojo
+            var pRojo = document.getElementById("rojo");
+            var aSpan = pRojo.getElementsByTagName("span");
+
+            for (i = 0; i < aSpan.length; i++) {
+                aSpan[i].classList.add("textoRojo");
+            }
+
+            //Parrafo verde
+            var pVerde = document.querySelectorAll("#verde span");
+
+            for (i = 0; i < pVerde.length; i++) {
+                pVerde[i].classList.add("textoVerde");
+            }
+
+            //Alpulsar el boton Clases, indica todas las clases del span
+            //Indica las posiciones de las clases
+            //Selectores
+            var spanTarget = document.querySelector("#target");
+            var bClases = document.querySelector("#bClases");
+            var bRV = document.querySelector("#bRV");
+            var p = document.querySelector("#dClassList p");
+
+            bClases.onclick = function() {
+                p.innerHTML = "";
+                for (var i = 0; i < spanTarget.classList.length; i++) {
+                    p.innerHTML += "El elemento tiene la clase: " + spanTarget.classList[i]+" en la posición: "+ i +"<br>";
+                }
+                p.innerHTML += "El elemento tiene un total de "+(i)+" clases"
+            }
+
+            //Hago toggle a la clase, para visualizarlo de color rojo o de color verde
+            bRV.onclick = function(){
+                spanTarget.classList.toggle("targetRed");
+                spanTarget.classList.toggle("targetGreen");
+
+                //Además actualizo el cuadro
+                bClases.click();
+            }
+        </script>
+    </div><!--    container-->
+
+    <!--    Jquery-->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

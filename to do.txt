@@ -1,0 +1,95 @@
+06/02/2018
+fontawesome: hacer los ejemplos que vienen en la web x
+Meter el icono de la flecha hacia arriba en el boton go to top de posicionamiento.html x
+Ejercicio 10.4 Poniendo una imagen en apocalypse now arriba a la izquierda y que el texto flote al rededor. Y debajo de los parrafos poner trailer y embeber el video de youtube. x
+Encima de una imagen que queramos  poner el icono de la lupa centrado y con opacity 0.6. y al dar click salga una ventana modal con opcion de cerrar y con detalle de la imagen (how to modal images).
+
+meteocons: hacer un widget q diga el tiempo en bilbao
+
+
+
+07/02/2018
+Arreglar la cagada del menu de navegacion de ejemplo/rwd. x
+Somos un movil L en portrait (425px) xg
+colibri adventure se oculta (el logo)--> visibility:hidden.x
+el menu desaparece--> visibility:hidden. y hacemos otro menu diferente. (dejar para el final)
+la imagen que ocupe todo el ancho de la pantalla de lado a lado. x
+subir el tamaño de texto de los parrafos hasta q se pueda leer y los parrafos uno debajo de otro ocupando todo el ancho de pantalla
+la galeria de imagenes tambien que cada imagen ocupe todo el anchox
+el pie de pagina que los parrafos se puedan leer y ocupen todo el ancho.x
+
+
+08/02/2018
+Dentro de bootstrap crear una nueva carpeta css y dentro un nuevo archovo custom.css donde customizaremos el css de bootstrap.
+Cambiar el color de navbar al azul corporativo de ipartek.
+Solucionar tema de que no se oculte el h1 detras del navbar
+6 thumbnails con pintxos de bar (customizados con titulo, breve descripcion y boton detalle y boton video). al pinchar en boton Detalle que lleve a la pagina html  detalle.html y al pinchar en video que abra una ventana modal con el video.
+
+
+
+12/02/2018
+Password+icono de un ojo para ver el password (que se vea solo cuando clickas el ojo)
+Poner un boton reset alineado a la izquierda para limpiar el formulario y poner el de submit alineado a la derecha
+Personalizar mensajes de validacion que muestra el navegador.
+Añadir un 3 radio-button de opcion sexo (masculino, femenino, otro), pero el valor cuando se submite al servidor que sea (m, f, o)
+Añadir un checkbox de "Acepto los términos y condiciones de uso..." al final. El texto es un hipervinculo con atributo blank a una pagina externa. Hay que validar que el checkbox esté marcado para poder mandar el formulario, si no que no haga submit (con required se puede hacer).
+Añadir otro listado de checkbox con Hobbies: cantar, nadar, jugar a la play...
+Añadir un select options de provincia dentro de direccion con listado de provincias, y maquetar el fieldset y legend direccion 
+Añadir al final un textarea con Observaciones (es opcional, no requerido).
+Agrupar los datos del formulario en dos fieldset (Datos personales y Direccion)
+
+
+
+13/02/2018
+bubbleSort
+
+
+
+
+14/02/2018
+
+otro boton rojo para limpiar y que empiece de cero.
+Que ordene el array y lo muestre
+lmitar el numero de posiciones a ordenar a 10.
+arriba del input sacar una alert warning dimissible de bootstrap que indique:
+	si no se ha metido ningun numero:(no me seas vago e introduce almenos 2 numeros),
+	si mete solo uno :(por favor necesito al menos otro numero para ordenar")
+	si mete más de 10: (maximo nivel de procesamiento alcanzado)
+arreglar maquetacion de añadir numero a 9 col y el input a 3col
+cuando añada un numero que el box aparezca con una transicion y no de golpe.
+
+
+
+
+15/02/2018
+poner un boton que ponga "calcular". Cuando pulsemos con un prompt abrir una ventana que ponga "dame un numero a sumar" al dar aceptar que salga otro prompt "dame el segundo numero" (parseint) y que devuelva la suma en un <output>. si el usuario da a cancelar que salga un mensaje en el output de "necesito que introduzcas un numero.
+segun carga la pagina (onload en el body) queremos un confirm que pregunte si es mayor de edad y si es menor de edad redirigir a otro html (maquetamos como queremos y ponemos que no puede entrar)
+
+Crgar la pagina de los pintxos y al cargar que en la consola de javascript muestre el numero de imagenes que existen, la extension y la url (y si es posible tamaño en pixsels, cuanto pesa en kb...). Ademas hacer una barra de separacion con puntitos y vamos a sacar el valor de todos los atributos del objeto location (hostname, port, protocol,href,pathname). Hacer lo mismo para el objeto screen(availHeigth, availWidth...), sacar tambien los mimetypes del objeto navigator.
+
+Meter en index debajo del menu la fecha (getDate) y en el footer "copiryght Ipartek Formacion y empleo"+año (metiendo el año con js)
+
+
+16/02/2018
+# maquetar un <span> con class="lunes viernes pintxo">1 </span>
+
+<a href="#" class="btn btn-default" onclick="xxxxx()">Boton</a>
+al clicar el boton que me muestre: tiene 3 clases y viernes esta en posicion 2/1 
+
+<a href="#" class="btn btn-default" onclick="xxxxx()">rojo/verde</a>
+al clicar el boton modifica el color del span de verde a rojo y viceversa.
+
+
+
+#hacer el ejercicio de validacion de formulario del libro
+
+#formulario html:
+si el sexo es masculino por lo menos q seleccione un hobby, si es femenino al menos 3 y si es otros no es necesario seleccionar ninguno.
+
+Observaciones: minimo 25caracteres y maximo 500.
+
+hacer un pequeño script fuera de la validacion que muestre el numero de caracteres que llevas escritos en observaciones: (xx/500)
+
+#Campus Ipartek: capitulo 3, 4,5,6 y 7 de Introduccion a javascript.
+
+

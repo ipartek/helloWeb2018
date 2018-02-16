@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Validacion formularios</title>
+</head>
+
+<body onload="datosPersonales.nombre.focus();">
+
+	<h1>Validacion de Formularios. Ejercicios</h1>
+	<h2>Ejercicio1 pag 340</h2>
+	<form name="datosPersonales" id="datosPersonales" method="get" action="">
+
+		<label for="nombre">NOMBRE:</label>
+		<input type="text" id="nombre" name="nombre" value=""><br><br>
+		<label for="apellidos">APELLIDOS:</label>
+		<input type="text" id="apellidos" name="apellidos" value=""><br><br>
+		<label for="sexo">SEXO:</label>
+		<select name="sexo" id="sexo" onchange="activarEstadoCivil()">
+			<option value="0" selected="selected">...</option>
+			<option value="1">Masculino</option>
+			<option value="2">Femenino</option>
+		</select>
+		<br><br>
+		<label for="estadoCivil">ESTADO CIVIL:</label>
+		<select name="estadoCivil" id="estadoCivil" disabled="disabled">
+			<option value="0" selected="selected">...</option>
+			<option value="1">Soltero</option>
+			<option value="2">Casado</option>
+			<option value="3">Divorciado</option>
+			<option value="4">Viudo</option>
+
+		</select>
+
+
+		<br><br>
+
+		<label>IDIOMAS</label><br>
+		<input type="checkbox" name="idioma1" id="idioma1" value="castellano">Castellano <br>
+		<input type="checkbox" name="idioma1" id="idioma2" value="Inglés">Inglés <br>
+		<input type="checkbox" name="idioma1" id="idioma3" value="Francés">Francés <br><br>
+		<label for="">PROFESION:</label><br>
+		<input type="radio" name="profesion" id="profesion1" value="autonomo">Autónomo <br>
+		<input type="radio" name="profesion" id="profesion2" value="ajena">Por cuenta ajena <br>
+		<input type="radio" name="profesion" id="profesion3" value="paro">En paro <br>
+		<input type="radio" name="profesion" id="profesion4" value="jubilado">Jubilado <br><br>
+
+		<label for="comentarios">COMENTARIOS:</label> <br>
+		<textarea name="comentarios" id="comentarios" cols="50" rows="14"></textarea> <br>
+		<input type="submit" id="enviar_datos" name="enviar_datos" value="enviar">
+		<input type="button" id="mostrar_datos" name="mostrar_datos" value="mostrar" onclick="mostrar()">
+
+	</form>
+
+	<script>
+		function mostrar() {
+
+			var formulario = document.forms[0];
+			var nom = document.getElementById("nombre").value;
+			var ap = document.getElementById("apellidos").value;
+			var estado;
+			var idiomas = [];
+			var profesion;
+			var comentarios = datosPersonales.comentarios.value;
+
+			var oEstados = datosPersonales.estadoCivil.options;
+			var estadoindex = oEstados.selectedIndex;
+			console.debug("option seleccionado %i", oEstados.selectedIndex);
+			estado = oEstados[estadoindex].textContent;
+
+			var cIdiomas = document.getElementsByName("idioma1");
+
+			for (i = 0; i < cIdiomas.length; i++) {
+				if (cIdiomas[i].checked) {
+					idiomas.push(cIdiomas[i].value);
+				}
+			}
+
+			var encontrado = false;
+			for (i = 0; i < datosPersonales.profesion.length && !encontrado; i++) {
+				if (datosPersonales.profesion[i].checked) {
+
+					profesion = datosPersonales.profesion[i].value;
+					encontrado = true;
+				}
+			}
+
+
+			alert(`DATOS INTRODUCIDOS: \n Nombre: ${nom} \n Apellidos: ${ap} \n Estado civil: ${estado} \n Idiomas: ${idiomas} \n Profesión: ${profesion} \n Comentarios: ${comentarios} \n`);
+		}
+
+		function activarEstadoCivil() {
+			var valorSexo = datosPersonales.sexo.options[datosPersonales.sexo.selectedIndex].value;
+			if (valorSexo == 2){
+				document.getElementById("estadoCivil").disabled = false;
+				}
+			else {
+				document.getElementById("estadoCivil").disabled = true;
+			}
+		}
+	</script>
+
+
+</body>
+</html>

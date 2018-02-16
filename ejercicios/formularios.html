@@ -22,7 +22,7 @@
         <p><b>tabindex</b> es necesario por accesibilidad</p>
 
         <!-- novalidate envia el formulario saltandose la validacion -->
-        <form action="#URL_SERVIDOR" method="post">
+        <form novalidate action="index.html" method="GET" onsubmit="return validate()">
 
             <fieldset id="datos">
                 <legend>Datos Personales</legend>

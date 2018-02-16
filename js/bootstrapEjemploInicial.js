@@ -1,5 +1,8 @@
-var contenidoImg = '<div class="row"><p>Numero de la imagen: ##numero##</p><p>Extension de la imagen: ##extension##</p><p>Url de la imagen: ##url##</p><hr></div>';
+var contenidoImg = '<div><p>Numero de la imagen: ##numero##</p><p>Extension de la imagen: ##extension##</p><p>Url de la imagen: ##url##</p><hr></div>';
+
 var contenidoDiv = '<div class="panel panel-##clase##" ><div class="panel-heading"><span>##titulo##</span></div><div class="panel-body">##informacion##</div></div>';
+
+var contenidoDispositivo = '<p>Altura: ##height##</p><p>Altura disponible: ##avalHeight##</p><p>Anchura:##width##</p><p>Anchura disponible: ##avalWidth##</p><p>Profindidad de color: ##colorDepth##</p>';
 
 
 function listarImagenes() {
@@ -27,6 +30,33 @@ function listarImagenes() {
     //console.log(contenido);
     crearContenido('divInfoImg', contenido);
 
+
+}
+
+function infoDispositivo (){
+
+    var contenido = '';
+
+    crearDivInfo('divInfoDispositivo', 'warning', 'Informacion sobre el dispositivo', contenidoDiv);
+
+    contenido = contenidoDispositivo;
+
+    contenido = contenido.replace('##height##', screen.height);
+    contenido = contenido.replace('##avalHeight##', screen.availHeight);
+    contenido = contenido.replace('##width##', screen.width);
+    contenido = contenido.replace('##avalWidth##', screen.availWidth);
+    contenido = contenido.replace('##colorDepth##', screen.colorDepth);
+
+    //console.log(contenido);
+    crearContenido('divInfoDispositivo', contenido);
+
+}
+
+function infoLocation(){
+
+    var contenido = '';
+
+    crearDivInfo('divLocation', 'danger', 'Informacion sobre localizacion', contenidoDiv);
 
 }
 

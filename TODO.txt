@@ -21,13 +21,40 @@ si es que no redirigir a otro html
 
 pagina de los pinchos
 
-cuando cargue y por consola mostrar el numero, extension y url (nombre y kb) de imagenes document.images 
-document.images[].src
+//cuando cargue y por consola mostrar el numero, extension y url (nombre y kb) de imagenes document.images 
+//document.images[].src
 
 sacar los atributos del objeto location
-lo mismo para el objeto screen
+//lo mismo para el objeto screen
 
 
 maquetar div
 
 ---------------------------
+
+//javscript/selectores.html
+
+---------------------------
+
+ejercicio de forms del libro 
+---Validando campos
+
+---------------------------
+
+forms
+
+validar name apellido etc.
+
+	si sexo=masculino almenos un hobby
+	si f al menos 3 hobbies
+	si otros al menos 0
+
+	observaciones minimo 25 caracteres maximo 500 y si no escribe mensaje de error
+
+script
+
+	debajo del textarea onkeypress contador de caracteres (ie 30/500) - buscarlo en inet
+------------------------------
+
+campus - js - manual de js - capitulos 3-7
+-------------------------------

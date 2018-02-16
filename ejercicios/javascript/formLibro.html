@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Libro</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Formulario Tipo</h1>
+
+        <form>
+            <br>
+            <div class="form-group">
+                <label for="nombre">NOMBRE:</label>
+                <input type="textg" class="form-control" id="nombre" placeholder="Nombre">
+            </div>
+
+            <div class="form-group">
+                <label for="apellido">APELLIDOS:</label>
+                <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+            </div>
+
+            <div class="form-group">
+                <label for="estadoCivil">ESTADO CIVIL:</label>
+                <select class="form-control" id="estadoCivil" name="estadoCivil">
+                <option value="0" selected>...</option>
+                <option value="1">Soltero</option>
+                <option value="2">Casado</option>
+                <option value="3">Divorciado</option>
+                <option value="4">Viudo</option>
+            </select>
+            </div>
+
+            <div class="form-group">
+                <label for="idioma">IDIOMAS:</label>
+                <div class="checkbox">
+                    <label>
+                    <input type="checkbox" name="idioma" value="Castellano"> Castellano
+                </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                    <input type="checkbox" name="idioma" value="Ingles"> Ingles
+                </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                    <input type="checkbox" name="idioma" value="Frances"> Frances
+                </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="profesion">PROFESION:</label>
+                <div class="radio">
+                    <label>
+                    <input type="radio" name="profesion" id="profesion1" value="1" > Autonomo
+                </label>
+                </div>
+                <div class="radio">
+                    <label>
+                    <input type="radio" name="profesion" id="profesion2" value="2" > Trabajador por cuenta ajena
+                </label>
+                </div>
+                <div class="radio">
+                    <label>
+                    <input type="radio" name="profesion" id="profesion3" value="3" > Desempleado
+                </label>
+                </div>
+                <div class="radio">
+                    <label>
+                    <input type="radio" name="profesion" id="profesion4" value="4" > Jubilado
+                </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comentarios">COMENTARIOS:</label>
+                <textarea class="form-control" rows="5" cols="30" id="comentario"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="button" class="btn btn-default" onclick="mostrarDatos()">Mostrar</button>
+        </form>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Datos a Introducir</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="pNombre"></p>
+                        <p id="pApellido"></p>
+                        <p id="pEstado"></p>
+                        <p id="pIdiomas"></p>
+                        <p id="pProfesion"></p>
+                        <p id="pComentario"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+
+
+
+
+
+    <!-- Jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <script src="/js/formLibro.js"></script>
+</body>
+</html>

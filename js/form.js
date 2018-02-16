@@ -77,3 +77,16 @@ function validate() {
 
 
 }
+
+
+function validate() {
+
+    //mas seguro coger por id
+    var formulario = document.forms[0];
+
+    console.log('validar formulario' + formulario);
+
+    return(false);
+}
+
+

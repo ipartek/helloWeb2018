@@ -20,13 +20,13 @@ var alumnos = [
                 "Aintziñe"
               ];
 
-function leer(){
+function leer() {
 
 
     //numero aleatorio
     var numero = Math.floor((Math.random() * alumnos.length));
     var alumno = alumnos[numero];
-    console.debug( "numero al azar %i y el alumno %s ", numero, alumno );
+    console.debug("numero al azar %i y el alumno %s ", numero, alumno);
 
     //mostrar en el html
     document.getElementById("voluntario").textContent = alumno;
@@ -35,13 +35,13 @@ function leer(){
 
     var celdas = document.getElementsByClassName("alumno");
 
-    for ( i=0; i < celdas.length ; i++ ){
+    for (i = 0; i < celdas.length; i++) {
 
-       if ( alumno == celdas[i].textContent){
+        if (alumno == celdas[i].textContent) {
             celdas[i].style.backgroundColor = 'orange';
-       }else{
-           celdas[i].style.backgroundColor = '#2f72cc';
-       }
+        } else {
+            celdas[i].style.backgroundColor = '#2f72cc';
+        }
     }
 
 
@@ -53,16 +53,3 @@ function leer(){
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

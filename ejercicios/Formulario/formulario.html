@@ -19,7 +19,8 @@
         <p>Todos los formularios tienen que tener un boton de 'submit', ademas de un valor en el atributo 'action' </p>
         <p>*disabled no se envia al submitar el formulario</p>
         <p>*read only sí se envía al submitar el formulario</p>
-        <form action="#URL_SERVIDOR" method="post">
+
+        <form novalidate method="get" onsubmit="return validar();">
 
             <br>
             <fieldset>
@@ -38,7 +39,7 @@
                 <br>
                 <label for="sexo">Sexo:</label>
                 <br>
-                <input type="radio" name="sexo" value="H"> Hombre
+                <input type="radio" name="sexo" value="H" checked> Hombre
                 <input type="radio" name="sexo" value="M"> Mujer
                 <input type="radio" name="sexo" value="O"> Otro
                 <br>
@@ -124,9 +125,9 @@
             <br>
             <label for="observaciones">Observaciones:</label>
             <br>
-            <textarea rows="10" cols="100">
-
-</textarea>
+            <textarea  rows="10" cols="100"></textarea>
+            <p id="count"></p>
+           <br>
             <input type="checkbox" name="hobby" value="painting" oninvalid="setCustomValidity('Debe aceptar los términos de uso y sus condiciones')">Acepto los
             <a target="_blank" href="terminos.html" required>términos y condiciones</a> del servicio
             <br>

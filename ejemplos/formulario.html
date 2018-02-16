@@ -15,7 +15,7 @@
         <p><b>readonly</b> si se envia al submitar el formulario</p>
         <p><b>tabindex</b>es necesario por accesibilidad</p>
         <br>
-        <form action="#URL_SERVIDOR" method="post">
+        <form novalidate action="index.html" method="get" onsubmit="return validar();">
             <fieldset>
                 <legend>Datos Personales</legend>
                 <label for="id">Id:</label>
@@ -120,6 +120,11 @@
 
             <br>
             <br>
+             <fieldset id="observaciones" style="text-align: center;">
+                <legend>Observaciones</legend>
+                <!-- Observaciones  -->
+                <textarea name="message" rows="10" cols="30" placeholder="Si tienes algo que opinar este es tu sitio"></textarea>
+            </fieldset>
 
             <input type="checkbox" name="condiciones" value="A">
             <label for="condiciones">Acepto las <a href="condiciones.html" target="_blank">condiciones de uso</a></label>
@@ -142,6 +147,17 @@
             } else {
                 x.type = "password";
             }
+        }
+
+
+        function validar()
+
+        {
+            //mas seguro coger por id CAMPEON
+        var formulario = document.forms[0];
+        console.log("Validar formulario");
+            return true;
+
         }
     </script>
 </body>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #ejemplo3 {
+
+            color: rgb(0, 255, 0);
+            font-size: 2em;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <span id="ejemplo3" class="lunes viernes pintxo">1</span>
+
+
+    <button onclick="posicion">Boton</button>
+
+    <button onclick="cambiarcolor()">Rojo/Verde</button>
+
+    <script>
+        function cambiarcolor() {
+
+
+            var background = document.getElementById("ejemplo3").style.color;
+
+            if (background == "rgb(0, 255, 0)") {
+                document.getElementById("ejemplo3").style.color = "rgb(255,0,0)";
+            } else {
+                document.getElementById("ejemplo3").style.color = "rgb(0, 255, 0)";
+            }
+        }
+
+
+        function posicion(){
+
+
+
+        }
+    </script>
+
+
+
+
+</body>
+</html>

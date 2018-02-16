@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+
+
+    <h1>Ejercicio1</h1>
+
+    <form name="datosPersonales" id="datosPersonales" method="post" action="">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value=""><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" value=""><br>
+        <label for="estadocivil">Estado Civil:</label>
+
+
+        <select id="estadocivil" name="estadocivil">
+
+            <option value="sinespecificar" selected="selected"></option>
+            <option value="soltero">Soltero</option>
+            <option value="casado">Casado</option>
+            <option value="divorciado">Divorciado</option>
+            <option value="viudo">Viudo</option>
+
+        </select>
+        <br>
+
+        <label>Idiomas:</label><br>
+
+        <input type="checkbox" name="idioma1" id="idioma1" value="castellano">Castellano <br>
+        <input type="checkbox" name="idioma2" id="idioma2" value="ingles">Ingles <br>
+        <input type="checkbox" name="idioma3" id="idioma3" value="frances">Frances <br>
+
+        <label>Profesion:</label>
+        <br>
+
+        <input type="radio" name="profesion" id="profesion1" value="autonomo">Autonomo <br>
+         <input type="radio" name="profesion" id="profesion2" value="ajena">Trabajador por cuenta ajena <br>
+          <input type="radio" name="profesion" id="profesion3" value="paro">Desempleado <br>
+           <input type="radio" name="profesion" id="profesion4" value="jubilado">Jubilado <br>
+<br>
+
+   <label for="comentarios">Comentarios</label>
+   <br>
+
+   <textarea id="comentarios" name="comentarios" rows="14" cols="50"></textarea><br>
+
+   <input type="submit" id="enviar_datos" name="enviar_datos" value="Enviar">
+
+   <input  onclick="mostrar()" type="button" id="mostrar_datos" name="mostrar_datos" value="Mostrar">
+
+
+    </form>
+
+
+
+<script>
+
+    function mostrar(){
+
+        var datosform= document.getElementById("datosPersonales");
+        var nombre=" Nombre: "+ datosform.nombre.value;
+         var apellidos=" Apellidos: "+ datosform.apellidos.value;
+         var estadocivil=" Estadocivil: "+ datosform.estadocivil.value;
+          var idiomas;
+        var profesion;
+
+
+
+        if(datosform.idioma1.checked){
+
+            idiomas=datosform.idioma1.value;
+        }
+
+         if(datosform.idioma2.checked){
+
+            idiomas=datosform.idioma2.value;
+        }
+         if(datosform.idioma3.checked){
+
+            idiomas=datosform.idioma3.value;
+        }
+
+
+
+
+
+         var encontrado= false;
+
+        for(var i=0; i<datosform.profesion.length && !encontrado; i++){
+
+
+            if{
+                (datosform.profesion[i].checked){
+
+                    profesion+=datosform.profesion[i].value;
+                    encontrado=true;
+                }
+
+
+            }
+        }
+
+        var comentarios=" Comentarios:" + datosform.comentarios.value;
+
+        var msgFinal=nombre+"\n"+apellidos+"\n"+estadocivil+"\n"+idiomas+"\n"+profesion+"\n"+ comentarios;
+
+
+
+
+        console.log(nombre);
+
+
+
+     alert(nombre + apellidos + estadocivil + idiomas + profesion + comentarios );
+
+
+
+
+    }
+
+
+
+
+    </script>
+</body>
+</html>

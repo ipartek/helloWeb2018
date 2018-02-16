@@ -101,7 +101,7 @@
 
                     <!-- TODO[x]: radio: SEXO: masculino(M), femenino(F), otro(O) -->
                     <label for="sexo">Sexo*</label>
-                    <input type="radio" name="sexo" value="M" required tabindex="3" checked> Masculino
+                    <input type="radio" name="sexo" value="M" required tabindex="3"> Masculino
                     <input type="radio" name="sexo" value="F" required tabindex="3"> Femenino
                     <input type="radio" name="sexo" value="O" required tabindex="3"> Otro
                     <br>
@@ -214,9 +214,10 @@
                         </div>
                     </div>
                     <br>
-                    <!-- TODO[x]: textarea: "OBSERVACIONES" NO required -->
+                    <!-- TODO[x]: textarea: "OBSERVACIONES" -->
                     <label for="observaciones">Observaciones:</label><br>
-                    <textarea name="observaciones" id="observaciones" placeholder="Obseraciones y sugerencias" tabindex="20" maxlength="500"></textarea>
+                    <textarea name="observaciones" id="observaciones" placeholder="Obseraciones y sugerencias" maxlength="500" onkeyup="mostrarCaracteres()" required tabindex="20"></textarea><br>
+                    <span id="span-caracteres">/500</span>
                     <br><br>
                     <!-- TODO[x]: checkbox: "Acepto condiciones de uso" que será un link a un html externo (target: "_blank") y debe ser REQUIRED-->
                     <input type="checkbox" name="terminos" required tabindex="21"> Acepto los <a href="https://www.timeinc.net/subs/privacy/termsofservice/pptos.html" target="_blank">terminos y condiciones</a>*
@@ -241,8 +242,9 @@
 
     <!--JS-->
     <script>
-        // Variables globales
+        // Variables globales de acceso al DOM
         var pass = document.getElementById("pass");
+        var taObservaciones = document.getElementById("observaciones");
 
         // Método para mostrar la contraseña
         function mostrarPass() {
@@ -267,6 +269,16 @@
 
 
         /**
+         *   Método para mostras los caracteres actuales del 'textarea#observaciones'
+         **/
+        function mostrarCaracteres() {
+            // Variables de acceso al DOM
+            var numCaracteres = document.getElementById("span-caracteres");
+
+            numCaracteres.textContent = taObservaciones.value.length + "/" + taObservaciones.maxLength;
+        }
+
+        /**
          *   Método para validar el formulario en el evento 'obsubmit'
          *   OUT: Devuelve TRUE si los campos del formulario son validos ELSE devuelve FALSE
          **/
@@ -274,42 +286,37 @@
 
             // Variables de acceso al DOM
             var form = document.forms[0]; // obtiene el 1. formularios de la página
-
-            // Variables de acceso al DOM
             var listaIntereses = document.getElementsByName("interes");
             var sexo = document.querySelector('input[name="sexo"]:checked').value;
-            var taObservaciones = document.getElementById("observaciones");
 
             // Variables locales
-            var datosValidos = false;
+            var datosValidos = true;
             var contIntereses = 0;
             var carObservaciones = 0;
 
 
             // TODO[x]: validar cantidad de intereses seleccionados
             /*
-            *   Si sexo == 'M' : intereses>=2
-            *   Si sexo == 'F' : intereses>=3
-            */
-            for(var iInteres = 0; iInteres < listaIntereses.length; iInteres++) {
-                if(listaIntereses[iInteres].checked){
+             *   Si sexo == 'M' : intereses>=2
+             *   Si sexo == 'F' : intereses>=3
+             */
+            for (var iInteres = 0; iInteres < listaIntereses.length; iInteres++) {
+                if (listaIntereses[iInteres].checked) {
                     contIntereses++;
                 }
             }
 
             switch (sexo) {
                 case 'M':
-                    if(contIntereses<2) {
+                    if (contIntereses < 2) {
                         alert("Selecciona al menos 2 intereses");
-                    } else {
-                        datosValidos = true;
+                        datosValidos = false;
                     }
                     break;
                 case 'F':
-                    if(contIntereses<3) {
+                    if (contIntereses < 3) {
                         alert("Seleccciona al menos 3 intereses");
-                    } else {
-                        datosValidos = true;
+                        datosValidos = false;
                     }
                     break;
                 default:
@@ -317,10 +324,14 @@
                     break;
             }
 
-            // TODO[]: validar que la cantidad de caracteres de 'observaciones' este en el tango [25 - 500]
-            /*if(taObservaciones.value.length )
 
-            return datosValidos;*/
+            // TODO[x]: validar que la cantidad de caracteres de 'observaciones' esté en el rango [25 - 500]
+            if (25 > taObservaciones.value.length || taObservaciones > 500) {
+                alert("Debe rellenar el apartado de observaciones y sugerencias con un mínimo de 25 caracteres.")
+                datosValidos = false;
+            }
+
+            return datosValidos;
 
         }
     </script>

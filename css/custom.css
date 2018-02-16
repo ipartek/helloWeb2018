@@ -5,6 +5,7 @@
     3. FontAwesome.html
         3.1 Image Modal
     4. ApocalypseNow.html
+    5. Formulario.html
 */
 
 /* 1. Estilos de index.html
@@ -229,4 +230,9 @@ h2#txt_afortunado {
     color: grey;
 }
 
-
+/* 5. Formulario.html*/
+#span-caracteres {
+    display: flex;
+    justify-content: flex-end;
+}
+/* END 5. Formulario.html*/

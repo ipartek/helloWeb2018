@@ -74,7 +74,7 @@
 
                 <div class="col-xs-6">
                     <h2>ClassList API</h2>
-                    <ul id="listaGets">
+                    <ul id="listaClassListAPI">
                         <li>add: <span class="return">añade una clase al elemento</span></li>
                         <li>remove: <span class="return">eliminar una clase al elemento</span></li>
                         <li>item: <span class="return">obtiene el indice del elemento</span></li>
@@ -106,7 +106,7 @@
 
                     <div class="col-xs-4">
                         <a href="#" class="btn btn-default" onclick="chkSeleccionados()">Calcular opciones seleccionadas</a>
-                        <p id="btnChekedReadme">Si el nº de opciones es 3 o menos, el resultado se mostrará de color rojo; si es mayor, será de color verde.</p>
+                        <p id="btnChekedReadme">Si el nº de opciones seleccionadas es mayor de la mitad, el resultado se mostrará de color verde; sino, será de color rojo.</p>
                     </div>
 
 
@@ -239,7 +239,7 @@
                 }
             }
 
-            if (contChecked > 3) {
+            if (contChecked > listVehiculos.length/2) {
                 pResultado.style.color = "green";
             } else {
                 pResultado.style.color = "red";

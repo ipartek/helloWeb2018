@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        li span {
+
+            color: gray;
+
+        }
+
+        .resultado{
+
+            color: teal;
+            font-size: 4em;
+
+        }
+
+        .textoRojo{
+
+            color: red;
+            font-size: 2em;
+
+        }
+
+         .textoVerde{
+
+            color: green;
+            font-size: 2em;
+
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Selectores</h1>
+
+        <ul>
+
+            <li> document.getElementById<span>: Element</span></li>
+            <li>document.getElementsByClassName<span>: NodeList</span></li>
+            <li>document.getElementsByTagName<span>: NodeList</span></li>
+            <li>document.getElementsByName<span>: NodeList</span></li>
+             <li>document.querySelector</li>
+            <li>document.querySelectorAll</li>
+
+
+        </ul>
+
+
+        <h2>getElementById</h2>
+        <div class="row">
+
+            <div class="col-xs-4">
+                <form action="">
+
+                    <input type="checkbox" name="vehicle" value="1">Bici<br>
+                    <input type="checkbox" name="vehicle" value="0">Coche<br>
+                    <input type="checkbox" name="vehicle" value="20" checked>Andando<br>
+                    <input type="checkbox" name="vehicle" value="45">Bus<br>
+                    <input type="checkbox" name="vehicle" value="67">Metro<br>
+
+
+                </form>
+            </div>
+            <div class="col-xs-4">
+                <a href="#" onclick="contarChecks()" class="btn btn-default">Calcular Opciones Checkeadas</a>
+            </div>
+            <div class="col-xs-4">
+                <p id="resultado1" class="resultado">1</p>
+
+            </div>
+
+
+
+
+        <!--Div Row --->
+
+
+    </div>
+    <!--Div Container --->
+
+
+    <h2>getElementsByTagName</h2>
+
+
+    <div class="row">
+
+         <p id="rojo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <span>Deleniti blanditiis</span> expedita optio deserunt doloribus, rem non aliquid ad ut labore. Ex labore, molestiae eos deleniti odit quidem tempore aspernatur beatae!</p>
+
+          <p id="verde">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam dolorum velit vitae nulla, similique quibusdam beatae est voluptates nemo reiciendis fuga. <span>Aliquid voluptate beatae eaque dolorem ducimus, nulla natus a?</span></p>
+
+    </div>
+  <script>
+
+      var pRojo=document.getElementById("rojo");
+      var aSpan= pRojo.getElementsByTagName("span");
+
+      for(i=0;i<aSpan.length;i++){
+
+
+          aSpan[i].classList.add("textoRojo");
+
+            }
+
+
+      var pVerde=document.querySelectorAll("#verde span");
+
+
+      for(i=0;i<pVerde.length;i++){
+
+
+          pVerde[i].classList.add("textoVerde");
+
+
+
+
+
+      }
+
+
+
+        </script>
+
+  <h2>ClassList API</h2>
+
+
+   <ul>
+
+       <li>add</li>
+       <li>remove</li>
+       <li>item</li>
+       <li>toggle</li>
+       <li>contains</li>
+       <li>replace</li>
+
+
+
+   </ul>
+    </div>
+
+
+
+
+    <script>
+
+
+        function contarChecks(){
+
+
+            var cVehiculos= document.getElementsByName("vehicle");
+            var cont= 0;
+
+
+            for(i=0; i<cVehiculos.length;i++){
+
+                if (cVehiculos[i].checked){
+
+
+                    cont++;
+                }
+
+
+            }
+
+
+            console.debug("checkbox"+ cVehiculos.length);
+
+
+
+
+                document.getElementById("resultado1").textContent=cont;
+
+
+
+
+
+
+        }
+
+
+
+
+    </script>
+
+
+
+
+
+    <!-- QUERY -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

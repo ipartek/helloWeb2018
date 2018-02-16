@@ -1,36 +1,35 @@
 function calcular() {
 
-
-
-    var numero1 = prompt("Dime un numero");
-    var numero2 = prompt("Dime otro numero");
-
+    var numero1;
+    var numero2;
+    var pedirOtro = false;
 
     do {
-        alert("No puedo calcular");
-        numero1 = prompt("Dime un numero");
-    } while (numero1 == null || numero1 = "");
-
-    do {
-        alert("No puedo calcular");
-        numero2 = prompt("Dime otro numero");
-    } while (numero1 == null || numero1 = "");
-
-    do {
-        var calcular = parseInt(numero1) + parseInt(numero2);
-
-
-
-        document.getElementById("caja").innerHTML = calcular;
-
-
-
+        numero1= parseInt(prompt("Dime un numero"));
+        pedirOtro = isNaN(numero1);
     }
-    while (numero1 != false && numero2 != false)
+
+    while (pedirOtro);
 
 
 
-    /* if (numero1 == null) {
+    do {
+        numero2= parseInt(prompt("Dime otro numero"));
+        pedirOtro = isNaN(numero2);
+    }
+
+    while (pedirOtro);
+    var resultado = parseInt(numero1) + parseInt(numero2);
+
+    document.getElementById("resultado").textContent = resultado;
+
+
+}
+
+
+
+
+/* if (numero1 == null) {
 
         alert("no puedo calcular");
 
@@ -56,16 +55,16 @@ function calcular() {
 
 */
 
-    function validaredad() {
+function validaredad() {
 
-        var edad = confirm("Eres menor o mayor de edad");
+    var edad = confirm("Eres menor o mayor de edad");
 
-        if (edad == false) {
+    if (edad == false) {
 
-            document.location.replace('menor.html');
+        document.location.replace('menor.html');
 
 
-
-        }
 
     }
+
+}

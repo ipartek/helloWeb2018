@@ -5,7 +5,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/Ejercicios/formularios/formularios.css">
-       <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -19,70 +19,70 @@
         <p><b>Tabindex</b> es necesario por accesibilidad</p>
 
 
-        <form action="#url_Servidor" method="post">
+        <form novalidate action="index.html" method="get" onsubmit="return validar();">
 
-                <fieldset>
-                    <legend>Datos Personales:</legend><br><br>
+            <fieldset>
+                <legend>Datos Personales:</legend><br><br>
 
-                     <label for="id">ID:</label>
-            <input type="number" name="id" value="45" disabled>
-            <br>
-
-
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Minimo 2 letras" required alt="Escribe algo" pattern="[A-Za-z]{2,120}" tabindex="1" autofocus oninvalid="setCustomValidity('Inserta un Nombre')" oninput=setCustomValidity('')   required>
-            <br>
+                <label for="id">ID:</label>
+                <input type="number" name="id" value="45" disabled>
+                <br>
 
 
-            <label for="apellido">Apellido:</label>
-            <input type="text" name="apellido" id="apellido" placeholder="Minimo 2 letras" required alt="Escribe algo" pattern="[A-Za-z]{2,120}" tabindex="2" oninvalid="setCustomValidity('Inserta los apellidos')" oninput=setCustomValidity('') required>
-            <br>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Minimo 2 letras" required alt="Escribe algo" pattern="[A-Za-z]{2,120}" tabindex="1" autofocus oninvalid="setCustomValidity('Inserta un Nombre')" oninput=setCustomValidity( '') required>
+                <br>
 
 
-
-            <label for="codigo">Codigo Postal:</label>
-            <input type="text" name="codigo" id="codigo" placeholder="Minimo 5 numeros" required alt="Escribe algo" tabindex="3" maxlength="5" size="5" pattern="[0-9]{5,5}" oninvalid="setCustomValidity('Inserta un codigo postal')" oninput=setCustomValidity('') required>
-            <br>
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" id="apellido" placeholder="Minimo 2 letras" required alt="Escribe algo" pattern="[A-Za-z]{2,120}" tabindex="2" oninvalid="setCustomValidity('Inserta los apellidos')" oninput=setCustomValidity( '') required>
+                <br>
 
 
 
+                <label for="codigo">Codigo Postal:</label>
+                <input type="text" name="codigo" id="codigo" placeholder="Minimo 5 numeros" required alt="Escribe algo" tabindex="3" maxlength="5" size="5" pattern="[0-9]{5,5}" oninvalid="setCustomValidity('Inserta un codigo postal')" oninput=setCustomValidity( '') required>
+                <br>
 
-            <label for="email">Email:</label>
-            <input type="text" name="email" id="" required alt="Escribe algo" tabindex="4" maxlength="25" size="10" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" oninvalid="setCustomValidity('Inserta el email')" oninput=setCustomValidity('') required>
-            <br>
 
 
+
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="" required alt="Escribe algo" tabindex="4" maxlength="25" size="10" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" oninvalid="setCustomValidity('Inserta el email')" oninput=setCustomValidity( '') required>
+                <br>
 
 
 
 
 
 
-            <label for="pass">Contraseña Visible y Invisible:</label>
-
-            <input type="password" name="pass" id="passvisible" placeholder="Contraseña" required alt="Escribe algo" tabindex="5" maxlength="5" size="5" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" size="4" required oninvalid="setCustomValidity('Falta el password')" oninput=setCustomValidity('')><i onclick="ver()" class="fa fa-eye"></i>
-            <br>
 
 
-<label>Sexo</label>
+                <label for="pass">Contraseña Visible y Invisible:</label>
+
+                <input type="password" name="pass" id="passvisible" placeholder="Contraseña" required alt="Escribe algo" tabindex="5" maxlength="5" size="5" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" size="4" required oninvalid="setCustomValidity('Falta el password')" oninput=setCustomValidity( '')><i onclick="ver()" class="fa fa-eye"></i>
+                <br>
 
 
-            <label for="masculino">Masculino</label>
-            <input type="radio" id="masculino" name="masculino" value="m" checked>
-
-            <label for="femenino">Femenino</label>
-
-            <input type="radio" id="femenino" name="femenino" value="f">
-
-            <label for="otro">Otro</label>
-
-            <input type="radio" id="otro" name="otro" value="o"><br><br>
+                <label>Sexo</label>
 
 
+                <label for="masculino">Masculino</label>
+                <input type="radio" id="masculino" name="masculino" value="m" checked>
+
+                <label for="femenino">Femenino</label>
+
+                <input type="radio" id="femenino" name="femenino" value="f">
+
+                <label for="otro">Otro</label>
+
+                <input type="radio" id="otro" name="otro" value="o"><br><br>
 
 
-                </fieldset>
-               <br><br>
+
+
+            </fieldset>
+            <br><br>
 
 
 
@@ -98,7 +98,7 @@
 
 
                 <label>Provincia: </label>
-                <select class="selector" name="provincia" oninvalid="setCustomValidity('Selecciona tu provincia')" oninput=setCustomValidity('')required>
+                <select class="selector" name="provincia" oninvalid="setCustomValidity('Selecciona tu provincia')" oninput=setCustomValidity( '')required>
 
                     <option value="">- Selecciona -</option>
                     <option value="15">A coru&#241;a</option>
@@ -157,44 +157,58 @@
         </select>
 
 
-          </fieldset>
-           <br>
+            </fieldset>
+            <br>
             <fieldset>
-              <legend>Hobbies:</legend><br><br>
+                <legend>Hobbies:</legend><br><br>
 
-            <input type="checkbox" id="hobbies" name="hobbies" value="nadar">Nadar
-            <input type="checkbox" id="hobbies" name="hobbies" value="correr">Correr
-            <input type="checkbox" id="hobbies" name="hobbies" value="viajar">Viajar
-     </fieldset>
-  <br>
+                <input type="checkbox" id="hobbies1" name="hobbies1" value="nadar">Nadar
+                <input type="checkbox" id="hobbies2" name="hobbies2" value="correr">Correr
+                <input type="checkbox" id="hobbies3" name="hobbies3" value="viajar">Viajar
+            </fieldset>
+            <br>
             <label for="observaciones">Observaciones</label><br>
 
             <TEXTAREA COLS=162 ROWS=5 NAME="observaciones">
 </TEXTAREA><br>
-           <br><br>
+            <br><br>
 
- <input type="checkbox" id="aceptar" name="aceptar"><a href="https://www.w3schools.com" target="_blank">Acepto las condiciones de uso required</a> <br><br>
+            <input type="checkbox" id="aceptar" name="aceptar"><a href="https://www.w3schools.com" target="_blank">Acepto las condiciones de uso required</a> <br><br>
 
-           <input type="reset" value="Resetear">
+            <input type="reset" value="Resetear">
             <input type="submit" value="Enviar">
 
 
 
-             </form></div>
+        </form>
+    </div>
 
 
 
 
-<script>
-function ver() {
-    var x = document.getElementById("passvisible");
-    if (x.type === "password") {
-        x.type = "text";
-    } else {
-        x.type = "password";
-    }
-}
-</script>
+    <script>
+        function ver() {
+            var x = document.getElementById("passvisible");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+
+        function validar() {
+
+            console.log("validarformulario");
+
+
+            //Mas seguro
+            var formulario = document.forms[0];
+
+            return false;
+
+        }
+    </script>
 
 </body>
 </html>

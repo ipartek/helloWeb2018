@@ -84,7 +84,7 @@
         <section id="formulario">
             <h2>Formulario de ejemplo:</h2>
             <!--con el atributo de form "novalidate": evita las validaciones html5-->
-            <form action="http://localhost:8084" method="post">
+            <form novalidate action="index.html" method="post" onsubmit="return validar()">
 
                 <fieldset id="datos-personales">
                     <legend>Dator personales</legend>
@@ -101,7 +101,7 @@
 
                     <!-- TODO[x]: radio: SEXO: masculino(M), femenino(F), otro(O) -->
                     <label for="sexo">Sexo*</label>
-                    <input type="radio" name="sexo" value="M" required tabindex="3"> Masculino
+                    <input type="radio" name="sexo" value="M" required tabindex="3" checked> Masculino
                     <input type="radio" name="sexo" value="F" required tabindex="3"> Femenino
                     <input type="radio" name="sexo" value="O" required tabindex="3"> Otro
                     <br>
@@ -216,7 +216,7 @@
                     <br>
                     <!-- TODO[x]: textarea: "OBSERVACIONES" NO required -->
                     <label for="observaciones">Observaciones:</label><br>
-                    <textarea name="observaciones" id="observaciones" placeholder="Obseraciones y sugerencias" tabindex="20"></textarea>
+                    <textarea name="observaciones" id="observaciones" placeholder="Obseraciones y sugerencias" tabindex="20" maxlength="500"></textarea>
                     <br><br>
                     <!-- TODO[x]: checkbox: "Acepto condiciones de uso" que será un link a un html externo (target: "_blank") y debe ser REQUIRED-->
                     <input type="checkbox" name="terminos" required tabindex="21"> Acepto los <a href="https://www.timeinc.net/subs/privacy/termsofservice/pptos.html" target="_blank">terminos y condiciones</a>*
@@ -231,7 +231,8 @@
                 <br><br>
                 <!-- TODO[x]: Botón RESET para limpiar el valor de todos los input del formulario. Mostrar un confirm para confirmar el borrado de datos si pulsa 'Aceptar'. Alineado a la izquierda -->
                 <input type="reset" onclick="return confirmarReset();">
-                <input type="submit" value="Enviar" onclick="return validarDatos()" tabindex="22"><br>
+                <input type="submit" value="Enviar" tabindex="22">
+                <!--onclick="return validarDatos()"--><br>
 
 
             </form>
@@ -264,26 +265,63 @@
             return confirm("¿Esta seguro de que desea restablecer todo el formulario?");
         }
 
-        // Método para validar datos antes de enviarlos al servidor
-        function validarDatos() {
-            var datosValidos = false;
-            var listaIntereses = document.getElementsByName("interes");
-            var numIntereses = 0;
-            var interes = 0;
 
-            while (numIntereses < 3 && interes < listaIntereses.length) {
-                if (listaIntereses[interes].checked) {
-                    numIntereses++;
+        /**
+         *   Método para validar el formulario en el evento 'obsubmit'
+         *   OUT: Devuelve TRUE si los campos del formulario son validos ELSE devuelve FALSE
+         **/
+        function validar() {
+
+            // Variables de acceso al DOM
+            var form = document.forms[0]; // obtiene el 1. formularios de la página
+
+            // Variables de acceso al DOM
+            var listaIntereses = document.getElementsByName("interes");
+            var sexo = document.querySelector('input[name="sexo"]:checked').value;
+            var taObservaciones = document.getElementById("observaciones");
+
+            // Variables locales
+            var datosValidos = false;
+            var contIntereses = 0;
+            var carObservaciones = 0;
+
+
+            // TODO[x]: validar cantidad de intereses seleccionados
+            /*
+            *   Si sexo == 'M' : intereses>=2
+            *   Si sexo == 'F' : intereses>=3
+            */
+            for(var iInteres = 0; iInteres < listaIntereses.length; iInteres++) {
+                if(listaIntereses[iInteres].checked){
+                    contIntereses++;
                 }
-                interes++;
             }
-            if (numIntereses >= 3) {
-                datosValidos = true;
-            } else {
-                alert('Debe elegir al menos 3 intereses');
-                document.getElementById("focus-interes").focus();
+
+            switch (sexo) {
+                case 'M':
+                    if(contIntereses<2) {
+                        alert("Selecciona al menos 2 intereses");
+                    } else {
+                        datosValidos = true;
+                    }
+                    break;
+                case 'F':
+                    if(contIntereses<3) {
+                        alert("Seleccciona al menos 3 intereses");
+                    } else {
+                        datosValidos = true;
+                    }
+                    break;
+                default:
+                    datosValidos = true;
+                    break;
             }
-            return datosValidos;
+
+            // TODO[]: validar que la cantidad de caracteres de 'observaciones' este en el tango [25 - 500]
+            /*if(taObservaciones.value.length )
+
+            return datosValidos;*/
+
         }
     </script>
 </body>

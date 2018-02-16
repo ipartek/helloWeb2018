@@ -20,7 +20,7 @@
 
 
 
-        <form action="#URL_SERVIDOR" method="post">
+        <form novalidate action="index.html" method="get" onsubmit="return validar()">
 
             <fieldset>
                 <legend>Datos personales</legend>
@@ -144,6 +144,16 @@
 
             </fieldset>
 
+            <br>
+
+            <fieldset id="observaciones" style="text-align: center;">
+                <legend>Observaciones</legend>
+                <!-- Observaciones  -->
+                <textarea name="message" rows="10" cols="30" placeholder="Si tienes algo que opinar este es tu sitio"></textarea>
+            </fieldset>
+
+            <br>
+
             <input type="checkbox" name="condiciones" value="S">
             <label for="condiciones">Acepto las <a href="condiciones-de-uso.html" target="_blank">condiciones de uso</a></label>
              <br>
@@ -165,6 +175,15 @@
         x.type = "password";
     }
 }
+
+    function validar(){
+        console.log("validar formulario");
+
+        // Mas seguro coger el formulario por id
+        var formulario = document.forms[0];
+
+        return true;
+    }
 
     </script>
 

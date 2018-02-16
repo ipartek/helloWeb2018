@@ -47,10 +47,14 @@
             top: 0;
             right: 0;
             color: white;
-/*            background-color: rgba(0, 0, 0, 0.5);*/
+            /*            background-color: rgba(0, 0, 0, 0.5);*/
             border-radius: 5px;
             line-height: 1.0em;
             color: black;
+        }
+
+        .box .cross:hover {
+            cursor: pointer;
         }
 
         /*
@@ -110,6 +114,9 @@
             display: block;
         }
 
+
+        /***************        KEYFRAMES      ********************/
+
         @keyframes mostrar {
             0% {
                 opacity: 0;
@@ -152,7 +159,7 @@
             <div class="panel panel-danger">
                 <div class="panel-heading">Números desordenados</div>
                 <div class="panel-body" id="cntNumDes">
-<!--                    <span class="box">1 <span class="cross"><i class="fa fa-times-circle"></i></span></span>-->
+                    <!--                    <span class="box">1 <span class="cross"><i class="fa fa-times-circle"></i></span></span>-->
                     <!--innerHTML-->
                     <!--
                     <span class="box">7</span>
@@ -184,27 +191,31 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <script>
+
+        //Defino los selectores
         var numeroInput = document.querySelector("#numeroInput");
         var butAnadir = document.querySelector("#butAnadir");
         var cntNumDes = document.querySelector("#cntNumDes");
         var cntNumOrd = document.querySelector("#cntNumOrd");
-        var spanNumero = '<span class="box">$$$$$</span>'
+        var spanNumero = '<span class="box">$$$$$</span>';
+
+        //Indica el indice inicial para el atributo data-index, que se
+        //empleará para saber la posición del span y así eliminar esa posición
+        //en el propio array
+        var ind = 0;
+
+        //Contendrá los valores en el orden introducido
         var aDesordenado = [];
-        var aOrdenado = [];
 
         //TRIGGERS de los eventos
         butAnadir.onclick = nuevoNumero;
         butOrdenar.onclick = ordenar;
         butReset.onclick = reset;
 
-        /**
-        Recoge el número del input y lomete en div#cntNumDes
-        */
 
         function nuevoNumero() {
-
+            //Numero introducido por input
             numero = parseInt(numeroInput.value);
-
 
             //Controlo que sea un nuúmero
             if (isNaN(numero)) {
@@ -217,8 +228,31 @@
                     alertas(2)
                 } else {
                     console.log(numero);
-                    cntNumDes.innerHTML += "<span class='box''>" + numero +
-                        "</span>";
+
+                    //Hay crear el elemento mediante createElement para
+                    //que el DOM lo pueda reconocer para los eventos
+                    var spa = document.createElement("span");
+                    spa.className = "box";
+                    spa.setAttribute("data-index", ind); //Indico el orden en el que ha sido creado
+                    ind++; //Incremento el valor
+                    spa.innerHTML = numero + "<span class='cross' ><i class='fa fa-times-circle'></i></span>";
+                    cntNumDes.appendChild(spa);
+
+                    //El elemento ya debe estar creado para poder asignar el evento
+                    //querySelector solo selecciona el primero, por lo que hay que seleccionarlos
+                    //todos, recorrer el array, y asignarle el onclick a cada uno de ellos
+                    cross = document.querySelectorAll("span.box span.cross");
+//                    console.log(cross)
+
+                    for (var i = 0; i < cross.length; i++) {
+                        cross[i].onclick = borrar;
+                    }
+
+                    //////////      VERSION ANTERIOR     //////////////////////
+                    //  cntNumDes.innerHTML += "<span class='box'>" + numero +
+                    //  "<span class='cross'><i class='fa fa-times-circle'></i></span></span>";
+
+
                     aDesordenado.push(numero);
                 }
                 numeroInput.focus();
@@ -250,12 +284,11 @@
                     }
                 }
 
-                aOrdenado = aDesordenado;
                 //Tengo el array ordenado
-                console.log("array %o", aOrdenado);
+                console.log("array %o", aDesordenado);
 
-                for (var i = 0; i < aOrdenado.length; i++) {
-                    cntNumOrd.innerHTML += "<span class='box''>" + aOrdenado[i] +
+                for (var i = 0; i < aDesordenado.length; i++) {
+                    cntNumOrd.innerHTML += "<span class='box''>" + aDesordenado[i] +
                         "</span>";
                 }
 
@@ -270,9 +303,15 @@
 
             //Limpio lso arrays unanvez estáno rdenados
             aDesordenado = [];
-            aOrdenado = [];
 
+            //Inhabilito poder quitar los números del array desordenado
+            console.log("Ocultando cruces")
+            cross = document.querySelectorAll("#cntNumDes span.box span.cross");
 
+            for (var i = 0; i < cross.length; i++) {
+                cross[i].style.display = "none";
+                console.log(cross[i])
+            }
 
 
         }
@@ -300,9 +339,10 @@
 
             document.querySelector("#divAlertas").innerHTML = '<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong> <span id="mensaje">' + mensaje + '</span></div>';
 
-            //            document.querySelector("#mensaje").textContent = mensaje;
+            //Hago focus en el principio de la pagina
             window.location.hash = '#main';
         }
+
 
         function reset() {
             //Limpio las listas en HTML. Los arrays los he reseteado al Ordenar
@@ -315,6 +355,43 @@
             //Habilito el botón Ordenar
             butOrdenar.disabled = false;
             butAnadir.disabled = false;
+
+            //Habilito poder quitar los números del array desordenado
+            console.log("Habilitando cruces")
+            cross = document.querySelectorAll("#cntNumDes span.box span.cross");
+
+            for (var i = 0; i < cross.length; i++) {
+                cross[i].style.display = "inital";
+                console.log(cross[i])
+            }
+        }
+
+
+        function borrar() {
+            console.log("Función borrar");
+            console.log(this)
+
+            //Recojo el índice del propio atributo
+            var index = this.parentElement.getAttribute("data-index");
+            console.log("Indice: " + index);
+
+            //Elimino el elemento
+            this.parentElement.parentElement.removeChild(this.parentElement);
+
+            //Elimino el valor en el array
+            aDesordenado.splice(index, 1);
+
+            //TEngo que renombrar todos los data-index
+            //Si se borra uno solo funciona bien,
+            //cuando hay varios da problemas porque se crean saltos
+            cross = document.querySelectorAll("span.box");
+            console.log(cross)
+
+            for (var i = 0; i < cross.length; i++) {
+                cross[i].setAttribute("data-index", i);
+            }
+
+            console.log(aDesordenado)
         }
     </script>
 </body>
@@ -335,8 +412,3 @@
 <!--TODO input 3 y el botón el resto 9, en línea-->
 <!--TODO El número ha de salir con transición -->
 <!--TODO Click eliminar caja, se pasa la posicion de la caja-->
-
-
-
-
-<!--TODO 155-->

@@ -47,10 +47,9 @@ Al cargar, que salga un mensaje: "Eres mayor de 18 años?" Si no que mande a otr
         <form action="formulario">
             <button type="button" class="btn btn-success" onclick="sumar()">Sumar</button>
             <input type="number" id="resultado" disabled placeholder="Resultado">
+            <output id="resOut"></output>
         </form>
     </div>
-
-
 
     <script>
         function comprobarEdad() {
@@ -60,15 +59,16 @@ Al cargar, que salga un mensaje: "Eres mayor de 18 años?" Si no que mande a otr
         }
 
         function sumar() {
-            var num1 = parseInt(prompt("Introduce un número"));
-            while (isNaN(num1)) {
+            var num1;
+            var num2;
+            do {
                 num1 = parseInt(prompt("Introduce un número"))
-            }
-            var num2 = parseInt(prompt("Introduce el segundo número"));
-            while (isNaN(num2)) {
+            } while (isNaN(num1))
+            do {
                 num2 = parseInt(prompt("Introduce el segundo número"));
-            }
+            } while (isNaN(num2))
             document.getElementById("resultado").value = num1 + num2;
+            document.getElementById("resOut").textContent = num1 + num2;
         }
     </script>
 

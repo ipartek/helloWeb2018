@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selectores</title>
+
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <style>
+        li span {
+            font-weight: 600;
+            color: #CCC;
+        }
+
+        .resultado {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 2em;
+            color: #FFF;
+            background-color: #F00;
+            border-radius: 5px;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .textoRojo {
+            color: red;
+            font-size: 1.5em;
+        }
+
+        .textoVerde {
+            color: green;
+            font-size: 1.5em;
+        }
+
+        output {
+            display: inline-block;
+            margin: 20px, 0;
+        }
+    </style>
+    <div class="container">
+        <h1>Selectores</h1>
+        <div class="row">
+            <div class="col-xs-6">
+                <h2>Tipo de selectores</h2>
+                <ul>
+                    <li>document.getElementById: <span>Element</span></li>
+                    <li>document.getElementsByClassName: <span>NodeList</span></li>
+                    <li>document.getElementsByName: <span>NodeList</span></li>
+                    <li>document.getElementsByTagName: <span>NodeList</span></li>
+                    <li>document.querySelector</li>
+                    <li>document.querySelectorAl</li>
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <h2>ClassListAPI</h2>
+                <ul>
+                    <li>Add(String [, String])</li>
+                    <li>Remove(String [, String])</li>
+                    <li>Item( Number )</li>
+                    <li>Toggle( String [, force] )</li>
+                    <li>Contains( String )</li>
+                    <li>Replace( oldClass, newClass )</li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- fin div row-->
+        <hr>
+        <h2>GetElementsByName</h2>
+
+        <div class="row">
+            <div class="col-xs-4">
+                <form action="fomrulario">
+                    <input type="checkbox" name="vehicle" value="0">Bici<br>
+                    <input type="checkbox" name="vehicle" value="1">Coche<br>
+                    <input type="checkbox" name="vehicle" value="2" checked>Andando<br>
+                    <input type="checkbox" name="vehicle" value="3">Bus<br>
+                    <input type="checkbox" name="vehicle" value="4">Metro
+                </form>
+            </div>
+
+            <div class="col-xs-4">
+                <a href="#" class="btn btn-success" onclick="contarChecks()">Comprobar chequeadas</a>
+            </div>
+
+            <div class="col-xs-4">
+                <p id="resultado1" class="resultado">Resultado</p>
+            </div>
+
+        </div>
+        <!-- fin div row GetElementsByName-->
+
+        <hr>
+        <h2>GetElementsByTagName y ClassListAPI add</h2>
+        <div class="row">
+            <p id="rojo"><span>Lorem ipsum dolor </span>sit amet, consectetur adipisicing elit. Eveniet pariatur aliquid, harum. Ad, dolores, cumque, voluptatibus id mollitia nisi, et sed blanditiis odio quam nesciunt consequuntur sint ipsa eos corrupti!
+                <span>Nihil voluptatem</span>, pariatur quia. Omnis quasi recusandae itaque, animi enim accusantium error, voluptate impedit, fugit ad alias corrupti? Recusandae nemo laborum perspiciatis inventore tenetur, provident ex aliquam aliquid ut non.
+                <span>Sunt saepe natus</span> id laborum nesciunt, illum, quae in earum cum deserunt ducimus mollitia consequatur cumque velit, distinctio eius nulla, cupiditate assumenda temporibus! Quia eius possimus quidem, molestiae provident et.</p>
+
+            <p id="verde"><span>Lorem ipsum dolor </span>sit amet, consectetur adipisicing elit. Eveniet pariatur aliquid, harum. Ad, dolores, cumque, voluptatibus id mollitia nisi, et sed blanditiis odio quam nesciunt consequuntur sint ipsa eos corrupti! Nihil voluptatem, pariatur quia. Omnis quasi recusandae itaque, <span>animi enim</span> accusantium error, voluptate impedit, fugit ad alias corrupti? Recusandae nemo laborum perspiciatis inventore tenetur, provident ex aliquam aliquid ut non. Sunt saepe natus id laborum nesciunt, illum, quae in earum cum <span>deserunt ducimus</span> mollitia consequatur cumque velit, distinctio eius nulla, cupiditate assumenda temporibus! Quia eius possimus quidem, molestiae provident et.</p>
+
+        </div>
+        <!-- div row parrafos GetElementsByTagName-->
+
+        <!-- script para utilizar la propiedad getElementsByTagName y ClassListAPI add -->
+        <script>
+            // al no estar dentro de una función, se ejecuta el Javascript de forma automática
+            // parrafos rojos
+            var pRojo = document.getElementById("rojo");
+            var aSpan = pRojo.getElementsByTagName("span");
+            for (var i = 0; i < aSpan.length; i++) {
+                aSpan[i].classList.add("textoRojo");
+            }
+
+            // parrafos verdes
+            var pVerde = document.getElementById("verde");
+            var aSpan = pVerde.getElementsByTagName("span");
+            for (i = 0; i < aSpan.length; i++) {
+                aSpan[i].classList.add("textoVerde"); //añade la clase "textoVerde" a la etiqueta aSpan
+            }
+        </script>
+
+        <!-- ClassListAPI -->
+        <hr>
+        <h2>ClassListAPI replace y toggle </h2>
+        <div class="row">
+            <span id="ejemplo3" class="lunes miercoles viernes sabado">Cantidad de clases: </span>
+            <output id="numClases"></output><br>
+            <a href="#" class="btn btn-primary" onclick="contarClases()">Contar clases</a>
+            <a href="#" id="btnColores" class="btn btn-danger btn-success" onclick="cambiarColor()">Rojo / Verde</a>
+
+            <script>
+                function contarClases() {
+                    var span = document.getElementById("ejemplo3");
+                    document.getElementById("numClases").textContent = span.classList.length;
+                }
+
+                function cambiarColor() {
+                    var color = document.getElementById("btnColores");
+                    var numClases = color.classList.length;
+
+                    // Con la propiedad Toogle
+
+                    color.classList.toggle("btn-danger", numClases > 3);
+                    color.classList.toggle("btn-danger", numClases <= 2);
+                    console.debug(color.classList);
+
+                    // Con la propiedad Replace
+
+//                    if (color.classList.contains("btn-danger")) {
+//                        color.classList.replace("btn-danger", "btn-success");
+//                        console.debug(color.classList);
+//                    } else if (color.classList.contains("btn-success")) {
+//                        color.classList.replace("btn-success", "btn-danger");
+//                        console.debug(color.classList);;
+//                    }
+                }
+            </script>
+
+        </div>
+        <!-- fin class row GetElementsByTagName -->
+
+    </div>
+    <!-- fin div container -->
+
+    <script>
+        // getElementsByName
+        function contarChecks() {
+            var contador = 0;
+            var cVehiculos = document.getElementsByName("vehicle");
+            //console.debug("Vehículos: " + cVehiculos);
+            for (var i = 0; i < cVehiculos.length; i++) {
+                if (cVehiculos[i].checked) {
+                    contador++;
+                }
+            }
+            document.getElementById("resultado1").textContent = contador;
+        }
+        // fin getElementsByName
+    </script>
+
+    <!-- CDN de jQuery 2.X minified. Con la version 2.X te aseguras de que Bootstrap sea compatible.
+    A partir de la 3.3.7 ya soporta la version de jQuery3.X -->
+
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

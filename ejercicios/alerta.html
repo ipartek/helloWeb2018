@@ -19,7 +19,7 @@
 </head>
 
 <body onload="crearAlerta()">
-    <p id="resultado"></p>
+    <output id="resultado"></output>
     <button onclick="calcular()">Sume dos números</button>
     <a href="ejercicios.html">Volver</a>
     <!--JavaScript -->
@@ -45,7 +45,7 @@
             else{
                 var suma=numero1+numero2;
                 console.log(suma)
-                document.getElementById("resultado").textContent="la suma de"+numero1+"+"+numero2+"="+suma;
+                document.getElementById("resultado").textContent=numero1+"+"+numero2+"="+suma;
             }
 
         }

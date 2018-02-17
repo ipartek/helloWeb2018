@@ -1,5 +1,10 @@
 /*CSS para formularios*/
 
+* {
+    box-sizing: border-box;
+
+}
+
 form {
     border: solid;
     margin: 20px;
@@ -15,6 +20,7 @@ textarea {
     margin: 10px;
     font-family: "roboto";
     font-weight: bold;
+
     /*    display: block;*/
     /*    width: 100%;*/
     /*    flex-basis: 100%;*/
@@ -38,6 +44,7 @@ textarea {
     display: block;
     width: 100%;
     margin: 10px 0;
+    border: 1px solid
 }
 
 input:not([type="submit"]):valid {
@@ -66,9 +73,9 @@ select {
     display: inline;
 }
 
-#hob_spans {
-/*    background-color: red;*/
-}
+
+
+/* Para dispositivos no m´viles 3 columnas*/
 
 #hobbies span {
     box-sizing: border-box;
@@ -76,8 +83,87 @@ select {
     width: 32%;
 }
 
-#contador, #contador+span {
+@media (max-width: 480px) {
+    #hob_spans {
+        /*    white-space: nowrap;*/
+        /*    font-size: 0;*/
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    #hob_spans span {
+        /*    font-size: initial;*/
+        flex-basis: 50%;
+    }
+    #hobbies span {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 50%;
+        /*        width: calc(50% - 20px);*/
+        white-space: nowrap;
+    }
+
+    #fDatos label[for="sexo"] {
+        display: block;
+    }
+
+    #fDatos input:not([type='radio']) {
+        display: inline-block;
+            border: 1px solid;
+        /*    margin: 10px;*/
+        margin: 0px;
+        /*    width: calc(70% - 20px);*/
+        width: 70%;
+    }
+
+    #fDatos input[type="radio"] {
+        margin: 0;
+        display: inline-block;
+        width: 20%;
+    }
+
+    #fDatos small {
+        display: inline-block;
+        width: 80%;
+    }
+
+    #fDatos #lOjo{
+        margin-top: 0;
+        width: 100%;
+    }
+}/*Fin medoa query*/
+
+input[type="radio"]{
+    vertical-align: sub;
+}
+
+#contador,
+#contador + span {
     display: block;
     float: right;
+    font-size: 0.8em;
+}
+
+#fDatos {
+    font-size: 0;
+}
+
+#fDatos legend,
+#fDatos label,
+#fDatos small {
+    font-size: initial;
+    text-align: left;
+}
+
+#fDatos label {
+    display: inline-block;
+    /*    border: none;*/
+    /*    margin: 10px;*/
+    margin: 10px 0px;
+    /*    width: calc(30% - 20px);*/
+    width: 30%;
+}
+
+#fDatos small:last-child{
     font-size: 0.8em;
 }

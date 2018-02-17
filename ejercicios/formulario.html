@@ -17,7 +17,7 @@
 
     <form novalidate action="/index.html" method="get" id="formulario" onsubmit="return validar()">
 
-        <fieldset>
+        <fieldset id="fDatos">
             <legend>Datos Personales</legend>
             <label for="id">Id:</label>
             <input type="text" name="id" value="45" disabled>
@@ -28,7 +28,7 @@
             <label for="apellido">Apellido:</label>
             <input type="text" name="apellido" id="apellido" required>
             <br>
-            <label for="apellido">Sexo:</label>
+            <label for="sexo">Sexo:</label>
             <input type="radio" name="sexo" value="m" checked><small>Masculino</small>
             <input type="radio" name="sexo" value="f"><small>Femenino</small>
             <input type="radio" name="sexo" value="o"><small>Otro</small>
@@ -38,8 +38,7 @@
             <br>
             <label for="pass">Password: </label>
             <input type="password" name="pass" id="pass" required>
-            <label><i id="ojo" class="fa fa-eye"></i><small>&nbsp;Visualizar contaseña</small></label>
-
+            <label id="lOjo"><i id="ojo" class="fa fa-eye"></i><small>&nbsp;Visualizar contaseña</small></label>
         </fieldset>
 
         <fieldset>
@@ -50,7 +49,7 @@
             <input type="text" name="cp" id="cp" size="5" pattern="[0-9]{5,5}">
             <br>
             <label for="provincia">Provincia: </label>
-            <select name="provincia" id="provincia" required>
+             <select name="provincia" id="provincia" required>
 <option value=''>Seleccione una provincia</option>
 <option value='alava'>Álava</option>
 <option value='albacete'>Albacete</option>
@@ -105,7 +104,6 @@
 <option value='zamora'>Zamora</option>
 <option value='zaragoza'>Zaragoza</option>
             </select>
-
         </fieldset>
 
 
@@ -138,98 +136,7 @@
 
 </html>
 
-<script>
-
-//    Selectores de los elementos
-    var pass = document.querySelector("#pass");
-    var ojo = document.querySelector("#ojo");
-    var botenviar = document.querySelector("#botenviar");
-
-
-//   Cuando hacen onousedown en el ojo cambio el tipo
-//   Al levantar el mouse vuelvo a ocultarlo
-    ojo.onmousedown = function(){
-        pass.type = "text";
-    }
-    ojo.onmouseup = function(){
-        pass.type = "password";
-    }
-
-    var formulario = document.querySelector("#formulario");
-    var cHobby = document.querySelector("#hob_spans");
-
-    function validar(){
-        console.log("Validar formulario");
-        var valido = true;
-
-        var sex = formulario.sexo.value;
-
-        //Cuento el número de checkboxes checkeados
-        arr_hobbies = document.getElementsByName("hob_arr");
-        arrChecked = 0;
-        for(var i = 0; i<arr_hobbies.length;i++){
-            if(arr_hobbies[i].checked){
-                arrChecked++;
-            }
-        }
-
-        //Tengo todos los elementos chequeados
-        if(sex == "m" && arrChecked<1){
-            alert("Debe seleccionar al menos un hobby");
-            cHobby.querySelector("span input:first-child").focus();
-            valido = false;
-        }else if(sex == "f" && arrChecked<2){
-            alert("Debe seleccionar al menos dos hobbies");
-            cHobby.querySelector("span input:first-child").focus();
-            valido = false;
-        }
-
-        //Observaciones tiene que tener almenos 25 caracteres y máximo 500
-        if(obs.value.length < 25 || obs.value.length > 500 ){
-            alert("Las observaciones deben tener entre 25 y 500 caracteres");
-            valido = false;
-            obs.focus();
-        }
-
-        var chkCond = document.querySelector("#condiciones");
-
-
-        return valido;
-    }
-
-
-
-    //Contador de caracteres a medida que va escribiendo
-    var obs =  document.querySelector("#obs");
-    var contador =  document.querySelector("#contador");
-    //Asigno aquí el evento
-    obs.onkeyup = caracteres;
-
-    function caracteres(){
-        var tamano = obs.value.length;
-        if (tamano > 500){
-            alert("Ha alcanzado el tamaño máximo");
-            obs.value = obs.value.substring(0, 500);
-            contador.textContent =  "500/500"; //En realidad siempre es 500/505
-        }else{
-            contador.textContent =  tamano + "/500";
-        }
-    }
-
-
-    //Custom messages
-//    document.querySelector("#nombre").oninvalid = "Debeeeeeeeeeee";
-//    document.querySelector("#nombre").setCustomValidity("");
-//    document.querySelector("#nombre").setCustomValidity("Debe escribir el nombre");
-//    document.querySelector("#apellido").setCustomValidity("Debe escribir el apellido");
-//    document.querySelector("[name='sexo']").setCustomValidity("Debe marcar su sexo");
-//    document.querySelector("#email").setCustomValidity("Debe escribir un email válido");
-//    document.querySelector("#pass").setCustomValidity("Debe escribir una contraseña");
-//    document.querySelector("#nombre").setCustomValidity("Hola!");
-//    document.querySelector("#nombre").setCustomValidity("Hola!");
-//    document.querySelector("#nombre").setCustomValidity("Hola!");
-
-</script>
+<script src="../js/formulario.js"></script>
 
 <!--event.target.setcustomvalidity-->
 

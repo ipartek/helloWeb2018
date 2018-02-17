@@ -92,48 +92,75 @@
 
         function validar() {
 
-            var vNombre = validarTexto(nombre);
-            var vApellido = validarTexto(apellido);
+            var vNombre = validarTexto(nombre, 2, 25);
+            var vApellido = validarTexto(apellido, 2, 25);
             var vEstadoCivil = validarSelect(estadoCivil);
-            var vIdioma = validarCheckbox(idioma,1);
+            var vIdioma = validarCheckbox(idiomas, 1, 9999);
             var vProfesion = validarRadio(profesion);
             var vComentario = validarTextarea(comentario, 25, 500);
 
-            if(vNombre){
-                if(vApellido){
-                    if(vEstadoCivil){
-                        if(vIdioma){
-                            if(vProfesion){
-                                if(vComentario){
-                                    return true;
-                                }
-                            }
-                        }
-                    }
-                }
+            if (vNombre && vApellido && vEstadoCivil && vIdioma && vProfesion && vComentario) {
+
             } else {
                 return false;
             }
 
         }
 
-function validarTexto(texto){
+        function validarTexto(texto, min, max) {
 
-}
+            if (texto.value.length >= min && texto.value.length <= max) {
+                return true;
+            } else {
+                return false;
+            }
 
-function validarSelect(select){
+        }
 
-}
+        function validarSelect(select) {
+            if (select.value != '0') {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
-function validarCheckbox(checkbox, minimo){
+        function validarCheckbox(checkbox, min, max) {
 
-}
+            var marcados = 0;
+            for (i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked) {
+                    marcados++;
+                }
+            }
 
-function validarRadio(radio){
+            if (marcados >= min && marcados <= max) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
-}
+        function validarRadio(radio) {
 
-function validarTextarea(texto, min, max){
+            var marcados = 0;
+            for (i = 0; i < radio.length; i++) {
+                if (radio[i].checked) {
+                    marcados++;
+                }
+            }
 
-}
+            if (marcados == 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
 
+        function validarTextarea(texto, min, max) {
+            if (texto.value.length >= min && texto.value.length <= max) {
+                return true;
+            } else {
+                return false;
+            }
+        }

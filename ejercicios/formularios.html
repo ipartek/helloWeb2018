@@ -8,7 +8,7 @@
     <!--Font awesome icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
 </head>
 
@@ -22,7 +22,7 @@
         <p><b>tabindex</b> es necesario por accesibilidad</p>
 
         <!-- novalidate envia el formulario saltandose la validacion -->
-        <form novalidate action="index.html" method="GET" onsubmit="return validate()">
+        <form novalidate action="#" method="GET" onsubmit="return validate()">
 
             <fieldset id="datos">
                 <legend>Datos Personales</legend>
@@ -71,6 +71,7 @@
                 <label for="busqueda_provincia">Provincia</label>
                 <select id="busqueda_provincia" tabindex="10">
 
+ <option value='0'>...</option>
  <option value='alava'>Álava</option>
  <option value='albacete'>Albacete</option>
  <option value='alicante'>Alicante/Alacant</option>
@@ -139,11 +140,11 @@
                 <div class="checkbox"><input type="checkbox" name="aficion" value="6" tabindex="16">Programar</div>
                 <br>
                 <label for="obsevaciones">Observaciones</label>
-                <input type="textarea" name="observaciones" tabindex="17">
+                <input type="textarea" id="observaciones" name="observaciones" tabindex="17">
 
             </fieldset>
 
-            <input type="checkbox" required tabindex="18">Acepto las <a href="#condiciones" target="_blank" tabindex="19">condiciones de uso</a>
+            <input type="checkbox" required tabindex="18" name="condiciones">Acepto las <a href="#condiciones" target="_blank" tabindex="19">condiciones de uso</a>
 
             <input type="submit" value="ENVIAR" tabindex="20">
             <input type="reset" value="RESET" tabindex="21">
@@ -161,7 +162,7 @@
     </div>
     <!-- end container -->
 
-    <script src="/js/form.js"></script>
+    <script src="../js/formularios.js"></script>
 </body>
 
 </html>

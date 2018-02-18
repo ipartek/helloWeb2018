@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formularios</title>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+    <!-- lo en la web https://www.bootstrapcdn.com/fontawesome/ copiamos URL y pegamos aqui
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+    <!--Custom CSS-->
+    <!-- <link rel="stylesheet" href="css/custom.css">-->
+    <!-- link a font awesome 4.7 Iconos-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        <
+        /* CSS para Formularios */
+
+        form {
+            border: 1px solid #000;
+            margin: 20px auto;
+            padding: 20px;
+
+        }
+
+        input[type="text"]:invalid,
+        input[type="correo"]:invalid,
+        input[type="pass"]:invalid {
+            color: red;
+        }
+
+        input[type="text"]:valid,
+        input[type="correo"]:valid,
+        input[type="pass"]:valid {
+            color: green;
+        }
+
+        /*input[type="image"] {
+    width: 50px;
+    height: 50px;
+}*/
+
+        input[type="submit"] {
+            float: right;
+        }
+
+        input[type="reset"] {
+            float: left;
+        }
+
+        fieldset {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        legend {
+            text-align: center;
+        }
+
+        div#container {
+            padding: 20px;
+        }
+
+        select {
+            float: right;
+            font-size: 1em;
+            margin-right: 900px;
+            margin-top: 10px
+        }
+
+        select#provincia {
+            margin-top: -109px;
+            margin-right: 800px;
+        }
+
+        label {
+            margin-top: 10px
+        }
+
+        .provincia {
+            float: left;
+        }
+
+        .pais {
+            float: left;
+            margin-top: 70px;
+            margin-left: -65px;
+        }
+
+        .ojoabierto {
+            width: 50px;
+            height: 50px;
+            margin-left: 350px;
+            margin-top: -36px;
+        }
+
+    </style>
+
+</head>
+
+<!--onload al cargar la Web activa el campo Nombre -->
+
+<body>
+
+    <div id="container">
+        <h1>Formularios</h1>
+        <p>Todos los formularios tienen que tener botón de 'submit', además de un valor en el atributo 'action'.</p>
+        <p><b>*disabled</b> no se envía al submitar el formulario.</p>
+        <p>*<b>readonly</b> si se envía al submitar el formulario.</p>
+        <p><b>tabindex</b> es necesario por accesibilidad.</p>
+        <!-- <form action="#URL_SERVIDOR" method="post"> Este es el correcto para el ejercicio-->
+
+        <form name="formulario1" id="formulario1" method="post" onsubmit="return validar()">
+            <fieldset id="datos_personales">
+                <legend id="legend_datos">Datos Personales</legend>
+                <label for="id">Id:</label>
+                <input type="text" name="id" value="45" disabled>
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" autofocus tabindex="1" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" title="Debe introducir su nombre">
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" name="apellidos" id="apellidos" tabindex="2" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" title="Debe introducir sus apellidos">
+
+                <label for="dni">DNI:</label>
+                <input type="text" name="dni" id="dni" maxlength="9">
+
+                <label for="correo">Email:</label> &nbsp;
+                <input type="text" name="correo" tabindex="4" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" title="Por favor introduzca un email válido">
+
+                <div>
+                    <label for="sexo">Sexo:</label>
+                    <select name="sexo" id="sexo">
+                        <option value="X" selected="selected">...</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                </div>
+
+                <label>Hobbies:</label><br>
+                <input type="checkbox" name="hobbie1" id="hobbie1" value="Bailar" class="hobbies">Bailar <br>
+                <input type="checkbox" name="hobbie2" id="hobbie2" value="Deporte" class="hobbies">Deporte <br>
+                <input type="checkbox" name="hobbie3" id="hobbie3" value="Cine" class="hobbies">Cine <br>
+                <input type="checkbox" name="hobbie4" id="hobbie4" value="Teatro" class="hobbies">Teatro <br>
+                <input type="checkbox" name="hobbie5" id="hobbie5" value="Pescar" class="hobbies">Pescar <br>
+                <input type="checkbox" name="hobbie6" id="hobbie6" value="Viajar" class="hobbies">Viajar <br>
+                <input type="checkbox" name="hobbie7" id="hobbie7" value="Escribir" class="hobbies">Escribir <br>
+                <input type="checkbox" name="hobbie8" id="hobbie8" value="Pintar" class="hobbies">Pintar <br>
+            </fieldset>
+            <fieldset id="grupo_direccion">
+                <legend id="legend_direccion">Direccion</legend>
+                <label for="calle">Calle:</label>
+                <input type="text" name="calle" id="calle" autofocus tabindex="1" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 5 letras por favor" title="Introduzca la calle">
+                <br>
+                <br>
+                <label for="cp">Codigo Postal:</label>
+                <input type="text" name="cp" id="cp" tabindex="2" required size="5" maxlength="5" pattern="[0-9]{5,5}" placeholder="5 números" title="Debe introducir el código postal">
+                <br>
+                <br>
+                <div class="provincia">
+                    <label for="provincia">Provincia:</label>
+                </div>
+                <div class="pais">
+                    <label for="pais">País:</label>
+                    <input type="text" name="pais" id="pais" required pattern="[A-Za-z]{4-16}" title="Debe introducir su país">
+                </div>
+                <select name="provincia" id="provincia" size="3">
+                    <option value="1">Albacete</option>
+                    <option value="2">Alicante</option>
+                    <option value="3">Almería</option>
+                    <option value="4">Alava</option>
+                    <option value="5">Asturias</option>
+                    <option value="6">Ávila</option>
+                    <option value="7">Badajoz</option>
+                    <option value="8">Baleares, Islas</option>
+                    <option value="9">Barcelona</option>
+                    <option value="10">Bizkaia</option>
+                    <option value="11">Burgos</option>
+                    <option value="12">Cáceres</option>
+                    <option value="13">Cádiz</option>
+                    <option value="14">Cantabria</option>
+                    <option value="15">Castellón</option>
+                    <option value="16">Ciudad Real</option>
+                    <option value="17">Córdoba</option>
+                    <option value="18">Coruña, A</option>
+                    <option value="19">Cuenca</option>
+                    <option value="20">Gipuzkoa</option>
+                    <option value="21">Girona</option>
+                    <option value="22">Granada</option>
+                    <option value="23">Guadalajara</option>
+                    <option value="24">Huelva</option>
+                    <option value="25">Huesca</option>
+                    <option value="26">Jaén</option>
+                    <option value="27">León</option>
+                    <option value="28">Lleida</option>
+                    <option value="29">Lugo</option>
+                    <option value="30">Madrid</option>
+                    <option value="31">Málaga</option>
+                    <option value="32">Murcia</option>
+                    <option value="33">Navarra</option>
+                    <option value="34">Ourense</option>
+                    <option value="35">Palencia</option>
+                    <option value="36">Palmas, Las</option>
+                    <option value="37">Pontevedra</option>
+                    <option value="38">Rioja, La</option>
+                    <option value="39">Salamanca</option>
+                    <option value="40">Santa Cruz de Tenerife</option>
+                    <option value="41">Segovia</option>
+                    <option value="42">Sevilla</option>
+                    <option value="43">Soria</option>
+                    <option value="44">Tarragona</option>
+                    <option value="45">Teruel</option>
+                    <option value="46">Toledo</option>
+                    <option value="47">Valencia</option>
+                    <option value="48">Valladolid</option>
+                    <option value="49">Zamora</option>
+                    <option value="50">Zaragoza</option>
+                    <option value="51">Ceuta</option>
+                    <option value="52">Melilla</option>
+
+                </select>
+            </fieldset>
+
+            <filedset id="grupo_observaciones">
+                <legend>Observaciones</legend>
+                <textarea name="textArea" id="textArea" placeholder="Escriba aquí..." onKeyDown="contar()" onKeyUp="contar()" cols="150" rows="14" maxlength="500" min="25" required></textarea>
+            </filedset>
+            <div id="cont">
+                <label>Caracteres restantes:</label>
+                <input disabled size="3" value="500" id="contador">
+
+            </div>
+            <br>
+            <br>
+            <label for="pass">Contraseña:</label>
+            <input id="password" type="password" name="pass" tabindex="5" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Mínimo 5 caracteres" size="30" title="Introduzca una contraseña válida">
+            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" onclick="showhide()" id="showhide"></span>
+            <br>
+            <br>
+            <input type="checkbox" name="aceptar" value="1" required title="Debe aceptar las condiciones">Aceptar <a href="#cond" target="_blank" class="condiciones">condiciones de uso</a><br>
+            <br>
+            <br>
+            <input type="button" onclick="limpiar_Form()" value="Reset form" name="btn_reset" id="btn_reset" value="Limpiar formulario">
+
+            <div id="capa_enviar">
+                <!-- AL incluir el onclick decimos que al hacer click en el boton enviar llamara a la funcion validar -->
+                <input type="submit" value="Enviar Datos" id="boton_enviar" name="boton_enviar" onclick="validar(this.form);return false">
+            </div>
+            <br>
+            <br>
+
+        </form>
+    </div>
+    <!-- end div id="contenedor" -->
+
+
+
+
+    <!-- Cargar JQuery 2.X minified -->
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <!-- los script deben estar en un formulario js-->
+    <script>
+        /* funcion para validar el formukario */
+        function validar(formulario) {
+            if ((formulario.nombre.value.length == 0) || (formulario.apellidos.value.length == 0)) {
+                alert("Los campos Nombre y Apellidos son obligatorios");
+                return false;
+            }
+            if (formulario.dni.value.length == 0) {
+                alert("El campo DNI es obligatorio");
+                return false;
+            }
+            if (formulario.sexo.options[formulario.sexo.selectedIndex].value == "M") {
+                if ((!formulario.hobbie1.checked) && (!formulario.hobbie2.checked) && (!formulario.hobbie3.checked) && (!formulario.hobbie4.checked) && (!formulario.hobbie5.checked) && (!formulario.hobbie6.checked) && (!formulario.hobbie7.checked) && (!formulario.hobbie8.checked)) {
+                    alert("Debe elegir por lo menos 1 Hobby");
+                    return false;
+                }
+            }
+
+            if (formulario.sexo.options[formulario.sexo.selectedIndex].value == "F") {
+                if ((!formulario.hobbie1.checked) && (!formulario.hobbie2.checked) && (!formulario.hobbie3.checked) && (!formulario.hobbie4.checked) && (!formulario.hobbie5.checked) && (!formulario.hobbie6.checked) && (!formulario.hobbie7.checked) && (!formulario.hobbie8.checked)) {
+                    alert("Debe elegir por lo menos 2 Hobbies");
+                    return false;
+                }
+            }
+
+            if (formulario.observaciones.value == null) {
+                alert("Debe introducir al menos una observacion de 25 caracteres.")
+            }
+            //Si hemos llegado a este punto del script es que el formulario es correcto, por lo que lo enviaremos al servidor
+            alert("Formulario correcto !!!");
+            formulario.submit();
+        }
+
+        function contar() {
+            var max = "500";
+            var cadena = document.getElementById("textArea").value;
+            var longitud = cadena.length;
+
+            if (longitud <= max) {
+                document.getElementById("contador").value = max - longitud;
+            } else {
+                document.getElementById("textArea").value = cadena.substr(0, max);
+            }
+        }
+
+        function limpiar_Form() {
+            document.getElementById("formulario1").reset();
+        }
+
+
+        }
+
+    </script>
+</body>
+
+</html>

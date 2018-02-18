@@ -9,13 +9,10 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
     <!-- font-awesome4.7.0 -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
 
     <style>
         header {
@@ -37,7 +34,7 @@
         }
 
         .box {
-            /*display: flex; Pendiente hacerlo con flex*/
+            /*display: flex;*/
             display: inline-block;
             width: 75px;
             height: 75px;
@@ -53,7 +50,6 @@
             animation-duration: 1.5s;
             animation-timing-function: ease-in;
         }
-
     </style>
 
 </head>
@@ -62,11 +58,10 @@
 
     <header>
         <div class="container">
-
             <h1>BubbleSort</h1>
-
         </div>
     </header>
+
 
     <div class="container">
 
@@ -81,20 +76,15 @@
                     </div>
                 </div>
                 <div class="clo-md-9">
-                    <button type="button" onclick="nuevoNumero()" class="btn btn-default"> Añadir Número </button>
+                    <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir Número</button>
                 </div>
             </form>
-
-
-
         </div>
         <div class="row">
             <div class="panel panel-danger">
                 <div class="panel-heading">Números Desordenados</div>
                 <div class="panel-body" id="cntNumDes">
-                    <!--
-                    <span class="box">3</span>
-                    -->
+                    <!--  <span class="box">3</span>    -->
                 </div>
             </div>
         </div>
@@ -106,41 +96,39 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <button type="button" onclick="pintarOrdenados()" class="btn btn-success btn-block">Ordenar</button>
+        </div>
+        <div class="row">
+            <button type="button" onclick="inicio()" class="btn btn-danger btn-block">Iniciar</button>
 
-    <div class="row">
-        <button type="button" onclick="numOrdenados()" class="btn btn-success btn-block">Ordenar</button>
+
+        </div>
     </div>
 
-    <div class="row">
-        <button type="button" onclick="inicio()" class="btn btn-danger btn-block">Iniciar</button>
 
-
-    </div>
-    </div>
-
-    <!-- jQuery -->
+    <!-- jquery -->
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
-
     <script>
-        // variables globales
+        //variables globales
         var numeroInput = document.getElementById("numeroInput");
         var cntNumDes = document.getElementById("cntNumDes");
         var cntNumOrd = document.getElementById("cntNumOrd");
         var spanNumero = '<span class="box">##numero##</span>';
-        var aDesordenado = []; //Array con números desordenados
+        var aDesordenado = []; // Array con numeros desordenados
         var aOrdenado = [];
 
         /**
-         * recoger número del input y meterlo en div#cntNumDes
+         *  recoger numero del input y meterlo en  div#cntNumDes
          */
         function nuevoNumero() {
-            console.debug("Añadir nuevo número %s", numeroInput.value);
 
+            console.debug("Añadir nuevo numero %s", numeroInput.value);
+            //añadir numero
             cntNumDes.innerHTML += spanNumero.replace('##numero##', numeroInput.value);
             aDesordenado.push(numeroInput.value);
 
@@ -150,37 +138,40 @@
         }
 
         /**
-         * Ordena de menor a mayor el array pasado por parametr
+         *  Ordena de menor a mayor el array pasado por parametro
          */
-        function ordenar(arr) {
-
+        function ordernar(arr) {
             var len = arr.length;
-            console.debug("array Desordenado " + arr);
+            console.debug("array desordenado " + arr);
             for (var i = 0; i < len; i++) {
+
                 for (var j = 0; j < len - i - 1; j++) {
+
                     if (arr[j] > arr[j + 1]) {
                         // cambio
                         var temp = arr[j];
+                        parseInt(temp);
                         arr[j] = arr[j + 1];
                         arr[j + 1] = temp;
-                        parseInt[j];
+
                     }
+
                 }
+
             }
             console.debug("array ordenado " + arr);
             return arr;
         }
 
-
-        function numOrdenados() {
-            console.debug("numOrdenados");
+        function pintarOrdenados() {
+            console.debug("pintarOrdenados");
             aOrdenado = ordernar(aDesordenado);
             cntNumOrd.innerHTML = "";
             for (i = 0; i < aOrdenado.length; i++) {
                 cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
+
             }
         }
-
 
 
         function inicio() {
@@ -207,6 +198,7 @@
         }
 
     </script>
+
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio 3</title>
@@ -29,23 +30,24 @@
 
     <div id="contenedor">
         <h1>Ejercicio 3</h1>
-
-        <form name="formulario1" id="formulario1" method="post" action="data.php">
+        
+<!-- en etiqueta form ponemos onsubmit para enviar los datos del formulario (llama a la funcion validar) -->
+        <form name="formulario1" id="formulario1" method="post" action="data.php" onsubmit="validar(this);return false">
             <fieldset id="grup_datos">
                 <legend id="legend_datos">Datos Personales</legend>
-                
+
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" id="nombre">
-                
+
                 <label for="apellidos">Apellidos:</label>
                 <input type="text" name="apellidos" id="apellidos">
-                
+
                 <label for="dni">DNI:</label>
                 <input type="text" name="dni" id="dni" maxlength="9">
-                
+
                 <label for="edad">Edad:</label>
                 <input type="text" name="edad" id="edad" size="2" maxlength="2">
-                
+
                 <div>
                     <label for="sexo">Sexo:</label>
                     <select name="sexo" id="sexo">
@@ -55,36 +57,45 @@
                     </select>
                 </div>
                 <fieldset id="grupo_fechas">
-                   <legend id="legend_fechas">Fecha de nacimiento</legend>
-                   <div class="fecha">
-                       <label for="dia">Dia</label>
-                       <select name="dia" id="dia">
+                    <legend id="legend_fechas">Fecha de nacimiento</legend>
+                    <div class="fecha">
+                        <label for="dia">Dia</label>
+                        <select name="dia" id="dia">
                            <option value="0" selected="selected">...</option>
                            <option value="01">01</option>
                            <option value="02">02</option>
                        </select>
-                   </div>
-                   <div class="fecha">
-                       <label for="mes">Mes</label>
-                       <select name="mes" id="mes">
+                    </div>
+                    <div class="fecha">
+                        <label for="mes">Mes</label>
+                        <select name="mes" id="mes">
                            <option value="0" selected="selected">...</option>
                            <option value="01">01</option>
                            <option value="02">02</option>
                        </select>
-                   </div>
-                   <div class="fecha">
-                       <label for="anio">Año</label>
-                       <select name="anio" id="anio">
+                    </div>
+                    <div class="fecha">
+                        <label for="anio">Año</label>
+                        <select name="anio" id="anio">
                            <option value="0" selected="selected">...</option>
-                           <option value=""></option>
+                           <option value="1970">1970</option>
+                           <option value="1971">1971</option>
                        </select>
-                   </div>
-                    
-                    
-                    
+                    </div>
                 </fieldset>
+                <label>IDIOMAS:</label><br>
+                <input type="checkbox" name="idioma1" id="idioma1" value="Castellano" class="idiomas">Castellano <br>
+                <input type="checkbox" name="idioma2" id="idioma2" value="Ingles" class="idiomas">Ingles <br>
+                <input type="checkbox" name="idioma3" id="idioma3" value="Frances" class="idiomas">Frances <br>
             </fieldset>
-
+            <filedset id="grupo_sugerencias">
+               <legend>Sugerencias</legend>
+               <textarea name="argumento" id="argumento" cols="50" rows="14"></textarea>
+            </filedset>
+            <div id="capa_enviar">
+               <!-- AL incluir el onclick decimos que al hacer click en el boton enviar llamara a la funcion validar -->
+                <input type="submit" value="Enviar Datos" id="boton_enviar" name="boton_enviar" onclick="validar(this.form);return false">
+            </div>
         </form>
     </div>
     <!-- end div id="contenedor" -->
@@ -102,55 +113,34 @@
 
     <!-- los script deben estar en un formulario js-->
     <script>
-        /* Esta funcion analiza si se cumplen los requisitos para que se active la lista desplegable del estado civil */
-        function activarEstadoCivil() {
-            var valorSexo = datosPersonales.sexo.options[datosPersonales.sexo.selectedIndex].value;
+        /* funcion para validar el formukario */
+       function validar (formulario){
+           if((formulario.nombre.value.length==0) || (formulario.apellidos.value.length==0)){
+               alert("Los campos Nombre y Apellidos son obligatorios");
+               return false;
+           }
+           if (formulario.dni.value.length==0){
+               alert("El campo DNI es obligatorio");
+               return false;
+           }
+           if ((formulario.edad.value<=1) || (isNaN(formulario.edad.value))){
+               alert("La edad debe ser mayor de 1");
+               return false;
+           }
+           if ((formulario.dia.options[formulario.dia.selectedIndex].value==0) || (formulario.mes.options[formulario.mes.selectedIndex].value==0) || (formulario.anio.options[formulario.anio.selectedIndex].value==0)){
+               alert("La fecha de nacimiento no es correcta");
+               return false;
+           }
+           if((!formulario.idioma1.checked) && (!formulario.idioma2.checked) && (!formulario.idioma3.checked)){
+               alert("Al menos debe seleccionar un idioma");
+               return false;
+           }
+           //Si hemos llegado a este punto del script es que el formulario es correcto, por lo que lo enviaremos al servidor
+           alert("Formulario correcto !!!");
+           formulario.submit();
+       }
 
-            if (valorSexo == 2) {
-                document.getElementById("estadoCivil").disabled = false;
-            } else {
-                document.getElementById("estadoCivil").disabled = true;
-            }
-        }
-
-        /*Esta función establecerá un valor para el cuadro de texto de las tasas dependiendo de la profesión escogida*/
-        function calcularTasas() {
-            var valorProfesion = "";
-            var encontrado = false;
-
-            for (var i = 0; i < datosPersonales.profesion.length && !encontrado; i++) {
-                if (datosPersonales.profesion[i].checked) {
-                    valorProfesion = datosPersonales.profesion[i].value;
-                    encontrado = true;
-                }
-            }
-
-            switch (valorProfesion) {
-                case "autonomo":
-                    datosPersonales.tasas.value = "15€";
-                    break;
-                case "ajena":
-                    datosPersonales.tasas.value = "20€";
-                    break;
-                case "desempleado":
-                    datosPersonales.tasas.value = "2€";
-                    break;
-                case "jubilado":
-                    datosPersonales.tasas.value = "5€";
-                    break;
-
-            }
-        }
-
-        /*Funcion mostrarMensaje() Muestra el mensaje en pantalla con el nombre, apellidos y tasas*/
-        function mostrarMensaje() {
-
-            var nombreyApellidos = "NOMBRE: " + datosPersonales.nombre.value + "\n";
-            nombreyApellidos += "APELLIDOS: " + datosPersonales.apellidos.value;
-            var mensajeFinal = nombreyApellidos + "\n TASAS: " + datosPersonales.tasas.value;
-
-            alert(mensajeFinal);
-        }
     </script>
 </body>
+
 </html>

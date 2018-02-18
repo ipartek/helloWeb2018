@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de CLassList</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <style>
+        h1 {
+            font-size: 2em;
+            color: blue;
+            text-align: center;
+        }
+
+        button {
+            float: right;
+        }
+
+        span#cClassList {
+            font-size: 3em;
+        }
+
+        p#cont_classList {
+            margin: 0px 220px -20px;
+            font-size: 2em;
+
+        }
+
+        span#pClassList {
+            font-size: 2em;
+
+        }
+        .container{
+            color:green;
+        }
+        .color{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>ClassList</h1>
+        </div>
+    </header>
+
+    <div class="container" id="contenedor">
+        <div class="row">
+            <div class="col-md-3">
+                <span>Contenido de ClassList:<p id="cont_classList"></p></span>
+
+            </div>
+            <div class="col-md-9">
+                <button onclick="contenido_classList()">Contenido ClassList</button>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <span id="ejemplo_classlist" class="Lunes Viernes Pintxo"></span>
+            </div>
+            <div class="col-md-9">
+                <button type="button" onclick="cant_classlist()" class="btn btn-default">Consultar cantidad Clases</button>
+                <span> Tiene <span id="cClassList"></span> Clases. </span>
+            </div>
+
+        </div>
+
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <span id="ejemplo_classlist" class="Lunes Viernes Pintxo">El Viernes está en la posición: <span id="pClassList"></span></span>
+            </div>
+            <div class="col-md-9">
+                <button type="button" onclick="posicion_classlist()" class="btn btn-default"> Posicion </button>
+            </div>
+        </div>
+
+        <hr>
+        <button type="button" onclick="cambiar_Color()" class="btn btn-default"> Rojo / Verde </button>
+
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+        /* Para ver el contenido de mi ClassList*/
+        function contenido_classList() {
+
+            var cClassList = document.getElementById("ejemplo_classlist").classList;
+            document.getElementById("cont_classList").innerHTML = cClassList;
+        }
+
+        /* Para ver la cantidad de clases de mi ClassList */
+        function cant_classlist() {
+            var cant = document.getElementById("ejemplo_classlist").classList.length;
+            document.getElementById("cClassList").innerHTML = cant;
+        }
+
+        /* Para ver la posicion de Viernes en mi ClassList */
+        function posicion_classlist() {
+            var cant = document.getElementById("ejemplo_classlist").classList.length;
+
+            for (i = 0; i < cant; i++) {
+                var posic = document.getElementById("ejemplo_classlist").classList.item(i);
+                if (posic = "Viernes") {
+                    document.getElementById("pClassList").innerHTML = i;
+                }
+            }
+
+        }
+
+        /* Para cambiar el color del texto, si esta en rojo ponerlo en verde */
+        function cambiar_Color(){
+            document.getElementById("contenedor").classList.toggle("color");
+        }
+
+    </script>
+</body>
+
+</html>

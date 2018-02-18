@@ -11,6 +11,10 @@
     var condiciones = document.getElementsByName('condiciones');
     var provincia = document.getElementById('busqueda_provincia');
 
+    var caracteres = document.getElementById('caracteres');
+
+    var contenidoDiv = '<div class="panel panel-##clase##" ><div class="panel-heading"><span>##titulo##</span></div><div class="panel-body">##informacion##</div></div>';
+
     function passToggle() {
 
         console.debug("pass toggle");
@@ -97,7 +101,16 @@
 
         var vCondiciones = validarCheckbox(condiciones, 1, 1);
         var VProvincia = validarSelect(provincia);
+
         var vObservaciones = validarTexto(observaciones, 25, 500);
+        document.getElementById('divError').innerHTML = '';
+        if (observaciones.value.length < 25) {
+            crearDivInfo('divError', 'danger', 'Observaciones', contenidoDiv);
+            crearContenido('divError', 'Las observaciones deben tener al menos 25 caracteres');
+        } else if (observaciones.value.length > 500) {
+            crearDivInfo('divError', 'danger', 'Observaciones', contenidoDiv);
+            crearContenido('divError', 'Las observaciones deben tener un maximo de 500 caracteres');
+        }
 
         if (vNombre && vApellido && vEmail && vPass && vDireccion && vCp && vSexo && vAficion && vCondiciones && VProvincia && vObservaciones) {
             return true;
@@ -164,4 +177,44 @@
         } else {
             return false;
         }
+    }
+
+    function contarCarcteres() {
+
+        caracteres.innerHTML = '<p>' + observaciones.value.length + '/500 caracteres usados</p>';
+
+    }
+
+    /**
+     * Genera el div en el que ira la informacion
+     * @id id del elemento en el que se va a generar el panel
+     * @clase color de la clase que se quiere utilizar de bootstrap
+     * @titulo titulo del panel
+     * @contenido maquetacion del contenido
+     */
+    function crearDivInfo(id, clase, titulo, contenido) {
+
+        var divGenerado = document.getElementById(id);
+
+        contenido = contenido.replace('##titulo##', titulo);
+        contenido = contenido.replace('##clase##', clase);
+
+        divGenerado.innerHTML += contenido;
+
+        console.log(contenido);
+
+    }
+
+    /**
+     * Genera el contenido del panel
+     */
+    function crearContenido(id, contenido) {
+
+        var divGenerado = document.getElementById(id);
+
+        //console.log(contenido);
+
+        divGenerado.innerHTML = divGenerado.innerHTML.replace('##informacion##', contenido);
+
+        console.log(divGenerado);
     }

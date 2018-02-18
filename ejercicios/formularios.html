@@ -8,6 +8,12 @@
     <!--Font awesome icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../css/styles.css">
 
 </head>
@@ -22,7 +28,7 @@
         <p><b>tabindex</b> es necesario por accesibilidad</p>
 
         <!-- novalidate envia el formulario saltandose la validacion -->
-        <form novalidate action="#" method="GET" onsubmit="return validate()">
+        <form novalidate action="#" method="GET" onsubmit="return validate()" class="form-inline">
 
             <fieldset id="datos">
                 <legend>Datos Personales</legend>
@@ -140,7 +146,9 @@
                 <div class="checkbox"><input type="checkbox" name="aficion" value="6" tabindex="16">Programar</div>
                 <br>
                 <label for="obsevaciones">Observaciones</label>
-                <input type="textarea" id="observaciones" name="observaciones" tabindex="17">
+                <input type="textarea" id="observaciones" name="observaciones" oninput="contarCarcteres()" tabindex="17">
+                <div id="caracteres"></div>
+                <div class="row" id="divError"></div>
 
             </fieldset>
 
@@ -161,6 +169,10 @@
 
     </div>
     <!-- end container -->
+        <!-- Jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script src="../js/formularios.js"></script>
 </body>

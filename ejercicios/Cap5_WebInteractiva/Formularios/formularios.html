@@ -55,8 +55,8 @@
                 <br>
                 <br>
                 <label for="sexo">Sexo: </label>
-                <input type=radio name="sexo" value="M"> Masculino
-                <input type=radio name="sexo" value="F"> Femenino
+                <input type=radio name="sexo" value="M" onchange="limitarMasculino()"> Masculino
+                <input type=radio name="sexo" value="F" onchange="limitarFemenino()" > Femenino
                 <input type=radio name="sexo" value="O"> Otro
             </fieldset>
             <br>
@@ -136,6 +136,7 @@
             <br>
             <fieldset id="Aficiones">
                 <legend>Aficiones</legend>
+                <FORM NAME="aficiones">
                 <input type="checkbox" name="leer" id="leer" value="leer">&nbsp;Leer<br>
                 <input type="checkbox" name="musica" id="musica" value="musica">&nbsp;Escuchar música<br>
                 <input type="checkbox" name="viajar" id="viajar" value="viajar">&nbsp;Viajar<br>
@@ -150,11 +151,19 @@
                 <input type="checkbox" name="concierto" id="concierto" value="concierto">&nbsp;Ir a conciertos<br>
                 <input type="checkbox" name="playa" id="playa" value="playa">&nbsp;Ir a la playa<br>
                 <input type="checkbox" name="monte" id="monte" value="monte">&nbsp;Ir al monte<br>
+                </FORM>
 
             </fieldset>
             <br>
 
             <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+
+                <label for="comentarios">COMENTARIOS:</label><br>
+                <textarea id="comentarios" name="comentarios" cols="50" rows="14" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea><br>
+
+                <input type="text" name=caracteres size=4>
+                <br>
+                <br>
 
                 <input type="checkbox" name="checkbox" value="check" id="agree" /> Acepto los términos de uso. <a href="formulario_condiciones.html">(Ver condiciones)</a>
 
@@ -169,6 +178,142 @@
             </form>
 
             <script>
+                function limitarMasculino() {
+
+                    var NewCount = 0
+
+                    if (document.aficiones.leer.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.musica.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.viajar.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.deporte.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.internet.checked) {
+                        NewCount = NewCount + 1
+                    }
+                     if (document.aficiones.dormir.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.cine.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.videojuegos.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.cocinar.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.amigos.checked) {
+                        NewCount = NewCount + 1
+                    }
+                    if (document.aficiones.concierto.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.playa.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.monte.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+
+                    if (NewCount == ) {
+                        alert('Seleccione solo una aficion.')
+                        document.aficiones;
+                        return false;
+                    }
+                }
+
+                function limitarFemenino() {
+
+                       var NewCount = 0
+
+                    if (document.aficiones.leer.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.musica.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.viajar.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.deporte.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.internet.checked) {
+                        NewCount = NewCount + 1
+                    }
+                     if (document.aficiones.dormir.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.cine.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.videojuegos.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.cocinar.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.amigos.checked) {
+                        NewCount = NewCount + 1
+                    }
+                    if (document.aficiones.concierto.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.playa.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.aficiones.monte.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+
+                    if (NewCount == 4) {
+                        alert('Seleccione solo 3 aficiones.')
+                        document.aficiones;
+                        return false;
+                    }
+                }
+
+
+                function caracteres() {
+                    var comentarios = document.getElementById('comentarios');
+                    if (input.value.length < 15) {
+                        alert('Escribe más de 15 carácteres.');
+                    }
+                }
+
+                function cuenta() {
+                    document.forms[0].caracteres.value = document.forms[0].comentarios.value.length
+                }
+
                 function validar() {
                     //Mas seguro coger por ID
                     console.log("Validar formulario");

@@ -15,7 +15,9 @@
         <p><strong>*disabled:</strong> no se envia al submitar el formulario</p>
         <p><strong>*readonly:</strong> si se envia al submitar el formulario</p>
         <p><strong>*tabindex:</strong> necesario por accesibilidad </p>
-        <form novalidate action="" method="" onsubmit="return validar()" name="datos" id="datos">
+        <form  action="index.html" method="get" onsubmit="return validar()" name="datos" id="datos">
+
+
 
             <fieldset id="datos_personales">
                 <legend id="legend_personales">Datos Personales</legend>
@@ -41,10 +43,9 @@
                 </div>
                 <br>
                 <label for="email"><span class="obligatorio">*</span>&nbsp;Dirección correo electrónico:</label>
-                <input type="text" name="email" id="email" placeholder="email@email.com" tabindex="4" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" oninvalid="setCustomValidity('No has introducido una contraseña correcta.')" oninput="setCustomValidity('')">
+                <input type="text" name="email" id="email" placeholder="email@email.com" tabindex="4" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" oninvalid="setCustomValidity('No has introducido una dirección de correo electrónico correcta.')" oninput="setCustomValidity('')">
                 <label for="password"><span class="obligatorio">*</span>&nbsp;Contraseña:</label>
-                <input type="password" name="pass" id="password" placeholder="Introduce tu contraseña" tabindex="5" size="25" maxlength="8" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$
-        " value="12345678">&nbsp;<i onclick="ver()" class="fa fa-eye"></i>
+                <input type="password" name="pass" id="password" placeholder="Introduce tu contraseña" tabindex="5" size="25" maxlength="8" required pattern="[A-Za-z0-9]+" value="13Nov2011" ninvalid="setCustomValidity('La contraseña introducida no es correcta.')" oninput="setCustomValidity('')">&nbsp;<i onclick="ver()" class="fa fa-eye"></i>
                 <br>
             </fieldset>
 
@@ -119,14 +120,14 @@
             <fieldset name="hobbies">
                 <legend id="legend_hobbies"><span class="obligatorio">*</span>&nbsp;Hobbies:</legend>
                 <label for="tushobbies">Elige tus hobbies:</label> <br>
-                <input type="checkbox" name="hobbies" value="1">Cantar <br>
-                <input type="checkbox" name="hobbies" value="2" checked>Bailar <br>
-                <input type="checkbox" name="hobbies" value="3">Saltar <br>
-                <input type="checkbox" name="hobbies" value="4">Correr <br>
-                <input type="checkbox" name="hobbies" value="5" checked>Nadar <br>
-                <input type="checkbox" name="hobbies" value="6">Montar en bicicleta <br>
-                <input type="checkbox" name="hobbies" value="7">Montaña <br>
-                <input type="checkbox" name="hobbies" value="8" checked>Leer <br>
+                <input type="checkbox" name="hobbies" value="opcion1">Cantar <br>
+                <input type="checkbox" name="hobbies" value="opcion2" checked>Bailar <br>
+                <input type="checkbox" name="hobbies" value="opcion3">Saltar <br>
+                <input type="checkbox" name="hobbies" value="opcion4">Correr <br>
+                <input type="checkbox" name="hobbies" value="opcion5" checked>Nadar <br>
+                <input type="checkbox" name="hobbies" value="opcion6">Montar en bicicleta <br>
+                <input type="checkbox" name="hobbies" value="opcion7">Montaña <br>
+                <input type="checkbox" name="hobbies" value="opcion8" checked>Leer <br>
             </fieldset>
 
             <fieldset id="grupo_sugerencias">

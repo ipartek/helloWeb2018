@@ -25,9 +25,18 @@
                 <input type="text" name="nombre" id="nombre" autofocus tabindex="1" required="required" pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('Mínimo 2 letras')" oninput="setCustomValidity('')">
 
                 <label for="apellido">Apellido:</label>
-                <input type="text" name="apellido" id="apellido" tabindex="2" required="required" pattern="[A-Za-z]
-                ){15,15}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('Mínimo 2 letras')" oninput="setCustomValidity('')">
+                <input type="text" name="apellido" id="apellido" tabindex="2" required="required" pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('Mínimo 2 letras')" oninput="setCustomValidity('')">
                 <br>
+                   <label for="correo">Email: </label>
+            <input type="text" name="correo" id="email" tabindex="4" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
+            <br>
+            <label for="pass">Contraseña </label>
+            <input type="password" id="password" name="pass" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Mayusculas, minusculas y número" size="30">
+            <button type="button" onclick="myFunction()" id="show_hide">
+            <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" />
+         </button>
+            <br>
                 <label for="sexo">Sexo: </label><br>
                 <input type="radio" name="sexo" value="M">Masculino<br>
                 <input type="radio" name="sexo" value="F">Femenino<br>
@@ -98,28 +107,21 @@
             </select>
             </fieldset>
 
-            <label for="correo">Email: </label>
-            <input type="text" name="correo" id="email" tabindex="4" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+         <fieldset>
+                <legend>Aficiones</legend>
 
-            <br>
-            <label for="pass">Contraseña </label>
-            <input type="password" id="password" name="pass" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Mayusculas, minusculas y número" size="30">
-            <button type="button" onclick="myFunction()" id="show_hide">
-            <img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" />
-         </button>
-            <br>
-
-
-
-            <br>
             <label for="hobbies">Hobbies </label><br>
             <input type="checkbox" name="hobbies" value="1" >Ir al monte <br>
             <input type="checkbox" name="hobbies" value="2">Piscina<br>
             <input type="checkbox" name="hobbies" value="3">Frontenis<br>
             <input type="checkbox" name="hobbies" value="4">Leer <br>
+            <input type="checkbox" name="hobbies" value="5">Cine <br>
+            <input type="checkbox" name="hobbies" value="6">Mountain Bike <br>
+            <input type="checkbox" name="hobbies" value="7">Footing <br>
+            <input type="checkbox" name="hobbies" value="8">Teatro <br>
+            </fieldset>
 
-            <br>
-            <br>
+
              <fieldset id="observaciones" style="text-align: center;">
                 <legend>Observaciones</legend>
                 <!-- Observaciones  -->
@@ -202,8 +204,9 @@
                 alert(errores);
             }
             return ( errores == "" )?true:false;
-        }
+
         return false;
+        }
     </script>
 </body>
 

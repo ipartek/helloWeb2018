@@ -53,14 +53,14 @@
 
      <div class="panel panel-danger">
 
-                <div class="panel-body container-flex"id="contenedor" >
+                <div class="panel-body container-flex" >
                     <!--innerHTML-->
                     <!---->
                     <!--
                     <span class="box">3<span class="close">x</span></span>
                     -->
                     <!-- end innerHTML-->
-                    <span id="box"class="box">A <span class="box1">a</span></span> <span class="box">E<span class="box1">e</span></span><span class="box">I<span class="box1">i</span></span><span class="box">O<span class="box1">o</span></span><span class="box">U<span class="box1"></span>u</span>
+                    <span class="box">A <span class="box1">a</span></span> <span class="box">E<span class="box1">e</span></span><span class="box">I<span class="box1">i</span></span><span class="box">O<span class="box1">o</span></span><span class="box">U<span class="box1"></span>u</span>
                 </div>
     </div>
          <div class="row">
@@ -81,21 +81,24 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
-        var spanLetra = '<span id="box"class="box">##letra##</span>';
-        var spanLetra1= '<span class="box1">##letra##</span>';
-    function desordenar(){
-        var caja= document.getElementById("box");
-        contenedor.innerHTML = "";
-        contenedor.inneHTML=caja;4
-        Aletras=['b','c','d','o','u'];
-        for (var i = 0; i < 5; i++) {
 
-                    contenedor.innerHTML += spanLetra.replace('##letra##', Aletras[i]);
-                    contenedor.innerHTML += spanLetra1.replace('##letra##', Aletras[i]);
-                }
+
+    function desordenar(){
+
+        var coincidencias = document.querySelectorAll("span.box");
+    //    console.log(coincidencias)
+       for(i=0;i<coincidencias.length;i++){
+            var numero =Math.floor((Math.random() * 5) + 1);
+
+        coincidencias[i].style.order=numero;
+
+        }
+
+
+
+
 
     }
-
 
     </script>
 </body>

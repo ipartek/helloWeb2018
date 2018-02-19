@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listener</title>
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        #azul {
+            background-color: cadetblue;
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+
+        }
+
+        #rojo {
+            background-color: red;
+            display: inline-block;
+            margin-left: 50px;
+            margin-top: 50px;
+            width: 100px;
+            height: 100px;
+        }
+
+        #verde {
+            background-color: forestgreen;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin-left: 25px;
+            margin-top: 25px;
+        }
+
+        .division {
+            background-color: black;
+
+            height: 10px;
+        }
+
+        .container-flex {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            height: 200px;
+            align-items: flex-end;
+        }
+
+        .box {
+            width: 125px;
+            height: 125px;
+            background-color: teal;
+            color: #FFF;
+            font-size: 3em;
+            text-align: center;
+            position: relative;
+            border-radius: 10%;
+            align-self: flex-end;
+        }
+
+        .btn-desordenar {
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>LISTENER &amp; BUBBLING</h1>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <input id="btn" type="button" class="btn btn-success" value="Escucho">
+                <input type="button" id="btn_reset" class="btn btn-danger" value="Borrar">
+                <input type="button" id="btn_js" class="btn btn-primary" value="JS Event">
+            </div>
+
+            <div class="col-xs-12 col-sm-4">
+                <h2>Mensajes</h2>
+                <textarea id="ta" cols="30" rows="10"></textarea>
+            </div>
+
+            <!-- ********************************************JAVASCRIPT 1****************************************************************-->
+            <script>
+                /* Escribimos en el Textarea*/
+                function show(texto) {
+                    var ta = document.getElementById("ta");
+                    ta.textContent += texto + ' \n';
+                }
+
+                //Escuchador o listener para los botones
+                var btn = document.getElementById("btn");
+
+                //si pones show ('lorem ipsum') ejecutaria la funcion, por eso lo metemos dentro de la funcion.
+                btn.addEventListener('click', function() {
+                    show('lorem ipsum')
+                }, false);
+
+                var btn_reset = document.getElementById("btn_reset");
+
+                btn_reset.addEventListener('click',
+                    function() { //funciones anónimas
+                        document.getElementById("ta").textContent = ""
+                    },
+                    false);
+                // En vez del evento HTML se puede realizar en JS
+                var btn_js = document.getElementById("btn_js");
+                //btn_js.onclick = show; se puede hacer asi o con funcion anonima
+                btn_js.onclick = function() {
+                    var ta = document.getElementById("ta");
+                    ta.textContent += 'Onclick con Js \n';
+                }
+            </script>
+            <!-***********************************************************END JAVASCRIPT 1 ********************************************************-->
+
+            <div class="col-xs-12 col-sm-4">
+                <h2>Bubbling</h2>
+                <div id="azul">
+                    <div id="rojo">
+                        <div id="verde"></div>
+                    </div>
+                </div>
+                <p>Rojo permite bubbling</p>
+                <p>Verde no permite bubbling</p>
+            </div>
+            <!-- ********************************************JAVASCRIPT 2****************************************************************-->
+            <script>
+                document.getElementById("azul").addEventListener('click', function() {
+                    document.getElementById("ta").textContent += "Click Azul \n";
+                });
+
+                document.getElementById("rojo").addEventListener('click', function() {
+                    document.getElementById("ta").textContent += "Click Rojo \n";
+                });
+
+                document.getElementById("verde").addEventListener('click', function(event) { //event es una variable predefinida
+                    document.getElementById("ta").textContent += "Click Verde con coordenadas x: " + event.x + " e y: " + event.y + " \n";
+                    event.stopPropagation(); //evitar bubbling
+                    //cambiar contenedor padre a color amarillo de fondo
+                    event.target.parentElement.style.backgroundColor = 'yellow';
+                });
+            </script>
+            <!-***********************************************************END JAVASCRIPT 2********************************************************-->
+        </div>
+
+
+
+        <hr class="division">
+
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">SOINU ARIKETA</div>
+                <!--<input type="button" class="btn btn-primary" value="Ordenar">-->
+                <input type="button" class="btn-desordenar btn-danger" value="Desordenar">
+                <div class="panel-body container-flex" id="contenedorFlex">
+                    <div class="box" id="box">
+                        <div class="boxG" id="aMayus">A</div>
+                        <div class="boxP" id="aMinus">a</div>
+                    </div>
+                    <div class="box">
+                        <div class="boxG" id="eMayus">E</div>
+                        <div class="boxP" id="eMinus">e</div>
+                    </div>
+                    <div class="box">
+                        <div class="boxG" id="iMayus">I</div>
+                        <div class="boxP" id="iMinus">i</div>
+                    </div>
+                    <div class="box">
+                        <div class="boxG" id="oMayus">O</div>
+                        <div class="boxP" id="oMinus">o</div>
+                    </div>
+                    <div class="box">
+                        <div class="boxG" id="uMayus">U</div>
+                        <div class="boxP" id="uMinus">u</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-************************************JAVASCRITP 3*************************************************************************-->
+
+        <script>
+            function desordenar() {
+                var contenedor = document.getElementById("contenedorFlex").classList.length;
+                for (i = 0; i < contenedor.length; i++) {
+                    var caja = document.getElementsByClassName("box").textContent;
+
+                }
+
+            }
+
+            //document.getElementById("btn-desordenar").addEventListener (click, desordenar);
+        </script>
+
+        <!-***********************************************************END JAVASCRIPT 3 ********************************************************-->
+
+
+        <hr class="division">
+        <div class="row">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+
+            <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+
+            <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+        </div>
+
+
+        <script>
+        </script>
+     <!-************************************JAVASCRITP 4*************************************************************************-->
+
+     <!-***********************************************************END JAVASCRIPT 4 ********************************************************-->
+
+    </div>
+    <!-- ********************************************BOOTSTRAP****************************************************************-->
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

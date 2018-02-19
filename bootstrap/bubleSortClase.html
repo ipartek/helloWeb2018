@@ -19,9 +19,11 @@
             background-color: teal;
             color: #FFF;
         }
+
         .row {
             margin: 20px 0;
         }
+
         @keyframes mostrar {
             0% {
                 opacity: 0;
@@ -30,22 +32,78 @@
                 opacity: 1;
             }
         }
+
+        @keyframes shake {
+            10%,
+            90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+
+            20%,
+            80% {
+                transform: translate3d(2px, 0, 0);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+
+            40%,
+            60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+        .container-flex{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content:space-between;
+            height: 125px;
+            align-items: center;
+
+        }
+
         .box {
-            /*display: flex;*/
-            display: inline-block;
+
             width: 75px;
             height: 75px;
             background-color: grey;
             color: #FFF;
             font-size: 3em;
             text-align: center;
-            margin-right: 10px;
+
+            position: relative;
         }
+
+        .box .close {
+            position: absolute;
+            top: -10px;
+            right: -5px;
+            color: #FFF;
+            background-color: #000;
+            font-size: 0.4em;
+            border-radius: 50%;
+            opacity: 1;
+            padding: 2px;
+        }
+
+
         .box:last-child {
             animation-name: mostrar;
             animation-duration: 1.5s;
             animation-timing-function: ease-in;
         }
+
+        /*
+        .box:hover {
+            animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+        */
     </style>
 
 </head>
@@ -61,17 +119,16 @@
 
     <div class="container">
 
+        <div id="msg"></div>
+
         <div class="row">
-
-            <div id="msg"></div>
-
             <form class="form-inline">
-                <div class="col-md-3">
+                <div class="col-xs-3">
                     <div class="form-group">
                         <input type="number" class="form-control" step="1" max="10" min="0" id="numeroInput">
                     </div>
                 </div>
-                <div class="clo-md-9">
+                <div class="col-xs-9">
                     <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir Número</button>
                 </div>
             </form>
@@ -79,15 +136,21 @@
         <div class="row">
             <div class="panel panel-danger">
                 <div class="panel-heading">Números Desordenados</div>
-                <div class="panel-body" id="cntNumDes">
-                    <!--  <span class="box">3</span>    -->
+                <div class="panel-body container-flex" id="cntNumDes">
+                    <!-- <div class="box">3<span class="close">x</span></div>-->
+
+                    <div class="box">1</div>
+                    <div class="box">2</div>
+                    <div class="box">3</div>
+                    <div class="box">4</div>
+                    <div class="box">5</div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="panel panel-success">
+            <div class="panel panel-success ">
                 <div class="panel-heading">Números Ordenados</div>
-                <div class="panel-body" id="cntNumOrd">
+                <div class="panel-body container-flex" id="cntNumOrd">
                     .....
                 </div>
             </div>
@@ -107,58 +170,75 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
+
+
         //variables globales
         var numeroInput = document.getElementById("numeroInput");
         var cntNumDes = document.getElementById("cntNumDes");
         var cntNumOrd = document.getElementById("cntNumOrd");
-        var spanNumero = '<span class="box">##numero##<span class="close" onclick="eliminarBox(##posicion##)">x</span></span>';
+        var spanNumero = '<div class="box">##numero##</div>';
         var aDesordenado = []; // Array con numeros desordenados
         var aOrdenado = [];
+
+
         /*
-        *   Validaciones antes de Ordenar
-        *   0 o menor que dos numeros
-        */
-        function validarNumerosOrdenados(){
-            if ( aDesordenado.length < 2 ){
-                showAlert("msg","warning","Al menos dime 2 numeros para ordenar");
+         *   Validaciones antes de Ordenar
+         *   0 o menor que dos numeros
+         */
+        function validarNumerosOrdenados() {
+
+            if (aDesordenado.length < 2) {
+                showAlert("msg", "warning", "Al menos dime 2 numeros para ordenar");
                 return false;
-            }else{
+            } else {
                 return true;
             }
+
         }
+
+
+
         /**
-        *   Validaciones al introducir numeros
-        *       1. Comprobar que sea vacio
-        *       2. No poder meter > 10 numeros
-        *
-        *
-        *    Muestra mensajes en caso de no pasar la validación
-        *    @return boolean
-        *                   true si pasa todas las validaciónes
-        *                   false en caso contrario
-        */
-        function validarEntradaNumeros(numero){
-            if ( numero == "" ){
-                showAlert("msg","warning","Escribe un número por favor");
+         *   Validaciones al introducir numeros
+         *       1. Comprobar que sea vacio
+         *       2. No poder meter > 10 numeros
+         *
+         *
+         *    Muestra mensajes en caso de no pasar la validación
+         *    @return boolean
+         *                   true si pasa todas las validaciónes
+         *                   false en caso contrario
+         */
+        function validarEntradaNumeros(numero) {
+
+
+
+            if (numero == "") {
+                showAlert("msg", "warning", "Escribe un número por favor");
                 return false;
             }
-            if ( aDesordenado.length == 10 ){
-                showAlert("msg","danger","No puedes introducir mas de 10 numeros");
+
+            if (aDesordenado.length == 10) {
+                showAlert("msg", "danger", "No puedes introducir mas de 10 numeros");
                 return false;
             }
+
             return true;
         }
+
+
         /**
          *  recoger numero del input y meterlo en  div#cntNumDes
          */
         function nuevoNumero() {
+
             var num = numeroInput.value;
             console.debug("Añadir nuevo numero %s", num);
-            if (validarEntradaNumeros(num)) {
 
+            if (validarEntradaNumeros(num)) {
                 //añadar numero
                 var span = spanNumero.replace('##numero##', num);
-                span += span.replace('##posicion##', aDesordenado.length);
+                span = span.replace('##posicion##', aDesordenado.length);
                 cntNumDes.innerHTML += span;
                 aDesordenado.push(num);
 
@@ -167,6 +247,25 @@
                 numeroInput.focus();
             }
         }
+
+        /**
+        *    Eliminamos la Caja del HTML
+        *    Eliminamos el numero del Array desordenado
+        */
+        function eliminarBox(pos, e){
+            console.debug("eliminarBox %s", pos);
+            console.debug("Antes Eliminar: " + aDesordenado );
+            //aDesordenado.splice(pos,1);
+            aDesordenado[pos] = null;
+            console.debug("Despues Eliminar: " + aDesordenado );
+
+            //ocultar
+            var boxEliminar = e.target.parentElement;
+            boxEliminar.style.display = "none";
+
+
+        }
+
         /**
          *  Ordena de menor a mayor el array pasado por parametro
          */
@@ -186,16 +285,23 @@
             console.debug("array ordenado " + arr);
             return arr;
         }
+
         function pintarOrdenados() {
             console.debug("pintarOrdenados");
-            if ( validarNumerosOrdenados() ){
+            if (validarNumerosOrdenados()) {
                 aOrdenado = ordernar(aDesordenado);
                 cntNumOrd.innerHTML = "";
                 for (i = 0; i < aOrdenado.length; i++) {
-                    cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
+                    //evitar null
+                    if ( aOrdenado[i] != null ){
+                        cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
+                    }
                 }
             }
+
         }
+
+
         /**
          * Muestra una Alerta de Bootsratp
          *     id    = Identificador de elemento donde lo vamos a insertar con innerHTML
@@ -210,19 +316,22 @@
             contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
             contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
         }
+
         /**
-        *   Limpiar los dos contenedores
-        *   Inicializar de nuevo los dos arrays
-        *   Limpiar Alert
-        *   poner foco en input
-        */
-        function reset(){
+         *   Limpiar los dos contenedores
+         *   Inicializar de nuevo los dos arrays
+         *   Limpiar Alert
+         *   poner foco en input
+         */
+        function reset() {
+
             cntNumDes.innerHTML = "";
             cntNumOrd.innerHTML = "";
             aDesordenado = [];
             aOrdenado = [];
             document.getElementById("msg").innerHTML = "";
             numeroInput.focus();
+
         }
     </script>
 

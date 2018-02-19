@@ -2,7 +2,6 @@
 
 * {
     box-sizing: border-box;
-
 }
 
 form {
@@ -11,52 +10,6 @@ form {
     padding: 20px;
     /*    display: flex;*/
     /*    flex-wrap: wrap;    */
-}
-
-input,
-label,
-select,
-textarea {
-    margin: 10px;
-    font-family: "roboto";
-    font-weight: bold;
-
-    /*    display: block;*/
-    /*    width: 100%;*/
-    /*    flex-basis: 100%;*/
-}
-
-label {
-    text-align: center
-}
-
-input:invalid {
-    color: red;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-    vertical-align: middle;
-}
-
-textarea {
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    border: 1px solid
-}
-
-input:not([type="submit"]):valid {
-    color: green;
-}
-
-input[type="submit"],
-input[type="reset"] {
-    box-sizing: border-box;
-    display: inline;
-    width: 49%;
-    margin: 0px;
 }
 
 fieldset {
@@ -68,73 +21,80 @@ legend {
     font-weight: bold;
 }
 
+legend,
+label,
+small {
+    font-size: initial;
+    text-align: left;
+}
+
+label:not([for="check"]) {
+    display: inline-block;
+    margin: 10px 0px;
+    width: 30%;
+}
+
+input,
+label,
+select,
+textarea {
+    margin: 10px;
+    font-family: "roboto";
+    font-weight: bold;
+}
+
+input:invalid {
+    color: red;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    vertical-align: middle;
+}
+
+
+input[type="submit"],
+input[type="reset"] {
+    box-sizing: border-box;
+    display: inline;
+    width: 49%;
+    margin: 0px;
+}
+
+input:not([type="submit"]):valid {
+    color: green;
+}
+
+input[type="radio"] {
+    vertical-align: sub;
+}
+
 select {
     font-size: 13.33px;
     display: inline;
 }
 
+textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid
+}
 
+#fDatos {
+    font-size: 0;
+}
+
+#fDatos small:last-child {
+    font-size: 0.8em;
+}
 
 /* Para dispositivos no m´viles 3 columnas*/
-
 #hobbies span {
     box-sizing: border-box;
     display: inline-block;
     width: 32%;
-}
-
-@media (max-width: 480px) {
-    #hob_spans {
-        /*    white-space: nowrap;*/
-        /*    font-size: 0;*/
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-    #hob_spans span {
-        /*    font-size: initial;*/
-        flex-basis: 50%;
-    }
-    #hobbies span {
-        box-sizing: border-box;
-        display: inline-block;
-        width: 50%;
-        /*        width: calc(50% - 20px);*/
-        white-space: nowrap;
-    }
-
-    #fDatos label[for="sexo"] {
-        display: block;
-    }
-
-    #fDatos input:not([type='radio']) {
-        display: inline-block;
-            border: 1px solid;
-        /*    margin: 10px;*/
-        margin: 0px;
-        /*    width: calc(70% - 20px);*/
-        width: 70%;
-    }
-
-    #fDatos input[type="radio"] {
-        margin: 0;
-        display: inline-block;
-        width: 20%;
-    }
-
-    #fDatos small {
-        display: inline-block;
-        width: 80%;
-    }
-
-    #fDatos #lOjo{
-        margin-top: 0;
-        width: 100%;
-    }
-}/*Fin medoa query*/
-
-input[type="radio"]{
-    vertical-align: sub;
 }
 
 #contador,
@@ -144,26 +104,53 @@ input[type="radio"]{
     font-size: 0.8em;
 }
 
-#fDatos {
-    font-size: 0;
-}
+@media (max-width: 480px) {
+    #fDatos #lOjo {
+        margin-top: 0;
+        width: 100%;
+    }
 
-#fDatos legend,
-#fDatos label,
-#fDatos small {
-    font-size: initial;
-    text-align: left;
-}
+    #fDatos label[for="sexo"] {
+        display: block;
+    }
 
-#fDatos label {
-    display: inline-block;
-    /*    border: none;*/
-    /*    margin: 10px;*/
-    margin: 10px 0px;
-    /*    width: calc(30% - 20px);*/
-    width: 30%;
-}
+    #fDatos input[type="radio"] {
+        margin: 0;
+        display: inline-block;
+        width: 20%;
+    }
 
-#fDatos small:last-child{
-    font-size: 0.8em;
+    #fDatos input:not([type='radio']), #fDir input, #fDir select {
+        display: inline-block;
+/*        border: 1px solid black;*/
+        margin: 0px;
+        width: 70%;
+    }
+
+    #fDatos small {
+        display: inline-block;
+        width: 80%;
+    }
+
+    #hob_spans {
+        /*    white-space: nowrap;*/
+        /*    font-size: 0;*/
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    #hob_spans span {
+        /*    font-size: initial;*/
+        flex-basis: 50%;
+    }
+
+    #hobbies span {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 50%;
+        /*        width: calc(50% - 20px);*/
+        white-space: nowrap;
+    }
 }
+/*Fin media query*/

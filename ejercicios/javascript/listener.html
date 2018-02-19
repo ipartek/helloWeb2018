@@ -1,0 +1,154 @@
+
+<!-- 3 parrafos:
+        1 listener para todos: al pinchar sobre uno se pone en rojo  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <style>
+        .row {
+            margin: 10px;
+        }
+
+        #azul {
+            background-color: #0000ff;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+
+        #rojo {
+            background-color: #FF0000;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #verde {
+            background-color: #00FF00;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Listener</h1>
+
+        <div class="row text-center">
+            <input id="btn" type="button" class="button btn btn-success" value="Escucho" />
+            <input id="btn_reset" type="button" class="button btn btn-danger" value="Reset" />
+            <input id="btn_js" type="button" class="button btn btn-primary" value="JS event" />
+        </div>
+
+        <div class="row text-center">
+            <textarea id="ta" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="row  text-center">
+            <h1>Bubbling</h1>
+            <div id="azul">
+                <div id="rojo">
+                    <div id="verde"></div>
+                </div>
+            </div>
+            <p>Rojo permite Bubbling</p>
+            <p>Verde NO permite Bubbling</p>
+        </div>
+
+        <div id="parrafos" class="row">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel mollitia, aperiam, blanditiis ab ipsa hic labore sequi adipisci consectetur debitis praesentium velit tempora qui perferendis dolorem ut ducimus eum provident.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus provident, esse amet minus. Repellendus sed corporis ratione nisi alias deleniti, unde nobis recusandae minima magni nemo. Eius nemo, iusto voluptatem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit optio, labore suscipit! Nobis, accusamus fuga nemo quas illum aut ut ab ad totam. Voluptates alias, magni iste aliquid excepturi necessitatibus!</p>
+        </div>
+    </div>
+
+    <script>
+        var ta = document.querySelector("#ta");
+
+        //Pintamos en el textarea
+        function show(texto) {
+            ta.value += "Evento con Listener: " + texto + " \n";
+        }
+
+        //Listener de los botones
+        var btn = document.querySelector("#btn");
+        btn.addEventListener('click', function() {
+            show("Lorem ipsum")
+        }, false);
+
+        var btn_reset = document.querySelector("#btn_reset");
+        btn_reset.addEventListener('click', function() {
+            ta.value = "";
+        }, false);
+
+        var btn_js = document.querySelector("#btn_js");
+        btn_js.onclick = function() {
+            ta.value += "Onclick con JS  \n";
+            //            btn.click();
+        }
+
+        var rojo = document.querySelector("#rojo");
+        var azul = document.querySelector("#azul");
+        var verde = document.querySelector("#verde");
+
+        rojo.addEventListener("click", function() {
+            //            btn_reset.click()
+            ta.value += "Mi color es:  " + window.getComputedStyle(this).backgroundColor + "\n";
+        });
+        azul.addEventListener("click", function() {
+            //            btn_reset.click()
+            ta.value += "Mi color es:  " + window.getComputedStyle(this).backgroundColor + "\n";
+        });
+        verde.addEventListener("click", function(e) {
+            //            btn_reset.click()
+            console.log(e.currentTarget.id);
+            e.target.parentElement.style.backgroundColor = "yellow"
+            e.stopPropagation();
+            ta.value += "Mi color es:  " + window.getComputedStyle(this).backgroundColor + "\n";
+
+            //Cambiar contenedor padre a amarillo
+        });
+
+        //Pinto el parrafo seleccionado  de rojo mediante u solo listener
+        var parr = document.querySelectorAll("#parrafos p");
+
+        for (var i = 0; i < parr.length; i++) {
+            parr[i].addEventListener("click", function() {
+                //Tengo que resetear todos los parrafos a negro
+                for (var j = 0; j < parr.length; j++) {
+                    parr[j].style.color = "black";
+                    parr[j].style.fontWeight = "initial";
+                }
+                //Pinto el actual a rojo
+                this.style.color = "red";
+                this.style.fontWeight = "bold";
+            })
+        }
+    </script>
+
+    <!--    Jquery-->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>
+

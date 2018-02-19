@@ -1,0 +1,100 @@
+<!--Con listeners-->
+<!-- 5 cajas que se repartan el espacio-->
+<!-- Dentro de las cajas dos elementos, el primero arriba y el segundo abajo -->
+<!-- Cuando demos al botón cambiamos el orden de forma aleatoria -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Listener</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <style>
+        * {
+            box-sizing: border-box;
+            color: white;
+            font-family: "roboto";
+        }
+
+        #container {
+            width: 80%;
+            border: 2px solid grey;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .box {
+            width: 70px;
+            height: 70px;
+            background-color: orange;
+            border: solid grey;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .box span {
+            display: block;
+            width: 100%;
+        }
+
+        .box span:last-child {
+            align-self: flex-end;
+        }
+
+        #btn {
+            display: block;
+            margin: 20px auto;
+            color: black;
+            padding: 10px;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <div class="box"><span>A</span><span>a</span></div>
+        <div class="box"><span>E</span><span>e</span></div>
+        <div class="box"><span>I</span><span>i</span></div>
+        <div class="box"><span>O</span><span>o</span></div>
+        <div class="box"><span>U</span><span>u</span></div>
+    </div>
+
+    <button id="btn">Desordenar</button>
+
+    <script>
+        var btn = document.querySelector("#btn");
+
+        btn.addEventListener("click", function() {
+
+            arrRandom = []; //Será el orden de las capas
+
+            //Relleno el array con randoms del 1 al 5
+            //Sin que se repitan.
+            for (var i = 0; arrRandom.length < 5; i++) {
+                random = Math.floor(Math.random() * 5) + 1; //Entre 1 y 5
+                //                console.log(random)
+                //Si no existe lo introduzco enel nuevo array
+                if (arrRandom.indexOf(random) == -1) {
+                    arrRandom.push(random);
+                    //                    console.log(arrRandom);
+                } else {
+                    //                    console.log("El número ya está dentro")
+                }
+            }
+
+            var boxes = document.querySelectorAll(".box");
+
+            var i = 0;
+            boxes.forEach(function(item) {
+                item.style.order = arrRandom[i];
+                i++;
+            })
+        })
+    </script>
+</body>
+</html>

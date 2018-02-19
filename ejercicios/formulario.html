@@ -15,8 +15,8 @@
     <p>*<strong>readonly</strong> si se envía al submitar el formulario</p>
     <p>*<strong>tabindex</strong> es necesario por accesibilidad</p>
 
-    <form novalidate action="/index.html" method="get" id="formulario" onsubmit="return validar()">
-
+    <form action="/index.html" method="get" id="formulario" onsubmit="return validar()">
+        <!--novalidate-->
         <fieldset id="fDatos">
             <legend>Datos Personales</legend>
             <label for="id">Id:</label>
@@ -41,15 +41,13 @@
             <label id="lOjo"><i id="ojo" class="fa fa-eye"></i><small>&nbsp;Visualizar contaseña</small></label>
         </fieldset>
 
-        <fieldset>
+        <fieldset id="fDir">
             <legend>Dirección</legend>
-            <label for="direccion">Dirección: </label>
-            <input type="text" name="direccion" id="direccion">
-            <label for="cp">Código Postal: </label>
-            <input type="text" name="cp" id="cp" size="5" pattern="[0-9]{5,5}">
+            <label for="direccion">Dirección: </label><input type="text" name="direccion" id="direccion">
             <br>
-            <label for="provincia">Provincia: </label>
-             <select name="provincia" id="provincia" required>
+            <label for="cp">Código Postal: </label><input type="text" name="cp" id="cp" size="5" pattern="[0-9]{5,5}">
+            <br>
+            <label for="provincia">Provincia: </label><select name="provincia" id="provincia" required>
 <option value=''>Seleccione una provincia</option>
 <option value='alava'>Álava</option>
 <option value='albacete'>Albacete</option>

@@ -16,16 +16,25 @@ function mostrarContrasena() {
         pass.type = "text";
 }
 
+//Selectores de todos los inputs para validación manual
+var nombre = document.querySelector("#nombre");
+var apellido = document.querySelector("#apellido");
+var sexo = document.querySelector("[name='sexo']");
+var email = document.querySelector("#email");
+var pass = document.querySelector("#pass");
+var direccion = document.querySelector("#direccion");
+var cp = document.querySelector("#cp");
 
 var formulario = document.querySelector("#formulario");
 var cHobby = document.querySelector("#hob_spans");
-
-//var botenviar = document.querySelector("#botenviar");
-
 var sex = formulario.sexo.value;
 var arr_hobbies = document.getElementsByName("hob_arr");
 var chkCond = document.querySelector("#condiciones");
-
+/*  Prueba validación customizada*/
+nombre.oninvalid = function () {
+    nombre.setCustomValidity("Mensaje customizado");
+}
+/*  FIN Prueba validación customizada*/
 function validar() {
     console.log("Validar formulario");
 
@@ -58,7 +67,6 @@ function validar() {
         alert("Debe aceptar las condiciones de uso");
         valido = false;
         chkCond.focus();
-
     }
 
     return valido;
@@ -74,12 +82,16 @@ obs.onkeyup = caracteres;
 
 function caracteres() {
     var tamano = obs.value.length;
-    if (tamano > 500) {
+    if (tamano < 25) {
+        obs.style.color = "red";
+    } else if (tamano > 500) {
         alert("Ha alcanzado el tamaño máximo");
         obs.value = obs.value.substring(0, 500);
         contador.textContent = "500/500"; //En realidad siempre es 500/505
     } else {
         contador.textContent = tamano + "/500";
+        obs.style.color = "initial";
+
     }
 }
 

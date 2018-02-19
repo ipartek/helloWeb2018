@@ -25,7 +25,7 @@
                 <input type="text" name="nombre" id="nombre" autofocus tabindex="1" required="required" pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('Mínimo 2 letras')" oninput="setCustomValidity('')">
 
                 <label for="apellido">Apellido:</label>
-                <input type="text" name="apellido" id="apellido" tabindex="2" required="required" pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('Mínimo 2 letras')" oninput="setCustomValidity('')">
+                <input type="text" name="apellido" id="apellido" tabindex="2" required="required" pattern="[A-Za-z ]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('Mínimo 2 letras')" oninput="setCustomValidity('')">
                 <br>
                    <label for="correo">Email: </label>
             <input type="text" name="correo" id="email" tabindex="4" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
@@ -46,7 +46,7 @@
             <fieldset>
                 <legend>Direccion</legend>
                 <label for="calle">Calle:</label>
-                <input type="text" name="calle" id="calle" tabindex="3" required="required" pattern="[a-z|A-z|0-9|\s]{15,15}" placeholder="Minimo 2 letras" maxlength="30" size="30" oninvalid="setCustomValidity('Mínimo 2 letras')" oninput="setCustomValidity('')">
+                <input type="text" name="calle" id="calle" tabindex="3" required="required" pattern="[A-Za-z0-9 ]{2,120}" placeholder="Minimo 2 letras" maxlength="30" size="30" oninvalid="setCustomValidity('Mínimo 2 letras')" oninput="setCustomValidity('')">
                 <label for="cp">Codigo Postal:</label>
                 <input type="text" name="cp" id="cp" tabindex="3" required="required" pattern="[0-9]{5,5}" placeholder="5 numeros" maxlength="5" size="5" oninvalid="setCustomValidity('Mínimo 5 números')" oninput="setCustomValidity('')">
                 <br>
@@ -162,6 +162,7 @@
             var formulario = document.getElementById("formulario");
             var sexo=formulario.sexo.value;
             var cHobbies= formulario.hobbies;
+            var condiciones= formulario.condiciones;
             for(i=0;i<cHobbies.length;i++)
                 {
                     if(cHobbies[i].checked){

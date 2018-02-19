@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlexBox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="/ejercicios/Bootsrap/css/custom.css">
+    <style>
+        .contenedor{
+            display:flex;
+            justify-content: space-between;
+            height:300px;
+
+
+        }
+        .caja{
+            display:flex;
+            justify-content: center;
+            font-size:3em;
+            color:white;
+            background-color:blueviolet;
+            border:1px solid blue;
+            border-radius:20px;
+            width:200px;
+            flex-grow: 1;
+            margin: 1%;
+        }
+        .mayuscula{
+            justify-content: center;
+            align-self:flex-start;
+        }
+        .minuscula{
+            justify-content: center;
+            align-self: flex-end;
+
+        }
+        #desorden{
+            width:100%;
+        }
+
+    </style>
+
+    <!-- Optional theme -->
+
+    <!-- Latest compiled and minified JavaScript -->
+
+</head>
+
+<body>
+    <div class="container">
+       <h1>Propiedad flex</h1>
+        <div class="row contenedor">
+            <div class="caja">
+                <div class="mayuscula"><p>a</p></div>
+                <div class="minuscula"><p >a</p></div>
+            </div>
+            <div class="caja">
+                <div class="mayuscula"><p>E</p></div>
+                <div class="minuscula"><p>e</p></div>
+            </div>
+            <div class="caja">
+                <div class="mayuscula"><p >I</p></div>
+                <div class="minuscula"><p >i</p></div>
+            </div>
+            <div class="caja">
+                <div class="mayuscula"><p >O</p></div>
+                <div class="minuscula"><p >o</p></div>
+            </div>
+            <div class="caja">
+                <div class="mayuscula"><p >U</p></div>
+                <div class="minuscula"><p >u</p></div>
+            </div>
+        </div>
+        <br>
+        <input type="button" id="desorden" class="btn btn-primary" value="Desordenar">
+    </div>
+    <!--JavaScript -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("desorden").addEventListener("click",desordenar,false)
+        function desordenar(){
+            var listaVocales=document.getElementsByClassName("caja");
+            for(var i=0; i<listaVocales.length;i++){
+                var vocal=listaVocales[i];
+                vocal.style.order = parseInt(Math.floor(Math.random() * 5));
+            }
+
+        }
+    </script>
+</body>
+</html>

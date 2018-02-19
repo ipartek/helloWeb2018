@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Listener</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="/ejercicios/Bootsrap/css/custom.css">
+
+    <!-- Optional theme -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <style>
+        #azul {
+            background-color: blue;
+            display: inline-block;
+            height: 200px;
+            width: 200px;
+        }
+
+        #rojo {
+            background-color: red;
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+
+        #verde {
+            background-color: green;
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            margin-left: 25px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Listener</h1>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <input type="button" id="btn" class="btn btn-success" value="escucho">
+                <input type="button" id="reset" class="btn btn-succes" value="reset">
+                <input type="button" id="botonJS" class="btn btn-primary" value="js Event">
+                <textarea name="eventos" id="ta" cols="30" rows="10"></textarea>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <h2>Bubbling</h2>
+                <!--vamos a hacer un div azul y dentro otro rojo-->
+                <div id="azul">
+                    <div id="rojo">
+                        <div id="verde"></div>
+                    </div>
+                </div>
+                <p>Rojo permite bubbling</p>
+                <p>Verde NO permite bubbling</p>
+            </div>
+        </div>
+        <div class="row parrafos">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit ipsa reiciendis aperiam doloremque mollitia laboriosam, illum sunt ab magni iusto nihil natus quam, ipsam, nemo consequuntur repudiandae quis dolores illo.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi doloremque aspernatur facere, sunt nobis labore magni adipisci saepe quam, deserunt harum voluptate optio odio reiciendis, eum esse iste quisquam iusto!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae optio commodi adipisci eligendi itaque voluptatum rerum quidem esse vero ex enim doloribus, facere iure molestiae eaque numquam fugiat aliquid illo.</p>
+
+
+        </div>
+    </div>
+    <!--JavaScript -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        /* listener para el botón */
+        var boton = document.getElementById("btn");
+        boton.addEventListener("click", function() {
+            show("Click")
+        }, false);
+        var reset = document.getElementById("reset");
+        reset.addEventListener("click", function() {
+            document.getElementById("ta").textContent = "";
+        }, false);
+
+        /* Escribimos en el textarea*/
+        function show(texto) {
+            var textArea = document.getElementById("ta");
+            ta.textContent += texto + "\n"
+        }
+        //en vez del evento en HTML se puede hacer en JavaScript
+        var botonJS = document.getElementById("botonJS");
+        botonJS.onclick = function() {
+            show("Click en Js")
+        };
+    </script>
+    <script>
+        document.getElementById("azul").addEventListener("click", function() {
+            document.getElementById("ta").textContent += "\n click azul";
+        });
+        document.getElementById("rojo").addEventListener("click", function() {
+            document.getElementById("ta").textContent += "\n click rojo"
+        });
+        /*evitar bubbling*/
+        document.getElementById("verde").addEventListener("click", function(event) {
+            /*coordenadas para ven donde se pincha */
+            document.getElementById("ta").textContent += "\n click verde x:"+event.x+" y:"+event.y;
+            event.stopPropagation();
+            //cambiar el contenedor padre a color amarillo de fondo//
+            event.target.parentElement.style.backgroundColor="yellow";
+        })
+    </script>
+    <script>
+        var parrafos = document.getElementsByClassName("parrafos")[0].getElementsByTagName("p");
+        for(var i=0;i<parrafos.length;i++){
+            console.log(parrafo)
+            var parrafo=parrafos[i];
+
+            parrafo.addEventListener("click",function(event,parrafos){
+                resetear();
+                colorear(event);
+            },false);
+        }
+        function resetear(){
+                    for(var i=0;i<parrafos.length;i++){
+                    parrafos[i].style.color="black";
+                }
+        }
+        function colorear(){
+            event.target.style.color="red";
+        }
+    </script>
+</body>
+
+</html>

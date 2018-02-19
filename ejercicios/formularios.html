@@ -52,9 +52,9 @@ Textarea observaciones (no requeridas))
                 <input type="password" name="pass" id="pass" pattern="(?=^.{5,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" tabindex="4" placeholder="Mayús. minus y 5 caracteres" title="Debe tener mínimo 5 caracteres y contener al menos una mayúscula, una minúscula y un número">
                 <img id="ojo" src="../img/ojo.jpg" onmousedown="showPass()" onmouseup="hidePass()"><br>
 
-                <input type="radio" id="sexo" name="sexo" value="M" required>Masculino
-                <input type="radio" id="sexo" name="sexo" value="F">Femenino
-                <input type="radio" id="sexo" name="sexo" value="O">Otros
+                <input type="radio" name="sexo" value="M" required>Masculino
+                <input type="radio" name="sexo" value="F">Femenino
+                <input type="radio" name="sexo" value="O">Otros
             </fieldset>
 
             <fieldset id="direccion">
@@ -136,7 +136,9 @@ Textarea observaciones (no requeridas))
                 <input type="checkbox" name="hobby" id="hobby5" value="5">Música
                 <input type="checkbox" name="hobby" id="hobby6" value="6">Montañismo<br>
                 <label for="obser">Obervaciones: </label><br>
-                <textarea rows="5" cols="100" name="obser" onchange="validarTextarea()"></textarea>
+                <textarea rows="5" cols="100" name="obser" onkeypress="validarTextarea()"></textarea>
+                <output id="longTextoArea">##numero## / 500</output>
+
 
             </fieldset>
             <span class="condiciones">
@@ -147,6 +149,8 @@ Textarea observaciones (no requeridas))
         </form>
     </div>
     <script>
+        var errores = "";
+
         function showPass() {
             var p = document.getElementById("pass");
             p.type = "text"
@@ -158,38 +162,55 @@ Textarea observaciones (no requeridas))
         }
 
         function validar() {
-            console.log("Validar funcionario");
-            //var formulario = document.forms[0];
-            //validarHobby();
-            validarTextarea();
 
+            if (form.nombre.value.length < 2 || form.nombre.value.length > 120) {
+                errores += "Rellena el nombre correctamente\n";
+            }
+            if (form.apellido.value.length < 2 || form.apellido.value.length > 120) {
+                errores += "Rellena la apellido correctamente\n";
+            }
+            if (form.email.value == "") {
+                errores += "Rellena el email\n";
+            }
+            if (form.calle.value == "") {
+                errores += "Rellena la calle\n";
+            }
+
+            validarHobby();
+
+            //validarTextarea();
+
+            alert(errores);
+            //return (errores == "")?true:false;
         }
 
         function validarHobby() {
             var contadorHobby = 0;
+            var cHobbies = form.hobby;
+            var sexo = form.sexo.value;
 
-            for (var i = 0; i <= form.hobby.length - 1; i++) {
-                if (form.hobby[i].checked) {
+            for (var i = 0; i <= cHobbies.length - 1; i++) {
+                if (cHobbies[i].checked) {
                     contadorHobby++;
                 }
             }
 
-            if ((form.sexo.value = "M") && (contadorHobby >= 1) || (form.sexo.value = "F") && (contadorHobby >= 3)) {
-                console.debug(form.sexo.value);
-                console.debug("MAL");
-                return true;
-            } else {
-                console.debug(form.sexo.value);
-                console.debug("BIEN");
-                return false;
+            if ((sexo == "M") && (contadorHobby < 1)) {
+                errores += "Selecciona al menos 1 hobby\n";
+            } else if ((sexo == "F") && (contadorHobby < 4)) {
+                errores += "Selecciona al menos 3 hobbies\n";
             }
         }
 
-        function validarTextarea(){
-            var longTexto=form.obser.textLength;
 
-            textoArea.innerHTML = spanNumero.replace('##numero##', longTexto);
+        function validarTextarea() {
+            var longTexto = form.obser.textLength;
+            var contenido = "##numero##/500";
+
+            contenido = contenido.replace('##numero##', longTexto)
+            longTextoArea.textContent = contenido;
             console.debug(longTexto);
+            console.debug(contenido);
         }
     </script>
 </body>
@@ -200,6 +221,6 @@ Si el sexo es "Masculino" mínimo 1 hobby.
 Si el sexo es "Femenino" mínimo 3 hobbies.
 Si el sexo es "Otros" no es necesario seleccionar ninguno.
 En "Observaciones" es obligatorio poner al menos 25 caracteres, máximo 500.
-Hacer un scrip que debajo del textarea salga un mensaje con un contador de caracteres restantes. (20/500)
+Hacer un script que debajo del textarea salga un mensaje con un contador de caracteres restantes. (20/500)
 
 -->

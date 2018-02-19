@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -19,7 +20,7 @@
         <p><b>Tabindex</b> es necesario por accesibilidad</p>
 
 
-        <form novalidate action="index.html" method="get" onsubmit="return validar();">
+        <form id="formulario"  action="index.html" method="get" onsubmit="return validar();">
 
             <fieldset>
                 <legend>Datos Personales:</legend><br><br>
@@ -59,19 +60,19 @@
                 <br>
 
 
-                <label id="sexo" class="genero">Sexo</label>
+                <label>Sexo</label>
 
 
                 <label for="masculino">Masculino</label>
-                <input type="radio" id="genero" name="genero" value="m" checked>
+                <input type="radio" name="genero" value='m' checked>
 
                 <label for="femenino">Femenino</label>
 
-                <input type="radio" id="genero" name="genero" value="f">
+                <input type="radio" name="genero" value='f'>
 
                 <label for="otro">Otro</label>
 
-                <input type="radio" id="genero" name="genero" value="o"><br><br>
+                <input type="radio" name="genero" value='o'><br><br>
 
 
 
@@ -87,8 +88,8 @@
             <fieldset id="datos_direccion">
 
                 <legend id="legend_direccion">Direccion:</legend>
-                <label>Calle:</label> <input type="text">
-                <label>Codigo Postal: </label><input type="text">
+                <label>Calle:</label> <input type="text" id="calle">
+                <label>Codigo Postal: </label><input type="text" id="codigo_postal">
 
 
 
@@ -157,9 +158,9 @@
             <fieldset>
                 <legend>Hobbies:</legend><br><br>
 
-                <input type="checkbox" id="hobbies1" name="hobbies1" value="nadar">Nadar
-                <input type="checkbox" id="hobbies2" name="hobbies2" value="correr">Correr
-                <input type="checkbox" id="hobbies3" name="hobbies3" value="viajar">Viajar
+                <input type="checkbox" id="hobbies1" name="hobbies" value="nadar">Nadar
+                <input type="checkbox" id="hobbies2" name="hobbies" value="correr">Correr
+                <input type="checkbox" id="hobbies3" name="hobbies" value="viajar">Viajar
             </fieldset>
             <br>
             <label for="observaciones">Observaciones</label><br>
@@ -195,51 +196,78 @@
         function validar() {
 
             console.log("validarformulario");
-
+            var errores = "";
 
             //Mas seguro
-            var formulario = document.forms[0];
+            var formulario = document.getElementById("formulario");
+            var cHobbies = formulario.hobbies;
 
-            return false;
+            //Contar numero de Checkboxes
+            var numCheck = 0;
+            for (i = 0; i < cHobbies.length; i++) {
 
-        }
-
-
-
-        function hobbies {
-
-
-            var genero = document.getElementById("sexo").value;
+                if (cHobbies[i].checked) {
 
 
-            switch (genero) {
+                    numCheck++;
+                }
 
-                case m {
+            }
 
+
+
+
+            var sexo = formulario.genero.value;
+
+            switch (sexo) {
+
+                case 'm':
+                    if (numCheck < 1) {
+
+
+                        errores += 'Al menos selecciona un hobbie \n';
+
+                    }
 
                     break;
 
-                }
-
-                case f {
 
 
-                }
-                case o {
+                case 'f':
 
-                    break
-                }
+                    if (numCheck < 3) {
+                        errores +='Al menos selecciona 3 hobbies  \n';
 
-                default:
-                    {
-
-
-                        break;
                     }
+                    break;
+               /* case 'o':
+
+                    break;
+*/
+
+                    /* Es opcional default:
+                         {
+
+
+                             break;
+                         }*/
+                    if (formulario.calle.value == "") {
+
+                        errores += 'dime tu calle \n';
+                    }
+
+
+
             }
+  if (errores != "") {
+
+                        alert(errores);
+                    }
+                    return (errores == "") ? true : false;
 
         }
     </script>
 
 </body>
+
 </html>

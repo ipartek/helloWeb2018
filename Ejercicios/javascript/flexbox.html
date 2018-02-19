@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .row {
+
+            margin: 20px 0;
+            /*20 px de arriba y abajo y 0 de izquierda a derecha*/
+        }
+
+        .container-flex {
+
+            height: 195px;
+            flex-direction: row;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .box {
+
+            /*display: inline-block;*/
+            width: 75px;
+            height: 140px;
+            background-color: grey;
+            color: #fff;
+            font-size: 3em;
+            text-align: center;
+            transition-delay: 2s;
+            position: relative;
+        }
+
+
+
+
+        .abajo {
+
+            display: flex;
+            margin-left: 25px;
+
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <button id="btn" class="btn btn-success">Cambiar el orden de las cajas</button>
+
+
+
+
+
+        <div class="row">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Numeros Desordenados</div>
+                <div class="panel-body container-flex" id="cntNumDes">
+
+
+
+
+                    <div class="box">
+
+                        A
+
+                        <div class="a">
+
+
+                            a
+                        </div>
+
+                    </div>
+                    <div class="box">
+
+                        E
+
+                        <div class="a">
+
+
+                            e
+                        </div>
+
+
+
+                    </div>
+                    <div class="box">
+
+                        I
+
+                        <div class="a">
+
+
+                            i
+                        </div>
+                    </div>
+                    <div class="box">
+
+                        O
+
+                        <div class="a">
+
+
+                            o
+                        </div>
+                    </div>
+                    <div class="box">
+
+                        U
+
+                        <div class="a">
+
+
+                            u
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <script>
+                function cambiarletras() {
+                    var elementos = ["A", "E", "I", "O", "U"];
+                    var randomValue = elementos[Math.floor(elementos.length * Math.random())];
+                    console.log(randomValue);
+                }
+
+
+                var boton = document.getElementById("btn");
+                boton.addEventListener('click', cambiarletras);
+
+                // boton.addEventListener('click',cambiarletras,false);
+
+            </script>
+
+
+
+
+
+
+
+
+
+
+            <!-- QUERY -->
+            <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

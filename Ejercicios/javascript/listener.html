@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        #azul {
+
+            background-color: cadetblue;
+
+            display: inline-block;
+
+            width: 200px;
+            height: 200px;
+
+        }
+
+
+        #rojo {
+
+            width: 100px;
+            display: inline-block;
+            margin-left: 50px;
+            margin-top: 50px;
+            height: 100px;
+            background-color: red;
+        }
+
+        #verde {
+            width: 50px;
+            display: inline-block;
+            margin-left: 25px;
+            margin-top: 25px;
+            height: 50px;
+            background-color: green;
+
+        }
+
+
+        p {
+
+            text-align: center;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <h1>Listener</h1>
+
+
+        <div class="row">
+            <input id="btn" type="button" class="btn btn-success" value="Escucho">
+            <input id="btnReset" type="button" class="btn btn-danger" value="Borrar">
+            <input id="btnjs" type="button" class="btn btn-primary" value="js Event">
+
+
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-xs-6 ">
+                <textarea id="ta" name="" rows="10" cols="30"></textarea>
+
+            </div>
+
+
+            <h2>Bubbling</h2>
+            <div id="azul">
+
+                <div id="rojo">
+
+                    <div id="verde">
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <p>Rojo permite bubbling</p>
+
+            <p>Verde no permite bubbling</p>
+        </div>
+
+        <script>
+            var ta = document.getElementById("ta");
+
+            var azul = document.getElementById("azul");
+            azul.addEventListener('click', function() {
+
+                ta.textContent += "click Azul \n";
+
+            });
+
+            var rojo = document.getElementById("rojo");
+            rojo.addEventListener('click', function() {
+
+                ta.textContent += "click Rojo \n";
+            });
+            var verde = document.getElementById("verde");
+            verde.addEventListener('click', function(event) {
+
+                ta.textContent += "click Verde X:"+ event.x+"y:"+ event.y+"\n"
+                event.stopPropagation;
+
+                //cambiar contenedor padre a color amarillo de fondo
+
+                event.target.parentElement.style.backgroundColor='yellow';
+
+            });
+        </script>
+    </div>
+
+    <script>
+        //Escribimos en el texarea
+
+        function show(texto) {
+
+
+            var ta = document.getElementById("ta");
+
+            ta.textContent += texto + "\n"; //Añades mas texto a lo que habia anteriormente
+
+        } //Cierre de escribir
+
+        //Listener del boton
+
+
+        var btn = document.getElementById("btn");
+        btn.addEventListener('click', function() {
+            show('lorem ipsum')
+        }, false);
+
+        var btnReset = document.getElementById("btnReset");
+        btnReset.addEventListener('click', function() {
+            document.getElementById("ta").textContent = "";
+        }, false);
+
+
+        var btnjs = document.getElementById("btnjs");
+
+        btnjs.onclick = function() {
+
+            document.getElementById("ta").textContent += "Onclick con javascript \n";
+
+        }
+    </script>
+
+
+
+
+
+
+
+    <!-- QUERY -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

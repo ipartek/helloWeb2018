@@ -26,14 +26,14 @@
 
         .box {
 
-            display: inline-block;
+            /*display: inline-block;*/
             width: 75px;
             height: 100px;
             background-color: grey;
             color: #fff;
             font-size: 3em;
             text-align: center;
-            margin-right: 10px;
+
             transition-delay: 2s;
             position: relative;
         }
@@ -45,7 +45,8 @@
             display: none;
 
         }
-        .box .close{
+
+        .box .close {
 
             position: absolute;
             top: -10px;
@@ -79,34 +80,47 @@
         }
 
 
-                /*Animar las cajas cuando mantienes el raton*/
+        /*Animar las cajas cuando mantienes el raton*/
+
         .box:hover {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
+            animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
 
         @keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
+            10%,
+            90% {
+                transform: translate3d(-1px, 0, 0);
+            }
 
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
+            20%,
+            80% {
+                transform: translate3d(2px, 0, 0);
+            }
 
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-4px, 0, 0);
+            }
 
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
+            40%,
+            60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
 
+        .container-flex {
 
-
+            height: 125px;
+            flex-direction: row;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -148,12 +162,16 @@
         <div class="row">
             <div class="panel panel-danger">
                 <div class="panel-heading">Numeros Desordenados</div>
-                <div class="panel-body" id="cntNumDes">
+                <div class="panel-body container-flex" id="cntNumDes">
 
 
 
 
-                    <span class="box">3<span onclick="borrarCaja(##posicion)" class="close">X</span></span>
+                    <div class="box">1<span onclick="borrarCaja(##posicion)" class="close">X</span></div>
+                    <div class="box">2<span onclick="borrarCaja(##posicion)" class="close">X</span></div>
+                    <div class="box">3<span onclick="borrarCaja(##posicion)" class="close">X</span></div>
+                    <div class="box">4<span onclick="borrarCaja(##posicion)" class="close">X</span></div>
+                    <div class="box">5<span onclick="borrarCaja(##posicion)" class="close">X</span></div>
 
                 </div>
             </div>
@@ -162,7 +180,7 @@
         <div class="row">
             <div class="panel panel-success">
                 <div class="panel-heading">Numeros Ordenados</div>
-                <div class="panel-body" id="cntNumOrd">
+                <div class="panel-body container-flex" id="cntNumOrd">
 
 
 
@@ -358,12 +376,12 @@
         /*Eliminamos la Caja del HTML
         Eliminamos el numero delArray desordenado*/
 
-         function borrarCaja(){
+        function borrarCaja() {
 
 
-             console.debug("eliminarcaja %s",pos)
+            console.debug("eliminarcaja %s", pos)
 
-         }
+        }
     </script>
 
 

@@ -7,8 +7,96 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Vocales</title>
+    <style>
+         .box {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            color: #FFF;
+            font-size: 3em;
+            text-align: center;
+           /* margin-right: 10px;      */
+             position: relative;
+        }
+        .box1{
+
+        }
+     .container-flex{
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+           height: 285px;
+            align-items: center;
+        }
+        .box>span{
+            display:flex;
+            /*flex: 0 50%;*/
+            flex-direction: column;
+        }
+
+    </style>
 </head>
 <body>
+  <header>
+        <div class="container">
 
+            <h1>Vocales</h1>
+
+
+        </div>
+
+    </header>
+<div class="container">
+
+
+     <div class="panel panel-danger">
+
+                <div class="panel-body container-flex"id="contenedor" >
+                    <!--innerHTML-->
+                    <!---->
+                    <!--
+                    <span class="box">3<span class="close">x</span></span>
+                    -->
+                    <!-- end innerHTML-->
+                    <span id="box"class="box">A <span class="box1">a</span></span> <span class="box">E<span class="box1">e</span></span><span class="box">I<span class="box1">i</span></span><span class="box">O<span class="box1">o</span></span><span class="box">U<span class="box1"></span>u</span>
+                </div>
+    </div>
+         <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="desordenar()">Desordenar</button>
+            </div>
+             </div>
+            <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="ordenar()">Comprobar</button>
+            </div>
+        </div>
+
+    </div>
+
+   <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        var spanLetra = '<span id="box"class="box">##letra##</span>';
+        var spanLetra1= '<span class="box1">##letra##</span>';
+    function desordenar(){
+        var caja= document.getElementById("box");
+        contenedor.innerHTML = "";
+        contenedor.inneHTML=caja;4
+        Aletras=['b','c','d','o','u'];
+        for (var i = 0; i < 5; i++) {
+
+                    contenedor.innerHTML += spanLetra.replace('##letra##', Aletras[i]);
+                    contenedor.innerHTML += spanLetra1.replace('##letra##', Aletras[i]);
+                }
+
+    }
+
+
+    </script>
 </body>
 </html>

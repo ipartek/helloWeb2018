@@ -19,9 +19,11 @@
             background-color: teal;
             color: #FFF;
         }
+
         .row {
             margin: 20px 0;
         }
+
         @keyframes mostrar {
             0% {
                 opacity: 0;
@@ -30,6 +32,7 @@
                 opacity: 1;
             }
         }
+
         @keyframes shake {
             10%,
             90% {
@@ -49,18 +52,20 @@
                 transform: translate3d(4px, 0, 0);
             }
         }
+
         .box {
             /*display: flex;*/
-            display: inline-block;
+/*            display: inline-block;*/
             width: 75px;
             height: 75px;
             background-color: grey;
             color: #FFF;
             font-size: 3em;
             text-align: center;
-            margin-right: 10px;
+/*            margin-right: 10px;*/
             position: relative;
         }
+
         .box .close {
             position: absolute;
             top: -10px;
@@ -72,11 +77,13 @@
             opacity: 1;
             padding: 2px;
         }
+
         .box:last-child {
             animation-name: mostrar;
             animation-duration: 1.5s;
             animation-timing-function: ease-in;
         }
+
         /*
         .box:hover {
             animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
@@ -85,6 +92,16 @@
             perspective: 1000px;
         }
         */
+        .container-flex{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            height: 125px;
+            align-items: center;
+
+        }
+
     </style>
 
 </head>
@@ -98,30 +115,33 @@
     </header>
 
 
-    <div class="container">
 
-        <div id="msg"></div>
+    <div id="msg"></div>
 
-        <div class="row">
-            <form class="form-inline">
-                <div class="col-xs-3">
-                    <div class="form-group">
-                        <input type="number" class="form-control" step="1" max="10" min="0" id="numeroInput">
-                    </div>
-                </div>
-                <div class="col-xs-9">
-                    <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir Número</button>
-                </div>
-            </form>
-        </div>
-        <div class="row">
-            <div class="panel panel-danger">
-                <div class="panel-heading">Números Desordenados</div>
-                <div class="panel-body" id="cntNumDes">
-                    <!-- <span class="box">3<span class="close">x</span></span>-->
+    <div class="row">
+        <form class="form-inline">
+            <div class="col-xs-3">
+                <div class="form-group">
+                    <input type="number" class="form-control" step="1" max="10" min="0" id="numeroInput">
                 </div>
             </div>
-        </div>
+            <div class="col-xs-9">
+                <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir Número</button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="panel panel-danger"  >
+            <div class="panel-heading">Números Desordenados</div>
+            <div class="panel-body container-flex" id="cntNumDes">
+                <!-- <span class="box">3<span class="close">x</span></span>-->
+
+                        <!-- <span class="box">3<span class="close">x</span></span>-->
+                        <span class="box">7<span onclick="eliminarBox(0)" class="close">x</span></span><span class="box">5<span onclick="eliminarBox(1)" class="close">x</span></span><span class="box">3<span onclick="eliminarBox(2)" class="close">x</span></span><span class="box">2<span onclick="eliminarBox(3)" class="close">x</span></span><span class="box">1<span onclick="eliminarBox(4)" class="close">x</span></span>
+                    </div>
+
+                </div>
+
         <div class="row">
             <div class="panel panel-success">
                 <div class="panel-heading">Números Ordenados</div>
@@ -204,10 +224,10 @@
             }
         }
         /**
-        *    Eliminamos la Caja del HTML
-        *    Eliminamos el numero del Array desordenado
-        */
-        function eliminarBox(pos){
+         *    Eliminamos la Caja del HTML
+         *    Eliminamos el numero del Array desordenado
+         */
+        function eliminarBox(pos) {
             console.debug("eliminarBox %s", pos);
         }
         /**
@@ -229,6 +249,7 @@
             console.debug("array ordenado " + arr);
             return arr;
         }
+
         function pintarOrdenados() {
             console.debug("pintarOrdenados");
             if (validarNumerosOrdenados()) {
@@ -267,6 +288,7 @@
             document.getElementById("msg").innerHTML = "";
             numeroInput.focus();
         }
+
     </script>
 
 </body>

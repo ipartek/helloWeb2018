@@ -3,8 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Formulario</title>
     <link rel="stylesheet" href="../../../css/styles.css">
+     <!-- font awesome 4.7 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
 </head>
 
 <body>
@@ -15,57 +19,57 @@
         <p><b>readonly</b> si se envia al submitar el formulario</p>
         <p><b>tabindex</b>es necesario por accesibilidad</p>
         <br>
-        <form novalidate action="index.html" method="get" onsubmit="return validar()">
+        <form id="formulario" action="index.hmtl" method="get" onsubmit="return validar();">
 
             <fieldset id="datos personales">
-                <legend>Datos personales</legend>
+                 <legend style="text-align: center;">Datos personales</legend>
 
-                <label for="id">Id:</label>
+                <!-- ID  -->
+                <label for="id">ID:</label>
                 <input type="text" name="id" value="45" disabled>
                 <br>
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" autofocus tabindex="1" required="required" pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('El campo nombre no cumple con los criterios, reviselo por favor.')">
+                 <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre"
+                       autofocus tabindex="1" method="post" placeholder="Nombre"
+                       required pattern="[A-Za-z]{2,120}"
+                       oninvalid="setCustomValidity('El campo nombre es obligatorio')"
+                       oninput="setCustomValidity('')">
                 <br>
                 <br>
                 <label for="apellido">Apellido:</label>
-                <input type="text" name="apellido" id="apellido" tabindex="2" required="required" pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('El campo apellido no cumple con los criterios, reviselo por favor.')">
+                <input type="text" name="apellido" id="apellido" tabindex="2" required="required" pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('El campo apellido no cumple con los criterios, reviselo por favor.')" oninput="setCustomValidity('')">
                 <br>
                 <br>
-                <label for="correo">Email: </label>
-                <input type="text" name="correo" id="email" tabindex="4" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" oninvalid="setCustomValidity('El campo email no cumple con los criterios, reviselo por favor.')">
+                <label for="email">Email: </label>
+                <input type="text" name="correo" id="email" tabindex="4" method="post" placeholder="algo@gmail.com" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" oninvalid="setCustomValidity('El campo email no cumple con los criterios, reviselo por favor.')">
                 <br>
                 <br>
                 <label for="pass">Contraseña: </label>
-                <input type="password" id="password" name="pass" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Mayusculas, minusculas y número" size="30" oninvalid="setCustomValidity('El campo contraseña no cumple con los criterios, reviselo por favor.')">
+               <input type="password" name="password" value="a1€Ratatui" id="myInput" tabindex="4" method="post" placeholder="Mayus,minus,numeros +8carac" size="30" ; pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required oninvalid="setCustomValidity('El campo contraseña es obligatorio')" oninput="setCustomValidity('')">
+                <i class='fa fa-eye' aria-hidden='true' onmousedown="myFunction()" onmouseup="myReset()"></i><br/>
+                <br>
 
 
 
                 <input type="image" img src="https://cdn0.iconfinder.com/data/icons/feather/96/eye-16.png" alt="eye" onclick="myFunction()">Mostrar contraseña
+                <br>
+                <br>
 
-                <script>
-                    function myFunction() {
-                        var x = document.getElementById("password");
-                        if (x.type === "password") {
-                            x.type = "text";
-                        } else {
-                            x.type = "password";
-                        }
-                    }
-                </script>
-                <br>
-                <br>
+                  <!-- Sexo  -->
+                <fieldset class="radios">
+                 <legend style="text-align: center;">SEXO</legend>
                 <label for="sexo">Sexo: </label>
-                <input type=radio name="sexo" value="M" onchange="limitarMasculino()"> Masculino
-                <input type=radio name="sexo" value="F" onchange="limitarFemenino()" > Femenino
-                <input type=radio name="sexo" value="O"> Otro
+                <input type=radio name="sexo" value="M" required checked> Masculino<br/>
+                <input type=radio name="sexo" value="F"> Femenino<br/>
+                <input type=radio name="sexo" value="O"> Otro<br/>
             </fieldset>
             <br>
             <br>
             <br>
             <fieldset id="direccion">
-                <legend>Dirección</legend>
+                 <legend style="text-align: center;">Direccion</legend>
 
-
+                 <!-- Calle  -->
                 <label for="calle">Calle:</label>
                 <input type="text" name="calle" id="calle" autofocus tabindex="1" required="required" pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" oninvalid="setCustomValidity('El campo Calle no cumple con los criterios, reviselo por favor.')">
                 <br>
@@ -134,32 +138,30 @@
             </fieldset>
             <br>
             <br>
-            <fieldset id="Aficiones">
-                <legend>Aficiones</legend>
-                <FORM NAME="aficiones">
-                <input type="checkbox" name="leer" id="leer" value="leer">&nbsp;Leer<br>
-                <input type="checkbox" name="musica" id="musica" value="musica">&nbsp;Escuchar música<br>
-                <input type="checkbox" name="viajar" id="viajar" value="viajar">&nbsp;Viajar<br>
-                <input type="checkbox" name="deporte" id="deporte" value="deporte">&nbsp;Practicar deporte<br>
-                <input type="checkbox" name="internet" id="internet" value="internet">&nbsp;Navegar por internet<br>
-                <input type="checkbox" name="dormir" id="dormir" value="dormir">&nbsp;Dormir<br>
-                <input type="checkbox" name="cine" id="cine" value="cine">&nbsp;Cine<br>
-                <input type="checkbox" name="videojuegos" id="videjuegos" value="videojuegos">&nbsp;Videojuegos<br>
-                <input type="checkbox" name="cocinar" id="cocinar" value="cocinar">&nbsp;Cocinar<br>
-                <input type="checkbox" name="tv" id="tv" value="tv">&nbsp;Ver la Tv<br>
-                <input type="checkbox" name="amigos" id="amigos" value="amigos">&nbsp;Salir con los amigos<br>
-                <input type="checkbox" name="concierto" id="concierto" value="concierto">&nbsp;Ir a conciertos<br>
-                <input type="checkbox" name="playa" id="playa" value="playa">&nbsp;Ir a la playa<br>
-                <input type="checkbox" name="monte" id="monte" value="monte">&nbsp;Ir al monte<br>
-                </FORM>
+            <fieldset class="checkbox">
+                <legend style="text-align: center;">Hobbies</legend>
+
+                <input type="checkbox" name="hobbies" value="option1" />Leer<br>
+                <input type="checkbox" name="hobbies" value="option2" />Escuchar musica<br>
+               <input type="checkbox" name="hobbies" value="option3" />Viajar<br>
+                <input type="checkbox" name="hobbies" value="option4" />Practicar deporte<br>
+               <input type="checkbox" name="hobbies" value="option5" />Navegar por internet<br>
+               <input type="checkbox" name="hobbies" value="option6" />Dormir<br>
+                <input type="checkbox" name="hobbies" value="option7" />Cine<br>
+              <input type="checkbox" name="hobbies" value="option8" />Videojuegos<br>
+               <input type="checkbox" name="hobbies" value="option9" />Cocinar<br>
+               <input type="checkbox" name="hobbies" value="option10" />Ver la TV<br>
+               <input type="checkbox" name="hobbies" value="option11" />Ir a conciertos<br>
+                <input type="checkbox" name="hobbies" value="option12" />Ir a la playa<br>
+                <input type="checkbox" name="hobbies" value="option13" />Ir al monte<br>
 
             </fieldset>
             <br>
 
             <form action="#" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
-
+ <!-- Observaciones  -->
                 <label for="comentarios">COMENTARIOS:</label><br>
-                <textarea id="comentarios" name="comentarios" cols="50" rows="14" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea><br>
+                <textarea id="comentarios" name="comentarios" cols="50" rows="14" placeholder="Si tienes algo que opinar este es tu sitio" onKeyDown="cuenta()" onKeyUp="cuenta()"></textarea><br>
 
                 <input type="text" name=caracteres size=4>
                 <br>
@@ -178,64 +180,74 @@
             </form>
 
             <script>
-                function limitarMasculino() {
+
+                    function myFunction() {
+                        var x = document.getElementById("password");
+                        if (x.type === "password") {
+                            x.type = "text";
+                        } else {
+                            x.type = "password";
+                        }
+                    }
+
+               /* function limitarMasculino() {
 
                     var NewCount = 0
 
-                    if (document.aficiones.leer.checked) {
+                    if (document.formulario.leer.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.musica.checked) {
+                    if (document.formulario.musica.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.viajar.checked) {
+                    if (document.formulario.viajar.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.deporte.checked) {
+                    if (document.formulario.deporte.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.internet.checked) {
+                    if (document.formulario.internet.checked) {
                         NewCount = NewCount + 1
                     }
-                     if (document.aficiones.dormir.checked) {
-                        NewCount = NewCount + 1
-                    }
-
-                    if (document.aficiones.cine.checked) {
+                     if (document.formulario.dormir.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.videojuegos.checked) {
+                    if (document.formulario.cine.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.cocinar.checked) {
+                    if (document.formulario.videojuegos.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.amigos.checked) {
-                        NewCount = NewCount + 1
-                    }
-                    if (document.aficiones.concierto.checked) {
+                    if (document.formulario.cocinar.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.playa.checked) {
+                    if (document.formulario.amigos.checked) {
+                        NewCount = NewCount + 1
+                    }
+                    if (document.formulario.concierto.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.monte.checked) {
+                    if (document.formulario.playa.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.formulario.monte.checked) {
                         NewCount = NewCount + 1
                     }
 
 
                     if (NewCount == ) {
                         alert('Seleccione solo una aficion.')
-                        document.aficiones;
+                        document.formulario;
                         return false;
                     }
                 }
@@ -244,64 +256,64 @@
 
                        var NewCount = 0
 
-                    if (document.aficiones.leer.checked) {
+                    if (document.formulario.leer.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.musica.checked) {
+                    if (document.formulario.musica.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.viajar.checked) {
+                    if (document.formulario.viajar.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.deporte.checked) {
+                    if (document.formulario.deporte.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.internet.checked) {
+                    if (document.formulario.internet.checked) {
                         NewCount = NewCount + 1
                     }
-                     if (document.aficiones.dormir.checked) {
-                        NewCount = NewCount + 1
-                    }
-
-                    if (document.aficiones.cine.checked) {
+                     if (document.formulario.dormir.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.videojuegos.checked) {
+                    if (document.formulario.cine.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.cocinar.checked) {
+                    if (document.formulario.videojuegos.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.amigos.checked) {
-                        NewCount = NewCount + 1
-                    }
-                    if (document.aficiones.concierto.checked) {
+                    if (document.formulario.cocinar.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.playa.checked) {
+                    if (document.formulario.amigos.checked) {
+                        NewCount = NewCount + 1
+                    }
+                    if (document.formulario.concierto.checked) {
                         NewCount = NewCount + 1
                     }
 
-                    if (document.aficiones.monte.checked) {
+                    if (document.formulario.playa.checked) {
+                        NewCount = NewCount + 1
+                    }
+
+                    if (document.formulario.monte.checked) {
                         NewCount = NewCount + 1
                     }
 
 
                     if (NewCount == 4) {
                         alert('Seleccione solo 3 aficiones.')
-                        document.aficiones;
+                        document.formulario;
                         return false;
                     }
                 }
-
+*/
 
                 function caracteres() {
                     var comentarios = document.getElementById('comentarios');
@@ -314,13 +326,56 @@
                     document.forms[0].caracteres.value = document.forms[0].comentarios.value.length
                 }
 
-                function validar() {
-                    //Mas seguro coger por ID
-                    console.log("Validar formulario");
-                    var formulario = document.forms[0];
-                    return true;
-
+                function myFunction() {
+            var x = document.getElementById("myInput");
+            x.type = "text";
+        }
+        function myReset() {
+            var x = document.getElementById("myInput");
+            x.type = "password";
+        }
+        function validar() {
+            console.log("validar formulario");
+            var errores = "";
+            //mas seguro cojer por id
+            var formulario = document.getElementById("formulario");
+            //contar numero checkboxes
+            var numChecks = 0;
+            var cAficiones = formulario.hobbies;
+            for(i=0; i < cAficiones.length; i++){
+                if ( cAficiones[i].checked ){
+                    numChecks++;
                 }
+            }
+            var sexo = formulario.sexo.value;
+            switch (sexo) {
+                case 'M':
+                    if ( numChecks < 1 ){
+                        errores += 'Al menos selecciona 1 hobby \n';
+                    }
+                    break;
+                case 'F':
+                     if ( numChecks < 3 ){
+                        errores += 'Al menos selecciona 3 hobbys \n';
+                    }
+                    break;
+                /*
+                case 'O':
+                    //no hacer nada
+                    break;
+                */
+                //default es opcional
+            }
+            //switch
+            if ( formulario.calle.value == "" ){
+                errores += 'Dime tu calle \n';
+            }
+            //mostrar errores con alert
+            if ( errores != "" ){
+                alert(errores);
+            }
+            return ( errores == "" )?true:false;
+        }
             </script>
 
 

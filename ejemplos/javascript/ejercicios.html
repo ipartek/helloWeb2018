@@ -44,6 +44,7 @@
     font-size: 0.2em;
 }
 
+
     </style>
 </head>
 
@@ -62,10 +63,9 @@
    <div class="caja">
         <output id="Suma">X</output>
     </div>
-
-
-
-
+<hr>
+<button type="button" id="boton1" onclick="boton()">BOTÓN</button>
+<span id="ejemplo3" class="lunes viernes pintxo">1</span>
 
 
 
@@ -112,6 +112,18 @@
                 output.textContent = sumaTotal;
                 }
 
+        }
+        function boton(){
+            var span1= document.getElementById("ejemplo3");
+
+            var elementClases= ejemplo3.classList;
+            console.log(elementClases);
+            console.log("El elemento"+elementClases[1]+" esta en la posicion "+1);
+            for(i=0;i<elementClases.length;i++){
+
+
+            span1.textContent=span1.value+"El elemento "+elementClases[i]+" esta en la posicion "+i;
+            }
         }
     </script>
 </body>

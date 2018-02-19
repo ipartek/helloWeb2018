@@ -33,41 +33,6 @@
                 opacity: 1;
             }
         }
-
-
-        .box {
-            /* display: flex;*/
-            widows: 75px;
-            height: 75px;
-            background-color: grey;
-            color: #FFF;
-            font-size: 2em;
-            text-align: center;
-            padding: 10px;
-            margin: 10px;
-            position: relative;
-        }
-
-        .box .close {
-            position: absolute;
-            top: -10px;
-            right: -5px;
-            color: cadetblue;
-            background-color: aqua;
-            font-size: 0.5em;
-            border-radius: 50%;
-            opacity: 1;
-            padding: 2px;
-        }
-
-
-        .box:hover {
-            animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
-            transform: translate3d(0, 0, 0);
-            backface-visibility: hidden;
-            perspective: 1000px;
-        }
-
         @keyframes shake {
             10%,
             90% {
@@ -91,15 +56,62 @@
             }
         }
 
+        .container-flex {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            height: 125px;
+            align-items: center;
+            align-content: space-around;
+        }
+
+        .box {
+            /* display: flex;*/
+            width: 75px;
+            height: 75px;
+            background-color: grey;
+            color: #FFF;
+            font-size: 2em;
+            text-align: center;
+            padding: 10px;
+           /* margin: 10px; si usamos container-flex quitamos esta propiedad */
+            position: relative;
+        }
+
+        .box .close {
+            position: absolute;
+            top: -10px;
+            right: -5px;
+            color: cadetblue;
+            background-color: aqua;
+            font-size: 0.5em;
+            border-radius: 50%;
+            opacity: 1;
+            padding: 2px;
+        }
+
+
         .box:last-child {
             animation-name: mostrar;
             animation-duration: 1.5s;
             animation-timing-function: ease-in;
         }
 
+        .box:hover {
+            animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+
+
+
+
         /*#alerta{
             display: none;
         }*/
+
     </style>
 
 
@@ -122,30 +134,40 @@
         <div id="alerta"></div>
 
         <div class="row">
-                <form class="form-inline">
-                    <div class="col-xs-3">
-                        <!--formulario en linea, horizontal -->
-                        <div class="form-group">
-                            <input type="number" class="form-control" step="1" max="100" min="0" id="numeroInput" placeholder="Dime un numero">
-                            <!--step, indica de cuanto a cuanto es el aumento -->
-                        </div>
+            <form class="form-inline">
+                <div class="col-xs-3">
+                    <!--formulario en linea, horizontal -->
+                    <div class="form-group">
+                        <input type="number" class="form-control" step="1" max="100" min="0" id="numeroInput" placeholder="Dime un numero">
+                        <!--step, indica de cuanto a cuanto es el aumento -->
                     </div>
-                    <div class="col-xs-9">
-                        <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir Numero</button>
-                    </div>
-                </form>
+                </div>
+                <div class="col-xs-9">
+                    <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir Numero</button>
+                </div>
+            </form>
 
         </div>
         <!--fin row 1-->
         <div class="row">
             <div class="panel panel-danger">
                 <div class="panel-heading">Numeros desordenados</div>
-                <div class="panel-body" id="cntNumDes">
+                <div class="panel-body container-flex" id="cntNumDes">
+
                     <!--propiedad innerHTML
                     <span class="box">3<span class="close">x</span></span>
                     <span class="box">6</span>
                    end innerHTML-->
+
+                    <!-- juego de ensayo para poder maquetar -->
+                    <span class="box">1<span class="close" onclick="eliminarBox(0)">x</span></span>
+                    <span class="box">2<span class="close" onclick="eliminarBox(1)">x</span></span>
+                    <span class="box">3<span class="close" onclick="eliminarBox(2)">x</span></span>
+                    <span class="box">4<span class="close" onclick="eliminarBox(3)">x</span></span>
+                    <span class="box">5<span class="close" onclick="eliminarBox(4)">x</span></span>
                 </div>
+
+
             </div>
 
         </div>
@@ -153,7 +175,7 @@
         <div class="row">
             <div class="panel panel-success">
                 <div class="panel-heading">Numeros ordenados</div>
-                <div class="panel-body" id="cntNumOrd">
+                <div class="panel-body container-flex" id="cntNumOrd">
                     <!--<span class="box">3</span> -->
                 </div>
             </div>
@@ -356,20 +378,21 @@
         /**eliminamos la caja del html y eliminamos el numero del array desordenado
          */
         function eliminarBox(pos) {
-             console.debug("eliminarBox %s", pos);
+            console.debug("eliminarBox %s", pos);
             aDesordenado.pop(aDesordenado[pos]);
             dibujarArray();
 
         }
-        function dibujarArray()
-        {
-             var arr = aDesordenado;
+
+        function dibujarArray() {
+            var arr = aDesordenado;
             var len = arr.length;
-            cntNumDes.innerHTML ="";
+            cntNumDes.innerHTML = "";
             for (var i = 0; i < len; i++) {
                 cntNumDes.innerHTML += spanNumero.replace('##numero##', arr[i]);
             }
         }
+
     </script>
 </body>
 

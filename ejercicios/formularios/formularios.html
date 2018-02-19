@@ -40,8 +40,9 @@
         <p>*<b>disabled</b> no se envia al submitar el formulario</p>
         <p>*<b>readonly</b> si se envia al submitar el formulario</p>
         <p><b>tabindex</b> es necesario por accesibilidad</p>
-        <!-- <form novalidate action="#URL_SERVIDOR" method="post">-->
-        <form novalidate action="index.html" method="get" onsubmit="return validar();">
+        <!-- <form novalidate action="#URL_SERVIDOR" method="post">
+        <form novalidate action="index.html" method="get" onsubmit="return validar();">-->
+        <form action="index.html" method="get" onsubmit="return validar();">
             <fieldset id="datos_personales">
                 <legend>Datos Personales:</legend>
 
@@ -49,13 +50,13 @@
                 <input type="text" name="id" value="456" readonly>
                 <br>
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" autofocus tabindex="1" required pattern="[A-Za-z]{3,120}" placeholder="Nombre, minimo 2 letras...">
+                <input type="text" name="nombre" id="nombre" autofocus tabindex="1" required pattern="[A-Za-z]{3,120}" placeholder="Nombre, minimo 2 letras..." oninvalid="setCustomValidity('El campo nombre es obligatorio');" oninput="setCustomValidity('')">
                 <br>
                 <label for="apellido1">Apellido:</label>
-                <input type="text" name="apellido1" id="apellido1" tabindex="2" required pattern="[A-Za-z]{3,120}" placeholder="Apellido, minimo 2 letras...">
+                <input type="text" name="apellido1" id="apellido1" tabindex="2" required pattern="[A-Za-z]{3,120}" placeholder="Apellido, minimo 2 letras..." oninvalid="setCustomValidity('El campo apellido es obligatorio');" oninput="setCustomValidity('')">
 
                 <label for="apellido2">Apellido2:</label>
-                <input type="text" name="apellido2" id="apellido2" tabindex="3" required pattern="[A-Za-z]{3,120}" placeholder="Apellido, minimo 2 letras...">
+                <input type="text" name="apellido2" id="apellido2" tabindex="3" required pattern="[A-Za-z]{3,120}" placeholder="Apellido, minimo 2 letras..." oninvalid="setCustomValidity('El campo apellido es obligatorio');" oninput="setCustomValidity('')">
                 <br>
 
                 <!--sexo  que se vea masculino, femenino y otro, se submita M, F, O-->
@@ -66,13 +67,13 @@
                     <input type="radio" value="O" name="sexo">Otro <br>
                 </fieldset>
                 <label for="email">Email:</label>
-                <input type="email" name="email" id="email" tabindex="5" required pattern="[a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4}$" placeholder="xxx@xxx.xxx">
+                <input type="email" name="email" id="email" tabindex="5" required pattern="[a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4}$" placeholder="xxx@xxx.xxx" oninvalid="setCustomValidity('El mail es obligatorio');" oninput="setCustomValidity('')">
 
 
                 <br>
                 <label for="pass">Contraseña:</label>
-                <input type="password" name="pass" id="pass" size="40" tabindex="5" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="mayusculas, minuscuas y numeros">
-                <i class="fa fa-eye" aria-hidden="true" onmouseover="ver()" on></i>
+                <input type="password" name="pass" id="pass" size="40" tabindex="5" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="mayusculas, minusculas y numeros" oninvalid="setCustomValidity('El campo contraseña es obligatorio');" oninput="setCustomValidity('')">
+                <i class="fa fa-eye" aria-hidden="true" onmouseover="ver()"></i>
                 <i class="fa fa-eye-slash" aria-hidden="true" onmouseover="resetear()"></i>
                 <!-- onmousedown="myFunction()" onmouseup="resetear()"-->
                 <br>
@@ -81,6 +82,11 @@
             <br>
             <fieldset id="direccion">
                 <legend>Dirección:</legend>
+
+                <label for="calle">Calle:</label>
+                <input type="text" name="calle" id="calle" autofocus tabindex="1" pattern="[A-Za-z]{3,120}" placeholder="Calle, minimo 2 letras...">
+                <br>
+
                 <label for="">Provincia:</label>
                 <select name="provincias" id="provincias" required>
                     <option value="" name="provincias">A Coruña</option>
@@ -182,6 +188,7 @@
     <script>
         const MIN = 25;
         const MAX = 500;
+        var errores = "";
 
         function validar() {
             console.log("Validar formulario");
@@ -214,25 +221,30 @@
             //  si es otro no es necesario
             var numHobbies = contarChecks();
             var queSexo = obtenerSexo();
+            var errores = "";
 
             switch (queSexo) {
                 case "M":
-                    if (numHobbies >= 2) {
-                        return true;
-                    } else {
-                        return false;
+                    if (numHobbies < 2) {
+                        errores += "Al menos 2 hobbies \n";
                     }
                     break;
                 case "F":
-                    if (numHobbies >= 3) {
-                        return true;
-                    } else {
-                        return false;
+                    if (numHobbies < 3) {
+                        errores += "Al menos 3 hobbies \n";
                     }
                     break;
                 default:
                     return true;
             }
+
+            if (document.forms[0].calle.value == "") {
+                errores += "Dime tu calle \n";
+            }
+            if (errores != "") {
+                alert(errores);
+            }
+            return (errores == "") ? true : false; //operador ternario
 
         }
 
@@ -243,7 +255,6 @@
             var len = texto.length;
 
             if (len >= MAX || len < 25) {
-
                 document.forms[0].txtObservaciones.style.color = "#ff0000"
 
             } else {

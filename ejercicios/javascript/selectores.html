@@ -28,6 +28,15 @@
             font-size: 1.5em;
         }
 
+        .verde {
+            color: green;
+
+        }
+
+        .rojo {
+            color: red;
+
+        }
     </style>
 </head>
 
@@ -104,7 +113,6 @@
                 document.getElementById("resultado1").textContent = cont;
                 console.info("Seleccionados: " + cVehiculos.item)
             }
-
         </script>
         <hr>
         <h2>getElementByTagName</h2>
@@ -129,27 +137,39 @@
             for (var i = 0; i < len; i++) {
                 spansVerde[i].classList.add("textoVerde");
             }
-
         </script>
         <hr>
         <h2>querySelector</h2>
         <div class="row">
             <div class="col-xs-6">
-            <span id="ejemplo3" class="lunes viernes pintxo">1</span>
-            <button id="boton" onclick="verDatos()">Ver</button>
-            <button id="boton" onclick="cambiarColor()">Rojo/Verde</button>
+                <span id="ejemplo3" class="lunes viernes pintxo verde">1</span>
+                <button id="boton" onclick="verDatos()">Ver</button>
+                <button id="boton" onclick="cambiarColor()">Rojo/Verde</button>
+            </div>
+            <div class="col-xs-3">
+                <p class="verde" id="mostrar"></p>
             </div>
         </div>
         <script>
-           function cambiarColor(){
-               //usando toggle cambiar de color
-
+            function cambiarColor() {
+                //usando toggle cambiar de color
+                var poner = document.getElementById("ejemplo3");
+                poner.classList.toggle("rojo");
             }
-            function verDatos(){
-              //var spans=  document.getElementsByTagName("span");
-               // var spansVerde = document.querySelectorAll("#verde span")
+
+            function verDatos() {
+                var ejemplo = document.getElementById("ejemplo3");
+                var numClases = ejemplo.classList;;
+                //var poner = document.getElementById("mostrar");
+                for (var i = 0; i < numClases.length; i++) {
+                    if (numClases[i] == "viernes") {
+                        var posicion = i + 1;
+                    }
+                }
+                ejemplo.textContent = ("Tiene " + numClases.length + " de clases, ademas el viernes esta en la posicion " + posicion);
             }
         </script>
+
 
     </div>
     <!--contenedor-->

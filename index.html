@@ -32,8 +32,9 @@
                 <li><a href="ejercicios/bootstrap/ejemplo-inicial.html">Bootstrap</a></li>
                 <li><a href="ejercicios/widget/index.html">Widget</a></li>
                 <li><a href="ejercicios/formularios/formularios.html">Formularios</a></li>
-
-           <li><a href="ejercicios/javascript/bubblesort.html">Buble Sort</a></li>
+                <li><a href="ejercicios/javascript/listener.html">Listener</a></li>
+                <li><a href="ejercicios/javascript/bubblesort.html">Buble Sort</a></li>
+                <li><a href="ejercicios/javascript/flexbox.html">Flexbox</a></li>
             </ul>
         </nav>
         <h1>Hello World</h1>
@@ -47,9 +48,9 @@
     </div>
     <!--end container-->
 
-        <div  id="cntFecha"></div>
+    <div id="cntFecha"></div>
 
-        <!-- jquery -->
+    <!-- jquery -->
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
     <!-- Latest compiled and minified JavaScript -->
@@ -58,12 +59,12 @@
     <script>
         var fecha = '<div>##anno##</div>';
         var dfecha = new Date();
-       var anyo = dfecha.getFullYear();
-    var cntFecha = document.getElementById("cntFecha");
-        cntFecha.innerHTML="";
+        var anyo = dfecha.getFullYear();
+        var cntFecha = document.getElementById("cntFecha");
+        cntFecha.innerHTML = "";
         cntFecha.innerHTML = fecha;
-        cntFecha.innerHTML.replace("##anno##",anyo);
-        document.write("Año "+ parseInt(anyo));
+        cntFecha.innerHTML.replace("##anno##", anyo);
+        document.write("Año " + parseInt(anyo));
     </script>
 </body>
 

@@ -34,16 +34,24 @@
         margin: 20px 0;
     }
 
+    .container-flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: 125px;
+        align-items: center;
+    }
+
     .box {
         position: relative;
-        display: inline-block;
+        /*display: inline-block;  */
         width: 75px;
         height: 75px;
         background-color: rebeccapurple;
         color: wheat;
         font-size: 3em;
         text-align: center;
-        margin: 8px;
+        /*margin: 8px;*/
     }
 
     .box .fa {
@@ -73,14 +81,14 @@
 
 
     .box2 {
-        display: inline-block;
+        /*display: inline-block;  */
         width: 75px;
         height: 75px;
         background-color: forestgreen;
         color: wheat;
         font-size: 3em;
         text-align: center;
-        margin: 5px;
+        /*margin: 5px;*/
     }
 </style>
 
@@ -112,10 +120,12 @@
             <div class="panel panel-danger">
                 <!-- Default panel contents -->
                 <div class="panel-heading ">Numeros desordenados</div>
-                <div class="panel-body" id="cntNumDes">
+                <div class="panel-body container-flex" id="cntNumDes">
+
                     <!-- Inner html
                     <span class="box">3</span>
                      end Inner html -->
+                    <span class="box" id="aparece">1<span onclick="borrar(0)"> <i class="fa fa-times-circle" aria-hidden="true"></i></span></span><span class="box" id="aparece">2<span onclick="borrar(1)"> <i class="fa fa-times-circle" aria-hidden="true"></i></span></span><span class="box" id="aparece">3<span onclick="borrar(2)"> <i class="fa fa-times-circle" aria-hidden="true"></i></span></span><span class="box" id="aparece">4<span onclick="borrar(3)"> <i class="fa fa-times-circle" aria-hidden="true"></i></span></span><span class="box" id="aparece">5<span onclick="borrar(4)"> <i class="fa fa-times-circle" aria-hidden="true"></i></span></span>
                 </div>
             </div>
         </div>
@@ -123,7 +133,7 @@
             <div class="panel panel-success">
                 <!-- Default panel contents -->
                 <div class="panel-heading ">Numeros ordenados</div>
-                <div class="panel-body" id="cntNumOrd">
+                <div class="panel-body container-flex" id="cntNumOrd">
                 </div>
             </div>
             <div class="row">
@@ -187,8 +197,8 @@
 
 
         }
-//Funcion borrar (sin probar si funciona) falta repintar tanto ordenar como desorden
-        function borrar(var num) {
+        //Funcion borrar (sin probar si funciona) falta repintar tanto ordenar como desorden
+        /*function borrar(var num) {
             var len = arrDes.length;
             for (var i = num; i < len; i++) {
                 arrDes[i] = arrDes[i + 1];
@@ -200,7 +210,7 @@
 
 
         }
-
+*/
         function ordenar() {
             alerta.innerHTML = "";
             console.debug("array desordenado" + arrDes);

@@ -66,13 +66,13 @@
                     <div class="col-xs-6">
                         <fieldset class="checkbox">
                             <legend style="text-align: center;" id="hobbies">Hobbies</legend>
-                            <input type="checkbox" name="hobbies" value="option1" required/> Danza<br>
-                            <input type="checkbox" name="hobbies" value="option2" required/> Videojuegos<br>
-                            <input type="checkbox" name="hobbies" value="option3" required/> Cazar<br>
-                            <input type="checkbox" name="hobbies" value="option4" required/> Deporte<br>
-                            <input type="checkbox" name="hobbies" value="option5" required/> Deporte de riesgo<br>
-                            <input type="checkbox" name="hobbies" value="option6" required/> Fotografia<br>
-                            <input type="checkbox" name="hobbies" value="option7" required/> Cantar
+                            <input type="checkbox" name="hobbies" value="option1" /> Danza<br>
+                            <input type="checkbox" name="hobbies" value="option2" /> Videojuegos<br>
+                            <input type="checkbox" name="hobbies" value="option3" /> Cazar<br>
+                            <input type="checkbox" name="hobbies" value="option4" /> Deporte<br>
+                            <input type="checkbox" name="hobbies" value="option5" /> Deporte de riesgo<br>
+                            <input type="checkbox" name="hobbies" value="option6" /> Fotografia<br>
+                            <input type="checkbox" name="hobbies" value="option7" /> Cantar
                         </fieldset>
                     </div>
                 </div>
@@ -193,7 +193,7 @@
         function validar() {
             console.log("Validar formulario");
             var formulario = document.forms[0];
-            var hobies = document.getElementsByName('hobbies');
+            var hobies = formulario.hobbies;
             var checkedHobies = 0;
 
             for (var i = 0; i < hobies.length; i++) {
@@ -210,26 +210,18 @@
                         console.info("minimo mete 1 campo de hobbie");
                         salida = false;
                     }
-
                     break;
-
-
                 case "F":
                     console.info("Eres chica");
                     if (checkedHobies < 3) {
                         console.info("minimo mete 3 campo de hobbie");
                         salida = false
                     };
-
                     break;
-
                 default:
                     console.info("Eres otro")
                     break;
-
             }
-
-
             return salida;
 
         }

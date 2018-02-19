@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flex</title>
+    <!-- Latest compiled and minified CSS -->
+    <!-- font awesome 4.7 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <style>
+        .container-flex {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: stretch;
+
+
+        }
+
+        .box-flex {
+            background-color: #88499C;
+            display: flex;
+            width: 15%;
+            height: 200px;
+            border-radius: 25px;
+            font-size: 3em;
+            color: white;
+            justify-content:center;
+
+        }
+        .mayus{
+            align-self:flex-start;
+
+        }
+        .minus{
+            align-self: flex-end;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Flex</h1>
+    <div class="container-flex">
+        <div class="box-flex" id="a">
+            <span class="mayus">A</span>
+            <span class="minus">a</span>
+        </div>
+        <div class="box-flex" id="e" style="order:0">
+            <span class="mayus">E</span>
+            <span class="minus">e</span>
+        </div>
+        <div class="box-flex" id="i" style="order:3">
+            <span class="mayus">I</span>
+            <span class="minus">i</span>
+        </div>
+        <div class="box-flex" id="o" style="order:4">
+            <span class="mayus">O</span>
+            <span class="minus">o</span>
+        </div>
+        <div class="box-flex" id="u" style="order:5">
+            <span class="mayus">U</span>
+            <span class="minus">u</span>
+        </div>
+    </div>
+    <br>
+    <input type="buttom" class="btn btn-default" value="DesOrdenar" id="desOrden">
+    <script>
+        var div = ["a", "e", "i", "o", "u"];
+        var divTam = div.length;
+
+        document.getElementById("desOrden").addEventListener('click', function() {
+            for (var i = 0; i < divTam; i++) {
+                var orden = parseInt((Math.random() * divTam) + 1);
+                var busqueda =div[i];
+                document.getElementById(busqueda).style.order=orden;
+
+            }
+        })
+    </script>
+
+
+
+    <a href="index.html"><i class="fa fa-reply" aria-hidden="true"></i>
+</a><br><br><br>
+    <!-- jquery-->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>

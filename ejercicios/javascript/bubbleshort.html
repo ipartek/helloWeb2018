@@ -47,7 +47,9 @@
         <div class="row">
             <div class="panel panel-danger">
                 <div class="panel-heading">Numeros desordenados</div>
-                <div class="panel-body" id="divNumDes">
+                <div class="panel-body container-flex" id="divNumDes">
+
+                    <span class="box">1<span class="close" onclick="eleminarCaja(0)">x</span></span><span class="box">2<span class="close" onclick="eleminarCaja(1)">x</span></span><span class="box">3<span class="close" onclick="eleminarCaja(2)">x</span></span><span class="box">4<span class="close" onclick="eleminarCaja(3)">x</span></span><span class="box">5<span class="close" onclick="eleminarCaja(4)">x</span></span>
 
                     <!-- innerHTML -->
                     <!--
@@ -62,7 +64,7 @@
 
             <div class="panel panel-success">
                 <div class="panel-heading">Numeros ordenados</div>
-                <div class="panel-body" id="divNumOrd">
+                <div class="panel-body container-flex" id="divNumOrd">
 
                 </div>
             </div>
@@ -90,8 +92,6 @@
 
 
     <script src="/js/ordenarNumeros.js">
-
-
     </script>
 </body>
 

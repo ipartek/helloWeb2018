@@ -39,18 +39,18 @@
            required="required" requerido
            pattern = patrones con expresiones regulares HTML% patterns
            autofocus coge el foco al cargar -->
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre. Entre 2-120 letras" required pattern="[A-Za-z]{2,120}" tabindex="1" autofocus oninput="validarCampos(this)"><br>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre. Entre 2-120 letras" required pattern="[A-Za-z]{2,120}" tabindex="1" autofocus oninvalid="El nombre introducido no es valido" oninput="setCustomValidity('')"><br>
 
                 <label for="apellido">Apellido</label>
-                <input type="text" name="apellido" id="apellido" placeholder="Apellido. Entre 2-120 letras" required pattern="[A-Za-z]{2,120}" tabindex="2" oninput="validarCampos(this)"><br>
+                <input type="text" name="apellido" id="apellido" placeholder="Apellido. Entre 2-120 letras" required pattern="[A-Za-z]{2,120}" tabindex="2" oninvalid="El apellido introducido no es valido" oninput="setCustomValidity('')"><br>
 
 
 
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="email" required tabindex="3" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" oninput="validarCampos(this)"><br>
+                <input type="email" name="email" id="email" placeholder="email" required tabindex="3" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" oninvalid="El email introducido no es valido" oninput="setCustomValidity('')"><br>
 
                 <label for="pass">Contraseña</label>
-                <input type="password" name="pass" id="pass" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required tabindex="4" placeholder="Mayuscula, miniscula y numero" oninput="validarCampos(this)">
+                <input type="password" name="pass" id="pass" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required tabindex="4" placeholder="Mayuscula, miniscula y numero" oninvalid="La contraseña introducida no es valida" oninput="setCustomValidity('')">
                 <button type="button" onmousedown="passToggle()" onmouseup="passToggle()"><i id="ojo" class="fa fa-eye-slash" aria-hidden="true"></i></button><br>
 
                 <label for="sexo">Sexo</label>

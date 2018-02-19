@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <style>
+        #azul {
+            background-color: cadetblue;
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+        }
+
+        #rojo {
+            background-color: red;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+
+        #verde {
+            background-color: green;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin-left: 25px;
+            margin-top: 25px;
+        }
+
+        .vocales {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-bottom: 25px;
+
+        }
+
+        .vocales div {
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            background-color: cadetblue;
+            color: white;
+            font-size: 3em;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 10%;
+
+        }
+
+        /*
+        .a {
+            order: 1;
+        }
+
+        .e {
+            order: 2
+        }
+
+        .i {
+            order: 3;
+        }
+
+        .o {
+            order: 4;
+        }
+
+        .u {
+            order: 5;
+        }
+
+        */
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="container">
+
+
+        <h1>Listener</h1>
+        <div class="row">
+            <input id="btn" type="button" class="btn btn-success" value="escucho">
+
+            <input id="btnJs" type="button" class="btn btn-info" value="js event">
+
+            <input id="btnReset" type="button" class="btn btn-danger" value="Reset">
+        </div>
+        <textarea name="" id="ta" cols="30" rows="10"></textarea>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <h2>Bubbling</h2>
+                <div id="azul">
+                    <div id="rojo">
+                        <div id="verde"></div>
+                    </div>
+                </div>
+
+                <p>Rojo permite bubbling</p>
+                <p>verde NO permite bubbling</p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <h1>Maquetacion con flex</h1>
+            <div class="vocales">
+
+                <div id="a">
+                    <span>A</span><span>a</span>
+                </div>
+                <div id="e">
+                    <span>E</span><span>e</span>
+                </div>
+                <div id="i">
+                    <span>I</span><span>i</span>
+                </div>
+                <div id="o">
+                    <span>O</span><span>o</span>
+                </div>
+                <div id="u">
+                    <span>U</span><span>u</span>
+                </div>
+
+
+            </div>
+
+            <input id="desorden" type="button" class="btn btn-primary" value="Desordenar">
+
+        </div>
+
+
+        <div class="row">
+            <h1>Event listeners aplicado a parrafos</h1>
+            <p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit veritatis, fugit molestiae nulla enim reiciendis magni voluptatibus voluptas expedita porro. Obcaecati amet, nemo facilis commodi at, quo illum quos explicabo!
+            </p>
+            <p id="p2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit veritatis, fugit molestiae nulla enim reiciendis magni voluptatibus voluptas expedita porro. Obcaecati amet, nemo facilis commodi at, quo illum quos explicabo!
+            </p>
+            <p id="p3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit veritatis, fugit molestiae nulla enim reiciendis magni voluptatibus voluptas expedita porro. Obcaecati amet, nemo facilis commodi at, quo illum quos explicabo!
+            </p>
+
+            <input id="desorden" type="button" class="btn btn-primary" value="Desordenar">
+
+        </div>
+
+    </div>
+
+
+    <script>
+        var ta = document.getElementById("ta");
+
+        var azul = document.getElementById("azul");
+        azul.addEventListener('click', function() {
+            ta.textContent += "click en azul\n";
+        });
+
+        var rojo = document.getElementById("rojo");
+        rojo.addEventListener('click', function() {
+            ta.textContent += "click en rojo\n";
+        });
+
+        var verde = document.getElementById("verde");
+        verde.addEventListener('click', function(event) {
+            ta.textContent += "click en verde, x:" + event.x + " y:" + event.y + "\n";
+            event.stopPropagation(); //Evitar bubbling
+
+            //cambiar color del contenedor padre a amarillo
+            event.target.parentElement.style.backgroundColor = 'yellow';
+        });
+    </script>
+
+
+
+
+    <script>
+        /*Escribimos en el textArea*/
+
+        function show(texto) {
+            var ta = document.getElementById("ta");
+            ta.textContent += texto + '\n';
+        }
+
+
+        //Escuchador o listener para los botones
+
+        var btn = document.getElementById("btn");
+        btn.addEventListener('click', function() {
+            show('Lorem ipsum')
+        }, false);
+
+        var btnReset = document.getElementById("btnReset");
+        btnReset.addEventListener('click',
+            function() {
+                document.getElementById("ta").textContent = "";
+            }, false)
+
+        var btnJs = document.getElementById("btnJs");
+        btnJs.onclick = function() {
+            document.getElementById("ta").textContent += 'onclick con Js\n'
+        };
+    </script>
+
+
+
+
+
+
+    <script>
+        /*Script para desordenar las letras*/
+
+        var aleatorio = [];
+        var btnDesordenar = document.getElementById("desorden");
+        btnDesordenar.addEventListener('click', desordenar);
+
+        function desordenar() {
+            for (i = 0; i < 5; i++) {
+                aleatorio[i] = Math.floor((Math.random() * 5) + 1);
+
+            }
+
+
+            document.getElementById("a").style.order = aleatorio[0];
+            document.getElementById("e").style.order = aleatorio[1];
+            document.getElementById("i").style.order = aleatorio[2];
+            document.getElementById("o").style.order = aleatorio[3];
+            document.getElementById("u").style.order = aleatorio[4];
+
+        }
+    </script>
+
+
+
+    <script>
+        /*Script para poner en rojo el parrafo que pinchemos*/
+
+
+        parrafos = document.getElementsByTagName("p");
+
+        for (i = 0; i < parrafos.length; i++) {
+            parrafos[i].addEventListener('click', colorear);
+
+        }
+
+
+        function colorear() {
+           event.target.style.color = "red";
+        }
+
+    </script>
+
+
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

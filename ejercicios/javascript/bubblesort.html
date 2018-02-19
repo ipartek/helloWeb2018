@@ -18,17 +18,26 @@
 			margin: 20px 0;
 		}
 
+        .container-flex{
+
+            display:flex;
+            flex-direction:row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            text-align: center;
+            align-items: center;
+        }
+
 		.box {
-			display: inline-block;
 			width: 75px;
-			height: 75px;
+			/*height: 75px;*/
 			background-color: grey;
 			color: #FFF;
 			font-size: 3em;
 			text-align: center;
 			padding-top: 10px;
-			margin-right: 10px;
 			position: relative;
+            display:flex;
 		}
 
 		.box .close{
@@ -42,7 +51,6 @@
 			opacity: 0.8;
 			font-size: 0.5em;
 			border-radius: 50%;
-			padding-top: 2px;
 		}
 
 		.box:last-child {
@@ -135,7 +143,7 @@
 		<div class="row">
 			<div class="panel panel-danger">
 				<div class="panel-heading">Números desordenados</div>
-				<div class="panel-body" id="cntNumDes">
+				<div class="panel-body container-flex" id="cntNumDes">
 					<!--innerHTML-->
 
 
@@ -145,6 +153,8 @@
 
 
 					<!--end innerHTML-->
+
+					<span class="box">1<span onclick="eliminarBox(##posicion##)" class="close">x</span></span><span class="box">2<span onclick="eliminarBox(##posicion##)" class="close">x</span></span><span class="box">3<span onclick="eliminarBox(##posicion##)" class="close">x</span></span><span class="box">4<span onclick="eliminarBox(##posicion##)" class="close">x</span></span><span class="box">5<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>
 				</div>
 			</div>
 		</div>
@@ -152,7 +162,7 @@
 		<div class="row">
 			<div class="panel panel-success">
 				<div class="panel-heading">Numeros ordenados</div>
-				<div class="panel-body" id="cntNumOrd">
+				<div class="panel-body container-flex" id="cntNumOrd">
 
 				</div>
 			</div>

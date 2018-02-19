@@ -23,7 +23,7 @@
 		<p><b>tabindex</b> es necesario por accesibilidad</p>
 
 
-		<form novalidate action="index.html" method="get" onsubmit="return validar();">
+		<form id="formulario" novalidate action="index.html" method="get" onsubmit="return validar();">
 
 			<fieldset>
 				<legend>Datos personales:</legend>
@@ -40,7 +40,8 @@
 				<!--
 				<input type="text" name="nombre" id="nombre" tabindex="1" autofocus required="required" pattern="[A-Za-z]{2,120}" placeholder="Nombre (minimo 2 letras)">
 				-->
-				<input type="text" name="nombre" id="nombre" tabindex="1" required placeholder="nombre" pattern="[A-Za-z]{2,120}">
+				<input type="text" name="nombre" id="nombre" tabindex="1" required placeholder="nombre" pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('El campo nombre es obligatorio')"
+                       oninput="setCustomValidity('')">>
 
 				<!-- el atributo required puede expresarse como required="required o simplemente como required(sin valor porque se sobreentiende) -->
 
@@ -56,14 +57,14 @@
 
 				<label for="pass">Password:</label>
 				<input type="password" class="form-control" name="password" id="pass" tabindex="4" required="required" size="30" placeholder="Mayusculas, minusculas y numeros" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-				<span onmousedown="mostrar()" onmouseup="ocultar()" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+				<span class="fa fa-fw fa-eye field-icon toggle-password" onclick="mostrar()"></span>
 				<br>
 
 				<label for="sex">Sexo:</label>
 				<br>
-				<input type="radio" name="sex" required="required" value="m">Masculino <br>
-				<input type="radio" name="sex" required="required" value="f">Femenino <br>
-				<input type="radio" name="sex" required="required" value="o">Otro <br>
+				<input type="radio" name="sexo" required="required" value="M">Masculino <br>
+				<input type="radio" name="sexo" required="required" value="F">Femenino <br>
+				<input type="radio" name="sexo" required="required" value="O">Otro <br>
 				<br>
 
 			</fieldset>
@@ -169,24 +170,57 @@
 
 
 <script>
+
 	function mostrar(){
 		 document.getElementById("pass").setAttribute("type", text);
+        document.getElementById("pass").setAttribute("type", password);
 
 	}
 
-	function ocultar(){
-		document.getElementById("pass").setAttribute("type", password);
-	}
 
-	function validar(){
+    function validar() {
+            console.log("validar formulario");
+            var errores = "";
+            //mas seguro cojer por id
+            var formulario = document.getElementById("formulario");
+            //contar numero checkboxes
+            var numChecks = 0;
+            var cHobbies = formulario.hobbies;
+            for(i=0; i < cHobbies.length; i++){
+                if ( cHobbies[i].checked ){
+                    numChecks++;
+                }
+            }
+            var sexo = formulario.sexo.value;
+            switch (sexo) {
+                case 'M':
+                    if ( numChecks < 1 ){
+                        errores += 'Al menos selecciona 1 hobby \n';
+                    }
+                    break;
+                case 'F':
+                     if ( numChecks < 3 ){
+                        errores += 'Al menos selecciona 3 hobbys \n';
+                    }
+                    break;
+                /*
+                case 'O':
+                    //no hacer nada
+                    break;
+                */
+                //default es opcional
+            }
+            //switch
+            if ( formulario.calle.value == "" ){
+                errores += 'Dime tu calle \n';
+            }
+            //mostrar errores con alert
+            if ( errores != "" ){
+                alert(errores);
+            }
+            return ( errores == "" )?true:false;
+        }
 
-		console.log("Validar formulario");
-
-		//mas seguro cogerlo por id
-		var formulario=document.forms[0];
-
-		return false;
-	}
 	</script>
 </body>
 

@@ -13,6 +13,9 @@ var provincia = document.getElementById('busqueda_provincia');
 
 var caracteres = document.getElementById('caracteres');
 
+//variable para almacenar la lista de campos no validos
+var noValidos = '';
+
 //Plantilla del panel que se introduce crearDivInfo
 var contenidoDiv = '<div class="panel panel-##clase##" ><div class="panel-heading"><span>##titulo##</span></div><div class="panel-body">##informacion##</div></div>';
 
@@ -38,7 +41,7 @@ function passToggle() {
 
 
 /*
-function validar(element) {
+function validarCampos(element) {
 
     //Hay que resetear el CustomValidity para que ejecute checkValidity(), si no da error
     element.setCustomValidity('');
@@ -112,33 +115,80 @@ function validarForm() {
 
     // Se genera un panel de error dependiendo de las observaciones introducidas
     var vObservaciones = validarTexto(observaciones, 25, 500);
+
+    //Limpiar el div en el que sale el error de las observaciones
     document.getElementById('divError').innerHTML = '';
     if (observaciones.value.length < 25) {
-        crearDivInfo('divError', 'danger', 'Observaciones', contenidoDiv);
+        crearDivInfo('divError', 'warning', 'Observaciones', contenidoDiv);
         crearContenido('divError', 'Las observaciones deben tener al menos 25 caracteres');
     } else if (observaciones.value.length > 500) {
         crearDivInfo('divError', 'danger', 'Observaciones', contenidoDiv);
         crearContenido('divError', 'Las observaciones deben tener un maximo de 500 caracteres');
     }
 
+    //Limpiar el div en el que salen los campos no validos
+    document.getElementById('divNoValidos').innerHTML = '';
+
     //Se comprueba si todos los campos pasan la validacion
     if (vNombre && vApellido && vEmail && vPass && vDireccion && vCp && vSexo && vAficion && vCondiciones && VProvincia && vObservaciones) {
         return true;
     } else {
         console.log('FALSE');
+
+        noValidos = '<p>Los siguientes campos no son validos</p>';
+
+        if (!vNombre) {
+            noValidos += '<p>Nombre</p>'
+        }
+        if (!vApellido) {
+            noValidos += '<p>Apellido</p>'
+        }
+        if (!vEmail) {
+            noValidos += '<p>Email</p>'
+        }
+        if (!vPass) {
+            noValidos += '<p>Contraseña</p>'
+        }
+        if (!vSexo) {
+            noValidos += '<p>Sexo</p>'
+        }
+        if (!vDireccion) {
+            noValidos += '<p>Direccion</p>'
+        }
+        if (!vCp) {
+            noValidos += '<p>Codigo Postal</p>'
+        }
+        if (!VProvincia) {
+            noValidos += '<p>Provincia</p>'
+        }
+        if (!vAficion) {
+            noValidos += '<p>Aficiones</p>'
+        }
+        if (!vObservaciones) {
+            noValidos += '<p>Observaciones</p>'
+        }
+        if (!vCondiciones) {
+            noValidos += '<p>Aceptar condiciones</p>'
+        }
+
+
+        crearDivInfo('divNoValidos', 'danger', 'Campos a rellenar', contenidoDiv);
+        crearContenido('divNoValidos', noValidos);
+
         return false;
     }
+
 
 }
 
 /**
-* Funcion que valida los campos de texto
-* @texto - el input del que se quiere comprobar el texto
-* @min - el numero minimo de caracteres
-* @max el numero maximo de caracteres
-*
-*
-*/
+ * Funcion que valida los campos de texto
+ * @texto - el input del que se quiere comprobar el texto
+ * @min - el numero minimo de caracteres
+ * @max el numero maximo de caracteres
+ *
+ *
+ */
 function validarTexto(texto, min, max) {
 
     if (texto.value.length >= min && texto.value.length <= max) {
@@ -150,10 +200,10 @@ function validarTexto(texto, min, max) {
 }
 
 /**
-* Funcion que valida si en el select se elegido un campo que no tenga value = 0 que deberia ser '...'
-*
-*
-*/
+ * Funcion que valida si en el select se elegido un campo que no tenga value = 0 que deberia ser '...'
+ *
+ *
+ */
 function validarSelect(select) {
     if (select.value != '0') {
         return true;
@@ -163,13 +213,13 @@ function validarSelect(select) {
 }
 
 /**
-* Funcion que los checkbox
-* @checkbox - el input del que se quiere comprobar
-* @min - el numero minimo de checkbox marcados
-* @max el numero maximo de checkbox marcados
-*
-*
-*/
+ * Funcion que los checkbox
+ * @checkbox - el input del que se quiere comprobar
+ * @min - el numero minimo de checkbox marcados
+ * @max el numero maximo de checkbox marcados
+ *
+ *
+ */
 function validarCheckbox(checkbox, min, max) {
 
     var marcados = 0;
@@ -187,8 +237,8 @@ function validarCheckbox(checkbox, min, max) {
 }
 
 /**
-* Funcion que valida si se ha seleccionado algun valor radio
-*/
+ * Funcion que valida si se ha seleccionado algun valor radio
+ */
 function validarRadio(radio) {
 
     var marcados = 0;
@@ -206,13 +256,13 @@ function validarRadio(radio) {
 }
 
 /**
-* Funcion que valida los campos de texto
-* @texto - el input del que se quiere comprobar el texto
-* @min - el numero minimo de caracteres
-* @max el numero maximo de caracteres
-*
-*
-*/
+ * Funcion que valida los campos de texto
+ * @texto - el input del que se quiere comprobar el texto
+ * @min - el numero minimo de caracteres
+ * @max el numero maximo de caracteres
+ *
+ *
+ */
 function validarTextarea(texto, min, max) {
     if (texto.value.length >= min && texto.value.length <= max) {
         return true;
@@ -222,8 +272,8 @@ function validarTextarea(texto, min, max) {
 }
 
 /**
-* Funcion que cuenta el numero de caracteres del textarea y los saca por pantalla
-*/
+ * Funcion que cuenta el numero de caracteres del textarea y los saca por pantalla
+ */
 function contarCarcteres() {
 
     caracteres.innerHTML = '<p>' + observaciones.value.length + '/500 caracteres usados</p>';

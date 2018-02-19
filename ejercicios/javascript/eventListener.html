@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Listeners</title>
+
+    <!-- meta para RWD -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CARGAS POR CDN -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!--ESTILOS LOCALES-->
+    <style>
+        #azul {
+            background-color: blue;
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+            z-index: 1;
+            display: flex;
+        }
+
+        #rojo {
+            background-color: red;
+            display: inline-block;
+            margin: auto;
+            width: 150px;
+            height: 150px;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #verde {
+            background-color: green;
+            width: 50px;
+            height: 50px;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <header>
+            <h1>Event Listeners</h1>
+        </header>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-6">
+                <h2>Listeners</h2>
+
+                <input type="button" id="btn" class="btn btn-success" value="Listener">
+                <input type="button" id="btnJS" class="btn btn-primary" value="JS Event">
+                <input type="button" id="btnReset" class="btn btn-danger" value="Reset">
+                <br><br>
+                <textarea name="ta" id="ta" cols="30" rows="10"></textarea>
+            </div>
+
+
+            <div class="col-xs-6">
+                <h2>Bubbling</h2>
+
+                <div id="azul">
+                    <div id="rojo">
+                        <div id="verde"></div>
+                    </div>
+                </div>
+                <p>Rojo permite bubbling: rojo y azul</p>
+                <p>Verde NO permite bubbling: sólo verde</p>
+            </div>
+
+
+        </div>
+        <hr>
+        <div class="row" id="parrafos">
+
+            <h3>Pulsa sobre un párrafo:</h3>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique eaque totam est in quidem tempora, quas vel magnam maxime mollitia doloremque esse ad accusantium possimus ut libero alias vitae suscipit.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora odit expedita, sint, iusto quisquam harum rem officia pariatur veritatis velit ducimus non iste quod voluptates provident perspiciatis obcaecati, assumenda vitae.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore accusantium ut mollitia quo recusandae cumque, in repellendus, necessitatibus nobis saepe est! Ea exercitationem fugit dolores ex nobis aliquid esse rem.</p>
+
+        </div>
+
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!-- CARGA DE SCRIPTS -->
+    <!-- jQuery v2.2.4 minified (dado que no vamos a aplicar cambios en el código de jQuery, usamos la versión 'minified' que viene sin indentar) -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+    </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--SCRIPT LOCAL-->
+    <script>
+        // var globales de acceso al DOM
+        var btn = document.getElementById("btn");
+        var btnJS = document.getElementById("btnJS");
+        var btnReset = document.getElementById("btnReset");
+        var ta = document.getElementById("ta");
+        var azul = document.getElementById("azul");
+        var rojo = document.getElementById("rojo");
+        var verde = document.getElementById("verde");
+        var parrafos = document.querySelectorAll("#parrafos p");
+
+        /**
+         *   Escribimos en el textarea
+         **/
+        function show(texto) {
+            ta.textContent += texto + " \n";
+        }
+
+        /**
+         *   Listener del botón 'btn'
+         **/
+
+        btn.addEventListener("click", function() {
+            show("Lorem Ipsum")
+        }, false);
+
+        /**
+         *   Resetear el contenido de textarea#ta
+         **/
+
+        btnReset.addEventListener("click", function() {
+            ta.textContent = "";
+        })
+
+        /**
+         *   Lanzar función show() mediante JS y sin listener
+         **/
+        btnJS.onclick = function() {
+            show("Lorem Ipsum")
+        };
+
+
+        azul.addEventListener("click", function() {
+            show("azul")
+        });
+
+
+        rojo.addEventListener("click", function() {
+            show("rojo");
+            // Devuelve el color del objeto clickado a rojo
+            this.style.backgroundColor = "red";
+        });
+
+
+        verde.addEventListener("click", function(event) {
+            show("verde");
+            // NOTE: para evitar propagación o "Bubbling"
+            event.stopPropagation();
+            //cambiar atributos de contenedor padre: color : yellow
+            event.target.parentElement.style.backgroundColor = "yellow";
+        });
+
+        /**
+         *   TODO: Añadir un listener a cada párrafo ("#parrafos p") y cambiar el estilos del párrafo seleccionado
+         *   Listener para cambiar de color el párrafo seleccionado
+         **/
+        parrafos.forEach(function(elem) {
+            elem.addEventListener("click", function(event) {
+
+                // Resetear los parrafos al estilo por defecto
+                parrafos.forEach(function(parrafo) {
+                    parrafo.style.color = "black";
+                    parrafo.style.fontWeight = "400";
+                });
+
+                this.style.color = "red";
+                this.style.fontWeight = "600";
+            }, false);
+        });
+    </script>
+</body>
+</html>

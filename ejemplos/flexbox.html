@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+</head>
+
+<body>
+    <header>
+        <h1>Flexbox</h1>
+    </header>
+
+    <section class="container">
+
+        <!--ESTILOS LOCALES-->
+        <style>
+            #contenedor {
+                border: 3px solid black;
+                height: 100px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: stretch;
+
+            }
+
+            .caja {
+                display: flex;
+                background-color: darkblue;
+                color: aliceblue;
+                width: 50px;
+                border-radius: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 1px;
+            }
+
+            .mayus {
+                align-self: flex-start;
+                width: 100%;
+                text-align: center;
+                margin-top: 5px;
+            }
+
+            .minus {
+                align-self: flex-end;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+        </style>
+
+        <button onclick="reordenar()">CAMBIAR ORDEN</button>
+        <br><br>
+        <div id="contenedor">
+            <div class="caja">
+                <div class="item mayus">A</div>
+                <div class="item minus">a</div>
+            </div>
+            <div class="caja">
+                <div class="item mayus">E</div>
+                <div class="item minus">e</div>
+            </div>
+            <div class="caja">
+                <div class="item mayus">I</div>
+                <div class="item minus">i</div>
+            </div>
+            <div class="caja">
+                <div class="item mayus">O</div>
+                <div class="item minus">o</div>
+            </div>
+            <div class="caja">
+                <div class="item mayus">U</div>
+                <div class="item minus">u</div>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        // var globales de acceso al DOM
+        var cajas = document.querySelectorAll(".caja");
+
+        /*
+         *   Función para reordenar las cajas con items
+         **/
+        function reordenar() {
+
+            for(var iCaja = 0; iCaja < cajas.length; iCaja++) {
+                cajas[iCaja].style.order = Math.floor(Math.random() * 5);
+            }
+        }
+    </script>
+</body>
+</html>

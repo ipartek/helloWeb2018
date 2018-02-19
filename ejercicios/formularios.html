@@ -84,7 +84,7 @@
         <section id="formulario">
             <h2>Formulario de ejemplo:</h2>
             <!--con el atributo de form "novalidate": evita las validaciones html5-->
-            <form novalidate action="index.html" method="post" onsubmit="return validar()">
+            <form action="index.html" method="post" onsubmit="return validar()">
 
                 <fieldset id="datos-personales">
                     <legend>Dator personales</legend>
@@ -92,11 +92,11 @@
                     <input type="text" name="id" value="72" disabled><br>
 
                     <label for="nombre">Nombre*</label>
-                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" pattern="[A-Za-z]{3,120}" required tabindex="1">
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" pattern="[A-Za-z\s]{3,120}" maxlength="120" required tabindex="1">
                     <br>
 
                     <label for="apellido">Apellido* </label>
-                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" pattern="[A-Za-z\s]{3,120}" required tabindex="2">
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" pattern="[A-Za-z\s]{3,120}" maxlength="120" required tabindex="2">
                     <br>
 
                     <!-- TODO[x]: radio: SEXO: masculino(M), femenino(F), otro(O) -->
@@ -130,7 +130,8 @@
                     <input type="text" required tabindex="8">
                     <br>
                     <label for="cp">CP* </label>
-                    <input type="text" name="cp" id="cp" placeholder="cód. postal" pattern="[0-9]{5,5}" size="5" maxlength="5" required tabindex="9">
+                    <!--NOTE: se muestra un mensaje de validación personalizado. Después de personalizarlo, hay que reiniciarlo para que vuelva a funcionar.-->
+                    <input type="text" name="cp" id="cp" placeholder="cód. postal" pattern="[0-9]{5,5}" size="5" minlength="5" maxlength="5" oninvalid="setCustomValidity('Introduzca un código postal correcto')" oninput="setCustomValidity('')" required tabindex="9">
                     <br>
                     <!-- TODO[x]: select: con las provincias de España -->
                     <label for="provincia">Provincia*</label>
@@ -306,6 +307,7 @@
                 }
             }
 
+            // Obtener sexo y mostrar un mensaje de error dependiendo de unas condiciones para cada resultado
             switch (sexo) {
                 case 'M':
                     if (contIntereses < 2) {
@@ -323,11 +325,15 @@
                     datosValidos = true;
                     break;
             }
+            // FIN Switch verificar sexo
 
 
             // TODO[x]: validar que la cantidad de caracteres de 'observaciones' esté en el rango [25 - 500]
             if (25 > taObservaciones.value.length || taObservaciones > 500) {
-                alert("Debe rellenar el apartado de observaciones y sugerencias con un mínimo de 25 caracteres.")
+                alert("Debe rellenar el apartado de observaciones y sugerencias con un mínimo de 25 caracteres.");
+                // NOTE: los campos del formulario tienen un atributo propio llamada 'elem.validity'
+                /*taObservaciones.validity = false;
+                taObservaciones.setCustomValidity("Debe rellenar el apartado de observaciones y sugerencias con un mínimo de 25 caracteres.");*/
                 datosValidos = false;
             }
 

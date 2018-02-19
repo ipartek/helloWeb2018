@@ -9,7 +9,7 @@ function ocultar() {
 }
 
 function validar() {
-    console.info("estoy dentro");
+    var errores=""
     var cHobbies = document.getElementsByName("hobby");
     var contador = 0;
     for (var i = 0; i < cHobbies.length; i++) {
@@ -25,7 +25,7 @@ function validar() {
             if (contador >= 1) {
                 console.info("Formulario válido");
             } else {
-                console.info("Si eres hombre, al menos 1 hobby");
+                errores=errores+"\nSi eres hombre, al menos 1 hobby");
             }
             break;
 
@@ -33,7 +33,7 @@ function validar() {
             if (contador >= 3) {
                 console.info("Formulario válido");
             } else {
-                console.info("Si eres mujer, al menos 3 hobbies");
+                errores=errores+"\nSi eres mujer, al menos 3 hobbies");
             }
             break;
         case ("O"):
@@ -43,12 +43,16 @@ function validar() {
 
     var textarea=document.getElementsByTagName("textarea")[0]
     if(textarea.textLength===0 ||textarea.textLength>500){
-        console.info("Textarea con texto NO valido")
+        errores=errores+"\nTextarea con texto NO valido"
+
     }
     else{
         console.info("Textarea con texto  valido")
     }
-    return false;
+    if (errores!=""){
+        alert(errores);
+    }
+    return (errores=="")?true:false;
 }
 
 document.getElementsByTagName('textarea')[0].onkeyup = function () {

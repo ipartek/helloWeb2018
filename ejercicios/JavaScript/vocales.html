@@ -39,7 +39,7 @@
             position: relative;
         }
 
-        .box>span{
+        .box>span {
             flex-direction: column;
             display: flex;
 
@@ -74,7 +74,7 @@
     <div id="msg"></div>
 
     <div class="row">
-        <div class="panel-body container-flex" >
+        <div class="panel-body container-flex">
             <!-- <span class="box">3<span class="close">x</span></span>-->
 
             <!-- <span class="box">3<span class="close">x</span></span>-->
@@ -94,13 +94,21 @@
                  <span class="box1">u</span>
             </span>
         </div>
+    </div>
+
+    <div class="row" id="divParrafos">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat eveniet provident, tempore odit odio fuga ipsum quibusdam obcaecati officiis eaque aliquam eos esse soluta quod numquam natus? Optio, nihil, adipisci.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium debitis error velit assumenda adipisci aliquid similique incidunt excepturi libero amet cumque minus repellat nam, natus facere labore rem, nisi impedit?Aliquam consequatur tenetur deserunt magni, impedit sapiente, accusantium voluptas eos ullam debitis eius officia nulla cupiditate est, aperiam expedita. Voluptas eaque officia incidunt dignissimos at obcaecati exercitationem nihil amet quidem!</p>
+        <p>Accusantium itaque quae commodi! Itaque a et ex voluptate sequi veniam, ut pariatur, laudantium voluptatum sed deleniti sunt molestias vel ducimus ab, laborum praesentium? Quis, atque quo quos delectus velit!</p>
+
 
     </div>
 
 
     <div class="row">
-        <button type="button" onclick="pintarOrdenados()" class="btn btn-primary btn-block">Desordenar</button>
-        <button type="button" onclick="reset()" class="btn btn-danger btn-block">Comprobar</button>
+        <button type="button" onclick="desordenar()" class="btn btn-primary btn-block">Desordenar</button>
+        <button type="button" onclick="comprobar()" class="btn btn-danger btn-block">Comprobar</button>
     </div>
 
 
@@ -113,8 +121,30 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
-        function desordenar(){
+        function desordenar() {
+            var listaVocales = document.getElementsByClassName("box");
+            for (var i = 0; i < listaVocales.length; i++) {
+                var vocal = listaVocales[i];
+                vocal.style.order = parseInt(Math.floor(Math.random() * 5));
+            }
+        }
 
+     /*   function comprobar {
+
+        }
+*/
+        //FOR para cambio de color en los parrafos
+        var parrafos = document.getElementsByTagName('p');
+
+        for (i = 0; i < parrafos.length; i++) {
+
+            parrafos[i].addEventListener('click', function(event) {
+                for (i = 0; i < parrafos.length; i++) {
+                    parrafos[i].style.backgroundColor = 'blue';
+                }
+                console.log('click2');
+                event.target.style.backgroundColor = 'gree ';
+            }, false);
         }
 
     </script>

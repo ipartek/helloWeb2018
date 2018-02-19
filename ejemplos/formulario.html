@@ -15,7 +15,7 @@
         <p><b>readonly</b> si se envia al submitar el formulario</p>
         <p><b>tabindex</b>es necesario por accesibilidad</p>
         <br>
-        <form novalidate action="index.html" method="get" onsubmit="return validar();">
+        <form  action="index.html" method="get" onsubmit="return validar();"id="formulario">
             <fieldset>
                 <legend>Datos Personales</legend>
                 <label for="id">Id:</label>
@@ -113,10 +113,10 @@
 
             <br>
             <label for="hobbies">Hobbies </label><br>
-            <input type="checkbox" name="opcion1" value="1">Ir al monte <br>
-            <input type="checkbox" name="opcion2" value="1">Piscina<br>
-            <input type="checkbox" name="opcion3" value="1">Frontenis<br>
-            <input type="checkbox" name="opcion1" value="1">Leer <br>
+            <input type="checkbox" name="hobbies" value="1" >Ir al monte <br>
+            <input type="checkbox" name="hobbies" value="2">Piscina<br>
+            <input type="checkbox" name="hobbies" value="3">Frontenis<br>
+            <input type="checkbox" name="hobbies" value="4">Leer <br>
 
             <br>
             <br>
@@ -153,12 +153,57 @@
         function validar()
 
         {
-            //mas seguro coger por id CAMPEON
-        var formulario = document.forms[0];
-        console.log("Validar formulario");
-            return true;
+            //mas seguro coger por id
+    //    var formulario = document.forms[0];
+       // console.log("Validar formulario");
+             var errores = "";
+            var formulario = document.getElementById("formulario");
+            var sexo=formulario.sexo.value;
+            var cHobbies= formulario.hobbies;
+            for(i=0;i<cHobbies.length;i++)
+                {
+                    if(cHobbies[i].checked){
+                        numChecks++;
+                    }
+                }
+            var numChecks=0;
 
+            for(i=0; i<numChecks.length;i++){
+                if(cHobbies[i].checked){
+                    numChecks++;
+                }
+            }
+             var sexo = formulario.sexo.value;
+            switch (sexo) {
+                case "M":
+                    if ( numChecks < 1 ){
+                        errores += 'Al menos selecciona 1 hobby \n';
+                    }
+                    break;
+                case "F":
+                     if ( numChecks < 3 ){
+                        errores += 'Al menos selecciona 3 hobbys \n';
+                    }
+                    break;
+                /*
+                case 'O':
+                    //no hacer nada
+                    break;
+                */
+                //default es opcional
+            }
+            //switch
+
+         if ( formulario.calle.value == "" ){
+                errores += 'Dime tu calle \n';
+            }
+            //mostrar errores con alert
+            if ( errores != "" ){
+                alert(errores);
+            }
+            return ( errores == "" )?true:false;
         }
+        return false;
     </script>
 </body>
 

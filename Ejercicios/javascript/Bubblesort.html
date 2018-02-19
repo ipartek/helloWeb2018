@@ -38,6 +38,14 @@
             }
         }
 
+        .container-flex{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .box {
             display: inline-block;
             width: 75px;
@@ -46,7 +54,7 @@
             color: #FFF;
             font-size: 3em;
             text-align: center;
-            margin-right: 10px;
+            /* margin-right: 10px; */
             position: relative;
         }
 
@@ -138,10 +146,12 @@
 
         <div class="panel panel-danger">
             <div class="panel-heading">Números Desordenados</div>
-            <div class="panel-body" id="cntNumDes">
+            <div class="panel-body container-flex" id="cntNumDes">
            <!--
                     <span class="box">3<span class="close">x</span></span>
              -->
+
+             <span class="box">1<span class="close">x</span></span><span class="box">2<span class="close">x</span></span><span class="box">3<span class="close">x</span></span><span class="box">4<span class="close">x</span></span><span class="box">5<span class="close">x</span></span>
 
             </div>
         </div>
@@ -151,7 +161,7 @@
 
         <div class="panel panel-success">
             <div class="panel-heading">Números Ordenados</div>
-            <div class="panel-body" id="cntNumOrd">
+            <div class="panel-body container-flex" id="cntNumOrd">
 
             </div>
         </div>

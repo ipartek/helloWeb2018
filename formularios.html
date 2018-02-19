@@ -20,7 +20,7 @@
 
 
 
-        <form novalidate action="index.html" method="get" onsubmit="return validar()">
+        <form id="formulario" action="index.html" method="get" onsubmit="return validar()">
 
             <fieldset>
                 <legend>Datos personales</legend>
@@ -63,11 +63,11 @@
                 <br>
                 <label for="hobbies">Hobbies:</label> <br>
                 <br>
-                <input type="checkbox" name="hobby1" value="Fu">Fútbol <br>
-                <input type="checkbox" name="hobby2" value="Ba">Baloncesto <br>
-                <input type="checkbox" name="hobby3" value="Ci">Cine<br>
-                <input type="checkbox" name="hobby4" value="Vi">videojuegos<br>
-                <input type="checkbox" name="hobby5" value="Ot">Otros<br>
+                <input type="checkbox" name="hobby" value="Fu">Fútbol <br>
+                <input type="checkbox" name="hobby" value="Ba">Baloncesto <br>
+                <input type="checkbox" name="hobby" value="Ci">Cine<br>
+                <input type="checkbox" name="hobby" value="Vi">videojuegos<br>
+                <input type="checkbox" name="hobby" value="Ot">Otros<br>
                 <br>
 
             </fieldset>
@@ -156,7 +156,7 @@
 
             <input type="checkbox" name="condiciones" value="S">
             <label for="condiciones">Acepto las <a href="condiciones-de-uso.html" target="_blank">condiciones de uso</a></label>
-             <br>
+            <br>
             <br>
             <br>
 
@@ -165,25 +165,75 @@
         </form>
     </div>
 
-<script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("pass");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
 
-    function myFunction() {
-    var x = document.getElementById("pass");
-    if (x.type === "password") {
-        x.type = "text";
-    } else {
-        x.type = "password";
-    }
-}
+        function validar() {
+            console.log("validar formulario");
 
-    function validar(){
-        console.log("validar formulario");
+            var errores = "";
 
-        // Mas seguro coger el formulario por id
-        var formulario = document.forms[0];
+            // Mas seguro coger el formulario por id
+            var formulario = document.getElementById("formulario");
 
-        return true;
-    }
+
+            // Contar numero checkboxes
+
+            var numChecks = 0;
+            var cHobbies = formulario.hobby;
+            for (i = 0; i < cHobbies.length; i++) {
+                if (cHobbies[i].checked) {
+                    numChecks++;
+                }
+            }
+
+
+
+            var sexo = formulario.sexo.value;
+
+            switch (sexo) {
+                case "M":
+                    if (numChecks < 1) {
+                        errores += "Al menos selecciona un hobby.\n";
+                    }
+                    break;
+
+                case "F":
+                    if (numChecks < 3) {
+                        alert("Al menos selecciona tres hobbies.\n");
+                    }
+                    break;
+
+                    /*
+                case "O":
+                    //No hacer nada
+                    break;
+                    */
+
+                    // Default es opcional
+
+
+            }
+
+            if (formulario.calle.value == "") {
+                errores += "Dime tu calle.\n";
+            }
+
+            //Mostrar errores
+
+            if (errores != "") {
+                alert(errores);
+            }
+
+            return (errores == "")?true:false;
+        }
 
     </script>
 

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap</title>
+
+    <!-- MUY IMPORTANTE PARA RWD-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- 12columnas css -->
+
+    <link rel="stylesheet" href="css/custom.css">
+
+    <style>
+        .box {
+            display: inline-block;
+            width: 100px;
+            height: 200px;
+            background-color: grey;
+            color: #FFF;
+            font-size: 3em;
+            text-align: center;
+            position: relative;
+        }
+
+        .box>span {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-flex {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        #azul {
+            background-color: cadetblue;
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+        }
+
+        #rojo {
+            background-color: red;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+
+        #verde {
+            background-color: green;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin-top: 25px;
+            margin-left: 25px;
+        }
+
+    </style>
+
+
+</head>
+
+
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="panel panel-danger">
+                <div class="panel-heading">Vocales</div>
+                <div class="panel-body container-flex" id="vocalesDes">
+
+                    <span class="box">A<span class="box1">a</span></span>
+                    <span class="box">E<span class="box1">e</span></span>
+                    <span class="box">I<span class="box1">i</span></span>
+                    <span class="box">O<span class="box1">o</span></span>
+                    <span class="box">U<span class="box1">u</span></span>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+
+            <input id="btn" type="button" onclick = "desordenar()" class="btn btn-success" value="Desordenar">
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        var caja = document.getElementsByClassName("box");
+
+   /*     function desordenar(){
+
+
+
+        }
+    */
+
+
+    </script>
+
+
+
+
+    <!-- j query -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

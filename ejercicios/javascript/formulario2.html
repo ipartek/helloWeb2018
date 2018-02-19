@@ -127,16 +127,19 @@
                 <input type="text" name="id" value="45" disabled>
 
                 <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" id="nombre" autofocus tabindex="1" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" title="Debe introducir su nombre">
+                <input type="text" name="nombre" id="nombre" autofocus tabindex="1" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" title="Debe introducir su nombre" oninvalid="setCustomValidity('El campo nombre es obligatorio')"
+                       oninput="setCustomValidity('')">
 
                 <label for="apellidos">Apellidos:</label>
-                <input type="text" name="apellidos" id="apellidos" tabindex="2" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" title="Debe introducir sus apellidos">
+                <input type="text" name="apellidos" id="apellidos" tabindex="2" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 2 letras por favor" title="Debe introducir sus apellidos" oninvalid="setCustomValidity('El campo apellidos es obligatorio')"
+                       oninput="setCustomValidity('')">
 
                 <label for="dni">DNI:</label>
                 <input type="text" name="dni" id="dni" maxlength="9">
 
                 <label for="correo">Email:</label> &nbsp;
-                <input type="text" name="correo" tabindex="4" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" title="Por favor introduzca un email válido">
+                <input type="text" name="correo" tabindex="4" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" title="Por favor introduzca un email válido" oninvalid="setCustomValidity('El campo email es obligatorio')"
+                       oninput="setCustomValidity('')">
 
                 <div>
                     <label for="sexo">Sexo:</label>
@@ -160,11 +163,13 @@
             <fieldset id="grupo_direccion">
                 <legend id="legend_direccion">Direccion</legend>
                 <label for="calle">Calle:</label>
-                <input type="text" name="calle" id="calle" autofocus tabindex="1" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 5 letras por favor" title="Introduzca la calle">
+                <input type="text" name="calle" id="calle" autofocus tabindex="1" required pattern="[A-Za-z]{2,120}" placeholder="Mínimo 5 letras por favor" title="Introduzca la calle" oninvalid="setCustomValidity('El campo calle es obligatorio')"
+                       oninput="setCustomValidity('')">
                 <br>
                 <br>
                 <label for="cp">Codigo Postal:</label>
-                <input type="text" name="cp" id="cp" tabindex="2" required size="5" maxlength="5" pattern="[0-9]{5,5}" placeholder="5 números" title="Debe introducir el código postal">
+                <input type="text" name="cp" id="cp" tabindex="2" required size="5" maxlength="5" pattern="[0-9]{5,5}" placeholder="5 números" title="Debe introducir el código postal" oninvalid="setCustomValidity('El campo codigo postal es obligatorio')"
+                       oninput="setCustomValidity('')">
                 <br>
                 <br>
                 <div class="provincia">
@@ -278,6 +283,10 @@
     <script>
         /* funcion para validar el formukario */
         function validar(formulario) {
+
+
+
+
             if ((formulario.nombre.value.length == 0) || (formulario.apellidos.value.length == 0)) {
                 alert("Los campos Nombre y Apellidos son obligatorios");
                 return false;
@@ -326,6 +335,21 @@
 
 
         }
+
+        /* incluir en funcion validar
+        var errores="";
+
+        return (errores == "")?true:false; //operador ternario si errores es vacio devuelve true; sino false -- Esto va antes de la ultima llave de la funcion
+        en vez de alert ponemos (cambiar cada alert por esto) es para que te salgan todos los errores
+        errores+= 'Al menos seleccion 1 hobbi \n'
+        añadimos que no se pueda dejar la calle en blanco
+        if (formulario.calle.value==""){
+            errores+='Dime tu calle \n';
+        }
+        // es para mostrar errores con alert
+        if (errores!=""){
+            alert(errores);
+            }*/
 
     </script>
 </body>

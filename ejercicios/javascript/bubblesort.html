@@ -36,16 +36,26 @@
             }
         }
 
+        /*este es el contenedor, luego hay que hacer los hijos*/
+        .container_flex{
+            display: flex; /* flex*/
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content:space-between;
+            align-items: center;
+            height:125px;
+        }
+
         .box {
-            /*display: flex; Pendiente hacerlo con flex*/
-            display: inline-block;
+
+
             width: 75px;
             height: 75px;
             background-color: grey;
             color: #FFF;
             font-size: 3em;
             text-align: center;
-            margin-right: 10px;
+            /*margin-right: 10px;*/
         }
 
         .box:last-child {
@@ -95,6 +105,11 @@
                     <!--
                     <span class="box">3</span>
                     -->
+                    <div class="box">1</div>
+                    <div class="box">2</div>
+                    <div class="box">3</div>
+                    <div class="box">4</div>
+                    <div class="box">5</div>
                 </div>
             </div>
         </div>

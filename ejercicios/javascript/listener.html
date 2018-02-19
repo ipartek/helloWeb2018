@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Listener</title>
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        #azul {
+            background-color: blue;
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+        }
+
+        #rojo {
+            background-color: red;
+            display: inline-block;
+            margin-left: 50px;
+            margin-top: 50px;
+            width: 150px;
+            height: 150px;
+        }
+
+        #verde {
+            background-color: green;
+            margin-left: 50px;
+            margin-top: 50px;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Listener</h1>
+
+        <div class="row">
+            <input id="btn" type="button" class="btn btn-success" value="escucho">
+            <input id="btnReset" type="button" class="btn btn-danger" value="limpiar">
+            <input id="btnJs" type="button" class="btn btn-primary" value="js event">
+
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-xs-12 col-sm-6">
+                <textarea id="ta" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <div class="row">
+                    <h2>Bubbling</h2>
+                    <div id="azul">
+                        <div id="rojo">
+                            <div id="verde"></div>
+                        </div>
+                    </div>
+                    <p>Rojo permite bubbling</p>
+                    <p>Verde NO permite bubbling</p>
+                </div>
+
+                <script>
+                    document.getElementById("azul").addEventListener('click', function() {
+                        document.getElementById("ta").textContent += "click Azul \n";
+                    });
+
+                    document.getElementById("rojo").addEventListener('click', function() {
+                        document.getElementById("ta").textContent += "click Rojo \n";
+                    });
+
+                    document.getElementById("verde").addEventListener('click', function(event) {
+                        document.getElementById("ta").textContent += "click Verde x"+event.x+" y:"event.y+"\n"; // x e y soncoordenadas
+                        event.stopPropagation(); //para evitar bubbling
+
+                        //cambiar contenedor padre a color amarillo de fondo
+                        event.target.parentElement.style.backgroundColor='yellow';
+                    });
+                </script>
+
+
+            </div>
+        </div>
+    </div>
+            <script>
+                /* Pintamos (escribimos) en el textArea */
+                function show(texto) {
+                    var ta = document.getElementById("ta");
+                    ta.textContent += texto + ' \n'; /*esto es igual a ta.textContent=ta.textContent+'algo \n */
+
+                }
+
+                // escuchador o listener para los botones
+
+                var btn = document.getElementById("btn");
+                btn.addEventListener('click', function() {
+                    show('lorem ipsum')
+                }, false);
+
+
+                var btnReset = document.getElementById("btnReset");
+                btnReset.addEventListener('click',
+                    function() {
+                        document.getElementById("ta").textContent = "";
+                    }, false);
+
+
+                // en vez del evento en HTML se puede realizar en JS (Javascript)
+                var btnReset = document.getElementById("btnJs");
+                btnJs.onclick = show;
+
+                /* es igual a esta btnJs.onclick=show;
+                btnJs.onclick=function(){
+                    document.getElementById("ta").textContent+="onclick con javascript \n";
+                }; */
+            </script>
+
+            <!-- Cargar JQuery 2.X minified -->
+            <!-- jQuery -->
+            <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

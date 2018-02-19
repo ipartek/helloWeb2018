@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+        .row {
+            margin-left: 300px;
+        }
+
+        .container_flex {
+            display: flex;
+            height: 200px;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-items: stretch;
+            background-color: skyblue;
+
+        }
+
+        .box {
+
+            width: 100px;
+            height: 150px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            background-color: grey;
+            color: #FFF;
+            font-size: 3em;
+            text-align: center;
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Flexbox</h1>
+
+
+    <div class="container_flex">
+
+        <div class="box" style="order: 3">
+            <div class="child_box">A</div>
+            <div class="child_box">a</div>
+        </div>
+        <div class="box" style="order: 1">
+            <div class="child_box">E</div>
+            <div class="child_box">e</div>
+        </div>
+        <div class="box" style="order: 4">
+            <div class="child_box">I</div>
+            <div class="child_box">i</div>
+        </div>
+        <div class="box" style="order: 5">
+            <div class="child_box">O</div>
+            <div class="child_box">o</div>
+        </div>
+        <div class="box" style="order: 2">
+            <div class="child_box">U</div>
+            <div class="child_box">u</div>
+        </div>
+
+
+
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <input type="button" class="btn btn-primary" value="Desordenar">
+    </div>
+
+
+
+    <script>
+
+    </script>
+
+    <!-- Cargar JQuery 2.X minified -->
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

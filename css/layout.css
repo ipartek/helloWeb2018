@@ -5,10 +5,9 @@
 
 */
 
-
-.container{
+.container {
     max-width: 1200px;
-    margin:auto;
+    margin: auto;
 }
 
 .logo {
@@ -20,11 +19,12 @@
 
 /*Hacer un menu de navegacion*/
 
-nav#main{
+nav#main {
     margin-bottom: 45px;
 }
 
 nav#main ul {
+    z-index: 999;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -33,22 +33,70 @@ nav#main ul {
 }
 
 nav#main li {
+    display: inline-block;
+}
+
+/*flotar solo los de primer nivel*/
+
+nav#main > li {
+
+    display: inline-block;
     float: left;
 }
+
+
+/* ocultar el resto de niveles */
+
+nav#main li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+
+
+/* mostrar submenu */
+
+nav#main li:hover > ul {
+    display: block;
+}
+
+
+nav#main li ul li {
+    display: block;
+    position: relative;
+
+}
+
+
+/* para el submenu de Libro/Capitulo15 */
+
+nav#main li ul li ul {
+   /* display: block;*/
+    right: -140px;
+    top: 0px;
+
+
+}
+
+
+
+
 
 nav#main li a {
     display: block;
     color: white;
-    text-align: center;
+    text-align: left;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
+/* Change the link color to #434343 on hover */
+
 nav#main li a:hover {
-    background-color: #111;
+    background-color: #434343;
 }
 
-nav#main .active{
+nav#main .active {
     background-color: green;
 }

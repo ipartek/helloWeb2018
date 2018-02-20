@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Hello World</title>
@@ -18,64 +19,122 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
+
 <body onload="init()">
 
-   <div class="container">
-    <h1>Hello World</h1>
-    <!-- con el i incluimos el icono de flecha web: https://fontawesome.com/v4.7.0/icon/arrow-circle-up/-->
-   <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+    <div class="container">
+        <h1>Hello World</h1>
+        <!-- con el i incluimos el icono de flecha web: https://fontawesome.com/v4.7.0/icon/arrow-circle-up/-->
+        <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
 
-    <nav id="main">
-       <ul>
-           <li> <a href="bitcoin.html">Ver valor Bitcoin</a></li>
-            <li><a href="aula.html">Ver Aula</a></li>
-            <li><a href="datatable.html">Data Table</a></li>
-           <li> <a href="css.html">CSS-Cascading Style Sheets</a></li>
-            <li><a href="capitulo8.html" class="active">CSS-Capitulo 8 Ejercicios</a></li>
-             <li><a href="posicionamiento.html">Posicionamiento</a></li>
-            <li><a href="fontawesome.html">Font Awesome</a></li>
-            <li><a href="apocalypsenow.html">Apocalyse Now</a></li>
-            <li><a href="lupa.html">Modal</a></li>
-            <li><a href="media.html">Media Query</a></li>
-           <li><a href="ejercicios/rwd/index.html">RWD</a></li>
-           <li><a href="ejercicios/bootstrap/ejemplo-inicial.html">Bootstrap</a>
-           <li><a href="ejercicios/formularios.html">Formularios</a></li>
-           <li><a href="ejercicios/javascript/bubblesort.html">Bubble Sort</a></li>
-           <li><a href="ejercicios/javascript/listener.html">Listener</a></li>
-         </ul>
-    </nav>
+        <nav id="main">
+            <ul>
+                <li> <a href="bitcoin.html">Ver valor Bitcoin</a></li>
+                <li><a href="aula.html">Ver Aula</a></li>
+
+                <!-- html -->
+                <li><a href="#">HTML</a>
+                    <ul>
+                        <li><a href="ejercicios/html/formularios.html">Formularios</a></li>
+                    </ul>
+                </li>
 
 
-<!--- aqui falta lo de la lupa y la imagen-->
+                <!-- CSS -->
+                <li><a href="#">CSS</a>
+                    <ul>
+                        <li><a href="ejercicios/css/lupa.html">Modal</a></li>
+                        <li><a href="ejercicios/css/media.html">Media Query</a></li>
+                        <li><a href="ejercicios/rwd/index.html">RWD</a></li>
+                        <li> <a href="ejercicios/css/css.html">CSS-Cascading Style Sheets</a></li>
+                        <li> <a href="ejercicios/css/apocalysenow.html">Apocalysenow</a></li>
+                        <li> <a href="ejercicios/css/flexbox.html">Flexbox</a></li>
+                    </ul>
+                </li>
 
-   <!-- ventana modal oculta-->
-   <div id="popup1" class="overlay">
-        <div class="popup">
-            <h2>Info box</h2>
-            <a class="close" href="#">&times;</a>
-            <!-- aqui va la imagen en vez de este texto-->
-               <div class="content">
-                <p>This is done totally without JavaScript. Just HTML and CSS.</p>
+                <!-- Javascript -->
+                <li><a href="#">JavaScript</a>
+                    <ul>
+                        <li><a href="ejercicios/javascript/formulario2.html">Formulario</a></li>
+                        <li><a href="ejercicios/javascript/bubblesort2.html">Bubblesort</a></li>
+                        <li><a href="ejercicios/javascript/classlist.html">ClassList</a></li>
+                        <li><a href="ejercicios/javascript/listener.html">Listener</a></li>
+                        <li><a href="ejercicios/javascript/selectores.html">Selectores</a></li>
+                    </ul>
+                </li>
+
+
+
+                <!-- BootStrap -->
+                <li><a href="#">Bootstrap</a>
+                    <ul>
+                        <li><a href="ejercicios/bootstrap/ejemplo-inicial.html">Recetas</a></li>
+                    </ul>
+                </li>
+
+
+                <!-- Varios Ejercicios -->
+                <li><a href="#">Varios</a>
+                    <ul>
+                        <li><a href="ejercicios/datatable.html">Datatable</a></li>
+                        <li><a href="ejercicios/fontawesome.html">Fontawesome</a></li>
+                        <li><a href="ejercicios/prompt.html">Prompt</a></li>
+                        <li><a href="ejercicios/posicionamiento.html">Posicionamiento</a></li>
+                    </ul>
+                </li>
+
+                <!-- Ejercicios libro Html,CSS y JavaScript -->
+                <li><a href="#">Libro</a>
+                    <ul>
+                        <li><a href="ejercicios/Libro/Capitulo8/capitulo8.html">Cap. 8</a></li>
+                        <li><a href="ejercicios/Libro/Capitulo9/capitulo9sol.html">Cap. 9</a></li>
+                        <li><a href="#">Cap.15</a>
+                            <ul>
+                                <li><a href="ejercicios/Libro/Capitulo15/ejercicio1.html">Ejercicio 1</a></li>
+                                <li><a href="ejercicios/Libro/Capitulo15/ejercicio2.html">Ejercicio 2</a></li>
+                                <li><a href="ejercicios/Libro/Capitulo15/ejercicio3.html">Ejercicio 3</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+        <!--- aqui falta lo de la lupa y la imagen-->
+
+        <!-- ventana modal oculta-->
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                <h2>Info box</h2>
+                <a class="close" href="#">&times;</a>
+                <!-- aqui va la imagen en vez de este texto-->
+                <div class="content">
+                    <p>This is done totally without JavaScript. Just HTML and CSS.</p>
+                </div>
             </div>
         </div>
+
+        <br>
+        <br>
+        <br>
+
+        <input type="number" id="numero" placeholder="Escribe un numero" />
+
+        <p id="texto">...</p>
+        <button id="boton" onclick="pulsador()">PULSAME!!!</button>
+
+        <!-- enlace al javascript -->
+        <script src="js/main.js" type="text/javascript"></script>
+
     </div>
-
-    <br>
-    <br>
-    <br>
-
-    <input type="number" id="numero" placeholder="Escribe un numero"/>
-
-    <p id="texto">...</p>
-    <button id="boton" onclick="pulsador()">PULSAME!!!</button>
-
-    <!-- enlace al javascript -->
-    <script src="js/main.js" type="text/javascript" ></script>
-
-</div> <!--<div id="container"> -->
+    <!--<div id="container"> -->
 
 </body>
 <footer>
-    <p>&copy; Ipartek formación y empleo <p>
+    <p>&copy; Ipartek formación y empleo
+        <p>
 </footer>
+
 </html>

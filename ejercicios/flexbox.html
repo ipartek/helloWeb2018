@@ -52,23 +52,23 @@
     <h1>Flexbox - Vocales </h1>
 
     <div class="container-flex">
-        <div class="box">
+        <div class="box" onclick="sonido('a')">
             <div class="upper">a</div>
             <div class="lower">a</div>
         </div>
-        <div class="box">
+        <div class="box" onclick="sonido('e')">
             <div class="upper">e</div>
             <div class="lower">e</div>
         </div>
-        <div class="box">
+        <div class="box" onclick="sonido('i')">
             <div class="upper">i</div>
             <div class="lower">i</div>
         </div>
-        <div class="box">
+        <div class="box" onclick="sonido('o')">
             <div class="upper">o</div>
             <div class="lower">o</div>
         </div>
-        <div class="box">
+        <div class="box" onclick="sonido('u')">
             <div class="upper">u</div>
             <div class="lower">u</div>
         </div>
@@ -109,6 +109,12 @@
             }
             return a;
         }
+
+        function sonido( fileName ){
+            var audio = new Audio( '../sounds/'+fileName+'.wav' );
+            audio.play();
+        }
+
 
 
     </script>

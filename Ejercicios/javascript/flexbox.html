@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         .row {
 
@@ -16,18 +17,31 @@
 
         .container-flex {
 
+
             height: 195px;
             flex-direction: row;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-between;
             align-items: stretch;
+        }
+
+        .upper {
+
+            text-transform: uppercase;
+
+        }
+
+        .lower {
+
+            text-transform: lowercase;
+
         }
 
         .box {
 
             /*display: inline-block;*/
-            width: 75px;
+            width: 19%;
             height: 140px;
             background-color: grey;
             color: #fff;
@@ -35,16 +49,9 @@
             text-align: center;
             transition-delay: 2s;
             position: relative;
-        }
-
-
-
-
-        .abajo {
-
             display: flex;
-            margin-left: 25px;
-
+            flex-direction: column;
+            justify-content: space-between;
 
         }
 
@@ -53,10 +60,12 @@
 
 <body>
 
+
+
     <div class="container">
+        <h1>Posicionamiento Aleatorio</h1>
 
-
-        <button id="btn" class="btn btn-success">Cambiar el orden de las cajas</button>
+        <button id="barajar" class="btn btn-success">BARAJAR CAJAS</button>
 
 
 
@@ -70,93 +79,176 @@
 
 
 
-                    <div class="box">
+                    <div class="box" onclick="sonido('a')">
 
-                        A
+                        <div class="upper">
 
-                        <div class="a">
+                            A
+                            <div class="lower">
 
 
-                            a
+                                a
+                            </div>
+
                         </div>
 
                     </div>
-                    <div class="box">
 
-                        E
+                    <div class="box" onclick="sonido('e')">
 
-                        <div class="a">
+                        <div class="upper">
+                            E
+                            <div class="lower">
 
 
-                            e
+                                e
+                            </div>
+
                         </div>
 
-
-
                     </div>
-                    <div class="box">
-
-                        I
-
-                        <div class="a">
 
 
-                            i
+                    <div class="box" onclick="sonido('i')">
+
+                        <div class="upper">
+
+                            I
+                            <div class="lower">
+
+
+                                i
+                            </div>
+
                         </div>
+
                     </div>
-                    <div class="box">
-
-                        O
-
-                        <div class="a">
 
 
-                            o
+                    <div class="box" onclick="sonido('o')">
+
+                        <div class="upper">
+
+                            O
+                            <div class="lower">
+
+
+                                o
+                            </div>
+
                         </div>
+
                     </div>
-                    <div class="box">
-
-                        U
-
-                        <div class="a">
 
 
-                            u
+                    <div class="box" onclick="sonido('u')">
+
+                        <div class="upper">
+
+                            U
+                            <div class="lower">
+
+
+                                u
+                            </div>
+
                         </div>
-                    </div>
 
+                    </div>
 
 
                 </div>
+
             </div>
+        </div>
+    </div>
 
-            <script>
-                function cambiarletras() {
-                    var elementos = ["A", "E", "I", "O", "U"];
-                    var randomValue = elementos[Math.floor(elementos.length * Math.random())];
-                    console.log(randomValue);
-                }
+    <script>
+        var aOrden = [1, 2, 3, 4, 5];
+        var btn = document.getElementById("barajar");
+        btn.addEventListener('click', function() {
 
+            console.log(aOrden);
 
-                var boton = document.getElementById("btn");
-                boton.addEventListener('click', cambiarletras);
+            aOrden = shuffle(aOrden);
 
-                // boton.addEventListener('click',cambiarletras,false);
+            var boxes = document.getElementsByClassName("box");
+            var box;
+            for (i = 0; i < boxes.length; i++) {
 
-            </script>
+                box = boxes[i];
 
-
-
-
-
-
+                box.style.order = aOrden[i];
 
 
 
+            }
 
-            <!-- QUERY -->
-            <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        });
+
+
+
+        function shuffle(a) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a;
+        }
+
+
+
+
+
+        function sonido(fileName) {
+
+
+            var audio = new Audio('/sounds/'+fileName+'.wav');
+            audio.play();
+            console.log('Se Escucha');
+        }
+
+        /* var boton = document.getElementById("box");
+                        function cambiarletras() {
+                            var elementos = ["A", "E", "I", "O", "U"];
+                            var randomValue = elementos[Math.floor(elementos.length * Math.random())];
+                            console.log(randomValue);
+
+
+
+
+
+                        }
+           var intercambiarletras(){
+
+                                box.textContent= randomValue;
+
+
+                            }
+
+                        var boton = document.getElementById("btn");
+                        boton.addEventListener('click', cambiarletras);
+
+                        // boton.addEventListener('click',cambiarletras,false);
+        */
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <!-- QUERY -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

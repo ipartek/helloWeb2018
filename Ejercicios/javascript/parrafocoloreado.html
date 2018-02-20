@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+
+    <h1 class="text-center">Cambiar colores a los parrafos</h1>
+
+    <div class="container">
+        <div class="row">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci iste dolore totam nulla unde animi possimus ex earum nobis, est error vero facere doloribus magnam excepturi, ullam impedit dolorum nesciunt!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, consectetur hic voluptate commodi quo, vitae obcaecati ea nam, ipsum aspernatur, sed iusto labore at nihil ducimus inventore nobis dolor praesentium.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, nihil vel impedit. Id veniam itaque, ipsa veritatis ab, eligendi, dolorem voluptate ipsam quod nisi harum animi laudantium quia fuga perferendis.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi asperiores sint aut. Optio consequatur doloribus, eveniet tempora sunt, cumque accusantium laborum obcaecati accusamus ipsam deleniti, nisi odio hic itaque eaque.</p>
+
+        </div>
+    </div>
+
+    <script>
+
+
+
+        var parrafos = document.getElementsByTagName("p");
+        var p;
+        for (i = 0; i < parrafos.length; i++) {
+
+            p = parrafos[i];
+            p.addEventListener('click',function(){pintarParrafo(this)} );
+        }
+
+
+        //Poner parrafos en negro
+        function reset(){
+
+             for (i = 0; i < parrafos.length; i++) {
+
+           parrafos[i].style.color="black";
+        }
+
+
+        }
+
+        function pintarParrafo(element){
+
+            reset();
+            element.style.color='red';
+
+        }
+
+    </script>
+
+    <!-- QUERY -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

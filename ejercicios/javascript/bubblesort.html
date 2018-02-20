@@ -213,7 +213,7 @@
         // Variables globales
         var listNum = []; // Array de números
         var contNum = 0;
-        var spanNumero = '<span class="box" data-index="##indiceNum##">##newNum##<i class="boxClose fas fa-times-circle fa-xs" onclick="borrarNum(this)"></i></span>';
+
 
 
         // FUNCIONES
@@ -225,6 +225,7 @@
         function anadirNum() {
 
             // var
+            var spanNumero = '<span class="box" data-index="##indiceNum##">##newNum##<i class="boxClose fas fa-times-circle fa-xs" onclick="borrarNum(this)"></i></span>';
             var nuevoSpan = "";
 
             // Mostrar en consola nuevo número
@@ -296,6 +297,9 @@
         */
         function ordenacionEnBurbuja() {
 
+            // var
+            var spanNumero = '<span class="box" data-index="##indiceNum##">##newNum##<i class="boxClose fas fa-times-circle fa-xs" onclick="borrarNum(this)"></i></span>';
+
             if (listNum.length < 2) {
                 mostrarAlertas(notMinLenth);
             } else {
@@ -351,7 +355,7 @@
 
                 // pintar lista ordenada
                 for (var j = 0; j < listNum.length; j++) {
-                    cntNumOrd.innerHTML += spanNumero.replace("#newNum#", listNum[j]);
+                    cntNumOrd.innerHTML += spanNumero.replace("##newNum##", listNum[j]);
                 }
 
                 // Mostrar el número de iteraciones necesitadas para ordenar la lista

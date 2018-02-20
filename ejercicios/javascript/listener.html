@@ -120,7 +120,7 @@
 
         <div class="row">
             <h1>Maquetacion con flex</h1>
-            <div class="vocales">
+            <div id="vocales" class="vocales">
 
                 <div id="a" onclick="sonido('a',this)">
                     <span>A</span><span>a</span>
@@ -253,13 +253,13 @@
 
 
         function sonido(filename, container) {
-            var vocales;
-            vocales = document.getElementById("vocales");
+            var vocal;
+            vocal = document.getElementById("vocales");
             var audio = new Audio('../../sounds/' + filename + '.wav')
             audio.play();
             container.style.backgroundColor = "cornflowerblue";
             document.getElementById("desorden").disabled = true;
-            vocales.style.pointerEvents = "none";
+            vocal.style.pointerEvents = "none";
 
 
 
@@ -269,7 +269,7 @@
                 container.style.backgroundColor = "cadetblue";
                 document.getElementById("desorden").disabled = false;
                 console.debug("ya no esta sonando");
-                vocales.style.pointerEvents = "auto";
+                vocal.style.pointerEvents = "auto";
             };
 
         }

@@ -80,7 +80,6 @@
         .row {
             margin: 10px 0px;
         }
-
     </style>
 
 
@@ -160,7 +159,23 @@
         function sonido(fileName) {
 
             var audio = new Audio('../../Sound/' + fileName + '.wav');
-            audio.play();
+
+
+             if(audio.duration > 0 && !audio.paused){
+
+                //already playing
+                audio.pause();
+                audio.currentTime = 0;
+                audio.play();
+
+            }else{
+
+                //not playing
+
+                audio.play();
+
+            }
+
 
         }
 

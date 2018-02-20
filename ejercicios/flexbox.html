@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Flexbox</title>
+    <title>Flexbox y Audio</title>
 </head>
 
 <body>
     <header>
-        <h1>Flexbox</h1>
+        <h1>Flexbox y Audio</h1>
     </header>
 
     <section class="container">
@@ -34,6 +34,11 @@
                 margin: 1px;
             }
 
+            .item {
+                font-weight: 600;
+                font-size: 1.4em;
+            }
+
             .mayus {
                 align-self: flex-start;
                 width: 100%;
@@ -49,26 +54,26 @@
             }
         </style>
 
-        <button onclick="reordenar()">CAMBIAR ORDEN</button>
+        <button onclick="reordenar()">BARAJAR</button>
         <br><br>
         <div id="contenedor">
-            <div class="caja">
+            <div class="caja" onclick="sonido('a', this, event)">
                 <div class="item mayus">A</div>
                 <div class="item minus">a</div>
             </div>
-            <div class="caja">
+            <div class="caja" onclick="sonido('e', this, event)">
                 <div class="item mayus">E</div>
                 <div class="item minus">e</div>
             </div>
-            <div class="caja">
+            <div class="caja" onclick="sonido('i', this, event)">
                 <div class="item mayus">I</div>
                 <div class="item minus">i</div>
             </div>
-            <div class="caja">
+            <div class="caja" onclick="sonido('o', this, event)">
                 <div class="item mayus">O</div>
                 <div class="item minus">o</div>
             </div>
-            <div class="caja">
+            <div class="caja" onclick="sonido('u', this, event)">
                 <div class="item mayus">U</div>
                 <div class="item minus">u</div>
             </div>
@@ -79,15 +84,43 @@
     <script>
         // var globales de acceso al DOM
         var cajas = document.querySelectorAll(".caja");
+        var reproduciendo = false;
 
         /*
          *   Función para reordenar las cajas con items
          **/
         function reordenar() {
 
-            for(var iCaja = 0; iCaja < cajas.length; iCaja++) {
+            for (var iCaja = 0; iCaja < cajas.length; iCaja++) {
                 cajas[iCaja].style.order = Math.floor(Math.random() * 5);
             }
+        }
+
+
+        /**
+         *   Funcion para reproducir el sonido al pulsar sobre una de las cajas con letras
+         **/
+        function sonido(fileName, elem, event) {
+
+            if (!reproduciendo) {
+                reproduciendo = true;
+                // cargar el audio a reproducir
+                var audio = new Audio('../sounds/' + fileName + '.wav');
+                audio.play();
+                elem.style.backgroundColor = "orange";
+                // Mostrar ruta del audio y nombre del archivo
+                console.debug("Ruta del audio: " + audio.src.split('/')[audio.src.split('/').length - 2] + "/" + audio.src.split('/')[audio.src.split('/').length - 1]);
+                console.debug("Suena la letra: " + fileName);
+                // Volver a los valores por defector al finalizar la reproducción de audio
+                audio.onended = function(event) {
+                    reproduciendo = false;
+                    elem.style.backgroundColor = "darkblue";
+                }
+            } else {
+                // evitar que se lancen el resto de eventos (incluido el mismo)
+                event.preventDefault();
+            }
+
         }
     </script>
 </body>

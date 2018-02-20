@@ -93,46 +93,18 @@ body {
 }
 
 
-
 canvas {
     background: #eee;
     display: block;
 
 }
 
-
-
-
-
 header {
 
-    width: 100%;
-    position: relative;
+   margin: auto;
 
 }
 
-nav {
-    float: center;
-}
-nav ul{
-    list-style: none;
-    overflow: hidden;
-}
-nav ul li{
-    float: right;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-}
-nav ul li a{
-    display: block;
-    padding: 20px;
-    color: #000;
-    text-decoration: none;
-}
-
-nav ul li:hover{
-    background:#2e518b;
-}
 
 #contenido {
     padding-top: 80px;

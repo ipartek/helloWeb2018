@@ -152,66 +152,19 @@
 
 
 
-        <hr class="division">
 
-        <div class="row">
-            <div class="panel panel-default">
-                <div class="panel-heading">SOINU ARIKETA</div>
-                <!--<input type="button" class="btn btn-primary" value="Ordenar">-->
-                <input type="button" class="btn-desordenar btn-danger" value="Desordenar">
-                <div class="panel-body container-flex" id="contenedorFlex">
-                    <div class="box" id="box">
-                        <div class="boxG" id="aMayus">A</div>
-                        <div class="boxP" id="aMinus">a</div>
-                    </div>
-                    <div class="box">
-                        <div class="boxG" id="eMayus">E</div>
-                        <div class="boxP" id="eMinus">e</div>
-                    </div>
-                    <div class="box">
-                        <div class="boxG" id="iMayus">I</div>
-                        <div class="boxP" id="iMinus">i</div>
-                    </div>
-                    <div class="box">
-                        <div class="boxG" id="oMayus">O</div>
-                        <div class="boxP" id="oMinus">o</div>
-                    </div>
-                    <div class="box">
-                        <div class="boxG" id="uMayus">U</div>
-                        <div class="boxP" id="uMinus">u</div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-        <!-************************************JAVASCRITP 3*************************************************************************-->
-
-        <script>
-            function desordenar() {
-                var contenedor = document.getElementById("contenedorFlex").classList.length;
-                for (i = 0; i < contenedor.length; i++) {
-                    var caja = document.getElementsByClassName("box").textContent;
-
-                }
-
-            }
-
-            //document.getElementById("btn-desordenar").addEventListener (click, desordenar);
-        </script>
-
-        <!-***********************************************************END JAVASCRIPT 3 ********************************************************-->
 
 
         <hr class="division">
         <div class="row">
+           <h2>Parrafos Escuchador</h2>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
 
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
 
             <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
 
-            <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+            <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.</p>
         </div>
 
 
@@ -219,6 +172,29 @@
      <!-************************************JAVASCRITP 4*************************************************************************-->
          <script>
 
+             var parrafos = document.getElementsByTagName("p");
+             var p;
+
+             for (i=0;i<parrafos.length; i++){
+                 p = parrafos[i];
+                 p.addEventListener('click', function(){
+                                                        reset();
+                                                        pintarParrafo(this);
+                                    });
+             }
+
+             /* Poner todos los parrafos en negro*/
+             function reset(){
+                 for (i=0; i<parrafos.length;i++){
+                     parrafos[i].style.color='black';
+                 }
+             }
+
+             /* Pintar el parrafo en rojo, antes resetear el anterior */
+             function pintarParrafo(element){
+                //reset();
+                 element.style.color ='red';
+             }
         </script>
      <!-***********************************************************END JAVASCRIPT 4 ********************************************************-->
 

@@ -93,3 +93,10 @@ hacer un pequeño script fuera de la validacion que muestre el numero de caracter
 #Campus Ipartek: capitulo 3, 4,5,6 y 7 de Introduccion a javascript.
 
 
+
+
+19/02/2018
+#FLEXBOX: Hacer la maquetacion AEIOU 5 cajas que se repartan el espacio entre las cinco cajas. Dento de las cajas bamos a tener 2 elementos, uno posicionado arriba y otro abajo (A-a, Ee, I-i, O-o, U-u). Cuando demos a un boton, a traves de un eventListener, que cambie de forma aleatoria el orden de las letras con el atributo order.
+
+#Listerners: maquetar 3 parrafos. Un escuchador para todos los parrafos (getElementsby Tagname p). Cuando pinchemos en un parrafo lo ponemos en rojo, pero solo el que hemos pinchado.
+

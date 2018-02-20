@@ -250,17 +250,28 @@
         /*Script para poner en rojo el parrafo que pinchemos*/
 
 
-        parrafos = document.getElementsByTagName("p");
+        var parrafos = document.getElementsByTagName("p");
 
         for (i = 0; i < parrafos.length; i++) {
-            parrafos[i].addEventListener('click', colorear);
 
+            parrafos[i].addEventListener('click', function(){colorear()});
+
+        }
+
+
+        /* poner todos los parrafos en negro*/
+        function reset(){
+            for (i = 0; i < parrafos.length; i++) {
+            parrafos[i].style.color = "black";
+            }
         }
 
 
         function colorear() {
-           event.target.style.color = "red";
+        reset();
+        event.target.style.color = "red";
         }
+
 
     </script>
 

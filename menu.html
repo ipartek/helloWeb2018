@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            background-color: lightgrey;
+        }
+
+        * {
+            font-family: "roboto";
+            box-sizing: border-box;
+        }
+
+        nav {
+            height: 60px;
+            width: 100%;
+            background-color: black;
+        }
+
+        nav ul {
+            margin: 0;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            /*            height: 100%;*/
+            list-style: none;
+        }
+
+
+        nav>ul>li {
+            display: inline-block;
+            line-height: 60px;
+            vertical-align: super;
+            text-align: center;
+            padding: 0;
+            width: 15%;
+        }
+
+        nav ul li ul {
+            display: none;
+        }
+
+        nav>ul>li:hover ul {
+            display: block;
+        }
+
+        nav ul li a {
+            background-color: black;
+            display: block;
+            margin: 0;
+            text-decoration: none;
+            color: white;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        nav ul li a:not(.active):hover {
+            background-color: #434343;
+            margin: 0;
+            padding: 0;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        /* Cuando sea versión móvil ocupan todo el ancho*/
+
+        @media (max-width: 480px) {
+            nav{
+                height: auto
+            }
+
+            nav ul {
+                flex-direction: column
+            }
+
+            nav ul li {
+                width: 100%;
+            }
+
+            nav>ul li:hover ul li a{
+/*                border: 2px solid lightgrey;*/
+                color: #4CAF50;
+            }
+        }
+
+        section{
+            width: 100%;
+            height:400px;
+            background-color: blueviolet;
+            border: solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav id="main">
+            <ul>
+                <li><a href="#" class="active">HOME</a></li>
+                <li><a href="ejercicios/sorteo.html">VER AULA</a></li>
+                <li class="toggle"><a href="#">HTML</a>
+                    <ul>
+                        <li><a href="ejercicios/datatable.html">Data Table</a></li>
+                        <li><a href="ejercicios/capitulo4.html">Capítulo 4</a></li>
+                    </ul>
+                </li>
+                <li class="toggle"><a href="#">CSS</a>
+                    <ul>
+                        <li><a href="ejercicios/css.html">CSS</a></li>
+                        <li><a href="ejercicios/posicionamiento.html">Posicionamiento</a></li>
+                        <li><a href="ejercicios/mediaqueries.html">Media Queries</a></li>
+                    </ul>
+                </li>
+                <li class="toggle"><a href="#">JAVASCRIPT</a>
+                    <ul>
+                        <li><a href="ejercicios/bitcoin.html">Bitcoin</a></li>
+                        <li><a href="ejercicios/lupa.html">Modal</a></li>
+                        <li><a href="ejercicios/formulario.html">Formulario</a></li>
+                        <li><a href="ejercicios/javascript/bubbleSort.html">Bubble Sort</a></li>
+                        <li><a href="ejercicios/javascript/selectores.html">Selectores</a></li>
+                        <li><a href="ejercicios/javascript/listener.html">Listeners</a></li>
+                        <li><a href="ejercicios/javascript/flexbox-listener.html">Flexbox-Listeners</a></li>
+                    </ul>
+                </li>
+                <li class="toggle"><a href="#">BOOTSTRAP</a>
+                    <ul>
+                        <li><a href="ejercicios/rwd/index.html">RWD</a></li>
+                        <li><a href="ejercicios/bootstrap/ejemplo_inicial.html">Bootstrap</a></li>
+                        <li><a href="ejercicios/bootstrap/12columnas.html">Bootstrap Grid System</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <section>
+
+        </section>
+    </div>
+
+    <!--    Toggle casero para móvil. Cuando el usuario sale de  un submenu
+        hay que volvera a ocultarlo-->
+    <script>
+//        //Selectores
+//        var arrToggle = document.querySelectorAll("#main .toggle");
+//        console.log(arrToggle.length)
+//
+//        arrToggle.forEach(function(item) {
+//            item.onmou
+//            item.style.display = "none";
+//            this.style.display = "block";
+//        })
+    </script>
+
+</body>
+</html>

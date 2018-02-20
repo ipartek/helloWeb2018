@@ -105,26 +105,28 @@
             //            btn.click();
         }
 
+
+
         var rojo = document.querySelector("#rojo");
         var azul = document.querySelector("#azul");
         var verde = document.querySelector("#verde");
 
-        rojo.addEventListener("click", function() {
+        azul.addEventListener("click", function() {
             //            btn_reset.click()
             ta.value += "Mi color es:  " + window.getComputedStyle(this).backgroundColor + "\n";
         });
-        azul.addEventListener("click", function() {
+        rojo.addEventListener("click", function() {
             //            btn_reset.click()
             ta.value += "Mi color es:  " + window.getComputedStyle(this).backgroundColor + "\n";
         });
         verde.addEventListener("click", function(e) {
             //            btn_reset.click()
             console.log(e.currentTarget.id);
+
+            //Cambiar contenedor padre a amarillo
             e.target.parentElement.style.backgroundColor = "yellow"
             e.stopPropagation();
             ta.value += "Mi color es:  " + window.getComputedStyle(this).backgroundColor + "\n";
-
-            //Cambiar contenedor padre a amarillo
         });
 
         //Pinto el parrafo seleccionado  de rojo mediante u solo listener
@@ -132,11 +134,13 @@
 
         for (var i = 0; i < parr.length; i++) {
             parr[i].addEventListener("click", function() {
+
                 //Tengo que resetear todos los parrafos a negro
                 for (var j = 0; j < parr.length; j++) {
                     parr[j].style.color = "black";
                     parr[j].style.fontWeight = "initial";
                 }
+
                 //Pinto el actual a rojo
                 this.style.color = "red";
                 this.style.fontWeight = "bold";
@@ -148,7 +152,5 @@
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 </body>
 </html>
-

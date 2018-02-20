@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Flexbox Listener</title>
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     <style>
         * {
             box-sizing: border-box;
@@ -26,17 +26,19 @@
 
         .box {
             width: 70px;
-            height: 70px;
-            background-color: orange;
+            height: 50vh;
+            background-color: darkkhaki;
             border: solid grey;
             display: flex;
             flex-wrap: wrap;
             text-align: center;
+            transition: background-color 1000ms linear;
         }
 
         .box span {
             display: block;
             width: 100%;
+            font-size: 3em;
         }
 
         .box span:last-child {
@@ -51,6 +53,7 @@
             border: 1px solid grey;
             border-radius: 5px;
         }
+
     </style>
 
 </head>
@@ -68,6 +71,7 @@
 
     <script>
         var btn = document.querySelector("#btn");
+        var boxes = document.querySelectorAll(".box");
 
         btn.addEventListener("click", function() {
 
@@ -87,7 +91,6 @@
                 }
             }
 
-            var boxes = document.querySelectorAll(".box");
 
             var i = 0;
             boxes.forEach(function(item) {
@@ -95,6 +98,47 @@
                 i++;
             })
         })
+
+
+
+        //SONIDOS
+
+
+        boxes.forEach(function(item) {
+            item.onclick = sonido;
+        })
+
+        function sonido() {
+            //Cambio el color con transición
+            this.style.backgroundColor = "orange";
+
+            var vocal = this.lastChild.innerHTML;
+            console.log(this.lastChild.innerHTML);
+
+            var audio = new Audio("/sounds/" + vocal + ".wav")
+            audio.play();
+
+
+            boxes.forEach(function(item) {
+                item.onclick = function(e) {
+                    e.preventDefault;
+                }
+            })
+
+            audio.onended = function() {
+                boxes.forEach(function(item) {
+                    item.onclick = sonido;
+                    item.style.backgroundColor = "darkkhaki";
+                })
+            }
+        }
+
+
+
+        //CAmbiar color mientras se reproduce y vuelve a su color
+        //Se bloquea el click en los demás
     </script>
 </body>
 </html>
+
+

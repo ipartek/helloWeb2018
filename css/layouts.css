@@ -4,7 +4,7 @@ container,encabezados,main,footer,sidebar,etc
 
 */
 
-.container{
+.container {
 
     max-width: 1200px;
     margin: auto;
@@ -23,10 +23,15 @@ container,encabezados,main,footer,sidebar,etc
 
 /*MENU PRINCIPAL*/
 
-nav#main{
+nav#main {
 
     margin-bottom: 45px;
 
+
+}
+
+nav#main  li{
+    display: inline-block;
 
 }
 
@@ -36,11 +41,46 @@ nav#main ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    text-align: center;
 }
 
-nav#main li {
+/*Flotar solo primer nivel*/
+
+nav#main > li {
     float: left;
 }
+
+/*Ocultar el resto de niveles*/
+
+nav#main li ul{
+
+    display: none;
+    position: absolute;
+    min-width: 140px;
+
+}
+
+/*Mostrar sub menu al pasar por encima*/
+
+nav#main li:hover >ul{
+
+
+    display: block;
+
+
+}
+
+
+nav#main ul{
+
+    z-index: 999;
+}
+
+nav#main li ul li{
+
+    display: block;
+}
+
 
 nav#main li a {
     display: block;
@@ -51,6 +91,7 @@ nav#main li a {
 }
 
 /* Change the link color to #111 (black) on hover */
+
 nav#main li a:hover {
     background-color: #111;
 }
@@ -60,7 +101,3 @@ nav#main li a:hover {
 nav#main ul li.active {
     background-color: #4CAF50;
 }
-
-
-
-

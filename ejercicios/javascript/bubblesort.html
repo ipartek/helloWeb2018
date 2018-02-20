@@ -71,7 +71,7 @@
         }
 
         /*efecto de animación al añadir número*/
-
+        /*TODO: no mostrar animación cuando el último número no se ha añadido (es decir, ya estaba en la lista)*/
         #cntNumDes .box:last-child {
             animation-name: mostrar;
             animation-duration: .5s;
@@ -213,7 +213,7 @@
         // Variables globales
         var listNum = []; // Array de números
         var contNum = 0;
-        var spanNumero = '<span class="box" data-index="##indiceNum##">#newNum#<i class="boxClose fas fa-times-circle fa-xs" onclick="borrarNum()"></i></span>';
+        var spanNumero = '<span class="box" data-index="##indiceNum##">##newNum##<i class="boxClose fas fa-times-circle fa-xs" onclick="borrarNum(this)"></i></span>';
 
 
         // FUNCIONES
@@ -224,6 +224,9 @@
         // FUTURE: Habrá que limpiar (sobrescribir) las listas con // lista.innerHTML = "" // al pulsar el botón ORDENAR
         function anadirNum() {
 
+            // var
+            var nuevoSpan = "";
+
             // Mostrar en consola nuevo número
             console.debug("Nuevo número %s", inputNum.value);
 
@@ -232,18 +235,18 @@
                 if (listNum.length < MAX_ELEM) {
                     // crear nuevo elemento <span> con el nuevo número
                     // Forma simple: cntNumDes.innerHTML = "<span class='box'>" + inputNum.value + "</span>"
-                    cntNumDes.innerHTML += spanNumero.replace("#newNum#", inputNum.value);
+                    nuevoSpan = spanNumero.replace("##newNum##", inputNum.value);
                     // Insertar el index de la posición para el método de borrado
-                    cntNumDes.innerHTML += spanNumero.replace("##indiceNum##", contNum);
+                    nuevoSpan = nuevoSpan.replace("##indiceNum##", contNum);
                     contNum++;
-                    cntNumDesHeader.innerHTML = "Números desordenados: [" + (listNum.length + 1) + "]";
                     // añadir número a la lista de números desordenada, SI tiene menos de 10 elementos
                     listNum.push(inputNum.value);
                 } else {
                     mostrarAlertas(listaCompleta);
                 }
 
-
+                cntNumDes.innerHTML += nuevoSpan;
+                cntNumDesHeader.innerHTML = "Números desordenados: [" + (listNum.length) + "]";
 
             }
             // limpiar el input y devolver focus
@@ -263,9 +266,9 @@
             if (!(MIN <= num && num <= MAX)) {
                 //alert("Debe insertar un número entre " + MIN + " y " + MAX);
                 mostrarAlertas(outOfRange);
+                console.info("Debe insertar un número entre " + MIN + " y " + MAX);
                 esValido = false;
             }
-            console.info("Debe insertar un número entre " + MIN + " y " + MAX);
             return esValido;
         }
 
@@ -275,12 +278,15 @@
             PRE: se pulsa en el icono de eliminar 'x' de un elemento de la lista ordenada
             POST: se elimina ese número, se reordena el array con el resto de números y se organizan sus indices
         **/
-        function borrarNum() {
+        function borrarNum(elem) {
 
-            // TODO: al crear el objeto de FontAwesome, convierte el elemento <i> en un <svg> y se carga las etiquetas como el onclick
-            console.log(this);
-            this.getAttribute("data-index");
-            //var posNum = document.getElementById
+            //var
+            var pos = null;
+
+            // TODO[]: al :hover el icono de FontAwesome, aplicarle la animación "shake" al elemento padre "span.box"
+            console.log(elem);
+            pos = elem.getAttribute("data-index");
+            console.debug(pos);
         }
 
         /**

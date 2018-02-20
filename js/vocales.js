@@ -47,8 +47,6 @@ for (let i = 0; i < parrafos.length; i++) {
     }, false);
 }
 
-//añade los eventlisteners para el sonido
-//habilitar();
 
 function sonido(filename) {
 
@@ -69,12 +67,12 @@ function sonido(filename) {
     })
 }
 
-
+/* Desabilita todos los eventos onclick igualandos a null, pinta todos los divs de negro y el activo de naranja
+Cuando deja de sonar llama a habilitar para volver a cambiar los onclick
+*/
 function deshabilitar(vocal) {
 
     let id = 'vocal' + vocal.toUpperCase();
-
-
 
     for (let i = 0; i < vocales.length; i++) {
         let letra = vocales[i].slice(-1).toLowerCase();
@@ -82,12 +80,10 @@ function deshabilitar(vocal) {
             sonido(letra);
         };
 
-        console.log('letra ' + letra);
-        document.getElementById(vocales[i]).removeEventListener('click', vFunction, false);
+        //console.log('letra ' + letra);
+        document.getElementById(vocales[i]).onclick = null;
 
         document.getElementById(vocales[i]).style.backgroundColor = 'black';
-        //console.log('disabled'+vocales[i]);
-
     }
 
     let divNaranja = document.getElementById(id);
@@ -96,38 +92,14 @@ function deshabilitar(vocal) {
 }
 
 
-
+/* Añade un evento onclick con el sonido. Se usa function(){} para que no ejecute el codigo al cargarlo */
 function habilitar() {
 
-
-
     for (let i = 0; i < vocales.length; i++) {
-        let vFunction;
         let letra;
         letra = vocales[i].slice(-1).toLowerCase();
-        console.log('letra ' + letra);
-
-        vFunction = function () {
-            sonido(letra);
+        document.getElementById(vocales[i]).onclick = function () {
+            sonido(letra)
         };
-
-        document.getElementById(vocales[i]).addEventListener('click', vFunction, false);
-        //console.log('disabled'+vocales[i]);
-
     }
-
-}
-
-function habilitarA() {
-        let vFunction;
-        let letra;
-        letra = 'a';
-        console.log('letra ' + letra);
-
-        vFunction = function () {
-            sonido(letra);
-        };
-
-        document.getElementById('vocalA').addEventListener('click', vFunction, false);
-        //console.log('disabled'+vocales[i]);
 }

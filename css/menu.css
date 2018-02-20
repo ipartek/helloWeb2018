@@ -1,0 +1,45 @@
+/*CSS para la barra del menu*/
+
+@import url("reset.css");
+
+/* menu principal nav#main */
+
+header{
+    width: 1024px;
+    margin: auto;
+}
+
+
+
+li {
+    list-style: none;
+}
+
+nav#main ul.nav > li {
+    float: left;
+}
+
+nav#main li a {
+    display: block;
+    padding: 10px 15px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+
+}
+
+nav#main .nav li a:hover {
+    background-color: #434343;
+}
+
+nav#main .nav li ul{
+    position: absolute;
+    display: none;
+    min-width: 140px;
+}
+
+nav#main .nav li:hover > ul {
+    display: block;
+}
+
+

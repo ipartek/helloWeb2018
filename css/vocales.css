@@ -3,11 +3,11 @@ div#divVocales{
     height: 300px;
     background-color: gray;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    /*flex-direction: row;
+    flex-wrap: nowrap;*/
     justify-content: center;
-    align-items: stretch;
-    padding: 25px;
+    /*align-items: stretch;*/
+    /*padding: 25px 0;*/
     margin-bottom: 20px;
 }
 

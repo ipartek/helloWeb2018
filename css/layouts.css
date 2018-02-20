@@ -1,25 +1,34 @@
 /*
     HOJA DE ESTILOS PARA LAYOUTS: SECCIONES PRINCIPALES DE LA WEB
     container, encabezados, secciones, articulos, navegación, footer...
+
+    1. Container global
+    2. Logo
+    3. NAVEGADOR PRINCIPAL .mainNav
 */
 
-/* Container que contiene todo el contenido dentro de BODY */
+/* 1. Container que contiene todo el contenido dentro de BODY */
 .container {
     max-width: 1200px;
     width: 90%;
     margin: auto;
 }
 
-/* Logo */
+/* 2. Logo */
 #logo_bitcoin {
     width: 100px;
     margin: auto;
     display: block;
 }
 
-/* Menú de navegación nav.mainNav */
+/* 3. Menú de navegación nav.mainNav */
 nav.mainNav {
     margin-bottom: 45px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 nav.mainNav ul {
@@ -28,11 +37,31 @@ nav.mainNav ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    z-index: 1000;
 }
 
-nav.mainNav li {
+nav.mainNav li:hover > ul {
+    display: block;
+}
+
+nav.mainNav ul>li {
     float: left;
 }
+
+/* ocultar los submenús */
+nav.mainNav li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+/* TODO[x]: mostrar submenus en vertical */
+nav.mainNav ul li ul li {
+    display: block;
+    float: inherit;
+
+}
+
 
 nav.mainNav li a {
     display: block;
@@ -40,13 +69,15 @@ nav.mainNav li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    text-align: left;
 }
 
-/* Change the link color to #111 (black) on hover */
+/* Cmbiar el color del elemento :hover */
 nav.mainNav li a:hover {
-    background-color: #111;
+    background-color: #434343;
 }
 
+/* Mostrar el ancla activa de otro color */
 nav.mainNav .active {
     background-color: #4CAF50;
 }

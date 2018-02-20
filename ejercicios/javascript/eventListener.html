@@ -97,18 +97,6 @@
 
     </div>
 
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
     <!-- CARGA DE SCRIPTS -->
     <!-- jQuery v2.2.4 minified (dado que no vamos a aplicar cambios en el código de jQuery, usamos la versión 'minified' que viene sin indentar) -->
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
@@ -149,7 +137,7 @@
 
         btnReset.addEventListener("click", function() {
             ta.textContent = "";
-        })
+        }, false);
 
         /**
          *   Lanzar función show() mediante JS y sin listener
@@ -161,14 +149,14 @@
 
         azul.addEventListener("click", function() {
             show("azul")
-        });
+        }, false);
 
 
         rojo.addEventListener("click", function() {
             show("rojo");
             // Devuelve el color del objeto clickado a rojo
             this.style.backgroundColor = "red";
-        });
+        }, false);
 
 
         verde.addEventListener("click", function(event) {
@@ -177,7 +165,7 @@
             event.stopPropagation();
             //cambiar atributos de contenedor padre: color : yellow
             event.target.parentElement.style.backgroundColor = "yellow";
-        });
+        }, false);
 
         /**
          *   TODO: Añadir un listener a cada párrafo ("#parrafos p") y cambiar el estilos del párrafo seleccionado

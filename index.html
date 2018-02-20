@@ -24,44 +24,70 @@
 
 <body onload="init()">
 
+    <header>
         <nav class="mainNav clearfix">
             <ul>
                 <li><a href="#" class="active">Home</a></li>
-                <li><a href="ejercicios/bitcoin.html">Ver valor del Bitcoin</a></li>
-                <li><a href="ejercicios/tabla_alumnos.html">Tabla de Alumnos</a></li>
-                <li><a href="ejercicios/arcanoid.html">Juego del Arcanoid</a></li>
-                <li><a href="ejercicios/capitulo4.html">Capítulo 4: Encabezados, div, listas y tablas</a></li>
-                <li><a href="ejercicios/css.html">CSS - Cascading Style Sheets</a></li>
-                <li><a href="ejercicios/posicionamiento.html">Posicionamiento</a></li>
-                <li><a href="ejercicios/apocalypse-now.html">Apocalypse Now</a></li>
-                <li><a href="ejercicios/media.html">Media Query</a></li>
-                <li><a href="ejercicios/rwd/index.html">RWD - Responsive</a></li>
-                <li><a href="ejercicios/bootstrap/ejemplo-inicial.html">Bootstrap 3.3</a></li>
-                <li><a href="ejercicios/bootstrap/bootstrap-grid.html">Bootstrap Grid System</a></li>
-                <li><a href="ejercicios/widget/index.html">Weather Widget</a></li>
-                <li><a href="ejercicios/formularios.html">Formularios</a></li>
-                <li><a href="ejercicios/javascript/bubblesort.html">Bubble Sort</a></li>
-                <li><a href="ejercicios/javascript/selectoresDOM.html">Selectores DOM</a></li>
-                <li><a href="ejercicios/javascript/eventListener.html">Event Listener</a></li>
-                <li><a href="ejercicios/rwd/flexbox.html">Flexbox</a></li>
+                <li><a href="ejercicios/tabla_alumnos.html">Ver Aula</a></li>
+                <!--HTML-->
+                <li><a href="#">HTML</a>
+                    <ul>
+                        <li><a href="ejercicios/capitulo4.html">Capítulo 4: Encabezados, div, listas y tablas</a></li>
+                        <li><a href="ejercicios/arcanoid.html">Juego del Arcanoid</a></li>
+                        <li><a href="ejercicios/formularios.html">Formularios</a></li>
+                    </ul>
+                </li>
+                <!--CSS-->
+                <li><a href="#">CSS</a>
+
+                    <ul>
+                        <li><a href="ejercicios/css.html">CSS - Cascading Style Sheets</a></li>
+                        <li><a href="ejercicios/posicionamiento.html">Posicionamiento</a></li>
+                        <li><a href="ejercicios/apocalypse-now.html">Apocalypse Now</a></li>
+                        <li><a href="ejercicios/media.html">Media Query</a></li>
+                        <li><a href="ejercicios/rwd/index.html">RWD - Responsive</a></li>
+                        <li><a href="ejercicios/flexbox.html">Flexbox</a></li>
+                    </ul>
+                </li>
+                <!--JAVASCRIP-->
+                <li><a href="#">JAVASCRIPT</a>
+                    <ul>
+                        <li><a href="ejercicios/widget/index.html">Weather Widget</a></li>
+                        <li><a href="ejercicios/javascript/bubblesort.html">Bubble Sort</a></li>
+                        <li><a href="ejercicios/javascript/selectoresDOM.html">Selectores DOM</a></li>
+                        <li><a href="ejercicios/javascript/eventListener.html">Event Listener</a></li>
+                    </ul>
+                </li>
+                <!--BOOTSTRAP-->
+                <li><a href="#">BOOTSTRAP</a>
+                    <ul>
+                        <li><a href="ejercicios/bootstrap/ejemplo-inicial.html">Bootstrap 3.3</a></li>
+                        <li><a href="ejercicios/bootstrap/bootstrap-grid.html">Bootstrap Grid System</a></li>
+                    </ul>
+                </li>
+                <!--EJEMPLOS-->
+                <li><a href="#">EJEMPLOS</a>
+                    <ul>
+                        <li><a href="ejemplos/datatables.html">DataTable</a></li>
+                        <li><a href="ejemplos/fontawesome.html">FontAwesome &amp; Modal Image</a></li>
+                        <li><a href="ejemplos/modal.html">Modal Image sin JS</a></li>
+                        <li><a href="ejemplos/sidenav.html">Sidenav</a></li>
+                        <li><a href="ejemplos/sidenav-sin-JS.html">Sidenav sin JS</a></li>
+                        <li><a href="ejercicios/bootstrap/plantilla-bootstrap.html">Plantilla Bootstrap</a></li>
+                    </ul>
+                </li>
+                <!--PLANTILLAS-->
+                <li><a href="#">PLANTILLAS</a>
+                    <ul>
+                        <li><a href="templates/plantilla-bootstrap.html">Plantilla Bootstrap</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
-
-        <h2>Ejemplos:</h2>
-        <nav id="navEjemplos" class="mainNav clearfix">
-            <ul>
-                <li><a href="ejemplos/datatables.html">DataTable</a></li>
-                <li><a href="ejemplos/fontawesome.html">FontAwesome &amp; Modal Image</a></li>
-                <li><a href="ejemplos/modal.html">Modal Image sin JS</a></li>
-                <li><a href="ejemplos/sidenav.html">Sidenav</a></li>
-                <li><a href="ejemplos/sidenav-sin-JS.html">Sidenav sin JS</a></li>
-                <li><a href="ejercicios/bootstrap/plantilla-bootstrap.html">Plantilla Bootstrap</a></li>
-
-            </ul>
-        </nav>
+    </header>
     <div class="container">
 
-        <span id="fechaIndex"></span>
+        <span id="fechaIndex" style="float: right; position: absolute"></span>
 
         <script>
             var fecha = new Date();
@@ -69,7 +95,7 @@
 
             /*spanFecha.innerHTML = fecha.toGMTString();*/
 
-            var fechaFormateada = "Fecha: " + fecha.getDate() + "/" +  (fecha.getMonth()+1) + "/" + fecha.getFullYear();
+            var fechaFormateada = "Fecha: " + fecha.getDate() + "/" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear();
 
             spanFecha.innerHTML = fechaFormateada;
         </script>
@@ -91,8 +117,8 @@
 
             <p>Introduza una lista de números separados por comas (,) :</p>
             <input type="text" id="listaDesordenada" placeholder="Inserte una lista de números separados por ',' (coma)">
-            <button id="btnOrdenar" onclick="ordenacionEnBurbuja()" >BubbleSort</button>
-            <button id="btnOrdenarRecursivo" onclick="recursiveBubbleSort(transformarEnArray(document.getElementById('listaDesordenada').value))" >Recursive BubbleSort</button>
+            <button id="btnOrdenar" onclick="ordenacionEnBurbuja()">BubbleSort</button>
+            <button id="btnOrdenarRecursivo" onclick="recursiveBubbleSort(transformarEnArray(document.getElementById('listaDesordenada').value))">Recursive BubbleSort</button>
             <p><strong>Lista ordenada: </strong> <span id="listaOrdenada"></span> </p>
             <p>Nº de iteraciones: <span id="iteraciones"> </span></p>
         </section>

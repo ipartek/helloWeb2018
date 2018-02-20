@@ -23,6 +23,14 @@ nav#main{
     margin-bottom: 45px;
 }
 
+nav#main li{
+    display: inline-block;
+}
+
+nav#main li ul li{
+    display: block;
+}
+
 
 nav#main ul {
     list-style-type: none;
@@ -30,10 +38,30 @@ nav#main ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    z-index: 999;
 }
 
-nav#main li {
+
+/* Flotar solo primer ninel */
+nav#main > li {
     float: left;
+    display: inline-block;
+}
+
+/* Ocultar el resto de niveles */
+
+nav#main li ul{
+    display: none;
+    position: absolute;
+    min-height: 140px;
+}
+
+
+/* Mostrar submenu al pasar por encima */
+
+nav#main li:hover > ul{
+    display: block;
+    background-color: #434343;
 }
 
 nav#main li a {

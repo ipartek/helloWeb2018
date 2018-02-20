@@ -110,7 +110,7 @@
         </script>
 
 
-    </div>
+
 
 
     <script>
@@ -141,6 +141,45 @@
         btnJs.onclick = function() {
             document.getElementById("ta").textContent += "onclick con javascript \n";
         };
+    </script>
+
+
+    <div class="row">
+        <h2>Parrafos escuchador</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit officiis est voluptatum corporis maiores facere in, magnam vitae illum excepturi, alias distinctio sapiente voluptas dolorum nostrum praesentium. Facere, optio quidem.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, quidem at iste pariatur quae facere quisquam laudantium, mollitia error voluptates, similique aliquam natus dicta perferendis, ex. Quaerat consequatur aut voluptatum!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci eveniet, vero repellendus soluta cum nostrum sapiente dolorem necessitatibus illum, nesciunt voluptates? Soluta ea vero impedit provident, tempore deserunt nostrum.</p>
+
+
+    </div>
+
+    </div>
+    <!-- Cierre container -->
+
+    <script>
+
+        var parrafos = document.getElementsByTagName("p");;
+        for(i=0; i<parrafos.length; i++){
+            p= parrafos[i];
+            p.addEventListener("click", function(){pintarParrafo(this)});
+        }
+
+        /* Para poner todos los parrafos en negro */
+        function reset(){
+            for(i=0; i<parrafos.length; i++){
+                parrafos[i].style.color = "black";
+            }
+        }
+
+        function pintarParrafo(element){
+            reset();
+            element.style.color = "red";
+        }
+
+
+
+
+
     </script>
 
 

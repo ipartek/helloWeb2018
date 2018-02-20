@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Bootstrap</title>
+    <title>Flexbox</title>
 
     <!-- MUY IMPORTANTE PARA RWD-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,14 +22,20 @@
 
     <style>
         .box {
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             width: 100px;
-            height: 200px;
-            background-color: grey;
+            min-height: 200px;
+            background-color: teal;
             color: #FFF;
             font-size: 3em;
             text-align: center;
             position: relative;
+        }
+
+        .upper {
+            text-transform: uppercase;
         }
 
         .box>span {
@@ -70,6 +76,11 @@
             margin-left: 25px;
         }
 
+
+        .row {
+            margin: 10px 0px;
+        }
+
     </style>
 
 
@@ -79,46 +90,79 @@
 
 <body>
 
+    <h1>Flexbox-Vocales</h1>
+
     <div class="container">
 
-        <div class="row">
 
-            <div class="panel panel-danger">
-                <div class="panel-heading">Vocales</div>
-                <div class="panel-body container-flex" id="vocalesDes">
+        <div class="panel-body container-flex" id="vocalesDes">
 
-                    <span class="box">A<span class="box1">a</span></span>
-                    <span class="box">E<span class="box1">e</span></span>
-                    <span class="box">I<span class="box1">i</span></span>
-                    <span class="box">O<span class="box1">o</span></span>
-                    <span class="box">U<span class="box1">u</span></span>
-
-                </div>
+            <div class="box" onclick="sonido('a')">
+                <div class="upper">a</div>
+                <div class="lower">a</div>
+            </div>
+            <div class="box" onclick="sonido('e')">
+                <div class="upper">e</div>
+                <div class="lower">e</div>
+            </div>
+            <div class="box" onclick="sonido('i')">
+                <div class="upper">i</div>
+                <div class="lower">i</div>
+            </div>
+            <div class="box" onclick="sonido('o')">
+                <div class="upper">o</div>
+                <div class="lower">o</div>
+            </div>
+            <div class="box" onclick="sonido('u')">
+                <div class="upper">u</div>
+                <div class="lower">u</div>
             </div>
 
+            <div class="row">
+
+                <input id="btnDesordenar" type="button" class="btn btn-success btn-block" value="Desordenar">
+
+            </div>
 
         </div>
-
-        <div class="row">
-
-            <input id="btn" type="button" onclick = "desordenar()" class="btn btn-success" value="Desordenar">
-
-        </div>
-
     </div>
 
 
     <script>
+        var btn = document.getElementById("btnDesordenar");
 
-        var caja = document.getElementsByClassName("box");
+        var aOrden = [1, 2, 3, 4, 5];
 
-   /*     function desordenar(){
+        btn.addEventListener("click", function() {
 
 
+            aOrden = shuffle(aOrden);
+            var boxes = document.getElementsByClassName("box");
+            var box;
+            for (i = 0; i < boxes.length; i++) {
+                box = boxes[i];
+                box.style.order = aOrden[i];
+            }
+        });
+
+        function shuffle(a) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a;
+        }
+
+
+        function sonido(fileName) {
+
+            var audio = new Audio('../../Sound/' + fileName + '.wav');
+            audio.play();
 
         }
-    */
-
 
     </script>
 

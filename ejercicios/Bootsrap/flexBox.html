@@ -128,15 +128,20 @@
             for (var i = 0; i < cajas.length; i++) {
 
                 //remove
-                cajas[i].onclick = function() {
-                    return false;
-                };
+                cajas[i].removeEventListener("click",function(){return false;})
             }
 
             //boton
 
             audio.addEventListener("ended", function() {
-                window.location.reload(true);
+                var vocales=["a","e","i","o","u"];
+                var vocal;
+                for(var i=0;i<cajas.length;i++){
+                    vocal=vocales[i]
+                    cajas[i].addEventListener("click",function(){
+                        sonido(vocal);
+                    });
+                }
             });
         }
 

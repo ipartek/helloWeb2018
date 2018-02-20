@@ -11,33 +11,47 @@ container,encabezados, main, footer, sidebar, etc...*/
     max-width: 1200px;
     margin:auto;
 }
-
-nav#main ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
 nav#main{
-    margin-bottom: 3em;
-}
-nav#main li {
-    float: left;
-}
-
-nav#main li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-nav#main li a:hover:not(.active) {
-    background-color: darkgreen;
+    margin-bottom: 2em;
+    display:inline-block;
+    width:100%;
+    background-color:#000;
 }
 
 nav#main .active {
     background-color: #4CAF50;
 }
+ul, li{
+    list-style: none;
+}
+nav ul li a{
+    background-color:#000;
+    text-decoration:none;
+    color:#FFF;
+    padding:10px 15px;
+    display:block;
+}
+nav ul li a:hover{
+    background-color:#434343;
+
+}
+nav>ul>li{
+    float:left;
+}
+nav ul li ul{
+    display:none;
+    position:absolute;
+    min-width: 150px;
+}
+nav ul li:hover >ul{
+    display:block;
+}
+nav ul li ul li{
+    position:relative;
+}
+nav ul li ul li ul{
+    top:0;
+    right:-150px;
+}
+
+

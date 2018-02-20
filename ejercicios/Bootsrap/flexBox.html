@@ -56,23 +56,23 @@
     <div class="container">
        <h1>Propiedad flex</h1>
         <div class="row contenedor">
-            <div class="caja">
+            <div class="caja" onclick="sonido('a')">
                 <div class="mayuscula"><p>a</p></div>
                 <div class="minuscula"><p >a</p></div>
             </div>
-            <div class="caja">
+            <div class="caja" onclick="sonido('e')">
                 <div class="mayuscula"><p>E</p></div>
                 <div class="minuscula"><p>e</p></div>
             </div>
-            <div class="caja">
+            <div class="caja" onclick="sonido('i')">
                 <div class="mayuscula"><p >I</p></div>
                 <div class="minuscula"><p >i</p></div>
             </div>
-            <div class="caja">
+            <div class="caja" onclick="sonido('o')">
                 <div class="mayuscula"><p >O</p></div>
                 <div class="minuscula"><p >o</p></div>
             </div>
-            <div class="caja">
+            <div class="caja" onclick="sonido('u')">
                 <div class="mayuscula"><p >U</p></div>
                 <div class="minuscula"><p >u</p></div>
             </div>
@@ -92,6 +92,20 @@
                 vocal.style.order = parseInt(Math.floor(Math.random() * 5));
             }
 
+        }
+        function sonido(nombreArchivo){
+            var audio= new Audio('sounds/'+nombreArchivo+".wav");
+            audio.play();
+            var cajas=document.getElementsByClassName("caja");
+            for(var i=0;i<cajas.length;i++){
+                cajas[i].removeEventListener("click");
+            }
+            audio.addEventListener("ended",function(){
+                                   var cajas=document.getElementsByClassName("caja");
+                                    for(var i=0;i<cajas.length;i++){
+                                    cajas[i].addEventListener("click");
+                }
+            },false);
         }
     </script>
 </body>

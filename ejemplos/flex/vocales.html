@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Vocales</title>
     <style>
-         .box {
-            display: inline-block;
+        .box {
+            display: flex;
+            flex-direction: column;
             width: 200px;
             height: 200px;
             background-color: blue;
             color: #FFF;
             font-size: 3em;
             text-align: center;
-           /* margin-right: 10px;      */
-             position: relative;
-        }
-        .box1{
+            /* margin-right: 10px;      */
 
         }
-     .container-flex{
-            display:flex;
-            flex-direction: row;
+
+        .box1 {
+            text-align:
+                display:flex;
+            flex-direction: column;
+        }
+
+        .container-flex {
+            display: flex;
+           /* flex-direction: row;*/
             flex-wrap: nowrap;
             justify-content: space-between;
-           height: 285px;
+            height: 285px;
             align-items: center;
         }
-        .box>span{
-            display:flex;
+
+        .box>span {
+            display: flex;
             /*flex: 0 50%;*/
             flex-direction: column;
         }
 
     </style>
 </head>
+
 <body>
-  <header>
+    <header>
         <div class="container">
 
             <h1>Vocales</h1>
@@ -48,58 +56,93 @@
         </div>
 
     </header>
-<div class="container">
+    <div class="container">
 
 
-     <div class="panel panel-danger">
+        <div class="panel panel-danger">
 
-                <div class="panel-body container-flex" >
-                    <!--innerHTML-->
-                    <!---->
-                    <!--
+            <div class="panel-body container-flex">
+                <!--innerHTML-->
+                <!---->
+                <!--
                     <span class="box">3<span class="close">x</span></span>
                     -->
-                    <!-- end innerHTML-->
-                    <span class="box">A <span class="box1">a</span></span> <span class="box">E<span class="box1">e</span></span><span class="box">I<span class="box1">i</span></span><span class="box">O<span class="box1">o</span></span><span class="box">U<span class="box1"></span>u</span>
-                </div>
-    </div>
-         <div class="row">
+                <!-- end innerHTML-->
+                <span class="box" onclick="sonido('a')">A <span class="box1">a</span></span>
+                <span class="box"onclick="sonido('e')">E<span class="box1">e</span></span>
+                <span class="box"onclick="sonido('i')">I<span class="box1">i</span></span>
+                <span class="box"onclick="sonido('o')">O<span class="box1">o</span></span>
+                <span class="box"onclick="sonido('u')">U<span class="box1"></span>u</span>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12">
                 <button type="button" class="btn btn-primary btn-lg btn-block" onclick="desordenar()">Desordenar</button>
             </div>
-             </div>
-            <div class="row">
+        </div>
+        <div class="row">
             <div class="col-md-12">
                 <button type="button" class="btn btn-primary btn-lg btn-block" onclick="ordenar()">Comprobar</button>
             </div>
         </div>
 
+        <div class="row">
+            <h2>Parrafos</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident iste veniam aut qui dolores tenetur autem dignissimos alias explicabo voluptas, dolorum doloribus consequuntur quae. Maiores expedita eligendi quam possimus corporis.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto autem, perspiciatis quo sint rem, quaerat molestiae praesentium natus maxime ut exercitationem, ratione voluptas reprehenderit placeat cum consequuntur atque cupiditate! Exercitationem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus dolores molestiae illum itaque facilis voluptatem animi eum quisquam, dolorem enim sunt quod ut fugiat debitis, porro officiis facere obcaecati asperiores.</p>
+        </div>
     </div>
 
-   <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            function desordenar() {
 
+                var coincidencias = document.querySelectorAll("span.box");
+                //    console.log(coincidencias)
+                for (i = 0; i < coincidencias.length; i++) {
+                    var numero = Math.floor((Math.random() * 5) + 1);
 
-    function desordenar(){
+                    coincidencias[i].style.order = numero;
 
-        var coincidencias = document.querySelectorAll("span.box");
-    //    console.log(coincidencias)
-       for(i=0;i<coincidencias.length;i++){
-            var numero =Math.floor((Math.random() * 5) + 1);
-
-        coincidencias[i].style.order=numero;
-
-        }
+                }
 
 
 
 
 
-    }
+            }
+            var p;
+            var parrafos=document.getElementsByTagName("p");
+            for(i=0;i<parrafos.length;i++){
+                p=parrafos[i];
+                p.addEventListener('click',function(){pintarParrafo(this)})
+            }
+            function reset(){
+                for(i=0;i<parrafos.length;i++){
+                p=parrafos[i];
+                p.style.color="black";
+            }
+            }
+            function pintarParrafo(element){
+              reset();
+                element.style.color="red";
+            }
+            function sonido(fileName){
+                var coincidencias = document.querySelectorAll("span.box");
+                var audio=new Audio('soinuak/'+fileName+'.wav');
+                audio.play();
+         coincidencias.addEventListener('click', function(event) {
 
-    </script>
+
+                alert("");
+            })
+            }
+
+        </script>
 </body>
+
 </html>

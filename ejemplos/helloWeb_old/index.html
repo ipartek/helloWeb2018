@@ -4,45 +4,92 @@
     <meta charset="UTF-8">
     <title>HelloWorl</title>
     <!-- enlace a la hoja de estilos-->
-    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
     <!--enlace a la hoja de estilos-->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 </head>
+
 <body onload="init()">
-   <div class="container">
-    <h1>Hello World</h1>
+    <div class="container">
+        <h1>Hello World</h1>
 
-    <nav id="main">
-        <ul>
+        <nav id="main">
+            <ul>
 
-             <li> <a href="#" class="active">Home</a></li>
-             <li> <a href="capitulo4.html" >Capitulo 4</a></li>
-             <li> <a href="datatable.html">Databases</a></li>
-             <li> <a href="css.html">Cascading Style Sheets</a></li>
-             <li> <a href="posicionamiento.html">Posicionamiento</a></li>
-             <li> <a href="elementosflotantes.html">Elementos Flotantes</a></li>
-             <li> <a href="bitcoin.html">Ver valor Bitcoin </a></li>
-             <li><a href="icono.html">Icono</a></li>
-             <li><a href="apocalypse.html">Apocalypse Now</a></li>
-             <li><a href="maquetacion.html">Maquetacion lupa</a></li>
-             <li><a href="modal.html">Modal</a></li>
-             <li><a href="mediaquery.html">Media-Query</a></li>
-            <li><a href="../rwd/index.html">Ejercicios RWD</a></li>
-            <li><a href="../bootstrap/ejemploinicial.html">Bootstrap</a></li>
-            <li><a href="../formulario.html">Formulario</a></li>
+                <li> <a href="#" class="active">Home</a></li>
+                <!--HTML-->
+                <li><a href="#">HTML</a>
+                    <ul>
+                        <li> <a href="capitulo4.html">Capitulo 4</a></li>
+                        <li><a href="../Tabla/index.html">Tabla</a></li>
+                        <li> <a href="datatable.html">Databases</a></li>
+                        <li><a href="apocalypse.html">Apocalypse Now</a></li>
 
-        </ul>
-    </nav>
+                        <li><a href="icono.html">Icono</a></li>
+                    </ul>
+                </li>
+                <!--CSS-->
+                <li><a href="#">CSS</a>
+                    <ul>
+                        <li> <a href="css.html">Cascading Style Sheets</a></li>
+                        <li><a href="mediaquery.html">Media-Query</a></li>
+                        <li><a href="modal.html">Modal</a></li>
+                        <li> <a href="posicionamiento.html">Posicionamiento</a></li>
+                        <li><a href="../rwd/index.html">Ejercicios RWD</a></li>
+                        <li><a href="maquetacion.html">Maquetacion lupa</a></li>
+                        <li> <a href="elementosflotantes.html">Elementos Flotantes</a></li>
+                    </ul>
+                </li>
 
-    <br>
-    <br>
-    <br>
-    <input type="number" id ="numero" placeholder="Escribe un numero"/>
-    <p id="texto">...</p>
-    <button id="boton" onclick="pulsado()">PULSAME!!!! </button>
-</div><!--fin div container-->
+                <!--Javascript-->
+                <li><a href="#">Javascript</a>
+                    <ul>
+                        <li><a href="../javascript/ejercicios.html">Ejercicios</a></li>
+                        <li> <a href="bitcoin.html">Ver valor Bitcoin </a></li>
+                        <li><a href="../widget/index.html">Widget</a></li>
+                    </ul>
+                </li>
+                <!--Bootstrap-->
+                <li><a href="#">Bootstrap</a>
+                    <ul>
+                        <li><a href="../bootstrap/ejemploinicial.html">Bootstrap</a></li>
+                        <li><a href="../formulario.html">Formulario</a></li>
+                          <li><a href="../bootstrap/12columnas.html">12 columnas</a></li>
+                             <li><a href="../bootstrap/detalle.html">Detalle</a></li>
+
+                    </ul>
+                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>
+        </nav>
+
+        <br>
+        <br>
+        <br>
+        <input type="number" id="numero" placeholder="Escribe un numero" />
+        <p id="texto">...</p>
+        <button id="boton" onclick="pulsado()">PULSAME!!!! </button>
+    </div>
+    <!--fin div container-->
     <!-- enlace al javascript-->
     <script src="js/main.js"></script>
 </body>

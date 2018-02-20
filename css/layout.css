@@ -23,7 +23,7 @@ nav#main ul {
     background-color: #333;
 }
 
-nav#main li {
+nav#main > ul > li {
     float: left;
 }
 
@@ -33,6 +33,7 @@ nav#main li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -40,6 +41,32 @@ nav#main li a:hover {
     background-color: #111;
 }
 
+
+nav#main li:hover > ul{
+    display:block;
+
+
+}
+
 nav#main .active {
     background-color: #4CAF50;
 }
+
+nav#main li ul{
+    display:none;
+    position:absolute;
+
+}
+
+nav#main li ul li{
+    display:block;
+
+
+}
+
+
+
+
+
+
+

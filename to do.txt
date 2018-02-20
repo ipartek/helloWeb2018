@@ -100,3 +100,9 @@ hacer un pequeño script fuera de la validacion que muestre el numero de caracter
 
 #Listerners: maquetar 3 parrafos. Un escuchador para todos los parrafos (getElementsby Tagname p). Cuando pinchemos en un parrafo lo ponemos en rojo, pero solo el que hemos pinchado.
 
+
+20/02/2018
+vocales: q suene el sonido de la vocal cuando pinche en la caja, que cambie de color mientras esta sonando y no deje seleccionar nada mas.
+Organizar el menu de index.
+Tema de eliminar las cajas con numeros para ordenar.
+

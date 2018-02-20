@@ -122,19 +122,19 @@
             <h1>Maquetacion con flex</h1>
             <div class="vocales">
 
-                <div id="a">
+                <div id="a" onclick="sonido('a',this)">
                     <span>A</span><span>a</span>
                 </div>
-                <div id="e">
+                <div id="e" onclick="sonido('e',this)">
                     <span>E</span><span>e</span>
                 </div>
-                <div id="i">
+                <div id="i" onclick="sonido('i',this)">
                     <span>I</span><span>i</span>
                 </div>
-                <div id="o">
+                <div id="o" onclick="sonido('o',this)">
                     <span>O</span><span>o</span>
                 </div>
-                <div id="u">
+                <div id="u" onclick="sonido('u',this)">
                     <span>U</span><span>u</span>
                 </div>
 
@@ -247,6 +247,38 @@
 
 
     <script>
+        /****************************************************
+                        funcion para reproducir el sonido al pìnchar en la vocal y cambiar color
+                        *****************************************************************************/
+
+
+        function sonido(filename, container) {
+            var vocales;
+            vocales = document.getElementById("vocales");
+            var audio = new Audio('../../sounds/' + filename + '.wav')
+            audio.play();
+            container.style.backgroundColor = "cornflowerblue";
+            document.getElementById("desorden").disabled = true;
+            vocales.style.pointerEvents = "none";
+
+
+
+
+            audio.onended = function() {
+
+                container.style.backgroundColor = "cadetblue";
+                document.getElementById("desorden").disabled = false;
+                console.debug("ya no esta sonando");
+                vocales.style.pointerEvents = "auto";
+            };
+
+        }
+    </script>
+
+
+
+
+    <script>
         /*Script para poner en rojo el parrafo que pinchemos*/
 
 
@@ -254,25 +286,25 @@
 
         for (i = 0; i < parrafos.length; i++) {
 
-            parrafos[i].addEventListener('click', function(){colorear()});
+            parrafos[i].addEventListener('click', function() {
+                colorear()
+            });
 
         }
 
 
         /* poner todos los parrafos en negro*/
-        function reset(){
+        function reset() {
             for (i = 0; i < parrafos.length; i++) {
-            parrafos[i].style.color = "black";
+                parrafos[i].style.color = "black";
             }
         }
 
 
         function colorear() {
-        reset();
-        event.target.style.color = "red";
+            reset();
+            event.target.style.color = "red";
         }
-
-
     </script>
 
 

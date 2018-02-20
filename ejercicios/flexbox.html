@@ -52,23 +52,23 @@
     <h1>Flexbox - Vocales </h1>
 
     <div class="container-flex">
-        <div class="box" onclick="sonido('a')">
+        <div class="box" onclick="sonido('a',this)">
             <div class="upper">a</div>
             <div class="lower">a</div>
         </div>
-        <div class="box" onclick="sonido('e')">
+        <div class="box" onclick="sonido('e', this)">
             <div class="upper">e</div>
             <div class="lower">e</div>
         </div>
-        <div class="box" onclick="sonido('i')">
+        <div class="box" onclick="sonido('i', this)">
             <div class="upper">i</div>
             <div class="lower">i</div>
         </div>
-        <div class="box" onclick="sonido('o')">
+        <div class="box" onclick="sonido('o', this)">
             <div class="upper">o</div>
             <div class="lower">o</div>
         </div>
-        <div class="box" onclick="sonido('u')">
+        <div class="box" onclick="sonido('u', this)">
             <div class="upper">u</div>
             <div class="lower">u</div>
         </div>
@@ -83,11 +83,12 @@
     <script>
 
         var aOrden = [1,2,3,4,5];
+        var boxes = document.getElementsByClassName("box");
+
 
         var btn = document.getElementById("btnBarajear");
         btn.addEventListener('click', function(){
             aOrden = shuffle(aOrden);
-            var boxes = document.getElementsByClassName("box");
             var box;
             for( i=0; i<boxes.length;i++){
                 box = boxes[i];
@@ -95,7 +96,27 @@
             }
         });
 
-       /**
+        function sonido( fileName, elem ){
+
+            btn.disabled = true;
+
+            var audio = new Audio( '../sounds/'+fileName+'.wav' );
+            audio.play();
+            audio.onended = habilitar;
+
+            elem.style.backgroundColor = 'orange';
+        }
+
+        function habilitar(){
+
+                btn.disabled = false;
+
+                for( i=0; i<boxes.length;i++){
+                    boxes[i].style.backgroundColor = 'teal';
+                }
+        }
+
+        /**
          * Shuffles array in place.
          * @param {Array} a items An array containing the items.
          */
@@ -109,13 +130,6 @@
             }
             return a;
         }
-
-        function sonido( fileName ){
-            var audio = new Audio( '../sounds/'+fileName+'.wav' );
-            audio.play();
-        }
-
-
 
     </script>
 

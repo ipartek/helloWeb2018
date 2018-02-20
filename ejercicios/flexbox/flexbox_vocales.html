@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox  y Listeners</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color:#FFF;
+            color: #555;
+            font-size: 1.1em;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        #container,
+        #container2{
+            margin: 150px auto;
+            max-width: 900px;
+            padding: 20px;
+            -webkit-display: -webkit-box;
+            -webkit-display: -webkit-flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #container{
+            background-color: #fcd04b;
+        }
+
+        .caja{
+            width: 200px;
+            height: 200px;
+            background-color: #594255;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            margin: 7px;
+            text-align: center;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 4.5em;
+            border-radius: 5px;
+        }
+
+        .caja span{
+             width: 100%;
+            color:#FFF;
+        }
+
+        #boton{
+            display: block;
+            margin: 20px auto;
+            border-radius: 50px;
+            border: 3px solid #fff;
+            background: #fcd04b;
+            overflow: hidden;
+            order: none;
+            cursor: pointer;
+            padding: 25px 80px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            outline: none;
+            position: relative;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+
+        }
+
+        #boton:hover{
+            background: #f29e0d;
+        }
+
+        p{
+           margin: 10px;
+        }
+
+        h1, h2{
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+   <h1>Flexbox</h1>
+
+    <div id="container">
+        <div class="caja" onclick="playSound('a')"><span>A</span><span>a</span></div>
+        <div class="caja" onclick="playSound('e')"><span>E</span><span>e</span></div>
+        <div class="caja" onclick="playSound('i')"><span>I</span><span>i</span></div>
+        <div class="caja" onclick="playSound('o')"><span>O</span><span>o</span></div>
+        <div class="caja" onclick="playSound('u')"><span>U</span><span>u</span></div>
+    </div>
+
+    <button id="boton">Desordenar</button>
+
+    <hr>
+
+    <div id="contenedor2">
+
+           <h2>Escuchador de párrafos</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat eveniet provident, tempore odit odio fuga ipsum quibusdam obcaecati officiis eaque aliquam eos esse soluta quod numquam natus? Optio, nihil, adipisci.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium debitis error velit assumenda adipisci aliquid similique incidunt excepturi libero amet cumque minus repellat nam, natus facere labore rem, nisi impedit?Aliquam consequatur tenetur deserunt magni, impedit sapiente, accusantium voluptas eos ullam debitis eius officia nulla cupiditate est, aperiam expedita. Voluptas eaque officia incidunt dignissimos at obcaecati exercitationem nihil amet quidem!</p>
+
+            <p>Accusantium itaque quae commodi! Itaque a et ex voluptate sequi veniam, ut pariatur, laudantium voluptatum sed deleniti sunt molestias vel ducimus ab, laborum praesentium? Quis, atque quo quos delectus velit!</p>
+    </div>
+<script>
+//sonidos
+function playSound(audioLetras){
+
+    var audio = new Audio('../../sonidos/' + audioLetras + '.wav');
+
+    if(audio.ended == false){
+        audio.play();
+        audioLetras = 0;
+
+    }else{
+        audio.ended();
+    }
+
+  debugger;
+
+}
+/***********************************************************************/
+//color parrafos
+
+    var parrafos=document.getElementsByTagName('p');
+    var p;
+
+    for(var i=0; i < parrafos.length; i++){
+        p = parrafos[i];
+        p.addEventListener('click', function(){pintarParrafo(this)});
+
+    }
+
+    //pone todos los parrafos a negro
+    function reset(){
+        for(var i=0; i <parrafos.length; i++){
+            parrafos[i].style.color = 'black';
+        }
+    }
+
+    function pintarParrafo(element){
+        reset();
+        element.style.color = 'red';
+    }
+
+</script>
+
+
+<script>
+
+     //desordenar
+
+    var arrayOrdenado =[1,2,3,4,5];
+
+    var boton = document.getElementById('boton');
+
+    boton.addEventListener('click', function() {
+
+        arrayOrdenado = shuffle(arrayOrdenado);
+        var cajas = document.getElementsByClassName('caja');
+        var unaCaja;
+
+        for( i=0; i<cajas.length; i++){
+            unaCaja = cajas[i];
+            unaCaja.style.order = arrayOrdenado[i];
+        }
+    });
+
+    /**
+         * Shuffles array in place.
+         * @param {Array} a items An array containing the items.
+         */
+        function shuffle(arrayOrdenado) {
+            var j, x, i;
+            for (i = arrayOrdenado.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = arrayOrdenado[i];
+                arrayOrdenado[i] = arrayOrdenado[j];
+                arrayOrdenado[j] = x;
+            }
+            return arrayOrdenado;
+        }
+
+</script>
+</body>
+</html>

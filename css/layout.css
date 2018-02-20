@@ -16,36 +16,75 @@
 }
 
 /*menú principal*/
-nav#main ul {
-    font-family: 'Encode Sans Expanded', sans-serif;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    margin-bottom: 45px;
-}
 
-nav#main li {
-    float: left;
-    font-family:
-}
+            /*aqui hace un reset*/
+           * {
+				margin:0px;
+				padding:0px;
+			}
 
-nav#main li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+			#header {
+				margin:auto 10px;
+				width:1024px;
+				font-family:Arial, Helvetica, sans-serif;
+                display: inline-flex;
+                text-transform: uppercase
+			}
 
-nav#main li a:hover {
-    background-color: #111;
-}
+			ul, ol {
+				list-style:none;
+			}
 
-.active {
-    background-color: #4CAF50;
-}
+            /*todos li hijos directos dentro de nav*/
+			.nav > li {
+				float:left;
+			}
+
+			.nav li a {
+				background-color:#000;
+				color:#fff;
+				text-decoration:none;
+				padding:10px 12px; /*anchura y altura */
+				display:block;/*al ponerlos asi se despegan*/
+			}
+
+			.nav li a:hover {
+				background-color:#434343;
+			}
+
+            /*para que desaparezcan todos los submenus*/
+			.nav li ul {
+				display:none;
+				position:absolute;/*para que tenga una posicion abs respecto al li superior*/
+				min-width:140px;
+			}
+
+            /*1 nivel los ul hijos directos dentro de nav al hacer hover que aparezcan*/
+			.nav li:hover > ul {
+				display:block;
+			}
+
+            /*2 nivel para que aparezcan a la derecha del li*/
+			.nav li ul li {
+				position:relative;
+			}
+
+    /*al haber puesto el ul relativa podemos ponerle a la siguiente lista derecha e izquierda*/
+			.nav li ul li ul {
+				right:-140px;
+				top:0px;
+			}
+
+        /*fin menú*/
+    h1{
+        font-family: 'Orbitron', sans-serif;
+        border: 3px solid #E66C7E;
+        width: 40%;
+        margin: 20px auto;
+    }
+
+
+
 
 
 

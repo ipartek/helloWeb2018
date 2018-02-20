@@ -52,9 +52,11 @@
                     <!-- contenido panel -->
                     <div class="panel-heading">Números desordenados</div>
                     <div class="panel-body" id="cntNumDes">
-                    <!--  <span class="box">4<span class="close">X</span></span>-->
-                        <!--ejemplo para maquetar luego-->
-
+                     <span class="box" onclick="eliminarBox()">4<span class="close">X</span></span>
+                     <span class="box" onclick="eliminarBox()">6<span class="close">X</span></span>
+                     <span class="box" onclick="eliminarBox()">3<span class="close">X</span></span>
+                     <span class="box" onclick="eliminarBox()">2<span class="close">X</span></span>
+                     <span class="box" onclick="eliminarBox()">1<span class="close">X</span></span></div>
                     </div>
                 </div>
             </div>
@@ -87,7 +89,117 @@
 
     <!--SCRIPTS-->
     <!-- custom javascript -->
-    <script src="ordenar.js" type="text/javascript"></script>
+    <script>
+
+    var numeroInput= document.getElementById("numeroInput");
+var cntNumDes = document.getElementById("cntNumDes");
+var spanNumero='<span class="box" onclick="eliminarBox()">$$$<span class="close">X</span></span>';
+var aDesordenados = []; //array con números desordenados
+var aOrdenados = []; //array con números ordenados
+
+
+/**
+* recoge un número del input y lo introduce en el div co id #cntNumDes
+*/
+function nuevoNumero(){
+    console.debug("añadir nuevo número %s", numeroInput.value);
+    var numeroEntero = parseInt(numeroInput.value);
+
+    cntNumDes.innerHTML += spanNumero.replace('$$$', numeroEntero);//le ponemos += para que no elimine los números que tenía
+    aDesordenados.push(numeroEntero);//agregamos una posición al array con push
+
+    numeroInput.value = "";//límpia el input
+    numeroInput.focus();//devuelve el foco al input
+}
+
+function validacion(){
+    if(aDesordenados.length == 0){
+
+       mostrarTexto("alert","No seas vag@ introduce un elemento por lo menos.", "alert-warning")
+
+    }else if(aDesordenados.length>10){
+
+        mostrarTexto("alert","No se puede meter mas de 10 números.", "alert-success")
+
+    }else if(aDesordenados.length < 2){
+
+        mostrarTexto("alert","No seas vag@ introduce más de un elemento.", "alert-warning")
+    }else{
+
+        ordenarBurbuja();
+        pintarBurbuja();
+
+    }
+}
+
+//eliminamos lacaja del html y eliminamos el número de array desordenado
+function eliminarBox(){
+    console.debug("eliminar box %s",pos);
+
+}
+
+function ordenarBurbuja(){
+
+    var longitud = aDesordenados.length;
+    console.log(longitud);
+    //recorreremos todos los elementos, excepto el último que ya esta en su sitio
+    for(var i=0; i< longitud; i++){
+
+        console.log(aDesordenados);
+
+        for(var j=0;j<longitud-i-1;j++){
+
+            //comparamos
+
+            if(aDesordenados[j]>aDesordenados[j+1]){
+
+                var numero=aDesordenados[j];//guardamos el numero mayor en el auxiliar
+                aDesordenados[j] = aDesordenados[j+1];
+                aDesordenados[j+1]= numero;
+
+                console.log(aDesordenados);
+            }//fin del if
+        }//fin for interno
+
+
+        }//fin for externo
+
+
+        aOrdenados = aDesordenados;
+
+    }//fin funcion
+
+function pintarBurbuja(){
+    var i=0;
+    for(i in aOrdenados){
+        cntNumOrd.innerHTML += spanNumero.replace('$$$', aOrdenados[i]);
+    }
+}
+
+function limpiar(){
+    cntNumDes.innerHTML="";//con esto se deja de ver lo escrito
+    cntNumOrd.innerHTML="";
+    aOrdenados.length = 0;//con esto se borra de memoria
+    aDesordenados.length = 0;
+
+}
+/*
+muestra una alerta de bootstrap
+*/
+function mostrarTexto(id, texto, clase){
+    var alerta = ' <div class="alert ##clase## alert-dismissible" role="alert" id="alerta01"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>##texto##</strong> .</div>';
+    var contenedor = document.getElementById(id);
+    contenedor.innerHTML = "";//si hay algo en el contenedor lo limpio
+
+    contenedor.innerHTML = alerta;
+    contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
+    contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
+
+}
+
+
+
+    </script>
 
     <!--jQuery Core 2.2.4-->
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>

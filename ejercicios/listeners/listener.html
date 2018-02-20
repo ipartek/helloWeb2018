@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Listeners</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <!-- compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!--Font Awesome-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <style>
+        textarera{
+            margin-top: 15px;
+        }
+        #azul {
+            background-color: aquamarine;
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+        }
+
+        #rojo {
+            background-color: red;
+            display: inline-block;
+            margin-left: 95px;
+            margin-top: 100px;
+            width: 100px;
+            height: 100px;
+        }
+
+        #verde {
+            background-color: #00FF00;
+            display: inline-block;
+            margin-left: 25px;
+            margin-top: 25px;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Listener</h1>
+        <div class="row">
+
+            <input id="btn" type="button" class="btn btn-success" value="escuchar">
+            <input id="btnReset" type="button" class="btn btn-danger" value="borrar">
+            <input id="btnJS" type="button" class="btn btn-primary" value="Js">
+
+        </div>
+
+        <div class="row"></div>
+        <div class="col-md-6">
+            <textarea id="ta" cols="30" rows="10"></textarea>
+        </div>
+        <!-- bubling-->
+        <div class="col-md-6">
+            <div id="azul">
+                <div id="rojo">
+                    <div id="verde"></div>
+                </div>
+            </div>
+            <p>Rojo permite bubbling</p>
+            <p>Verde NO permite bubbling</p>
+        </div>
+    </div>
+    <script>
+
+        document.getElementById('azul').addEventListener('click', function(){
+        document.getElementById('ta').textContent += 'click azul \n';
+        });
+
+        document.getElementById('rojo').addEventListener('click', function(){
+        document.getElementById('ta').textContent += 'click rojo \n';
+        });
+
+        //el verde esta evitando el bubbling
+        document.getElementById('verde').addEventListener('click', function(event){
+        document.getElementById('ta').textContent += 'click verde x: '+ event.x + ' y:'+ event.y +'\n';
+            event.stopPropagation();
+
+            //cambiar el contenedor padre al color amarillo
+
+            event.target.parentElement.style.backgroundColor = 'yellow';
+        });
+
+    </script>
+    <script>
+        //escribimos en el texarea
+
+        function show() {
+            var ta = document.getElementById("ta");
+            ta.textContent += 'algo \n';
+        }
+
+
+        //escuchador o listener para el botón
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', show, false);
+
+        //botón reset
+        var btnReset = document.getElementById('btnReset');
+        btnReset.addEventListener('click', function() {
+            document.getElementById('ta').textContent = '';
+        }, false);
+
+        //boton js
+        var btnJS = document.getElementById('btnJS');
+        btnJS.onclick = function() {
+            document.getElementById('ta').textContent += 'lorem impsum dolor sit amet';
+        }
+    </script>
+    <!--Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

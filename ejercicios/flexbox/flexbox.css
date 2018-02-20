@@ -1,0 +1,67 @@
+#cajas {
+    display: flex;
+    display: -webkit-flex;
+    /* Para navegadores webkit, como Safari */
+    flex-flow: row wrap;
+    /*los elementos dentro del contenedor (los .caja-item) se van a alinear en fila (row)*/
+    -webkit-flex-flow: row wrap;
+    text-align: center;
+    font-size: 2.5em;
+    justify-content: center;
+}
+
+
+.caja-item {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    margin: 10px;
+}
+
+/*las 5 columnas tienen el mismo ancho, por eso flex es 1*/
+
+.uno {
+    background-color: #bacee3;
+    flex: 1;
+    -webkit-flex: 1;
+    order: 1;
+    -webkit-order: 1;
+}
+
+.dos {
+    background-color: #b6ebb3;
+    flex: 1;
+    -webkit-flex: 1;
+    order: 2;
+    -webkit-order: 2;
+}
+
+.tres {
+    background-color: #7ebdbb;
+    flex: 1;
+    -webkit-flex: 1;
+    order: 3;
+    -wbkit-order: 3;
+}
+
+.cuatro {
+    background-color: #bd7eb6;
+    flex: 1;
+    -webkit-flex: 1;
+    order: 4;
+    -webkit-order: 4;
+}
+
+.cinco {
+    background-color: #fdb9d0;
+    flex: 1;
+    -webkit-flex: 1;
+    order: 5;
+    -webkit-order: 5;
+}
+
+/*boton*/
+
+
+

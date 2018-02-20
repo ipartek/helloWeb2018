@@ -10,45 +10,64 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <!--https://www.bootstrapcdn.com/fontawesome/-->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 </head>
-<style>
-    h1{
-        font-family: 'Orbitron', sans-serif;
-        border: 3px solid #E66C7E;
-        width: 40%;
-        margin: 0 auto;
-    }
 
-    #main ul li{
-        border: 1px solid #9FCE99;
-    }
-</style>
 <body onload="init()">
-<div id="container">
-     <nav id="main">
-       <ul>
-        <li><a href="ejercicios/bitcoin/bitcoin.html" class="active">Valor Bitcoin</a></li>
-        <li><a href="ejercicios/aula.html">Aula</a></li>
-        <li><a href="ejercicios/juego/juego.html">Juego</a></li>
-        <li><a href="ejercicios/capitulo4/cap4.html">Capítulo 4</a></li>
-        <li><a href="ejercicios/datatable/data_table.html">Data table</a></li>
-        <li><a href="ejercicios/css_ejercicios/css.html">Página CSS</a></li>
-        <li><a href="ejercicios/posicionamiento/posicionamiento.html">Posicionamiento CSS</a></li>
-        <li><a href="ejercicios/apocalipsis_now/apocalipsisNow.html">Apocalipsis Now</a></li>
-        <li><a href="ejercicios/iconos_font_awesome/iconos.html">Font Awesome</a></li>
-        <li><a href="ejercicios/media_query/media_querys.html">Media Queries</a></li>
-        <li><a href="ejercicios/modal/modal.html">Ventanas Modales</a></li>
-        <li><a href="ejercicios/maquetacion/maquetacion.html">Maquetación</a></li>
-        <li><a href="ejercicios/rwd/index.html">RWD</a></li>
-        <li><a href="ejercicios/bootstrap/ejemplo-inicial.html">Bootstrap</a></li>
-         <li><a href="ejercicios/bootstrap/doce_columnas.html">12 columnas</a></li>
-         <li><a href="ejercicios/formulario/formulario.html">Formulario</a></li>
 
-       </ul>
-    </nav>
 
-    <h1>Hello World</h1>
+<div id="header">
+			<ul class="nav">
+				<li><a href="">Inicio</a></li>
+				<li><a href="ejercicios/aula/aula.html">Aula</a>
+				<li><a href="">HTML</a>
+					<ul>
+						<li><a href="ejercicios/capitulo4/cap4.html">Capitulo 4</a></li>
+						<li><a href="ejercicios/datatable/data_table.html">Data table</a></li>
+						<li><a href="ejercicios/formulario/formulario.html">Formulario</a></li>
+				    </ul>
+				</li>
+				<li><a href="">CSS</a>
+					<ul>
+						<li><a href="ejercicios/modal/modal.html">Ventanas modales</a></li>
+						<li><a href="ejercicios/media_query/media_querys.html">Media queries</a></li>
+						<li><a href="ejercicios/iconos_font_awesome/iconos.html">Font Awesome</a></li>
+						<li><a href="ejercicios/css_ejercicios/css.html">Página CSS</a></li>
+						<li><a href="ejercicios/posicionamiento/posicionamiento.html">Posicionamiento CSS</a></li>
+						<li><a href="ejercicios/maquetacion/">Maquetación</a></li>
+						<li><a href="ejercicios/rwd/index.html">RWD</a></li>
+                        <li><a href="ejercicios/apocalipsis_now/apocalipsisNow.html">Apocalipsis now</a></li>
+                    </ul>
+				</li>
+				<li><a href="">Javascript</a>
+				    <ul>
+						<li><a href="ejercicios/alert%2520javascript/alerta.html">Alerts</a></li>
+						<li><a href="ejercicios/bitcoin/bitcoin.html">Bitcoin</a></li>
+						<li><a href="ejercicios/javascript/bublesort.html">Método burbuja</a></li>
+						<li><a href="ejercicios/juego/juego.html">Juego Arkanoid</a></li>
+						<li><a href="ejercicios/listeners/listener.html">Listeners</a></li>
+						<li><a href="ejercicios/selectores/selectores.html">Selectores</a></li>
+						<li><a href="ejercicios/widget/widget.html">Widget Tiempo</a></li>
+                       <li><a href="ejercicios/flexbox/flexbox_vocales.html">Flexbox</a></li>
+
+                    </ul>
+                </li>
+				<li><a href="">Bootstrap</a>
+				    <ul>
+				        <li><a href="ejercicios/bootstrap/detalle.html">Detalle Pinchos</a></li>
+				        <li><a href="ejercicios/bootstrap/doce_columnas.html">Doce columnas</a></li>
+				        <li><a href="ejercicios/bootstrap/ejemplo-inicial.html">Ejemplo inicial</a></li>
+				    </ul>
+				</li>
+
+			</ul><!-- fin nav-->
+
+</div><!-- fin header-->
+
+
+
+
+   <h1>Hello World</h1>
 
     <div class="clase_input">
     <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -57,7 +76,8 @@
     </div>
 
     <button id="boton" onclick="ordenarBurbuja()">¡¡¡PÚLSAME!!!</button>
-</div><!--end container-->
+
+
 
 <!-- enlace al javascript -->
 <script src="js/main.js" type="text/javascript" ></script>

@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="panel_cuerpo">
-                        <form novalidate action="../../index.html" role="form" id="formulario" onsubmit="return validar()">
+                        <form novalidate action="../../index.html" id="formulario" novalidate onsubmit="return validar()">
                             <fieldset>
                                 <legend>Datos personales</legend>
                                 <div class="columna">
@@ -211,8 +211,9 @@
 
                                 <div class="columna">
                                     <div class="form-group">
-                                        <label class="control-label"><i class="fa fa-pencil"></i> Observaciones</label>
-                                        <textarea class="control_formulario" id="txt"></textarea>
+                                        <label class="control-label"><i class="fa fa-pencil"></i> Observaciones
+                                        <div id="info"></div></label>
+                                        <textarea class="control_formulario" id="txt" onkeypress="return limita(event, 500);" onkeyup="actualizaInfo(500)"></textarea>
                                     </div>
                                 </div>
                             </fieldset>
@@ -243,51 +244,75 @@
     <!-- SCRIPT-->
     <script>
         function validar() {
+
+
             console.log("validar formulario");
-
-            //más seguro coger por id
-            validarSexo();
-
+            var formulario = document.getElementById("formulario");
+            var genero = formulario.genero.value;
 
 
+            //contar número de checkbox
+            var numChecks = 0;
+            var cAficiones = formulario.aficiones;
 
-        }
-
-        function validarSexo(){
-
-            var radioButtons = document.getElementsByName("genero");
-
-            for(var i=0; i< radioButtons.length; i++){
-
-                //falta
-            }
-            var contadorAfic = 0;
-
-            for(var i=0;i<formulario.aficiones.length-1; i++){
-                if(formulario.aficiones[i].checked){
-                    contadorAfic++;
+            for(var i=0;i<cAficiones.length-1; i++){
+                if(cAficiones[i].checked){
+                    numChecks++;
                 }
             }
 
 
-            switch(radioButtons){
+            switch(genero){
                 case "hombre" :
-                    if( contadorAfic < 1 ) { //si el género es masculino por lo menos seleccionar una afición
-                          return false;
+                    if( numChecks < 1 ) {
+                        alert("al menos selecciona 1 afición");
+                        return false;
                     }
                     break;
 
 
                 case "mujer" :
-                    if( contadorAfic < 3 ) { //si el género es femenino por lo menos seleccionar tres aficiones                          return false;
+                    if( numChecks < 3 ) {
+                        alert("al menos selecciona 3 aficiones");
+                        return false;
                     }
                     break;
+              }// fin switch
 
 
-                default :
-                  return true;
-              }
         }
+
+
+
+           //Limitar Caracteres
+             function limita(elEvento, maximoCaracteres) {
+              var elemento = document.getElementById("txt");
+
+
+                   if(elemento.value.length >= maximoCaracteres ) {
+                    return false;
+                  }
+                  else {
+                    return true;
+                  }
+            }
+
+
+             //Actualiza Caracteres
+            function actualizaInfo(maximoCaracteres) {
+              var elemento = document.getElementById("txt");
+              var info = document.getElementById("info");
+
+              if(elemento.value.length >= maximoCaracteres ) {
+                info.innerHTML = "(Máximo "+maximoCaracteres+" carácteres)";
+              }
+              else {
+                info.innerHTML = "(Puedes escribir hasta "+(maximoCaracteres-elemento.value.length)+" carácteres adicionales)";
+              }
+            }
+
+
+
 
     </script>
 

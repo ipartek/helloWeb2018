@@ -38,6 +38,7 @@
             width: 50px;
             height: 50px;
         }
+
     </style>
 </head>
 
@@ -52,76 +53,107 @@
             <input id="btnReset" type="button" class="btn btn-danger" value="reset">
 
         </div>
-    </div>
-    <script>
-        /** escribimos en el textarea */
-        function show(texto) {
-            var ta = document.getElementById("ta");
-            ta.textContent += texto + '\n'; //añade, no elimina nada
-        }
 
-        //escuchador para el boton
-        var btn = document.getElementById("btn");
-        var texto =
-            /* btn.addEventListener('click', show, false); sin parametros,
-            no se puede poner directamente show(texto), porque sino lo ejecuta siempre
-            para que lo ejecute cuando esta el escuchador se pone con una funcion ()*/
-            btn.addEventListener('click', function() {
-                show('lorem ipsum')
+        <script>
+            /** escribimos en el textarea */
+            function show(texto) {
+                var ta = document.getElementById("ta");
+                ta.textContent += texto + '\n'; //añade, no elimina nada
+            }
+
+            //escuchador para el boton
+            var btn = document.getElementById("btn");
+            var texto =
+                /* btn.addEventListener('click', show, false); sin parametros,
+                no se puede poner directamente show(texto), porque sino lo ejecuta siempre
+                para que lo ejecute cuando esta el escuchador se pone con una funcion ()*/
+                btn.addEventListener('click', function() {
+                    show('lorem ipsum')
+                }, false);
+
+            var btnReset = document.getElementById("btnReset");
+            btnReset.addEventListener('click', function() {
+                document.getElementById("ta").textContent = ""
             }, false);
 
-        var btnReset = document.getElementById("btnReset");
-        btnReset.addEventListener('click', function() {
-            document.getElementById("ta").textContent = ""
-        }, false);
 
+            //En vez de evento en html se puede realizar en javaScript
+            var btnJS = document.getElementById("btnJS");
+            /*btnJS.onclick =show;*/
+            btnJS.onclick = function() {
+                document.getElementById("ta").textContent += "onclick en Javaspcript \n";
+            };
 
-        //En vez de evento en html se puede realizar en javaScript
-        var btnJS = document.getElementById("btnJS");
-        /*btnJS.onclick =show;*/
-        btnJS.onclick = function() {
-            document.getElementById("ta").textContent += "onclick en Javaspcript \n";
-        };
-    </script>
+        </script>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6">
-            <textarea id="ta" name="" id="" cols="30" rows="10"></textarea>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <h2>Bubbling</h2>
-            <div id="azul">
-                <div id="rojo">
-                    <div id="verde"></div>
-                </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <textarea id="ta" name="" id="" cols="30" rows="10"></textarea>
             </div>
-            <p>Rojo permite bubbling</p>
-            <p>Verde no permite bubbling</p>
+            <div class="col-xs-12 col-sm-6">
+                <h2>Bubbling</h2>
+                <div id="azul">
+                    <div id="rojo">
+                        <div id="verde"></div>
+                    </div>
+                </div>
+                <p>Rojo permite bubbling</p>
+                <p>Verde no permite bubbling</p>
 
+            </div>
         </div>
-    </div>
-    <script>
-        var ta = document.getElementById("ta");
-        var azul = document.getElementById("azul");
-        var rojo = document.getElementById("rojo");
-        var verde = document.getElementById("verde");
-        azul.addEventListener('click', function() {
-            ta.textContent += "click azul \n";
-        });
+        <script>
+            var ta = document.getElementById("ta");
+            var azul = document.getElementById("azul");
+            var rojo = document.getElementById("rojo");
+            var verde = document.getElementById("verde");
+            azul.addEventListener('click', function() {
+                ta.textContent += "click azul \n";
+            });
 
-        rojo.addEventListener('click', function() {
-            ta.textContent += "click rojo \n";
-        });
+            rojo.addEventListener('click', function() {
+                ta.textContent += "click rojo \n";
+            });
 
-        verde.addEventListener('click', function(event) {
-            ta.textContent += "click verde en X:" + event.x + " Y:" + event.y + "\n";
-            //cambiar el contenemdo del padre
-            event.target.parentElement.style.backgroundColor = "yellow";
-            event.stopPropagation(); //evitar bubbling
-        });
-    </script>
-    <div class="container">
+            verde.addEventListener('click', function(event) {
+                ta.textContent += "click verde en X:" + event.x + " Y:" + event.y + "\n";
+                //cambiar el contenemdo del padre
+                event.target.parentElement.style.backgroundColor = "yellow";
+                event.stopPropagation(); //evitar bubbling
+            });
+
+        </script>
+        <div class="row">
+            <h2>parrafos escuchador</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae mollitia quisquam exercitationem commodi doloremque! Est cum, omnis similique. Excepturi explicabo, totam nostrum fuga omnis. Vitae nesciunt id in aspernatur quos.</p>
+            <p>Totam est amet eligendi quo fugit consequuntur, itaque corporis nihil odio magnam deleniti nisi fuga numquam facilis suscipit deserunt, tenetur reprehenderit ipsam, porro illo, enim officiis provident. Sit, eligendi, animi.</p>
+            <p>Rem optio sit aliquid illum pariatur saepe nihil officia iusto, accusantium dolorum odit numquam dolorem et labore, modi laborum eos nulla alias consequatur distinctio ratione magni asperiores? Est, delectus, ullam.</p>
+        </div>
+        <script>
+            var parrafos = document.getElementsByTagName("p");
+            var p;
+            for (i = 0; i < parrafos.length; i++) {
+                p = parrafos[i];
+                //es lo mismo que  p.addEventListener('click', pintarParrafo);
+                p.addEventListener('click', function() {
+                    pintarParrafo(this)
+                });
+            }
+            /*poner todos los parrafos en negro*/
+            function reset() {
+                for (i = 0; i < parrafos.length; i++) {
+                    parrafos[i].style.color = 'Black';
+                }
+            }
+
+            function pintarParrafo(element) {
+                reset();
+                element.style.color = 'red';
+            }
+
+        </script>
     </div>
+
     <!-- jquery -->
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 

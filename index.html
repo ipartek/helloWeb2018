@@ -1,108 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Hello World</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- enlace a la hoja de estilos -->
-<link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
 
     <!-- fontawesome 4.7 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 </head>
+
 <body onload="init()">
 
-<div class="container">
+    <div class="container">
 
-    <nav id="main">
-       <ul>
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="bitcoin.html">Ver valor Bitcoin</a></li>
-        <li><a href="aula.html">Ver Aula</a></li>
-        <li><a href="capitulo4.html">Ver capitulo4</a></li>
-        <li><a href="ejercicios/modal.html">Modal</a></li>
-        <li><a href="ejercicios/media.html">Media Query</a></li>
-        <li><a href="ejercicios/rwd/index.html">RWD</a></li>
-        <li><a href="ejercicios/bootstrap/ejemplo-inicial.html">Boostrap</a></li>
-        <li><a href="ejercicios/bootstrap/12columnas.html">Boostrap Grid System</a></li>
-        <li><a href="ejercicios/Cap5_WebInteractiva/Formularios/formularios.html">Formularios</a></li>
-        <li><a href="ejercicios/JavaScript/bucleSort.html">Bucle Sort</a></li>
-         <li><a href="ejercicios/JavaScript/listener.html">Listener</a></li>
-       </ul>
+        <nav id="main">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="aula.html">Ver Aula</a></li>
+                <!-- HTML -->
+                <li><a href="#">HTML</a>
+                    <ul>
+                        <li><a href="capitulo4.html">Ver capitulo4</a></li>
+                        <li><a href="ejercicios/Cap5_WebInteractiva/Formularios/formularios.html">Formularios</a></li>
+                    </ul>
 
-    </nav>
-       <script type="text/javascript">
-        //Creamos un objeto con la fecha actual
+                </li>
+                <!-- CSS -->
+                <li><a href="#">CSS</a>
+                    <ul>
+                        <li><a href="ejercicios/modal.html">Modal</a></li>
+                        <li><a href="ejercicios/media.html">Media Query</a></li>
+                        <li><a href="ejercicios/rwd/index.html">RWD</a></li>
+                    </ul>
+                </li>
+                <!-- JavaScript -->
+                <li><a href="#">JavaScript</a>
+                    <ul>
+                        <li><a href="bitcoin.html">Ver valor Bitcoin</a></li>
+                        <li><a href="ejercicios/JavaScript/bucleSort.html">Bucle Sort</a></li>
+                        <li><a href="ejercicios/JavaScript/listener.html">Listener</a></li>
+                    </ul>
 
-         var fecha=new Date();
+                </li>
+                <!-- Bootstrap -->
+                <li><a href="#">Bootstrap</a>
+                    <ul>
+                        <li><a href="ejercicios/bootstrap/ejemplo-inicial.html">Boostrap</a></li>
+                        <li><a href="ejercicios/bootstrap/12columnas.html">Boostrap Grid System</a></li>
+                    </ul>
 
-           var fechaGMT=fecha.toGMTString();
+                </li>
+            </ul>
 
-            document.write ("1* Fecha actual: "+fecha+"<br>");
+        </nav>
+        <script type="text/javascript">
+            //Creamos un objeto con la fecha actual
 
-            document.write ("2* Fecha actual: "+fechaGMT+"<br>");
+            var fecha = new Date();
 
-           //fijando hora
-           fecha.setHours(14);
-           var fechaGMT=fecha.toGMTString();
-            document.write ("3* Fecha actual: "+fechaGMT+"<br>");
+            var fechaGMT = fecha.toGMTString();
 
+            document.write("1* Fecha actual: " + fecha + "<br>");
 
-           /* fecha.setMonth(2); //Modificamos el mes actual por febrero (1)
-            fechaGMT=fecha.toGMTString();
-            document.write("* Fecha modificada, cambiamos a Febrero: "+fechaGMT+"<br>");
-            fecha.setYear(2018); //Cambiamos al año 2018
-            fechaGMT=fecha.toGMTString();
-            document.write("* Fecha modificada, cambiamos a 2018: "+fechaGMT+"<br>");*/
+            document.write("2* Fecha actual: " + fechaGMT + "<br>");
 
-    </script>
-
-    <h1>Hello World </h1>
-
-
-    <div class="card">
-       <img src="https://www.campuswincarte.es/wp-content/uploads/2015/03/html-300x300.jpg" alt="">
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores quisquam maxime odit enim. Iste, dolor porro explicabo doloribus eligendi, laborum enim deserunt nam, ad corporis neque similique quidem voluptas!</p>
-    </div>
+            //fijando hora
+            fecha.setHours(14);
+            var fechaGMT = fecha.toGMTString();
+            document.write("3* Fecha actual: " + fechaGMT + "<br>");
 
 
+            /* fecha.setMonth(2); //Modificamos el mes actual por febrero (1)
+             fechaGMT=fecha.toGMTString();
+             document.write("* Fecha modificada, cambiamos a Febrero: "+fechaGMT+"<br>");
+             fecha.setYear(2018); //Cambiamos al año 2018
+             fechaGMT=fecha.toGMTString();
+             document.write("* Fecha modificada, cambiamos a 2018: "+fechaGMT+"<br>");*/
+        </script>
 
-    <div class="cnt-img-zoom">
-        <img src="https://cdnhtml5hive.azureedge.net/wp-content/uploads/2014/03/css-beginners-tutorial.jpg" alt="">
-        <a href="#popup1"><i class="fa fa-search fa-4x"></i></a>
-    </div>
+        <h1>Hello World </h1>
 
-    <!-- ventana modal oculta -->
-    <div id="popup1" class="modal">
-        <div class="modal-content">
-            <a class="close" href="#close">&times;</a>
-            <img src="https://cdnhtml5hive.azureedge.net/wp-content/uploads/2014/03/css-beginners-tutorial.jpg" alt="">
+
+        <div class="card">
+            <img src="https://www.campuswincarte.es/wp-content/uploads/2015/03/html-300x300.jpg" alt="">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores quisquam maxime odit enim. Iste, dolor porro explicabo doloribus eligendi, laborum enim deserunt nam, ad corporis neque similique quidem voluptas!</p>
         </div>
+
+
+
+        <div class="cnt-img-zoom">
+            <img src="https://cdnhtml5hive.azureedge.net/wp-content/uploads/2014/03/css-beginners-tutorial.jpg" alt="">
+            <a href="#popup1"><i class="fa fa-search fa-4x"></i></a>
+        </div>
+
+        <!-- ventana modal oculta -->
+        <div id="popup1" class="modal">
+            <div class="modal-content">
+                <a class="close" href="#close">&times;</a>
+                <img src="https://cdnhtml5hive.azureedge.net/wp-content/uploads/2014/03/css-beginners-tutorial.jpg" alt="">
+            </div>
+        </div>
+
+
+
+        <br>
+        <br>
+        <br>
+
+        <div class="border">
+            <input type="number" id="numero" placeholder="Escribe un numero" />
+            <p id="texto">...</p>
+            <button id="boton" onclick="pulsador()">PULSAME!!!</button>
+        </div>
+
+
     </div>
+    <!-- /container  -->
+    <footer>
 
+    </footer>
 
-
-    <br>
-    <br>
-    <br>
-
-   <div class="border">
-        <input type="number" id="numero" placeholder="Escribe un numero"/>
-        <p id="texto">...</p>
-        <button id="boton" onclick="pulsador()">PULSAME!!!</button>
-   </div>
-
-
-</div><!-- /container  -->
-<footer>
-
-</footer>
-
-<!-- enlace al javascript -->
-<script src="js/main.js" type="text/javascript" ></script>
+    <!-- enlace al javascript -->
+    <script src="js/main.js" type="text/javascript"></script>
 
 </body>
+
 </html>

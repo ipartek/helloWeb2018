@@ -206,7 +206,10 @@
         function sonido(fileName) {
 
 
-            var audio = new Audio('/sounds/'+fileName+'.wav');
+            var audio = new Audio('/sounds/'+fileName+'.wav'); //Coge el audio
+             audio.stop();/*sound.pause();
+sound.currentTime = 0;*/
+
             audio.play();
             console.log('Se Escucha');
         }

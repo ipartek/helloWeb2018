@@ -138,7 +138,9 @@ Textarea observaciones (no requeridas))
                 <label for="obser">Obervaciones: </label><br>
                 <textarea rows="5" cols="100" name="obser" onkeypress="validarTextarea()"></textarea>
                 <output id="longTextoArea">##numero## / 500</output>
-
+                <script>
+                    longTextoArea.textContent = '0/500';
+                </script>
 
             </fieldset>
             <span class="condiciones">
@@ -204,10 +206,10 @@ Textarea observaciones (no requeridas))
 
 
         function validarTextarea() {
-            var longTexto = form.obser.textLength;
+            var longTexto = form.obser.textLength+1;
             var contenido = "##numero##/500";
 
-            contenido = contenido.replace('##numero##', longTexto)
+            contenido = contenido.replace('##numero##', longTexto);
             longTextoArea.textContent = contenido;
             console.debug(longTexto);
             console.debug(contenido);

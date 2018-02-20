@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Flex y AddListener</title>
+    <title>Flexbox y AddListener</title>
 
     <meta name="viewport" content="width=device-width initial-scale=1.0">
 
@@ -61,8 +61,8 @@
             justify-content: space-between;
             background-color: #2E4053;
             color: #FFF;
-            width: 120px;
-            height: 300px;
+            width: 15%;
+            min-height: 300px;
             border-radius: 20px;
             border-color: #FFF;
         }
@@ -119,25 +119,25 @@
 
         <div class="row">
             <h2>Flex y Addlistener</h2>
-            <input id="btn-flex" type="button" class="btn btn-success btn-block" value="Desordenar">
+            <input id="btnDesordenar" type="button" class="btn btn-success btn-block" value="Desordenar">
             <div class="cnt-flex">
-                <div id="cajaA" class="caja-flex">
+                <div id="cajaA" class="caja-flex" onclick="sonido('a')">
                     <span>A</span>
                     <span>a</span>
                 </div>
-                <div id="cajaE" class="caja-flex">
+                <div id="cajaE" class="caja-flex" onclick="sonido('e')">
                     <span>E</span>
                     <span>e</span>
                 </div>
-                <div id="cajaI" class="caja-flex">
+                <div id="cajaI" class="caja-flex" onclick="sonido('i')">
                     <span>I</span>
                     <span>i</span>
                 </div>
-                <div id="cajaO" class="caja-flex">
+                <div id="cajaO" class="caja-flex" onclick="sonido('o')">
                     <span>O</span>
                     <span>o</span>
                 </div>
-                <div id="cajaU" class="caja-flex">
+                <div id="cajaU" class="caja-flex" onclick="sonido('u')">
                     <span>U</span>
                     <span>u</span>
                 </div>
@@ -145,18 +145,66 @@
             </div>
         </div>
 
+        <!-- Desordenar los div de las letras al pulsar el botón -->
+        <!--
         <script>
             var ta = document.getElementById("ta");
-            var orden;
+
             var numElem = document.querySelectorAll(".cnt-flex div");
-            document.getElementById("btn-flex").addEventListener('click', function() {
+            document.getElementById("btnDesordenar").addEventListener('click', function() {
                 for (var i = 0; i < numElem.length; i++) {
                     orden = parseInt(Math.random() * 100);
                     numElem[i].style.order = orden;
                 }
-            });
+            }, false); // el trye/false es opcional
 
         </script>
+-->
+
+        <!-- OTRA FORMA DE Desordenar los div de las letras al pulsar el botón -->
+        <script>
+            var aOrden = [1, 2, 3, 4, 5];
+            var silencio = true;
+
+            var btn = document.getElementById("btnDesordenar");
+            btn.addEventListener('click', function() {
+                aOrden = shuffle(aOrden);
+                var boxes = document.getElementsByClassName("caja-flex");
+                var box;
+                for (i = 0; i < boxes.length; i++) {
+                    box = boxes[i];
+                    box.style.order = aOrden[i];
+                }
+            })
+
+            function shuffle(a) {
+                var j, x, i;
+                for (i = a.length - 1; i > 0; i--) {
+                    j = Math.floor(Math.random() * (i + 1));
+                    x = a[i];
+                    a[i] = a[j];
+                    a[j] = x;
+                }
+                return a;
+            }
+
+            function sonido(filename) {
+                if (silencio) {
+                    var audio = new Audio('../sounds/' + filename + '.wav');
+                    audio.play();
+                    silencio = false;
+                    audio.onended = function() {
+                        silencio = true;
+                    }
+                }
+            }
+        </script>
+
+
+
+
+        <!-- ***************************************************************************** -->
+
         <h2>AddEventListener</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis minima reprehenderit vero necessitatibus laudantium dolorum commodi, iste illo cumque officia quo animi voluptates accusantium sint quibusdam placeat velit dignissimos recusandae.Eius sequi, facere optio qui fugit delectus, quis quidem dolorum ad libero molestias, sunt esse veritatis fugiat illo tenetur voluptas, assumenda dolorem ab ipsa ex consequatur. Nihil natus possimus perspiciatis.Libero excepturi voluptas laudantium nobis id pariatur nesciunt, nihil explicabo natus expedita maxime modi officiis soluta nostrum corporis voluptatibus possimus sunt aliquam ex incidunt!</p>
 
@@ -164,17 +212,31 @@
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quos ab aut, harum saepe error ex veniam illum totam libero temporibus blanditiis, magnam velit! Facere cupiditate deleniti reiciendis laborum quis.Cupiditate placeat autem labore incidunt aliquam unde suscipit natus, iusto, voluptate. Mollitia, minus, at! Architecto earum sit minima esse placeat quam suscipit ratione, quasi ea, provident impedit dignissimos quaerat accusamus.Aperiam quisquam doloremque, quos atque quis. Doloremque maxime obcaecati quibusdam asperiores tenetur, aut possimus fugit natus.</p>
     </div>
+    <!-- fin div container -->
 
+    <!-- Pintar párrafos de rojo al clicar sobre ellos -->
     <script>
         var parrafos = document.getElementsByTagName("p");
-        console.debug(parrafos);
+
         for (var i = 0; i < parrafos.length; i++) {
             parrafos[i].addEventListener('click', function() {
-                parrafos[i].style.backgroundColor = "red";
-            }, false);
+                pintarParrafo(this)
+            });
         }
 
+        function reset() {
+            for (var i = 0; i < parrafos.length; i++) {
+                parrafos[i].style.backgroundColor = "white";
+            }
+        }
+
+        function pintarParrafo(element) {
+            reset();
+            element.style.backgroundColor = "red";
+        };
+
     </script>
+
 
     <script>
         //        Escribimos en el TextArea

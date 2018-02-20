@@ -17,10 +17,13 @@ input[type="text"]:valid,input[type="email"]:valid{
 input[type="checkbox"],input[type="radio"]{
     margin-left: 25px;
 }
-form img {
-    max-width: 2%;
+form img#ojo {
+    z-index: 5;
+    max-width: 3%;
     display: inline-block;
     padding-top: 20px;
+    position: relative;
+    top:15px;
 }
 
 div.derecha{

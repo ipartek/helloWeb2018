@@ -1,14 +1,14 @@
 /* CSS para las secciones principales de la web, por ejemplo:
 container, encabezados, main, footer,sidebar, etc */
 
-
-.container{
+.container {
     max-width: 1200px;
-    margin:auto;
+    margin: auto;
 }
 
 
 /* Menu navegacion propio */
+
 /*nav ul a{
     text-decoration: none;
     color:white;
@@ -30,33 +30,60 @@ nav ul li{
 }*/
 
 /* Menu principal nav#main */
-nav#main{
-    margin-bottom: 45px;
+
+
+nav.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
-nav#main ul {
+nav.clearfix ul li{
+    min-width: 15%;
+    margin: auto;
+}
+
+nav#main ul.nav li a {
+    z-index: 999;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #333;
+    background-color: #000;
 }
 
-nav#main li {
+nav#main ul.nav > li {
+    display: inline-block;
     float: left;
 }
 
-nav#main li a {
+nav#main ul.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 15%;
+    padding: 0;
+    margin: 0;
+}
+
+nav#main ul.nav li ul li {
+    display: block;
+}
+
+nav#main ul.nav li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 15px;
     text-decoration: none;
 }
 
+nav#main ul.nav li:hover > ul {
+    display: block;
+}
+
 /* Change the link color to #111 (black) on hover */
+
 nav#main li a:hover {
-    background-color: #111;
+    background-color: #434343;
 }
 
 nav#main .active {

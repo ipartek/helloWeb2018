@@ -31,42 +31,45 @@
             border-radius: 25px;
             font-size: 3em;
             color: white;
-            justify-content:center;
+            justify-content: center;
 
         }
-        .mayus{
-            align-self:flex-start;
+
+        .mayus {
+            align-self: flex-start;
 
         }
-        .minus{
+
+        .minus {
             align-self: flex-end;
 
         }
+
     </style>
 </head>
 
 <body>
     <h1>Flex</h1>
     <div class="container-flex">
-        <div class="box-flex" id="a">
-            <span class="mayus">A</span>
-            <span class="minus">a</span>
+        <div class="box-flex" id="a" onclick="sonido('a')">
+            <div class="mayus">A</div>
+            <div class="minus">a</div>
         </div>
-        <div class="box-flex" id="e" style="order:0">
-            <span class="mayus">E</span>
-            <span class="minus">e</span>
+        <div class="box-flex" id="e" style="order:0" onclick="sonido('e')">
+            <div class="mayus">E</div>
+            <div class="minus">e</div>
         </div>
-        <div class="box-flex" id="i" style="order:3">
-            <span class="mayus">I</span>
-            <span class="minus">i</span>
+        <div class="box-flex" id="i" style="order:3" onclick="sonido('i')">
+            <div class="mayus">I</div>
+            <div class="minus">i</div>
         </div>
-        <div class="box-flex" id="o" style="order:4">
-            <span class="mayus">O</span>
-            <span class="minus">o</span>
+        <div class="box-flex" id="o" style="order:4" onclick="sonido('o')">
+            <div class="mayus">O</div>
+            <div class="minus">o</div>
         </div>
-        <div class="box-flex" id="u" style="order:5">
-            <span class="mayus">U</span>
-            <span class="minus">u</span>
+        <div class="box-flex" id="u" style="order:5" onclick="sonido('u')">
+            <div class="mayus">U</div>
+            <div class="minus">u</div>
         </div>
     </div>
     <br>
@@ -78,11 +81,45 @@
         document.getElementById("desOrden").addEventListener('click', function() {
             for (var i = 0; i < divTam; i++) {
                 var orden = parseInt((Math.random() * divTam) + 1);
-                var busqueda =div[i];
-                document.getElementById(busqueda).style.order=orden;
+                var busqueda = div[i];
+                document.getElementById(busqueda).style.order = orden;
 
             }
         })
+        var ids = ['a', 'e', 'i', 'o', 'u'];
+
+        function resetOn() {
+            for (i = 0; i < ids.length; i++) {
+                document.getElementById(ids[i]).style.display = "none";;
+            }
+            console.info("reset Ons");
+
+        }
+
+        function resetOut() {
+            for (i = 0; i < ids.length; i++) {
+                document.getElementById(ids[i]).style.display = "block";;
+            }
+            console.info("reset Out");
+
+        }
+
+
+
+        function sonido(fileName) {
+            var audio = new Audio('soinuak/' + fileName + '.wav');
+            resetOn();
+            audio.addEventListener("ended", function() {
+                console.log("Terminada cancion");
+                resetOut();
+            });
+
+
+            audio.play();
+            console.info("reproduciendo cancion");
+
+        }
+
     </script>
 
 

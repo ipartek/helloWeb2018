@@ -72,9 +72,9 @@
         </div>
         <br><br>
         <div class="row">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nemo possimus, assumenda doloremque tenetur ad. Aspernatur animi non voluptas autem modi necessitatibus dicta nostrum, esse, alias obcaecati nihil perspiciatis! Error.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse nihil consequuntur, recusandae, quam tenetur quibusdam repudiandae eum quidem nesciunt facilis magni expedita laudantium numquam porro ex, sunt quisquam vero non?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, inventore, dolorum nam neque explicabo odit dolor? Ipsa placeat fuga pariatur perferendis quod fugit quae quis reiciendis, et optio iusto. Eveniet.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nemo possimus, assumenda doloremque tenetur ad. Aspernatur animi non voluptas autem modi necessitatibus dicta nostrum, esse, alias obcaecati nihil perspiciatis! Error.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse nihil consequuntur, recusandae, quam tenetur quibusdam repudiandae eum quidem nesciunt facilis magni expedita laudantium numquam porro ex, sunt quisquam vero non?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, inventore, dolorum nam neque explicabo odit dolor? Ipsa placeat fuga pariatur perferendis quod fugit quae quis reiciendis, et optio iusto. Eveniet.</p>
         </div>
 
     </div>
@@ -82,21 +82,23 @@
     <script>
         //coger todos los p
         var parrafos = document.getElementsByTagName("P");
-        parrafos[0].addEventListener('click',function(){
-            event.target.style.color="red";
-            parrafos[].style.color="black";
-            parrafos[2].style.color="black";
-        })
-        parrafos[1].addEventListener('click',function(){
-            event.target.style.color="red";
-            parrafos[0].style.color="black";
-            parrafos[2].style.color="black";
-        })
-        parrafos[2].addEventListener('click',function(){
-            event.target.style.color="red";
-            parrafos[1].style.color="black";
-            parrafos[1].style.color="black";
-        })
+        for (var i = 0; i < parrafos.length; i++) {
+            parrafos[i].addEventListener('click', function() {
+                reset();
+                pintar();
+            })
+        }
+
+        //Pintar parrafos
+        function pintar() {
+            event.target.style.color = "red";
+        }
+        //Reset de parrafos
+        function reset() {
+            for (var i = 0; i < parrafos.length; i++) {
+                parrafos[i].style.color = "black";
+            }
+        }
         //bubling
         var ta = document.getElementById("ta");
         document.getElementById("azul").addEventListener('click', function() {
@@ -112,6 +114,7 @@
             event.target.parentElement.style.backgroundColor = "yellow";
         })
         /* Escribimos en el Textarea*/
+
         function show(texto) {
             console.info("pulsaste el boton verde");
             var ta = document.getElementById("ta");

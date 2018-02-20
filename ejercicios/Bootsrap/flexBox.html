@@ -55,11 +55,11 @@
 
 </head>
 
-<body>
+<body onload="anadirListener()">
     <div class="container">
         <h1>Propiedad flex</h1>
         <div class="row contenedor">
-            <div class="caja" onclick="sonido('a')">
+            <div class="caja" >
                 <div class="mayuscula">
                     <p>A</p>
                 </div>
@@ -67,7 +67,7 @@
                     <p>a</p>
                 </div>
             </div>
-            <div class="caja" onclick="sonido('e')">
+            <div class="caja">
                 <div class="mayuscula">
                     <p>E</p>
                 </div>
@@ -75,7 +75,7 @@
                     <p>e</p>
                 </div>
             </div>
-            <div class="caja" onclick="sonido('i')">
+            <div class="caja">
                 <div class="mayuscula">
                     <p>I</p>
                 </div>
@@ -83,7 +83,7 @@
                     <p>i</p>
                 </div>
             </div>
-            <div class="caja" onclick="sonido('o')">
+            <div class="caja">
                 <div class="mayuscula">
                     <p>O</p>
                 </div>
@@ -91,7 +91,7 @@
                     <p>o</p>
                 </div>
             </div>
-            <div class="caja" onclick="sonido('u')">
+            <div class="caja">
                 <div class="mayuscula">
                     <p>U</p>
                 </div>
@@ -118,7 +118,16 @@
 
         }
         var cajas = document.getElementsByClassName("caja");
-
+        var vocales=["a","e","i","o","u"];
+        var vocal;
+        function anadirListener(){
+        for(var i=0;i<cajas.length;i++){
+                    vocal=vocales[i]
+                    cajas[i].addEventListener("click",function(){
+                        sonido(vocal);
+                    });
+        }
+        }
         function sonido(nombreArchivo) {
             var audio = new Audio('sounds/' + nombreArchivo + ".wav");
             audio.play();
@@ -134,14 +143,7 @@
             //boton
 
             audio.addEventListener("ended", function() {
-                var vocales=["a","e","i","o","u"];
-                var vocal;
-                for(var i=0;i<cajas.length;i++){
-                    vocal=vocales[i]
-                    cajas[i].addEventListener("click",function(){
-                        sonido(vocal);
-                    });
-                }
+                anadirListener();
             });
         }
 

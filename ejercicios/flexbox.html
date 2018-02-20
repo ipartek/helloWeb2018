@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Flexbox</title>
@@ -15,111 +14,125 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <style>
-        .container-flex {
+
+        .container-flex{
             display: flex;
             justify-content: space-between;
         }
 
-        .box {
+        .box{
             background-color: teal;
             color: #FFF;
             width: 19%;
             font-size: 3em;
             min-height: 200px;
             text-align: center;
-
+            border-radius: 15%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
 
         }
 
-        .upper {
+        .upper{
             text-transform: uppercase;
         }
 
-        .row {
+        .row{
             margin: 2em 0;
         }
+
     </style>
 
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Flexbox - Vocales </h1>
-
-        <div class="container-flex">
-            <div class="box" id="audio" onclick="sonido('a')">
-                <div class="upper">a</div>
-                <div class="lower">a</div>
-            </div>
-            <div class="box" onclick="sonido('e')">
-                <div class="upper">e</div>
-                <div class="lower">e</div>
-            </div>
-            <div class="box" onclick="sonido('i')">
-                <div class="upper">i</div>
-                <div class="lower">i</div>
-            </div>
-            <div class="box" onclick="sonido('o')">
-                <div class="upper">o</div>
-                <div class="lower">o</div>
-            </div>
-            <div class="box" onclick="sonido('u')">
-                <div class="upper">u</div>
-                <div class="lower">u</div>
-            </div>
+<div class="container">
+    <h1>Flexbox - Vocales </h1>
+    <div class="row">
+         <div class="container-flex">
+        <div class="box" onclick="sonido('a',this)">
+            <div class="upper">a</div>
+            <div class="lower">a</div>
         </div>
-
-
-        <div class="row">
-            <button id="btnBarajear" class="btn btn-success btn-block">BARAJEAR</button>
+        <div class="box" onclick="sonido('e', this)">
+            <div class="upper">e</div>
+            <div class="lower">e</div>
         </div>
-
-
-        <script>
-            var aOrden = [1, 2, 3, 4, 5];
-
-            var btn = document.getElementById("btnBarajear");
-
-            btn.addEventListener('click', function() {
-                aOrden = shuffle(aOrden);
-                var boxes = document.getElementsByClassName("box");
-                var box;
-                for (i = 0; i < boxes.length; i++) {
-                    box = boxes[i];
-                    box.style.order = aOrden[i];
-                }
-            });
-
-            /**
-             * Shuffles array in place.
-             * @param {Array} a items An array containing the items.
-             */
-            function shuffle(a) {
-                var j, x, i;
-                for (i = a.length - 1; i > 0; i--) {
-                    j = Math.floor(Math.random() * (i + 1));
-                    x = a[i];
-                    a[i] = a[j];
-                    a[j] = x;
-                }
-                return a;
-            }
-
-
-
-            function sonido(fileName) {
-                var audio = new Audio('../sounds/' + fileName + '.wav');
-                var myAudio = document.getElementById("audio");
-                myAudio.addEventListener
-
-            }
-        </script>
-
+        <div class="box" onclick="sonido('i', this)">
+            <div class="upper">i</div>
+            <div class="lower">i</div>
+        </div>
+        <div class="box" onclick="sonido('o', this)">
+            <div class="upper">o</div>
+            <div class="lower">o</div>
+        </div>
+        <div class="box" onclick="sonido('u', this)">
+            <div class="upper">u</div>
+            <div class="lower">u</div>
+        </div>
     </div>
+    </div>
+   <div class="row">
+        <button id="btnBarajear" class="btn btn-success btn-block">BARAJEAR</button>
+    </div>
+
+
+    <script>
+
+        var aOrden = [1,2,3,4,5];
+        var boxes = document.getElementsByClassName("box");
+
+
+        var btn = document.getElementById("btnBarajear");
+        btn.addEventListener('click', function(){
+            aOrden = shuffle(aOrden);
+            var box;
+            for( i=0; i<boxes.length;i++){
+                box = boxes[i];
+                box.style.order = aOrden[i];
+            }
+        });
+
+        function sonido( fileName, elem ){
+
+            btn.disabled = true;
+
+            var audio = new Audio( '../sounds/'+fileName+'.wav' );
+            audio.play();
+            audio.onended = habilitarColor;
+
+            elem.style.backgroundColor = 'orange';
+        }
+
+        function habilitarColor(){
+
+                btn.disabled = false;
+
+                for( i=0; i<boxes.length;i++){
+                    boxes[i].style.backgroundColor = 'teal';
+                }
+        }
+
+        /**
+         * Shuffles array in place.
+         * @param {Array} a items An array containing the items.
+         */
+        function shuffle(a) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a;
+        }
+
+    </script>
+
+</div>
 
     <!-- jquery -->
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -128,5 +141,4 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </body>
-
 </html>

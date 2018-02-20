@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <title>Hello World</title>
 
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <!-- Enlace a la hoja de estilos-->
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/layouts.css">
+    <link rel="stylesheet" href="css/commons.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/etiquetas.css">
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/">
     <style>
@@ -15,6 +27,7 @@
 </head>
 
 <body onload="init()">
+
     <header>
         <nav id="main">
             <ul>
@@ -24,27 +37,34 @@
                 <li><a href="">HTML</a>
                     <ul>
                         <li><a href="capitulo4.html">Capítulo 4</a></li>
+                        <li><a href="formateado_parrafos.html">Formateado de parrafos</a></li>
+                        <li><a href="enlaces.html">Enlaces</a></li>
                         <li><a href="formulario.html">Formularios (I)</a></li>
                         <li><a href="formulariodos.html">Formularios (II)</a></li>
+                        <li><a href="formularioTres.html">Formulario (III)</a></li>
+                         <li><a href="tablas.html">Tablas</a></li>
                         <li><a href="datatable.html">DataTable</a></li>
                         <li><a href="listas.html">Listas</a></li>
-                        <li><a href="tablas.html">Tablas</a></li>
-                        <li><a href="formateado_parrafos.html">Formateado de parrafos</a></li>
+
                     </ul>
                 </li>
                 <!--CSS-->
                 <li><a href="">CSS</a>
                     <ul>
-                        <li><a href="css.html">CSS - Cascading Style Sheets</a></li>
-                        <li><a href="ejercicios/flexbox.html">Flexbox</a></li>
+                        <li> <a href="css.html">CSS - Cascading Style Sheets</a></li>
+                        <li><a href="rwd/index.html">Reponsive</a></li>
                         <li><a href="media.html">Media</a></li>
                         <li><a href="modal.html">Modal</a></li>
+                        <li><a href="ejercicios/flexbox.html">Flexbox</a></li>
+
                     </ul>
                 </li>
                 <li><a href="">JavaScript</a>
                     <ul>
                         <li><a href="bitcoin.html">Ver valor del Bitcoin</a></li>
                         <li><a href="arcanoid.html">Juego de Arcanoid</a></li>
+                        <li><a href="ejercicios/JavaScript/calcularSuma.html">Calcular Suma</a></li>
+                        <li><a href="ejercicios/JavaScript/selectores.html">Selectores</a></li>
                         <li><a href="/ejercicios/JavaScript/listener.html">Listener</a></li>
                     </ul>
 
@@ -53,6 +73,7 @@
                 <li><a href="">Bootstrap</a>
                     <ul>
                         <li><a href="bootstrap/12columnas.html">12Columnas</a></li>
+                        <li><a href="bootstrap/widget/index.html">Widget</a></li>
                         <li><a href="bootstrap/bubleSortClase.html">BubbleSort</a></li>
                         <li><a href="bootstrap/pintxos.html">Pintxos</a></li>
                     </ul>
@@ -69,15 +90,33 @@
                 var f = new Date();
                 document.write(f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear());
             </script>
-        </div>
+            <hr>
+            <br>
 
-        <br>
-        <br>
-        <br>
-        <div>
-            <label for="num">Introduce un numero:&nbsp;</label><input type="number" name="num" id="numero" placeholder="Escribe un número" />
-            <p id="texto">...</p>
-            <button class="boton" id="boton" onclick="pulsador()">¡¡¡PULSAME!!!</button>
+
+            <div class="card">
+                <img src="https://www.campuswincarte.es/wp-content/uploads/2015/03/html-300x300.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab maiores quisquam maxime odit enim. Iste, dolor porro explicabo doloribus eligendi, laborum enim deserunt nam, ad corporis neque similique quidem voluptas!</p>
+            </div>
+            <div class="cnt-img-zoom">
+                <img src="https://cdnhtml5hive.azureedge.net/wp-content/uploads/2014/03/css-beginners-tutorial.jpg" alt="">
+                <a href="#popup1"><i class="fa fa-search fa-4x"></i></a>
+            </div>
+
+            <!-- ventana modal oculta -->
+            <div id="popup1" class="modal">
+                <div class="modal-content">
+                    <a class="close" href="#close">&times;</a>
+                    <img src="https://cdnhtml5hive.azureedge.net/wp-content/uploads/2014/03/css-beginners-tutorial.jpg" alt="">
+                </div>
+            </div>
+            <hr>
+            <br>
+            <div>
+                <label for="num">Introduce un numero:&nbsp;</label><input type="number" name="num" id="numero" placeholder="Escribe un número" />
+                <p id="texto">...</p>
+                <button class="boton" id="boton" onclick="pulsador()">¡¡¡PULSAME!!!</button>
+            </div>
         </div>
     </section>
     <br>
@@ -93,5 +132,12 @@
             document.write("&copy;" + "&nbsp;" + update + " Ipartek Servicios Informáticos ");
         </script>
     </footer>
+     <!-- ********************************************BOOTSTRAP****************************************************************-->
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

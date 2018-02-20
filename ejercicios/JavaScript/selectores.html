@@ -190,12 +190,16 @@ Cuando el segundo argumento está presente: Si el segundo argumento se evalúa c
 
         <script>
             function contarClases() {
-                var contador = 0;
 
+                var nombreClase;
                 var cClase = document.getElementById("resultado3").classList.length;
+                var nombres = document.getElementById("resultado3").classList.value;
+
 
 
                 document.getElementById("resultado3").textContent = cClase;
+
+                document.getElementById("resultado3").innerHTML= "tienes " + cClase + " clases: " + nombres;
 
             }
 

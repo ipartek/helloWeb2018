@@ -56,17 +56,23 @@
             }
         }
 
+        .container-flex{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            height: 125px;
+        }
 
         .box {
-            /*display: flex;*/
-            display: inline-block;
             width: 75px;
             height: 75px;
             background-color: grey;
             color: #FFF;
             font-size: 3em;
             text-align: center;
-            margin-right: 10px;
+            /* margin-right: 10px; */
             position: relative;
         }
 
@@ -97,6 +103,7 @@
             perspective: 1000px;
         }
         */
+
     </style>
 
 </head>
@@ -129,15 +136,22 @@
         <div class="row">
             <div class="panel panel-danger">
                 <div class="panel-heading">Números Desordenados</div>
-                <div class="panel-body" id="cntNumDes">
+                <div class="panel-body container-flex" id="cntNumDes">
                     <!-- <div class="box">3<span class="close">x</span></div>-->
+
+                    <div class="box">1<span onclick="eliminarBox(0, event)" class="close">x</span></div>
+                    <div class="box">2<span onclick="eliminarBox(1, event)" class="close">x</span></div>
+                    <div class="box">3<span onclick="eliminarBox(2, event)" class="close">x</span></div>
+                    <div class="box">4<span onclick="eliminarBox(3, event)" class="close">x</span></div>
+                    <div class="box">5<span onclick="eliminarBox(4, event)" class="close">x</span></div>
+
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="panel panel-success">
                 <div class="panel-heading">Números Ordenados</div>
-                <div class="panel-body" id="cntNumOrd">
+                <div class="panel-body container-flex" id="cntNumOrd">
                     .....
                 </div>
             </div>
@@ -157,8 +171,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script>
-
-
         //variables globales
         var numeroInput = document.getElementById("numeroInput");
         var cntNumDes = document.getElementById("cntNumDes");
@@ -236,15 +248,15 @@
         }
 
         /**
-        *    Eliminamos la Caja del HTML
-        *    Eliminamos el numero del Array desordenado
-        */
-        function eliminarBox(pos, e){
+         *    Eliminamos la Caja del HTML
+         *    Eliminamos el numero del Array desordenado
+         */
+        function eliminarBox(pos, e) {
             console.debug("eliminarBox %s", pos);
-            console.debug("Antes Eliminar: " + aDesordenado );
+            console.debug("Antes Eliminar: " + aDesordenado);
             //aDesordenado.splice(pos,1);
             aDesordenado[pos] = null;
-            console.debug("Despues Eliminar: " + aDesordenado );
+            console.debug("Despues Eliminar: " + aDesordenado);
 
             //ocultar
             var boxEliminar = e.target.parentElement;
@@ -280,7 +292,7 @@
                 cntNumOrd.innerHTML = "";
                 for (i = 0; i < aOrdenado.length; i++) {
                     //evitar null
-                    if ( aOrdenado[i] != null ){
+                    if (aOrdenado[i] != null) {
                         cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
                     }
                 }
@@ -320,6 +332,7 @@
             numeroInput.focus();
 
         }
+
     </script>
 
 </body>

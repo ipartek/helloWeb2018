@@ -16,12 +16,18 @@
 
 <body>
 
+    &lt;span id="ejemplo3" class="lunes viernes pintxo"&gt;1&lt;/span&gt;
+    <br>
+
     <span id="ejemplo3" class="lunes viernes pintxo">1</span>
 
-
-    <button onclick="posicion">Boton</button>
+    <button onclick="posicion()">Boton</button>
 
     <button onclick="cambiarcolor()">Rojo/Verde</button>
+
+    <div id="texto">Cuantas clases hay?</div>
+
+
 
     <script>
         function cambiarcolor() {
@@ -37,9 +43,19 @@
         }
 
 
-        function posicion(){
+        function posicion() {
+
+            var texto = document.getElementById("texto");
+            var clase = document.getElementById("ejemplo3").classList.length;
+             var info = document.getElementById("ejemplo3").classList.value;
+             console.log(info);
 
 
+
+            texto.textContent = "Tienes " + clase + " clases,y estas son: "+ info ;
+
+
+            console.log(clase);
 
         }
     </script>

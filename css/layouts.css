@@ -71,6 +71,12 @@ nav#main li:hover >ul{
 }
 
 
+/*Alinear el texto a la izquierda*/
+nav#main li ul li a{
+
+    text-align: left;
+}
+
 nav#main ul{
 
     z-index: 999;

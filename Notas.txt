@@ -1,0 +1,16 @@
+
+
+
+	CSS 	border-color
+	JS	borderColor
+
+	HTML 	onclick
+	JS	  click
+
+	listener - usar siempre el siguiente formato
+	
+	.addEventListener ( 'click' , function(){
+						nombreFuncion();
+						});
+
+	//.addEventListener ('click', nombreFuncion()); - se ejecuta

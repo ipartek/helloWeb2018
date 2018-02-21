@@ -1,12 +1,6 @@
 vocales
 	pulsada en naranja y desactivar mientras suena
 
-------------------------
-
-menu
-
-https://www.youtube.com/watch?v=oZa2Ut8u2S0
-
 ---------------------------
 
 usar event.target.parentElement para cerrar las cajas

@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <!--CARGAR ESTILOS LOCALES-->
+    <!--
+       Animante.css (para crear animaciones predefinidas en clases)
+       @see: https://github.com/daneden/animate.css
+    -->
+    <!--<style rel="stylesheet" href="../../css/animate.css"></style>-->
+    <!-- Mediante CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <style>
         /*HEADER*/
 
@@ -62,14 +69,39 @@
             position: relative;
         }
 
-        .box:hover {
+        /*.boxClose:hover {
             animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
             transform: translate3d(0, 0, 0);
             backface-visibility: hidden;
             perspective: 1000px;
-        }
+        }*/
 
         /*efecto de animación "shake" al hover*/
+
+        /* compatibilidad con Chorme, Safari, Opera */
+
+        @-webkit-keyframes shake {
+            10%,
+            90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+
+            20%,
+            80% {
+                transform: translate3d(2px, 0, 0);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+
+            40%,
+            60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
 
         @keyframes shake {
             10%,
@@ -102,27 +134,6 @@
             color: black;
             background-color: white;
             border-radius: 50%;
-        }
-
-        /*efecto de animación al añadir número*/
-
-        /* FUTURE[]: no mostrar animación cuando el último número ya estaba en la lista) */
-
-        #cntNumDes .box:last-child {
-            animation-name: mostrar;
-            animation-duration: .5s;
-            animation-timing-function: ease-in;
-        }
-
-        /*FUTURE: cambiar el efecto a una clase propia "shake" y añadirsela a un elemento dinámicamente desde JS cuando haga onmousedown sobre el icono de la cruz*/
-
-        /*.boxClose:hover*/
-
-        .shake {
-            animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
-            transform: translate3d(0, 0, 0);
-            backface-visibility: hidden;
-            perspective: 1000px;
         }
 
         /* BOTONES */
@@ -230,7 +241,7 @@
         function anadirNum() {
 
             // var
-            var spanNumero = '<span class="box" data-index="##indiceNum##">##newNum##<i class="boxClose fas fa-times-circle fa-xs" onclick="borrarNum(this)"></i></span>';
+            var spanNumero = '<span class="box" data-index="##indiceNum##">##newNum##<i class="boxClose fas fa-times-circle fa-xs" onclick="borrarNum(this)" onmouseover="shake(this.parentElement)"></i></span>';
             var nuevoSpan = "";
             // limpiar newNum de 0s a la izquierda
             let newNum = parseInt(inputNum.value, 10);
@@ -254,7 +265,9 @@
                 }
                 cntNumDes.innerHTML += nuevoSpan;
                 cntNumDesHeader.innerHTML = "Números desordenados: [" + contNum + "]";
-
+                if (contNum < MAX_ELEM) {
+                    animarNuevaEntrada(contNum - 1);
+                }
             }
             // limpiar el input y devolver focus
             inputNum.value = "";
@@ -468,6 +481,42 @@
 
             // Eliminar la alerta en caso de existir
             document.getElementById("divAlertas").innerHTML = "";
+        }
+
+        /*FUTURE[x]: cambiar el efecto a una clase propia "shake" y añadirsela a un elemento dinámicamente desde JS cuando haga onmousedown sobre el icono de la cruz*/
+        /**
+            Función que añade la animación "shake" onmouseover del icono "x"
+            @elem: la caja contenedora del número con la X sobre la que se ha pasado el ratón
+        **/
+        function shake(elem) {
+
+            console.debug("X.mouseover");
+            elem.style.animation = "shake 0.82s cubic-bezier(.36, .07, .19, .97) both";
+            elem.addEventListener("animationend", function() {
+                elem.style = "";
+            });
+
+        }
+
+        // TODO[x]: aplicar animación al mostrar nuevo número en UI
+        /**
+            Función que aplica la animación 'mostrar' al añadir un nuevo número a la lista desordenada de la UI.
+        **/
+        // FIXME: le aplica la animación a varias cajas cuando añades un nuevo número antes de que la anterior animación temine
+        function animarNuevaEntrada(index) {
+
+            var newBox = document.querySelector("span[data-index='" + String(index) + "']");
+            var animando = false;
+
+            if (!animando) {
+                newBox.style.animation = "mostrar 0.5s ease-in";
+                animando = true;
+            }
+            newBox.addEventListener("animationend", function() {
+                newBox.style = "";
+                animando = false;
+            });
+
         }
     </script>
     <!-- CARGA DE SCRIPTS EXTERNOS -->

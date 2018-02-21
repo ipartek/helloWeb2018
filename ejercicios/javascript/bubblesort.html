@@ -24,7 +24,7 @@
 
         /*CUERPO*/
 
-        /*CHANGES: posicionamiento mediante FLEX*/
+        /*CHANGES[x]: posicionamiento mediante FLEX*/
 
         /*@see: https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
 
@@ -186,17 +186,6 @@
         </section>
     </div>
 
-
-    <!-- CARGA DE SCRIPTS EXTERNOS -->
-    <!-- jQuery v2.2.4 minified (dado que no vamos a aplicar cambios en el código de jQuery, usamos la versión 'minified' que viene sin indentar) -->
-    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
-    </script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <!--FontAwesome v5.0.6-->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-
     <!--SCRIPT LOCAL-->
     <script>
         // Variables del DOM
@@ -213,6 +202,7 @@
         const MAX_ELEM = 10; // Máximo de elementos de las lista
 
         // Códigos de alerta
+        const emptyInput = "emptyInput";
         const notMinLenth = "notMinLenth";
         const outOfRange = "outOfRange";
         const listaCompleta = "listaCompleta";
@@ -220,7 +210,7 @@
         // Variables globales
         var listNum = []; // Array de números
         var listNumOrd = []; //Array de números ya ordenados
-        var contNum = 0;
+        var contNum = 0; // tamaño del array 'listNum'
 
 
 
@@ -229,39 +219,40 @@
         /**
          *   Función para añadir un nuevo número a la lista desordenada
          **/
-        // FUTURE: Habrá que limpiar (sobrescribir) las listas con // lista.innerHTML = "" // al pulsar el botón ORDENAR
+        // FUTURE[x]: Habrá que limpiar (sobrescribir) las listas con // lista.innerHTML = "" // al pulsar el botón ORDENAR
         function anadirNum() {
 
             // var
             var spanNumero = '<span class="box" data-index="##indiceNum##">##newNum##<i class="boxClose fas fa-times-circle fa-xs" onclick="borrarNum(this)"></i></span>';
             var nuevoSpan = "";
+            // limpiar newNum de 0s a la izquierda
+            let newNum = parseInt(inputNum.value, 10);
 
-            if (validarNumero(inputNum.value) && inputNum.value != "") {
+            if (isNaN(newNum)) {
+                mostrarAlertas(emptyInput);
+            } else if (validarNumero(newNum)) {
                 // Mostrar en consola nuevo número
-                console.debug("Nuevo número %s", inputNum.value);
-                if (listNum.length < MAX_ELEM) {
+                console.debug("Nuevo número %i", newNum);
+                if (contNum < MAX_ELEM) {
                     // crear nuevo elemento <span> con el nuevo número
-                    // Forma simple: cntNumDes.innerHTML = "<span class='box'>" + inputNum.value + "</span>"
-                    nuevoSpan = spanNumero.replace("##newNum##", inputNum.value);
+                    // Forma simple: cntNumDes.innerHTML = "<span class='box'>" + newNum + "</span>"
+                    nuevoSpan = spanNumero.replace("##newNum##", newNum);
                     // Insertar el index de la posición para el método de borrado
                     nuevoSpan = nuevoSpan.replace("##indiceNum##", contNum);
                     contNum++;
                     // añadir número a la lista de números desordenada, SI tiene menos de 10 elementos
-                    listNum.push(inputNum.value);
+                    listNum.push(newNum);
                 } else {
                     mostrarAlertas(listaCompleta);
                 }
-                // para evitar el efecto 'mostrar' al saltar el error de lista completa
-                if (listNum.length < MAX_ELEM + 1) {
-                    cntNumDes.innerHTML += nuevoSpan;
-                    cntNumDesHeader.innerHTML = "Números desordenados: [" + (listNum.length) + "]";
-
-                }
+                cntNumDes.innerHTML += nuevoSpan;
+                cntNumDesHeader.innerHTML = "Números desordenados: [" + contNum + "]";
 
             }
             // limpiar el input y devolver focus
             inputNum.value = "";
             inputNum.focus();
+            newNum = undefined;
             // FUTURE: Añadir eventListener "mouseover" al nuevo elemento
             anadirEventoHover();
         }
@@ -292,12 +283,19 @@
         function borrarNum(elem) {
 
             //var
-            var pos = null;
+            var pos = elem.parentElement.dataset.index;
+            console.debug("Posición eliminada: %s", pos);
 
-            // TODO[]: al :hover el icono de FontAwesome, aplicarle la animación "shake" al elemento padre "span.box"
-            console.log(elem);
-            pos = elem.getAttribute("data-index");
-            console.debug(pos);
+            // FUTURE[]: al :hover el icono de FontAwesome, aplicarle la animación "shake" al elemento padre "span.box"
+
+            // TODO[x]: eliminar elemento con "pos" del array "listNum", de la UI y reordenar los indices
+            /*listNum.splice(pos, 1);*/
+            // FIXME[x]: borra mal los números después de limpiar los NULL. limpiarNulls debería dejar igual el array listNum
+            listNum[pos] = null;
+            contNum--;
+            console.debug("Lista desordenadas post-borrado: " + listNum);
+            elem.parentElement.style.display = "none"; // desaparece de la UI
+            cntNumDesHeader.innerHTML = "Números desordenados: [" + contNum + "]"; // actualizar el contador de la cabecera
         }
 
         /**
@@ -308,14 +306,19 @@
         function ordenacionEnBurbuja() {
 
             // var
-            var spanNumero = '<span class="box" data-index="##indiceNum##">##newNum##<i class="boxClose fas fa-times-circle fa-xs" onclick="borrarNum(this)"></i></span>';
+            var spanNumero = '<span class="box" data-index="##indiceNum##">##newNum##</span>';
 
-            if (listNum.length < 2) {
+            // cloar el array desordenado y limpiarlo de NULLS
+            listNumOrd = listNum.slice();
+            listNumOrd = limpiarArrayDeNulls(listNumOrd);
+            console.debug("Lista a ordenar sin NULLS: " + listNumOrd);
+
+            if (listNumOrd.length < 2) {
                 mostrarAlertas(notMinLenth);
             } else {
                 // variables de posiciones
                 var sig;
-                var ult_pos = listNum.length;
+                var ult_pos = listNumOrd.length;
                 var iteracion = 0;
                 var temp;
 
@@ -324,21 +327,21 @@
                 var sin_cambios;
 
                 // pintar lista en su estado inicial:
-                console.debug("Lista inicial: " + listNum);
+                console.debug("Lista inicial: " + listNumOrd);
 
                 // iterar tantas veces como posiciones tiene el array o hasta que la lista este ordenada
-                while (iteracion < listNum.length && !stop) {
+                while (iteracion < listNumOrd.length && !stop) {
                     // preparar las posición para la siguiente iteración
                     sig = 1; // se compara el par de las posiciones 'sig-1' y su posterior 'sig'
                     ult_pos--; // en cada iteración se comprar una posición menos, dado que la última posición ya está ocupara por el mayor valor
                     sin_cambios = 0;
                     // comparar las posiciones inmediatas y ordenarlas de menor a mayor
                     for (var i = 0; i < ult_pos; i++) {
-                        if (parseInt(listNum[sig - 1]) > parseInt(listNum[sig])) {
+                        if (parseInt(listNumOrd[sig - 1]) > parseInt(listNumOrd[sig])) {
                             // invertir orden el los valores
-                            temp = listNum[sig - 1];
-                            listNum[sig - 1] = listNum[sig];
-                            listNum[sig] = temp;
+                            temp = listNumOrd[sig - 1];
+                            listNumOrd[sig - 1] = listNumOrd[sig];
+                            listNumOrd[sig] = temp;
                         } else {
                             // contabilizar las comparaciones sin movimientos
                             sin_cambios++;
@@ -352,20 +355,20 @@
                         stop = true;
                     } else {
                         // mostrar por consola la iteración y el estado actual de la lista
-                        console.debug("ITERACIÓN Nº" + iteracion + " : " + listNum);
+                        console.debug("ITERACIÓN Nº" + iteracion + " : " + listNumOrd);
                     }
                 }
                 // Mostrar resultado de la lista ordenada y el nº de iteraciones necesarias
-                console.debug("Lista ordenada: " + listNum + " en " + (iteracion - 1) + "º iteraciones");
+                console.debug("Lista ordenada: " + listNumOrd + " en " + (iteracion - 1) + "º iteraciones");
 
-                //return listNum;
+                //return listNumOrd;
 
                 // Limpiar el contenido de la lista ordenada anterior
                 cntNumOrd.innerHTML = "";
 
                 // pintar lista ordenada
-                for (var j = 0; j < listNum.length; j++) {
-                    cntNumOrd.innerHTML += spanNumero.replace("##newNum##", listNum[j]);
+                for (var j = 0; j < listNumOrd.length; j++) {
+                    cntNumOrd.innerHTML += spanNumero.replace("##newNum##", listNumOrd[j]);
                 }
 
                 // Mostrar el número de iteraciones necesitadas para ordenar la lista
@@ -399,12 +402,33 @@
         }*/
 
 
+        /**
+            Función para quitar los elementos NULL (previamente borrdos por el usuario en la UI) de un array
+            PRE: array con posibles elementos NULL
+            POST: array sin elementos NULL
+        **/
+        function limpiarArrayDeNulls(array) {
+
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] === null) {
+                    array.splice(i, 1);
+                    i--;
+                }
+            }
+            return array;
+        }
+
+
         /*
          *   Función para mostrar diferentes tipos de alerta y sus mensajes dependiendo del código de error
          *   @errorCode: código de error para especificar el texto de la alerta
          */
         function mostrarAlertas(errorCode) {
             switch (errorCode) {
+                case "emptyInput":
+                    tipoAlerta = "warning";
+                    mensajeAlerta = " Campo de entrada vacio.";
+                    break;
                 case "outOfRange":
                     tipoAlerta = "warning";
                     mensajeAlerta = " Debe insertar un número en el rango [" + MIN + " - " + MAX + "].";
@@ -436,6 +460,8 @@
             cntNumDesHeader.innerHTML = "Números desordenados";
             // resetear las variables de las listas
             listNum = [];
+            contNum = 0;
+            listNumOrd = [];
 
             // Eliminar la alerta en caso de existir
             document.getElementById("divAlertas").innerHTML = "";
@@ -447,16 +473,23 @@
         Función para asignarle el evento mouseover a las 'X' y que les añada la clase 'shake' al parentElement
         **/
         function anadirEventoHover() {
-            var iconosBorrar = document.querySelectorAll("boxClose");
+            var iconosClose = document.querySelectorAll(".boxClose");
 
-            for (var iIconosBorrar = 0; iIconosBorrar < iconosBorrar.length; iIconosBorrar++) {
-                iconosBorrar[iIconosBorrar].addEventListener("mouseover", function(event) {
-                    event.parentElement.addClass = "shake";
+            /*for (var iIconosClose = 0; iIconosClose < iconosClose.length; iIconosClose++) {
+                iconosClose[iIconosClose].addEventListener("mouseover", function() {
+                    iconosClose[iIconosClose].parentElement.classList.add('shake');
                 }, false);
-            }
+            }*/
         }
-
-        /*FUTURE[]: eliminar elemento del array y de la UI 'onclick' en la 'X' */
     </script>
+    <!-- CARGA DE SCRIPTS EXTERNOS -->
+    <!-- jQuery v2.2.4 minified (dado que no vamos a aplicar cambios en el código de jQuery, usamos la versión 'minified' que viene sin indentar) -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous">
+    </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--FontAwesome v5.0.6-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
 </html>

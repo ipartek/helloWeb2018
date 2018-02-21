@@ -15,6 +15,16 @@ var alumnos = [
                 "Patricia",
                 "Aintzine"
                 ];
+function showAlumnos(){
+    alumnos.forEach(alumno =>{
+        console.log("alumno = " + alumno);
+    });
+
+    alumnos.forEach((alumno, i) =>{
+        console.log(i +" = " + alumno);
+    });
+}
+
 
 
 function leer(){

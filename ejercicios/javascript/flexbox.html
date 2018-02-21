@@ -126,24 +126,24 @@
         <div class="container">
 
             <h2>Flexbox2</h2>
-            <div class="containerFlex">
-                <div class="box2">
+            <div id="container-flex" class="containerFlex">
+                <div class="box2" data-letter="a">
                     <span class="upper">a</span>
                     <span class="lower">A</span>
                 </div>
-                <div class="box2">
+                <div class="box2" data-letter="e">
                     <span class="upper">e</span>
                     <span class="lower">E</span>
                 </div>
-                <div class="box2">
+                <div class="box2" data-letter="i">
                     <span class="upper">i</span>
                     <span class="lower">I</span>
                 </div>
-                <div class="box2">
+                <div class="box2" data-letter="o">
                     <span class="upper">o</span>
                     <span class="lower">O</span>
                 </div>
-                <div class="box2">
+                <div class="box2" data-letter="u">
                     <span class="upper">u</span>
                     <span class="loweer">U</span>
                 </div>
@@ -156,6 +156,7 @@
     <!-- jquery -->
     <script>
         var aOrden = [1, 2, 3, 4, 5];
+        var aLetras = ['a', 'e', 'i', 'o', 'u'];
         var btn = document.getElementById("btnDesordenar");
         btn.addEventListener('click', function() {
             aOrden = shuffle(aOrden);
@@ -193,9 +194,33 @@
         }
 
         function sonido(fileName) {
-            resetearSonidos();
+            /*resetearSonidos();*/
+            var boxes = document.getElementsByClassName("container-flex-parent2");
+            desabilitarBotones(boxes);
             var audio = new Audio('../../soinuak/' + fileName + '.wav');
             audio.play();
+
+            audio.onended = function() {
+                habilitarBotones(boxes);
+            };
+
+        }
+
+        function desabilitarBotones(boxes) {
+            btn.disabled = false;
+            for (i = 0; i < boxes.length; i++) {
+                boxes[i].onclick = null;
+            }
+        }
+
+        function habilitarBotones(boxes) {
+            btn.disabled = false;
+            for (i = 0; i < boxes.length; i++) {
+                boxes[i].onclick = function() {
+                    sonido("'"+aLetras[i]+"'");
+                    cambiarColor(this);
+                };
+            }
         }
 
         function resetearColores() {
@@ -208,18 +233,16 @@
 
         }
 
-        function resetearSonidos() {
-            var aSonidos = ['letraA', 'letraE', 'letraI', 'letraO', 'letraU'];
-            var aLetras = ['a', 'e', 'i', 'o', 'u'];
+        /* function resetearSonidos() {
+             var aSonidos = ['letraA', 'letraE', 'letraI', 'letraO', 'letraU'];
+             var aLetras = ['a', 'e', 'i', 'o', 'u'];
 
-            var elem;
-            for (i = 0; i < aSonidos.length; i++) {
-                elem = document.getElementById(aSonidos[i]);
-                elem.removeEventListener('click', sonido(aLetras[i]));
-
-
-            }
-        }
+             var elem;
+             for (i = 0; i < aSonidos.length; i++) {
+                 elem = document.getElementById(aSonidos[i]);
+                 elem.removeEventListener('click', sonido(aLetras[i]));
+             }
+         }*/
 
 
         function cambiarColor(elemento) {
@@ -230,6 +253,9 @@
 
         }
     </script>
+
+    <!-- <script src="/js/flexbox_solucion_listener.js"></script>
+    <script src="/js/flexbox_solucion_pointerEvent.js"></script> -->
 
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 

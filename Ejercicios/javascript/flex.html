@@ -44,7 +44,6 @@
             align-self: flex-end;
 
         }
-
     </style>
 </head>
 
@@ -87,30 +86,32 @@
             }
         })
         var ids = ['a', 'e', 'i', 'o', 'u'];
-
+//reseteamos los botomes para que no pueda tocarlos
         function resetOn() {
             for (i = 0; i < ids.length; i++) {
-                document.getElementById(ids[i]).style.display = "none";;
+                document.getElementById(ids[i]).style.pointerEvents = "none";
             }
             console.info("reset Ons");
 
         }
-
+//habilitamos botoenes para que funcionen
         function resetOut() {
             for (i = 0; i < ids.length; i++) {
-                document.getElementById(ids[i]).style.display = "block";;
-            }
-            console.info("reset Out");
+                document.getElementById(ids[i]).style.pointerEvents = "auto";
+                console.info("reset Out");
 
+            }
         }
 
 
-
+//funcion que pinta habilita des hbailita y repinta los div con letras y sonidos
         function sonido(fileName) {
             var audio = new Audio('soinuak/' + fileName + '.wav');
             resetOn();
+            document.getElementById(fileName).style.backgroundColor = "orange";
             audio.addEventListener("ended", function() {
                 console.log("Terminada cancion");
+                document.getElementById(fileName).style.backgroundColor = "#88499C";
                 resetOut();
             });
 
@@ -119,12 +120,11 @@
             console.info("reproduciendo cancion");
 
         }
-
     </script>
 
 
 
-    <a href="index.html"><i class="fa fa-reply" aria-hidden="true"></i>
+    <a href=http://127.0.0.1:49261/index.html><i class="fa fa-reply" aria-hidden="true"></i>
 </a><br><br><br>
     <!-- jquery-->
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>

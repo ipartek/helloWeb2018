@@ -20,6 +20,16 @@ var alumnos = [
                 "Aintziñe"
               ];
 
+function showAlumnos(){
+
+
+    alumnos.forEach( ( elem , i) => {
+        console.log( `Alumno ${elem} posiscion ${i}`);
+    });
+
+}
+
+
 function leer() {
 
 

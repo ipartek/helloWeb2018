@@ -29,8 +29,6 @@
             align-items: center;
             justify-content: center;
             width: calc(10% - 5px);
-            /*            box-sizing: border-box;*/
-            /*            height: ;*/
             background-color: gray;
             color: white;
             font-size: 3em;
@@ -127,6 +125,7 @@
                 transform: scale(1);
             }
         }
+
     </style>
 </head>
 
@@ -181,7 +180,7 @@
         </div>
         <div class="row">
             <button type="button" id="butOrdenar" class="btn btn-success btn-lg btn-block">Ordenar</button>
-            <button type="button" id="butReset" class="btn btn-danger btn-lg btn-block" disabled>Reset</button>
+            <button type="button" id="butReset" class="btn btn-danger btn-lg btn-block">Reset</button>
         </div>
     </div>
 
@@ -212,47 +211,49 @@
 
 
         function nuevoNumero() {
+            //Limpio el div de losnúmeros ordenados
+            cntNumOrd.innerHTML = "";
+
             //Numero introducido por input
             numero = parseInt(numeroInput.value);
 
-            //Controlo que sea un nuúmero
+            //Controlo que sea un número
             if (isNaN(numero)) {
                 alertas(5);
             } else if (aDesordenado.length >= 10) { //Controlo si ya contiene 10 valores
-
                 alertas(1);
+            } else if (numero == "" || numero < 1) {
+                alertas(2)
             } else {
-                if (numero == "" || numero < 1) {
-                    alertas(2)
-                } else {
-                    //                    console.log(numero);
+                //                    console.log(numero);
 
-                    //Hay crear el elemento mediante createElement para
-                    //que el DOM lo pueda reconocer para los eventos
-                    var spa = document.createElement("span");
-                    spa.className = "box";
-                    spa.setAttribute("data-index", ind); //Indico el orden en el que ha sido creado
-                    ind++; //Incremento el valor
-                    spa.innerHTML = numero + "<span class='cross' ><i class='fa fa-times-circle'></i></span>";
-                    cntNumDes.appendChild(spa);
-
-                    //El elemento ya debe estar creado para poder asignar el evento
-                    //querySelector solo selecciona el primero, por lo que hay que seleccionarlos
-                    //todos, recorrer el array, y asignarle el onclick a cada uno de ellos
-                    cross = document.querySelectorAll("span.box span.cross");
-                    //                    console.log(cross)
-
-                    for (var i = 0; i < cross.length; i++) {
-                        cross[i].onclick = borrar;
-                    }
-
-                    //////////      VERSION ANTERIOR     //////////////////////
-                    //  cntNumDes.innerHTML += "<span class='box'>" + numero +
-                    //  "<span class='cross'><i class='fa fa-times-circle'></i></span></span>";
+                //Hay crear el elemento mediante createElement para
+                //que el DOM lo pueda reconocer para los eventos
+                var spa = document.createElement("span");
+                spa.className = "box";
+                spa.setAttribute("data-index", ind); //Indico el orden en el que ha sido creado
+                ind++; //Incremento el valor
+                spa.innerHTML = numero + "<span class='cross' ><i class='fa fa-times-circle'></i></span>";
 
 
-                    aDesordenado.push(numero);
+                cntNumDes.appendChild(spa);
+
+                //El elemento ya debe estar creado para poder asignar el evento
+                //querySelector solo selecciona el primero, por lo que hay que seleccionarlos
+                //todos, recorrer el array, y asignarle el onclick a cada uno de ellos
+                cross = document.querySelectorAll("span.box span.cross");
+                //                    console.log(cross)
+
+                for (var i = 0; i < cross.length; i++) {
+                    cross[i].onclick = borrar;
                 }
+
+                //////////      VERSION ANTERIOR     //////////////////////
+                //  cntNumDes.innerHTML += "<span class='box'>" + numero +
+                //  "<span class='cross'><i class='fa fa-times-circle'></i></span></span>";
+
+
+                aDesordenado.push(numero);
                 numeroInput.focus();
             }
             numeroInput.value = "";
@@ -287,32 +288,37 @@
                 //Tengo el array ordenado
                 console.log("array %o", aDesordenado);
 
+                //Limpio la capa de los números ordenados por si hubiera algún número
+                cntNumOrd.innerHTML = "";
+
                 for (var i = 0; i < aDesordenado.length; i++) {
                     cntNumOrd.innerHTML += "<span class='box''>" + aDesordenado[i] +
                         "</span>";
                 }
 
                 //Inhabilito el botón Ordenar y Añadir númerohasta resetear
-                this.disabled = true;
-                butAnadir.disabled = true;
-                butAnadir.value = "";
+                //               this.disabled = true;
+                //               butAnadir.disabled = true;
+                //               butAnadir.value = "";
 
                 //Habilito el botón reset
-                butReset.disabled = false;
+                //               butReset.disabled = false;
             }
 
-            //Limpio lso arrays unanvez estáno rdenados
-            aDesordenado = [];
+            console.log(aDesordenado)
+
+            //Limpio lso arrays una vez estáno ordenados
+            //            aDesordenado = [];
 
             //Inhabilito poder quitar los números del array desordenado
             console.log("Ocultando cruces")
-            cross = document.querySelectorAll("#cntNumDes span.box span.cross");
+            /*            cross = document.querySelectorAll("#cntNumDes span.box span.cross");
 
-            for (var i = 0; i < cross.length; i++) {
-                cross[i].style.display = "none";
-                console.log(cross[i])
-            }
-
+                        for (var i = 0; i < cross.length; i++) {
+                            cross[i].style.display = "none";
+                            console.log(cross[i])
+                        }
+            */
 
         }
 
@@ -390,8 +396,12 @@
                 cross[i].setAttribute("data-index", i);
             }
 
+            //Tengo que restar un elemento al índice
+            ind--;
+
             console.log(aDesordenado)
         }
+
     </script>
 </body>
 

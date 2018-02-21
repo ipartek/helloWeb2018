@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
 
     <style>
@@ -20,6 +21,7 @@
 
         nav {
             height: 60px;
+            /***************************************/
             width: 100%;
             background-color: black;
         }
@@ -37,25 +39,36 @@
 
         nav>ul>li {
             display: inline-block;
+            /*            border:solid orange;////////////////////////*/
             line-height: 60px;
             vertical-align: super;
             text-align: center;
             padding: 0;
             width: 15%;
+
         }
 
         nav ul li ul {
+            position: absolute;
             display: none;
+            /*            border: solid yellow*/
         }
 
         nav>ul>li:hover ul {
             display: block;
         }
 
+        /*
+        nav>ul>li>ul:hover{
+            display: block;
+        }
+*/
+
         nav ul li a {
             background-color: black;
             display: block;
             margin: 0;
+            padding: 0 5px;
             text-decoration: none;
             color: white;
             white-space: nowrap;
@@ -66,7 +79,7 @@
         nav ul li a:not(.active):hover {
             background-color: #434343;
             margin: 0;
-            padding: 0;
+            /*            padding: 0;*/
         }
 
         .active {
@@ -76,7 +89,7 @@
         /* Cuando sea versión móvil ocupan todo el ancho*/
 
         @media (max-width: 480px) {
-            nav{
+            nav {
                 height: auto
             }
 
@@ -88,17 +101,23 @@
                 width: 100%;
             }
 
-            nav>ul li:hover ul li a{
-/*                border: 2px solid lightgrey;*/
+            nav>ul li:hover ul li a {
+                /*                border: 2px solid lightgrey;*/
                 color: #4CAF50;
+            }
+
+            nav ul li ul {
+                position: static;
+                /*                left:0;*/
+                /*                right:0;*/
             }
         }
 
-        section{
+        section {
             width: 100%;
-            height:400px;
+            height: 400px;
             background-color: blueviolet;
-            border: solid red;
+/*            border: solid red;*/
         }
     </style>
 </head>
@@ -151,15 +170,15 @@
     <!--    Toggle casero para móvil. Cuando el usuario sale de  un submenu
         hay que volvera a ocultarlo-->
     <script>
-//        //Selectores
-//        var arrToggle = document.querySelectorAll("#main .toggle");
-//        console.log(arrToggle.length)
-//
-//        arrToggle.forEach(function(item) {
-//            item.onmou
-//            item.style.display = "none";
-//            this.style.display = "block";
-//        })
+        //        //Selectores
+        //        var arrToggle = document.querySelectorAll("#main .toggle");
+        //        console.log(arrToggle.length)
+        //
+        //        arrToggle.forEach(function(item) {
+        //            item.onmou
+        //            item.style.display = "none";
+        //            this.style.display = "block";
+        //        })
     </script>
 
 </body>

@@ -102,8 +102,6 @@
 
 
         //SONIDOS
-
-
         boxes.forEach(function(item) {
             item.onclick = sonido;
         })
@@ -117,7 +115,6 @@
 
             var audio = new Audio("/sounds/" + vocal + ".wav")
             audio.play();
-
 
             boxes.forEach(function(item) {
                 item.onclick = function(e) {
@@ -137,6 +134,8 @@
 
         //CAmbiar color mientras se reproduce y vuelve a su color
         //Se bloquea el click en los demás
+
+        //Habilitar y deshabilitar el botón
     </script>
 </body>
 </html>

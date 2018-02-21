@@ -14,3 +14,9 @@
 						});
 
 	//.addEventListener ('click', nombreFuncion()); - se ejecuta
+
+
+--------------------------------------------------------
+
+https://javascript30.com/
+js en 30 dias

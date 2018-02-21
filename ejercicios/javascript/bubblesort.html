@@ -503,6 +503,7 @@
             Función que aplica la animación 'mostrar' al añadir un nuevo número a la lista desordenada de la UI.
         **/
         // FIXME: le aplica la animación a varias cajas cuando añades un nuevo número antes de que la anterior animación temine
+        // FIXME: al eliminar y reinsertar nuevos numeros, anima la posición incorrecta
         function animarNuevaEntrada(index) {
 
             var newBox = document.querySelector("span[data-index='" + String(index) + "']");
@@ -512,6 +513,8 @@
                 newBox.style.animation = "mostrar 0.5s ease-in";
                 animando = true;
             }
+
+
             newBox.addEventListener("animationend", function() {
                 newBox.style = "";
                 animando = false;

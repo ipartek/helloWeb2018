@@ -89,16 +89,26 @@
 */
 
         #cntNumDes .box:last-child {
+/*
+            animation: mostrar;
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in;
+*/
+        }
+
+        #cntNumDes .anim{
             animation: mostrar;
             animation-duration: 0.5s;
             animation-timing-function: ease-in;
         }
-
+        
         #cntNumOrd .box {
             animation: mostrar;
             animation-duration: 0.5s;
             animation-timing-function: ease-in;
         }
+        
+        
 
         #cntNumDes,
         #cntNumOrd {
@@ -203,6 +213,7 @@
 
         //Contendrá los valores en el orden introducido
         var aDesordenado = [];
+        var aOrdenado = [];
 
         //TRIGGERS de los eventos
         butAnadir.onclick = nuevoNumero;
@@ -231,12 +242,12 @@
                 //que el DOM lo pueda reconocer para los eventos
                 var spa = document.createElement("span");
                 spa.className = "box";
-                spa.setAttribute("data-index", ind); //Indico el orden en el que ha sido creado
+                spa.dataset.index = ind; //Indico el orden en el que ha sido creado
                 ind++; //Incremento el valor
                 spa.innerHTML = numero + "<span class='cross' ><i class='fa fa-times-circle'></i></span>";
-
-
                 cntNumDes.appendChild(spa);
+                
+                spa.classList.add("anim");
 
                 //El elemento ya debe estar creado para poder asignar el evento
                 //querySelector solo selecciona el primero, por lo que hay que seleccionarlos
@@ -274,25 +285,30 @@
                 alertas(4);
                 //                numeroInput.focus();
             } else {
+                
+                //Copio el desordenado en el ordenado, para que pueda seguir añadiendo más tarde
+                aOrdenado = aDesordenado.slice(0);
+                
                 for (var i = 0; i < len; i++) {
                     for (var j = 0; j < len - i - 1; j++) {
-                        if (aDesordenado[j] > aDesordenado[j + 1]) {
+                        if (aOrdenado[j] > aOrdenado[j + 1]) {
                             // cambio
-                            var temp = aDesordenado[j];
-                            aDesordenado[j] = aDesordenado[j + 1];
-                            aDesordenado[j + 1] = temp;
+                            var temp = aOrdenado[j];
+                            aOrdenado[j] = aOrdenado[j + 1];
+                            aOrdenado[j + 1] = temp;
                         }
                     }
                 }
 
                 //Tengo el array ordenado
-                console.log("array %o", aDesordenado);
+                console.log("array Desordenado:  %o", aDesordenado);
+                console.log("array Ordenado:  %o", aOrdenado);
 
                 //Limpio la capa de los números ordenados por si hubiera algún número
                 cntNumOrd.innerHTML = "";
 
-                for (var i = 0; i < aDesordenado.length; i++) {
-                    cntNumOrd.innerHTML += "<span class='box''>" + aDesordenado[i] +
+                for (var i = 0; i < aOrdenado.length; i++) {
+                    cntNumOrd.innerHTML += "<span class='box''>" + aOrdenado[i] +
                         "</span>";
                 }
 
@@ -305,7 +321,7 @@
                 //               butReset.disabled = false;
             }
 
-            console.log(aDesordenado)
+            console.log(aOrdenado)
 
             //Limpio lso arrays una vez estáno ordenados
             //            aDesordenado = [];
@@ -378,7 +394,7 @@
             //            console.log(this)
 
             //Recojo el índice del propio atributo
-            var index = this.parentElement.getAttribute("data-index");
+            var index = this.parentElement.dataset.index;
             console.log("Indice: " + index);
 
             //Elimino el elemento
@@ -393,7 +409,7 @@
             cross = document.querySelectorAll("span.box");
 
             for (var i = 0; i < cross.length; i++) {
-                cross[i].setAttribute("data-index", i);
+                cross[i].dataset.index = i;
             }
 
             //Tengo que restar un elemento al índice
@@ -404,20 +420,4 @@
 
     </script>
 </body>
-
 </html>
-
-<!--TODO Boton disables hasta que se pueda resetear-->
-<!--TODO Según va poniendo dime número, lo va mostrando en pantalla en rojo-->
-<!--ordenados en verde-->
-
-<!--TODO [x]Cuando de al botón Ordenaro lo muestra ordenado-->
-<!--TODO Botón en rojo reiniciar -->
-<!--TODO Limitar el número hasta 10, mensaje(también ordenando si
-   no hay números), alerta de bootstrap dismisable, menos de dos no puede ordenar
-       Con 0 números: no me seas vaguete y mete al menos dos números
-       Con 1 nñumero:  por favor necesito dos números para poder ordenar
-       Con 11: Lo siento pero no tengo tanta capicidad de procesamiento, máximo 10 números-->
-<!--TODO input 3 y el botón el resto 9, en línea-->
-<!--TODO El número ha de salir con transición -->
-<!--TODO Click eliminar caja, se pasa la posicion de la caja-->

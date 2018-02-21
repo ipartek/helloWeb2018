@@ -4,254 +4,148 @@
 <head>
     <meta charset="UTF-8">
     <title>Flexbox</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <style>
-        .row {
-
-            margin: 20px 0;
-            /*20 px de arriba y abajo y 0 de izquierda a derecha*/
-        }
-
         .container-flex {
-
-
-            height: 195px;
-            flex-direction: row;
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
-            align-items: stretch;
         }
-
-        .upper {
-
-            text-transform: uppercase;
-
-        }
-
-        .lower {
-
-            text-transform: lowercase;
-
-        }
-
         .box {
 
-            /*display: inline-block;*/
+            background-color: teal;
+            color: #FFF;
             width: 19%;
-            height: 140px;
-            background-color: grey;
-            color: #fff;
             font-size: 3em;
+            min-height: 200px;
             text-align: center;
-            transition-delay: 2s;
-            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+        }
+        .upper {
+            text-transform: uppercase;
+            flex-grow: 1;
+        }
+        .lower {
+            flex-grow: 1;
+        }
+        .row {
+            margin: 2em 0;
+        }
+
+        #ondo i,#txarto i,#numero i,#numero p{
+
+            font-size: 3em;
+
+        }
+        #ondo i{
+
+            color: #21CD02;
+        }
+
+        #txarto i{
+
+            color: #FC2F01
+        }
+
+        #numero p{
+
+            text-align: center;
 
         }
 
+
+
     </style>
+
 </head>
 
 <body>
 
-
-
     <div class="container">
-        <h1>Posicionamiento Aleatorio</h1>
-
-        <button id="barajar" class="btn btn-success">BARAJAR CAJAS</button>
+        <h1 class="text-center">Posicionamiento Aleatorio (Flexbox - Vocales)</h1>
 
 
 
+
+
+               <div class="col-md-12 text-center "  id="numero">
+         <p> Cual es esta Letra?</p>
+            <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+        </div>
+
+        </div>
+        <div class="row">
+        <div class="col-md-6 text-center" id="ondo">
+
+        <i class="fa fa-thumbs-o-up" aria-hidden="true"> Ondo:</i>
+
+
+        </div>
+
+          <div class="col-md-6 text-center "  id="txarto">
+
+           <i class="fa fa-thumbs-o-down" aria-hidden="true"> Txarto:</i>
+
+
+        </div>
+
+
+          </div>
 
 
         <div class="row">
-            <div class="panel panel-danger">
-                <div class="panel-heading">Numeros Desordenados</div>
-                <div class="panel-body container-flex" id="cntNumDes">
 
-
-
-
-                    <div class="box" onclick="sonido('a')">
-
-                        <div class="upper">
-
-                            A
-                            <div class="lower">
-
-
-                                a
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="box" onclick="sonido('e')">
-
-                        <div class="upper">
-                            E
-                            <div class="lower">
-
-
-                                e
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="box" onclick="sonido('i')">
-
-                        <div class="upper">
-
-                            I
-                            <div class="lower">
-
-
-                                i
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="box" onclick="sonido('o')">
-
-                        <div class="upper">
-
-                            O
-                            <div class="lower">
-
-
-                                o
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="box" onclick="sonido('u')">
-
-                        <div class="upper">
-
-                            U
-                            <div class="lower">
-
-
-                                u
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
+        <div id="container-flex"  class="container-flex">
+            <div class="box" data-letter="a">
+                <div class="upper">a</div>
+                <div class="lower">a</div>
+            </div>
+            <div class="box" data-letter="e">
+                <div class="upper">e</div>
+                <div class="lower">e</div>
+            </div>
+            <div class="box" data-letter="i">
+                <div class="upper">i</div>
+                <div class="lower">i</div>
+            </div>
+            <div class="box" data-letter="o">
+                <div class="upper">o</div>
+                <div class="lower">o</div>
+            </div>
+            <div class="box" data-letter="u">
+                <div class="upper">u</div>
+                <div class="lower">u</div>
             </div>
         </div>
-    </div>
+</div>
 
-    <script>
-        var aOrden = [1, 2, 3, 4, 5];
-        var btn = document.getElementById("barajar");
-        btn.addEventListener('click', function() {
+        <div class="row">
+            <button id="btnBarajear" class="btn btn-success btn-block">BARAJAR</button>
+        </div>
 
-            console.log(aOrden);
-
-            aOrden = shuffle(aOrden);
-
-            var boxes = document.getElementsByClassName("box");
-            var box;
-            for (i = 0; i < boxes.length; i++) {
-
-                box = boxes[i];
-
-                box.style.order = aOrden[i];
-
-
-
-            }
-
-        });
-
-
-
-        function shuffle(a) {
-            var j, x, i;
-            for (i = a.length - 1; i > 0; i--) {
-                j = Math.floor(Math.random() * (i + 1));
-                x = a[i];
-                a[i] = a[j];
-                a[j] = x;
-            }
-            return a;
-        }
+        <script src="solucionflexboxlistener.js"></script>
+         <!--<script src="solucionflexboxpointerevent.js"></script>-->
 
 
 
 
 
-        function sonido(fileName) {
-
-
-            var audio = new Audio('/sounds/'+fileName+'.wav'); //Coge el audio
-             //audio.stop();/*sound.pause();
-//sound.currentTime = 0;*/
-
-            audio.play();
-            console.log('Se Escucha');
-        }
-
-        /* var boton = document.getElementById("box");
-                        function cambiarletras() {
-                            var elementos = ["A", "E", "I", "O", "U"];
-                            var randomValue = elementos[Math.floor(elementos.length * Math.random())];
-                            console.log(randomValue);
-
-
-
-
-
-                        }
-           var intercambiarletras(){
-
-                                box.textContent= randomValue;
-
-
-                            }
-
-                        var boton = document.getElementById("btn");
-                        boton.addEventListener('click', cambiarletras);
-
-                        // boton.addEventListener('click',cambiarletras,false);
-        */
-
-    </script>
-
-
-
-
-
-
-
-
-
-
-    <!-- QUERY -->
+    <!-- jquery -->
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

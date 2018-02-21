@@ -65,6 +65,10 @@ nav#main li ul li{
     display: block;
 }
 
+nav#main li ul li a{
+    text-align: left;
+}
+
 
 
 nav#main li a {

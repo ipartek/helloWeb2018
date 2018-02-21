@@ -124,7 +124,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
         document.getElementById("desorden").addEventListener("click", desordenar, false)
-
+        var contadorBien=0;
+            var respuesta=""
+            var contadorMal=0;
+            var botonPreguntar=document.getElementById("preguntar");
+            var vocales=["a","e","i","o","u"];
+            var vocal="";
         function desordenar() {
             var listaVocales = document.getElementsByClassName("caja");
             for (var i = 0; i < listaVocales.length; i++) {
@@ -170,12 +175,6 @@
         document.getElementById("preguntar").addEventListener("click", preguntar, false);
         function preguntar(){
             desordenar();
-            var contadorBien=0;
-            var respuesta=""
-            var contadorMal=0;
-            var botonPreguntar=document.getElementById("preguntar");
-            var vocales=["a","e","i","o","u"];
-            var vocal="";
             vocal=vocales[parseInt(Math.floor(Math.random() * 5))];
             var audio= new Audio('sounds/' + vocal + ".wav");
             audio.play();

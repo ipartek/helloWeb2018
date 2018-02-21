@@ -43,10 +43,23 @@
             align-self: flex-end;
 
         }
+        #pregunta,#respuesta{
+            font-size:1em;
+        }
 
         #desorden {
             width: 100%;
         }
+        #preguntar {
+            width: 100%;
+        }
+        #pBien{
+            color:green;
+        }
+        #pMal{
+            color:red;
+        }
+
     </style>
 
     <!-- Optional theme -->
@@ -58,6 +71,8 @@
 <body>
     <div class="container">
         <h1>Propiedad flex</h1>
+        <p id="pBien">Bien:<span id="bien">0</span></p>
+        <p id="pMal">Mal:<span id="mal">0</span></p>
         <div class="row contenedor">
             <div class="caja" onclick="sonido('a',this)">
                 <div class="mayuscula">
@@ -102,6 +117,7 @@
         </div>
         <br>
         <input type="button" id="desorden" class="btn btn-primary" value="Desordenar">
+        <input type="button" id="preguntar" class="btn btn-primary" value="Preguntar">
     </div>
     <!--JavaScript -->
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -120,11 +136,13 @@
         var cajas = document.getElementsByClassName("caja");
 
         function sonido(nombreArchivo, caja) {
+
             caja.style.backgroundColor="orange";
             var audio = new Audio('sounds/' + nombreArchivo + ".wav");
             audio.play();
             var cajas = document.getElementsByClassName("caja");
-            var boton = document.getElementById("desorden")
+            var boton1 = document.getElementById("preguntar");
+            var boton2 = document.getElementById("desorden");
 
             for (var i = 0; i < cajas.length; i++) {
 
@@ -132,7 +150,8 @@
                 cajas[i].style.pointerEvents="none";
 
             }
-            boton.disabled=true;
+            boton1.disabled=true;
+            boton2.disabled=true;
 
             //boton
 
@@ -144,8 +163,59 @@
                     cajas[i].style.pointerEvents="auto";
                     cajas[i].style.backgroundColor="blueviolet";
                 }
-                boton.disabled=false;
+                boton1.disabled=false;
+                boton2.disabled=true;
             });
+        }
+        document.getElementById("preguntar").addEventListener("click", preguntar, false);
+        function preguntar(){
+            desordenar();
+            var contadorBien=0;
+            var respuesta=""
+            var contadorMal=0;
+            var botonPreguntar=document.getElementById("preguntar");
+            var vocales=["a","e","i","o","u"];
+            var vocal="";
+            vocal=vocales[parseInt(Math.floor(Math.random() * 5))];
+            var audio= new Audio('sounds/' + vocal + ".wav");
+            audio.play();
+            for (var i = 0; i < cajas.length; i++) {
+
+                //remove
+                cajas[i].style.pointerEvents="none";
+                cajas[i].removeEventListener("click",function(){return false;});
+
+            }
+            botonPreguntar.disabled=true;
+            audio.addEventListener("ended", function() {
+
+                for(var i=0;i<cajas.length;i++){
+                    cajas[i].style.pointerEvents="auto";
+                    cajas[i].style.backgroundColor="blueviolet";
+                }
+                for (var i = 0; i < cajas.length; i++) {
+
+                //remove
+                cajas[i].addEventListener("click",function(){
+                    respuesta=event.target.getElementsByClassName("minuscula")[0].getElementsByTagName("p")[0].textContent;
+                    console.log("Pregunta="+vocal)
+                    console.log("Respuesta="+respuesta)
+                    if(respuesta==vocal){
+                        contadorBien++;
+                        document.getElementById("bien").textContent=contadorBien;
+                    }
+                    else{
+                        contadorMal++;
+                        document.getElementById("mal").textContent=contadorMal;                }
+                    botonPreguntar.disabled=false;
+                });
+
+
+            }
+            });
+
+
+
         }
 
     </script>

@@ -1,5 +1,26 @@
 "use strict";
 
+/*
+   Cuidado !!!!!!!!!!!!!!
+
+  CSS    border-color
+  JS     borderColor
+
+
+    HTML   onclick
+    JS       click
+
+    //Listner usar siempre el siguiente formato
+
+    .addListener('clik', function(){
+                                        nombreFuncion()
+                                    });
+
+
+    .addListener('clik', nombreFuncion ); // se ejecuta la funcion
+
+*/
+
 
 var aOrden = [1, 2, 3, 4, 5];
 var aSonidos = ['a', 'e', 'i', 'o', 'u'];

@@ -36,6 +36,11 @@
 
         .upper{
             text-transform: uppercase;
+             flex-grow: 1;
+        }
+
+        .lower{
+            flex-grow: 1;
         }
 
         .row{
@@ -71,7 +76,7 @@
     </div>
     <div class="row">
          <div id="container-flex" class="container-flex">
-        <div class="box" data-letter="a">
+        <div class="box" data-letter="a" onclick="incrementar()">
             <div class="upper">a</div>
             <div class="lower">a</div>
         </div>
@@ -94,15 +99,31 @@
     </div>
     </div>
    <div class="row">
-        <button id="btnBarajear" class="btn btn-success btn-block">BARAJEAR</button>
+        <button id="btnBarajear" class="btn btn-primary btn-block">NAHAZTU</button>
+    </div>
+    <div class="row">
+       <div class="col-xs-4">
+           <input type="text" name="letra">
+       </div>
+       <div class="col-xs-8">
+           <button id="btnSacarLetra" class="btn btn-success btn-block">ATERA HITZA</button>
+       </div>
+
     </div>
 
+<script>
+    function incrementar(){
+        var contador = 0;
+        var i
 
-   <!-- <script src="../js/flexbox_solucion_listener.js"></script>-->
-    <script src="../js/flexbos_solucion-pointerEvent.js"></script>
+
+    }
+</script>
+   <script src="../js/flexbox_solucion_listener.js"></script>
+
 
 </div>
-
+    <!--<script src="/js/flexbox_solucion_pointerEvent.js"></script>-->
     <!-- jquery -->
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 

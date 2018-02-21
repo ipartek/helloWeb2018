@@ -10,28 +10,28 @@
     <title>Vocales</title>
     <style>
         .box {
-            display: flex;
-            flex-direction: column;
-            width: 200px;
+
+             width: 200px;
             height: 200px;
             background-color: blue;
             color: #FFF;
             font-size: 3em;
             text-align: center;
-            /* margin-right: 10px;      */
 
+            /* margin-right: 10px;      */
         }
 
         .box1 {
-            text-align:
-                display:flex;
-            flex-direction: column;
+           padding-top: 75px;
         }
 
         .container-flex {
+
+            flex-direction:row;
             display: flex;
-           /* flex-direction: row;*/
+            /* flex-direction: row;*/
             flex-wrap: nowrap;
+
             justify-content: space-between;
             height: 285px;
             align-items: center;
@@ -41,8 +41,8 @@
             display: flex;
             /*flex: 0 50%;*/
             flex-direction: column;
-        }
 
+        }
     </style>
 </head>
 
@@ -68,16 +68,16 @@
                     <span class="box">3<span class="close">x</span></span>
                     -->
                 <!-- end innerHTML-->
-                <span class="box" onclick="sonido('a')">A <span class="box1">a</span></span>
-                <span class="box"onclick="sonido('e')">E<span class="box1">e</span></span>
-                <span class="box"onclick="sonido('i')">I<span class="box1">i</span></span>
-                <span class="box"onclick="sonido('o')">O<span class="box1">o</span></span>
-                <span class="box"onclick="sonido('u')">U<span class="box1"></span>u</span>
+                <span class="box" data-letter="a">A <span class="box1">a</span></span>
+                <span class="box" data-letter="e">E<span class="box1">e</span></span>
+                <span class="box" data-letter="i">I<span class="box1">i</span></span>
+                <span class="box" data-letter="o">O<span class="box1">o</span></span>
+                <span class="box" data-letter="u">U<span class="box1">u</span></span>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="desordenar()">Desordenar</button>
+                <button type="button" id="btnBarajear" class="btn btn-primary btn-lg btn-block" onclick="desordenar()">Desordenar</button>
             </div>
         </div>
         <div class="row">
@@ -94,55 +94,76 @@
         </div>
     </div>
 
-        <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <script>
-            function desordenar() {
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        var coincidencias = document.querySelectorAll("span.box");
+        for (i = 0; i < coincidencias.length; i++) {
+            coincidencias[i].addEventListener('click', sonido);
+        }
 
-                var coincidencias = document.querySelectorAll("span.box");
-                //    console.log(coincidencias)
-                for (i = 0; i < coincidencias.length; i++) {
-                    var numero = Math.floor((Math.random() * 5) + 1);
+        var btn = document.getElementById("btnBarajear");
 
-                    coincidencias[i].style.order = numero;
-
-                }
+        function desordenar() {
 
 
+            //    console.log(coincidencias)
+            for (i = 0; i < coincidencias.length; i++) {
+                var numero = Math.floor((Math.random() * 5) + 1);
 
-
+                coincidencias[i].style.order = numero;
 
             }
-            var p;
-            var parrafos=document.getElementsByTagName("p");
-            for(i=0;i<parrafos.length;i++){
-                p=parrafos[i];
-                p.addEventListener('click',function(){pintarParrafo(this)})
-            }
-            function reset(){
-                for(i=0;i<parrafos.length;i++){
-                p=parrafos[i];
-                p.style.color="black";
-            }
-            }
-            function pintarParrafo(element){
-              reset();
-                element.style.color="red";
-            }
-            function sonido(fileName){
-                var coincidencias = document.querySelectorAll("span.box");
-                var audio=new Audio('soinuak/'+fileName+'.wav');
-                audio.play();
-         coincidencias.addEventListener('click', function(event) {
 
 
-                alert("");
+
+
+
+        }
+        var p;
+        var parrafos = document.getElementsByTagName("p");
+        for (i = 0; i < parrafos.length; i++) {
+            p = parrafos[i];
+            p.addEventListener('click', function() {
+                pintarParrafo(this)
             })
-            }
+        }
 
-        </script>
+        function reset() {
+            for (i = 0; i < parrafos.length; i++) {
+                p = parrafos[i];
+                p.style.color = "black";
+            }
+        }
+
+        function pintarParrafo(element) {
+            reset();
+            element.style.color = "red";
+        }
+
+        function sonido() {
+            var letra = event.target.dataset.letter;
+            //  console.log(letra);
+            event.target.style.backgroundColor = 'orange';
+            for (var i = 0; i < coincidencias.length; i++) {
+                coincidencias[i].removeEventListener('click', sonido);
+            }
+            var audio = new Audio('soinuak/' + letra + '.wav');
+            audio.play();
+            audio.onended = habilitar;
+
+        }
+
+        function habilitar() {
+            //volver habilitar botones
+            for (var i = 0; i < coincidencias.length; i++) {
+                coincidencias[i].addEventListener('click', sonido);
+                coincidencias[i].style.backgroundColor = 'blue';
+            }
+        }
+    </script>
 </body>
 
 </html>

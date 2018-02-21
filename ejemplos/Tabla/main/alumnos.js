@@ -19,6 +19,11 @@ var alumnos = [
                 "Joseba",
                 "Aintziñe"
               ];
+function showAlumnos(){
+    alumnos.forEach(alumnos =>{
+        console.log("alumno" + alumno);
+    })
+}
 
 function leer(){
 

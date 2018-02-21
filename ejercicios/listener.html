@@ -67,7 +67,7 @@
             border-color: #FFF;
         }
 
-        #btn-flex {
+        #btnDesordenar {
             margin: 15px 0;
         }
 
@@ -121,23 +121,23 @@
             <h2>Flex y Addlistener</h2>
             <input id="btnDesordenar" type="button" class="btn btn-success btn-block" value="Desordenar">
             <div class="cnt-flex">
-                <div id="cajaA" class="caja-flex" onclick="sonido('a')">
+                <div id="cajaA" class="caja-flex" onclick="sonido('a',this)">
                     <span>A</span>
                     <span>a</span>
                 </div>
-                <div id="cajaE" class="caja-flex" onclick="sonido('e')">
+                <div id="cajaE" class="caja-flex" onclick="sonido('e',this)">
                     <span>E</span>
                     <span>e</span>
                 </div>
-                <div id="cajaI" class="caja-flex" onclick="sonido('i')">
+                <div id="cajaI" class="caja-flex" onclick="sonido('i',this)">
                     <span>I</span>
                     <span>i</span>
                 </div>
-                <div id="cajaO" class="caja-flex" onclick="sonido('o')">
+                <div id="cajaO" class="caja-flex" onclick="sonido('o',this)">
                     <span>O</span>
                     <span>o</span>
                 </div>
-                <div id="cajaU" class="caja-flex" onclick="sonido('u')">
+                <div id="cajaU" class="caja-flex" onclick="sonido('u',this)">
                     <span>U</span>
                     <span>u</span>
                 </div>
@@ -145,62 +145,12 @@
             </div>
         </div>
 
-        <!-- Desordenar los div de las letras al pulsar el botón -->
-        <!--
-        <script>
-            var ta = document.getElementById("ta");
 
-            var numElem = document.querySelectorAll(".cnt-flex div");
-            document.getElementById("btnDesordenar").addEventListener('click', function() {
-                for (var i = 0; i < numElem.length; i++) {
-                    orden = parseInt(Math.random() * 100);
-                    numElem[i].style.order = orden;
-                }
-            }, false); // el trye/false es opcional
-
-        </script>
+        <script src="/js/listenerOpc1.js"></script>
+<!--
+        Las opciones 2 y 3 de listener con este codigo, no funcionan mientras se pueda hacer click en el elemento contenedor.
+        Además, en el HTML de las versiones 2/3 no se llama al evento onclick desde la caja-flex. Se pasa el data-letter (que se necesita para formar el nombre del sonido a reproducir) y el listener está en la propia función que se llama desde el span/div de las letras mayúsculas y minúsculas. Para ello se necesita pintar la caja padre del "target" y con el código de este HTML daría conflicto. Sin data-letter no se reproduce ningún sonido.
 -->
-
-        <!-- OTRA FORMA DE Desordenar los div de las letras al pulsar el botón -->
-        <script>
-            var aOrden = [1, 2, 3, 4, 5];
-            var silencio = true;
-
-            var btn = document.getElementById("btnDesordenar");
-            btn.addEventListener('click', function() {
-                aOrden = shuffle(aOrden);
-                var boxes = document.getElementsByClassName("caja-flex");
-                var box;
-                for (i = 0; i < boxes.length; i++) {
-                    box = boxes[i];
-                    box.style.order = aOrden[i];
-                }
-            })
-
-            function shuffle(a) {
-                var j, x, i;
-                for (i = a.length - 1; i > 0; i--) {
-                    j = Math.floor(Math.random() * (i + 1));
-                    x = a[i];
-                    a[i] = a[j];
-                    a[j] = x;
-                }
-                return a;
-            }
-
-            function sonido(filename) {
-                if (silencio) {
-                    var audio = new Audio('../sounds/' + filename + '.wav');
-                    audio.play();
-                    silencio = false;
-                    audio.onended = function() {
-                        silencio = true;
-                    }
-                }
-            }
-        </script>
-
-
 
 
         <!-- ***************************************************************************** -->

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <style>
+        .container-flex {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box {
+            background-color: teal;
+            color: #FFF;
+            width: 19%;
+            font-size: 3em;
+            min-height: 200px;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        .upper {
+            text-transform: uppercase;
+            flex-grow: 1;
+        }
+
+        .lower {
+            flex-grow: 1;
+        }
+
+        .row {
+            margin: 2em 0;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Flexbox - Vocales </h1>
+
+        <div id="container-flex"  class="container-flex">
+            <div class="box" data-letter="a">
+                <div class="upper">a</div>
+                <div class="lower">a</div>
+            </div>
+            <div class="box" data-letter="e">
+                <div class="upper">e</div>
+                <div class="lower">e</div>
+            </div>
+            <div class="box" data-letter="i">
+                <div class="upper">i</div>
+                <div class="lower">i</div>
+            </div>
+            <div class="box" data-letter="o">
+                <div class="upper">o</div>
+                <div class="lower">o</div>
+            </div>
+            <div class="box" data-letter="u">
+                <div class="upper">u</div>
+                <div class="lower">u</div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <button id="btnBarajear" class="btn btn-success btn-block">BARAJEAR</button>
+        </div>
+
+         <script src="/js/listenerOpc2.js"></script>
+<!--        <script src="/js/listenerOpc3.js"></script>-->
+
+
+    </div>
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

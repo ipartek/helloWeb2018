@@ -47,7 +47,7 @@
             color: #FFF;
             text-align: center;
             font-size: 3em;
-/*            margin-right: 10px;*/
+/*          margin-right: 10px;*/
         }
 
         @keyframes mostrar {
@@ -137,16 +137,14 @@
                 <div class="panel-body container-flex" id="cntNumDes">
 
 
-                    <span class="box">5<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>
-                    <span class="box">1<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>
-                    <span class="box">2<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>
-                    <span class="box">3<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>
-                    <span class="box">4<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>
-                    <span class="box">10<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>
-                    <span class="box">6<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>
-                    <span class="box">7<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>
-                    <span class="box">8<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>
-                    <span class="box">9<span onclick="eliminarBox(##posicion##)" class="close">x</span></span>
+                    <span class="box">5<span onclick="eliminarBox(this)" class="close">x</span></span>
+                    <span class="box">1<span onclick="eliminarBox(this)" class="close">x</span></span>
+                    <span class="box">2<span onclick="eliminarBox(this)" class="close">x</span></span>
+                    <span class="box">3<span onclick="eliminarBox(this)" class="close">x</span></span>
+                    <span class="box">4<span onclick="eliminarBox(this)" class="close">x</span></span>
+                    <span class="box">7<span onclick="eliminarBox(this)" class="close">x</span></span>
+                    <span class="box">8<span onclick="eliminarBox(this)" class="close">x</span></span>
+                    <span class="box">9<span onclick="eliminarBox(this)" class="close">x</span></span>
 
 
                     <!--innerHTML-->
@@ -268,8 +266,10 @@
             }
         }
 
-        function eleminarBox(pos){
-
+        function eliminarBox(elem){
+            console.debug(elem.parentElement);
+            elem.parentElement.style.display="none";
+            console.debug(elem.parentElement.style.display);
         }
 
     </script>

@@ -8,6 +8,7 @@ var alumnos = [
                 "Iñaki Aretxabaleta",
                 "Javier",
                 "Jorge",
+                "Mikel",
                 "Leire",
                 "Iñaki Jimenez",
                 "Alex",
@@ -16,6 +17,14 @@ var alumnos = [
                 "Patri",
                 "Aintziñe"
               ];
+
+
+//ForEach con arrow
+function showAlumnos(){
+    alumnos.forEach(alumnos =>{
+        console.log("alumno"+alumno);
+    })
+}
 
 function leer(){
 

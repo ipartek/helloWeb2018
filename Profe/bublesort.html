@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BubbleSort</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <style>
+        header {
+            background-color: teal;
+            color: #FFF;
+        }
+        .row {
+            margin: 20px 0;
+        }
+        @keyframes mostrar {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes shake {
+            10%,
+            90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+            20%,
+            80% {
+                transform: translate3d(2px, 0, 0);
+            }
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+            40%,
+            60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+        .container-flex{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            height: 125px;
+        }
+        .box {
+            width: 75px;
+            height: 75px;
+            background-color: grey;
+            color: #FFF;
+            font-size: 3em;
+            text-align: center;
+            /* margin-right: 10px; */
+            position: relative;
+        }
+        .box .close {
+            position: absolute;
+            top: -10px;
+            right: -5px;
+            color: #FFF;
+            background-color: #000;
+            font-size: 0.4em;
+            border-radius: 50%;
+            opacity: 1;
+            padding: 2px;
+        }
+        .box:last-child {
+            animation-name: mostrar;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in;
+        }
+        /*
+        .box:hover {
+            animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+        */
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>BubbleSort</h1>
+        </div>
+    </header>
+
+
+    <div class="container">
+
+        <div id="msg"></div>
+
+        <div class="row">
+            <form class="form-inline">
+                <div class="col-xs-3">
+                    <div class="form-group">
+                        <input type="number" class="form-control" step="1" max="10" min="0" id="numeroInput">
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <button type="button" onClick="nuevoNumero()" class="btn btn-default">Añadir Número</button>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="panel panel-danger">
+                <div class="panel-heading">Números Desordenados</div>
+                <div class="panel-body container-flex" id="cntNumDes">
+                    <!-- <div class="box">3<span class="close">x</span></div>-->
+
+                    <div class="box">1<span onclick="eliminarBox(0, event)" class="close">x</span></div>
+                    <div class="box">2<span onclick="eliminarBox(1, event)" class="close">x</span></div>
+                    <div class="box">3<span onclick="eliminarBox(2, event)" class="close">x</span></div>
+                    <div class="box">4<span onclick="eliminarBox(3, event)" class="close">x</span></div>
+                    <div class="box">5<span onclick="eliminarBox(4, event)" class="close">x</span></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-success">
+                <div class="panel-heading">Números Ordenados</div>
+                <div class="panel-body container-flex" id="cntNumOrd">
+                    .....
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button type="button" onclick="pintarOrdenados()" class="btn btn-success btn-block">Ordenar</button>
+            <button type="button" onclick="reset()" class="btn btn-danger btn-block">Reset</button>
+        </div>
+
+    </div>
+
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script>
+        //variables globales
+        var numeroInput = document.getElementById("numeroInput");
+        var cntNumDes = document.getElementById("cntNumDes");
+        var cntNumOrd = document.getElementById("cntNumOrd");
+        var spanNumero = '<div class="box">##numero##<span onclick="eliminarBox(##posicion##, event)" class="close">x</span></div>';
+        var aDesordenado = []; // Array con numeros desordenados
+        var aOrdenado = [];
+        /*
+         *   Validaciones antes de Ordenar
+         *   0 o menor que dos numeros
+         */
+        function validarNumerosOrdenados() {
+            if (aDesordenado.length < 2) {
+                showAlert("msg", "warning", "Al menos dime 2 numeros para ordenar");
+                return false;
+            } else {
+                return true;
+            }
+        }
+        /**
+         *   Validaciones al introducir numeros
+         *       1. Comprobar que sea vacio
+         *       2. No poder meter > 10 numeros
+         *
+         *
+         *    Muestra mensajes en caso de no pasar la validación
+         *    @return boolean
+         *                   true si pasa todas las validaciónes
+         *                   false en caso contrario
+         */
+        function validarEntradaNumeros(numero) {
+            if (numero == "") {
+                showAlert("msg", "warning", "Escribe un número por favor");
+                return false;
+            }
+            if (aDesordenado.length == 10) {
+                showAlert("msg", "danger", "No puedes introducir mas de 10 numeros");
+                return false;
+            }
+            return true;
+        }
+        /**
+         *  recoger numero del input y meterlo en  div#cntNumDes
+         */
+        function nuevoNumero() {
+            var num = numeroInput.value;
+            console.debug("Añadir nuevo numero %s", num);
+            if (validarEntradaNumeros(num)) {
+                //añadar numero
+                var span = spanNumero.replace('##numero##', num);
+                span = span.replace('##posicion##', aDesordenado.length);
+                cntNumDes.innerHTML += span;
+                aDesordenado.push(num);
+                //limpiar input y poner foco
+                numeroInput.value = "";
+                numeroInput.focus();
+            }
+        }
+        /**
+         *    Eliminamos la Caja del HTML
+         *    Eliminamos el numero del Array desordenado
+         */
+        function eliminarBox(pos, e) {
+            console.debug("eliminarBox %s", pos);
+            console.debug("Antes Eliminar: " + aDesordenado);
+            //aDesordenado.splice(pos,1);
+            aDesordenado[pos] = null;
+            console.debug("Despues Eliminar: " + aDesordenado);
+            //ocultar
+            var boxEliminar = e.target.parentElement;
+            boxEliminar.style.display = "none";
+        }
+        /**
+         *  Ordena de menor a mayor el array pasado por parametro
+         */
+        function ordernar(arr) {
+            var len = arr.length;
+            console.debug("array desordenado " + arr);
+            for (var i = 0; i < len; i++) {
+                for (var j = 0; j < len - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        // cambio
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            console.debug("array ordenado " + arr);
+            return arr;
+        }
+        function pintarOrdenados() {
+            console.debug("pintarOrdenados");
+            if (validarNumerosOrdenados()) {
+                aOrdenado = ordernar(aDesordenado);
+                cntNumOrd.innerHTML = "";
+                for (i = 0; i < aOrdenado.length; i++) {
+                    //evitar null
+                    if (aOrdenado[i] != null) {
+                        cntNumOrd.innerHTML += spanNumero.replace('##numero##', aOrdenado[i]);
+                    }
+                }
+            }
+        }
+        /**
+         * Muestra una Alerta de Bootsratp
+         *     id    = Identificador de elemento donde lo vamos a insertar con innerHTML
+         *     clase = clase para cambiar el color de la Alerta ( danger, success, ...)
+         *     texto = Texto a mostrar en la Alerta
+         */
+        function showAlert(id, clase, texto) {
+            var alerta = '<div class="alert alert-##clase## alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>##texto##</div>';
+            var contenedor = document.getElementById(id);
+            contenedor.innerHTML = "";
+            contenedor.innerHTML = alerta;
+            contenedor.innerHTML = contenedor.innerHTML.replace("##texto##", texto);
+            contenedor.innerHTML = contenedor.innerHTML.replace("##clase##", clase);
+        }
+        /**
+         *   Limpiar los dos contenedores
+         *   Inicializar de nuevo los dos arrays
+         *   Limpiar Alert
+         *   poner foco en input
+         */
+        function reset() {
+            cntNumDes.innerHTML = "";
+            cntNumOrd.innerHTML = "";
+            aDesordenado = [];
+            aOrdenado = [];
+            document.getElementById("msg").innerHTML = "";
+            numeroInput.focus();
+        }
+    </script>
+
+</body>
+
+</html>

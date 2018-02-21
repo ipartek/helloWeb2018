@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #resultado {
+            font-size: 4em;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Suma Numeros con Prompt</h1>
+
+    <output id="resultado"></output>
+    <button onclick="sumar()">Sumar</button>
+
+    <script>
+        function sumar() {
+            var num1;
+            var num2;
+            var pedirOtro = false;
+            do {
+                num1 = (prompt("1º Numero para sumar"));
+                pedirOtro = isNaN(num1);
+            } while (pedirOtro);
+            do {
+                num2 = parseInt(prompt("2º Numero para sumar"));
+                pedirOtro = isNaN(num2);
+            } while (pedirOtro);
+            var resultado = num1 + num2;
+            document.getElementById("resultado").textContent = resultado;
+        }
+    </script>
+
+
+</body>
+</html>

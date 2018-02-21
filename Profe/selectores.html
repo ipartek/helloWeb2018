@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BootStrap</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <style>
+        li span {
+            color: darkgrey;
+        }
+        .resultado {
+            color: teal;
+            font-size: 4em;
+            text-align: center;
+        }
+        .textoRojo{
+            color:red;
+            font-size: 2em;
+        }
+        .textoVerde{
+            color:green;
+            font-size: 2em;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xs-6">
+                <h2>Selectores</h2>
+                <ul>
+                    <li>document.getElementById<span> : Element</span></li>
+                    <li>document.getElementsByName<span> : NodeList</span></li>
+                    <li>document.getElementsByClassName<span> : NodeList</span></li>
+                    <li>document.getElementsByTagName<span> : NodeList</span></li>
+                    <li>document.querySelector</li>
+                    <li>document.querySelectorAll</li>
+                </ul>
+            </div>
+            <div class="col-xs-6">
+                <h2>classList Api</h2>
+                <ul>
+                    <li>add</li>
+                    <li>remove</li>
+                    <li>item</li>
+                    <li>toggle</li>
+                    <li>contains</li>
+                    <li>replace</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <hr>
+        <h2>getElementsByName</h2>
+
+        <div class="row">
+            <div class="col-xs-4">
+                <form action="">
+                    <input type="checkbox" name="vehicle" value="1">Bici<br>
+                    <input type="checkbox" name="vehicle" value="0">Coche<br>
+                    <input type="checkbox" name="vehicle" value="20" checked>Andando<br>
+                    <input type="checkbox" name="vehicle" value="45">Bus<br>
+                    <input type="checkbox" name="vehicle" value="67">Metro<br>
+                </form>
+            </div>
+            <div class="col-xs-4">
+                <a href="#" onclick="contarChecks()" class="btn btn-default">Calcular Opciones Checkeadas</a>
+            </div>
+
+            <div class="col-xs-4">
+                <p id="resultado1" class="resultado">1</p>
+            </div>
+        </div>
+        <script>
+            function contarChecks() {
+                var cVehiculos = document.getElementsByName("vehicle");
+                console.debug("checkbox " + cVehiculos.length);
+                var cont = 0;
+                for (i = 0; i < cVehiculos.length; i++) {
+                    if (cVehiculos[i].checked) {
+                        cont++;
+                    }
+                }
+                document.getElementById("resultado1").textContent = cont;
+            }
+        </script>
+
+
+        <hr>
+        <h2>getElementsByTagName & querySelectorAll</h2>
+        <div class="row">
+            <p id="rojo">Lorem <span>ipsum</span> dolor sit amet, <span>consectetur</span> adipisicing elit. Odit veritatis architecto quibusdam reprehenderit. Quaerat adipisci nihil animi a ullam quo, voluptate iusto omnis doloribus tempore laudantium <span>rerum</span> commodi quod possimus!</p>
+            <p id="verde">Lorem ipsum dolor <span>sit amet</span>, consectetur adipisicing elit. Odit veritatis architecto quibusdam reprehenderit. Quaerat adipisci nihil animi a ullam quo, voluptate iusto omnis doloribus tempore laudantium rerum commodi <span>quod</span> possimus!</p>
+        </div>
+        <script>
+            var parrafoRojo = document.getElementById("rojo");
+            var aSpan       = parrafoRojo.getElementsByTagName("span");
+            for(i=0; i < aSpan.length; i++){
+                aSpan[i].classList.add("textoRojo");
+            }
+            var spansVerde = document.querySelectorAll("#verde span");
+            for(i=0; i < spansVerde.length; i++){
+                spansVerde[i].classList.add("textoVerde");
+            }
+        </script>
+
+        <hr>
+
+    </div>
+    <!-- container -->
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

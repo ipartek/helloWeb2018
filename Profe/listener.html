@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listener</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <style>
+        #azul {
+            background-color: cadetblue;
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+        }
+        #rojo {
+            background-color: red;
+            display: inline-block;
+            margin-left: 50px;
+            margin-top: 50px;
+            width: 100px;
+            height: 100px;
+        }
+        #verde{
+            background-color: green;
+            display: inline-block;
+            margin-left: 25px;
+            margin-top: 25px;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <h2>Listener</h2>
+            <input id="btn" type="button" class="btn btn-success" value="Escucho">
+            <input id="btnJs" type="button" class="btn btn-primary" value="js event">
+            <input id="btnReset" type="button" class="btn btn-danger" value="Limpiar">
+        </div>
+
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-6">
+                <h2>Muestra eventos</h2>
+                <textarea id="ta" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <h2>Bubbling</h2>
+                <div id="azul">
+                    <div id="rojo">
+                        <div id="verde"></div>
+                    </div>
+                </div>
+                <p>Rojo permite bubbling</p>
+                <p>Verde NO permite bubbling</p>
+            </div>
+        </div>
+
+        <script>
+            var ta = document.getElementById("ta");
+            var azul = document.getElementById("azul");
+            azul.addEventListener('click',function(){
+                 ta.textContent += "click Azul \n";
+            });
+            var rojo = document.getElementById("rojo");
+            rojo.addEventListener('click',function(){
+                ta.textContent += "click Rojo \n";
+            });
+            var verde = document.getElementById("verde");
+            verde.addEventListener('click',function(event){
+                ta.textContent += "Verde Click x:"+ event.x + " y:"+event.y+"\n";
+                event.stopPropagation(); // evitar bubbling
+                //cambiar el contendor padre a color amarillo de fondo
+                event.target.parentElement.style.backgroundColor='yellow';
+            });
+        </script>
+
+
+
+
+    <script>
+        /*
+                  Escribimos en el Textarea
+                */
+        function show(texto) {
+            var ta = document.getElementById("ta");
+            ta.textContent += texto + ' \n';
+        }
+        //Listener para los botones
+        var btn = document.getElementById("btn");
+        btn.addEventListener('click', function() {
+            show('lorem ipsum')
+        }, false);
+        var btnReset = document.getElementById("btnReset");
+        btnReset.addEventListener('click',
+            function() {
+                document.getElementById("ta").textContent = "";
+            }, false);
+        //En vez del evento en HTML se puede realizar en Js
+        var btnJs = document.getElementById("btnJs");
+        btnJs.onclick = function() {
+            document.getElementById("ta").textContent += "onclik con javascript \n";
+        };
+    </script>
+
+
+    <div class="row">
+        <h2>Parrafos Escuchador</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore rem alias ea esse earum culpa dolorum, voluptatum iure quae minima asperiores possimus veritatis, cupiditate laudantium quibusdam. Fugiat enim distinctio laboriosam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum eveniet saepe ea aperiam rem omnis repellendus perspiciatis in quo aliquid provident, officiis cum fuga corporis culpa nihil facilis, consequatur dolore.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At quaerat cumque maiores ducimus nihil dicta excepturi, voluptate sapiente commodi beatae maxime repellendus, illo sed obcaecati! Veniam obcaecati cumque sunt veritatis.</p>
+    </div>
+
+
+    <script>
+        var parrafos = document.getElementsByTagName("p");
+        var p;
+        for( i=0; i < parrafos.length; i++ ){
+            p = parrafos[i];
+            p.addEventListener('click', function(){
+                reset();
+                pintarParrafo(this);
+            });
+        }
+        /* poner todos los parrafos en negro */
+        function reset(){
+          for( i=0; i < parrafos.length; i++ ){
+            parrafos[i].style.color = 'black';
+          }
+        }
+        function pintarParrafo(element){
+            element.style.color = 'red';
+        }
+    </script>
+
+</div>
+<!-- container -->
+
+
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

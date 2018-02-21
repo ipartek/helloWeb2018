@@ -110,7 +110,7 @@
                     <span class="box">3<span class="close">x</span></span>
                     -->
                     <!-- end innerHTML-->
-                    <span class="box">1<span onclick="eliminarBox(0)" class="close">x</span></span><span class="box">2<span onclick="eliminarBox(1)" class="close">x</span></span><span class="box">3<span onclick="eliminarBox(2)" class="close">x</span></span><span class="box">4<span onclick="eliminarBox(3)" class="close">x</span></span><span class="box">5<span onclick="eliminarBox(4)" class="close">x</span></span>
+                    <span class="box">1<span onclick="eliminarBox(0,event)" class="close">x</span></span><span class="box">2<span onclick="eliminarBox(1,event)" class="close">x</span></span><span class="box">3<span onclick="eliminarBox(2,event)" class="close">x</span></span><span class="box">4<span onclick="eliminarBox(3,event)" class="close">x</span></span><span class="box">5<span onclick="eliminarBox(4,event)" class="close">x</span></span>
                 </div>
             </div>
         </div>
@@ -233,8 +233,15 @@
             numeroInput.focus();
         }
 
-        function eliminarBox(pos) {
-            console.debug("eliminarBox %s", pos);
+        function eliminarBox(pos, e) {
+
+                    // cntNumOr.innerHTML += spanNumero.replace('##numero##', arrDes[i]);
+                   var boxEliminar=e.target.parentElement
+                boxEliminar.style.display="none";
+            arrDes[pos]=null;
+            console.log(arrDes);
+
+
         }
     </script>
 </body>

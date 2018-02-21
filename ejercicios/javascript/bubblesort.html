@@ -62,24 +62,11 @@
             position: relative;
         }
 
-        .boxClose {
-            position: absolute;
-            z-index: 5;
-            left: 35px;
-            top: -8px;
-            color: black;
-            background-color: white;
-            border-radius: 50%;
-        }
-
-        /*efecto de animación al añadir número*/
-
-        /* FUTURE[]: no mostrar animación cuando el último número ya estaba en la lista) */
-
-        #cntNumDes .box:last-child {
-            animation-name: mostrar;
-            animation-duration: .5s;
-            animation-timing-function: ease-in;
+        .box:hover {
+            animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
         }
 
         /*efecto de animación "shake" al hover*/
@@ -105,6 +92,26 @@
             60% {
                 transform: translate3d(4px, 0, 0);
             }
+        }
+
+        .boxClose {
+            position: absolute;
+            z-index: 5;
+            left: 35px;
+            top: -8px;
+            color: black;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        /*efecto de animación al añadir número*/
+
+        /* FUTURE[]: no mostrar animación cuando el último número ya estaba en la lista) */
+
+        #cntNumDes .box:last-child {
+            animation-name: mostrar;
+            animation-duration: .5s;
+            animation-timing-function: ease-in;
         }
 
         /*FUTURE: cambiar el efecto a una clase propia "shake" y añadirsela a un elemento dinámicamente desde JS cuando haga onmousedown sobre el icono de la cruz*/
@@ -253,8 +260,6 @@
             inputNum.value = "";
             inputNum.focus();
             newNum = undefined;
-            // FUTURE: Añadir eventListener "mouseover" al nuevo elemento
-            anadirEventoHover();
         }
 
 
@@ -285,8 +290,6 @@
             //var
             var pos = elem.parentElement.dataset.index;
             console.debug("Posición eliminada: %s", pos);
-
-            // FUTURE[]: al :hover el icono de FontAwesome, aplicarle la animación "shake" al elemento padre "span.box"
 
             // TODO[x]: eliminar elemento con "pos" del array "listNum", de la UI y reordenar los indices
             /*listNum.splice(pos, 1);*/
@@ -465,21 +468,6 @@
 
             // Eliminar la alerta en caso de existir
             document.getElementById("divAlertas").innerHTML = "";
-        }
-
-
-        /*FUTURE[]: generar efecto "shake" a la caja cuando se posicione sobre la 'X'*/
-        /**
-        Función para asignarle el evento mouseover a las 'X' y que les añada la clase 'shake' al parentElement
-        **/
-        function anadirEventoHover() {
-            var iconosClose = document.querySelectorAll(".boxClose");
-
-            /*for (var iIconosClose = 0; iIconosClose < iconosClose.length; iIconosClose++) {
-                iconosClose[iIconosClose].addEventListener("mouseover", function() {
-                    iconosClose[iIconosClose].parentElement.classList.add('shake');
-                }, false);
-            }*/
         }
     </script>
     <!-- CARGA DE SCRIPTS EXTERNOS -->

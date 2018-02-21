@@ -151,7 +151,11 @@
                     <span class="box">3<span class="close">x</span></span>
              -->
 
-             <span class="box">1<span class="close">x</span></span><span class="box">2<span class="close">x</span></span><span class="box">3<span class="close">x</span></span><span class="box">4<span class="close">x</span></span><span class="box">5<span class="close">x</span></span>
+             <span class="box">1<span class="close" onclick="eliminarBox(0, event)">x</span></span>
+             <span class="box">2<span class="close" onclick="eliminarBox(1, event)">x</span></span>
+             <span class="box">3<span class="close" onclick="eliminarBox(2, event)">x</span></span>
+             <span class="box">4<span class="close" onclick="eliminarBox(3, event)">x</span></span>
+             <span class="box">5<span class="close" onclick="eliminarBox(4, event)">x</span></span>
 
             </div>
         </div>
@@ -259,8 +263,15 @@
 
 
 
-        function eliminarBox(pos){
+        function eliminarBox(pos, e) {
             console.debug("eliminarBox %s", pos);
+            console.debug("Antes Eliminar: " + aDesordenado);
+            //aDesordenado.splice(pos,1);
+            aDesordenado[pos] = null;
+            console.debug("Despues Eliminar: " + aDesordenado);
+            //ocultar
+            var boxEliminar = e.target.parentElement;
+            boxEliminar.style.display = "none";
         }
 
 

@@ -80,6 +80,11 @@
         .row {
             margin: 10px 0px;
         }
+
+        .btn{
+            display: block;
+        }
+
     </style>
 
 
@@ -94,7 +99,7 @@
     <div class="container">
 
 
-        <div class="panel-body container-flex" id="vocalesDes">
+        <div id="container-flex" class="panel-body container-flex" id="vocalesDes">
 
             <div class="box" onclick="sonido('a')">
                 <div class="upper">a</div>
@@ -117,70 +122,23 @@
                 <div class="lower">u</div>
             </div>
 
-            <div class="row">
+
+
+        </div>
+
+        <div class="row">
 
                 <input id="btnDesordenar" type="button" class="btn btn-success btn-block" value="Desordenar">
 
             </div>
-
-        </div>
     </div>
 
 
-    <script>
-        var btn = document.getElementById("btnDesordenar");
-
-        var aOrden = [1, 2, 3, 4, 5];
-
-        btn.addEventListener("click", function() {
 
 
-            aOrden = shuffle(aOrden);
-            var boxes = document.getElementsByClassName("box");
-            var box;
-            for (i = 0; i < boxes.length; i++) {
-                box = boxes[i];
-                box.style.order = aOrden[i];
-            }
-        });
+    <script src="/js/flexbox_solucion_listener.js"></script>
 
-        function shuffle(a) {
-            var j, x, i;
-            for (i = a.length - 1; i > 0; i--) {
-                j = Math.floor(Math.random() * (i + 1));
-                x = a[i];
-                a[i] = a[j];
-                a[j] = x;
-            }
-            return a;
-        }
-
-
-        function sonido(fileName) {
-
-            var audio = new Audio('../../Sound/' + fileName + '.wav');
-
-
-             if(audio.duration > 0 && !audio.paused){
-
-                //already playing
-                audio.pause();
-                audio.currentTime = 0;
-                audio.play();
-
-            }else{
-
-                //not playing
-
-                audio.play();
-
-            }
-
-
-        }
-
-    </script>
-
+    <!-- <script src="/js/flexbox_solucion_pointerEvent.js"></script> -->
 
 
 

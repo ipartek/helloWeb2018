@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Flexbox  y Listeners</title>
+    <title>Flexbox y Listeners</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
@@ -10,15 +11,15 @@
             box-sizing: border-box;
         }
 
-        body{
-            background-color:#FFF;
+        body {
+            background-color: #FFF;
             color: #555;
             font-size: 1.1em;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         #container,
-        #container2{
+        #container2 {
             margin: 150px auto;
             max-width: 900px;
             padding: 20px;
@@ -30,11 +31,11 @@
             justify-content: space-around;
         }
 
-        #container{
+        #container {
             background-color: #fcd04b;
         }
 
-        .caja{
+        .caja {
             width: 200px;
             height: 200px;
             background-color: #594255;
@@ -49,12 +50,12 @@
             border-radius: 5px;
         }
 
-        .caja span{
-             width: 100%;
-            color:#FFF;
+        .caja span {
+            width: 100%;
+            color: #FFF;
         }
 
-        #boton{
+        #boton {
             display: block;
             margin: 20px auto;
             border-radius: 50px;
@@ -75,30 +76,32 @@
 
         }
 
-        #boton:hover{
+        #boton:hover {
             background: #f29e0d;
         }
 
-        p{
-           margin: 10px;
+        p {
+            margin: 10px;
         }
 
-        h1, h2{
+        h1,
+        h2 {
             text-align: center;
         }
+
     </style>
 
 </head>
 
 <body>
-   <h1>Flexbox</h1>
+    <h1>Flexbox</h1>
 
     <div id="container">
-        <div class="caja" onclick="playSound('a')"><span>A</span><span>a</span></div>
-        <div class="caja" onclick="playSound('e')"><span>E</span><span>e</span></div>
-        <div class="caja" onclick="playSound('i')"><span>I</span><span>i</span></div>
-        <div class="caja" onclick="playSound('o')"><span>O</span><span>o</span></div>
-        <div class="caja" onclick="playSound('u')"><span>U</span><span>u</span></div>
+        <div class="caja" data-letter="a"><span>A</span><span>a</span></div>
+        <div class="caja" data-letter="e"><span>E</span><span>e</span></div>
+        <div class="caja" data-letter="i"><span>I</span><span>i</span></div>
+        <div class="caja" data-letter="o"><span>O</span><span>o</span></div>
+        <div class="caja" data-letter="u"><span>U</span><span>u</span></div>
     </div>
 
     <button id="boton">Desordenar</button>
@@ -107,79 +110,64 @@
 
     <div id="contenedor2">
 
-           <h2>Escuchador de párrafos</h2>
+        <h2>Escuchador de párrafos</h2>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat eveniet provident, tempore odit odio fuga ipsum quibusdam obcaecati officiis eaque aliquam eos esse soluta quod numquam natus? Optio, nihil, adipisci.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat eveniet provident, tempore odit odio fuga ipsum quibusdam obcaecati officiis eaque aliquam eos esse soluta quod numquam natus? Optio, nihil, adipisci.</p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium debitis error velit assumenda adipisci aliquid similique incidunt excepturi libero amet cumque minus repellat nam, natus facere labore rem, nisi impedit?Aliquam consequatur tenetur deserunt magni, impedit sapiente, accusantium voluptas eos ullam debitis eius officia nulla cupiditate est, aperiam expedita. Voluptas eaque officia incidunt dignissimos at obcaecati exercitationem nihil amet quidem!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium debitis error velit assumenda adipisci aliquid similique incidunt excepturi libero amet cumque minus repellat nam, natus facere labore rem, nisi impedit?Aliquam consequatur tenetur deserunt magni, impedit sapiente, accusantium voluptas eos ullam debitis eius officia nulla cupiditate est, aperiam expedita. Voluptas eaque officia incidunt dignissimos at obcaecati exercitationem nihil amet quidem!</p>
 
-            <p>Accusantium itaque quae commodi! Itaque a et ex voluptate sequi veniam, ut pariatur, laudantium voluptatum sed deleniti sunt molestias vel ducimus ab, laborum praesentium? Quis, atque quo quos delectus velit!</p>
+        <p>Accusantium itaque quae commodi! Itaque a et ex voluptate sequi veniam, ut pariatur, laudantium voluptatum sed deleniti sunt molestias vel ducimus ab, laborum praesentium? Quis, atque quo quos delectus velit!</p>
     </div>
-<script>
-//sonidos
-function playSound(audioLetras){
+    <script>
+        /***********************************************************************/
+        //color parrafos
 
-    var audio = new Audio('../../sonidos/' + audioLetras + '.wav');
+        var parrafos = document.getElementsByTagName('p');
+        var p;
 
-    if(audio.ended == false){
-        audio.play();
-        audioLetras = 0;
+        for (var i = 0; i < parrafos.length; i++) {
+            p = parrafos[i];
+            p.addEventListener('click', function() {
+                pintarParrafo(this)
+            });
 
-    }else{
-        audio.ended();
-    }
-
-  debugger;
-
-}
-/***********************************************************************/
-//color parrafos
-
-    var parrafos=document.getElementsByTagName('p');
-    var p;
-
-    for(var i=0; i < parrafos.length; i++){
-        p = parrafos[i];
-        p.addEventListener('click', function(){pintarParrafo(this)});
-
-    }
-
-    //pone todos los parrafos a negro
-    function reset(){
-        for(var i=0; i <parrafos.length; i++){
-            parrafos[i].style.color = 'black';
         }
-    }
 
-    function pintarParrafo(element){
-        reset();
-        element.style.color = 'red';
-    }
-
-</script>
-
-
-<script>
-
-     //desordenar
-
-    var arrayOrdenado =[1,2,3,4,5];
-
-    var boton = document.getElementById('boton');
-
-    boton.addEventListener('click', function() {
-
-        arrayOrdenado = shuffle(arrayOrdenado);
-        var cajas = document.getElementsByClassName('caja');
-        var unaCaja;
-
-        for( i=0; i<cajas.length; i++){
-            unaCaja = cajas[i];
-            unaCaja.style.order = arrayOrdenado[i];
+        //pone todos los parrafos a negro
+        function reset() {
+            for (var i = 0; i < parrafos.length; i++) {
+                parrafos[i].style.color = 'black';
+            }
         }
-    });
 
-    /**
+        function pintarParrafo(element) {
+            reset();
+            element.style.color = 'red';
+        }
+
+    </script>
+
+
+    <script>
+        //desordenar
+
+        var arrayOrdenado = [1, 2, 3, 4, 5];
+
+        var boton = document.getElementById('boton');
+
+        boton.addEventListener('click', function() {
+
+            arrayOrdenado = shuffle(arrayOrdenado);
+            var cajas = document.getElementsByClassName('caja');
+            var unaCaja;
+
+            for (i = 0; i < cajas.length; i++) {
+                unaCaja = cajas[i];
+                unaCaja.style.order = arrayOrdenado[i];
+            }
+        });
+
+        /**
          * Shuffles array in place.
          * @param {Array} a items An array containing the items.
          */
@@ -194,6 +182,41 @@ function playSound(audioLetras){
             return arrayOrdenado;
         }
 
-</script>
+        //sonidos
+
+        //pointerEvent en un div los eventos de ratón no funcionan
+
+            var contenedor = document.getElementById('container');
+
+            var boxes= document.getElementsByClassName('caja');
+
+            for(var i=0; i < boxes.length; i++){
+                boxes[i].addEventListener('click', sonido);
+            }
+
+        function sonido(){
+
+            //coge la letra
+            var letra = event.target.parentElement.dataset.letter;
+
+            //cambiar el color al padre del que ha provocado el evento
+            event.target.parentElement.style.backgroundColor = 'orange';
+            var papa= event.target.parentElement;
+            console.debug('letra %s', letra);
+
+            contenedor.style.pointerEvents = "none";
+
+            var audio = new Audio('sonidos/' + letra + '.wav');
+            audio.play();
+            audio.onended = function(){
+                contenedor.style.pointerEvents = "auto";
+                papa.style.backgroundColor = '#594255';
+            }
+
+        }
+
+
+    </script>
 </body>
+
 </html>

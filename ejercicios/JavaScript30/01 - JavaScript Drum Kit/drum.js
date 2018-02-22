@@ -2,7 +2,7 @@
 
 
 
-window.addEventListener("keydown", playSound);
+
 window.addEventListener("keyup",function(){
     var keys=document.querySelectorAll(".key");
     for(var i=0; i<keys.length;i++){
@@ -10,13 +10,22 @@ window.addEventListener("keyup",function(){
     }
 });
 
-function playSound(){
-    var key=event.keyCode;
-    var audio= document.querySelector("audio[data-key='"+key+"']");
-    var key = document.querySelector(".key[data-key='"+key+"']");
-    key.style.border=".4rem solid gold"
+window.addEventListener('keydown', playSound);
+
+function playSound() {
+    var key = event.keyCode;
+    console.log('playSound %o', key);
+    var audio = document.querySelector('audio[data-key="' + key + '"]');
+    var keyPress = document.querySelector('.key[data-key="' + key + '"]');
+    
+    if (audio!=null) {
+    
+    keyPress.style.border=".4rem solid gold";
+    audio.addEventListener("ended", function() {
+                console.log("Terminada cancion");
+               
+            });
+    audio.currentTime= 0;
     audio.play();
-    
-    
-    console.log('playsound %o',)
+    }
 }

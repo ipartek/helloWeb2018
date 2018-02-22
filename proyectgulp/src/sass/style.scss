@@ -1,0 +1,11 @@
+@import 'reset';
+@import 'colors';
+@import 'variables';
+@import 'elements';
+
+//funciones
+@import 'mixins';
+//layout
+@import 'layouts/content';
+//botones
+@import 'componentes/boton';

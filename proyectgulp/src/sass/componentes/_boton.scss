@@ -1,0 +1,24 @@
+%btn-generico{
+    border:1px solid $primary-color;
+    color:$secondary-color;
+    display: inline-block;
+    height: 50px;
+    min-width:  100px;
+    @include border-radius(10px);
+
+   &:hover{
+        background-color: $accent-color;
+    }
+
+}
+.btn{
+    @extend %btn-generico;
+}
+
+.btn-azul{
+    @extend %btn-generico;
+    border-radius: 50%;
+    &:hover{
+        background-color:blue;
+    }
+}

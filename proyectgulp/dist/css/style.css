@@ -1,0 +1,33 @@
+/*elementos*/
+h1 {
+  color: green;
+}
+
+.container {
+  margin: auto;
+  max-width: 1024px;
+}
+
+.btn, .btn-azul {
+  border: 1px solid green;
+  color: green;
+  display: inline-block;
+  height: 50px;
+  min-width: 100px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.btn:hover, .btn-azul:hover {
+  background-color: grey;
+}
+
+.btn-azul {
+  border-radius: 50%;
+}
+
+.btn-azul:hover {
+  background-color: blue;
+}

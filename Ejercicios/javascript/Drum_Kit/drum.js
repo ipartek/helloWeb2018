@@ -1,40 +1,45 @@
 "use strick";
 
 
-window.addEventListener('keydown', playsound);
+ //sonidos
 
-function playsound() {
+ //pointerEvent en un div los eventos de ratón no funcionan
 
-    var key = event.keyCode;
-    var direcciondiv= document.getElementsByTagName("div");
-    console.log('playsounds %o', key);
+ var teclas = document.getElementById('keys');
 
-var audio= document.querySelector('audio[data-key="'+key+'"]');
-
+ //key down te devuelve siempre mayúscula
+ window.addEventListener('keydown', sonido);
 
 
-audio.play();
+ function sonido() {
 
-    bordercolor;
-    }
+     //console.log('tecla pulsada %o', event);
 
-    function bordercolor(){
+     //coge la tecla
+     var tecla = event.keyCode;
 
-        var pintar=document.querySelector('.key');
-
-        for(var i=0;i<pintar.length;i++){
-            console.log(pintar);
-
-            pintar[i].style.borderColor="yellow";
-
-        }
+     var audio = document.querySelector('audio[data-key="' + tecla + '"]');
+     audio.play();
 
 
+     var aTecla = document.querySelectorAll('.key');
+     var teclaSel;
+
+     for (var i = 0; i < aTecla.length; i++) {
+         if (tecla == aTecla[i].getAttribute("data-key")) {
+
+             teclaSel= aTecla[i];
+             teclaSel.classList.add("playing");
+
+             audio.onended = function () {
+
+                 teclaSel.classList.remove("playing");
+            }
+
+         }
 
 
+     }
 
 
-
-    }
-
-
+ }

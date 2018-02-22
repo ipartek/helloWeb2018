@@ -6,7 +6,7 @@ var boxes = document.getElementsByClassName("box");
 var aOrden = [1, 2, 3, 4, 5];
 var aSonidos = ['a', 'e', 'i', 'o', 'u']; /*Sirve para que coja las letras y deshabilite luego el evento*/
 var letraAleatoria=['a', 'e', 'i', 'o', 'u'];
-var sacarletraaleatoria= math.random(letraAleatoria);
+var sacarletraaleatoria= Math.floor(Math.random(letraAleatoria));
 var acierto;
 var fallo;
 
@@ -42,8 +42,8 @@ function sonido() {
     }
 
 }
-
-
+var direcciondei= document.getElementById("ondo");
+direcciondei.innerHTML= letraAleatoria;
 
 
 

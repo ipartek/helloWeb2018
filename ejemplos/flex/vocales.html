@@ -9,39 +9,31 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Vocales</title>
     <style>
-        .box {
-
+          .box {
              width: 200px;
             height: 200px;
             background-color: blue;
             color: #FFF;
             font-size: 3em;
             text-align: center;
-
             /* margin-right: 10px;      */
         }
-
         .box1 {
            padding-top: 75px;
         }
-
         .container-flex {
-
             flex-direction:row;
             display: flex;
             /* flex-direction: row;*/
             flex-wrap: nowrap;
-
             justify-content: space-between;
             height: 285px;
             align-items: center;
         }
-
         .box>span {
             display: flex;
             /*flex: 0 50%;*/
             flex-direction: column;
-
         }
     </style>
 </head>
@@ -68,7 +60,7 @@
                     <span class="box">3<span class="close">x</span></span>
                     -->
                 <!-- end innerHTML-->
-                <span class="box" data-letter="a">A <span class="box1">a</span></span>
+                <span class="box" data-letter="a">A <span class="box1" >a</span></span>
                 <span class="box" data-letter="e">E<span class="box1">e</span></span>
                 <span class="box" data-letter="i">I<span class="box1">i</span></span>
                 <span class="box" data-letter="o">O<span class="box1">o</span></span>
@@ -99,11 +91,15 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
-        var coincidencias = document.querySelectorAll("span.box");
+        var coincidencias =  document.getElementsByClassName("box");
+        var coincidencias1 = document.getElemtnsByClassName("box1");
+        //console.log(coincidencias);
         for (i = 0; i < coincidencias.length; i++) {
             coincidencias[i].addEventListener('click', sonido);
         }
-
+ for (i = 0; i < coincidencias.length; i++) {
+            coincidencias1[i].removeEventListener('click', sonido);
+        }
         var btn = document.getElementById("btnBarajear");
 
         function desordenar() {
@@ -132,7 +128,7 @@
         }
 
         function reset() {
-            for (i = 0; i < parrafos.length; i++) {
+           for (i = 0; i < parrafos.length; i++) {
                 p = parrafos[i];
                 p.style.color = "black";
             }

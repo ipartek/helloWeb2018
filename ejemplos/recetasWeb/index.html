@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="init()">
+    <header>
+        <div class="container">
+
+            <h1>Recetas Web</h1>
+
+
+        </div>
+
+    </header>
+    <!-- Modal1 -->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Ingredientes</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <h2>Ingredientes</h2>
+                        <li>1 pollo troceado</li>
+                        <li>1 pimiento rojo grande</li>
+                        <li>1 pimiento verde grande</li>
+                        <li>1 cebolla grande</li>
+                        <li>4 dientes de ajo</li>
+                        <li>4 tomates maduros</li>
+                        <li>250 ml de vino blanco</li>
+                        <li>100 gr de jamón serrano</li>
+                        <li>Aceite de oliva virgen suave</li>
+                        <li>Sal (al gusto)</li>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal2 -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Ingredientes</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <h2>Ingredientes</h2>
+                        <li>10 rodajas de merluza (dos dedos de grosor), un 2 k. aprox.</li>
+                        <li>6 dientes de ajo.</li>
+                        <li>300 grs. de guisantes.</li>
+                        <li>Un vaso de vino blanco (un godello o ribeiro) y 100 ml de caldo de pescado</li>
+                        <li>4 cucharadas con perejil picado y sal (al gusto)</li>
+                        <li>2 cucharadas de harina de trigo.</li>
+                        <li>6 cucharadas de aceite de oliva virgen extra</li>
+                        <li>5 huevos duros</li>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Ingredientes</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                <h2>Ingredientes</h2>
+                   <li>1 cucharada de aceite de oliva virgen extra,</li>
+                   <li>1 cebolleta picada,</li>
+                   <li>4 dientes de ajo picados</li>
+                   <li>1 kg de patatas peladas</li>
+                   <li>medio vaso de vino blanco, caldo de pescado</li>
+                   <li>1 punta de cayena y perejil picado</li>
+                   <li>media cola de rape</li>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Container permitira centrar el contenido-->
+    <div class="container" id="contenedorRecetas">
+        <div class="row">
+            <div class="col-xs-12 col-md-4">
+                <span id="cerrar"onclick="eliminarReceta(event)"    >X</span>
+                <div class="thumbnail">
+
+                    <img src="https://www.gallinablanca.es/files/thumbs/34adb920306999224fe4542e717bd2892367f1c0_r900_480_2.jpg" alt="...">
+                    <div class="caption">
+                        <hr>
+
+                        <h3>Pollo al chilindron</h3>
+                        <span><i class="fa fa-heart-o" aria-hidden="true"></i>  </span><span>0</span> <span>Berasategui</span>
+                        <hr>
+
+                        <a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-eye" aria-hidden="true"></i> ingredientes</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <span id="cerrar" onclick="eliminarReceta(event)">X</span>
+                <div class="thumbnail">
+
+                    <img src="https://www.gallinablanca.es/files/thumbs/b873e075c3bacf6e90a083cca15571da75ef6640_r900_480_2.jpg" alt="...">
+                    <div class="caption">
+                        <hr>
+
+                        <h3>Merluza en salsa</h3>
+                        <span><i class="fa fa-heart-o" aria-hidden="true"></i>  </span><span>12</span> <span>Arguiñano</span>
+                        <hr>
+
+                        <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-eye" aria-hidden="true"></i> ingredientes</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <span id="cerrar"onclick="eliminarReceta(event)">X</span>
+                <div class="thumbnail">
+
+                    <img src="http://canalcocina.es/medias/_cache/zoom-f33463d9adf5a8eddfa920c5f62b21b8-920-518.jpg" alt="...">
+                    <div class="caption">
+                        <hr>
+
+                        <h3>Patatas en salsa </h3>
+                        <span><i class="fa fa-heart-o" aria-hidden="true"></i>  </span><span>0</span> <span>Arzak</span>
+                        <hr>
+
+                        <a href="#" data-toggle="modal" data-target="#myModal3"><i class="fa fa-eye" aria-hidden="true"></i> ingredientes</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <footer id="footer">
+
+
+
+            <br>
+            <br>
+            <form id="formulario" onsubmit="return false;">
+
+
+                <div class="col-sm-2 my-1">
+
+                    <input type="text" class="form-control" id="inlineFormInputNombre" placeholder="Nombre">
+                </div>
+                <div class="col-sm-2 my-1">
+
+                    <input type="text" class="form-control" id="inlineFormInputFoto" placeholder="foto">
+                </div>
+
+                <div class="col-sm-2 my-1">
+
+                    <input type="number" class="form-control" id="inlineFormInputLikes" placeholder="likes">
+
+                </div>
+                <div class="col-sm-2 my-1">
+
+                    <input type="text" class="form-control" id="inlineFormInputCocinero" placeholder="cocinero">
+
+                </div>
+
+                <div class="col-auto my-1">
+                    <button type="submit" class="btn btn-primary" onclick="crear()">Crear</button>
+                </div>
+                <br>
+                <span id="copyright"><i class="fa fa-copyright" aria-hidden="true"></i> iparcheff 2018</span>
+            </form>
+
+
+        </footer>
+    </div>
+
+    <!-- Jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+    <script src="js/receta.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

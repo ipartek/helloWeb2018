@@ -1,0 +1,18 @@
+#cerrar{
+    float:right;
+}
+#copyright{
+    opacity: 0.5;
+    color:grey;
+
+}
+#formulario{
+    background-color: white;
+    opacity: 1;
+
+}
+#footer{
+    background: white;
+    bottom:0px;
+    position:fixed;
+}

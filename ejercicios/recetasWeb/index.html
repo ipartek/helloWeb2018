@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <!-- FonAwesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Link hoja de estilos -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body onload="init.js">
+
+    <header>
+        <div class="container-fluid" id="cabecera">
+
+            <h1><span id="tenedor"><i class="fa fa-cutlery" aria-hidden="true"></i></span>RecetasWeb</h1>
+
+        </div>
+    </header>
+
+    <section>
+
+        <div class="container containerRecetas">
+
+            <div class="row">
+                <div class="col-sm-6 col-md-4 receta">
+                    <div class="thumbnail">
+                        <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371597326801.jpeg" alt="tiramisú">
+                        <div class="caption">
+                            <h3>Tiramisú</h3>
+                            <p><span id="likes"><i class="fa fa-heart" aria-hidden="true"></i> 12</span><span id="cocinero">Eva Argiñano</span></p>
+                            <hr>
+
+                            <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 receta">
+                    <div class="thumbnail">
+                        <img src="https://todocooking.com/wp-content/uploads/2015/09/Pollo-al-chilindron3.jpg" alt="pollo al chilindron">
+                        <div class="caption">
+                            <h3>Pollo al chilindron</h3>
+                            <p><span id="likes"><i class="fa fa-heart" aria-hidden="true"></i> 16</span><span id="cocinero">Arzak</span></p>
+                            <hr>
+                            <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 receta">
+                    <div class="thumbnail">
+                        <img src="https://www.miscosillasdecocina.com/wp-content/uploads/2014/02/bacalao-pilpil-e1491084486535.jpg" alt="bacalao al pil pil">
+                        <div class="caption">
+                            <h3>Bacalao al pil pil</h3>
+                            <p><span id="likes"><i class="fa fa-heart" aria-hidden="true"></i> 10</span><span id="cocinero">Martin Berasategi</span></p>
+                            <hr>
+                            <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--fin 1er row -->
+
+
+
+
+
+
+            <div class="row">
+                <div class="col-sm-6 col-md-4 receta">
+                    <div class="thumbnail">
+                        <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371597326801.jpeg" alt="tiramisú">
+                        <div class="caption">
+                            <h3>Tiramisú</h3>
+                            <p><span id="likes"><i class="fa fa-heart" aria-hidden="true"></i> 12</span><span id="cocinero">Eva Argiñano</span></p>
+                            <hr>
+                            <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 receta">
+                    <div class="thumbnail">
+                        <img src="https://todocooking.com/wp-content/uploads/2015/09/Pollo-al-chilindron3.jpg" alt="pollo al chilindron">
+                        <div class="caption">
+                            <h3>Pollo al chilindron</h3>
+                            <p><span id="likes"><i class="fa fa-heart" aria-hidden="true"></i> 16</span><span id="cocinero">Arzak</span></p>
+                            <hr>
+                            <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4 receta">
+                    <div class="thumbnail">
+                        <img src="https://www.miscosillasdecocina.com/wp-content/uploads/2014/02/bacalao-pilpil-e1491084486535.jpg" alt="bacalao al pil pil">
+                        <div class="caption">
+                            <h3>Bacalao al pil pil</h3>
+                            <p><span id="likes"><i class="fa fa-heart" aria-hidden="true"></i> 10</span><span id="cocinero">Martin Berasategi</span></p>
+                            <hr>
+                            <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--fin 2 row -->
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Ingredientes</h4>
+                        </div>
+                        <div class="modal-body">
+                           <ul>
+                               <li>Ajo</li>
+                               <li>Perejil</li>
+                               <li>Sal</li>
+                               <li>Mucho amor</li>
+                           </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+        <!-- Fin CONTAINER -->
+
+    </section>
+
+
+    <footer>
+        <div class="container-fluid" id="pie">
+
+            <form id="formulario" class="form-inline" novalidate action="#" method="get" onsubmit="return nuevaReceta();">
+
+                <fieldset>
+                    <legend>Nueva Receta</legend>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input class="form-control" type="text" id="nombre" name="nombre" required placeholder="nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="foto">Foto:</label>
+                        <input class="form-control" type="text" id="foto" name="foto" required placeholder="introduce la url de la foto">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="likes">Likes:</label>
+                        <input class="form-control" type="text" id="likes" name="likes" required placeholder="Indica cuantos likes tiene">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cocinero">Cocinero:</label>
+                        <input class="form-control" type="text" id="cocinero" name="cocinero" required placeholder="Nombre del ocinero">
+                    </div>
+
+
+
+
+                    <button type="submit" class="btn btn-default">Crear nueva receta</button>
+                </fieldset>
+            </form>
+
+
+            <div class="copiright">
+                <p>© Iparcheff 2018</p>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+    </footer>
+
+
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <script src="js/receta.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

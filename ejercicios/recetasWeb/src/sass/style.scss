@@ -1,0 +1,20 @@
+//ESto es SASS
+//Variables
+@import 'variables';
+@import 'mixins';
+@import 'colors';
+
+
+@import 'reset';
+@import 'elements';
+
+//Layouts
+@import 'layouts/content';
+@import 'layouts/header';
+@import 'layouts/footer';
+@import 'layouts/modal';
+
+//Componentes
+@import 'componentes/boton';
+@import 'componentes/box';
+

@@ -1,0 +1,5 @@
+/*HOJA DE ESTILOS GLOBAL QUE CARGA LOS DEMÁS*/
+
+@import url('reset.css');
+@import url('etiquetas.css');
+@import url('custom.css');

@@ -1,10 +1,14 @@
-vocales
-	pulsada en naranja y desactivar mientras suena
-
----------------------------
-
-usar event.target.parentElement para cerrar las cajas
 
 
------------------------------
+PERRERA
+
+form para meter perros
+	nombre
+	raza
+	chip
+	img
+
+listado de perros
+
+poder eliminar perros
 

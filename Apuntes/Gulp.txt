@@ -1,0 +1,27 @@
+GULP
+-----
+Libreria de node que se encarga de automatizar cosas.
+
+coge el codigo de /src y lo pasa a /dist
+
+package.json - archivo de configuracion del proyecto
+
+Las librerias se guardan en node.modules
+npm install descarga las librerias necesarias
+
+
+gulpfile.js - automatiza tareas
+
+si no funciona meter la ruta en el path en variables de entorno
+C:\Users\$usuario\AppData\Roaming\npm
+
+
+PROYECTO
+--------
+
+npm init - Inicia un proyecto en la carpeta actual
+npm install gulp --save-dev - instala gulp en el proyecto y guarda la dependencia en el package
+
+gulp nombreTarea - ejecuta la tarea de gulpfile.js
+
+gulp - deja gulp escuchando y ejecuta los watchers al modificar los archivos

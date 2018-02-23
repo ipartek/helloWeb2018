@@ -4,6 +4,10 @@ var recetas = [];
 var divRecetas = document.getElementById('recetas');
 var formMostrado = false;
 
+var rNombre = document.getElementById('nombre');
+var rFoto = document.getElementById('foto');
+var rLikes = document.getElementById('likes');
+var rCocinero = document.getElementById('cocinero');
 
 /* creamos unas recetas de prueba */
 function init() {
@@ -29,7 +33,7 @@ function init() {
     rTortilla.addIngrediente("sal");
 
 
-    console.log("1º receta %s %o", rTortilla.nombre, rTortilla);
+    //console.log("1º receta %s %o", rTortilla.nombre, rTortilla);
 
     nuevoThumbnail(rTortilla);
     recetas.push(rTortilla);
@@ -42,7 +46,7 @@ function init() {
 
 
 
-    console.log("1º receta %s %o", rBacalao.nombre, rBacalao);
+    //console.log("1º receta %s %o", rBacalao.nombre, rBacalao);
 
     nuevoThumbnail(rBacalao);
     recetas.push(rBacalao);
@@ -55,38 +59,38 @@ function init() {
 /*crea el objeto con los datos de la receta*/
 function nuevaReceta() {
 
-    var rNombre = document.getElementById('nombre');
-    var rFoto = document.getElementById('foto');
-    var rLikes = document.getElementById('likes');
-    var rCocinero = document.getElementById('cocinero');
 
-    var receta = new Receta(rNombre.value, rFoto.value, rLikes.value, rCocinero.value);
+    resetearBordes();
 
-    recetas.push(receta);
+    if (validar(rNombre.value, rFoto.value, rLikes.value, rCocinero.value)) {
 
-    console.log(recetas);
+        var receta = new Receta(rNombre.value, rFoto.value, rLikes.value, rCocinero.value);
 
-    nuevoThumbnail(receta);
+        console.log(recetas);
 
+        nuevoThumbnail(receta);
+        recetas.push(receta);
+
+        resetearForm();
+    }
 }
 
 /*crea el thumbnail con la receta y lo posiciona el primero*/
-
 function nuevoThumbnail(receta) {
 
-    var rThumbnail = `            <!--thumbnail de la receta -->
+    var rThumbnail = `<!--thumbnail de la receta -->
 
-                <div class="thumbnail box">
+                <div class="thumbnail box" data-id="##id##">
                     <img class="img-responsive" src="##src##" alt="##alt##">
                     <div class="caption">
                         <h3>##nombreReceta##</h3>
                         <div class="info">
-                            <p class="likes"><i class="fa fa-heart" aria-hidden="true"></i>##likes##</p>
+                            <p class="likes"><i class="fa fa-heart" aria-hidden="true"></i> ##likes##</p>
                             <p class="cocinero">##cocinero##</p>
                         </div>
                     </div>
                     <div class="ingredientes">
-                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#ingredientesModal">Ingredientes</a>
+                        <span role="button" data-toggle="modal" data-target="#ingredientesModal" onclick="crearModal()"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</span>
                     </div>
                     <span class="close"><i class="fa fa-times-circle" aria-hidden="true" onclick="eleminarCaja(##id##)"></i></span>
                 </div>
@@ -97,7 +101,9 @@ function nuevoThumbnail(receta) {
     rThumbnail = rThumbnail.replace('##nombreReceta##', receta.nombre);
     rThumbnail = rThumbnail.replace('##likes##', receta.likes);
     rThumbnail = rThumbnail.replace('##cocinero##', receta.cocinero);
-    rThumbnail = rThumbnail.replace('##id##', recetas.length - 1);
+    var id = recetas.length;
+    rThumbnail = rThumbnail.replace('##id##', id);
+    rThumbnail = rThumbnail.replace('##id##', id);
 
 
     divRecetas.innerHTML = rThumbnail + divRecetas.innerHTML;
@@ -114,21 +120,20 @@ function eleminarCaja(id) {
 
 }
 
-/*
-para que muerste y oculte el formulario de abajo
-sin hacer*/
-function toggleForm(){
-    if(formMostrado){
-        document.getElementById('nuevaReceta').style.bottom = '-20px';
+/*para que muestre y oculte el formulario de abajo*/
+function toggleForm() {
+    if (formMostrado) {
+        document.getElementById('menuForm').style.bottom = '-40px';
         //ocultar
     } else {
-        document.getElementById('nuevaReceta').style.bottom = '0';
+        document.getElementById('menuForm').style.bottom = '0';
         //mostrar
     }
+    formMostrado = !formMostrado;
 }
 
-/*rellenar el modal*/
-function crearModal (){
+/*rellenar el modal con los datos de cada receta*/
+function crearModal() {
     var contenido = `<div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">##receta##</h4>
@@ -140,4 +145,92 @@ function crearModal (){
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
                     </div>`;
+    var modal = document.getElementById('modalReceta');
+    var receta = event.target.parentElement.parentElement; //div de la receta
+
+    var posicion = receta.dataset.id;
+
+    var nombre = recetas[posicion].nombre;
+
+    if (recetas[posicion].ingredientes.length > 0) {
+
+        var ingredientes = `<ul>
+                            <p>Ingredientes</p>
+                            ##ingredienteLista##
+                        </ul>`;
+        var ingredientesLista = '';
+        recetas[posicion].ingredientes.forEach((ingrediente) => {
+            ingredientesLista += `<li>${ingrediente}</li>`;
+
+        });
+
+        ingredientes = ingredientes.replace('##ingredienteLista##', ingredientesLista);
+
+
+    } else {
+        var ingredientes = 'La receta no tiene ingredientes aun';
+    }
+
+    contenido = contenido.replace('##receta##', nombre);
+    contenido = contenido.replace('##ingredientes##', ingredientes);
+
+
+    modal.innerHTML = contenido;
+
+}
+
+/* validar si los campos son del tipo correcto y contienen informacion */
+function validar(nombre, foto, likes, cocinero) {
+
+    var vNombre = validarTexto(nombre);
+    var vFoto = validarTexto(foto);
+    var vLikes = validarNumber(likes);
+    var vCocinero = validarTexto(cocinero);
+
+    if (!vNombre) {
+        rNombre.style.border = '2px solid red';
+        return false;
+    } else if (!vFoto) {
+        rFoto.style.border = '2px solid red';
+        return false;
+    } else if (!vLikes) {
+        rLikes.style.border = '2px solid red';
+        return false;
+    } else if (!vCocinero) {
+        rCocinero.style.border = '2px solid red';
+        return false;
+    } else {
+        return true;
+    }
+
+}
+
+function validarTexto(texto) {
+    if (texto !== '') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validarNumber(num) {
+    if (num !== NaN && num !== '') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function resetearForm() {
+    rNombre.value = '';
+    rFoto.value = '';
+    rLikes.value = '';
+    rCocinero.value = '';
+}
+
+function resetearBordes() {
+    rNombre.style.border = '1px solid grey';
+    rFoto.style.border = '1px solid grey';
+    rLikes.style.border = '1px solid grey';
+    rCocinero.style.border = '1px solid grey';
 }

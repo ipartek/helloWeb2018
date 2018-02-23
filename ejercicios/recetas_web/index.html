@@ -31,17 +31,17 @@
 
             <!--thumbnail de la receta -->
             <!--
-                <div class="thumbnail box">
+                <div class="thumbnail box" data-id="##id##">
                     <img class="img-responsive" src="##src##" alt="##alt##">
                     <div class="caption">
                         <h3>##nombreReceta##</h3>
                         <div class="info">
-                        <span class="likes"><i class="fa fa-heart" aria-hidden="true"></i>##likes##</span>
+                        <span class="likes"><i class="fa fa-heart" aria-hidden="true"></i> ##likes##</span>
                         <span class="cocinero">##cocinero##</span>
-                    </div>
+                        </div>
                     </div>
                     <div class="ingredientes">
-                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#ingredientesModal">Ingredientes</a>
+                        <span role="button" data-toggle="modal" data-target="#ingredientesModal" onclick="crearModal()"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</span>
                     </div>
                     <span class="close"><i class="fa fa-times-circle" aria-hidden="true" onclick="eleminarCaja(##id##)"></i></span>
                 </div>
@@ -65,18 +65,24 @@
         <!-- Modal -->
         <div class="modal fade" id="ingredientesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
-                <div class="modal-content">
+                <div class="modal-content" id="modalReceta">
+
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">##receta##</h4>
                     </div>
                     <div class="modal-body">
-                        ##ingredientes##
+
+                        <ul>
+                            <p>Ingredientes</p>
+                            ##ingredienteLista##
+                        </ul>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
                     </div>
+
                 </div>
             </div>
         </div>
@@ -87,30 +93,30 @@
     <!--end container-->
 
     <!-- formulario fixed -->
-    <div class="container-fluid" id="nuevaReceta">
+    <div class="container-fluid" id="menuForm">
         <div id="menuRecetas">
-            <a href="#" class="btn btn-primary" onclick="toggleForm()">Nueva receta</a>
+            <a onclick="toggleForm()">Nueva receta</a>
         </div>
         <div id="divFormRecetas">
             <form class="form-inline" onsubmit="nuevaReceta()">
-                <div class="form-group">
+                <div class="form-group col-xs-3">
                     <label class="sr-only" for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" placeholder="nombre">
                 </div>
-                <div class="form-group">
+                <div class="form-group col-xs-2">
                     <label class="sr-only" for="foto">Foto</label>
                     <input type="text" class="form-control" id="foto" placeholder="foto">
                 </div>
-                <div class="form-group">
+                <div class="form-group col-xs-2">
                     <label class="sr-only" for="likes">Foto</label>
                     <input type="number" class="form-control" id="likes" placeholder="likes">
                 </div>
-                <div class="form-group">
+                <div class="form-group col-xs-3">
                     <label class="sr-only" for="cocinero">Cocinero</label>
                     <input type="text" class="form-control" id="cocinero" placeholder="cocinero">
                 </div>
 
-                <button type="button" class="btn btn-success" onclick="nuevaReceta()">CREAR</button>
+                <button type="button" class="btn btn-success col-xs-2" onclick="nuevaReceta()">CREAR</button>
             </form>
         </div>
     </div>

@@ -9,6 +9,7 @@
     float: left;
     margin-top: 1em;
     margin-right: 3em;
+
 }
 
 .header .h1 {
@@ -30,11 +31,27 @@
 }
 
 .box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+
+    padding-top: 2em;
     position: relative;
     height: auto;
-    width: 24%;
+    width: 23%;
+    margin: 10px 1%;
     text-align: center;
     margin-bottom: 5px;
+
+
+}
+
+.img-responsive{
+    max-height: 200px;
+    width: auto;
 }
 
 
@@ -61,27 +78,68 @@
 
 }
 
-.info{
-    margin-bottom: 5px;
-}
-.info .likes {
-    display: inline-block;
-   text-align: left;
+.caption{
+    width: 90%;
+    margin: auto;
+
 }
 
-.info .cocinero {
-    display: inline-block;
-     text-align: right;
+.caption .h3 {
+    width: 90%;
+    text-align: center;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.info .cocinero{
+    text-align: right;
 }
 
 .ingredientes {
-    display: block;
-    bottom: 5px;
-    width: 80%;
+    position: absolute;
+    bottom: 3px;
+    left: 5%;
+    border-top: 2px solid gray;
+
+    width: 90%;
     margin: auto;
+
+
 }
 
-#nuevaReceta {
+#menuForm {
+    margin: 0;
+    padding: 0;
     position: fixed;
-    bottom: 0;
+    bottom: -40px;
+    transition-duration: .5s;
+
 }
+
+#menuRecetas, #divFormRecetas {
+    margin: 0;
+    padding: 0;
+    height: 30px;
+
+}
+
+#menuRecetas a{
+    margin-left: 1em;
+    padding: 1em;
+    border: 2px solid black;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    background-color: gray;
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+#menuRecetas a:hover{
+    cursor: pointer;
+}
+

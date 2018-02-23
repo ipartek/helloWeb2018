@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RecetasWeb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body onload="init()">
+
+    <div class="container-fluid">
+        <header>
+            <h1><i class="fa fa-book fa-3" aria-hidden="true"></i>RecetasWeb</h1>
+        </header>
+
+
+    </div>
+    <div class="container">
+        <h2>Recetas</h2>
+        <div class="row" id="recetas">
+            <!--<div class="col-xs-12 col-sm-6 col-md-4 detalleReceta" data-posicion=`+i+`>
+               <i class="fa fa-times-circle fa-2x" aria-hidden="true" onclick="eliminarReceta()"></i>
+                <div class="thumbnail">
+                    <img src="`+recetas[i].foto+`">
+                    <div class="caption">
+                        <h2>`+recetas[i].nombre+`</h2><p>
+                        <i class="fa fa-heart likes" aria-hidden="true"></i><span class="likes">`+recetas[i].likes+`</span> <span class="cocinero">`+recetas[i].cocinero+`</span></p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye fa-2" aria-hidden="true"></i>
+Ver Recetas</button>
+
+
+                    </div>
+                </div>
+            </div>-->
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Ingredientes de la receta</h4>
+                </div>
+                <div class="modal-body">
+                    aqui vienen las recetas :D
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+       <div id="desplegable">
+        <h3 id="cambiante"><a href="#desplegable" onclick="cambiarDestino()">Anadir nueva receta</a></h3>
+        <form action="#">
+            <input type="text" id="nombre" method="Post" oninvalid="setCustomValidity('El campo debe contener al menos dos letras, y sin números')" required pattern="[A-Za-z]{2,120}" placeholder="Nombre de la receta">
+            <input type="text" id="foto" method="Post" oninvalid="setCustomValidity('El campo debe contener al menos dos letras, y sin números')" required pattern="[A-Za-z]{2,120}" placeholder="Url de la foto de la receta">
+            <input type="number" method="Post" required id="likes" placeholder="Numero de likes">
+            <input type="text" id="cocinero" method="Post" oninvalid="setCustomValidity('El campo debe contener al menos dos letras, y sin números')" required pattern="[A-Za-z]{2,120}" placeholder="Nombre del cocinero">
+            <input onclick=anadirReceta() class="btn btn-default"id="envio-formulario" type="submit" value="Añadir Receta">
+        </form>
+        </div>
+        <div class="info">
+            <p>@iparcheff 2018</p>
+        </div>
+    </footer>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/receta.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

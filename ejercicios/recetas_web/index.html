@@ -123,7 +123,7 @@
                         <div class="row">
                             <div class="col-xs-3">
 
-                                <input type="text" id="nombre" class="form-control" placeholder="Título receta">
+                                <input type="text" id="nombre" class="form-control" placeholder="Título receta" required="required" pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('Introduce tu nombre de la receta, por favor')" oninput="setCustomValidity('')">
                             </div>
                             <div class="col-xs-3">
 
@@ -131,15 +131,15 @@
                             </div>
                             <div class="col-xs-3">
 
-                                <input type="text" class="form-control" id="descripcion" placeholder="Breve descripción de la receta">
+                                <input type="text" class="form-control" id="descripcion" placeholder="Breve descripción de la receta" required="required" pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('Escribe brevemente una descripción de la receta')" oninput="setCustomValidity('')">
                             </div>
                             <div class="col-xs-3">
 
-                                <input type="text" class="form-control" id="cocinero" placeholder="Cocinero o autor de la receta">
+                                <input type="text" class="form-control" id="cocinero" placeholder="Cocinero o autor de la receta" required="required" pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('¿Quíen es el cocinero?')" oninput="setCustomValidity('')">
                             </div>
                         </div>
 
-                        0<button  onclick="crearReceta()" class="btn btn-default">Crear</button>
+                        <button  onclick="crearReceta()" class="btn btn-default">Crear</button>
                     </form>
                 </div>
             </div>

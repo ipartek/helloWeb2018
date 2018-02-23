@@ -56,8 +56,21 @@ body{
 }
 
 .receta{
-    display: flex;
+   /* position: absolute; */
 
+}
+
+.cerrar{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    top:-10px;
+    padding-top: 5px;
+    text-align:center;
+    z-index: 999;
+    background-color: grey;
+    float: right;
+    font-weight: 600;
 }
 
 

@@ -45,7 +45,6 @@ body{
 }
 
 .containerRecetas{
-    display: flex;
     padding-bottom: 200px;
     background-color: beige;
     padding-top: 40px;
@@ -58,6 +57,7 @@ body{
 
 .receta{
     display: flex;
+
 }
 
 

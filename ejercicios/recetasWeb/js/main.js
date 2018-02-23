@@ -19,3 +19,16 @@ function init(){
     //añadirlas al array recetas
 
 }
+
+function nuevaReceta(){
+    var formulario=document.getElementById("formulario");
+    var nombre=formulario.nombre.textContent;
+    var foto=formulario.foto.textContent;
+    var likes=formulario.likes.textContent;
+    var cocinero=formulario.cocinero.textContent;
+
+    contenedor=document.getElementById("recetas");
+
+
+
+}

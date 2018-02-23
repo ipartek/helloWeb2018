@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recetas</title>
+
+    <!--  Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Bootstrap Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--Font awesome icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body onload="init()">
+
+    <div class="header container-fluid">
+        <img src="http://cdn.onlinewebfonts.com/svg/img_443286.png" alt="Icono">
+        <h1>Recetas</h1>
+    </div>
+    <div class="container">
+
+        <div class="row container-flex" id="recetas">
+
+            <!--thumbnail de la receta -->
+            <!--
+                <div class="thumbnail box">
+                    <img class="img-responsive" src="##src##" alt="##alt##">
+                    <div class="caption">
+                        <h3>##nombreReceta##</h3>
+                        <div class="info">
+                        <span class="likes"><i class="fa fa-heart" aria-hidden="true"></i>##likes##</span>
+                        <span class="cocinero">##cocinero##</span>
+                    </div>
+                    </div>
+                    <div class="ingredientes">
+                        <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#ingredientesModal">Ingredientes</a>
+                    </div>
+                    <span class="close"><i class="fa fa-times-circle" aria-hidden="true" onclick="eleminarCaja(##id##)"></i></span>
+                </div>
+            -->
+            <!--end thumbnail-->
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="ingredientesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">##receta##</h4>
+                    </div>
+                    <div class="modal-body">
+                        ##ingredientes##
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!--end container-->
+
+    <!-- formulario fixed -->
+    <div class="container-fluid" id="nuevaReceta">
+        <div id="menuRecetas">
+            <a href="#" class="btn btn-primary" onclick="toggleForm()">Nueva receta</a>
+        </div>
+        <div id="divFormRecetas">
+            <form class="form-inline" onsubmit="nuevaReceta()">
+                <div class="form-group">
+                    <label class="sr-only" for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="nombre">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="foto">Foto</label>
+                    <input type="text" class="form-control" id="foto" placeholder="foto">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="likes">Foto</label>
+                    <input type="number" class="form-control" id="likes" placeholder="likes">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="cocinero">Cocinero</label>
+                    <input type="text" class="form-control" id="cocinero" placeholder="cocinero">
+                </div>
+
+                <button type="button" class="btn btn-success" onclick="nuevaReceta()">CREAR</button>
+            </form>
+        </div>
+    </div>
+    <!-- bootstrap -->
+    <!-- Jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Bootstrap Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/receta.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

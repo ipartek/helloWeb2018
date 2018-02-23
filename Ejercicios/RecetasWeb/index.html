@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RecetasWeb</title>
+</head>
+<!-- Latest compiled and minified CSS -->
+<!-- font awesome 4.7 -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="css/styles.css">
+
+<body onload="init()">
+    <h1><i class="fa fa-cutlery" aria-hidden="true"></i> Recetas Web </h1>
+    <div class="container">
+
+
+        <h2>Nuestras mejores recetas <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></h2>
+        <div class="row"id="Inicio-recetas">
+
+            <!-- comienzo del array recetas con sus div
+            <div class=" col-md-4 ">
+                <div class="thumbnail div-contenedor-recetas">
+                    <img src="https://proximaati-com.secure.footprint.net/Assets/Modules/Editorial/Article/Images/receta-pavo-navidad-5-size-3.jpg" alt="imagen de plato">
+                    <div class="caption">
+                        <h3>Nombre plato</h3>
+                        <p><span class="left-span-likes"><i class="fa fa-heart" aria-hidden="true"></i></span><span class="right-span-cocinero">Nombre cocinero</span></p>
+
+                        <button type="button" class="btn btn-primary btn-lg btn-block " data-toggle="modal" data-target="#myModal">
+  <i class="fa fa-eye" aria-hidden="true"></i> Ingredientes
+</button>
+
+
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="btn btn-secondary btn-lg btn-block" class="close" data-dismiss="modal" aria-label="Close">    <span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Ingredientes</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <ul>
+                                            <li>Pollo</li>
+                                            <li>Pollo</li>
+                                            <li>Pollo</li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             Final del array recetas div-->
+
+        </div>
+        <!--div row end -->
+    </div>
+    <!--container-->
+        <!-- Inicio formulario añadir receta -->
+        <div class="container recetaForm">
+            <form action="#" onsubmit="false">
+                <fieldset id="Añadir Receta">
+                    <legend>Añadir receta</legend>
+                    <!-- NombreReceta -->
+                    <div id="colorin-legend">
+                        <input type="text" name="nombre" id="platoNombre" autofocus tabindex="1" placeholder="Nombre_Receta" required pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('El campo nombre es obligatorio')" oninput="setCustomValidity('')">
+                        <!-- FotoReceta -->
+                        <input type="text" name="foto" id="platoFoto" tabindex="2" method="post" placeholder="Foto" required oninvalid="setCustomValidity('El campo foto es obligatorio')" oninput="setCustomValidity('')">
+                        <!-- NumeroLikes -->
+                        <input type="number" id="platoLike" name="likes" tabindex="3" method="post" placeholder="Likes" required oninvalid="setCustomValidity('El campo like es obligatorio')" oninput="setCustomValidity('')">
+                        <!-- NombreCocinero -->
+                        <input type="text" name="nombreCocinero" id="platoCocinero" tabindex="4" method="post" placeholder="Nombre_Cocinero" required oninvalid="setCustomValidity('El campo nombre_cocinero es obligatorio')" oninput="setCustomValidity('')">
+                        <!-- boton Enviar -->
+
+
+                        <input type="submit" value="Ñan"onclick="anadirPlato()">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+
+        <!--Fin añadir receta-->
+
+
+
+
+
+        <footer style="background-color: black;color: white;text-align: center;">&copy;Iparcheff
+            <script>
+                var f = new Date();
+                document.write('<span>' + f.getFullYear() + '</span>');;
+            </script>
+        </footer>
+    <!-- div container -->
+    <!-- enlace de javascript -->
+</body>
+
+<script src="js/main.js" type="text/javascript"></script>
+
+<script src="js/receta.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</html>

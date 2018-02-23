@@ -6,10 +6,7 @@ window.addEventListener('keydown',function(e){playSound();});
 //keypress: devuelve mayusculas y minuscuals
 //keydown: devuelve el mismo codigo en mayus y minus
 
-function removeTransition(e) {
-    if (e.propertyName !== 'transform') return;
-    e.target.classList.remove('playing');
-  }
+
 
 function playSound (){
     

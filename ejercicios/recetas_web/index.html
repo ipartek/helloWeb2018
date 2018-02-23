@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recetas Web</title>
+
+    <!-- ********************************CSS *************************************************-->
+
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- font-awesome4.7.0 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body onload="init()">
+    <header>
+        <div class="container">
+            <h1><i class="fa fa-cutlery" aria-hidden="true"></i>&nbsp;Recetas Web</h1>
+
+        </div>
+    </header>
+    <div class="container">
+        <div id ="contenedorRecetas" class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="https://static.hogarmania.com/archivos/201105/562-conejo-al-chilindron-con-patatas-xl-668x400x80xX.jpg" alt="pollo al chilindrón">
+                    <div class="caption">
+                        <h3>Conejo al chilindrón.</h3>
+                        <p>Un plato de conejo con su salsa típica de Navarra, con tomate, verdura, pimiento choricero y vino blanco</p>
+                        <p><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;16 Likes</p>
+                        <a class="links" href="pollo" data-toggle="modal" data-target="#conejo">Ingredientes</a>
+                        <h5>Karlos Arguiñano</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="https://static.hogarmania.com/archivos/201106/bacalao-kokotxas-crema-ligera-xl-668x400x80xX.jpg" alt="bakalao Kokotxas">
+                    <div class="caption">
+                        <h3>Bacalao con kokotxas.</h3>
+                        <p>Un taco de bacalao con sus kokotxas al pil pil y acompañado por una crema ligera de patata y pimiento.</p>
+                        <i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Likes
+                        <p><a class="links" href="#">Ingredientes</a></p>
+                        <h5>Juan Maria Arzak</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="http://canalcocina.es/medias/_cache/zoom-1197739ab46c618b2f9bf0e85d23b0a8-920-518.jpg" alt="pitxon">
+                    <div class="caption">
+                        <h3>Pitxon con sirope de cerezas.</h3>
+                        <p>Receta de conejo al chilindrón con patatas, un plato de conejo con su salsa típica de Navarra, con tomate, verdura, pimiento choricero y vino blanco</p>
+                        <i class="fa fa-heart" aria-hidden="true"></i>&nbsp;4 Likes
+                        <p><a class="links" href="#">Ingredientes</a></p>
+                        <h5>Eneko Atxa</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--*********************************************MODAL***************************************************************-->
+
+        <div class="modal fade" id="conejo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Conejo al Chilindrón</h4>
+                    </div>
+                    <div class="modal-body">
+                       <p>Para 4 personas:</p>
+                       <ul>
+                           <li>1 Conejo</li>
+                           <li>1 cebolla</li>
+                           <li>1 pimiento verde</li>
+                           <li>5 dientes de ajo</li>
+                           <li>2 tomates</li>
+                           <li>2 patatas</li>
+                           <li>carne de 4 pimientos choriceros</li>
+                           <li>2 rebanadas de pan</li>
+                           <li>Harina</li>
+                           <li>1 vaso de vino blanco</li>
+                           <li>1 vaso de caldo o de agua</li>
+                           <li>Vinagre</li>
+                           <li>Aceite virgen extra</li>
+                           <li>Sal</li>
+                           <li>Pimienta</li>
+                           <li>Perejil</li>
+                       </ul>
+                       <hr>
+                        <h4>Elaboración</h4>
+                        <hr>
+                        <p>Trocea el conejo y salpimiéntalo, reboza en harina y fríe en una sartén con aceite. Reserva.</p>
+                        <p>Para el chilindrón, pica 4 dientes de ajo, la cebolla y el pimiento y ponlos a pochar en una cazuela con aceite. Sazona. Añade el tomate pelado y picado. Cocina lentamente. Añade a la verdura pochada, la carne de pimiento choricero, el vino blanco, el caldo o el agua y por ultimo, el conejo. Sazona y deja guisar a fuego suave durante 35-40 minutos.</p>
+                        <p>Maja en un mortero 1 diente de ajo, dos rebanadas de pan frito, dos cucharadas de vinagre y un chorro de aceite. Agrega este majado a la cazuela y cocina otros 4-5 minutos a fuego muy suave.
+</p>
+                        <p>Pela, trocea y fríe las patatas en una sartén con abundante aceite. Escurre. Sirve el conejo acompañado con las patatas fritas.</p>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--***************************************************FOOTER**********************************************************************-->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2>Nueva Receta</h2>
+                    <form onsubmit="return false;">
+                        <div class="row">
+                            <div class="col-xs-3">
+
+                                <input type="text" id="nombre" class="form-control" placeholder="Título receta">
+                            </div>
+                            <div class="col-xs-3">
+
+                                <input type="text" class="form-control" id="foto" placeholder="URL de la foto">
+                            </div>
+                            <div class="col-xs-3">
+
+                                <input type="text" class="form-control" id="descripcion" placeholder="Breve descripción de la receta">
+                            </div>
+                            <div class="col-xs-3">
+
+                                <input type="text" class="form-control" id="cocinero" placeholder="Cocinero o autor de la receta">
+                            </div>
+                        </div>
+
+                        0<button  onclick="crearReceta()" class="btn btn-default">Crear</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row company">
+                <script>
+                    update = new Date().getFullYear();
+                    document.write("&copy; &nbsp;Iparcheff" + "&nbsp;" + update);
+                </script>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ********************************************BOOTSTRAP****************************************************************-->
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--****************************************************JAVASCRIPT***********************************************************-->
+    <script src="js/main.js"></script>
+    <script src="js/receta.js"></script>
+</body>
+
+</html>

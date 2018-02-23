@@ -1,0 +1,25 @@
+%btn-generico {
+    border: 1px solid $primaryColor;
+    color: $secondaryColor;
+    display: inline-block;
+    height: 50px;
+    min-width: 100px;
+
+    /*Usamos mixin*/
+    @include border-radius(10px);
+
+    &:hover {
+        background-color: $accentColor;
+    }
+}
+
+.btnG {
+    @extend %btn-generico;
+}
+
+.btnG-azul {
+    @extend %btn-generico;
+    &:hover {
+        background-color: aqua;
+    }
+}

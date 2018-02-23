@@ -1,0 +1,76 @@
+.box {
+    width: 100%;
+    height: 300px;
+    border: 1px solid lightgrey;
+    -webkit-box-shadow: 10px 10px 45px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 45px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 45px -4px rgba(0, 0, 0, 0.75);
+    position: relative;
+    margin-bottom: 50px;
+    .cross {
+        padding: 0;
+        position: absolute;
+        top:-0.5em;;
+        right: -0.5em;;
+        font-size: 2em;
+        color: black;
+        line-height: 1em;
+        cursor:pointer;
+    }
+
+    .foto {
+        width: 100%;
+        height: 40%; //        border: solid orange;
+        background-image: url("https://picsum.photos/200/300/?random");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .desc {
+        width: 100%;
+        height: 45%; //        border: solid blue;
+        text-align: center;
+        .title {
+            font-family: 'Indie Flower', cursive;
+            display: block;
+            font-size: 1.8em;
+            font-weight: bold;
+            border-bottom: 1px solid lightgrey;
+            padding: 5px;
+        }
+
+        .likeCoc {
+            height: 70%; //            border: solid red;
+            display: flex;
+            align-items: center;
+        }
+
+        .like,
+        .cocinero {
+            width: 50%; //            border: solid;
+            margin: 0;
+            font-size: 1.3em;
+        }
+
+        .like i {
+            color: red;
+            font-weight: bold;
+        }
+
+        .cocinero {
+            font-family: "lobster";
+        }
+
+    }
+
+    .ing {
+        height: 15%;
+        border-top: 1px solid lightgrey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3em;
+        cursor:pointer;
+    }
+}

@@ -1,18 +1,17 @@
-
 var recetas = [];
 
 /* Creamos unas recetas de prueba */
 
-function init(){
+function init() {
 
-   var rPollo = new Receta("rPollo", "https://www.petitchef.es/imgupl/recipe/pollo-al-chilindron-con-verduras--md-100954p148148.jpg", 13, "Robin Food");
+    var rPollo = new Receta("rPollo", "https://www.petitchef.es/imgupl/recipe/pollo-al-chilindron-con-verduras--md-100954p148148.jpg", 13, "Robin Food");
 
     rPollo.addIngrediente("pollo");
     rPollo.addIngrediente("ajo");
     rPollo.addIngrediente("tomate");
     rPollo.addIngrediente("chilindron");
 
-   // console.log("1º receta %o", rPollo);
+    // console.log("1º receta %o", rPollo);
 
 
     // Crear mas recetas
@@ -21,7 +20,7 @@ function init(){
 
 }
 
-function crear(){
+function crear() {
 
     var nombre = document.getElementById("inlineFormInputName").value;
     console.log(nombre);
@@ -36,6 +35,7 @@ function crear(){
 
     contenedor.innerHTML = `<div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
+                    <span class="close" onclick="eliminarBox(event)">x</span>
                     <img src=${foto} alt="Direccion de imagen">
                     <hr>
                     <div class="caption">
@@ -54,21 +54,17 @@ function crear(){
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="modal1Label">Ingredientes del pollo al chilindrón</h4>
+                                        <h4 class="modal-title" id="modal1Label">Ingredientes del ${nombre}</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="embed-responsive embed-responsive-16by9">
                                             <ul>
-                                                <li>1 pollo troceado</li>
-                                                <li>1 pimiento rojo grande</li>
-                                                <li>1 pimiento verde grande</li>
-                                                <li>1 cebolla grande</li>
-                                                <li>4 dientes de ajo</li>
-                                                <li>4 tomates maduros</li>
-                                                <li>250 ml de vino blanco</li>
-                                                <li>100 gr de jamón serrano</li>
-                                                <li>Aceite de oliva virgen suave</li>
-                                                <li>Sal (al gusto)</li>
+                                                <li>Ingrediente 1</li>
+                                                <li>Ingrediente 2</li>
+                                                <li>Ingrediente 3</li>
+                                                <li>Ingrediente 4</li>
+                                                <li>Ingrediente 5</li>
+                                                <li>...</li>
                                             </ul>
                                         </div>
 
@@ -87,4 +83,10 @@ function crear(){
                 </div>
             </div>` + contenedor.innerHTML;
 
+}
+
+
+function eliminarBox(e) {
+    var boxEliminar = e.target.parentElement;
+    boxEliminar.style.display = "none";
 }

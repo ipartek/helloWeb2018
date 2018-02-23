@@ -13,6 +13,18 @@ header{
     padding-bottom: 60px;
 }
 
+.thumbnail .close{
+            position: absolute;
+            top: 0px;
+            right: 15px;
+            color: #FFF;
+            background-color: #000;
+            font-size: 0.8em;
+            border-radius: 50%;
+            opacity: 1;
+            padding: 2px;
+        }
+
 
 footer{
   position: fixed;

@@ -36,6 +36,11 @@ header {
   margin-bottom: 20px;
 }
 
+header span {
+  margin-left: 10px;
+  font-family: "lobster";
+}
+
 footer {
   position: fixed;
   bottom: 0;

@@ -1,0 +1,70 @@
+.navbar-header a{
+
+    font-size: 16px;
+
+}
+
+footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+    font-size: 1.1em;
+    position: fixed;
+    height: 145px;
+
+
+
+}
+
+.row{
+    position: relative;
+
+    bottom: 50px;
+
+}
+
+.form-group{
+
+    margin-bottom: 0px;
+}
+
+.navbar-brand{
+
+    font-size: 18px;
+
+}
+
+.fa-eye:hover{
+
+    color: yellow;
+
+
+}
+
+.thumbnail span{
+    margin-top: -280px;
+            right: 8px;
+            color: #fff;
+            background-color: #000;
+            font-size: 1.4em;
+            border-radius: 50%;
+            opacity: 1;
+            padding: 2px;
+
+
+}
+
+.fa-heart:hover{
+
+    color: red;
+
+}
+
+.columnas{
+
+    margin-top: 10%;
+
+}

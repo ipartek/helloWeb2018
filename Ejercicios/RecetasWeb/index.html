@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body onload="init()">
+
+   <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- The mobile navbar-toggle button can be safely removed since you do not need it in a non-responsive implementation -->
+          <a class="navbar-brand" href="#"><i class="fa fa-cutlery fa-2x" aria-hidden="true"></i> Recetas</a>
+        </div>
+        <!-- Note that the .navbar-collapse and .collapse classes have been removed from the #navbar -->
+
+      </div>
+    </nav>
+
+
+    <div class="container">
+
+
+        <div id="contenedor_recetas"class="row">
+            <!-- Primer row -->
+
+            <div class="columnas col-md-4">
+                <div class="thumbnail text-center">
+                    <img src="/Ejercicios/RecetasWeb/img/pollo.png" alt="..." >
+                     <span onclick="borrarCaja()" class="close">X</span>
+                    <div class="caption">
+                        <h3>Pollo al chilindron</h3>
+                        <p>Pollo con Salsa Chilindron.</p>
+                        <i class="fa fa-heart" aria-hidden="true">16</i> Arzak
+                        <p><a href="#pollo" class="btn btn-primary" role="button" data-toggle="modal" data-target="#pollo"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="columnas col-md-4">
+                <div class="thumbnail text-center">
+                    <img src="/Ejercicios/RecetasWeb/img/bacalao.png" alt="..."><span onclick="borrarCaja(##posicion)" class="close">X</span>
+                    <div class="caption">
+                        <h3>Bacalao al pil-pil</h3>
+                        <p>Bacalao con aceite de oliva, ajo y guindillas.</p>
+
+                        <i class="fa fa-heart" aria-hidden="true">16</i> Karlos Arguiñano
+
+
+
+                        <p><a href="#bacalao" class="btn btn-primary" role="button" data-toggle="modal" data-target="#bacalao"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="columnas col-md-4">
+                <div class="thumbnail text-center">
+                    <img src="/Ejercicios/RecetasWeb/img/setas.png" alt="..."><span onclick="borrarCaja(##posicion)" class="close">X</span>
+                    <div class="caption">
+                        <h3>Revuelto de zizas</h3>
+                        <p>Setas de todo tipo</p>
+                        <i class="fa fa-heart" aria-hidden="true">16</i> Eva Arguiñano
+                        <p><a href="#bacalao" class="btn btn-primary" role="button" data-toggle="modal" data-target="#setas"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+
+<!---MODALES---->
+
+        <div class="modal fade" id="pollo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Pollo con Chilindron</h4>
+                </div>
+                <div class="modal-body">
+                    <ul>
+
+                       <li>1 pollo troceado</li>
+                       <li>1 pimiento rojo grande</li>
+                       <li>1 pimiento verde grande</li>
+                       <li>1 cebolla grande</li>
+                       <li>4 dientes de ajo</li>
+                       <li>4 tomates maduros</li>
+                       <li>250 ml de vino blanco</li>
+                       <li>100 gr de jamón serrano</li>
+                       <li>Aceite de oliva virgen suave</li>
+                       <li>Sal</li>
+
+
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div class="modal fade" id="bacalao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Bacalao al pil-pil</h4>
+                </div>
+                <div class="modal-body">
+                    <ul>
+
+                       <li>2 lomos de bacalao de lomo alto</li>
+                       <li>2 patatas</li>
+                       <li>2 dientes de ajo</li>
+                       <li>1 limón</li>
+                       <li>1 huevo</li>
+                       <li>1 cucharada de alga wakame seca triturada</li>
+                       <li>40 g de mantequilla</li>
+                       <li>100 ml de leche</li>
+                       <li>Agua</li>
+                       <li>Sal</li>
+                       <li>Aceite de oliva virgen extra</li>
+                       <li>Perejil</li>
+
+
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div class="modal fade" id="setas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Revuelto de zizas</h4>
+                </div>
+                <div class="modal-body">
+                    <ul>
+
+                       <li>500 g de zizas de primavera</li>
+                       <li>8 huevos</li>
+                       <li>1 lechuga</li>
+                       <li>1 tomate</li>
+                       <li>1 cebolleta</li>
+                       <li>Aceite de oliva virgen extra</li>
+                       <li>Vinagre</li>
+                       <li>Sal</li>
+                       <li>Perejil</li>
+
+
+
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<!---FIN MODALES---->
+
+
+
+        <!--FORMULARIO--->
+   <footer>
+       <form onsubmit="return false" role="form">
+
+   <h2>Nueva Receta</h2>
+       <div class="form-inline">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" id="nombre"
+           placeholder="Introduce el nombre de la receta">
+
+  <label for="foto">Adjuntar una Foto</label>
+    <input type="text" id="foto">
+
+    <label for="likes">Likes</label>
+    <input type="text" class="form-control" id="likes"
+           placeholder="Cuanta puntuacion le pones?">
+
+ <label for="cocinero">Cocinero</label>
+    <input type="text" class="form-control" id="cocinero"
+           placeholder="Introduce el nombre del Cocinero">
+           <br>
+
+           <label for="descripcion">Descripcion</label>
+    <input type="text" class="form-control" id="descripcion"
+           placeholder="Introduce la descripcion">
+
+  <button type="submit" class="btn btn-default" onclick="anadir_receta()">Crear</button>
+  </div>
+
+
+</form>
+      <br>
+
+
+
+          <i class="fa fa-copyright" aria-hidden="true">IparCheck</i>
+
+
+
+
+      </footer>
+
+    </div>
+
+
+        <!--FIN_FORMULARIO--->
+
+        <!-- QUERY -->
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+        <script src="JS/receta.js"></script>
+        <script src="JS/main.js"></script>
+
+</body>
+</html>

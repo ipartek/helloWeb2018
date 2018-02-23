@@ -1,0 +1,29 @@
+.container{
+    max-width: 900px;
+    margin: auto;
+    color: teal;
+
+}
+
+header{
+    background-color: #E6E6E6;
+}
+
+.row{
+    padding-bottom: 60px;
+}
+
+footer{
+  position: fixed;
+    height: 60px;
+    bottom: 0;
+    background-color: #E6E6E6;
+}
+
+.footer{
+    color: #000000;
+    opacity: 0.8;
+    font-size: 1em;
+}
+
+

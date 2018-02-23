@@ -63,6 +63,10 @@ function anadir_receta() {
 
 function borrarCaja(){
 
+    var close=document.getElementsByClassName("close").checked = true;
+
+
+    close.innerHTML ="";
 
 
 }

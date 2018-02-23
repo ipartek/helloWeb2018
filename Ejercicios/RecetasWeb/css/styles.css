@@ -1,3 +1,13 @@
+html,body{
+padding: 0 0 125px;
+        margin: 0px;
+
+
+}
+
+
+
+
 .navbar-header a{
 
     font-size: 16px;
@@ -44,7 +54,7 @@ footer {
 
 }
 
-.thumbnail span{
+.close{
     margin-top: -280px;
             right: 8px;
             color: #fff;

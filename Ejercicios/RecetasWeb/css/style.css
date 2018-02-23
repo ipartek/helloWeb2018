@@ -1,0 +1,35 @@
+.likes {
+    float: left;
+
+}
+
+.cocinero {
+    float: right
+}
+
+.thumbnail {
+
+    padding: 15px;
+}
+
+.likeCoci {
+    padding: 15px;
+}
+
+footer {
+    display: block;
+    height: 80px;
+    width: auto;
+    position: fixed;
+    bottom: 0px;
+    left:0px;
+    border: 1px solid #000;
+    background-color: aqua;
+}
+
+#pie {
+    font-size: 15px;
+}
+#exit{
+    float:right;
+}

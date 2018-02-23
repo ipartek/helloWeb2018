@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recetas Web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--custom CSS-->
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fa fa-book" aria-hidden="true"></i>Recetas Web</h1>
+        </div>
+    </header>
+    <div class="row" id="contenedorRecetas">
+        <div class="col-sm-4 col-md-4">
+            <div class="thumbnail">
+               <span id="exit" onclick="eliminarBox(0, event)"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span>
+                <img src="http://bacalaoalpilpil.info/img/bacalao-al-pil-pil-rapido-226.jpg" alt="...">
+                <div class="caption">
+                    <h3>Bacalao al Pil-Pil</h3>
+                    <p class="likeCoci"><span class="likes"><i class="fa fa-heart" aria-hidden="true"></i> 1</span><span class="cocinero">Belén Esteban</span></p>
+                    <!-- Trigger the modal with a button -->
+                    <p><i class="fa fa-eye" aria-hidden="true"></i><a data-toggle="modal" data-target="#myModal">Ingredientes</a></p>
+
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Ingredientes</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <li>4 trozos de bacalao salado. </li>
+                                    <li>5 dientes de ajo.</li>
+                                    <li>1/2 guindilla.</li>
+                                    <li>300 ml. de aceite virgen extra.</li>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="thumbnail">
+               <span id="exit" onclick="eliminarBox(0, event)"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span>
+                <img src="http://www.recetasdiarias.com/wp-content/uploads/2010/01/pollo-al-chilindron.jpg" alt="...">
+                <div class="caption">
+                    <h3>Pollo al Chilindrón</h3>
+                    <p class="likeCoci"><span class="likes"><i class="fa fa-heart" aria-hidden="true"></i> 100</span><span class="cocinero">Paquirrín</span></p>
+                    <p><i class="fa fa-eye" aria-hidden="true"></i><a data-toggle="modal" data-target="#myModal2">Ingredientes</a></p>
+
+                    <!-- Modal -->
+                    <div id="myModal2" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Ingredientes</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <li>1 pollo troceado.</li>
+                                    <li>1 pimiento rojo grande.</li>
+                                    <li>1 pimiento verde grande.</li>
+                                    <li>1 cebolla grande.</li>
+                                    <li> 4 dientes de ajo.</li>
+                                    <li>4 tomates maduros.</li>
+                                    <li>250 ml de vino blanco.</li>
+                                    <li>100 gr de jamón serrano.</li>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="thumbnail">
+               <span id="exit" onclick="eliminarBox(0, event)"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span>
+                <img src="https://www.petitchef.es/imgupl/recipe/patatas-a-la-riojana--md-50919p63692.jpg" alt="...">
+                <div class="caption">
+                    <h3>Patatas a la Riojana</h3>
+                    <p class="likeCoci"><span class="likes"><i class="fa fa-heart" aria-hidden="true"></i> 170</span><span class="cocinero">Mario Conde</span></p>
+                    <p><i class="fa fa-eye" aria-hidden="true"></i><a data-toggle="modal" data-target="#myModal3">Ingredientes</a></p>
+
+                    <!-- Modal -->
+                    <div id="myModal3" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Ingredientes</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <li>1 cucharada de aceite de oliva virgen.</li>
+                                    <li>1 cebolla pequeña, picada.</li>
+                                    <li>2 dientes de ajo, picados.</li>
+                                    <li> 1 pimiento rojo, picado en trozos pequeños.</li>
+                                    <li>250 gr de chorizo, cortado en rodajas de 2 cm de grosor.</li>
+                                    <li>1 cucharadita de sal.</li>
+                                    <li>1 cucharada de pimentón dulce.</li>
+                                    <li>1 cucharadita de pimentón picante.</li>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/main.js"></script>
+
+
+
+
+    <footer>
+        <div class="container">
+            <form class="form-inline" onsubmit="return false">
+                <div class="form-group">
+                    <label for="exampleInputName2"></label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre Receta">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2"></label>
+                    <input type="text" class="form-control" id="foto" placeholder="Meter URL de la foto">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2"></label>
+                    <input type="text" class="form-control" id="likes" placeholder="Número likes">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2"></label>
+                    <input type="text" class="form-control" id="chef" placeholder="Cheff">
+                </div>
+                <button class="btn btn-default" onclick="newReceta()">Crear</button>
+            </form>
+            <h2 id="pie">@iparcheff 2018</h2>
+        </div>
+    </footer>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

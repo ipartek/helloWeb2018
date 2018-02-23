@@ -34,9 +34,10 @@
 
     </header>
 
+ <hr>
 
-    <div class="container">
-        <hr>
+    <div class="container" id="contenedorRecetas">
+
 
         <div class="row">
             <div class="col-sm-6 col-md-4">
@@ -59,17 +60,27 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="modal1Label">Ingredientes</h4>
+                                        <h4 class="modal-title" id="modal1Label">Ingredientes del pollo al chilindrón</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="embed-responsive embed-responsive-16by9">
-
+                                            <ul>
+                                                <li>1 pollo troceado</li>
+                                                <li>1 pimiento rojo grande</li>
+                                                <li>1 pimiento verde grande</li>
+                                                <li>1 cebolla grande</li>
+                                                <li>4 dientes de ajo</li>
+                                                <li>4 tomates maduros</li>
+                                                <li>250 ml de vino blanco</li>
+                                                <li>100 gr de jamón serrano</li>
+                                                <li>Aceite de oliva virgen suave</li>
+                                                <li>Sal (al gusto)</li>
+                                            </ul>
                                         </div>
 
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -107,17 +118,33 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="modal1Label">Ingredientes</h4>
+                                        <h4 class="modal-title" id="modal1Label">Ingredientes de la paella de marisco</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="embed-responsive embed-responsive-16by9">
+                                            <ul>
+                                                <li>2 tazas de arroz</li>
+                                                <li>4 tazas de caldo de gambas</li>
+                                                <li>½ kg de calamares</li>
+                                                <li>½ kg de gambas frescas</li>
+                                                <li>1 puñado de conchas de mar almejas y mejillones</li>
+                                                <li>1 cebolla</li>
+                                                <li>1 tomate mediano</li>
+                                                <li>½ pimiento rojo</li>
+                                                <li>2 dientes de ajo</li>
+                                                <li>½ taza de guisantes</li>
+                                                <li>1 ramo de hojas de perejil fresco</li>
+                                                <li>Aceite de oliva</li>
+                                                <li>Sal</li>
+                                                <li>Pimienta</li>
+                                                <li>Colorante amarillo ó algunas hebras de azafrán</li>
+                                            </ul>
 
                                         </div>
 
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -157,17 +184,20 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="modal1Label">Ingredientes</h4>
+                                        <h4 class="modal-title" id="modal1Label">Ingredientes del chuletón</h4>
                                     </div>
                                     <div class="modal-body">
                                         <div class="embed-responsive embed-responsive-16by9">
-
+                                            <ul>
+                                                <li>Chuletón de ternera de más de un kilo</li>
+                                                <li>Sal marina gorda</li>
+                                                <li>Patatas fritas de acompañamiento</li>
+                                            </ul>
                                         </div>
 
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
                             </div>
@@ -189,7 +219,7 @@
     Cerramos el contenido de las 3 imagenes
     -->
 
-        </div>
+    </div>
 
     <!--
     Cerramos el container
@@ -198,51 +228,51 @@
 
 
 
-        <footer>
+    <footer>
 
-            <form>
-                <div class="form-row align-items-center">
-                    <div class="col-sm-2 my-1">
-                        <label class="sr-only" for="inlineFormInputName">Nombre</label>
-                        <input type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre">
-                    </div>
-                    <div class="col-sm-2 my-1">
-                        <label class="sr-only" for="inlineFormInputName">Foto</label>
-                        <input type="text" class="form-control" id="inlineFormInputName" placeholder="Foto">
-                    </div>
-                    <div class="col-sm-2 my-1">
-                        <label class="sr-only" for="inlineFormInputName">Likes</label>
-                        <input type="text" class="form-control" id="inlineFormInputName" placeholder="Likes">
-                    </div>
-                    <div class="col-sm-2 my-1">
-                        <label class="sr-only" for="inlineFormInputName">Cocinero</label>
-                        <input type="text" class="form-control" id="inlineFormInputName" placeholder="Cocinero">
-                    </div>
-                    <div class="col-sm-2 my-1">
-                        <button type="submit" class="btn btn-primary">Crear</button>
-                    </div>
+        <form onsubmit="return false">
+            <div class="form-row align-items-center">
+                <div class="col-sm-2 my-1">
+                    <label class="sr-only" for="inlineFormInputName">Nombre</label>
+                    <input type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre">
                 </div>
-            </form>
-
-            <hr>
-
-            <div class="footer">
-                <i class="fa fa-copyright" aria-hidden="true"></i> <span>Iparchef 2018</span>
+                <div class="col-sm-2 my-1">
+                    <label class="sr-only" for="inlineFormInputImage">Foto</label>
+                    <input type="text" class="form-control" id="inlineFormInputImage" placeholder="Foto">
+                </div>
+                <div class="col-sm-2 my-1">
+                    <label class="sr-only" for="inlineFormInputLikes">Likes</label>
+                    <input type="text" class="form-control" id="inlineFormInputLikes" placeholder="Likes">
+                </div>
+                <div class="col-sm-2 my-1">
+                    <label class="sr-only" for="inlineFormInputChef">Cocinero</label>
+                    <input type="text" class="form-control" id="inlineFormInputChef" placeholder="Cocinero">
+                </div>
+                <div class="col-sm-2 my-1">
+                    <button type="submit" onclick="crear()" class="btn btn-primary">Crear</button>
+                </div>
             </div>
+        </form>
 
-        </footer>
+        <hr>
+
+        <div class="footer">
+            <i class="fa fa-copyright" aria-hidden="true"></i> <span>Iparchef 2018</span>
+        </div>
+
+    </footer>
 
 
-        <script src="js/receta.js"></script>
-        <script src="js/main.js"></script>
+    <script src="js/receta.js"></script>
+    <script src="js/main.js"></script>
 
 
-        <!-- j query -->
-        <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- j query -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-        <!-- Latest compiled and minified JavaScript -->
+    <!-- Latest compiled and minified JavaScript -->
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
 </body>

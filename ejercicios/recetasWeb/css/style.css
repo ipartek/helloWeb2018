@@ -1,0 +1,49 @@
+header{
+    background-color: #2196f3;
+    margin: 0 auto;
+    padding: 10px;
+    color: azure;
+    position: fixed;
+    z-index:99;
+}
+
+
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+form {
+    display: fixed;
+    margin:auto;
+}
+
+form input{
+    float: left;
+    min-width: 15%;
+    margin:1%;
+}
+
+form legend{
+    margin-bottom: 5px;
+}
+
+#cocinero {
+    text-align: right;
+}
+
+footer{
+    background-color: #FFF;
+    z-index:99;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .copyright{
+    margin-top: 70px;
+    clear:both;
+    background-color: #2196f3;
+    color: azure;
+}

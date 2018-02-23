@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recetas Web</title>
+    <!--Bootstrap-->
+    <!-- compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!--Font Awesome-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!--Custom -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body onload="init()">
+
+    <header>
+        <div class="container" id="cont01">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-default navbar-fixed-top">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="glyphicon glyphicon-menu-hamburger"></span>
+                            </button>
+                            <div class="navbar-left logo">
+                                <div class="logo col-md-6">
+                                    <a href="#"><img alt="recetas web" src="img/logo.png">
+                                     </a>
+                                </div>
+                            </div>
+                            <h1 id="logo" class="brand brand-name navbar-left">
+                                Recetas Web
+                            </h1>
+                        </div>
+                    </nav>
+                 </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section>
+        <!-- Container (Recetas) -->
+        <div id="recetas_lista" class="container-fluid text-center bg-grey">
+            <h2>Recetas deliciosas</h2><br>
+            <h4>Participa y agrega la tuya</h4>
+            <div class="row text-center slideanim" id="recetas_lista">
+<!--
+        <div class="col-sm-4">
+            <div class="thumbnail">
+                <button type="button" class="close">
+                  <span>&times;</span>
+                </button>
+                <img src="img/pinchos/pincho01.jpg" alt="pincho" width="400" height="300">
+                <p><strong>Receta 1</strong></p>
+                <p><i class="fa fa-heart"></i> Likes</p>
+                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal">
+                  INGREDIENTES
+                </button>
+            </div>
+        </div>
+-->
+
+            <!-- Modal -->
+<!--
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="modal-title" id="exampleModalLabel">INGREDIENTES</h2>
+                  </div>
+                  <div class="modal-body">
+                      <ul class="ingredientes">
+                          <li>1 pollo</li>
+                          <li>1 cebolla</li>
+                          <li>1 pimiento verde</li>
+                          <li>5 dientes de ajo</li>
+                          <li>2 tomates</li>
+                          <li>2 patatas</li>
+                          <li>carne de 4 pimientos choriceros</li>
+                          <li>2 rebanadas de pan</li>
+                          <li>harina</li>
+                          <li>1 vaso de vino blanco</li>
+                          <li>1 vaso de caldo o de agua</li>
+                          <li>vinagre</li>
+                          <li>aceite virgen extra</li>
+                          <li>sal</li>
+                          <li>pimienta</li>
+                          <li>perejil</li>
+                      </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div> recetas lista
+-->
+
+         </div>
+    </section>
+
+    <!--formulario-->
+    <div id="contact" class="container">
+       <h2 class="text-center">Rellena el formulario para añadir recetas</h2>
+        <h3 class="text-center">¡Únete al equipo de Iparcheff aportando una receta!</h3>
+
+
+        <div class="row">
+          <div class="col-md-12">
+                <div class="row">
+                    <div class="col-sm-3 form-group">
+                        <input class="form-control" id="nombreInput" name="nombre" placeholder="Nombre" type="text" required>
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <input class="form-control" id="fotoInput" name="foto" placeholder="Foto" type="text" required>
+                    </div>
+
+
+                    <div class="col-sm-3 form-group">
+                        <input class="form-control" id="numeroInput" name="likes" placeholder="Likes" type="text" required>
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <input class="form-control" id="cocineraInput" name="cocinera" placeholder="Cocinera/o" type="text" required>
+                    </div>
+                </div>
+
+                <br>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <button class="btn pull-right" type="" onclick="crear()">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+    </div>
+    <footer class="text-center">
+        <a class="up-arrow" href="#cont01" data-toggle="tooltip" title="" data-original-title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+        <p>@ <a href="" data-toggle="tooltip" title="" data-original-title="Visit w3schools">iparcheff</a></p>
+    </footer>
+    <!--SCRIPTS-->
+    <!--jQuery Core 2.2.4-->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!--Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <script src="js/recetas.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,5 +1,5 @@
 // JavaScript local
-//"use strict";
+"use strict";
 
 // variables globales
 var recetas = [];
@@ -58,7 +58,6 @@ function init() {
     rPollo.addIngrediente("ajo");
     rPollo.addIngrediente("tomate");
     rPollo.addIngrediente("chilindrón");
-    console.log("Receta de "+ rPollo.nombre +": %o", rPollo);
     recetas.push(rPollo);
 
     var rBacalao = new Receta("Bacalao al pil pil", "https://www.miscosillasdecocina.com/wp-content/uploads/2014/02/bacalao-pilpil-e1491084486535.jpg", 48, "Karlos Argiñano");
@@ -66,7 +65,6 @@ function init() {
     rBacalao.addIngrediente("ajo");
     rBacalao.addIngrediente("aceite");
     rBacalao.addIngrediente("guindillas");
-    console.log("Receta de "+ rBacalao.nombre +": %o", rBacalao);
     recetas.push(rBacalao);
 
     var rMerluza = new Receta("Merluza en salsa verde", "https://www.gallinablanca.es/files/thumbs/b873e075c3bacf6e90a083cca15571da75ef6640_r900_480_2.jpg", 27, "Arzak");
@@ -75,7 +73,6 @@ function init() {
     rMerluza.addIngrediente("almeja");
     rMerluza.addIngrediente("ajo");
     rMerluza.addIngrediente("perejil");
-    console.log("Receta de "+ rMerluza.nombre +": %o", rMerluza);
     recetas.push(rMerluza);
 
     // muestra en UI las recetas del array 'recetas'
@@ -106,7 +103,7 @@ function mostrarReceta(receta) {
     //nuevaReceta.querySelector(".thumbnail").setAttribute("id", "thm" + idReceta);
     nuevaReceta.querySelector(".imgReceta").setAttribute("src", receta.foto);
     nuevaReceta.querySelector(".imgReceta").setAttribute("alt", "foto " + receta.nombre);
-    nuevaReceta.querySelector(".likes").textContent = receta.likes;
+    nuevaReceta.querySelector(".likes").textContent = " " +receta.likes;
     nuevaReceta.querySelector(".cocinero").textContent = receta.cocinero;
 
     nuevaReceta.style.display = "initial";
@@ -114,6 +111,9 @@ function mostrarReceta(receta) {
 
 }
 
+/*
+*   Función que muestra el año actual en las etiquetas HTML con clase .anio
+*/
 function mostrarAnioActual() {
 
     // variables DOM
@@ -125,17 +125,61 @@ function mostrarAnioActual() {
 
 }
 
+function borrarReceta(elem) {
+
+    // borrar la receta de la lista
+    var nombreReceta = elem.querySelector("div>h3").textContent;
+    var recetaBorrar = recetas.filter(receta => receta.nombre == nombreReceta);
+    var resultado = borrarElemento(recetas, recetaBorrar[0]);
+    if(!resultado) {
+        alert("No se ha podido borrar el elemento");
+        console.warn("No se ha podido borrar el elemento");
+    } else {
+        // borrar la receta de la UI
+        elem.style.display = "none";
+    }
+}
+
+
+/*
+*   Función para borrar un elemento de un array
+*   @array: el array que contiene el elemento
+*   @element: el elemento que se desea borrar
+*   POST: @array sin el @element
+*/
+function borrarElemento(array, element) {
+    /*let index = findWithAttr(array, nombre, element[0].nombre);*/
+    let index = array.indexOf(element);
+    let borrado = false;
+
+    if (index !== -1) {
+        array.splice(index, 1);
+        borrado = true;
+    } else {
+        borrado = false;
+    }
+
+    return borrado;
+}
+
+
 function anadirReceta() {
 
-    let inputNombre = document.getElementById("inputNombre").value;
-    let inputFoto = document.getElementById("inputFoto").value;
-    let inputLikes = document.getElementById("inputLikes").value;
-    let inputCocinero = document.getElementById("inputCocinero").value;
+    let inputNombre = document.getElementById("inputNombre");
+    let inputFoto = document.getElementById("inputFoto");
+    let inputLikes = document.getElementById("inputLikes");
+    let inputCocinero = document.getElementById("inputCocinero");
 
     // crear nuevo objeto Receta
-    var nuevaReceta = new Receta(inputNombre, inputFoto, inputLikes, inputCocinero);
+    var nuevaReceta = new Receta(inputNombre.value, inputFoto.value, inputLikes.value, inputCocinero.value);
     // añadirla al array de 'recetas'
     recetas.unshift(nuevaReceta);
     // mostrarla en pantalla
     mostrarReceta(nuevaReceta);
+
+    // limpiar input del formulario
+    inputNombre.value = "";
+    inputFoto.value = "";
+    inputLikes.value = "";
+    inputCocinero.value = "";
 }

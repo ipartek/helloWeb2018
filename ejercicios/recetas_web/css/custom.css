@@ -13,10 +13,18 @@
     padding: 0;
 }
 
+header div:first-child {
+    position: fixed;
+    background-color: #589442;
+    padding-left: 5px;
+    border-radius: 10%;
+}
+
 .logo {
-    border: 2px solid lightgoldenrodyellow;
+    /*border: 2px solid lightgoldenrodyellow;*/
     padding: 20px;
     border-radius: 50%;
+    color: lightgoldenrodyellow;
 }
 
 /*CONTENT: RECETAS*/
@@ -34,6 +42,20 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+}
+
+.cntImagen {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.iconoBorrar {
+    position: absolute;
+    left: 300px;
+    top: -20px;
+    background-color: white;
+    border-radius: 50%;
 }
 
 #recetas img {
@@ -59,7 +81,6 @@
     text-align: center;
 }
 
-
 /*FORMULARIO*/
 
 #formNuevaReceta {
@@ -78,6 +99,32 @@
     flex-wrap: wrap;
 }
 
-.rrss > i {
-    padding: 0 5px;
+.rrss i {
+    margin: 0 10px;
+    color: lightgoldenrodyellow;
+}
+
+.fa-facebook-square:hover {
+    color: #3b5998;
+}
+
+.fa-instagram:hover {
+    border-radius: 10px;
+    padding: 0 1px;
+    background: #405de6;
+    background: -moz-linear-gradient(top, #405de6 0%, #c13584 33%, #f56040 66%, #ffdc80 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #405de6), color-stop(33%, #c13584), color-stop(66%, #f56040), color-stop(100%, #ffdc80));
+    background: -webkit-linear-gradient(top, #405de6 0%, #c13584 33%, #f56040 66%, #ffdc80 100%);
+    background: -o-linear-gradient(top, #405de6 0%, #c13584 33%, #f56040 66%, #ffdc80 100%);
+    background: -ms-linear-gradient(top, #405de6 0%, #c13584 33%, #f56040 66%, #ffdc80 100%);
+    background: linear-gradient(to bottom, #405de6 0%, #c13584 33%, #f56040 66%, #ffdc80 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#405de6', endColorstr='#ffdc80', GradientType=0);
+}
+
+.fa-youtube-play:hover {
+    color: #ff0000;
+}
+
+.fa-rss-square:hover {
+    color: #f26522;
 }

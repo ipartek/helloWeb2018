@@ -24,9 +24,13 @@
 <body onload="init()">
 
     <div class="container-fluid header">
-        <header>
-            <i class="logo fa fa-cutlery fa-2x" aria-hidden="true"></i>
-            <h1>Recetas Web</h1>
+        <header class="row">
+            <div class="col-xs-1">
+                <a href="#"><i class="logo fa fa-cutlery fa-2x" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-xs-offset-1">
+                <h1>Recetas Web</h1>
+            </div>
         </header>
     </div>
 
@@ -36,43 +40,47 @@
 
             <div class="row" id="recetas">
 
-                    <div class="plantillaReceta col-xs-12 col-sm-6 col-md-4">
-                        <div class="thumbnail">
+                <div class="plantillaReceta col-xs-12 col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <div class="cntImagen">
                             <img class="imgReceta" alt="foto pollo al chilindrón">
-                            <div class="caption">
-                                <h3>Nombre Receta</h3>
-                            </div>
-                            <div class="row infoReceta">
-                                <i class="fa fa-heart" aria-hidden="true"><span class="likes"> 72</span></i>
-                                <span class="cocinero">Cocinero</span>
-                            </div>
-                            <div class="ingredientes" data-toggle="modal" data-target="#modal">
-                                <i class="fa fa-list" aria-hidden="true"></i><span> Ver ingredientes</span>
-                            </div>
+                            <i class="fa fa-times-circle fa-2x iconoBorrar" aria-hidden="true" onclick="borrarReceta(this.parentElement.parentElement.parentElement)"></i>
                         </div>
-                    </div>
 
-                    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Ingredientes:</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <ul>
-                                        <li>Pollo</li>
-                                        <li>Ajo</li>
-                                        <li>Tomate</li>
-                                        <li>Chilindrón</li>
-                                    </ul>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                </div>
+                        <div class="caption">
+                            <h3>Nombre Receta</h3>
+                        </div>
+                        <div class="row infoReceta">
+                            <i class="fa fa-heart" aria-hidden="true"><span class="likes"> 72</span></i>
+                            <span class="cocinero">Cocinero</span>
+                        </div>
+                        <div class="ingredientes" data-toggle="modal" data-target="#modal">
+                            <i class="fa fa-list" aria-hidden="true"></i><span> Ver ingredientes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Ingredientes:</h4>
+                            </div>
+                            <div class="modal-body">
+                                <ul>
+                                    <li>Pollo</li>
+                                    <li>Ajo</li>
+                                    <li>Tomate</li>
+                                    <li>Chilindrón</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                             </div>
                         </div>
                     </div>
+                </div>
 
 
             </div>
@@ -85,7 +93,7 @@
             <h2>Añadir receta</h2>
             <form action="#secRecetas" class="form-inline">
                 <!--<legend>Receta:</legend>-->
-                <input type="text" id="inputNombre" class="form-control" placeholder="nombre" maxlength="30" tabindex="1">
+                <input type="text" id="inputNombre" class="form-control" placeholder="nombre" maxlength="30" required tabindex="1">
                 <input type="text" id="inputFoto" class="form-control" placeholder="URL de la imágen" tabindex="2">
                 <input type="number" id="inputLikes" class="form-control" placeholder="likes" tabindex="3">
                 <input type="text" id="inputCocinero" class="form-control" placeholder="cocinero" tabindex="4">
@@ -103,10 +111,10 @@
             <p><i class="fa fa-copyright" aria-hidden="true"></i> Iparcheff <span id="anio"></span></p>
         </div>
         <div class="col-xs-4 rrss">
-            <i class="fa fa-facebook-square" aria-hidden="true"></i>
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-            <i class="fa fa-youtube-play" aria-hidden="true"></i>
-            <i class="fa fa-rss-square" aria-hidden="true"></i>
+            <a href="https://www.facebook.com/JustEat.es/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/justeat_es/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/user/JustEatSpain" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            <a href="https://www.just-eat.es/" target="_blank"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
         </div>
     </footer>
 

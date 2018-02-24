@@ -2,6 +2,7 @@ var recetas = [];
 
 var dinamico = `<div id="receta" class="col-xs-12 col-sm-6 col-md-4">
                     <div class="thumbnail">
+                        <span onclick="borrarReceta(##POSICION##)" class="close">X</span>
                         <img id="foto" src="##FOTO##" alt="foto">
                         <div class="caption">
                             <h3 id="tituloReceta">##NOMBRE##</h3>
@@ -20,7 +21,7 @@ var dinamico = `<div id="receta" class="col-xs-12 col-sm-6 col-md-4">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                        <h4 class="modal-title" id="myModalLabel">Prueba</h4>
+                                        <h4 class="modal-title" id="myModalLabel">Ingredientes</h4>
                                     </div>
                                     <div class="modal-body">
                                         <!-- 4:3 aspect ratio -->
@@ -80,31 +81,28 @@ function init() {
     recetas.push(rSalmon);
     recetas.push(rAlubias);
     recetas.push(rPaella);
-
     pintarTodos();
 }
 
-
-function pintarTodos(){
-    var detalleReceta;
-    recetas.forEach(function (elem) {
-        detalleReceta = dinamico;
-        pintarReceta(elem);
-}
-function pintarReceta(elem) {
-        detalleReceta = detalleReceta.replace('##NOMBRE##', elem.nombre);
-        detalleReceta = detalleReceta.replace('##FOTO##', elem.foto);
-        detalleReceta = detalleReceta.replace('##LIKES##', elem.likes);
-        detalleReceta = detalleReceta.replace('##COCINERO##', elem.cocinero);
-        cntRecetas.innerHTML = detalleReceta + cntRecetas.innerHTML;
-
-
+function pintarTodos() {
+    recetas.forEach(function (elem,index) {
+        pintarReceta(elem,index);
     });
+}
+
+function pintarReceta(elem,i) {
+    var detalleReceta = dinamico;
+    detalleReceta = detalleReceta.replace('##POSICION##', i);
+    detalleReceta = detalleReceta.replace('##NOMBRE##', elem.nombre);
+    detalleReceta = detalleReceta.replace('##FOTO##', elem.foto);
+    detalleReceta = detalleReceta.replace('##LIKES##', elem.likes);
+    detalleReceta = detalleReceta.replace('##COCINERO##', elem.cocinero);
+    console.log(detalleReceta);
+    cntRecetas.innerHTML = detalleReceta + cntRecetas.innerHTML;
 }
 
 function añadirReceta() {
     var cntRecetas = document.getElementById("cntRecetas");
-
 
     var receta = new Receta();
     receta.nombre = document.getElementById("nombreForm").value;
@@ -112,8 +110,16 @@ function añadirReceta() {
     receta.likes = document.getElementById("likesForm").value;
     receta.cocinero = document.getElementById("cocineroForm").value;
 
-    recetas.unshift(receta);
+    recetas.push(receta);
 
-    cntRecetas.innerHTML = dinamico + cntRecetas.innerHTML;
+    pintarReceta(receta,recetas.length);
     console.log(cntRecetas);
+}
+
+function borrarReceta(pos) {
+    console.log(recetas[pos]);
+    recetas.splice(pos,1);
+    console.log(recetas);
+    cntRecetas.innerHTML = "";
+    pintarTodos();
 }

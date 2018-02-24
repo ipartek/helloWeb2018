@@ -1,12 +1,29 @@
-header{
+header {
     background-color: #2196f3;
     margin: 0 auto;
-    padding: 10px;
-    color: azure;
     position: fixed;
-    z-index:99;
+    z-index: 99;
+    width: 100%;
+    font-family: 'Russo One', sans-serif;
 }
 
+#principal,
+footer {
+    font-family: 'roboto', sans-serif;
+}
+
+header .container {
+    padding: 10px 20px;
+    color: #FFF;
+}
+
+#principal {
+    min-height: 100%;
+    overflow: auto;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 110px;
+}
 
 .container-flex {
     display: flex;
@@ -14,18 +31,43 @@ header{
     flex-direction: row;
 }
 
+.thumbnail {
+    min-height: 400px;
+    position: relative;
+}
+
+.thumbnail img {
+    min-height: 250px;
+}
+
+.thumbnail .close {
+    min-width: 1em;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    color: #DDD;
+    background-color: #444;
+    border-radius: 50%;
+    font-size: 2em;
+    opacity: 0.7;
+    text-align: center;
+}
+
+.thumbnail .close:hover{
+    opacity: 1;
+}
 form {
     display: fixed;
-    margin:auto;
+    margin: auto;
 }
 
-form input{
+form input {
     float: left;
-    min-width: 15%;
-    margin:1%;
+    min-width: 18%;
+    margin: 1%;
 }
 
-form legend{
+form legend {
     margin-bottom: 5px;
 }
 
@@ -33,17 +75,23 @@ form legend{
     text-align: right;
 }
 
-footer{
+footer {
     background-color: #FFF;
-    z-index:99;
+    z-index: 99;
     position: fixed;
     bottom: 0;
     width: 100%;
+    max-height: 500px;
 }
 
-footer .copyright{
-    margin-top: 70px;
-    clear:both;
+.copyright {
+    margin: 70px 0 0 0;
+    clear: both;
     background-color: #2196f3;
     color: azure;
+}
+
+.copyright p {
+    margin: 0 auto;
+    text-align: center;
 }

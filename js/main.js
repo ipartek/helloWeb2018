@@ -9,7 +9,7 @@ function init() {
     //    console.info('info: DOM listo y cargado');
     //    console.warn('warn: DOM listo y cargado');
     //    console.error('error: DOM listo y cargado');
-    var hora new Date();
+    var hora = new Date();
     document.getElementById("hora").innerHTML=hora.get
 
 

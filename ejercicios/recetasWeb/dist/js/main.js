@@ -1,8 +1,12 @@
-//Selectores globales
+//Selectores globales.
 var rRecetas = document.querySelector("#rRecetas");
 var tempColumna = document.querySelector(".columna");
 
 //Array que irá guardando las recetas
+//Se utilizará el atributo data-index para gestionar la
+//información del objeto y su posición
+//Al eliminar objetos en pantalla, su posición en el array se declarará
+//null para evitar reorganizarlo
 var aRecetas = [];
 
 function initRec() {
@@ -19,6 +23,11 @@ function initRec() {
     //Añadirlas al array recetas
     var rMerluza = new Receta("Merluza", "http://www.recetasderechupete.com/wp-content/uploads/2016/01/merluza_en_salsa_verde.jpg", 24, "Argiñano");
 
+    rMerluza.addIngrediente("Merluza");
+    rMerluza.addIngrediente("Perejil");
+    rMerluza.addIngrediente("Besamel");
+    rMerluza.addIngrediente("Limón");
+
     aRecetas.push(rPollo);
     aRecetas.push(rMerluza);
 
@@ -34,31 +43,26 @@ function initRec() {
 
 //Esta función recorre el array de elementos y crea
 //una caja con los valores adecuados
+//Tiene sentido mientras haya objetos predefinidos
 function creaBoxes() {
-
     console.log(aRecetas)
-    aRecetas.forEach(receta => {
-        //Clono la plantilla de la box y le quito la
-        //propiedad display none
-        //        let tempBox = tempColumna.cloneNode(true);
-        //        tempBox.style.display = "initial";
-        //        tempBox.querySelector(".title").textContent = receta.nombre;
-        //        tempBox.querySelector(".foto").style.backgroundImage = `url('${receta.foto}')`;
-        //        tempBox.querySelector(".like").innerHTML = `<i class="fa fa-heart-o"></i>&nbsp;${receta.likes}`;
-        //        tempBox.querySelector(".cocinero").textContent = receta.cocinero;
-        //
-        //        console.log("Recetas ")
-        //        //        console.log(tempColumna)
-        //        rRecetas.appendChild(tempBox);
-        //
-        sumaBox(receta);
+    aRecetas.forEach((receta, index) => {
+        sumaBox(receta, index);
     })
 }
 
 //Elimino el elemento de la pantalla
 function eliminarBox() {
-    console.log(this)
-    this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+    console.log(this);
+    let colPadre = this.parentNode.parentNode;
+
+    //Elimino el objeto(columna completa) al row #rRecetas
+    rRecetas.removeChild(colPadre);
+
+    //Pongo a null el array que contiene los objetos en el índice correspondiente
+    aRecetas[colPadre.dataset.index] = null;
+
+    console.log("Array de Recetas: " + aRecetas.length)
 }
 
 
@@ -74,6 +78,8 @@ function alta() {
     let foto = fAlta.querySelector("#foto").value;
     let likes = fAlta.querySelector("#likes").value;
     let cocinero = fAlta.querySelector("#cocinero").value;
+    let iIng = fAlta.querySelector("#iIng").value;
+    let aIng = [];
 
     let receta = new Receta();
     receta.nombre = nombre;
@@ -81,21 +87,39 @@ function alta() {
     receta.likes = likes;
     receta.cocinero = cocinero;
 
+    aIng = iIng.split(",");
+    aIng.forEach(ingre =>{
+//        let cap = ingre.charAt(0).toUpperCase();
+//        receta.addIngrediente(ingre.trim().replace(ingre.charAt(0), cap));
+        receta.addIngrediente(ingre.trim());
+    })
+
     console.log("%o", receta);
 
     //Añado el nuevo perro al array, y los muestro
     aRecetas.push(receta); //En realidad ya no hace falta el array
-    sumaBox(receta); //Primero volverá a crear todos los elementos
-    //Más tarde habrá ñadrilo con appendChild
+    sumaBox(receta, (aRecetas.length - 1)); //Primero volverá a crear todos los elementos
 
     fAlta.reset();
 }
 
 //Añado un box con la nueva información
-function sumaBox(receta) {
-    //Añado un box al row
+function sumaBox(receta, index) {
+    //Clono la plantilla y modifico sus valoes para
+    //Agregarlo al row
     let tempBox = tempColumna.cloneNode(true);
+
+    //Agrego el atributo data-index pra controlar la posicion del objeto
+    //en el array y así identificarlo y mostrar los ingredientes
+    tempBox.dataset.index = index;
+
+    //Visualizo la nueva platnilla
     tempBox.style.display = "initial";
+
+    //Retiro la clase columna (tiene display:none)
+    tempBox.classList.remove("columna");
+
+    //modifico la información con la del objeto actual
     tempBox.querySelector(".title").textContent = receta.nombre;
     tempBox.querySelector(".foto").style.backgroundImage = `url('${receta.foto}')`;
     tempBox.querySelector(".like").innerHTML = `<i class="fa fa-heart-o"></i>&nbsp;${receta.likes}`;
@@ -110,6 +134,7 @@ function sumaBox(receta) {
     //Evento para mostrar el modal
     tempBox.querySelector(".ing").onclick = modal;
 
+    //Añado la plantilla rellena con la nueva información al row
     rRecetas.appendChild(tempBox);
 }
 
@@ -118,26 +143,47 @@ var dIng = document.querySelectorAll(".ing");
 dIng.onclick = modal;
 
 function modal() {
-    console.log("Hi")
-    //Creo un elemento imagen
-    var im = document.createElement("img");
+    //Selector
+    let modal = document.getElementById("modal");
+    let ulIng = modal.querySelector("#ulIng");
+    let listTitle = modal.querySelector("#modTitle");
 
-    //Creo un elemento imagen dentro de modal
-    var modal = document.getElementById("modal");
-    modal.appendChild(im);
+    let liNew;
+    let ejemplo = "Arroz";
+    let ejemplo2 = "Pollo";
 
-    //Cambio el display por si estuviera oculta
-    modal.style.display = "block";
+    //Limpio la lista de ingredientes ya que voy a crearlos dependiendo del
+    //objeto actual
+    ulIng.innerHTML = "";
 
-    //Visualizo la imagen
-    modal.getElementsByTagName("img")[0].src = "http://www.recetasderechupete.com/wp-content/uploads/2016/01/merluza_en_salsa_verde.jpg";
+    //Busco el índice del objeto en el array identificando el
+    //atributo data-index de la caja
+    let index = this.parentElement.parentElement.dataset.index;
+    console.log(this.parentElement.parentElement);
+
+    //Trabajo con el objeto en dicha posición del array
+    let rActual = aRecetas[index];
+
+    //Agrego al título la propiedad nombre del objeto seleccionado
+    modTitle.textContent = rActual.nombre;
+
+    //Creo tantos elementos li como ingredientes haya y se los agrego
+    //a la ul
+    rActual.ingredientes.forEach(ingre => {
+        liNew = document.createElement("li");
+        liNew.innerHTML = "<i class='fa fa-check-circle'></i>&nbsp;" + ingre;
+        ulIng.appendChild(liNew);
+        console.log("HIII" + ulIng);
+    })
+
+    //Cambio el display pra mostrarlo
+    modal.style = "display: flex; justify-content:center; align-items:center";
 
     //Hago la animacion dandole la clase
-    modal.classList.add("zoom");
+    //    modal.classList.add("zoom");
 
+    //Hago desaparecer la lista al pinchar en la cruz
     modal.getElementsByTagName("span")[0].onclick = function () {
-        //Al clikar la imagen la hago desaparecer
-        modal.removeChild(document.getElementsByTagName("img")[0]);
         modal.style.display = "none";
     }
 }

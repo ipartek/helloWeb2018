@@ -41,6 +41,9 @@ gulp.task('sass', function () {
 gulp.task('move', function(){
     gulp.src('./src/js/*.js')
         .pipe(gulp.dest('./dist/js/'));
+    gulp.src('./src/img/*.*')
+        .pipe(gulp.dest('./dist/img/'));
+
 });
 
 

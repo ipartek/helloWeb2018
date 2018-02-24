@@ -4,10 +4,17 @@
 </header>
 <div class="container">
     <div id="modal">
-        <span class="close fa fa-times"></span>
+        <span class="fa fa-times"></span>
+        <div id="listaIng">
+            <h1 id="modTitle">Titulo de la receta</h1>
+            <hr>
+            <ul id="ulIng">
+
+            </ul>
+        </div>
     </div>
     <div id="rRecetas" class="row">
-        <div class="columna col-sm-4 col-xs-12">
+        <div class="columna col-sm-4 col-xs-12" >
             <div class="box">
                 <div class="cross"><i class="fa fa-times-circle"></i></div>
                 <div class="foto"></div>
@@ -31,28 +38,31 @@
         <form class="" id="fAlta" action="#">
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre">
+                <input type="text" class="form-control" id="nombre" required> <!--value="tthth"-->
             </div>
             <div class="form-group">
                 <label for="foto">Foto:</label>
-                <input type="text" class="form-control" id="foto">
+                <input type="text" class="form-control" id="foto" value="./img/fibs.jpg" required>
             </div>
             <div class="form-group">
                 <label for="likes">Likes:</label>
-                <input type="text" class="form-control" id="likes">
+                <input type="number" class="form-control" id="likes" required> <!--value="34"-->
             </div>
             <div class="form-group">
                 <label for="cocinero">Cocinero:</label>
-                <input type="text" class="form-control" id="cocinero">
-                <!--            <small>Ejemplo: http://as01.epimg.net/tikitakas/imagenes/2017/03/03/portada/1488545991_954393_1488546312_noticia_normal.jpg</small>-->
+                <input type="text" class="form-control" id="cocinero" required> <!--value="tthth"-->
             </div>
-            <button id="bAlta" type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group">
+                <label for="iIng">Ingredientes:</label>
+                <input type="text" class="form-control" id="iIng" placeholder="Separados por comas..."> <!--value="arroz, sal, chorizo"-->
+            </div>
+            <button id="bAlta" type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </section>
 </div>
 
 <footer>
     <div id="copy">
-        Iparchef 2018 <i class="fa fa-copyright"></i>
+        <i class="fa fa-copyright"></i>&nbsp;Iparchef 2018
     </div>
 </footer>

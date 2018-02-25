@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recetas Web</title>
+
+    <!-- MUY IMPORTANTE PARA RWD-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/styles.css">
+
+
+</head>
+
+<!--<body background= "https://n6-img-fp.akamaized.net/free-photo/texture-of-checkered-tablecloth_1205-247.jpg?size=338&ext=jpg&ve=1" onload="init()">-->
+<body background= "http://moziru.com/images/wood-clipart-wood-background-4.jpg" onload="init()">
+    
+
+    <header>
+
+        <div class="container">
+            <h1>Recetas web</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwzxNk2gS-wcjkbep2iPoho4_Ksj1r1ArCpm5skDpEvKXdmGIi">
+
+        </div>
+
+    </header>
+
+    <hr>
+
+    <div class="container" id="contenedorRecetas">
+
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <span class="close" onclick="eliminarBox(event)">x</span>
+
+                    <img src="http://oneblogtwosisters.com/wp-content/uploads/2017/05/tortilla2.jpg" alt="tortilla.img">
+                    <hr>
+                    <div class="caption">
+                        <h3>Tortilla de patatas</h3>
+                        <p> <i class="fa fa-thumbs-o-up" aria-hidden="true">Nº Likes</i>
+                            <span class="sukaldari">Juan Mari Arzak</span> </p>
+                        <hr>
+
+                        <!-- Button trigger modal -->
+                        <a data-toggle="modal" data-target="#modal1">
+                            <p><i class="fa fa-eye" aria-hidden="true"></i>Ingredientes</p>
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="modal1Label">Ingredientes de la tortilla de patatas</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <ul class="ingredients">
+                                                <li class="ingredient">4 huevos</li>
+                                                <li class="ingredient">300 g de patata</li>
+                                                <li class="ingredient">Aceite de oliva</li>
+                                                <li class="ingredient">Sal</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Acaba boton modal apertura de ingredientes -->
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!--
+   Pastel de chocolate
+    -->
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <span class="close" onclick="eliminarBox(event)">x</span>
+                    <img src="https://www.pequerecetas.com/wp-content/uploads/2016/11/pastel-de-chocolate.jpg" alt="pastel.img">
+                    <hr>
+                    <div class="caption">
+                        <h3>Pastel de chocolate</h3>
+                        <p> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>nº de likes <span class="sukaldari">David de Jorge</span> </p>
+                        <hr>
+
+
+                        <!-- Button trigger modal -->
+                        <a data-toggle="modal" data-target="#modal2">
+                            <p><i class="fa fa-eye" aria-hidden="true"></i>Ingredientes</p>
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2Label">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="modal1Label">Ingredientes del pastel de chocolate</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <div id="result_box" dir="ltr">* 1 tableta mediana de chocolate<br> * 200 <span id="SPELLING_ERROR_4" class="blsp-spelling-error">ml</span> de nata líquida<br> * 90 <span id="SPELLING_ERROR_5" class="blsp-spelling-error">gr</span> de mantequilla<br> * 2 tazas de harina<br> * 2 tazas de azúcar<br> * 1 <span id="SPELLING_ERROR_6" class="blsp-spelling-error">cucharadita</span> de levadura en polvo<br> * 1 pellizco de sal<br> * 1 taza de cacao en polvo<br> * 50 gr de coco rallado<br> * 3 huevos grandes<br> * 1 cucharada de extracto de vainilla<br> * 2 cucharadas de aceite vegetal<br> * 1 <span id="SPELLING_ERROR_7" class="blsp-spelling-error">yogurt</span> blanco/natural<br> * 1 taza de café fuerte</div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Acaba boton modal apertura de ingredientes -->
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!--
+    Cerramos receta Paella de marisco
+    -->
+
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <span class="close" onclick="eliminarBox(event)">x</span>
+                    <img src="http://zallo.com/images/es-ES/blog/recetas/receta_ensalada_bermeana.jpg">
+                    <hr>
+                    <div class="caption">
+                        <h3>Ensalada Bermeana</h3>
+                        <p> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Nº likes <span class="sukaldari">Eneko Atxa</span> </p>
+                        <hr>
+
+
+                        <!-- Button trigger modal -->
+                        <a data-toggle="modal" data-target="#modal3">
+                            <p><i class="fa fa-eye" aria-hidden="true"></i>Ingredientes</p>
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal3Label">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="modal1Label">Ingredientes de la ensalada Bermeana</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <ul>
+                                                <li>Patata cocida</li>
+                                                <li>Huevos cocidos</li>
+                                                <li>Cebolletas</li>
+                                                <li>1 lata de bonito del norte en aceite de oliva</li>
+                                                <li>Aceite de Oliva</li>
+                                                <li>Vinagre&nbsp;</li>
+                                                <li>Sal</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <footer>
+
+        <form onsubmit="return false">
+            <h5>Añade tu propia receta: </h5>
+            <div class="form-row align-items-center">
+                <div class="col-sm-2 my-1">
+                    <label class="sr-only" for="inlineFormInputName">Nombre</label>
+                    <input type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre">
+                </div>
+                <div class="col-sm-2 my-1">
+                    <label class="sr-only" for="inlineFormInputImage">Foto</label>
+                    <input type="text" class="form-control" id="inlineFormInputImage" placeholder="Foto">
+                </div>
+                <div class="col-sm-2 my-1">
+                    <label class="sr-only" for="inlineFormInputLikes">Likes</label>
+                    <input type="text" class="form-control" id="inlineFormInputLikes" placeholder="Likes">
+                </div>
+                <div class="col-sm-2 my-1">
+                    <label class="sr-only" for="inlineFormInputChef">Cocinero</label>
+                    <input type="text" class="form-control" id="inlineFormInputChef" placeholder="Cocinero">
+                </div>
+                <div class="col-sm-2 my-1">
+                    <button type="submit" onclick="crear()" class="btn btn-primary">Crear</button>
+                </div>
+            </div>
+        </form>
+
+        <hr>
+
+        <div class="footer">
+            <i class="fa fa-copyright" aria-hidden="true" float="right"></i> <span class="footerSign">Iparchef 2018</span>
+        </div>
+
+    </footer>
+
+
+    <script src="js/receta.js"></script>
+    <script src="js/main.js"></script>
+
+
+    <!-- j query -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

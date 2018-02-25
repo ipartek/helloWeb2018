@@ -75,6 +75,11 @@ form legend {
     text-align: right;
 }
 
+.cntIngredientes{
+    margin:20px;
+    padding:10px;
+    background-color: #CFC;
+}
 footer {
     background-color: #FFF;
     z-index: 99;

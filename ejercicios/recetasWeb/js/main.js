@@ -104,10 +104,11 @@ function añadirReceta() {
     receta.foto = document.getElementById("fotoForm").value;
     receta.likes = document.getElementById("likesForm").value;
     receta.cocinero = document.getElementById("cocineroForm").value;
+    receta.ingredientes = "";
 
     recetas.push(receta);
 
-    pintarReceta(receta, recetas.length);
+    pintarReceta(receta, recetas.length - 1);
 }
 
 function borrarReceta(pos) {
@@ -115,28 +116,31 @@ function borrarReceta(pos) {
     recetas.splice(pos, 1);
     console.log(recetas);
     cntRecetas.innerHTML = "";
-    pintarTodos();
+    pintarRecetas();
 }
 
 function pintarIngredientes(pos) {
     var cntIngredientes = document.getElementById("cntIngredientes" + pos);
     cntIngredientes.innerHTML = "";
-    recetas[pos].ingredientes.forEach(function (ingre) {
-        pintarIngrediente(ingre, pos);
-    });
+    console.log(recetas[pos].ingredientes);
+    console.log(recetas[pos].ingredientes);
+    if (recetas[pos].ingredientes != "") {
+        recetas[pos].ingredientes.forEach(function (ingre) {
+            pintarIngrediente(ingre, pos);
+        });
+    }
 }
 
 function pintarIngrediente(ingre, pos) {
-//    var cntIngredientes = document.getElementById("cntIngredientes" + pos);
+    //    var cntIngredientes = document.getElementById("cntIngredientes" + pos);
 
-    var cntIngredientes= document.querySelector('div[id="cntIngredientes'+pos+'"]');
+    var cntIngredientes = document.querySelector('div[id="cntIngredientes' + pos + '"]');
     cntIngredientes.innerHTML += ingre + "<br>";
 }
 
 function añadirIngrediente(pos) {
-    var nuevoIngre = document.getElementById("nuevoIngre"+pos).value;
+    var nuevoIngre = document.getElementById("nuevoIngre" + pos).value;
 
     recetas[pos].addIngrediente(nuevoIngre);
-    console.log(recetas[pos].ingredientes);
     pintarIngredientes(pos);
 }

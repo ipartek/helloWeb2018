@@ -46,6 +46,15 @@ footer {
   bottom: 0;
   width: 100%;
   margin: 0;
+  border-top: 1px solid lightgrey;
+  background-color: white;
+}
+
+footer #lid {
+  position: relative;
+  border-bottom: 1px solid lightgrey;
+  text-align: center;
+  cursor: pointer;
 }
 
 footer #copy {
@@ -127,6 +136,35 @@ footer #copy {
   to {
     transform: scale(1);
   }
+}
+
+#fAlta {
+  display: none;
+  padding: 0 10px;
+  width: 100%;
+  font-size: 0;
+}
+
+.form-group {
+  display: inline-flex;
+  justify-content: center;
+  width: calc(100% / 6);
+  margin: 10px 0;
+  font-size: initial;
+}
+
+.form-group .form-control {
+  display: inline-block;
+}
+
+@media screen and (max-width: 480px) {
+  .form-group .form-control {
+    font-size: 0.6em;
+  }
+}
+
+.form-group button {
+  width: 90%;
 }
 
 .btnG, .btnG-azul {

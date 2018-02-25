@@ -39,7 +39,7 @@
         </div>
     </div>
     <div id="rRecetas" class="row">
-        <div class="columna col-sm-4 col-xs-12" >
+        <div class="columna col-sm-4 col-xs-12">
             <div class="box">
                 <div class="cross"><i class="fa fa-times-circle"></i></div>
                 <div class="foto"></div>
@@ -56,37 +56,47 @@
 
     </div>
 
-    <hr>
+    <!--    <hr>-->
 
-    <section>
-        <h2 class="text-center">Grabar Receta</h2>
-        <form class="" id="fAlta" action="#">
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" required> <!--value="tthth"-->
-            </div>
-            <div class="form-group">
-                <label for="foto">Foto:</label>
-                <input type="text" class="form-control" id="foto" value="./img/fibs.jpg" required>
-            </div>
-            <div class="form-group">
-                <label for="likes">Likes:</label>
-                <input type="number" class="form-control" id="likes" required> <!--value="34"-->
-            </div>
-            <div class="form-group">
-                <label for="cocinero">Cocinero:</label>
-                <input type="text" class="form-control" id="cocinero" required> <!--value="tthth"-->
-            </div>
-            <div class="form-group">
-                <label for="iIng">Ingredientes:</label>
-                <input type="text" class="form-control" id="iIng" placeholder="Separados por comas..."> <!--value="arroz, sal, chorizo"-->
-            </div>
-            <button id="bAlta" type="submit" class="btn btn-primary">Guardar</button>
-        </form>
-    </section>
+
 </div>
 
 <footer>
+    <div id="lid">
+        <i class="fa fa-caret-up"></i>
+    </div>
+
+    <!--        <h2 class="text-center">Grabar Receta</h2>-->
+    <form class="" id="fAlta" action="#">
+        <div class="form-group">
+            <!--                <label for="nombre">Nombre:</label>-->
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+            <!--value="tthth"-->
+        </div>
+        <div class="form-group">
+            <!--                <label for="foto">Foto:</label>-->
+            <input type="text" class="form-control" id="foto" value="" placeholder="Foto" required>
+        </div>
+        <div class="form-group">
+            <!--                <label for="likes">Likes:</label>-->
+            <input type="number" class="form-control" id="likes" placeholder="Likes" required>
+            <!--value="34"-->
+        </div>
+        <div class="form-group">
+            <!--                <label for="cocinero">Cocinero:</label>-->
+            <input type="text" class="form-control" id="cocinero" placeholder="Cocinero" required>
+            <!--value="tthth"-->
+        </div>
+        <div class="form-group">
+            <!--                <label for="iIng">Ingredientes:</label>-->
+            <input type="text" class="form-control" id="iIng" placeholder="Ingredientes">
+            <!--value="arroz, sal, chorizo"-->
+        </div>
+        <div class="form-group">
+            <button id="bAlta" type="submit" class="btn btn-success"><i class="fa fa-floppy-o"></i></button>
+        </div>
+    </form>
+
     <div id="copy">
         <i class="fa fa-copyright"></i>&nbsp;Iparchef 2018
     </div>

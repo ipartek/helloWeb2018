@@ -1,0 +1,37 @@
+#fAlta {
+//    position: absolute;
+//    bottom: 10px;
+////    bottom: -10px;
+//    z-index: -1;
+
+
+    display: none;
+
+
+    padding: 0 10px;
+    width: 100%;
+    font-size: 0;
+
+    //Forma con altutra
+//    height:0px;
+//    overflow: hidden;
+//    transition: all 1s;
+}
+
+.form-group {
+    display: inline-flex;
+    justify-content: center;
+    width: calc(100% / 6);
+    margin: 10px 0;
+    font-size: initial;
+    label {}
+    .form-control {
+        display: inline-block;
+        @media screen and (max-width: 480px) {
+            font-size: 0.6em;
+        }
+    }
+    button{
+        width: 90%;
+    }
+}

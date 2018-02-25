@@ -3,17 +3,20 @@ footer {
     bottom: 0;
     width: 100%;
     margin: 0;
-
-    #footForm{
-
+    border-top: 1px solid lightgrey;
+    background-color: white;
+    #lid{
+        position: relative;
+        border-bottom: 1px solid lightgrey;
+        text-align: center;
+        cursor:pointer;
+//        transition: all 1s;
     }
-
     #copy {
         background-color: forestgreen;
         color: white;
         text-align: center;
         font-size: 1.3em;
         padding: 5px;
-
     }
 }

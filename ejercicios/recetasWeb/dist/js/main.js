@@ -74,11 +74,16 @@ bAlta.onclick = alta;
 
 function alta() {
     event.preventDefault();
-    let nombre = fAlta.querySelector("#nombre").value;
-    let foto = fAlta.querySelector("#foto").value;
-    let likes = fAlta.querySelector("#likes").value;
-    let cocinero = fAlta.querySelector("#cocinero").value;
-    let iIng = fAlta.querySelector("#iIng").value;
+//    let nombre = fAlta.querySelector("#nombre").value;
+    let nombre = fAlta.querySelector("#nombre").value == ""? "Nombre": fAlta.querySelector("#nombre").value;
+//    let foto = fAlta.querySelector("#foto").value;
+    let foto = fAlta.querySelector("#foto").value== ""? "./img/fibs.jpg": fAlta.querySelector("#foto").value;
+//    let likes = fAlta.querySelector("#likes").value;
+    let likes = fAlta.querySelector("#likes").value== ""? "0": fAlta.querySelector("#likes").value;
+//    let cocinero = fAlta.querySelector("#cocinero").value;
+    let cocinero = fAlta.querySelector("#cocinero").value== ""? "Chef": fAlta.querySelector("#cocinero").value;
+//    let iIng = fAlta.querySelector("#iIng").value;
+    let iIng = fAlta.querySelector("#iIng").value== ""? "Sin ingredientes": fAlta.querySelector("#iIng").value;
     let aIng = [];
 
     let receta = new Receta();
@@ -88,9 +93,9 @@ function alta() {
     receta.cocinero = cocinero;
 
     aIng = iIng.split(",");
-    aIng.forEach(ingre =>{
-//        let cap = ingre.charAt(0).toUpperCase();
-//        receta.addIngrediente(ingre.trim().replace(ingre.charAt(0), cap));
+    aIng.forEach(ingre => {
+        //        let cap = ingre.charAt(0).toUpperCase();
+        //        receta.addIngrediente(ingre.trim().replace(ingre.charAt(0), cap));
         receta.addIngrediente(ingre.trim());
     })
 
@@ -101,6 +106,9 @@ function alta() {
     sumaBox(receta, (aRecetas.length - 1)); //Primero volverá a crear todos los elementos
 
     fAlta.reset();
+
+    //Oculto el formulario
+    muestroForm();
 }
 
 //Añado un box con la nueva información
@@ -136,6 +144,10 @@ function sumaBox(receta, index) {
 
     //Añado la plantilla rellena con la nueva información al row
     rRecetas.appendChild(tempBox);
+
+
+    rRecetas.lastElementChild.scrollIntoView();
+
 }
 
 //Modal
@@ -186,4 +198,32 @@ function modal() {
     modal.getElementsByTagName("span")[0].onclick = function () {
         modal.style.display = "none";
     }
+}
+
+
+//Visualizo y oculto el formulario
+//Selectores
+var caret = document.querySelector("#lid");
+caret.onclick = muestroForm;
+
+function muestroForm() {
+
+    if (fAlta.style.display == "flex") {
+        fAlta.style.display = "none";
+    } else {
+        fAlta.style.display = "flex";
+    }
+
+    //Manejando la altura
+//    if (fAlta.style.height == "0px") {
+//        fAlta.style.height = "auto";
+//    } else {
+//        fAlta.style.height = "0px";
+//    }
+
+    //Cambia un apor la otra automáticamente
+    caret.querySelector("i").classList.toggle("fa-caret-down");
+    caret.querySelector("i").classList.toggle("fa-caret-up");
+
+//    caret.querySelector(".fa").style.transform ="rotate(90deg)";
 }

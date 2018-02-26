@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Propagación del evento</title>
+
+<style type="text/css">
+ #t-daddy { border: 1px solid red }
+ #c1 { background-color: pink; }
+</style>
+
+<script type="text/javascript">
+
+function stopEvent(ev) {
+  c2 = document.getElementById("c2");
+  c2.innerHTML = "hola";
+
+  // this ought to keep t-daddy from getting the click.
+  ev.stopPropagation();
+  alert("La propagación del evento se ha parado.");
+}
+
+function load() {
+  elem = document.getElementById("tbl1");
+  elem.addEventListener("click", stopEvent, false);
+}
+</script>
+</head>
+
+<body onload="load();">
+
+<table id="t-daddy" onclick="alert('hi');">
+ <tr id="tbl1">
+  <td id="c1">uno</td>
+ </tr>
+ <tr>
+  <td id="c2">dos</td>
+ </tr>
+</table>
+
+</body>
+</html>

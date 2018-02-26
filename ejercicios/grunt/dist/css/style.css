@@ -1,0 +1,37 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* /reset */
+/* Elementos */
+h1 {
+  color: #00B5D6;
+}
+
+/* /Elementos */
+.container {
+  margin: auto;
+  max-width: 1024px;
+}
+
+.btn, .btn-azul {
+  border: 1px solid #00B5D6;
+  color: #357997;
+  display: inline-block;
+  height: 50px;
+  min-width: 100px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.btn:hover, .btn-azul:hover {
+  background-color: #EF6B00;
+}
+
+.btn-azul:hover {
+  background-color: blue;
+}

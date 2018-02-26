@@ -26,15 +26,17 @@
 
         </div>
     </header>
-    <div class="container">
-        <div id ="contenedorRecetas" class="row">
+    <div class="container containerRecetas" id="containerRecetas">
+        <!-- Se hace por Js-->
+    </div>
+    <!-- <div id ="contenedorRecetas" class="row">
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
                     <img src="https://static.hogarmania.com/archivos/201105/562-conejo-al-chilindron-con-patatas-xl-668x400x80xX.jpg" alt="pollo al chilindrón">
                     <div class="caption">
                         <h3>Conejo al chilindrón.</h3>
                         <p>Un plato de conejo con su salsa típica de Navarra, con tomate, verdura, pimiento choricero y vino blanco</p>
-                        <p><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;16 Likes</p>
+                        <p class="like"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;16</p>
                         <a class="links" href="pollo" data-toggle="modal" data-target="#conejo">Ingredientes</a>
                         <h5>Karlos Arguiñano</h5>
                     </div>
@@ -46,7 +48,7 @@
                     <div class="caption">
                         <h3>Bacalao con kokotxas.</h3>
                         <p>Un taco de bacalao con sus kokotxas al pil pil y acompañado por una crema ligera de patata y pimiento.</p>
-                        <i class="fa fa-heart" aria-hidden="true"></i>&nbsp;Likes
+                        <p class="like"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;16</p>
                         <p><a class="links" href="#">Ingredientes</a></p>
                         <h5>Juan Maria Arzak</h5>
                     </div>
@@ -58,17 +60,17 @@
                     <div class="caption">
                         <h3>Pitxon con sirope de cerezas.</h3>
                         <p>Receta de conejo al chilindrón con patatas, un plato de conejo con su salsa típica de Navarra, con tomate, verdura, pimiento choricero y vino blanco</p>
-                        <i class="fa fa-heart" aria-hidden="true"></i>&nbsp;4 Likes
-                        <p><a class="links" href="#">Ingredientes</a></p>
+                        <p class="like"><i class="fa fa-heart" aria-hidden="true"></i>&nbsp;16</p>
+                        <p><a class="links" href="#" role="button" onclick="showModal()">Ingredientes</a></p>
                         <h5>Eneko Atxa</h5>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
-        <!--*********************************************MODAL***************************************************************-->
+    <!--*********************************************MODAL***************************************************************-->
 
-        <div class="modal fade" id="conejo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <!--  <div class="modal fade" id="conejo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -112,38 +114,96 @@
             </div>
         </div>
 
+        -->
+
+
+    <div class="modal fade" id="modalIngredientes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Ingredientes:</h4>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                    <ol id="listaIngredientes"></ol>
+                    <hr>
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
     </div>
+
+
     <!--***************************************************FOOTER**********************************************************************-->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h2>Nueva Receta</h2>
-                    <form onsubmit="return false;">
-                        <div class="row">
-                            <div class="col-xs-3">
+                    <h2><a href="#" class="formularioNuevo" data-toggle="modal" data-target="#nuevoFormulario">Nueva Receta&nbsp;<i class="fa fa-plus-circle" aria-hidden="true"></i></a></h2>
+                    <!-- Modal -->
+                    <div class="modal fade" id="nuevoFormulario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">CREAR NUEVA RECETA</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form onsubmit="return false;" id="formulario">
+                                        <div class="row">
+                                           <input type="text" id="nombre" class="form-control" placeholder="Título receta" required oninvalid="setCustomValidity('Introduce un nombre para la receta, por favor')" oninput="setCustomValidity('')">
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" class="form-control" id="foto" placeholder="URL de la foto" required>
+                                         </div>
+                                        <div class="row">
+                                            <input type="text" class="form-control" id="descripcion" required placeholder="Breve descripción">
+                                        </div>
+                                        <div class="row">
+                                            <input type="number" class="form-control" id="likes" required placeholder="Likes">
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" class="form-control" id="cocinero" placeholder="Cocinero o autor de la receta" required pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('¿Quíen es el cocinero?, Introduce el autor de la receta.')" oninput="setCustomValidity('')">
+                                        </div>
 
-                                <input type="text" id="nombre" class="form-control" placeholder="Título receta" required="required" pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('Introduce tu nombre de la receta, por favor')" oninput="setCustomValidity('')">
-                            </div>
-                            <div class="col-xs-3">
+                                        <button type="submit" onclick="nuevaReceta()" class="btn btn-default">Crear Receta</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 
-                                <input type="text" class="form-control" id="foto" placeholder="URL de la foto">
-                            </div>
-                            <div class="col-xs-3">
-
-                                <input type="text" class="form-control" id="descripcion" placeholder="Breve descripción de la receta" required="required" pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('Escribe brevemente una descripción de la receta')" oninput="setCustomValidity('')">
-                            </div>
-                            <div class="col-xs-3">
-
-                                <input type="text" class="form-control" id="cocinero" placeholder="Cocinero o autor de la receta" required="required" pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('¿Quíen es el cocinero?')" oninput="setCustomValidity('')">
+                                </div>
                             </div>
                         </div>
-
-                        <button  onclick="crearReceta()" class="btn btn-default">Crear</button>
-                    </form>
+                    </div>
+                    <!-- <form onsubmit="return false;" id="formulario">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <input type="text" id="nombre" class="form-control" placeholder="Título receta" required oninvalid="setCustomValidity('Introduce un nombre para la receta, por favor')" oninput="setCustomValidity('')">
+                            </div>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" id="foto" placeholder="URL de la foto" required>
+                            </div>
+                            <div class="col-xs-2">
+                                <input type="text" class="form-control" id="descripcion"  required placeholder="Breve descripción">
+                            </div>
+                            <div class="col-xs-1">
+                                <input type="number" class="form-control" id="likes"  required placeholder="Likes">
+                            </div>
+                            <div class="col-xs-2">
+                                <input type="text" class="form-control" id="cocinero" placeholder="Cocinero o autor de la receta" required pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('¿Quíen es el cocinero?, Introduce el autor de la receta.')" oninput="setCustomValidity('')">
+                            </div>
+                        </div>
+                        <button  type= "submit" onclick="nuevaReceta()" class="btn btn-default">Crear Receta</button>
+                    </form>-->
                 </div>
             </div>
-            <div class="row company">
+            <div class="company">
                 <script>
                     update = new Date().getFullYear();
                     document.write("&copy; &nbsp;Iparcheff" + "&nbsp;" + update);

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+</head>
+
+<body>
+    <style>
+        .seleccionado {
+            background-color: yellow;
+            color: #000;
+        }
+
+        #sparring {
+            display: inline-block;
+            border: 2px solid black;
+            min-height: 100px;
+            min-width: 100px;
+            background-color: bisque;
+        }
+        #box{
+            display: inline-block;
+            border: 2px solid black;
+            height: 25px;
+            width: 25px;
+            background-color: red;
+        }
+    </style>
+    <h1>JQUERY</h1>
+    <a href="https://www.desarrolloweb.com/manuales/manual-jquery.html#capitulos113" target="_blank">Manual de Desarrollo Web</a>
+
+     <div id="box"></div>
+    <p class="uno">Acordarse de añadir la libreria de JQuery al final del HTML.</p>
+    <p>Al igual que en JavaScript hay que esperar a que el DOM este cargado <b>'ready'</b> para comenzar nuestros Scripts.</p>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
+
+    <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+
+    <p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+
+
+    <div id="sparring">
+
+    </div>
+    <button id="btn">CLICK</button>
+    <input type="text" id="texto" placeholder="Dime algo con amor">
+    <select id="opciones">
+        <option value="0">Append</option>
+        <option value="1">Prepend</option>
+        <option value="2">Insert after</option>
+        <option value="3">Insert Before</option>
+    </select>
+
+
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script>
+        //version mas antigua.ahora ya no se pone el .ready
+        $(document).ready(function() {
+            console.log('Ready');
+            /* $("p").css("color", "red");
+             $("p:odd").css("color", "blue"); //parrafos pares
+             $("p:even").css("color", "red"); //parafos impares
+             $("p:even").css("font-size", "30px");
+             $("p:odd").addClass("seleccionado");
+
+             alert($("p.uno").text());
+             $("p:last").text("Agur eta ondo izan");
+
+             $("p").click(function() {
+                // $(this).toggleClass("seleccionado");
+                 $(this).fadeOut();
+             });*/
+
+            $("#btn").click(function() {
+                var texto = $("#texto").val();
+
+                var opcion = $("#opciones").val();
+
+                console.log("Click en el botón es %s opcion %s", texto, opcion);
+
+                switch (opcion) {
+                    case "0":
+                        console.log("Append");
+                        $("#sparring").append(texto);
+                        break;
+                    case "1":
+                        console.log("Prepend");
+                        $("#sparring").prepend(texto);
+                        break;
+                    case "2":
+                        console.log("InsertAfeter");
+                        $("#box").insertAfter("#sparring");
+
+                        break;
+                    case "3":
+                        console.log("InsertBefore");
+                        $("#box").insertBefore("#sparring");
+                        break;
+                }
+                $("#texto").val("");
+
+
+
+                $( "p" ).insertAfter( "#foo" );
+
+                // $( "#sparring" ).append(valorInput);
+
+            });
+            //$("input").val();
+
+
+        });
+    </script>
+</body>
+
+</html>

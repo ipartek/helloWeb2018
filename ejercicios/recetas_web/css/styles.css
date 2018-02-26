@@ -61,7 +61,7 @@
     right: 10px;
     color: black;
 }
-
+/*
 @keyframes mostrar {
     0% {
         opacity: 0;
@@ -77,7 +77,7 @@
     animation-duration: .5s;
 
 }
-
+*/
 .caption{
     width: 90%;
     margin: auto;
@@ -115,7 +115,7 @@
     margin: 0;
     padding: 0;
     position: fixed;
-    bottom: -40px;
+    bottom: 0;
     transition-duration: .5s;
 
 }
@@ -142,4 +142,11 @@
 #menuRecetas a:hover{
     cursor: pointer;
 }
+
+
+input {
+    max-width: 90%;
+    margin: auto;
+}
+
 

@@ -67,7 +67,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content" id="modalReceta">
 
-                    <div class="modal-header">
+                    <!-- <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">##receta##</h4>
                     </div>
@@ -77,7 +77,51 @@
                             <p>Ingredientes</p>
                             ##ingredienteLista##
                         </ul>
+                    </div>-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
                     </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" id="modalForm">
+
+                    <div id="divFormRecetas container-fluid">
+                        <form class="form" id="formulario" onsubmit="return nuevaReceta()">
+                            <div class="form-group ">
+                                <label class="sr-only" for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="nombre" required>
+                            </div>
+                            <div class="form-group ">
+                                <label class="sr-only" for="foto">Foto</label>
+                                <input type="text" class="form-control" id="foto" placeholder="foto" required>
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label class="sr-only" for="likes">Foto</label>
+                                <input type="number" class="form-control" id="likes" placeholder="likes" required>
+                            </div>
+                            <div class="form-group col-xs-6">
+                                <label class="sr-only" for="cocinero">Cocinero</label>
+                                <input type="text" class="form-control" id="cocinero" placeholder="cocinero" required>
+                            </div>
+
+                            <div class="form-group col-xs-12">
+                                <label for="comment">Ingredientes:</label>
+                                <textarea class="form-control" rows="5" id="ingredientes" placeholder="Introduce un ingrediente en cada linea" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-success col-xs-2">CREAR</button>
+                        </form>
+                    </div>
+
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
@@ -95,29 +139,7 @@
     <!-- formulario fixed -->
     <div class="container-fluid" id="menuForm">
         <div id="menuRecetas">
-            <a onclick="toggleForm()">Nueva receta</a>
-        </div>
-        <div id="divFormRecetas">
-            <form class="form-inline" onsubmit="nuevaReceta()">
-                <div class="form-group col-xs-3">
-                    <label class="sr-only" for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="nombre">
-                </div>
-                <div class="form-group col-xs-2">
-                    <label class="sr-only" for="foto">Foto</label>
-                    <input type="text" class="form-control" id="foto" placeholder="foto">
-                </div>
-                <div class="form-group col-xs-2">
-                    <label class="sr-only" for="likes">Foto</label>
-                    <input type="number" class="form-control" id="likes" placeholder="likes">
-                </div>
-                <div class="form-group col-xs-3">
-                    <label class="sr-only" for="cocinero">Cocinero</label>
-                    <input type="text" class="form-control" id="cocinero" placeholder="cocinero">
-                </div>
-
-                <button type="button" class="btn btn-success col-xs-2" onclick="nuevaReceta()">CREAR</button>
-            </form>
+            <a role="button" data-toggle="modal" data-target="#formModal">Nueva receta</a>
         </div>
     </div>
     <!-- bootstrap -->

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery</title>
+
+    <style>
+        .seleccionado {
+            background-color: yellow;
+            color: black;
+        }
+
+        #sparring {
+            display: inline-block;
+            border: 2px solid black;
+            min-height: 100px;
+            min-width: 100px;
+            background-color: beige;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+    <h1>JQUERY</h1>
+    <a href="https://www.desarrolloweb.com/manuales/manual-jquery.html#capitulos113" target="_blank">Manual Desarrollo Web</a>
+
+    <p>Acordarse de cargar la libreria de jquery al final del body</p>
+    <p>Al igual que en js hay que esperar a que el DOM este cargado ('ready') para empezar nuestros scripts</p>
+
+    <p class="uno">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis suscipit voluptatum, omnis ad quasi quo itaque, quia quas illo sint, quae consequatur eaque molestias repudiandae dolore ex accusamus facilis harum.</p>
+    <p>Necessitatibus cumque officia fugiat incidunt quisquam adipisci commodi iste, sunt ea corporis ipsa harum illo earum recusandae sapiente, id repudiandae ducimus consequuntur vitae enim saepe nostrum delectus. Reprehenderit, illum, nisi.</p>
+    <p>Expedita ducimus, animi doloribus illum illo atque earum, recusandae eligendi, dolore nostrum dicta pariatur. Fugit pariatur magnam aliquam dolorem placeat molestias dolor unde, explicabo accusamus. Quos quisquam perferendis non sit?</p>
+
+    <div id="sparring"></div>
+    <button id="btn">Clickiti</button>
+    <input type="text" id="texto" placeholder="Dime algo">
+    <select name="opciones" id="opciones">
+        <option value="0">Append</option>
+        <option value="1">Prepend</option>
+        <option value="2">InsertAfter</option>
+        <option value="3">InsertBefore</option>
+    </select>
+
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script>
+        //en versiones nuevas se ha abreviado por $(function(){} );
+        $(document).ready(function() {
+            console.log('Ready')
+
+
+            $('p:even').css('font-size', '2em');
+            $('p:odd').addClass('seleccionado');
+
+            //alert ($('p.uno').text());
+
+            $('p:last').text('Agur');
+
+            $('p').click(function() {
+                $(this).fadeOut();
+            });
+        });
+
+        $('#btn').click(function() {
+            console.log('clickiti');
+
+            console.log($('#texto').val());
+            console.log('selector %s', $('#opciones').val());
+
+            var selector = $('#opciones').val();
+            var valor = '<p>' + $('#texto').val() + '</p>';
+
+            switch (selector) {
+
+                case ('0'):
+                    $('#sparring').append($('#texto').val());
+                    break;
+                case ('1'):
+                    $('#sparring').prepend($('#texto').val());
+                    break;
+                case ('2'):
+                    $(valor).insertAfter('#sparring');
+                    break;
+                case ('3'):
+                    $(valor).insertBefore('#sparring');
+                    break;
+            }
+
+            $('#texto').val('');
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

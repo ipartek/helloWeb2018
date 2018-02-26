@@ -11,6 +11,7 @@ let inputNombre = document.getElementById("inputNombre");
 let inputFoto = document.getElementById("inputFoto");
 let inputLikes = document.getElementById("inputLikes");
 let inputCocinero = document.getElementById("inputCocinero");
+let modal = $("#modal");
 
 /*
  *   Fragmeno HTML a insertar por cada receta
@@ -121,7 +122,6 @@ function mostrarReceta(receta) {
 
     nuevaReceta.style.display = "initial";
     secRecetas.appendChild(nuevaReceta);
-
 }
 
 /*
@@ -142,8 +142,8 @@ function borrarReceta(elem) {
 
     // borrar la receta de la lista
     var nombreReceta = elem.querySelector("div>h3").textContent;
-    var recetaBorrar = recetas.filter(receta => receta.nombre == nombreReceta);
-    var resultado = borrarElemento(recetas, recetaBorrar[0]);
+    var receta = recetas.filter(receta => receta.nombre == nombreReceta);
+    var resultado = borrarElemento(recetas, receta[0]);
     if (!resultado) {
         alert("No se ha podido borrar el elemento");
         console.warn("No se ha podido borrar el elemento");
@@ -176,7 +176,7 @@ function borrarElemento(array, element) {
 }
 
 
-function anadirReceta() {
+function anadirReceta(event) {
 
     if (validarFormulario()) {
 
@@ -199,7 +199,8 @@ function anadirReceta() {
         //limpiarFormulario();
         form.reset();
     } else {
-        //alert("Los datos introducidos en el formulario, no son correctos.")
+        event.preventDefault();
+        alert("Los datos introducidos en el formulario, no son correctos.")
         console.info("Datos de formulario incorrectos");
     }
 
@@ -249,3 +250,27 @@ function validarFormulario() {
     return esCorrecto;
 
 }
+
+function showModal(elem) {
+
+    var nombreReceta = elem.querySelector("div>h3").textContent;
+    var receta = recetas.filter(receta => receta.nombre == nombreReceta);
+    var ingredientes = receta[0].ingredientes;
+    var listElements = "";
+
+    // mostrar la ventana modal
+    modal.modal("show");
+
+    ingredientes.forEach(ingrediente => {
+        listElements += "<li> - "+ingrediente+"</li>";
+    });
+    console.log(listElements);
+    //document.getElementById("listaIngredientes").innerHTML = listElements;
+    $("#listaIngredientes").html(listElements);
+
+}
+
+
+
+
+

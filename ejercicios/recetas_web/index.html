@@ -43,7 +43,7 @@
                 <div class="plantillaReceta col-xs-12 col-sm-6 col-md-4">
                     <div class="thumbnail">
                         <div class="cntImagen">
-                            <img class="imgReceta" alt="foto pollo al chilindrón">
+                            <img class="imgReceta" alt="foto receta">
                             <i class="fa fa-times-circle fa-2x iconoBorrar" aria-hidden="true" onclick="borrarReceta(this.parentElement.parentElement.parentElement)"></i>
                         </div>
 
@@ -54,12 +54,13 @@
                             <i class="fa fa-heart" aria-hidden="true"><span class="likes"> 72</span></i>
                             <span class="cocinero">Cocinero</span>
                         </div>
-                        <div class="ingredientes" data-toggle="modal" data-target="#modal">
+                        <!--data-target="#modal"-->
+                        <div class="ingredientes" data-toggle="modal" onclick="showModal(this.parentElement.parentElement)">
                             <i class="fa fa-list" aria-hidden="true"></i><span> Ver ingredientes</span>
                         </div>
                     </div>
                 </div>
-                <!--TODO: crear una sola ventana modal para todas las vistas de 'ingredientes' e invocarla dinámicamente con sus correspondientes datos a mostrar-->
+                <!--TODO[]: crear una sola ventana modal para todas las vistas de 'ingredientes' e invocarla dinámicamente con sus correspondientes datos a mostrar-->
                 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -68,12 +69,7 @@
                                 <h4 class="modal-title" id="myModalLabel">Ingredientes:</h4>
                             </div>
                             <div class="modal-body">
-                                <ul>
-                                    <li>Pollo</li>
-                                    <li>Ajo</li>
-                                    <li>Tomate</li>
-                                    <li>Chilindrón</li>
-                                </ul>
+                                <ul id="listaIngredientes"></ul>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -87,13 +83,14 @@
             <!-- FIN .recetas -->
         </section>
     </div>
-    <!--FUTURE: dejar el footer en la parte inferior de la página y mostrar/ocultar el formulario para añadir nuevas recetas mediante un icono '+'-->
+    <!--TODO[]: dejar el footer en la parte inferior de la página y mostrar/ocultar el formulario para añadir nuevas recetas mediante un icono '+'-->
     <div class="container parteInferiorFija">
         <section id="formNuevaReceta">
-
-            <h2>Añadir receta</h2>
-            <form action="#secRecetas" id="formulario"
-               class="form-inline">
+            <div id="anadirReceta">
+                <i class="fa fa-plus-circle fa-4x" aria-hidden="true"></i>
+                <h2 id="titAnadirReceta">Añadir receta</h2>
+            </div>
+            <form action="#secRecetas" id="formulario" class="form-inline" onsubmit="return validarFormulario()">
                 <!--<legend>Receta:</legend>-->
                 <input type="text" id="inputNombre" class="form-control" placeholder="nombre" maxlength="30" required tabindex="1">
                 <!--FUTURE: cambiar el input de foto a tipo 'file'-->
@@ -102,7 +99,7 @@
                 <input type="text" id="inputCocinero" class="form-control" placeholder="cocinero" tabindex="4">
                 <br><br>
                 <!--TODO: validar formulario antes de añadir nueva receta-->
-                <button type="button" class="btn btn-success" onclick="anadirReceta()">Añadir</button>
+                <button type="submit" class="btn btn-success" onclick="anadirReceta(event)">Añadir</button>
                 <button type="reset" class="btn btn-danger">Limpiar</button>
                 <!--FUTURE: Añadir ingredientes-->
             </form>

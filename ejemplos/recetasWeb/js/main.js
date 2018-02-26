@@ -49,7 +49,7 @@ function crear(){
 
 }
 function eliminarReceta(e){
-      var boxReceta=e.target.parentElement
+      var boxReceta=e.target.parentElement;
                 boxReceta.style.display="none";
 
 }

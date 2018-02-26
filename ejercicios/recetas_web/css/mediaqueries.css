@@ -1,0 +1,7 @@
+/* MEDIA QUERY STYLES */
+
+@media (max-width : 800px) {
+    #formNuevaReceta {
+        bottom: -165px;
+    }
+}

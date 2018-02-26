@@ -6,12 +6,14 @@ var recetas = [];
 var idReceta = 0;
 
 // variables del formulario
-let form = document.getElementById("formulario");
-let inputNombre = document.getElementById("inputNombre");
-let inputFoto = document.getElementById("inputFoto");
-let inputLikes = document.getElementById("inputLikes");
-let inputCocinero = document.getElementById("inputCocinero");
-let modal = $("#modal");
+var form = document.getElementById("formulario");
+var inputNombre = document.getElementById("inputNombre");
+var inputFoto = document.getElementById("inputFoto");
+var inputLikes = document.getElementById("inputLikes");
+var inputCocinero = document.getElementById("inputCocinero");
+var ingredientes = document.getElementById("taIngredientes");
+var modal = $("#modal");
+var formVisible = false;
 
 /*
  *   Fragmeno HTML a insertar por cada receta
@@ -70,6 +72,9 @@ function init() {
 
     // Mostar año actual junto al Copyright
     mostrarAnioActual();
+
+    // EVENTOS
+    $("#btnShowForm").click( mostrarFormulario );
 }
 
 
@@ -181,20 +186,27 @@ function anadirReceta(event) {
     if (validarFormulario()) {
 
         // rellenar datos no requeridos con valores por defecto
-        if(inputLikes.value === "") {
+        if (inputLikes.value === "") {
             inputLikes.value = 0;
         }
-        if(inputCocinero.value === ""){
+        if (inputCocinero.value === "") {
             inputCocinero.value = "Anónimo";
         }
+        // separar los ingredientes
+        let listaIngredientes = ingredientes.value.split(",");
+        console.debug("Ingredientes de la nueva receta: " + listaIngredientes);
 
         // crear nuevo objeto Receta
         var nuevaReceta = new Receta(inputNombre.value, inputFoto.value, inputLikes.value, inputCocinero.value);
+        listaIngredientes.forEach(ingrediente => {
+            nuevaReceta.addIngrediente(ingrediente);
+        });
         // añadirla al array de 'recetas'
         recetas.unshift(nuevaReceta);
         // mostrarla en pantalla
         mostrarReceta(nuevaReceta);
-
+        //ocultar formulario
+        mostrarFormulario();
         // limpiar input del formulario
         //limpiarFormulario();
         form.reset();
@@ -226,7 +238,7 @@ function anadirReceta(event) {
 function validarFormulario() {
 
     let extImagen = inputFoto.value.split('.');
-    console.log(extImagen);
+    console.log("Extensión de la imagen: " + extImagen[extImagen.length-1]);
 
     // var return
     let esCorrecto = true;
@@ -238,7 +250,9 @@ function validarFormulario() {
     if (inputFoto.value === "") {
         esCorrecto = false;
         inputFoto.setCustomValidity("Debe insertar la URL de la imagen");
-    } else if(extImagen[extImagen.length-1] !== "png" && extImagen[extImagen.length-1] !== "jpg" && extImagen[extImagen.length-1] !== "jpeg") {
+    } else if (extImagen[extImagen.length - 1] !== "png" &&
+        extImagen[extImagen.length - 1] !== "jpg" &&
+        extImagen[extImagen.length - 1] !== "jpeg") {
         esCorrecto = false;
         inputFoto.setCustomValidity("El formato de la imágen es incorrecto");
     }
@@ -262,7 +276,7 @@ function showModal(elem) {
     modal.modal("show");
 
     ingredientes.forEach(ingrediente => {
-        listElements += "<li> - "+ingrediente+"</li>";
+        listElements += "<li> - " + ingrediente + "</li>";
     });
     console.log(listElements);
     //document.getElementById("listaIngredientes").innerHTML = listElements;
@@ -271,6 +285,17 @@ function showModal(elem) {
 }
 
 
+function mostrarFormulario() {
 
-
-
+    if (formVisible) {
+        // Ocultar formulario
+        $("#formNuevaReceta").css("bottom", "-190px");
+        form.style.display = "collapse";
+        formVisible = !formVisible;
+    } else {
+        // Mostrar formulario
+        $("#formNuevaReceta").css("bottom", "40px");
+        form.style.display = "visible";
+        formVisible = !formVisible;
+    }
+}

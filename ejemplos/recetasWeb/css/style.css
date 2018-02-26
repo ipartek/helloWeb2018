@@ -14,5 +14,32 @@
 #footer{
     background: white;
     bottom:0px;
-    position:fixed;
+    position:fixed
+}
+#cabecera{
+
+    background:url("https://i0.wp.com/farm2.staticflickr.com/1457/26706460355_60ed0c1b56_k_d.jpg?resize=1060%2C707&ssl=1");
+    border:0px;
+}
+h1{
+    font-weight: 1000
+}
+#contenedorRecetas{
+   background:url("https://previews.123rf.com/images/maglara/maglara1505/maglara150500336/39480984-placa-vac%C3%ADa-en-el-mantel-en-la-mesa-de-madera-sobre-fondo-azul-del-grunge.jpg");
+}
+.thumbnail img{
+    height: 300px;
+    width: 400px;
+
+}
+#cocinero{
+    font-weight: 700;
+}
+#likes{
+    color:red;
+    font-weight: 700;
+    font-size: 18px;
+}
+#loginForms{
+    display:none;
 }

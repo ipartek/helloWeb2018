@@ -17,7 +17,7 @@
 
 <body onload="init()">
     <header>
-        <div class="container">
+        <div class="container-fluid" id="cabecera">
 
             <h1>Recetas Web</h1>
 
@@ -25,6 +25,23 @@
         </div>
 
     </header>
+     <!-- modal Javascrpit -->
+        <div id="modalIngredientes" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Ingredientes</h4>
+              </div>
+              <div class="modal-body">
+                <ol id="listaIngredientes"></ol>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              </div>
+              </div>
+            </div>
+    </div>
     <!-- Modal1 -->
     <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -125,7 +142,7 @@
                         <hr>
 
                         <h3>Pollo al chilindron</h3>
-                        <span><i class="fa fa-heart-o" aria-hidden="true"></i>  </span><span>0</span> <span>Berasategui</span>
+                        <span><i class="fa fa-heart-o" aria-hidden="true"></i>  </span><span id="likes">0</span> <span id="cocinero">Alberto Berasategui</span>
                         <hr>
 
                         <a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-eye" aria-hidden="true"></i> ingredientes</a>
@@ -142,7 +159,7 @@
                         <hr>
 
                         <h3>Merluza en salsa</h3>
-                        <span><i class="fa fa-heart-o" aria-hidden="true"></i>  </span><span>12</span> <span>Arguiñano</span>
+                        <span><i class="fa fa-heart-o" aria-hidden="true"></i>  </span><span id="likes">12</span> <span id="cocinero">Carlos Arguiñano</span>
                         <hr>
 
                         <a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-eye" aria-hidden="true"></i> ingredientes</a>
@@ -159,7 +176,7 @@
                         <hr>
 
                         <h3>Patatas en salsa </h3>
-                        <span><i class="fa fa-heart-o" aria-hidden="true"></i>  </span><span>0</span> <span>Arzak</span>
+                        <span><i class="fa fa-heart-o" aria-hidden="true"></i>  </span><span id="likes">0</span> <span id="cocinero">Arzak</span>
                         <hr>
 
                         <a href="#" data-toggle="modal" data-target="#myModal3"><i class="fa fa-eye" aria-hidden="true"></i> ingredientes</a>
@@ -172,37 +189,63 @@
     </div>
     <div class="col-xs-12 col-md-4">
         <footer id="footer">
+<form id="formulario" onmouseout="hideForm();"
+                  class="form-inline"
+                  action="#"
+                  method="post"
+                  onsubmit="return false;">
+
+                <fieldset>
+                    <legend onmouseover="showForm();" onmouseout="hideForm();">Nueva Receta</legend>
+                    <span id="loginForms">
+                    <div class="form-group">
+                        <input class="form-control"
+                               type="text"
+                               id="nombre"
+                               name="nombre"
+                               required
+                               placeholder="nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control"
+                               type="text"
+                               id="foto"
+                               name="foto"
+                               required
+                               placeholder="introduce la url de la foto">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control"
+                               type="number"
+                               id="likes_"
+                               name="likes"
+                               required
+                               placeholder="Indica cuantos likes tiene">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control"
+                               type="text"
+                               id="cocinero_"
+                               name="cocinero"
+                               required
+                               placeholder="Nombre del cocinero">
+                    </div>
+<div class="form-group">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    <button type="submit"
+                            class="btn btn-default"
+                            onclick="nuevaReceta()">Crear nueva receta</button>
+
+
+                    </span>
+                </fieldset>
 
 
 
-            <br>
-            <br>
-            <form id="formulario" onsubmit="return false;">
-
-
-                <div class="col-sm-2 my-1">
-
-                    <input type="text" class="form-control" id="inlineFormInputNombre" placeholder="Nombre">
-                </div>
-                <div class="col-sm-2 my-1">
-
-                    <input type="text" class="form-control" id="inlineFormInputFoto" placeholder="foto">
-                </div>
-
-                <div class="col-sm-2 my-1">
-
-                    <input type="number" class="form-control" id="inlineFormInputLikes" placeholder="likes">
-
-                </div>
-                <div class="col-sm-2 my-1">
-
-                    <input type="text" class="form-control" id="inlineFormInputCocinero" placeholder="cocinero">
-
-                </div>
-
-                <div class="col-auto my-1">
-                    <button type="submit" class="btn btn-primary" onclick="crear()">Crear</button>
-                </div>
                 <br>
                 <span id="copyright"><i class="fa fa-copyright" aria-hidden="true"></i> iparcheff 2018</span>
             </form>

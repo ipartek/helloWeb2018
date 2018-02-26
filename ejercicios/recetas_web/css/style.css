@@ -1,0 +1,76 @@
+#tenedor{
+    padding: 10px;
+    margin-right: 25px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: darkgray;
+}
+
+#cabecera{
+    background: url("https://images3.alphacoders.com/175/175459.jpg");
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+
+}
+
+h1{
+
+    color:aliceblue;
+}
+
+.cocinero{
+    float: right;
+    color: darkgreen;
+}
+
+.likes{
+    color: red;
+}
+
+
+#pie{
+    position: fixed;
+    bottom: 0px;
+    background-color: beige;
+    width:100%;
+
+}
+
+body{
+    background-color: cadetblue;
+}
+
+.containerRecetas{
+    padding-bottom: 200px;
+    background-color: beige;
+    padding-top: 40px;
+
+}
+
+.copiright{
+    padding-top: 20px;
+}
+
+.receta{
+   /* position: absolute; */
+
+}
+
+.cerrar{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    top:-10px;
+    padding-top: 5px;
+    text-align:center;
+    z-index: 999;
+    background-color: grey;
+    float: right;
+    font-weight: 600;
+}
+
+

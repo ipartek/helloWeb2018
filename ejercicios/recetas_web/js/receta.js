@@ -13,6 +13,7 @@ class Receta{
 
     addIngrediente( ingrediente ){
         this.ingredientes.push(ingrediente);
+
     }
 
 

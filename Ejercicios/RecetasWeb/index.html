@@ -16,11 +16,21 @@
 
 <body onload="init()">
     <h1><i class="fa fa-cutlery" aria-hidden="true"></i> Recetas Web </h1>
-    <div class="container">
+    <div class="container bodycontenido">
+
+
 
 
         <h2>Nuestras mejores recetas <i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></h2>
-        <div class="row"id="Inicio-recetas">
+        <div class="row" id="Inicio-recetas">
+
+
+                <div class="container containerRecetas" id="containerRecetas">
+                </div>
+
+
+
+
 
             <!-- comienzo del array recetas con sus div
             <div class=" col-md-4 ">
@@ -64,42 +74,62 @@
         <!--div row end -->
     </div>
     <!--container-->
-        <!-- Inicio formulario añadir receta -->
-        <div class="container recetaForm">
-            <form action="#" onsubmit="false">
-                <fieldset id="Añadir Receta">
-                    <legend>Añadir receta</legend>
-                    <!-- NombreReceta -->
-                    <div id="colorin-legend">
-                        <input type="text" name="nombre" id="platoNombre" autofocus tabindex="1" placeholder="Nombre_Receta" required pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('El campo nombre es obligatorio')" oninput="setCustomValidity('')">
-                        <!-- FotoReceta -->
-                        <input type="text" name="foto" id="platoFoto" tabindex="2" method="post" placeholder="Foto" required oninvalid="setCustomValidity('El campo foto es obligatorio')" oninput="setCustomValidity('')">
-                        <!-- NumeroLikes -->
-                        <input type="number" id="platoLike" name="likes" tabindex="3" method="post" placeholder="Likes" required oninvalid="setCustomValidity('El campo like es obligatorio')" oninput="setCustomValidity('')">
-                        <!-- NombreCocinero -->
-                        <input type="text" name="nombreCocinero" id="platoCocinero" tabindex="4" method="post" placeholder="Nombre_Cocinero" required oninvalid="setCustomValidity('El campo nombre_cocinero es obligatorio')" oninput="setCustomValidity('')">
-                        <!-- boton Enviar -->
-
-
-                        <input type="submit" value="Ñan"onclick="anadirPlato()">
+     <!-- modal -->
+                <div id="modalIngredientes" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Ingredientes</h4>
+                            </div>
+                            <div class="modal-body">
+                                <ol id="listaIngredientes"></ol>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
                     </div>
-                </fieldset>
-            </form>
-        </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
+    <!-- Inicio formulario añadir receta -->
+    <div class="container recetaForm">
+        <form action="#" onSubmit="return false" id="formulario">
+            <fieldset id="Añadir Receta">
+                <legend>Añadir receta</legend>
+                <!-- NombreReceta -->
+                <div id="colorin-legend">
+                    <input type="text" name="nombre" id="platoNombre" autofocus tabindex="1" placeholder="Nombre_Receta" oninvalid="setCustomValidity('El campo nombre es obligatorio')" oninput="setCustomValidity('')" required>
+                    <!-- FotoReceta -->
+                    <input type="text" name="foto" id="platoFoto" tabindex="2" method="post" placeholder="Foto" required oninvalid="setCustomValidity('El campo foto es obligatorio')" oninput="setCustomValidity('')">
+                    <!-- NumeroLikes -->
+                    <input type="number" id="platoLike" name="likes" tabindex="3" method="post" placeholder="Likes" required oninvalid="setCustomValidity('El campo like es obligatorio')" oninput="setCustomValidity('')">
+                    <!-- NombreCocinero -->
+                    <input type="text" name="nombreCocinero" id="platoCocinero" tabindex="4" method="post" placeholder="Nombre_Cocinero" required oninvalid="setCustomValidity('El campo nombre_cocinero es obligatorio')" oninput="setCustomValidity('')">
+                    <!-- boton Enviar -->
 
 
-        <!--Fin añadir receta-->
+                    <input type="submit" value="Ñan" onclick="anadirPlato()">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+
+    <!--Fin añadir receta-->
 
 
 
 
 
-        <footer style="background-color: black;color: white;text-align: center;">&copy;Iparcheff
-            <script>
-                var f = new Date();
-                document.write('<span>' + f.getFullYear() + '</span>');;
-            </script>
-        </footer>
+    <footer style="background-color: #333333;color: white;text-align: center;">&copy;Iparcheff
+        <script>
+            var f = new Date();
+            document.write('<span>' + f.getFullYear() + '</span>');;
+        </script>
+    </footer>
     <!-- div container -->
     <!-- enlace de javascript -->
 </body>

@@ -1,10 +1,17 @@
+body{
+    background-color: #BA7C45;
+}
+h1,legend{
+    color:white;
+}
+
 .right-span-cocinero {
     margin-left: 50%;
-    color: #5cb26b;
+    color: goldenrod;
 }
 
 .left-span-likes {
-    color: #FDA9DE;
+    color: palevioletred;
 }
 
 .div-contenedor-recetas {
@@ -24,7 +31,7 @@ h1 {
     height: 80px;
     text-align: center;
     padding: 0.5em;
-    background-color: #1E9F75;
+    background-color: #AFD048;
 }
 
 fieldset {
@@ -41,7 +48,7 @@ legend {
     width: auto;
     height: 40px;
     padding: 0.2em;
-    background-color: #1e9f75;
+    background-color: #AFD048;
     border-top-left-radius: 10%;
     border-top-right-radius: 10%;
     border-bottom-right-radius: 10%;
@@ -54,7 +61,21 @@ legend {
     margin-top: -2em;
     padding-left: 2em;
     padding-top: 1em;
-    background-color: #1e9f75;
+    background-color: #AFD048;
 
+}
+.bodycontenido{
+    margin-bottom: 13em;
+}
+.recetaForm{
+    margin-bottom: 1em;
+    position: fixed; /* Set the navbar to fixed position */
+    bottom: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+}
+footer{
+        position: fixed; /* Set the navbar to fixed position */
+    bottom: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
 }
 

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+</head>
+
+<body>
+
+    <style>
+        .seleccionado {
+            background-color: yellow;
+            color: black;
+        }
+
+        #sparring {
+            display: inline-block;
+            border: 2px solid black;
+            min-height: 100px;
+            min-width: 300px;
+            background-color: bisque;
+        }
+
+        #parrafo {
+            background-color: red;
+            padding: 2px;
+        }
+
+        #span {
+            background-color: green;
+            padding: 2px;
+        }
+
+    </style>
+
+    <head>
+        <h1>jQuery</h1>
+    </head>
+
+    <div class="content">
+        <a href="https://www.desarrolloweb.com/manuales/manual-jquery.html" target="_blank">Manual Desarrollo Web</a>
+        <p class="importante">Importante cargar el script de jQuery: bien por CDN o guardandolo en local.</p>
+        <p>Al igual que en JS, hay que esperar a que el DOM este cargado ( <em>ready</em> ) para ejecutar nuestros scripts.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolor molestiae cupiditate suscipit dicta quisquam, tempora dolorum architecto asperiores, quos assumenda mollitia, fuga provident odio nisi ipsam voluptatum debitis. Nam!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolor molestiae cupiditate suscipit dicta quisquam, tempora dolorum architecto asperiores, quos assumenda mollitia, fuga provident odio nisi ipsam voluptatum debitis. Nam!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolor molestiae cupiditate suscipit dicta quisquam, tempora dolorum architecto asperiores, quos assumenda mollitia, fuga provident odio nisi ipsam voluptatum debitis. Nam!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolor molestiae cupiditate suscipit dicta quisquam, tempora dolorum architecto asperiores, quos assumenda mollitia, fuga provident odio nisi ipsam voluptatum debitis. Nam!</p>
+    </div>
+    <hr>
+    <div id="sparring">
+        <p id="parrafo">PÁRRAFO</p>
+        <span id="span">SPAN</span>
+    </div>
+    <br>
+    <input type="text" id="texto" placeholder="Escribe algo">
+    <select name="opciones" id="opciones">
+        <option value="0">Append</option>
+        <option value="1">Prepend</option>
+        <option value="2">insertBefore</option>
+        <option value="3">insertAfter</option>
+    </select>
+    <button id="btn">CLICK</button>
+
+    <!-- jQuery v2.2.4 minified (dado que no vamos a aplicar cambios en el código de jQuery, usamos la versión 'minified' que viene sin indentar) -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script>
+        "use strict";
+
+        $(function() {
+            console.log("DOM is ready");
+
+            // En versiones antiguas de jQuery se añadía el .ready
+            /*$(document).ready(function() {
+                // Handler for .ready() called.
+            });*/
+
+            // Ejemplo de selectores jQuery
+            /*$("p:even").css("color", "red");
+            $("p:even").css("font-weight", "600");
+            $("p:odd").css("color", "green");
+            $("p:odd").css("font-style", "italic");
+
+            $("p:odd").addClass("seleccionado");
+
+            // Atributos / CSS
+            var textoUno = $("p.importante").text();
+            alert(textoUno);
+
+            $("p:last").text("Nuevo párrafo cambiado dinámicamente.");*/
+
+            // Manipulación jQuery
+            $("p").click(function() {
+                $(this).toggleClass("seleccionado");
+            });
+
+            $("#btn").click(function() {
+
+                var opcion = $("#opciones").val();
+                var txt = $("#texto").val();
+                var objetivo = $("#sparring");
+                var span = $("#span");
+                var parrafo = $("#parrafo");
+
+                switch (opcion) {
+                    case "0":
+                        objetivo.append(txt);
+                        break;
+                    case "1":
+                        objetivo.prepend(txt);
+                        break;
+                    case "2":
+                        parrafo.insertBefore(objetivo);
+                        span.insertBefore(objetivo);
+                        break;
+                    case "3":
+                        parrafo.insertAfter(objetivo);
+                        span.insertAfter(objetivo);
+                        break;
+                    default:
+                        objetivo.text(txt);
+                }
+            });
+
+
+        });
+    </script>
+
+</body>
+
+</html>

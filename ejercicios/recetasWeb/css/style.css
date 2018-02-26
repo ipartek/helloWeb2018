@@ -38,7 +38,24 @@ h1{
     background-color: beige;
     width:100%;
     z-index: 999;
+<<<<<<< HEAD
+=======
 
+}
+/*
+#pie:hover{
+>>>>>>> origin/InakiAretxabaleta
+
+    bottom: 75px;
+    transition: 1s;
+
+}
+*/
+.copiright{
+    position: fixed;
+    bottom: 0px;
+    background-color: beige;
+    width:100%;
 }
 /*
 #pie:hover{
@@ -73,7 +90,11 @@ body{
 
 .receta img{
    /* position: absolute; */
+<<<<<<< HEAD
     max-height: 200px;
+=======
+    min-height: 300px;
+>>>>>>> origin/InakiAretxabaleta
 
 }
 
@@ -88,6 +109,16 @@ body{
     background-color: grey;
     float: right;
     font-weight:900;
+<<<<<<< HEAD
+=======
+}
+
+.cerrar:hover{
+    top:-12px;
+    right: -2px;
+    color: aliceblue;
+
+>>>>>>> origin/InakiAretxabaleta
 }
 
 .cerrar:hover{

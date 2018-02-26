@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+
+</head>
+
+<body>
+
+    <style>
+        .seleccionado {
+            background-color: teal;
+            color: #000;
+        }
+
+        #sparring {
+            display: inline-block;
+            border: 1px solid black;
+            min-height: 100px;
+            min-width: 100px;
+            background-color: bisque;
+
+        }
+    </style>
+
+
+    <h1>Jquery</h1>
+
+    <a href="https://www.desarrolloweb.com/manuales/manual-jquery.html#capitulos113" target="_blank">Manual Desarrollo Web</a>
+    <p class="uno">Acordarse de añadir la librería de Jquery al final del HTML</p>
+    <p>Al igual que en Javascript, hay que esperar a que el DOM esté cargado 'ready' para comenzar nuestros scripts</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque maiores, porro cumque expedita perspiciatis animi odit illum repellat voluptatibus quae, blanditiis, laboriosam, delectus consectetur natus nemo id dolorem voluptas.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem voluptas dignissimos hic, praesentium possimus, eos quas deserunt natus amet veritatis corporis asperiores dolore tempore impedit. Nihil, commodi molestiae dignissimos repudiandae.</p>
+
+    <div id="sparring"></div>
+    <button id="btn">click</button>
+    <input type="text" id="texto" placeholder="Dime algo">
+    <select id="opciones">
+        <option value="0">Append</option>
+        <option value="1">Preppend</option>
+        <option value="2">Inset after</option>
+        <option value="3">Inset before</option>
+    </select>
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
+    <script>
+        //Estos pasos iniciales hay que incluirlos siempre q trabajemos con jQuery
+        $(document).ready(function() {
+            // Handler for .ready() called.
+            console.log("ready");
+            /*
+                        $("p").css("color", "red"); //poner todos los parrafos rojos
+                        $("p:even").css("color", "red"); //poner los parrafos impares en rojo
+                        $("p:odd").css("color", "teal"); //poner los parrafos pares en rojo
+                        $("p:odd").css("font-size", "30px");
+                        $("p:odd").addClass("seleccionado");
+                        alert($("p.uno").text());
+                        $("p:last").text("Agur eta jan yogur");
+
+            */
+
+            //funcion para hacer algo cuando se detecte un click en cualquier parrafo
+            $("p").click(function() {
+                //$(this).css("color", "red");
+                $(this).toggleClass("seleccionado");
+
+            })
+
+            $("#btn").click(function() {
+                var texto = $("#texto").val();
+                var valor = $("#opciones").val();
+                console.log("boton clickeado");
+                console.log(texto);
+                console.log(valor);
+
+                switch (valor) {
+                    case "0":
+                        $("#sparring").append(texto);
+                        break;
+                    case "1":
+                        $("#sparring").prepend(texto);
+                        break;
+                    case "2":
+                        $("#sparring").insertAfter(texto);
+                        break;
+                    case "3":
+                        $("#sparring").insertBefore(texto);
+                        break;
+
+                }
+
+                $("#texto").val("");
+
+
+
+            })
+
+
+        });
+    </script>
+
+</body>
+
+</html>

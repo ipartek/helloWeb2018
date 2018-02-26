@@ -19,13 +19,25 @@ function init() {
 
     var rCocido = new Receta("Cocido", "https://i.ytimg.com/vi/R-9ZoARMdww/maxresdefault.jpg", 2, "Eusebio Plaza");
 
+    rCocido.addIngrediente("a");
+    rCocido.addIngrediente("b");
+    rCocido.addIngrediente("c");
+    rCocido.addIngrediente("d");
+
 	sumarReceta(rCocido);
 
 
     var rMigas = new Receta("Migas", "https://www.erv.es/blog/wp-content/uploads/2015/01/seguro_anulacion_viaje_caceres_gastronomia.jpg", 24, "Pepa Sanchez");
 
+    rMigas.addIngrediente("e");
+    rMigas.addIngrediente("f");
+    rMigas.addIngrediente("g");
+    rMigas.addIngrediente("h");
+
 	//añado las recetas base al array
     sumarReceta(rMigas);
+
+
 
 	//pinto las recetas base
 	pintarRecetas();
@@ -45,6 +57,7 @@ function anadirReceta() {
         var foto = document.getElementById("fotoInput").value;
         var likes = document.getElementById("likesInput").value;
         var cocinero = document.getElementById("cocineraInput").value;
+        var ingredientesRicos = document.getElementById("ingredientesRicos");
 
         //para crear nuevas recetas
         var nuevaReceta = new Receta(nombre, foto, likes, cocinero);
@@ -57,10 +70,7 @@ function anadirReceta() {
         pintarRecetas();
 
         //límpia el input
-//        nombre.innerHTML= "";
-//        foto.innerHTML="";
-//        likes.innerHTML="";
-//        cocinero.innerHTML="";
+        form.reset();
 
     }else{
         console.log("no se puede crear receta porque nos faltan input");
@@ -89,8 +99,8 @@ function borrarReceta(elem,indice) {
 	var padre5 = padre4.parentNode;
 	padre5.removeChild(padre4);
 
-    //elimino el onjeto del array
-    recetas.splice(indice,1);
+    //elimino el ojeto del array
+    aRecetas.splice(indice,1);
 
 }
 
@@ -116,51 +126,33 @@ function pintarRecetas() {
 						<p><strong>${aRecetas[i].nombre}</strong></p>
                         <p><i class="fa fa-heart"></i> ${aRecetas[i].likes}</p>
 						<p>${aRecetas[i].cocinero}</p>
-                        <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#modal">
-                          <i class="fa fa-eye" aria-hidden="true"></i> INGREDIENTES
-                        </button>
-
-                       <!-- Modal -->
-                <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h2 class="modal-title" id="exampleModalLabel">INGREDIENTES</h2>
-                      </div>
-                      <div class="modal-body">
-                          <ul class="ingredientes">
-                              <li>1 pollo</li>
-                              <li>1 cebolla</li>
-                              <li>1 pimiento verde</li>
-                              <li>5 dientes de ajo</li>
-                              <li>2 tomates</li>
-                              <li>2 patatas</li>
-                              <li>carne de 4 pimientos choriceros</li>
-                              <li>2 rebanadas de pan</li>
-                              <li>harina</li>
-                              <li>1 vaso de vino blanco</li>
-                              <li>1 vaso de caldo o de agua</li>
-                              <li>vinagre</li>
-                              <li>aceite virgen extra</li>
-                              <li>sal</li>
-                              <li>pimienta</li>
-                              <li>perejil</li>
-                          </ul>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>`;
+                        <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal"  onclick="showModal(${i})">
+                          <i class="fa fa-eye" aria-hidden="true" ></i> INGREDIENTES
+                        </button>`;
 
 		//añado la nueva receta al contenedor, respetando las que ya existían
         inicioRecetas.innerHTML += recetaNueva;
 
 
     }
+
+
+}
+
+function showModal(index){
+
+    var recetaSeleccionada = aRecetas[index];
+    console.debug('showModal %o' + recetaSeleccionada );
+
+    $('#modalIngredientes').modal('show');
+
+    var ingredientes = recetaSeleccionada.ingredientes;
+    var lis = "";
+    ingredientes.forEach( ing => {
+            lis += "<li>"+ing+"</li>";
+    });
+    $("#listaIngredientes").html(lis);
+
+
 }
 

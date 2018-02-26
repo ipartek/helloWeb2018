@@ -40,7 +40,7 @@
                             </h1>
                         </div>
                     </nav>
-                 </div>
+                </div>
             </div>
         </div>
     </header>
@@ -52,62 +52,81 @@
             <h2>Recetas deliciosas</h2><br>
             <h4>Participa y agrega la tuya</h4>
             <div class="row text-center slideanim" id="recetas_lista">
-
-
-         </div>
-        </div>
-    </section>
-
-    <!--formulario-->
-    <div id="contact" class="container">
-       <h2 class="text-center">Rellena el formulario para añadir recetas</h2>
-        <h3 class="text-center">¡Únete al equipo de Iparcheff aportando una receta!</h3>
-
-
-        <div class="row">
-          <div class="col-md-12">
-                <div class="row">
-                    <form id="formulario" name="form" onsubmit="return false">
-                    <div class="col-sm-3 form-group">
-                        <input class="form-control" id="nombreInput" name="nombre" required placeholder="Nombre" type="text">
-                    </div>
-                    <div class="col-sm-3 form-group">
-                        <input class="form-control" id="fotoInput" name="foto" required placeholder="Foto" type="text">
-                    </div>
-
-
-                    <div class="col-sm-3 form-group">
-                        <input class="form-control" id="likesInput" name="likes" required placeholder="Likes" type="text">
-                    </div>
-                    <div class="col-sm-3 form-group">
-                        <input class="form-control" id="cocineraInput" name="cocinera" required placeholder="Cocinera/o" type="text" >
-                    </div>
-                     <div class="row">
-                        <div class="col-md-12 form-group">
-                            <input class="btn pull-right" type="submit" onclick="anadirReceta()" value="enviar">
-                        </div>
-                    </div>
-                    </form>
-                </div>
-
-                <br>
-
+             <!-- se pone la modal fuera porque el contenedor lo limpias-->
             </div>
         </div>
-        <br>
+                   <!-- Modal -->
+                <div class="modal fade" id="modalIngredientes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h2 class="modal-title" id="exampleModalLabel">INGREDIENTES</h2>
+                      </div>
+                      <div class="modal-body">
+                          <ol class="ingredientes" id="listaIngredientes">
 
+                          </ol>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    </section>
+
+    <div id="contact" class="container">
+       <div class="row">
+            <h2 class="text-center">Rellena el formulario para añadir recetas</h2>
+            <h3 class="text-center">¡Únete al equipo de Iparcheff aportando una receta!</h3>
+            <button data-toggle="collapse" data-target="#sumarReceta">Añade tu receta</button>
+                <div id="sumarReceta" class="collapse">
+                    <div class="col-md-12">
+                        <div class="row">
+                        <form id="formulario" name="form" onsubmit="return false">
+                            <div class="col-sm-3 form-group">
+                                <input class="form-control" id="nombreInput" name="nombre" required placeholder="Nombre" type="text">
+                            </div>
+                            <div class="col-sm-3 form-group">
+                                <input class="form-control" id="fotoInput" name="foto" required placeholder="Foto" type="text">
+                            </div>
+
+
+                            <div class="col-sm-3 form-group">
+                                <input class="form-control" id="likesInput" name="likes" required placeholder="Likes" type="text">
+                            </div>
+                            <div class="col-sm-3 form-group">
+                                <input class="form-control" id="cocineraInput" name="cocinera" required placeholder="Cocinera/o" type="text">
+                            </div>
+
+                            <div class="col-sm-12 form-group">
+                                <textarea id="ingredientesRicos" rows="20" cols="50"></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 form-group">
+                                    <input class="btn pull-right" type="submit" onclick="anadirReceta()" value="enviar">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <footer class="text-center">
         <a class="up-arrow" href="#cont01" data-toggle="tooltip" title="" data-original-title="TO TOP">
-    <span class="glyphicon glyphicon-chevron-up"></span>
-  </a><br><br>
+        <span class="glyphicon glyphicon-chevron-up"></span></a><br><br>
         <p>@ iparcheff</p>
-<!--
+        <!--
 		 <script>
                 var f = new Date();
                 document.write('<span>' + f.getFullYear() + '</span>');;
             </script>
--->
+        -->
     </footer>
     <!--SCRIPTS-->
     <!--jQuery Core 2.2.4-->

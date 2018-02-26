@@ -38,8 +38,10 @@
     <select id="opciones">
         <option value="0">Append</option>
         <option value="1">Prepend</option>
-        <option value="2">Insert after</option>
-        <option value="3">Insert before</option>
+        <option value="2">After</option>
+        <option value="3">Before</option>
+        <option value="4">Insert after</option>
+        <option value="5">Insert before</option>
     </select>
 
 
@@ -85,22 +87,34 @@
 
               $("#btn").click(function(){
 
-                 switch($('#opciones option:selected').val()) {
+                  var texto= $("#texto").val();
+                  var opcion= $("#opciones").val();
+
+                  switch(opcion) {
                     case "0":
-                       $("#sparring").append("soy append");
+                       $("#sparring").append(texto);
                     break;
                     case "1":
-                        $("#sparring").prepend("soy prepend");
+                        $("#sparring").prepend(texto);
                     break;
                     case "2":
-                        $("#sparring").after("Insert After");
+                        $("#sparring").after(texto);
                     break;
-                    default:
-                        $("#sparring").before("Insert Before");
-                }
+                    case "3":
+                        $("#sparring").before(texto);
+                        break;
+                    case "4":
+                        $( "<p>"+texto+"</p>" ).insertAfter( "#sparring" );
+                        break;
+                      default:
+
+                        $( "<p>"+texto+"</p>" ).insertBefore( "#sparring" );
+                        break;
+
+                  }
 
             });
-});
+        });
 
 
 

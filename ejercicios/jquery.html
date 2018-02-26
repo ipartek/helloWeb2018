@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+</head>
+<body>
+    <style>
+        .seleccionado{
+            background-color:yellow;
+            color: #000;
+        }
+        #sparring{
+            display:inline-block;
+            border: 2px solid black;
+            min-height: 100px;
+            min-width: 100px;
+            background-color: bisque;
+        }
+    </style>
+    <h1>JQuery</h1>
+    <a href="https://www.desarrolloweb.com/manuales/manual-jquery.html#capitulos113">Manual de desarrollo para JQuery</a>
+    <p class="uno">Acordarse de añadir las librerías de JQuery al final</p>
+    <p>Al igual que en JavaScript, hay que esperar a que el DOM esté cargado</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam assumenda odit necessitatibus illo, quisquam molestias? Soluta similique consequuntur itaque at maiores placeat, quidem neque. Tempora consequuntur provident consequatur iste voluptas!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga ea, nisi id. Ab temporibus molestiae a mollitia maxime quis non vel, sint nulla facilis eius, incidunt enim iusto, recusandae qui.</p>
+    <div id="sparring">
+
+    </div>
+    <button id="btn">CLICK</button>
+    <input id="texto"type="text" placeholder="Dime algo con amor">
+    <select id="opciones">
+        <option value="0">Append</option>
+        <option value="1">Prepend</option>
+        <option value="2">InsertAfter</option>
+        <option value="3">InsertBefore</option>
+    </select>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $( document ).ready(function(){
+            /*
+            console.log("ready");
+            $("p:odd").addClass("seleccionado");
+
+            alert($("p.uno").text());
+            $("p:last").text("agur");*/
+            $("#btn").click(function(){
+                console.log("te oigo");
+                var texto= $("#texto").val();
+                console.log(texto);
+                var opcion=$("#opciones").val();
+                switch(opcion){
+                    case "0":
+                        console.log("Append");
+                        $("#sparring").append(texto);
+                        break;
+                    case "1":
+                        $("#sparring").prepend(texto);
+                        console.log("Prepend");
+                        break;
+                    case "2":
+                        $("#sparring").insertAfter(texto);
+                        console.log("InserAfter");
+                        break;
+                    case "3":
+                        $("#sparring").insertBefore(texto);
+                        console.log("InsertBefore");
+                        break;
+                }
+
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -53,7 +53,9 @@ Ver Recetas</button>
                     <h4 class="modal-title" id="myModalLabel">Ingredientes de la receta</h4>
                 </div>
                 <div class="modal-body">
-                    aqui vienen las recetas :D
+                    <ol id="listaIngredientes">
+
+                    </ol>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -70,6 +72,9 @@ Ver Recetas</button>
             <input type="text" id="foto" method="Post" oninvalid="setCustomValidity('El campo debe contener al menos dos letras, y sin números')" required pattern="[A-Za-z]{2,120}" placeholder="Url de la foto de la receta">
             <input type="number" method="Post" required id="likes" placeholder="Numero de likes">
             <input type="text" id="cocinero" method="Post" oninvalid="setCustomValidity('El campo debe contener al menos dos letras, y sin números')" required pattern="[A-Za-z]{2,120}" placeholder="Nombre del cocinero">
+
+            <textarea name="" id="ingredientes" cols="30" rows="10" placeholder="Introduce los ingredientes separados por comas"></textarea>
+            <br>
             <input onclick=anadirReceta() class="btn btn-default"id="envio-formulario" type="submit" value="Añadir Receta">
         </form>
         </div>

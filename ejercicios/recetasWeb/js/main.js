@@ -1,4 +1,5 @@
 var paella = new Receta("Paella", "https://www.goya.com/media/3961/shrimp-paella.jpg?quality=80", 16, "Carlos Argiñano");
+paella.addIngrediente("Arroz");
 var ensalada = new Receta("Ensalada", "https://t1.rg.ltmcdn.com/es/images/3/2/6/img_ensalada_de_verduras_variadas_57623_600.jpg", 6, "Alberto Chicote");
 var recetas = [];
 recetas.push(paella);
@@ -20,7 +21,7 @@ function init() {
                         <h2>` + recetas[i].nombre + `</h2><p>
                         <i class="fa fa-heart likes" aria-hidden="true"></i><span class="likes">` + recetas[i].likes + `</span> <span class="cocinero">` + recetas[i].cocinero + `</span></p>
 
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye fa-2" aria-hidden="true"></i>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="showModal(${i})"><i class="fa fa-eye fa-2" aria-hidden="true"></i>
 Ver Recetas</button>
 
 
@@ -41,10 +42,15 @@ function anadirReceta() {
         var fotoR = document.getElementById("foto").value;
         var likesR = document.getElementById("likes").value;
         var cocineroR = document.getElementById("cocinero").value;
+        var ingredientes = $("#ingredientes").val().split(/\r?\n/);
+        console.log(ingredientes);
         var receta = new Receta(nombreR, fotoR, likesR, cocineroR);
+        ingredientes.forEach(ingrediente=>{
+            receta.addIngrediente(ingrediente);
+        });
         recetas.unshift(receta);
         resetear();
-        init()
+        init();
     } else {
         console.warn("no se puede crear porque el formulario no es correcto")
     }
@@ -78,4 +84,16 @@ function cambiarDestino() {
 
 function cambiarOtraVez() {
     document.getElementById("cambiante").innerHTML = `<a href="#desplegable" onclick="cambiarDestino()">Anadir nueva receta</a>`
+}
+function showModal(indice){
+    var recetaSeleccionada=recetas[indice];
+    console.log("%o"+recetaSeleccionada);
+
+    var ingredientes=recetaSeleccionada.ingredientes;
+    var lis=""
+    ingredientes.forEach( ingrediente => {
+        lis+="<li>"+ingrediente+"</li>"
+
+    });
+    $("#listaIngredientes").html(lis);
 }

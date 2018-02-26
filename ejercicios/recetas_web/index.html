@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!--TODO: crear una sola ventana modal para todas las vistas de 'ingredientes' e invocarla dinámicamente con sus correspondientes datos a mostrar-->
                 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -87,6 +87,7 @@
             <!-- FIN .recetas -->
         </section>
     </div>
+    <!--FUTURE: dejar el footer en la parte inferior de la página y mostrar/ocultar el formulario para añadir nuevas recetas mediante un icono '+'-->
     <div class="container parteInferiorFija">
         <section id="formNuevaReceta">
 
@@ -94,13 +95,15 @@
             <form action="#secRecetas" class="form-inline">
                 <!--<legend>Receta:</legend>-->
                 <input type="text" id="inputNombre" class="form-control" placeholder="nombre" maxlength="30" required tabindex="1">
+                <!--FUTURE: cambiar el input de foto a tipo 'file'-->
                 <input type="text" id="inputFoto" class="form-control" placeholder="URL de la imágen" tabindex="2">
                 <input type="number" id="inputLikes" class="form-control" placeholder="likes" tabindex="3">
                 <input type="text" id="inputCocinero" class="form-control" placeholder="cocinero" tabindex="4">
                 <br><br>
+                <!--TODO: validar formulario antes de añadir nueva receta-->
                 <button type="button" class="btn btn-success" onclick="anadirReceta()">Añadir</button>
                 <button type="reset" class="btn btn-danger">Limpiar</button>
-
+                <!--FUTURE: Añadir ingredientes-->
             </form>
 
         </section>

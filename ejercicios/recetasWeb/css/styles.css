@@ -10,6 +10,12 @@ header{
 }
 /****header****/
 /*Contenido principal*/
+.container{
+    background-color:burlywood;
+}
+.container h2{
+    color:white;
+}
 #recetas{
     margin-bottom:150px;
 }
@@ -63,15 +69,15 @@ footer{
     text-align: center;
 
 }
-#desplegable form label{
-    color:white;
-}
+
 #desplegable form input{
     width:20%;
     line-height: 2em;
     border-radius:10px;
     text-align: center;
     margin-left:10px;
+    min-width:150px;
+    margin-top: 10px;
 }
 #desplegable form .btn {
     width:10%;
@@ -86,7 +92,7 @@ footer{
 }
 #desplegable{
     position:fixed;
-    bottom:-65px;
+    bottom:-75px;
     z-index: -1;
     width:100%;
     transition-duration: 2s;

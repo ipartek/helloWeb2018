@@ -65,7 +65,7 @@ Ver Recetas</button>
     <footer>
        <div id="desplegable">
         <h3 id="cambiante"><a href="#desplegable" onclick="cambiarDestino()">Anadir nueva receta</a></h3>
-        <form action="#" onsubmit="return false;">
+        <form id="formulario" action="#" onsubmit="return false;">
             <input type="text" id="nombre" method="Post" oninvalid="setCustomValidity('El campo debe contener al menos dos letras, y sin números')" required pattern="[A-Za-z]{2,120}" placeholder="Nombre de la receta">
             <input type="text" id="foto" method="Post" oninvalid="setCustomValidity('El campo debe contener al menos dos letras, y sin números')" required pattern="[A-Za-z]{2,120}" placeholder="Url de la foto de la receta">
             <input type="number" method="Post" required id="likes" placeholder="Numero de likes">

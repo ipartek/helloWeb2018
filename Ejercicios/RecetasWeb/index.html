@@ -11,17 +11,15 @@
 
 <body onload="init()">
 
-   <nav class="navbar navbar-default navbar-fixed-top">
+   <header>
       <div class="container">
-        <div class="navbar-header">
-          <!-- The mobile navbar-toggle button can be safely removed since you do not need it in a non-responsive implementation -->
-          <a class="navbar-brand" href="#"><i class="fa fa-cutlery fa-2x" aria-hidden="true"></i> Recetas</a>
-        </div>
-        <!-- Note that the .navbar-collapse and .collapse classes have been removed from the #navbar -->
+
+
+         <h1> <a class="navbar-brand" href="#"><i class="fa fa-cutlery fa-2x" aria-hidden="true">&nbsp; Recetas</i></a></h1>
+
 
       </div>
-    </nav>
-
+    </header>
 
     <div class="container">
 
@@ -30,7 +28,7 @@
             <!-- Primer row -->
 
             <div class="columnas col-md-4">
-                <div class="thumbnail text-center">
+                <div class="thumbnail text-center" id="thumb">
                     <img src="/Ejercicios/RecetasWeb/img/pollo.png" alt="..." >
                      <span onclick="borrarCaja()" class="close">X</span>
                     <div class="caption">
@@ -52,14 +50,10 @@
 
                         <i class="fa fa-heart" aria-hidden="true">16</i> Karlos Arguiñano
 
-
-
                         <p><a href="#bacalao" class="btn btn-primary" role="button" data-toggle="modal" data-target="#bacalao"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a>
                     </div>
                 </div>
             </div>
-
-
 
             <div class="columnas col-md-4">
                 <div class="thumbnail text-center">
@@ -181,16 +175,13 @@
 
 
 
-
-
-
 <!---FIN MODALES---->
 
 
 
         <!--FORMULARIO--->
    <footer>
-       <form onsubmit="return false" role="form">
+       <form onsubmit="return false" role="form" id="formulario">
 
    <h2>Nueva Receta</h2>
        <div class="form-inline">
@@ -223,7 +214,9 @@
 
 
 
-          <i class="fa fa-copyright" aria-hidden="true">IparCheck</i>
+
+
+          <i class="fa fa-copyright" aria-hidden="true">IparCheff</i>
 
 
 
@@ -236,6 +229,8 @@
         <!--FIN_FORMULARIO--->
 
         <!-- QUERY -->
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script><!-- QUERY -->
         <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 

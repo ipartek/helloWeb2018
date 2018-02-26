@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <!-- FonAwesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Link hoja de estilos -->
+    <link rel="stylesheet" href="css/stylesander.css">
+
+
+</head>
+
+<body onload="init()">
+
+    <header>
+        <div class="container-fluid" id="cabecera">
+
+            <h1><span id="tenedor"><i class="fa fa-cutlery" aria-hidden="true"></i></span>RecetasWeb</h1>
+
+        </div>
+    </header>
+
+    <section>
+
+        <div class="container containerRecetas" id="containerRecetas">
+        </div>
+
+        <!-- modal -->
+        <div id="modalIngredientes" class="modal fade" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Ingredientes</h4>
+              </div>
+              <div class="modal-body">
+                <ol id="listaIngredientes"></ol>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+    </section>
+
+
+    <footer>
+        <div class="container-fluid" id="pie">
+
+            <form id="formulario"
+                  class="form-inline"
+                  action="#"
+                  method="post"
+                  onsubmit="return false;">
+
+                <fieldset>
+                    <legend>Nueva Receta</legend>
+
+                    <div class="form-group">
+                        <input class="form-control"
+                               type="text"
+                               id="nombre"
+                               name="nombre"
+                               required
+                               placeholder="nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control"
+                               type="text"
+                               id="foto"
+                               name="foto"
+                               required
+                               placeholder="introduce la url de la foto">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control"
+                               type="number"
+                               id="likes"
+                               name="likes"
+                               required
+                               placeholder="Indica cuantos likes tiene">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control"
+                               type="text"
+                               id="cocinero"
+                               name="cocinero"
+                               required
+                               placeholder="Nombre del ocinero">
+                    </div>
+
+
+                    <button type="submit"
+                            class="btn btn-default"
+                            onclick="nuevaReceta()">Crear nueva receta</button>
+                </fieldset>
+            </form>
+
+
+            <div class="copiright">
+                <p>© Iparcheff 2018</p>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <script src="js/receta.js"></script>
+    <script src="js/mainander.js"></script>
+
+</body>
+
+</html>

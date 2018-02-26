@@ -78,3 +78,9 @@ footer {
     margin-top: 10%;
 
 }
+
+
+@media (max-width: 991px) {
+  #thumb {
+        margin-top: 130px;
+  }

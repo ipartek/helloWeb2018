@@ -5,16 +5,23 @@
 var recetas = [];
 var idReceta = 0;
 
+// variables del formulario
+let form = document.getElementById("formulario");
+let inputNombre = document.getElementById("inputNombre");
+let inputFoto = document.getElementById("inputFoto");
+let inputLikes = document.getElementById("inputLikes");
+let inputCocinero = document.getElementById("inputCocinero");
+
 /*
-*   Fragmeno HTML a insertar por cada receta
-*   Reemplazar en cada receta:
-*       #idReceta# : identificador númerico único de la receta.
-*       #nombreReceta# : receta.nombre
-*       #fotoReceta# : receta.foto
-*       #altFotoReceta# = "foto de " + receta.nombre
-*       #ingredientesReceta# : forEache(receta.ingredientes)
-*
-*/
+ *   Fragmeno HTML a insertar por cada receta
+ *   Reemplazar en cada receta:
+ *       #idReceta# : identificador númerico único de la receta.
+ *       #nombreReceta# : receta.nombre
+ *       #fotoReceta# : receta.foto
+ *       #altFotoReceta# = "foto de " + receta.nombre
+ *       #ingredientesReceta# : forEache(receta.ingredientes)
+ *
+ */
 /*var htmlReceta = `<div class='col-xs-12 col-sm-6 col-md-4 receta' data-index='#idReceta#'>
                     <div class='thumbnail' id='thumb-#idReceta#'>
                         <img src='#fotoReceta#' alt='#altFotoReceta#'>
@@ -53,6 +60,22 @@ var idReceta = 0;
 /* recetas de muestra */
 function init() {
 
+    crearRecetasMock();
+
+    // muestra en UI las recetas del array 'recetas'
+    recetas.forEach(receta => {
+        mostrarReceta(receta);
+    });
+
+    // Mostar año actual junto al Copyright
+    mostrarAnioActual();
+}
+
+
+/**
+ *  Función para mostrar unas recetas predefinidas
+ */
+function crearRecetasMock() {
     var rPollo = new Receta("Pollo al chilindrón", "http://recetasdecocina.elmundo.es/wp-content/uploads/2016/10/receta-pollo-al-chilindron.jpg", 72, "Robin Food");
     rPollo.addIngrediente("pollo");
     rPollo.addIngrediente("ajo");
@@ -74,21 +97,11 @@ function init() {
     rMerluza.addIngrediente("ajo");
     rMerluza.addIngrediente("perejil");
     recetas.push(rMerluza);
-
-    // muestra en UI las recetas del array 'recetas'
-    recetas.forEach(receta => {
-        mostrarReceta(receta);
-    });
-
-
-
-    // Mostar año actual junto al Copyright
-    mostrarAnioActual();
 }
 
 /*
-*   Función para mostrar en UI las recetas del array 'recetas'
-*/
+ *   Función para mostrar en UI las recetas del array 'recetas'
+ */
 function mostrarReceta(receta) {
 
     // var del DOM
@@ -103,7 +116,7 @@ function mostrarReceta(receta) {
     //nuevaReceta.querySelector(".thumbnail").setAttribute("id", "thm" + idReceta);
     nuevaReceta.querySelector(".imgReceta").setAttribute("src", receta.foto);
     nuevaReceta.querySelector(".imgReceta").setAttribute("alt", "foto " + receta.nombre);
-    nuevaReceta.querySelector(".likes").textContent = " " +receta.likes;
+    nuevaReceta.querySelector(".likes").textContent = " " + receta.likes;
     nuevaReceta.querySelector(".cocinero").textContent = receta.cocinero;
 
     nuevaReceta.style.display = "initial";
@@ -112,8 +125,8 @@ function mostrarReceta(receta) {
 }
 
 /*
-*   Función que muestra el año actual en las etiquetas HTML con clase .anio
-*/
+ *   Función que muestra el año actual en las etiquetas HTML con clase .anio
+ */
 function mostrarAnioActual() {
 
     // variables DOM
@@ -131,7 +144,7 @@ function borrarReceta(elem) {
     var nombreReceta = elem.querySelector("div>h3").textContent;
     var recetaBorrar = recetas.filter(receta => receta.nombre == nombreReceta);
     var resultado = borrarElemento(recetas, recetaBorrar[0]);
-    if(!resultado) {
+    if (!resultado) {
         alert("No se ha podido borrar el elemento");
         console.warn("No se ha podido borrar el elemento");
     } else {
@@ -142,11 +155,11 @@ function borrarReceta(elem) {
 
 
 /*
-*   Función para borrar un elemento de un array
-*   @array: el array que contiene el elemento
-*   @element: el elemento que se desea borrar
-*   POST: @array sin el @element
-*/
+ *   Función para borrar un elemento de un array
+ *   @array: el array que contiene el elemento
+ *   @element: el elemento que se desea borrar
+ *   POST: @array sin el @element
+ */
 function borrarElemento(array, element) {
     /*let index = findWithAttr(array, nombre, element[0].nombre);*/
     let index = array.indexOf(element);
@@ -165,21 +178,74 @@ function borrarElemento(array, element) {
 
 function anadirReceta() {
 
-    let inputNombre = document.getElementById("inputNombre");
-    let inputFoto = document.getElementById("inputFoto");
-    let inputLikes = document.getElementById("inputLikes");
-    let inputCocinero = document.getElementById("inputCocinero");
+    if (validarFormulario()) {
 
-    // crear nuevo objeto Receta
-    var nuevaReceta = new Receta(inputNombre.value, inputFoto.value, inputLikes.value, inputCocinero.value);
-    // añadirla al array de 'recetas'
-    recetas.unshift(nuevaReceta);
-    // mostrarla en pantalla
-    mostrarReceta(nuevaReceta);
+        // rellenar datos no requeridos con valores por defecto
+        if(inputLikes.value === "") {
+            inputLikes.value = 0;
+        }
+        if(inputCocinero.value === ""){
+            inputCocinero.value = "Anónimo";
+        }
 
-    // limpiar input del formulario
-    inputNombre.value = "";
-    inputFoto.value = "";
-    inputLikes.value = "";
-    inputCocinero.value = "";
+        // crear nuevo objeto Receta
+        var nuevaReceta = new Receta(inputNombre.value, inputFoto.value, inputLikes.value, inputCocinero.value);
+        // añadirla al array de 'recetas'
+        recetas.unshift(nuevaReceta);
+        // mostrarla en pantalla
+        mostrarReceta(nuevaReceta);
+
+        // limpiar input del formulario
+        //limpiarFormulario();
+        form.reset();
+    } else {
+        //alert("Los datos introducidos en el formulario, no son correctos.")
+        console.info("Datos de formulario incorrectos");
+    }
+
+}
+
+/**
+ *   Función para limpiar los input del formulario
+ */
+/*function limpiarFormulario() {
+
+    // inputs del formulario
+    var inputsForm = document.querySelectorAll("form input");
+
+    inputsForm.forEach(input => {
+        input.value = "";
+    });
+}*/
+
+
+/**
+ *   Función para validar los campos de entrada del formulario
+ */
+function validarFormulario() {
+
+    let extImagen = inputFoto.value.split('.');
+    console.log(extImagen);
+
+    // var return
+    let esCorrecto = true;
+
+    if (inputNombre.value === "") {
+        esCorrecto = false;
+    }
+
+    if (inputFoto.value === "") {
+        esCorrecto = false;
+        inputFoto.setCustomValidity("Debe insertar la URL de la imagen");
+    } else if(extImagen[extImagen.length-1] !== "png" && extImagen[extImagen.length-1] !== "jpg" && extImagen[extImagen.length-1] !== "jpeg") {
+        esCorrecto = false;
+        inputFoto.setCustomValidity("El formato de la imágen es incorrecto");
+    }
+
+    if (inputLikes < 0) {
+        esCorrecto = false;
+    }
+
+    return esCorrecto;
+
 }

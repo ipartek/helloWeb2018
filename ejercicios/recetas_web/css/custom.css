@@ -18,6 +18,7 @@ header div:first-child {
     background-color: #589442;
     padding-left: 5px;
     border-radius: 10%;
+    width: 70px;
 }
 
 .logo {
@@ -110,7 +111,6 @@ header div:first-child {
 
 .fa-instagram:hover {
     border-radius: 10px;
-    padding: 0 1px;
     background: #405de6;
     background: -moz-linear-gradient(top, #405de6 0%, #c13584 33%, #f56040 66%, #ffdc80 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, #405de6), color-stop(33%, #c13584), color-stop(66%, #f56040), color-stop(100%, #ffdc80));

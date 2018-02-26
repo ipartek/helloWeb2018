@@ -92,11 +92,12 @@
         <section id="formNuevaReceta">
 
             <h2>Añadir receta</h2>
-            <form action="#secRecetas" class="form-inline">
+            <form action="#secRecetas" id="formulario"
+               class="form-inline">
                 <!--<legend>Receta:</legend>-->
                 <input type="text" id="inputNombre" class="form-control" placeholder="nombre" maxlength="30" required tabindex="1">
                 <!--FUTURE: cambiar el input de foto a tipo 'file'-->
-                <input type="text" id="inputFoto" class="form-control" placeholder="URL de la imágen" tabindex="2">
+                <input type="text" id="inputFoto" class="form-control" placeholder="URL de la imágen" required tabindex="2">
                 <input type="number" id="inputLikes" class="form-control" placeholder="likes" tabindex="3">
                 <input type="text" id="inputCocinero" class="form-control" placeholder="cocinero" tabindex="4">
                 <br><br>

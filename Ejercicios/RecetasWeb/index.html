@@ -15,7 +15,7 @@
       <div class="container">
 
 
-         <h1> <a class="navbar-brand" href="#"><i class="fa fa-cutlery fa-2x" aria-hidden="true">&nbsp; Recetas</i></a></h1>
+         <h1> <a class="navbar-brand" href="#"><i class="fa fa-cutlery fa-2x" aria-hidden="true">&nbsp; RecetasWEB</i></a></h1>
 
 
       </div>
@@ -32,40 +32,17 @@
                     <img src="/Ejercicios/RecetasWeb/img/pollo.png" alt="..." >
                      <span onclick="borrarCaja()" class="close">X</span>
                     <div class="caption">
-                        <h3>Pollo al chilindron</h3>
-                        <p>Pollo con Salsa Chilindron.</p>
-                        <i class="fa fa-heart" aria-hidden="true">16</i> Arzak
-                        <p><a href="#pollo" class="btn btn-primary" role="button" data-toggle="modal" data-target="#pollo"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a>
+                        <h3></h3>
+                        <p></p>
+                        <i class="fa fa-heart" aria-hidden="true"></i>
+                        <p><a href="#pollo" class="btn btn-primary" role="button" data-toggle="modal" data-target="#pollo"><i class="fa fa-eye" aria-hidden="true"></i> </a>
                     </div>
                 </div>
             </div>
 
 
-            <div class="columnas col-md-4">
-                <div class="thumbnail text-center">
-                    <img src="/Ejercicios/RecetasWeb/img/bacalao.png" alt="..."><span onclick="borrarCaja()" class="close">X</span>
-                    <div class="caption">
-                        <h3>Bacalao al pil-pil</h3>
-                        <p>Bacalao con aceite de oliva, ajo y guindillas.</p>
 
-                        <i class="fa fa-heart" aria-hidden="true">16</i> Karlos Arguiñano
 
-                        <p><a href="#bacalao" class="btn btn-primary" role="button" data-toggle="modal" data-target="#bacalao"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="columnas col-md-4">
-                <div class="thumbnail text-center">
-                    <img src="/Ejercicios/RecetasWeb/img/setas.png" alt="..."><span onclick="borrarCaja()" class="close">X</span>
-                    <div class="caption">
-                        <h3>Revuelto de zizas</h3>
-                        <p>Setas de todo tipo</p>
-                        <i class="fa fa-heart" aria-hidden="true">16</i> Eva Arguiñano
-                        <p><a href="#bacalao" class="btn btn-primary" role="button" data-toggle="modal" data-target="#setas"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- /row -->
 
@@ -193,7 +170,7 @@
     <input type="text" id="foto" required>
 
     <label for="likes">Likes</label>
-    <input type="text" class="form-control" id="likes"
+    <input type="number" class="form-control" id="likes"
            placeholder="Cuanta puntuacion le pones?" required>
 
  <label for="cocinero">Cocinero</label>
@@ -205,7 +182,7 @@
     <input type="text" class="form-control" id="descripcion"
            placeholder="Introduce la descripcion" required>
 
-  <button type="submit" class="btn btn-default" onclick="anadir_receta()">Crear</button>
+  <button type="submit" class="btn btn-default" onclick="nuevaReceta()">Crear</button>
   </div>
 
 

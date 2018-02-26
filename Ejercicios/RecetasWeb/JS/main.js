@@ -23,7 +23,7 @@ function cargarRecetas() {
 
     var recetasHtml = "";
 
- var contenedorRecetas = document.getElementById("contenedor_recetas");
+    var contenedorRecetas = document.getElementById("contenedor_recetas");
 
     recetas.forEach((receta, index) => {
 
@@ -45,9 +45,10 @@ function cargarRecetas() {
     contenedorRecetas.innerHTML = recetasHtml;
 
 }
+
 function crearRecetasMock() {
 
-    var rPollo = new Receta("Pollo", "http://recetasdecocina.elmundo.es/wp-content/uploads/2016/10/receta-pollo-al-chilindron.jpg", 13, "Robin Food");
+    var rPollo = new Receta("Pollo", "http://127.0.0.1:61493/Ejercicios/RecetasWeb/img/pollo.png", 13, "Robin Food", "Pollo con chilindron");
 
     rPollo.addingredientes("pollo");
     rPollo.addingredientes("ajo");
@@ -55,16 +56,26 @@ function crearRecetasMock() {
     rPollo.addingredientes("chilidron");
 
     //crear mas recetas
-    var tortillaPatatas = new Receta("Tortilla Patatas", "https://es.rc-cdn.community.thermomix.com/recipeimage/flz0tm0r-a2069-162740-cfcd2-zlr8kinc/733f35bb-e440-4c4f-9b87-949a0e20e384/main/tortilla-de-patatas-con-cebolla.jpg", 45, "Karlos Argiñano");
+    var tortillaPatatas = new Receta("Tortilla Patatas", "https://2.bp.blogspot.com/-CsRabToZc7Q/TbvpzCJmOoI/AAAAAAAAFcs/C_T9i8gpJA4/s640/IMG_0576.JPG", 45, "Karlos Argiñano", "Tortilla de Patatas");
     tortillaPatatas.addingredientes("Patatas");
     tortillaPatatas.addingredientes("Huevos");
 
 
 
+    //crear mas recetas
+    var pastel = new Receta("Pastel con Frutas del Bosque", "http://postrestradicionales.com/wp-content/uploads/2016/04/Pastel-de-queso-con-frutas-del-bosque.png", 145, "Buddy Valastro", "Pastel de Queso con Frutas del Bosque");
+    pastel.addingredientes("Nata líquida.");
+    pastel.addingredientes("Frutas del bosque");
+    pastel.addingredientes("Huevos");
+    pastel.addingredientes("Azúcar");
+    pastel.addingredientes("Café");
+    pastel.addingredientes("Gelatina en polvo");
+    pastel.addingredientes("Hojitas de menta");
+
     //añadirlas al array recetas
     recetas.push(rPollo);
     recetas.push(tortillaPatatas);
-
+    recetas.push(pastel);
     console.debug("Recetas Creadas");
 }
 
@@ -85,11 +96,13 @@ function nuevaReceta() {
         console.debug('crear receta');
         //recoger values de los inputs
         var nombre = document.getElementById("nombre").value;
+        var descripcion = document.getElementById("descripcion").value;
         var foto = document.getElementById("foto").value;
         var likes = document.getElementById("likes").value;
         var cocinero = document.getElementById("cocinero").value;
+        var descripcion = document.getElementById("descripcion").value;
         //crear receta nueva
-        var newReceta = new Receta(nombre, foto, likes, cocinero);
+        var newReceta = new Receta(nombre, foto, likes, cocinero, descripcion);
 
         //añadir al array
         recetas.unshift(newReceta);

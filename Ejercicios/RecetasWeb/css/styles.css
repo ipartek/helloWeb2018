@@ -5,8 +5,30 @@ padding: 0 0 125px;
 
 }
 
+header{
+
+    background-color: chocolate;
 
 
+}
+.thumbnail{
+
+
+    margin-top: 20px;
+}
+
+a{
+
+
+    color:  white;
+}
+
+
+.fa-2x{
+
+    margin-top: -20px;
+     font-size: 2.2em;
+}
 
 .navbar-header a{
 
@@ -30,7 +52,7 @@ footer {
 }
 
 .row{
-    position: relative;
+
 
     bottom: 50px;
 
@@ -54,18 +76,7 @@ footer {
 
 }
 
-.close{
-    margin-top: -280px;
-            right: 8px;
-            color: #fff;
-            background-color: #000;
-            font-size: 1.4em;
-            border-radius: 50%;
-            opacity: 1;
-            padding: 2px;
 
-
-}
 
 .fa-heart:hover{
 
@@ -73,10 +84,14 @@ footer {
 
 }
 
-.columnas{
+.cerrar span{
 
-    margin-top: 10%;
-
+    border: 2px solid black;
+ -webkit-border-radius: 5555px;
+-moz-border-radius: 5555px;
+border-radius: 5555px;
+    font-size: 21px;
+    width: 200px;
 }
 
 

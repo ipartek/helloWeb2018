@@ -101,11 +101,6 @@ function alta() {
 
     console.log(aIng)
 
-    //Probando el for en jQuery
-    $.each((aRecetas, index) =>{
-        console.log("Indice: "+ this);
-    });
-
     aIng.forEach(ingre => {
         //        let cap = ingre.charAt(0).toUpperCase();
         //        receta.addIngrediente(ingre.trim().replace(ingre.charAt(0), cap));

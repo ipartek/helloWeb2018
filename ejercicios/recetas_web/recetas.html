@@ -48,67 +48,14 @@
 
     <section>
         <!-- Container (Recetas) -->
-        <div id="recetas_lista" class="container-fluid text-center bg-grey">
+        <div id="recetas_cabecera" class="container-fluid text-center bg-grey">
             <h2>Recetas deliciosas</h2><br>
             <h4>Participa y agrega la tuya</h4>
             <div class="row text-center slideanim" id="recetas_lista">
-<!--
-        <div class="col-sm-4">
-            <div class="thumbnail">
-                <button type="button" class="close">
-                  <span>&times;</span>
-                </button>
-                <img src="img/pinchos/pincho01.jpg" alt="pincho" width="400" height="300">
-                <p><strong>Receta 1</strong></p>
-                <p><i class="fa fa-heart"></i> Likes</p>
-                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal">
-                  INGREDIENTES
-                </button>
-            </div>
-        </div>
--->
 
-            <!-- Modal -->
-<!--
-            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h2 class="modal-title" id="exampleModalLabel">INGREDIENTES</h2>
-                  </div>
-                  <div class="modal-body">
-                      <ul class="ingredientes">
-                          <li>1 pollo</li>
-                          <li>1 cebolla</li>
-                          <li>1 pimiento verde</li>
-                          <li>5 dientes de ajo</li>
-                          <li>2 tomates</li>
-                          <li>2 patatas</li>
-                          <li>carne de 4 pimientos choriceros</li>
-                          <li>2 rebanadas de pan</li>
-                          <li>harina</li>
-                          <li>1 vaso de vino blanco</li>
-                          <li>1 vaso de caldo o de agua</li>
-                          <li>vinagre</li>
-                          <li>aceite virgen extra</li>
-                          <li>sal</li>
-                          <li>pimienta</li>
-                          <li>perejil</li>
-                      </ul>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div> recetas lista
--->
 
          </div>
+        </div>
     </section>
 
     <!--formulario-->
@@ -120,28 +67,31 @@
         <div class="row">
           <div class="col-md-12">
                 <div class="row">
+                    <form id="formulario" name="form" onsubmit="return false">
                     <div class="col-sm-3 form-group">
-                        <input class="form-control" id="nombreInput" name="nombre" placeholder="Nombre" type="text" required>
+                        <input class="form-control" id="nombreInput" name="nombre" required placeholder="Nombre" type="text">
                     </div>
                     <div class="col-sm-3 form-group">
-                        <input class="form-control" id="fotoInput" name="foto" placeholder="Foto" type="text" required>
+                        <input class="form-control" id="fotoInput" name="foto" required placeholder="Foto" type="text">
                     </div>
 
 
                     <div class="col-sm-3 form-group">
-                        <input class="form-control" id="numeroInput" name="likes" placeholder="Likes" type="text" required>
+                        <input class="form-control" id="likesInput" name="likes" required placeholder="Likes" type="text">
                     </div>
                     <div class="col-sm-3 form-group">
-                        <input class="form-control" id="cocineraInput" name="cocinera" placeholder="Cocinera/o" type="text" required>
+                        <input class="form-control" id="cocineraInput" name="cocinera" required placeholder="Cocinera/o" type="text" >
                     </div>
+                     <div class="row">
+                        <div class="col-md-12 form-group">
+                            <input class="btn pull-right" type="submit" onclick="anadirReceta()" value="enviar">
+                        </div>
+                    </div>
+                    </form>
                 </div>
 
                 <br>
-                <div class="row">
-                    <div class="col-md-12 form-group">
-                        <button class="btn pull-right" type="" onclick="crear()">Enviar</button>
-                    </div>
-                </div>
+
             </div>
         </div>
         <br>
@@ -151,7 +101,13 @@
         <a class="up-arrow" href="#cont01" data-toggle="tooltip" title="" data-original-title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a><br><br>
-        <p>@ <a href="" data-toggle="tooltip" title="" data-original-title="Visit w3schools">iparcheff</a></p>
+        <p>@ iparcheff</p>
+<!--
+		 <script>
+                var f = new Date();
+                document.write('<span>' + f.getFullYear() + '</span>');;
+            </script>
+-->
     </footer>
     <!--SCRIPTS-->
     <!--jQuery Core 2.2.4-->

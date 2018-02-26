@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+
+    <style>
+        .seleccionado{
+            background-color: aqua;
+            color: blueviolet;
+        }
+
+        #sparring{
+            display: inline-block;
+            border: 2px solid black;
+            min-height: 100px;
+            min-width: 100px;
+            background-color: aquamarine;
+        }
+        #btn{
+
+        }
+    </style>
+</head>
+<body>
+   <h1>JQuery</h1>
+    <p class="uno">Acordarse de añadir la libreria de JQuery al final del HTML</p>
+    <p>Al igual que en JS hay que esparar a que el DOM esté cargado 'ready', para empezar nuestros scripts</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi molestiae, vitae est similique. </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ratione qui nobis officia amet</p>
+    <p class="cinco">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, unde quidem</p>
+
+
+    <div id="sparring"></div>
+    <br>
+    <button id="btn">CLICK</button>
+    <input type="text" id="texto" placeholder="dime algo con amor">
+    <select id="opciones">
+        <option value="0">Append</option>
+        <option value="1">Prepend</option>
+        <option value="2">Insert after</option>
+        <option value="3">Insert before</option>
+    </select>
+
+
+
+    <a href="https://www.desarrolloweb.com/manuales/manual-jquery.html#capitulos113" target="_blank">DesarrolloWeb.com</a>
+
+ <!--jQuery Core 2.2.4-->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script>
+         //código a ejecutar cuando el DOM está listo para recibir instrucciones, hoy en día se usa el abreviado.
+        $(document).ready(function(){
+            console.log('Ready, oh yeah!!');
+
+           // alert($('p.uno').text());
+
+
+
+        //seleccionamos todos los p y los pintamos de rojo
+            //$('p').css('color','red');
+
+        //seleccionamos todos los pimpares y los pintamos de negro y le ponemos letra 30px
+            //$('p:even').css('font-size','30px');
+            //$('p:even').css('color','black');
+
+        //clase seleccionado a todos los parrafos impares
+            //$("p:even").addClass(".seleccionado");
+        //cambiamos el texto del párrafo cinco
+            //$('p.cinco').text('helloooooo');
+
+
+//            $('p').click(function(){
+//             selecciona los párrafos y los pones rojos
+//                $(this).css('color', 'red');
+//            funciona como un interruptor, si tiene se pone, si no tiene se lo quita
+//               $(this).toggleClass('seleccionado');
+//                $(this).fadeOut('seleccionado');
+//
+//            });
+
+//
+
+
+              $("#btn").click(function(){
+
+                 switch($('#opciones option:selected').val()) {
+                    case "0":
+                       $("#sparring").append("soy append");
+                    break;
+                    case "1":
+                        $("#sparring").prepend("soy prepend");
+                    break;
+                    case "2":
+                        $("#sparring").after("Insert After");
+                    break;
+                    default:
+                        $("#sparring").before("Insert Before");
+                }
+
+            });
+});
+
+
+
+
+
+    </script>
+</body>
+</html>

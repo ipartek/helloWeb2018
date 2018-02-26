@@ -1,57 +1,126 @@
-/*creamos una receta de prueba*/
-var recetas=[];
-
-function objPintxo(){
-    var rPollo = new Receta('pollo','http://www.recetasderechupete.com/wp-content/uploads/2015/05/pollo_chilindron-525x360.jpg',13,'Robin Food');
-
-    var rCocido = new Receta('Cocido','http://www.recetasderechupete.com/wp-content/uploads/2015/05/pollo_chilindron-525x360.jpg',14,'Pepa');
-
-    var rMigas = new Receta('Migas','http://www.recetasderechupete.com/wp-content/uploads/2015/05/pollo_chilindron-525x360.jpg',17,'Julia');
+var aRecetas = [];
+var inicioRecetas = document.getElementById("recetas_lista");
+var contenedor= document.getElementById("recetas_lista");
 
 
 
-    rPollo.addIngrediente('pollo');
-    rPollo.addIngrediente('ajo');
-    rPollo.addIngrediente('tomate');
-    rPollo.addIngrediente('chilindrón');
 
 
-    console.log('1º receta %s %o', rPollo.nombre , rPollo);
+function init() {
+
+    var rPollo = new Receta("Pollo", "http://recetasdecocina.elmundo.es/wp-content/uploads/2016/10/receta-pollo-al-chilindron.jpg", 13, "Robin Food");
+
+    rPollo.addIngrediente("pollo");
+    rPollo.addIngrediente("ajo");
+    rPollo.addIngrediente("tomate");
+    rPollo.addIngrediente("chilidron");
+
+    sumarReceta(rPollo);
+
+    var rCocido = new Receta("Cocido", "https://i.ytimg.com/vi/R-9ZoARMdww/maxresdefault.jpg", 2, "Eusebio Plaza");
+
+	sumarReceta(rCocido);
 
 
+    var rMigas = new Receta("Migas", "https://www.erv.es/blog/wp-content/uploads/2015/01/seguro_anulacion_viaje_caceres_gastronomia.jpg", 24, "Pepa Sanchez");
 
-    //crear mas recetas
+	//añado las recetas base al array
+    sumarReceta(rMigas);
 
-    //añadir al array de recetas
+	//pinto las recetas base
+	pintarRecetas();
 }
 
-function crear(){
 
-    limpiar();
-    nuevoNumero();
-    pintarPincho();
+function anadirReceta() {
+
+    console.log("nueva receta click");
+
+    //comprobar que el formulario es correcto antes de añadirReceta
+    var form = document.getElementById("formulario");
+    if(form.checkValidity() ){
+        console.log("crear receta");
+        //recojo los valores de los input
+        var nombre = document.getElementById("nombreInput").value;
+        var foto = document.getElementById("fotoInput").value;
+        var likes = document.getElementById("likesInput").value;
+        var cocinero = document.getElementById("cocineraInput").value;
+
+        //para crear nuevas recetas
+        var nuevaReceta = new Receta(nombre, foto, likes, cocinero);
+
+
+        //añado la nueva receta al array
+        sumarReceta(nuevaReceta);
+
+        //añado la receta al container del HTML
+        pintarRecetas();
+
+        //límpia el input
+//        nombre.innerHTML= "";
+//        foto.innerHTML="";
+//        likes.innerHTML="";
+//        cocinero.innerHTML="";
+
+    }else{
+        console.log("no se puede crear receta porque nos faltan input");
+    }
+
+
+
+
 }
 
-//crear recetas por formulario
-var nombreInput = document.getElementById("nombreInput");
+//añado la receta al principio del array
+function sumarReceta(nuevaReceta) {
+	aRecetas.unshift(nuevaReceta);
+	return aRecetas;
+}
 
-var numeroInput= document.getElementById("numeroInput");
-var contenedor = document.getElementById("recetas_lista");
-var spanNumero=`<div class="col-sm-4">
+//borro la receta
+function borrarReceta(elem,indice) {
+
+    //elimino el div de la receta
+    var x = event.target;
+	var padre = x.parentNode;
+	var padre2 = padre.parentNode;
+	var padre3 = padre2.parentNode;
+	var padre4 = padre3.parentNode;
+	var padre5 = padre4.parentNode;
+	padre5.removeChild(padre4);
+
+    //elimino el onjeto del array
+    recetas.splice(indice,1);
+
+}
+
+
+function pintarRecetas() {
+
+	//limpio el container para que no me salgan repetidas las recetas
+    inicioRecetas.innerHTML = "";
+
+	//recorro el array para poder pintar las nuevas recetas
+    var recorrerRecetas = aRecetas.length;
+
+    for (var i = 0; i < recorrerRecetas; i++) {
+			var recetaNueva = `
+            <div class="col-sm-4" id="recetilla">
                     <div class="thumbnail">
-                        <button type="button" class="close">
-                          <span>&times;</span>
+                       <div>
+						<button type="button" class="close" onclick="borrarReceta(this, ${i})">
+						  <span>&times;</span>
+						</button>
+						</div>
+						<img src="${aRecetas[i].foto}" alt="foto">
+						<p><strong>${aRecetas[i].nombre}</strong></p>
+                        <p><i class="fa fa-heart"></i> ${aRecetas[i].likes}</p>
+						<p>${aRecetas[i].cocinero}</p>
+                        <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#modal">
+                          <i class="fa fa-eye" aria-hidden="true"></i> INGREDIENTES
                         </button>
-                        <img src="img/pinchos/pincho01.jpg" alt="pincho" width="400" height="300">
-                        <p><strong>Receta 1</strong></p>
-                        <p><i class="fa fa-heart"></i> $$$</p>
-                         <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal">
-                          INGREDIENTES
-                        </button>
-                    </div>
-                </div>
 
-                <!-- Modal -->
+                       <!-- Modal -->
                 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -87,58 +156,11 @@ var spanNumero=`<div class="col-sm-4">
                     </div>
                   </div>
                 </div>`;
-var aPinchos = [];
+
+		//añado la nueva receta al contenedor, respetando las que ya existían
+        inicioRecetas.innerHTML += recetaNueva;
 
 
-
-
-
-/**
-* recoge un número del input y lo introduce en el div co id #cntNumDes
-*/
-function nuevoNumero(){
-    console.debug("añadir nuevo número %s", numeroInput.value);
-    var numeroEntero = numeroInput.value;
-
-
-
-
-    aPinchos.unshift(numeroEntero);//agregamos una posición al pripio del array
-
-
-
-    numeroInput.value = "";//límpia el input
-    numeroInput.focus();//devuelve el foco al input
+    }
 }
-
-
-
-//eliminamos la caja del html y eliminamos el número de array desordenado
-//function eliminarBox{
-//    console.debug("eliminar box %s",pos);
-//
-//}
-
-
-function pintarPincho(){
-        for (var i in aPinchos) {
-        var newElement = document.createElement('spanNumero');
-
-//        borrada = contenedor.removeChild(newElement);
-//        var borrada = 0;
-
-        newElement.innerHTML += spanNumero.replace('$$$',aPinchos[i]);
-        contenedor.appendChild(newElement);
-        return newElement;
-        }
-}
-
-function limpiar(){
-
-
-
-
-
-}
-
 

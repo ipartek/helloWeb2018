@@ -34,7 +34,7 @@ function cargarRecetas(){
                                         <span class="likes"><i class="fa fa-heart" aria-hidden="true"></i>${receta.likes}</span>
                                         <span class="cocinero">${receta.cocinero}</span></p>
                                     <hr>
-                                    <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
+                                    <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" onclick="showModal(${index})"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
                                 </div>
                             </div>
                         </div>`;
@@ -111,3 +111,35 @@ function eliminarReceta(elem, posicion ){
 
 
 }
+
+
+function showModal(index){
+
+    var recetaSeleccionada = recetas[index];
+    console.debug('showModal %o' + recetaSeleccionada );
+
+    $('#modalIngredientes').modal('show');
+
+    var ingredientes = recetaSeleccionada.ingredientes;
+    var lis = "";
+    ingredientes.forEach( ing => {
+            lis += "<li>"+ing+"</li>";
+    });
+    $("#listaIngredientes").html(lis);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

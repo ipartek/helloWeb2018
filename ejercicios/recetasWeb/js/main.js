@@ -1,80 +1,142 @@
 var recetas = [];
 
+
+
 /* creamos unas recetas de prueba */
 function init() {
 
-    var rPollo = new Receta("Pollo", "http://recetasdecocina.elmundo.es/wp-content/uploads/2016/10/receta-pollo-al-chilindron.jpg", 13, "Robin Food");
+    var d = new Date();
+    var n = d.getFullYear();
+
+    currentYear = document.getElementById("año");
+    currentYear.innerHTML = n;
+
+
+
+    var rTiramisu = new Receta("Tiramisú", "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/2/4/2/RX-FNM_030111-Sugar-Fix-005_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371597326801.jpeg", 13, "Eva Argiñano");
+    rTiramisu.addIngrediente("mascarpone");
+    rTiramisu.addIngrediente("cafe");
+    rTiramisu.addIngrediente("sobaos");
+
+    console.log("1º receta %s %o", rTiramisu.nombre, rTiramisu);
+
+
+
+    var rPollo = new Receta("Pollo al chilindrón", "https://todocooking.com/wp-content/uploads/2015/09/Pollo-al-chilindron3.jpg", 16, "Arzak");
 
     rPollo.addIngrediente("pollo");
     rPollo.addIngrediente("ajo");
     rPollo.addIngrediente("tomate");
     rPollo.addIngrediente("chilidron");
 
+    var rBacalao = new Receta("Pollo al chilindrón", "https://www.miscosillasdecocina.com/wp-content/uploads/2014/02/bacalao-pilpil-e1491084486535.jpg", 10, "Martin Berasategi");
 
-    console.log("1º receta %s %o", rPollo.nombre, rPollo);
+    rBacalao.addIngrediente("bacalao");
+    rBacalao.addIngrediente("ajo");
+    rBacalao.addIngrediente("sal");
 
+    recetas.push(rTiramisu);
+    recetas.push(rPollo);
+    recetas.push(rBacalao);
 
-    //crear mas recetas
-
-    //añadirlas al array recetas
-
+    cargarRecetas();
 }
 
+function cargarRecetas() {
+    var contenedor = document.getElementById("containerRecetas");
+
+    contenedor.innerHTML = "";
+    var recetasHtml = "";
+
+    recetas.forEach((Receta, index) => {
+        recetasHtml += `<div class="col-sm-6 col-md-4 receta">
+                            <div class="cerrar"><span onclick="eliminarReceta(this, ${index})">X</span></div>
+                            <div class="thumbnail">
+                                <img src="${Receta.foto}" alt="${Receta.nombre}">
+                                <div class="caption nombre">
+                                    <h3>${Receta.nombre}</h3>
+                                    <p><span class="likes"><i class="fa fa-heart" aria-hidden="true"></i> ${Receta.likes}</span><span class="cocinero">${Receta.cocinero}</span></p>
+                                    <hr>
+                                    <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" onclick="showModal(${index})"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
+                                </div>
+                            </div>
+                    </div>`;
+    });
+
+    contenedor.innerHTML = recetasHtml;
+
+
+}
 
 
 
 function nuevaReceta() {
+
+
     var formulario = document.getElementById("formulario");
-    var nombre = formulario.nombre.value;
-    var foto = formulario.foto.value;
-    var likes = formulario.likes.value;
-    var cocinero = formulario.cocinero.value;
 
-    /*var divReceta = `<div class="row">
-                        <div class="col-sm-6 col-md-4 receta">
-                            <div class="thumbnail">
-                                <img src="${foto}" alt="pollo al chilindron">
-                                <div class="caption">
-                                    <h3>${nombre}</h3>
-                                    <p><span id="likes"><i class="fa fa-heart" aria-hidden="true"></i> ${likes}</span><span id="cocinero">${cocinero}</span></p>
-                                    <hr>
-                                    <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
-*/
+    if (formulario.checkValidity()) {
+        var nombre = formulario.nombre.value;
+        var foto = formulario.foto.value;
+        var likes = formulario.likes.value;
+        var cocinero = formulario.cocinero.value;
+        var stringIngredientes = formulario.ingredientes.value;
+        var ingredientes =[];
+        ingredientes= stringIngredientes.split("\n");
+        var nuevo = new Receta(nombre, foto, likes, cocinero);
+        for(var i=0;i<ingredientes.length;i++){
+            nuevo.addIngrediente(ingredientes[i]);
+        }
+        recetas.unshift(nuevo);
+        cargarRecetas();
 
-    var divReceta = `<div class="col-sm-6 col-md-4 receta">
-                            <div class="cerrar"><span onclick="eliminarReceta(this)">X</span></div>
-                            <div class="thumbnail">
-                                <img src="${foto}" alt="pollo al chilindron">
-                                <div class="caption">
-                                    <h3>${nombre}</h3>
-                                    <p><span id="likes"><i class="fa fa-heart" aria-hidden="true"></i> ${likes}</span><span id="cocinero">${cocinero}</span></p>
-                                    <hr>
-                                    <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
-                                </div>
-                            </div>
-                    </div>`;
+    } else {
+        console.warn("No se puede cargar el formulario porque no es válido");
+    }
 
 
-    var contenedor = document.getElementById("containerRecetas");
-    contenedor.innerHTML = divReceta + contenedor.innerHTML;
+    //Para vaciar todos los campos del formulario
+    formulario.reset();
+
 
 
 }
 
 
-  function eliminarReceta(element){
+function eliminarReceta(elem, posicion) {
 
-    var recetas=document.getElementsByClassName("receta");
-    for(var i=0; i<recetas.length; i++){
-        console.debug(i);
+    console.log("indice %i, objeto %o", posicion, elem);
+    elem.parentElement.parentElement.style.display = 'none';
+    recetas.splice(posicion, 1);
+}
+
+
+function showModal(index) {
+
+    var recetaSeleccionada = recetas[index];
+    console.debug('showModal %o' + recetaSeleccionada);
+
+    $('#modalIngredientes').modal('show');
+
+    var ingredientes = recetaSeleccionada.ingredientes;
+    var lis = "";
+    ingredientes.forEach(ing => {
+        lis += "<li>" + ing + "</li>";
+    });
+    $("#listaIngredientes").html(lis);
+
+
+}
+
+
+function mostrarFormulario() {
+    var pie = document.getElementById("pie");
+    if (pie.style.bottom == "49px") {
+        pie.style.bottom = "-420px";
+    } else {
+        pie.style.bottom = "49px";
     }
-  }
 
+    pie.style.transition = "1s";
 
-
-
-
+}

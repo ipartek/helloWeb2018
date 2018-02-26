@@ -1,8 +1,56 @@
+"use strict";
 var recetas = [];
 
 /* Creamos unas recetas de prueba */
+function init(){
 
-function init() {
+    crearRecetasMock();
+
+    cargarRecetas();
+}
+
+/**
+* Mostramos Recetas por Pantalla
+*/
+
+function cargarRecetas(){
+
+
+    var contenedorRecetas = document.getElementById("containerRecetas");
+    contenedorRecetas.innerHTML = "";
+    var recetasHtml = "";
+
+    recetas.forEach( (receta, index) => {
+
+        console.log( "%i receta %o", index, receta );
+        recetasHtml += `<div class="col-sm-6 col-md-4 receta">
+                           <div class="cerrar"><span onclick="eliminarReceta(this, ${index} )">X</span></div>
+                            <div class="thumbnail">
+                                <img src="${receta.foto}" alt="${receta.nombre}">
+                                <div class="caption">
+                                    <h3>${receta.nombre}</h3>
+                                    <p>
+                                        <span class="likes"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>${receta.likes}</span>
+                                        <span class="cocinero">${receta.cocinero}</span></p>
+                                    <hr>
+                                    <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" onclick="showModal(${index})"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
+                                </div>
+                            </div>
+                        </div>`;
+
+    });
+
+    contenedorRecetas.innerHTML = recetasHtml;
+
+}
+
+    
+    
+
+/**
+*    Creamos varias recetas ficticias
+*/
+function crearRecetasMock(){
 
     var rEnsalada = new Receta("rEnsalada", "http://zallo.com/images/es-ES/blog/recetas/receta_ensalada_bermeana.jpg", 13, "Eneko Atxa");
 
@@ -15,84 +63,76 @@ function init() {
 
 
     // Crear mas recetas
+    var pastelChocolate = new Receta("Pastel de Chocolate", "https://www.pequerecetas.com/wp-content/uploads/2016/11/pastel-de-chocolate.jpg", 45, "David de Jorge");
+    pastelChocolate.addIngrediente("Cacao");
+    pastelChocolate.addIngrediente("Azucar");
+   
+    
 
     // Añadirlas al array recetas
+    recetas.push(rEnsalada);
+    recetas.push(pastelChocolate);
 
+    console.debug("Recetas Creadas");
 }
 
-function nuevaReceta() {
-    console.log("nuevaReceta click")
 
+
+function nuevaReceta(){
+    console.log("nuevaReceta click");
+
+    //comprobar que el formulario es correcto antes de crear
     var form = document.getElementById("formulario");
-    if (form.checkValidity()) {
+    if ( form.checkValidity() ){
         console.debug('crear receta');
-    } else {
-        console.warn("No se puede crear")
+        //recoger values de los inputs
+        var nombre   = document.getElementById("nombre").value;
+        var foto     = document.getElementById("foto").value;
+        var likes    = document.getElementById("likes").value;
+        var cocinero = document.getElementById("cocinero").value;
+        //crear receta nueva
+        var newReceta = new Receta(nombre, foto, likes, cocinero);
+
+        //añadir al array
+        recetas.unshift(newReceta);
+
+        //pintar nueva receta
+        cargarRecetas();
+
+        //limpiar campos del formulario
+        form.reset();
+
+    }else{
+        console.warn('No se puede crear porque form no correcto');
     }
-}
-
-
-function crear() {
-
-    var nombre = document.getElementById("inlineFormInputName").value;
-    console.log(nombre);
-    var foto = document.getElementById("inlineFormInputImage").value;
-    console.log(foto);
-    var likes = document.getElementById("inlineFormInputLikes").value;
-    console.log(likes);
-    var cocinero = document.getElementById("inlineFormInputChef").value;
-    console.log(cocinero);
-
-    var contenedor = document.getElementById("contenedorRecetas");
-
-    contenedor.innerHTML = `<div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <span class="close" onclick="eliminarBox(event)">x</span>
-                    <img src=${foto} alt="Direccion de imagen">
-                    <hr>
-                    <div class="caption">
-                        <h3>${nombre}</h3>
-                        <p> <span><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>${likes}</span> <span>${cocinero}</span> </p>
-                        <hr>
-                        <!-- Button trigger modal -->
-                        <a data-toggle="modal" data-target="#modal1">
-                            <p><i class="fa fa-eye" aria-hidden="true"></i>Ingredientes</p>
-                        </a>
-                        <!-- Modal -->
-                        <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="modal1Label">Ingredientes del ${nombre}</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <ul>
-                                                <li>Ingrediente 1</li>
-                                                <li>Ingrediente 2</li>
-                                                <li>Ingrediente 3</li>
-                                                <li>Ingrediente 4</li>
-                                                <li>Ingrediente 5</li>
-                                                <li>...</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Acaba boton modal apertura de ingredientes -->
-                    </div>
-                </div>
-            </div>` + contenedor.innerHTML;
 
 }
 
 
-function eliminarBox(e) {
-    var boxEliminar = e.target.parentElement;
-    boxEliminar.style.display = "none";
+function eliminarReceta(elem, posicion ){
+    console.log("eliminarReceta click posicion %i", posicion );
+
+    elem.parentElement.parentElement.style.display = 'none';
+    recetas.splice(posicion,1);
+
+
+
+}
+
+
+function showModal(index){
+
+    var recetaSeleccionada = recetas[index];
+    console.debug('showModal %o' + recetaSeleccionada );
+
+    $('#modalIngredientes').modal('show');
+
+    var ingredientes = recetaSeleccionada.ingredientes;
+    var lis = "";
+    ingredientes.forEach( ing => {
+            lis += "<li>"+ing+"</li>";
+    });
+    $("#listaIngredientes").html(lis);
+
+
 }

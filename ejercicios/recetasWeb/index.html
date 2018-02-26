@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>RecetasWeb</title>
+    <!-- FonAwesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- fonts awoseme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet">
+
+    <!-- Link hoja de estilos -->
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -27,77 +29,89 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="row text-center" id="recetasCont">
-            <!--<div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="https://www.gallinablanca.es/files/thumbs/f8a018386d588664842dac447c236784ba7f2479_r476_261_5.jpg" alt="fotoReceta" width="400" height="300">
-                    <p><strong>##recetapollo##</strong></p>
-                    <p><i class="fa fa-heart" aria-hidden="true">Likes</i></p>
-                    <p>cocinero</p>
-                    <button class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true">Ingredientes</i></button>
-                </div>
-            </div>-->
+
+    <section>
+
+        <div class="container containerRecetas" id="containerRecetas">
+
+
         </div>
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+        <!-- modal -->
+        <div id="modalIngredientes" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">##nombre##</h4>
+                        <h4 class="modal-title">Ingredientes</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="embed-responsive embed-responsive-4by3">
-                            <ul>
-                                <li>Ingrediente1</li>
-                                <li>Ingrediente1</li>
-                                <li>Ingrediente1</li>
-                            </ul>
-
-                        </div>
+                        <ol id="listaIngredientes"></ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
+                <!-- /.modal-content -->
             </div>
+            <!-- /.modal-dialog -->
         </div>
-        <!--modal-->
-    </div>
+        <!-- /.modal -->
+
+        <div id="dialog" title="dialog" hidden>
+            <form class="formulario" action="#" method="post" onsubmit="return false;" id="formulario">
+
+                <fieldset id="nuevaReceta">
+                    <legend>Nueva Receta </legend>
+                    <input type="text" name="nombre" tabindex="1" required placeholder="Nombre">
+                    <input type="text" name="foto" id="foto" autofocus tabindex="2" required placeholder="Foto">
+                    <input type="number" name="likes" id="likes" tabindex="3" required placeholder="Numero de Likes">
+                    <input type="text" name="cocinero" id="cocinero" tabindex="4" required placeholder="Nombre cocinero">
+                    <input type="text" tabindex="4" id="ingrediente" placeholder="Nuevo ingrediente"><i class="fa fa-plus-circle" id="nuevoIngrediente" aria-hidden="true" onclick="nuevoIngrediente()"></i>
+                    <button type="submit" onClick="nueva()" class="btn btn-default">Añadir Receta</button>
+                </fieldset>
+            </form>
+        </div>
+
+
+        <!-- Fin CONTAINER -->
+
+    </section>
     <footer class="fixed-bottom">
-        <form class="form-inline" action="" method="get">
-
-            <fieldset id="nuevaReceta">
-                <legend>Nueva Receta</legend>
-
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" tabindex="1">
-
-                <label for="foto">Foto:</label>
-                <input type="text" name="foto" id="foto" autofocus tabindex="2">
-
-                <label for="likes">Likes:</label>
-                <input type="number" name="likes" id="likes" tabindex="3" required>
-
-                <label for="cocinero">Cocinero:</label>
-                <input type="text" name="cocinero" id="cocinero" tabindex="4">
 
 
-                <button type="button" onClick="nueva()" class="btn btn-default">Añadir Receta</button>
-
-            </fieldset>
-        </form>
-
-        <p id="footer-p" class="footer"><i class="fa fa-copyright" aria-hidden="true">IPARCHEFF2018</i></p>
-
+        <div>
+           <i class="fa fa-plus-circle" id="nueva" aria-hidden="true"></i>
+            <p id="footer-p" class="footer"><i class="fa fa-copyright" aria-hidden="true">IPARCHEFF2018</i></p>
+        </div>
     </footer>
 
 
-    <!-- bootstrap-->
+    <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
     <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>--->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+
+
+
     <script src="js/receta.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $("#nueva").click(function() {
+            console.log("clicka");
+
+            $("#dialog").dialog();
+
+
+        });
+    </script>
 
 </body>
 
 </html>
+
+

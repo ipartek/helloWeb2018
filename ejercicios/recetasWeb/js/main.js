@@ -1,12 +1,17 @@
 var recetas = [];
-var divReceta = '<div class="col-sm-4"><div class="thumbnail"><img src="##foto##" alt="fotoReceta" width="400" height="300"><p><strong>##nombre##</strong></p><p><i class="fa fa-heart" aria-hidden="true"></i>##likes## ##cocinero##</p><button class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true">Ingredientes</i></button></div></div>';
+var nuevoIngrediente=[];
 
 /*crear unas recetas de prueba*/
 
 function init() {
+    crearRecetasMock();
+    cargarRecetas();
+}
+
+function crearRecetasMock() {
+    /*mok es juego de datos de pruebas*/
 
     var rPollo = new Receta("Pollo", "https://www.gallinablanca.es/files/thumbs/f8a018386d588664842dac447c236784ba7f2479_r476_261_5.jpg", 13, "Arzak");
-
     rPollo.addIngrediente("pollo");
     rPollo.addIngrediente("ajo");
     rPollo.addIngrediente("tomate");
@@ -41,77 +46,129 @@ function init() {
     console.log("primera receta %o", rPollo);
     console.log("primera receta %s %o", rPollo.nombre, rPollo);
     console.log("consola");
-    recetas.unshift(rPollo);
-    recetas.unshift(rReceta2);
-    recetas.unshift(rReceta3);
-    recetas.unshift(rReceta4);
-    visualizarImagenes();
+    recetas.push(rPollo);
+    recetas.push(rReceta2);
+    recetas.push(rReceta3);
+    recetas.push(rReceta4);
+    console.log("recetas creadas ");
+}
 
+function eliminarReceta(elemento, posicion) {
 
+    console.log("Eliminar receta de la posicion %i", posicion);
+    elemento.parentElement.parentElement.style.display = "none";
 
-    function visualizarImagenes() {
-        var contenido=""
-        /*var arr = document.images;
-        var len = arr.length;
-        for (var i = 0; i < len; i++) {
-            var iimagen = arr[i];
-            console.info("Nº" + i + ":" + iimagen.src);
-        }*/
+    recetas.splice(pocion, 1); // a partir de esta posicion cuantos elementos elimino
 
-        var arr = recetas;
-        var len = arr.length;
-        var div = divReceta;
-        recetasCont.innerHTML="";
-        for (var i = 0; i < len; i++) {
-            contenido+=`<div class="col-sm-4"><div class="thumbnail"><img src=${arr[i].foto} alt="fotoReceta" width="400" height="300"><p><strong>${arr[i].nombre}</strong></p><p><i class="fa fa-heart" aria-hidden="true"></i>${arr[i].likes} ${arr[i].cocinero}</p><button class="btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true">Ingredientes</i></button></div></div>`
-
-        }
-        recetasCont.innerHTML =contenido;
-    }
 
 }
 
+function cargarRecetas(){
 
 
+    var contenedorRecetas = document.getElementById("containerRecetas");
+    contenedorRecetas.innerHTML = "";
+    var recetasHtml = "";
 
+    recetas.forEach( (receta, index) => {
 
-var recetasCont = document.getElementById("recetasCont");
+        console.log( "%i receta %o", index, receta );
+        recetasHtml += `<div class="col-sm-6 col-md-4 receta">
+                           <div class="cerrar"><span onclick="eliminarReceta(this, ${index} )">X</span></div>
+                            <div class="thumbnail">
+                                <img src="${receta.foto}" alt="${receta.nombre}">
+                                <div class="caption">
+                                    <h3>${receta.nombre}</h3>
+                                    <p>
+                                        <span class="likes"><i class="fa fa-heart" aria-hidden="true"></i>${receta.likes}</span>
+                                        <span class="cocinero">${receta.cocinero}</span></p>
+                                    <hr>
+                                    <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" onclick="showModal(${index})"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
+                                </div>
+                            </div>
+                        </div>`;
 
+    });
 
-/*var divReceta = '<div class="col-sm-4"><div class="thumbnail"><img src="https://www.gallinablanca.es/files/thumbs/f8a018386d588664842dac447c236784ba7f2479_r476_261_5.jpg" alt="fotoReceta" width="400" height="300"><p><strong>##nombre##</strong></p></div></div>';*/
+    contenedorRecetas.innerHTML = recetasHtml;
 
-/*function escribirArray() {
-    var arr = recetas;
-    var len = arr.length;
-    for (var i = 0; i < len; i++) {
-       // recetasCont.innerHTML += divReceta.replace('##numero##', arr[i]);
-        console.log("arrai");
-    }
-}*/
+}
 
+/*
 function borrarInputs() {
+    / * borrar inputs valor a valor
+
     document.forms[0].likes.value = "";
     document.forms[0].cocinero.value = "";
     document.forms[0].nombre.value = "";
-    document.forms[0].foto.value = "";
+    document.forms[0].foto.value = "";* /
+
+    / *borrar inputs todos de golpe
+    var inputs =Array.from(form.getElementsByTagName("input"));
+    inputs.forEach(input=>{input.value=""});* /
+
+     / * borrar inputs todos de golpe * /
+    form.reset();
+
+}*/
+
+function showModal(index){
+    //no se puede pasar ni un objeto ni un array como parametro, por lo que pasamos la direccion
+
+
+    var recetaSeleccionada = recetas[index];
+    console.debug('showModal %o' + recetaSeleccionada );
+
+    $('#modalIngredientes').modal('show');
+
+    var ingredientes = recetaSeleccionada.ingredientes;
+    var lis = "";
+    ingredientes.forEach( ing => {
+            lis += "<li>"+ing+"</li>";
+    });
+    $("#listaIngredientes").html(lis);
 
 }
 
-function nueva() {
 
-    var likes = document.forms[0].likes.value;
-    var cocinero = document.forms[0].cocinero.value;
-    var nombre = document.forms[0].nombre.value;
-    var foto = document.forms[0].foto.value;
-    var nuevaReceta = new Receta(nombre, foto, likes, cocinero);
-    nuevaReceta.addIngrediente("Ingrediente");
-    nuevaReceta.addIngrediente("ingrediente");
-    nuevaReceta.addIngrediente("ingrediente");
-    nuevaReceta.addIngrediente("ingrediente");
-    recetas.unshift(nuevaReceta);
-    dibujarRecetas();
-    console.debug("array %s", recetas.length);
-    borrarInputs();
+function nuevoIngrediente(){
+    var ingrediente = document.forms[0].ingrediente.value;
+    nuevoIngrediente.pus(nuevoIngrediente);
+
+}
+function nueva() {
+    console.log("nuevaRecetaClick");
+    nuevoIngrediente="";
+
+    //comprobar la validez de la receta antes de meterla
+    var form = document.getElementById("formulario");
+    if (form.checkValidity()) {
+        console.debug('Crear receta');
+        //recoger los valores de los imputs
+        var likes = document.forms[0].likes.value;
+        var cocinero = document.forms[0].cocinero.value;
+        var nombre = document.forms[0].nombre.value;
+        var foto = document.forms[0].foto.value;
+        /*otra forma
+         var likes = document.getElementById("likes").value;*/
+        //crear nueva receta
+        var nuevaReceta = new Receta(nombre, foto, likes, cocinero);
+        nuevaReceta.addIngrediente("Ingrediente");
+        nuevaReceta.addIngrediente("ingrediente");
+        nuevaReceta.addIngrediente("ingrediente");
+        nuevaReceta.addIngrediente("ingrediente");
+        nuevaReceta.
+        //añadir receta al inicio del array
+        recetas.unshift(nuevaReceta);
+        console.debug("array %s", recetas.length);
+        // recargar recetas
+        cargarRecetas();
+        //borrar valores del formulario
+        form.reset();;
+    } else {
+        console.warn('No se puede crear porque form no es correcto');
+    }
+
 }
 
 
@@ -120,9 +177,15 @@ function dibujarRecetas() {
 
     //añadir receta
     /*likes = parseInt(likes);*/
-    var div = divReceta.replace('##nombre##', recetas[0].nombre);
+    /*var div = divReceta.replace('##nombre##', recetas[0].nombre);
     div = div.replace('##cocinero##', recetas[0].cocinero);
     div = div.replace('##foto##', recetas[0].foto);
     div = div.replace('##likes##', recetas[0].likes);
-    recetasCont.innerHTML += div;
+    for (var i = 0; i < recetas[0].ingredientes.length; i++) {
+        // recetasCont.innerHTML += divReceta.replace('##numero##', arr[i]);
+    }
+    console.log("arrai");
+    recetasCont.innerHTML = div + recetasCont.innerHTML;*/
+
+
 }

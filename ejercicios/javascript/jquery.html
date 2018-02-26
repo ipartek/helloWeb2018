@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .seleccionado {
+            background-color: burlywood;
+            color: black;
+        }
+
+        #sparring {
+            display: inline-block;
+            border: 2px solid black;
+            min-height: 100px;
+            min-height: 100px;
+            height: 100px;
+            width: 100px;
+
+        }
+        #box{
+            display: inline-block;
+            height: 25px;
+            width: 25px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JQuery</h1>
+    <p class="uno">añadir la libreria de jquery al final del html</p>
+    <a rel="stylesheet" href="http://www.campus.formacion.ipartek.com/moodle/mod/page/view.php?id=389">Manual Desarrollo Web</a>
+    <a rel="stylesheet" href="https://api.jquery.com/category/effects/">
+        Efectos</a>
+ <div id="box"></div>
+    <p>al igual que en javascript, hay que esperar a que el dom 'ready' este cargado para empezar nuestros scripts</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione itaque inventore quis incidunt nemo qui corrupti, veritatis suscipit rem aperiam nesciunt temporibus corporis deleniti eveniet illo, fugit asperiores, autem debitis?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione itaque inventore quis incidunt nemo qui corrupti, veritatis suscipit rem aperiam nesciunt temporibus corporis deleniti eveniet illo, fugit asperiores, autem debitis?</p>
+
+    <div id="sparring"></div>
+
+    <input type="text" id="texto" placeholder="Escribe algo">
+    <select name="" id="opciones">
+        <option value="0">Append</option>
+        <option value="1">Prepend</option>
+        <option value="2">InsertAfter</option>
+        <option value="3">InsertBefore</option>
+    </select>
+     <button type="button" id="btn">Click</button>
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            console.log('Ready');
+            /*//$("p:even").css("color","red");// para pares
+            //$("p:odd").css("color","green");// impares
+            $("p:odd").addClass("seleccionado");
+            alert($("p.uno").text());
+            $("p:last").text("Agur");*/
+            $("p").click(function() {
+                //$(this).css("color","red");
+                $(this).toggleClass("seleccionado"); // es un interruptor, si tiene ese estilo y pinchas lo quita, sino, lo pone
+            });
+
+            $("#btn").click(function() {
+                console.log($("#texto").val());
+                var valor=$("#texto").val();
+                var opcion_seleccionada = $("#opciones option:selected").val();
+                console.log("opcion seleccionada: %s Valor:%s", opcion_seleccionada,valor);
+                switch (opcion_seleccionada) {
+                    case "0":
+                        //mete al final
+                        $( "#sparring" ).append( valor );
+                        break;
+                    case "1":
+                        //mete al principio
+                       $( "#sparring" ).prepend( valor );
+                        break;
+                    case "2":
+                        $( "#box").insertAfter( "#sparring");
+                        break;
+                    case "3":
+                        $("#box" ).insertBefore("#sparring");
+                        break;
+
+                }
+                $("#texto").val("");
+
+            });
+        });
+    </script>
+
+</body>
+</html>

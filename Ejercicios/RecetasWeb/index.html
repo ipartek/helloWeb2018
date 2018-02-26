@@ -26,23 +26,6 @@
 
         <div id="contenedor_recetas"class="row">
             <!-- Primer row -->
-
-            <div class="columnas col-md-4">
-                <div class="thumbnail text-center" id="thumb">
-                    <img src="/Ejercicios/RecetasWeb/img/pollo.png" alt="..." >
-                     <span onclick="borrarCaja()" class="close">X</span>
-                    <div class="caption">
-                        <h3></h3>
-                        <p></p>
-                        <i class="fa fa-heart" aria-hidden="true"></i>
-                        <p><a href="#pollo" class="btn btn-primary" role="button" data-toggle="modal" data-target="#pollo"><i class="fa fa-eye" aria-hidden="true"></i> </a>
-                    </div>
-                </div>
-            </div>
-
-
-
-
         </div>
         <!-- /row -->
 
@@ -53,9 +36,11 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Pollo con Chilindron</h4>
+                    <h4 class="modal-title" id="titulo">Pollo con Chilindron</h4>
                 </div>
                 <div class="modal-body">
+
+                   <button id="btn-ingredientes" onclick="agregaringredientes()">Añadir Ingredientes</button>
                     <ul>
 
                        <li>1 pollo troceado</li>
@@ -79,77 +64,6 @@
             </div>
         </div>
     </div>
-
-
-
-        <div class="modal fade" id="bacalao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Bacalao al pil-pil</h4>
-                </div>
-                <div class="modal-body">
-                    <ul>
-
-                       <li>2 lomos de bacalao de lomo alto</li>
-                       <li>2 patatas</li>
-                       <li>2 dientes de ajo</li>
-                       <li>1 limón</li>
-                       <li>1 huevo</li>
-                       <li>1 cucharada de alga wakame seca triturada</li>
-                       <li>40 g de mantequilla</li>
-                       <li>100 ml de leche</li>
-                       <li>Agua</li>
-                       <li>Sal</li>
-                       <li>Aceite de oliva virgen extra</li>
-                       <li>Perejil</li>
-
-
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-        <div class="modal fade" id="setas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Revuelto de zizas</h4>
-                </div>
-                <div class="modal-body">
-                    <ul>
-
-                       <li>500 g de zizas de primavera</li>
-                       <li>8 huevos</li>
-                       <li>1 lechuga</li>
-                       <li>1 tomate</li>
-                       <li>1 cebolleta</li>
-                       <li>Aceite de oliva virgen extra</li>
-                       <li>Vinagre</li>
-                       <li>Sal</li>
-                       <li>Perejil</li>
-
-
-
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 
 <!---FIN MODALES---->
@@ -189,13 +103,7 @@
 </form>
       <br>
 
-
-
-
-
           <i class="fa fa-copyright" aria-hidden="true">IparCheff</i>
-
-
 
 
       </footer>

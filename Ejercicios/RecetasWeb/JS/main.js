@@ -48,7 +48,7 @@ function cargarRecetas() {
 
 function crearRecetasMock() {
 
-    var rPollo = new Receta("Pollo", "http://127.0.0.1:61493/Ejercicios/RecetasWeb/img/pollo.png", 13, "Robin Food", "Pollo con chilindron");
+    var rPollo = new Receta("Pollo", "https://3.bp.blogspot.com/-Ie7ALdbIr_k/V969A4zAVHI/AAAAAAAADJA/Bj4LUryiH6gznb3N4liA0ueS4byfUpziwCLcB/s640/Pollo%2Bal%2Bchilindr%25C3%25B3n.jpg", 13, "Robin Food", "Pollo con chilindron");
 
     rPollo.addingredientes("pollo");
     rPollo.addingredientes("ajo");
@@ -144,6 +144,17 @@ function showModal(index) {
         lis += "<li>" + ing + "</li>";
     });
     $("#listaIngredientes").html(lis);
+
+
+}
+
+function agregaringredientes(){
+
+    var botonagregar= document.getElementById("btn-ingredientes");
+    var nombrereceta = document.getElementById("nombre").value;
+
+    botonagregar.innerHTML=nombrereceta;
+
 
 
 }

@@ -75,7 +75,13 @@ footer {
 
 
 }
+#btn-ingredientes{
 
+     -webkit-border-radius: 5555px;
+-moz-border-radius: 5555px;
+border-radius: 5555px;
+    background-color: #18E74A;
+}
 
 
 .fa-heart:hover{

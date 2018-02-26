@@ -20,6 +20,18 @@ function init() {
 
 }
 
+function nuevaReceta() {
+    console.log("nuevaReceta click")
+
+    var form = document.getElementById("formulario");
+    if (form.checkValidity()) {
+        console.debug('crear receta');
+    } else {
+        console.warn("No se puede crear")
+    }
+}
+
+
 function crear() {
 
     var nombre = document.getElementById("inlineFormInputName").value;

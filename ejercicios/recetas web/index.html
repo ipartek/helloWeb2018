@@ -42,7 +42,7 @@
 
     <div class="container" id="contenedorRecetas">
 
-
+<!--        Tortilla de patatas-->
         <div class="row">
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
@@ -57,12 +57,36 @@
                         <hr>
 
                         <!-- Button trigger modal -->
-                        <a data-toggle="modal" data-target="#modal1">
+                        <a data-toggle="modal" data-target="#modalIngredientes">
                             <p><i class="fa fa-eye" aria-hidden="true"></i>Ingredientes</p>
                         </a>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label">
+                       <!-- <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1Label">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="modal1Label">Ingredientes de la tortilla de patatas</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <ul class="ingredients">
+                                                <li class="ingredient">4 huevos</li>
+                                                <li class="ingredient">300 g de patata</li>
+                                                <li class="ingredient">Aceite de oliva</li>
+                                                <li class="ingredient">Sal</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                         <!-- Modal JQUERY -->
+                         <div class="modal fade" id="modalIngredientes" tabindex="-1" role="dialog" aria-labelledby="modal1Label">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -85,6 +109,7 @@
                                 </div>
                             </div>
                         </div>
+                        
 
                         <!-- Acaba boton modal apertura de ingredientes -->
 
@@ -144,7 +169,7 @@
 
 
             <!--
-    Cerramos receta Paella de marisco
+  Ensalada Bermeana
     -->
 
 
@@ -207,25 +232,37 @@
             <h5>Añade tu propia receta: </h5>
             <div class="form-row align-items-center">
                 <div class="col-sm-2 my-1">
-                    <label class="sr-only" for="inlineFormInputName">Nombre</label>
-                    <input type="text" class="form-control" id="inlineFormInputName" placeholder="Nombre">
+                 
+                    <input type="text"
+                     class="form-control" 
+                     id="inlineFormInputName" 
+                     name="nombre"
+                     placeholder="Nombre"
+                     requiredS>
                 </div>
                 <div class="col-sm-2 my-1">
-                    <label class="sr-only" for="inlineFormInputImage">Foto</label>
+                  
                     <input type="text" class="form-control" id="inlineFormInputImage" placeholder="Foto">
                 </div>
                 <div class="col-sm-2 my-1">
-                    <label class="sr-only" for="inlineFormInputLikes">Likes</label>
+                
                     <input type="text" class="form-control" id="inlineFormInputLikes" placeholder="Likes">
                 </div>
                 <div class="col-sm-2 my-1">
-                    <label class="sr-only" for="inlineFormInputChef">Cocinero</label>
+                  
                     <input type="text" class="form-control" id="inlineFormInputChef" placeholder="Cocinero">
                 </div>
                 <div class="col-sm-2 my-1">
                     <button type="submit" onclick="crear()" class="btn btn-primary">Crear</button>
                 </div>
             </div>
+        </form>
+        
+        <form>
+            <input type="text" placeholder="text" required>
+            <input type="submit" value="enviar">
+
+            
         </form>
 
         <hr>

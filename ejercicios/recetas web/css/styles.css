@@ -1,79 +1,95 @@
-.container{
+.container {
     max-width: 900px;
     margin: auto;
     color: teal;
 
 }
-header{
+
+header {
     background-color: white;
 }
-header img{
-    float:right
+
+header img {
+    float: right
 }
 
 
 }
-.row{
+
+.row {
     padding-bottom: 60px;
 }
-.sukaldari{
+
+.sukaldari {
     float: right;
 }
 
-h1{
-float:left;
-font-family: 'Lobster', cursive;
-margin-top: 45px;
-margin-left: -45px;
-font-size:70px;
-color:red;
+h1 {
+    float: left;
+    font-family: 'Lobster', cursive;
+    margin-top: 45px;
+    margin-left: -45px;
+    font-size: 70px;
+    color: red;
 }
 
 
 
-h5{
-    font-style:oblique;
+h5 {
+    font-style: oblique;
     font-weight: bold;
 }
-.footerSign{
+
+.footerSign {
     font-style: italic;
 }
-.thumbnail .close{
-            position: absolute;
-            top: 0px;
-            right: 15px;
-            color: #FFF;
-            background-color: #000;
-            font-size: 0.8em;
-            border-radius: 50%;
-            opacity: 1;
-            padding: 2px;
-        }
 
-.caption{
+.thumbnail .close {
+   position: absolute;
+    top: -30px;
+    right: 5px;
+    color: #FFF;
+    background-color: #000;
+    font-size: 1.2em;
+    border-radius: 50%;
+    opacity: 1;
+    padding: 2px;
+}
+
+.caption {
     font-family: 'Lobster', cursive;
-    background-color:floralwhite
-    
+    background-color: floralwhite;
+    margin-top: -25px;
 }
 
-.thumbnail{
-    background-image:url(https://n6-img-fp.akamaized.net/free-photo/texture-of-checkered-tablecloth_1205-247.jpg?size=338&ext=jpg&ve=1)
-/*          background-image:url(http://moziru.com/images/wood-clipart-wood-background-4.jpg)*/
+.thumbnail {
+    background-image: url(https://n6-img-fp.akamaized.net/free-photo/texture-of-checkered-tablecloth_1205-247.jpg?size=338&ext=jpg&ve=1);
+    padding: 10px 20px 10px 20px;
+    margin-top: -20px;
+    color: #092d4c;
 }
 
-.thumbnail caption{
+.thumbnail img {
+    width: 250px;
+    height: 150px;
+    margin-top: 10px;
+}
+
+.thumbnail caption {
     margin: 10px 10px 10px 10px;
-    color: #143856;
+
+
 }
-footer{
-  position: fixed;
+
+footer {
+    position: fixed;
     height: 85px;
     width: 100%;
     bottom: 0;
     background-color: #E6E6E6;
 }
 
-.footer{
+.footer {
     color: #000000;
     opacity: 0.8;
     font-size: 1em;

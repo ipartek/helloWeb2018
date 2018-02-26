@@ -87,6 +87,49 @@ function crear() {
 
 
 function eliminarBox(e) {
-    var boxEliminar = e.target.parentElement;
+    var boxEliminar = e.target.parentElement.parentElement;
     boxEliminar.style.display = "none";
 }
+
+/*
+
+function nuevaReceta() {
+
+
+
+    var form = document.getElementById("formulario");
+
+    if (form.checkValidity) {
+        console.debug("crear receta");
+
+        // Recoger values de los inputs
+
+        var nombre = document.getElementById("inlineFormInputName").value;
+        var foto = document.getElementById("inlineFormInputImage").value;
+        var likes = document.getElementById("inlineFormInputLikes").value;
+        var cocinero = document.getElementById("inlineFormInputChef").value;
+
+        //Crear receta nueva
+
+        var newReceta = new Receta(nombre, foto, likes, cocinero);
+
+        // Añadir al array
+
+        recetas.unshift(newReceta);
+
+        // Volver a pintar
+
+        // Limpiar campos del formulario
+        form.reset()
+
+    } else {
+        console.warn("Formulario incorrecto");
+
+    }
+
+
+}
+
+*/
+
+

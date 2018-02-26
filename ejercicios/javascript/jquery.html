@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQUERY</title>
+    <style>
+        .seleccionado {
+            background-color: yellow;
+            color: black;
+        }
+
+        #sparring {
+            display: inline-block;
+            border: solid;
+            min-width: 100px;
+            min-height: 100px;
+            background: bisque;
+        }
+
+        #btn,
+        #texto {
+            display: block
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="tit">JQUERY</h1>
+
+    <div id="sparring"></div>
+    <button id="btn">Seleccionar</button>
+    <input type="text" id="texto">
+    <select name="opciones" id="opciones">
+        <option value="0">Append</option>
+        <option value="1">Prepend</option>
+        <option value="2">InsertAfter</option>
+        <option value="3">InsertBefore</option>
+    </select>
+
+    <!--
+    <a href="https://www.desarrolloweb.com/manuales/manual-jquery.html#capitulos113" target="_blank">Manual Desarrollo Web</a>
+    <p class="uno">Acordarse de añadir la librería de JQUERY al final del html</p>
+    <p>Al igual que en JavaScript hay que esperar a que el DOM esté cargado (ready) para empmezar nuestros scripts</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestias, aspernatur delectus animi repellendus itaque natus, ea error cupiditate vitae expedita? Molestias nam, itaque iste commodi quo magni modi illo.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis molestias, aspernatur delectus animi repellendus itaque natus, ea error cupiditate vitae expedita? Molestias nam, itaque iste commodi quo magni modi illo.</p>
+-->
+    <!--    Jquery-->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script>
+        $(function() {
+            console.log("Ready");
+
+            //            $("p:odd")
+            //                .css({
+            //                    "color": "blue",
+            //                    "font-size": "2em"
+            //                })
+            //                .addClass("seleccionado")
+            //
+            //            console.log('Clase: ', $("p.uno").text());
+            //
+            //            $("p:last").text("hola");
+
+            $("#btn").click(manipular);
+        })
+
+        function manipular() {
+            console.log($("#texto").val());
+
+            let texto = $("#texto").val();
+            let opt = $("#opciones").val();
+            console.log('Opción: ', opt);
+            console.log('Texto: ', texto);
+
+            switch (opt) {
+                case "0":
+                    $("#sparring").append(texto);
+                    console.log("Opcion elegida: 0")
+                    break;
+                case "1":
+                    $("#sparring").prepend(texto);
+                    console.log("Opcion elegida: 1")
+                    break;
+                case "2":
+                    $("<p>"+texto+"</p>").insertAfter("#sparring");
+                    console.log("Opcion elegida: 2")
+                    break;
+                case "3":
+                    $("<p>"+texto+"</p>").insertBefore("#sparring");
+                    console.log("Opcion elegida: 3")
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

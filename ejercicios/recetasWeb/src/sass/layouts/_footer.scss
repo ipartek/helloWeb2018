@@ -5,12 +5,14 @@ footer {
     margin: 0;
     border-top: 1px solid lightgrey;
     background-color: white;
-    #lid{
+    #lid {
         position: relative;
         border-bottom: 1px solid lightgrey;
         text-align: center;
-        cursor:pointer;
-//        transition: all 1s;
+        cursor: pointer;
+        i {
+            transition: all 0.5s;
+        }
     }
     #copy {
         background-color: forestgreen;
@@ -18,5 +20,6 @@ footer {
         text-align: center;
         font-size: 1.3em;
         padding: 5px;
+        font-family: "lobster";
     }
 }

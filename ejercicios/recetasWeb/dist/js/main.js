@@ -74,16 +74,16 @@ bAlta.onclick = alta;
 
 function alta() {
     event.preventDefault();
-//    let nombre = fAlta.querySelector("#nombre").value;
-    let nombre = fAlta.querySelector("#nombre").value == ""? "Nombre": fAlta.querySelector("#nombre").value;
-//    let foto = fAlta.querySelector("#foto").value;
-    let foto = fAlta.querySelector("#foto").value== ""? "./img/fibs.jpg": fAlta.querySelector("#foto").value;
-//    let likes = fAlta.querySelector("#likes").value;
-    let likes = fAlta.querySelector("#likes").value== ""? "0": fAlta.querySelector("#likes").value;
-//    let cocinero = fAlta.querySelector("#cocinero").value;
-    let cocinero = fAlta.querySelector("#cocinero").value== ""? "Chef": fAlta.querySelector("#cocinero").value;
-//    let iIng = fAlta.querySelector("#iIng").value;
-    let iIng = fAlta.querySelector("#iIng").value== ""? "Sin ingredientes": fAlta.querySelector("#iIng").value;
+    //    let nombre = fAlta.querySelector("#nombre").value;
+    let nombre = fAlta.querySelector("#nombre").value == "" ? "Nombre" : fAlta.querySelector("#nombre").value;
+    //    let foto = fAlta.querySelector("#foto").value;
+    let foto = fAlta.querySelector("#foto").value == "" ? "./img/fibs.jpg" : fAlta.querySelector("#foto").value;
+    //    let likes = fAlta.querySelector("#likes").value;
+    let likes = fAlta.querySelector("#likes").value == "" ? "0" : fAlta.querySelector("#likes").value;
+    //    let cocinero = fAlta.querySelector("#cocinero").value;
+    let cocinero = fAlta.querySelector("#cocinero").value == "" ? "Chef" : fAlta.querySelector("#cocinero").value;
+    //    let iIng = fAlta.querySelector("#iIng").value;
+    // let iIng = fAlta.querySelector("#iIng").value == "" ? "Sin ingredientes" : fAlta.querySelector("#iIng").value;
     let aIng = [];
 
     let receta = new Receta();
@@ -92,7 +92,20 @@ function alta() {
     receta.likes = likes;
     receta.cocinero = cocinero;
 
-    aIng = iIng.split(",");
+    //Recojo los ingredientes del INPUT
+    // aIng = iIng.split(",");
+
+    //Recojo los ingredientes del textarea
+    console.log($("#taIng").val())
+    aIng = $("#taIng").val().split(/\n/);
+
+    console.log(aIng)
+
+    //Probando el for en jQuery
+    $.each((aRecetas, index) =>{
+        console.log("Indice: "+ this);
+    });
+
     aIng.forEach(ingre => {
         //        let cap = ingre.charAt(0).toUpperCase();
         //        receta.addIngrediente(ingre.trim().replace(ingre.charAt(0), cap));
@@ -101,6 +114,7 @@ function alta() {
 
     console.log("%o", receta);
 
+    //    if (fAlta.checkValidity()) { //Este if sería lógico si el formulario se enviara a otra página
     //Añado el nuevo perro al array, y los muestro
     aRecetas.push(receta); //En realidad ya no hace falta el array
     sumaBox(receta, (aRecetas.length - 1)); //Primero volverá a crear todos los elementos
@@ -109,6 +123,9 @@ function alta() {
 
     //Oculto el formulario
     muestroForm();
+    //    }
+
+    return false;
 }
 
 //Añado un box con la nueva información
@@ -207,23 +224,20 @@ var caret = document.querySelector("#lid");
 caret.onclick = muestroForm;
 
 function muestroForm() {
-
-    if (fAlta.style.display == "flex") {
-        fAlta.style.display = "none";
-    } else {
-        fAlta.style.display = "flex";
-    }
+    let fAlta = document.querySelector("#fAlta");
+    //    if (fAlta.style.display == "flex") {
+    //        fAlta.style.display = "none";
+    //    } else {
+    //        fAlta.style.display = "flex";
+    //    }
 
     //Manejando la altura
-//    if (fAlta.style.height == "0px") {
-//        fAlta.style.height = "auto";
-//    } else {
-//        fAlta.style.height = "0px";
-//    }
+    if (fAlta.style.maxHeight == "" || fAlta.style.maxHeight == "0px") {
+        fAlta.style.maxHeight = "300px";
+        caret.querySelector("i").style.transform = "rotate(180deg)";
+    } else {
+        fAlta.style.maxHeight = "0px";
+        caret.querySelector("i").style.transform = "rotate(0deg)";
+    }
 
-    //Cambia un apor la otra automáticamente
-    caret.querySelector("i").classList.toggle("fa-caret-down");
-    caret.querySelector("i").classList.toggle("fa-caret-up");
-
-//    caret.querySelector(".fa").style.transform ="rotate(90deg)";
 }

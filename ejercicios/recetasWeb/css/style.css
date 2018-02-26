@@ -22,22 +22,37 @@ h1{
     color:aliceblue;
 }
 
-#cocinero{
+.cocinero{
     float: right;
     color: darkgreen;
 }
 
-#likes{
+.likes{
     color: red;
 }
 
 
 #pie{
     position: fixed;
+    bottom: -420px;
+    background-color: beige;
+    width:100%;
+    z-index: 999;
+
+}
+/*
+#pie:hover{
+
+    bottom: 75px;
+    transition: 1s;
+
+}
+*/
+.copiright{
+    position: fixed;
     bottom: 0px;
     background-color: beige;
     width:100%;
-
 }
 
 body{
@@ -53,10 +68,12 @@ body{
 
 .copiright{
     padding-top: 20px;
+    z-index: 999;
 }
 
-.receta{
+.receta img{
    /* position: absolute; */
+    min-height: 300px;
 
 }
 
@@ -67,10 +84,17 @@ body{
     top:-10px;
     padding-top: 5px;
     text-align:center;
-    z-index: 999;
+    z-index: 100;
     background-color: grey;
     float: right;
-    font-weight: 600;
+    font-weight:900;
+}
+
+.cerrar:hover{
+    top:-12px;
+    right: -2px;
+    color: aliceblue;
+
 }
 
 

@@ -80,7 +80,6 @@ function nuevaReceta() {
         var foto = formulario.foto.value;
         var likes = formulario.likes.value;
         var cocinero = formulario.cocinero.value;
-<<<<<<< HEAD
         var stringIngredientes = formulario.ingredientes.value;
         var ingredientes =[];
         ingredientes= stringIngredientes.split("\n");
@@ -88,9 +87,7 @@ function nuevaReceta() {
         for(var i=0;i<ingredientes.length;i++){
             nuevo.addIngrediente(ingredientes[i]);
         }
-=======
-        nuevo = new Receta(nombre, foto, likes, cocinero);
->>>>>>> origin/InakiAretxabaleta
+
         recetas.unshift(nuevo);
         cargarRecetas();
 

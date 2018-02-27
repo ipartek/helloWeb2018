@@ -133,17 +133,12 @@ function borrarCaja(elem, posicion) {
 
 function showModal(index) {
 
-    var recetaSeleccionada = recetas[index];
-    console.debug('showModal %o' + recetaSeleccionada);
 
-    $('#modalIngredientes').modal('show');
 
-    var ingredientes = recetaSeleccionada.ingredientes;
-    var lis = "";
-    ingredientes.forEach(ing => {
-        lis += "<li>" + ing + "</li>";
-    });
-    $("#listaIngredientes").html(lis);
+
+    $('#nuevareceta').modal('show');
+
+
 
 
 }

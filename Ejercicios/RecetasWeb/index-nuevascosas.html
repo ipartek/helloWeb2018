@@ -68,7 +68,7 @@
 
 <!---FIN MODALES---->
 <br>
-<i href="#nuevareceta"class="fa fa-plus  fa-2x"  aria-hidden="true">NUEVA RECETA</i>
+<i class="fa fa-plus  fa-2x" onclick="showModal()" aria-hidden="true">NUEVA RECETA</i>
 
 
 <!---Modal para nueva Receta--->
@@ -117,8 +117,6 @@
 
 
 
-
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -129,49 +127,10 @@
     </div>
 
 
-
-        <!--FORMULARIO--->
-   <footer>
-       <form onsubmit="return false" role="form" id="formulario">
-
-   <h2>Nueva Receta</h2>
-       <div class="form-inline">
-    <label for="nombre">Nombre</label>
-    <input type="text" class="form-control" id="nombre"
-           placeholder="Introduce el nombre de la receta" required>
-
-  <label for="foto">Adjuntar una Foto</label>
-    <input type="text" id="foto" required>
-
-    <label for="likes">Likes</label>
-    <input type="number" class="form-control" id="likes"
-           placeholder="Cuanta puntuacion le pones?" required>
-
- <label for="cocinero">Cocinero</label>
-    <input type="text" class="form-control" id="cocinero"
-           placeholder="Introduce el nombre del Cocinero" required>
-           <br>
-
-           <label for="descripcion">Descripcion</label>
-    <input type="text" class="form-control" id="descripcion"
-           placeholder="Introduce la descripcion" required>
-
-  <button type="submit" class="btn btn-default" onclick="nuevaReceta()">Crear</button>
-  </div>
-
-
-</form>
-      <br>
-
-          <i class="fa fa-copyright" aria-hidden="true">IparCheff</i>
-
-
-      </footer>
-
     </div>
 
 
-        <!--FIN_FORMULARIO--->
+
 
         <!-- QUERY -->
         <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>

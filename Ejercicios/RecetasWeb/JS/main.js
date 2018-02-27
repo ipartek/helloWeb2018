@@ -37,7 +37,7 @@ function cargarRecetas() {
                         <h3>` + receta.nombre + `</h3>
                         <p>` + receta.descripcion + `.</p>
                         <i class="fa fa-heart" aria-hidden="true">` + receta.likes + `</i> ` + receta.cocinero + `
-                        <p><a href="#pollo" class="btn btn-primary" role="button" data-toggle="modal" data-target="#pollo"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a>
+                        <p><a href="#modal" class="btn btn-primary" role="button" data-toggle="modal" ><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a>
                     </div>
                 </div>
             </div>`

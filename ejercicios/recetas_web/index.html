@@ -154,24 +154,26 @@
                                     <h4 class="modal-title" id="myModalLabel">CREAR NUEVA RECETA</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <form onsubmit="return false;" id="formulario">
-                                        <div class="row">
-                                           <input type="text" id="nombre" class="form-control" placeholder="Título receta" required oninvalid="setCustomValidity('Introduce un nombre para la receta, por favor')" oninput="setCustomValidity('')">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Email address</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
                                         </div>
-                                        <div class="row">
-                                            <input type="text" class="form-control" id="foto" placeholder="URL de la foto" required>
-                                         </div>
-                                        <div class="row">
-                                            <input type="text" class="form-control" id="descripcion" required placeholder="Breve descripción">
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Password</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                         </div>
-                                        <div class="row">
-                                            <input type="number" class="form-control" id="likes" required placeholder="Likes">
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">File input</label>
+                                            <input type="file" id="exampleInputFile">
+                                            <p class="help-block">Example block-level help text here.</p>
                                         </div>
-                                        <div class="row">
-                                            <input type="text" class="form-control" id="cocinero" placeholder="Cocinero o autor de la receta" required pattern="[A-Za-z]{2,120}" oninvalid="setCustomValidity('¿Quíen es el cocinero?, Introduce el autor de la receta.')" oninput="setCustomValidity('')">
+                                        <div class="checkbox">
+                                            <label>
+                                                  <input type="checkbox"> Check me out
+                                        </label>
                                         </div>
-
-                                        <button type="submit" onclick="nuevaReceta()" class="btn btn-default">Crear Receta</button>
+                                        <button type="submit" class="btn btn-default">Submit</button>
                                     </form>
                                 </div>
                                 <div class="modal-footer">

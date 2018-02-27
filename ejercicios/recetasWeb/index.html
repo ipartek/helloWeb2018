@@ -24,17 +24,13 @@
     <header>
         <div class="container">
             <h1><i class="fa fa-home fa-fw" aria-hidden="true"></i>RecetasWeb</h1>
-
-
         </div>
     </header>
 
 
-    <section>
-
+    <section id="seccionRecetas">
         <div class="container containerRecetas" id="containerRecetas">
-
-
+            <!-- dibuja las recetas-->
         </div>
 
         <!-- modal -->
@@ -57,31 +53,25 @@
             <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
-
-        <div id="dialog" title="dialog" hidden>
+        <!-- Fin CONTAINER -->
+    </section>
+    <footer class="fixed-bottom">
+        <a href="#capaFormulario" data-toggle="collapse" alt="NuevaReceta"><i class="fa fa-plus-circle" id="nuevoIngrediente" aria-hidden="true"></i></a>
+        <div id=capaFormulario class="collapse">
             <form class="formulario" action="#" method="post" onsubmit="return false;" id="formulario">
-
                 <fieldset id="nuevaReceta">
                     <legend>Nueva Receta </legend>
                     <input type="text" name="nombre" tabindex="1" required placeholder="Nombre">
                     <input type="text" name="foto" id="foto" autofocus tabindex="2" required placeholder="Foto">
                     <input type="number" name="likes" id="likes" tabindex="3" required placeholder="Numero de Likes">
                     <input type="text" name="cocinero" id="cocinero" tabindex="4" required placeholder="Nombre cocinero">
-                    <input type="text" tabindex="4" id="ingrediente" placeholder="Nuevo ingrediente"><i class="fa fa-plus-circle" id="nuevoIngrediente" aria-hidden="true" onclick="nuevoIngrediente()"></i>
+                    <input type="text" tabindex="4" id="ingrediente" placeholder="Nuevo ingrediente"><i class="fa fa-plus-circle" id="nuevoIngrediente" aria-hidden="true" onclick="añadirIngrediente();"></i>
+                    <label id="numIngredientes"></label>
                     <button type="submit" onClick="nueva()" class="btn btn-default">Añadir Receta</button>
                 </fieldset>
             </form>
         </div>
-
-
-        <!-- Fin CONTAINER -->
-
-    </section>
-    <footer class="fixed-bottom">
-
-
         <div>
-           <i class="fa fa-plus-circle" id="nueva" aria-hidden="true"></i>
             <p id="footer-p" class="footer"><i class="fa fa-copyright" aria-hidden="true">IPARCHEFF2018</i></p>
         </div>
     </footer>
@@ -93,25 +83,9 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>--->
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
-
-
 
     <script src="js/receta.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        $("#nueva").click(function() {
-            console.log("clicka");
-
-            $("#dialog").dialog();
-
-
-        });
-    </script>
-
 </body>
 
 </html>
-
-

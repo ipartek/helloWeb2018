@@ -1,8 +1,16 @@
+h1,
+h3,
+h4 {
+    font-weight: bold;
+}
+
 body {
-    font-family: sans-serif;
+    font-family: "roboto">;
+    background-color: #F5DA81;
 }
 
 img {
+
     max-width: 200px;
     border-radius: 10px;
     margin: 10px;
@@ -13,7 +21,6 @@ li {
 }
 
 header {
-
     width: 100%;
     background-color: cadetblue;
 }
@@ -24,7 +31,7 @@ footer {
     bottom: 0;
     width: 100%;
     background-color: darkgray;
-
+    z-index: 999;
 }
 
 form {
@@ -42,7 +49,6 @@ button {
 
 
 .col-3 {
-
     width: 30%;
 }
 
@@ -85,42 +91,66 @@ button {
     padding: 2px;
 }
 
-.cerrar{
+.cerrar {
     position: relative;
     width: 30px;
     height: 30px;
-    top:-10px;
+    top: -10px;
     padding-top: 5px;
-    text-align:center;
-    z-index: 999;
-    background-color: grey;
+    text-align: center;
+    z-index: 100;
+    background-color: dodgerblue;
     float: right;
     font-weight: 600;
     border-radius: 50px;
+    left: 30px;
+    color: azure;
 }
-.receta
- {
 
+.receta {
     border: 1px solid black;
     border-radius: 10px;
     max-width: 300px;
+    min-width: 250px;
     margin: 20px;
+    /*background-color: gainsboro;*/
+    background-color: #01DFA5;
 }
 
-p#footer-p {
+.thumbnail {
+    border: none;
+    margin-top: 20px;
+}
+
+.likes {
+    color: dodgerblue;
+}
+
+.derecha {
+    float: right;
+    font-style: oblique;
+}
+
+.izquierda {
+    float: left;
+}
+
+#footer-p {
     font-style: oblique;
     text-align: center;
     background-color: darkgray;
 }
 
-
-#formulario
- {
+#formulario {
     border-radius: 10px;
-    width: 400px;
     margin: 20px;
 }
 
 #likes {
     width: 50px;
+}
+
+#btnIngrediente {
+    margin: 0 auto;
+    display: inline-block;
 }

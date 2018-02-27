@@ -1,5 +1,5 @@
 var recetas = [];
-var nuevoIngrediente=[];
+var nuevoIngrediente = [];
 
 /*crear unas recetas de prueba*/
 
@@ -57,22 +57,17 @@ function eliminarReceta(elemento, posicion) {
 
     console.log("Eliminar receta de la posicion %i", posicion);
     elemento.parentElement.parentElement.style.display = "none";
-
     recetas.splice(pocion, 1); // a partir de esta posicion cuantos elementos elimino
-
-
 }
 
-function cargarRecetas(){
-
-
+function cargarRecetas() {
     var contenedorRecetas = document.getElementById("containerRecetas");
     contenedorRecetas.innerHTML = "";
     var recetasHtml = "";
 
-    recetas.forEach( (receta, index) => {
+    recetas.forEach((receta, index) => {
 
-        console.log( "%i receta %o", index, receta );
+        console.log("%i receta %o", index, receta);
         recetasHtml += `<div class="col-sm-6 col-md-4 receta">
                            <div class="cerrar"><span onclick="eliminarReceta(this, ${index} )">X</span></div>
                             <div class="thumbnail">
@@ -80,14 +75,13 @@ function cargarRecetas(){
                                 <div class="caption">
                                     <h3>${receta.nombre}</h3>
                                     <p>
-                                        <span class="likes"><i class="fa fa-heart" aria-hidden="true"></i>${receta.likes}</span>
-                                        <span class="cocinero">${receta.cocinero}</span></p>
+                                        <span class="likes izquierda"><i class="fa fa-heart" aria-hidden="true"></i>${receta.likes}</span>
+                                        <span class="cocinero derecha">${receta.cocinero}</span></p>
                                     <hr>
-                                    <p><a href="#" class="btn btn-primary" role="button" data-toggle="modal" onclick="showModal(${index})"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
+                                    <p id="btnIngrediente"><a href="#" class="btn btn-primary" role="button" data-toggle="modal" onclick="showModal(${index})"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
                                 </div>
                             </div>
                         </div>`;
-
     });
 
     contenedorRecetas.innerHTML = recetasHtml;
@@ -112,33 +106,38 @@ function borrarInputs() {
 
 }*/
 
-function showModal(index){
+function showModal(index) {
     //no se puede pasar ni un objeto ni un array como parametro, por lo que pasamos la direccion
 
 
     var recetaSeleccionada = recetas[index];
-    console.debug('showModal %o' + recetaSeleccionada );
+    console.debug('showModal %o' + recetaSeleccionada);
 
     $('#modalIngredientes').modal('show');
 
     var ingredientes = recetaSeleccionada.ingredientes;
     var lis = "";
-    ingredientes.forEach( ing => {
-            lis += "<li>"+ing+"</li>";
+    ingredientes.forEach(ing => {
+        lis += "<li>" + ing + "</li>";
     });
     $("#listaIngredientes").html(lis);
 
 }
 
-
-function nuevoIngrediente(){
+function añadirIngrediente() {
+    //añadir ingrediente
     var ingrediente = document.forms[0].ingrediente.value;
-    nuevoIngrediente.pus(nuevoIngrediente);
-
+    nuevoIngrediente.push(ingrediente);
+    //indicar numero de ingredientes añadidos
+    var num = nuevoIngrediente.length;
+    console.log("Numero: %i", num);
+    document.getElementById('numIngredientes').innerHTML = num;
+    //eliminar contenido de ingrediente para permitir nuevo ingrediente
+    document.forms[0].ingrediente.value = "";
 }
+
 function nueva() {
     console.log("nuevaRecetaClick");
-    nuevoIngrediente="";
 
     //comprobar la validez de la receta antes de meterla
     var form = document.getElementById("formulario");
@@ -153,11 +152,7 @@ function nueva() {
          var likes = document.getElementById("likes").value;*/
         //crear nueva receta
         var nuevaReceta = new Receta(nombre, foto, likes, cocinero);
-        nuevaReceta.addIngrediente("Ingrediente");
-        nuevaReceta.addIngrediente("ingrediente");
-        nuevaReceta.addIngrediente("ingrediente");
-        nuevaReceta.addIngrediente("ingrediente");
-        nuevaReceta.
+        nuevaReceta.ingredientes = nuevoIngrediente;
         //añadir receta al inicio del array
         recetas.unshift(nuevaReceta);
         console.debug("array %s", recetas.length);
@@ -168,24 +163,4 @@ function nueva() {
     } else {
         console.warn('No se puede crear porque form no es correcto');
     }
-
-}
-
-
-
-function dibujarRecetas() {
-
-    //añadir receta
-    /*likes = parseInt(likes);*/
-    /*var div = divReceta.replace('##nombre##', recetas[0].nombre);
-    div = div.replace('##cocinero##', recetas[0].cocinero);
-    div = div.replace('##foto##', recetas[0].foto);
-    div = div.replace('##likes##', recetas[0].likes);
-    for (var i = 0; i < recetas[0].ingredientes.length; i++) {
-        // recetasCont.innerHTML += divReceta.replace('##numero##', arr[i]);
-    }
-    console.log("arrai");
-    recetasCont.innerHTML = div + recetasCont.innerHTML;*/
-
-
 }

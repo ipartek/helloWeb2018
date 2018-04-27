@@ -1,11 +1,11 @@
 var recetas = [];
 
-var dinamico = `<div id="receta" class="recCompleta col-xs-12 col-sm-6 col-md-4">
+var dinamico = `<div class="recCompleta col-xs-12 col-sm-6 col-md-4">
                     <div class="thumbnail">
                         <span onclick="borrarReceta(##POSICION##)" class="close">&times;</span>
                         <img id="foto" src="##FOTO##" alt="foto">
                         <div class="caption">
-                            <h3 id="tituloReceta">##NOMBRE##</h3>
+                            <h3 class="tituloReceta">##NOMBRE##</h3>
                             <div class="container-flex">
                                 <span id="likes"><i class="fa fa-heart text-danger" aria-hidden="true"></i>##LIKES##</span>
                                 <span id="cocinero">##COCINERO##</span>
@@ -13,7 +13,7 @@ var dinamico = `<div id="receta" class="recCompleta col-xs-12 col-sm-6 col-md-4"
                             <p><a href="#" class="btn btn-primary btn-block" onclick="pintarIngredientes(##POSICION##)" role="button" data-toggle="modal" data-target="#modal-receta##POSICION##"><i class="fa fa-eye" aria-hidden="true"></i> Ingredientes</a></p>
                         </div>
 
-                        <!-- Modal video Receta-->
+                        <!-- Modal Receta-->
                         <div class="modal fade" id="modal-receta##POSICION##" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -27,8 +27,11 @@ var dinamico = `<div id="receta" class="recCompleta col-xs-12 col-sm-6 col-md-4"
                                         <!-- 4:3 aspect ratio -->
                                         <div class="embed-responsive embed-responsive-4by3">
                                             <button type="button" class="btn btn-default" onclick="añadirIngrediente(##POSICION##)"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></button> <input id="nuevoIngre##POSICION##" type="text" name="ingrediente" required placeholder="Añadir ingrediente">
-                                            <div id="cntIngredientes##POSICION##" class="cntIngredientes"></div>
+                                            <div class="cntIngredientes">
+                                                <ol id="cntIngredientes##POSICION##">
 
+                                                </ol>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -97,18 +100,24 @@ function pintarReceta(elem, i) {
 }
 
 function añadirReceta() {
-    var cntRecetas = document.getElementById("cntRecetas");
+    // comprobar que el formulario es correcto antes de crearlo
+    var form = document.getElementById("form");
+    if (form.checkValidity()) {
+        var cntRecetas = document.getElementById("cntRecetas");
+        var receta = new Receta();
+        receta.nombre = document.getElementById("nombreForm").value;
+        receta.foto = document.getElementById("fotoForm").value;
+        receta.likes = document.getElementById("likesForm").value;
+        receta.cocinero = document.getElementById("cocineroForm").value;
+        receta.ingredientes = "";
 
-    var receta = new Receta();
-    receta.nombre = document.getElementById("nombreForm").value;
-    receta.foto = document.getElementById("fotoForm").value;
-    receta.likes = document.getElementById("likesForm").value;
-    receta.cocinero = document.getElementById("cocineroForm").value;
-    receta.ingredientes = "";
+        recetas.push(receta);
 
-    recetas.push(receta);
-
-    pintarReceta(receta, recetas.length - 1);
+        pintarReceta(receta, recetas.length - 1);
+        borrarFormulario();
+    } else {
+        console.log("Receta imcompleta");
+    }
 }
 
 function borrarReceta(pos) {
@@ -117,6 +126,10 @@ function borrarReceta(pos) {
     console.log(recetas);
     cntRecetas.innerHTML = "";
     pintarRecetas();
+}
+
+function borrarFormulario() {
+    form.reset();
 }
 
 function pintarIngredientes(pos) {
@@ -132,10 +145,8 @@ function pintarIngredientes(pos) {
 }
 
 function pintarIngrediente(ingre, pos) {
-    //    var cntIngredientes = document.getElementById("cntIngredientes" + pos);
-
-    var cntIngredientes = document.querySelector('div[id="cntIngredientes' + pos + '"]');
-    cntIngredientes.innerHTML += ingre + "<br>";
+    var cntIngredientes = document.querySelector('ol[id="cntIngredientes' + pos + '"]');
+    cntIngredientes.innerHTML += "<li>" + ingre + "</li>";
 }
 
 function añadirIngrediente(pos) {
@@ -143,4 +154,35 @@ function añadirIngrediente(pos) {
 
     recetas[pos].addIngrediente(nuevoIngre);
     pintarIngredientes(pos);
+}
+
+
+/****************************************************/
+
+function showModal() {
+    $('#modalFormulario').modal('show');
+}
+
+function añadirReceta2() {
+    // comprobar que el formulario es correcto antes de crearlo
+    var form = document.getElementById("form");
+    var ingredientes = document.getElementById("ingredientesForm").value;
+
+    console.debug(ingredientes);
+//    if (form.checkValidity()) {
+//        var cntRecetas = document.getElementById("cntRecetas");
+//        var receta = new Receta();
+//        receta.nombre = document.getElementById("nombreForm").value;
+//        receta.foto = document.getElementById("fotoForm").value;
+//        receta.likes = document.getElementById("likesForm").value;
+//        receta.cocinero = document.getElementById("cocineroForm").value;
+//        receta.ingredientes = document.getElementById("ingredientesForm").value;
+//
+//        recetas.push(receta);
+//
+//        pintarReceta(receta, recetas.length - 1);
+//        borrarFormulario();
+//    } else {
+//        console.log("Receta imcompleta");
+//    }
 }

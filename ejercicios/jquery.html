@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery</title>
+</head>
+
+<body>
+    <style>
+        .seleccionado {
+            background-color: yellow;
+            color: blue;
+        }
+
+        #sparring {
+            display: inline-block;
+            border: 2px solid red;
+            min-width: 100px;
+            min-height: 100px;
+            background-color: bisque;
+        }
+        
+        #box{
+            background-color: red;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+    <h1>JQuery</h1>
+    <div id="box"></div>
+    <a href="https://www.desarrolloweb.com/manuales/manual-jquery.html#capitulos113" target="_blank">Manual de desarrollo Web</a>
+    <p class="uno">Hay que importar o cargar la librería de Jquery</p>
+    <p>Al igual que en JavaScript hay que esperar a que el DOM esté cargado 'ready' para comenzar nuestros scripts</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis doloremque esse illum est aspernatur aliquam nam voluptatibus saepe officia deleniti. Porro veniam neque ut consequuntur, laboriosam, natus provident doloribus debitis.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis dolorum ratione dolor quia atque officiis quos nobis nisi ad. Iusto culpa adipisci voluptates suscipit eveniet, nulla vitae fugit totam labore?</p>
+    <div id="sparring"></div>
+    <input type="text" id="texto" placeholder="Escribe algo" value="Algo">
+    <input type="button" id="btn" value="BOTÓN">
+    <select id="opciones">
+        <option value="0">Append</option>
+        <option value="1">Prepend</option>
+        <option value="2">After</option>
+        <option value="3">Before</option>
+        <option value="4">InsertAfter</option>
+        <option value="5">InsertBefore</option>
+    </select>
+
+    <!-- Librería de JQuery -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Importante colocar la importación de la libreria antes de utilizarlo -->
+    <script>
+        $(document).ready(function() { //Es una forma antigua. Ahora se usa la versión simplificada: $(function() {
+            console.log("Ready");
+
+            $("p").css("color", "blue"); //pone todos los p con letra roja
+            //        $("p:even").css("color","red"); //solo los impares
+            //        $("p:odd").css("color","green");//solo los pares. Al ser un estilo asignado en linea tiene preferencia sobre el que se asigne a la clase
+            $("p:odd").css("font-size", "30px");
+            $("p:odd").addClass("seleccionado");
+            //            alert($("p.uno").text());
+            $("p:last").text("Agur");
+
+            $("p").click(function() {
+                $(this).toggleClass("seleccionado");
+                $(this).fadeOut();
+            });
+
+        });
+
+        $("#btn").click(function() {
+            var opcion = $("#opciones").val();
+            var texto = $("#texto").val();
+
+            switch (opcion) {
+                case "0":
+                    $("#sparring").append(texto);
+                    break;
+                case "1":
+                    $("#sparring").prepend(texto);
+                    break;
+                case "2":
+                    $("#sparring").after(texto);
+                    break;
+                case "3":
+                    $("#sparring").before(texto);
+                    break;
+                case "4":
+                    //En este caso crea un elemento que no existía y lo introduce "antes" o "despues" dependiendo de la función
+                    $("<p>" + texto + "</p>").insertAfter("#sparring");//las funciones insertAfter y insertBefore no funcionan con texto plano. Tiene que estar contenudo dentro de un etiqueta
+                    break;
+                case "5":
+                    // En este caso mueve un elemento creado previamente en el HTML y lo traslada a "antes" o "despues"
+                    $("#box").insertBefore("#sparring");//las funciones insertAfter y insertBefore no funcionan con texto plano. Tiene que estar contenudo dentro de un etiqueta
+                    break;
+            } //fin de switch
+            $("#texto").val("");
+        });
+    </script>
+
+
+
+</body>
+</html>

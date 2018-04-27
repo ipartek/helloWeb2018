@@ -36,24 +36,27 @@
         </div>
     </section>
 
-    <div class="modal fade" id="modal-formulario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="modalFormulario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                    <h4 class="modal-title" id="myModalLabel">Ingredientes</h4>
+                    <h4 class="modal-title" id="myModalLabel">Nueva Receta</h4>
                 </div>
                 <div class="modal-body">
                     <!-- 4:3 aspect ratio -->
                     <div class="embed-responsive embed-responsive-4by3">
-                        <button type="button" class="btn btn-default" onclick="añadirIngrediente(##POSICION##)"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i></button> <input id="nuevoIngre##POSICION##" type="text" name="ingrediente" required placeholder="Añadir ingrediente">
-                        <div class="cntIngredientes">
-                            <ol id="cntIngredientes##POSICION##">
-
-                            </ol>
-                        </div>
+                        <form id="form2" name="form" action="index.html" onsubmit="return false">
+                            <input type="text" name="Nombre" id="nombreForm" required tabindex="1" value="" autofocus placeholder="Nombre receta">
+                            <input type="text" name="foto" id="fotoForm" required tabindex="2" placeholder="Foto">
+                            <input type="number" name="Likes" id="likesForm" required tabindex="3" placeholder="Likes">
+                            <input type="text" name="cocinero" id="cocineroForm" required tabindex="4" placeholder="Nombre Cocinero">
+                            <textarea id="ingredientesForm"placeholder="Introduce cada ingrediente en una línea" rows="8"cols="50" ></textarea>
+                            <input class="btn btn-success" onclick="añadirReceta2()" type="submit" value="CREAR">
+                            
+                        </form>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -64,15 +67,8 @@
     </div>
 
     <footer>
-        <section id="formulario">
-            <form id="form" name="form" action="index.html" onsubmit="return false">
-                <legend>Nueva Receta</legend>
-                <input type="text" name="Nombre" id="nombreForm" required tabindex="1" value="" autofocus placeholder="Nombre receta">
-                <input type="text" name="foto" id="fotoForm" required tabindex="2" placeholder="Foto">
-                <input type="number" name="Likes" id="likesForm" required tabindex="3" placeholder="Likes">
-                <input type="text" name="cocinero" id="cocineroForm" required tabindex="4" placeholder="Nombre Cocinero">
-                <input class="btn btn-success" onclick="añadirReceta()" type="submit" value="CREAR">
-            </form>
+        <section id="plusReceta">
+            <button type="button" class="btn btn-default" onclick="showModal()"><i class="fa fa-plus-square fa-4x" aria-hidden="true"></i></button>
         </section>
         <section class="copyright">
             <p>@iparchef2018</p>

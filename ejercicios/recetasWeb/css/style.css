@@ -100,3 +100,17 @@ footer {
     margin: 0 auto;
     text-align: center;
 }
+
+/********************************************/
+
+#plusReceta{
+    position: fixed;
+    font-size: 5em;
+    right: 15px;
+    bottom:30px;
+}
+
+#form2 input{
+    float: none;
+    display: block;
+}

@@ -44,63 +44,62 @@
         } = obj;
         console.log(nombre); // "Carlos"
 
-        var frutas =[{
-		"nombre": "fresa",
-		"precio": 0.75,
-		"calorias": 100,
-		"colores": ["rosa", "rojo"],
-		"oferta": true
-	},
-	{
-		"nombre": "pera",
-		"precio": 2,
-		"calorias": 350,
-		"colores": ["verde", "amarillo"],
-		"oferta": false
-	},
-	{
-		"nombre": "banana",
-		"precio": 3.15,
-		"calorias": 500,
-		"colores": ["amarillo", "negro"],
-		"oferta": true
-	}
+        var frutas = [{
+                "nombre": "fresa",
+                "precio": 0.75,
+                "calorias": 100,
+                "colores": ["rosa", "rojo"],
+                "oferta": true
+            },
+            {
+                "nombre": "pera",
+                "precio": 2,
+                "calorias": 350,
+                "colores": ["verde", "amarillo"],
+                "oferta": false
+            },
+            {
+                "nombre": "banana",
+                "precio": 3.15,
+                "calorias": 500,
+                "colores": ["amarillo", "negro"],
+                "oferta": true
+            }
 
-];
+        ];
         //console.log(frutas);
-        let totalFrutas= 0;
+        let totalFrutas = 0;
         frutas.forEach(fruta => totalFrutas += fruta.precio);
         console.log(`Total precio frutas ${totalFrutas}`);
 
-        let total = frutas.reduce (function (previous, current){
+        let total = frutas.reduce(function(previous, current) {
             return previous.precio + current.precio
-        },0);//no se puede 0 porque previous.precio =0.undefined
+        }, 0); //no se puede 0 porque previous.precio =0.undefined
         console.log(`Total precio frutas ${total}`);
 
-        let totalPrecio = frutas.map(f=>f.precio).reduce((p,c)=>p+c);
+        let totalPrecio = frutas.map(f => f.precio).reduce((p, c) => p + c);
         console.log(`Total precio= ${totalPrecio}`);
 
 
-        let totalPrecioOferta = frutas.filter(f=>f.oferta).map(f=>f.precio).reduce((p,c)=>p+c);
+        let totalPrecioOferta = frutas.filter(f => f.oferta).map(f => f.precio).reduce((p, c) => p + c);
         console.log(totalPrecioOferta);
 
 
         //buscar primera fruta color verde
-        let verde =frutas.find(f=>f.colores.find(c=>c==="verde"));
+        let verde = frutas.find(f => f.colores.find(c => c === "verde"));
         console.log(`Verde %o:`, verde);
         //buscar primera fruta en oferta
-        let primerOferta = frutas.filter(f=>f.oferta);
-        console.log(`Primera oferta: %o:`,primerOferta);
+        let primerOferta = frutas.filter(f => f.oferta);
+        console.log(`Primera oferta: %o:`, primerOferta);
         //conseguir total de calorias
-        let totalCalorias = frutas.map( f=> f.calorias).reduce( (p,c) => p + c);
-        console.log(`Total caloria:`+totalCalorias);
+        let totalCalorias = frutas.map(f => f.calorias).reduce((p, c) => p + c);
+        console.log(`Total caloria:` + totalCalorias);
         //array de nombres de frutas
-        let nombres =frutas.map(f=>f.nombre);
-         console.log(`Nombres fruta: %o:`, nombres);
+        let nombres = frutas.map(f => f.nombre);
+        console.log(`Nombres fruta: %o:`, nombres);
         //array de nombres de fruta en oferta
-        let nombresOferta =frutas.filter(f=>f.oferta).map(f=>f.nombre);
+        let nombresOferta = frutas.filter(f => f.oferta).map(f => f.nombre);
         console.log(`Nombres fruta oferta: %o:`, nombresOferta);
-
     </script>
 
 </body>

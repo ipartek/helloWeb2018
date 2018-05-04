@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ES6 - PROMESAS</h1>
+    <script>
+        var frutas = [{
+                "nombre": "fresa",
+                "precio": 0.75,
+                "calorias": 100,
+                "colores": ["rosa", "rojo"],
+                "oferta": true
+            },
+            {
+                "nombre": "pera",
+                "precio": 2,
+                "calorias": 350,
+                "colores": ["verde", "amarillo"],
+                "oferta": false
+            },
+            {
+                "nombre": "banana",
+                "precio": 3.15,
+                "calorias": 500,
+                "colores": ["amarillo", "negro"],
+                "oferta": true
+            }
+
+        ];
+
+        function llamadaAjax() {
+            console.log('llamada Ajax');
+            return new Promise(
+                resolve => {
+                    setTimeout(function() {
+                        console.log('retorno Ajax');
+                        resolve(frutas);
+                    }, 5000);
+
+                } //resolve
+            ) //promise
+        }
+        /*let frutasJson= llamadaAjax();
+        console.log(frutasJson);*/
+        let p1 = llamadaAjax();
+        p1.then(el => console.log(el)); // el then hace que se sincronice
+
+        function sumaAsincrona(a, b) {
+            return new Promise(
+                resolve => {
+                    if (a=== -1){
+                        throw new Error ('a== -1');
+                    }
+                    setTimeout(() => resolve(a + b), 2000);
+                },
+                error => {
+                    reject("error valores invalidos");
+
+                }
+            );
+        }
+        let p2 = sumaAsincrona(2, 2);
+        let p3 = sumaAsincrona(5, 5);
+        let p4 = sumaAsincrona(4, 4);
+
+
+        //p2.then(v=>console.log(v)).catch(e=>console.error(e));
+
+        //sumar p2 +p3 + p4 = anidamiento, incompleto
+        let result = p2.then(
+            r1 => {
+                p3.then(
+                    r2 => {
+                        p4.then(
+                            r3 => {
+                                console.log("resultado" + r1 + r2 + r3);
+                            }
+                        )
+                    }
+                )
+            }
+        );
+        result.then(v => console.log(v));
+
+        //suma p2+p3+p4 all espera a que se cumplan todas las promesas
+        Promise.all([p2,p3,p4]).then(values =>console.log ("all: "+ values));
+
+         //race devuelve la primera promesa que se ejecuta, el resto de promesas se ignoran
+        Promise.race([p2,p3,p4]).then(values =>console.log ("race: "+ values));
+
+        //funcion asincrona usando await
+        async function sumaEsperando(){
+            //se espera 2 segundos de una llamada a otra
+            const p12 = await sumaAsincrona(6,6);
+            //se espera 2 segundos de una llamada a otra
+            const p18 = await sumaAsincrona(9,9);
+            //se espera 2 segundos de una llamada a otra
+            const p10 = await sumaAsincrona(5,5);
+
+            console.log("SUMATORIO 6 segundos: "+ (p12+p18+p10));
+        }
+        sumaEsperando();
+
+        //forzar error
+        /*let pError =sumaAsincrona(-1,200);
+        pError.then(v=>console.log(v)).catch(e=> console.log(e));*/
+
+        //hacer llamadas ajax a https://bitaps.com/api/ticker
+        function llamadaAjaxTicker() {
+            console.log('llamada Ajax Ticker');
+            return new Promise(
+                resolve => {
+                    setTimeout(function() {
+                        console.log('retorno Ajax');
+                        resolve('https://bitaps.com/api/ticker');
+                    }, 5000);
+
+                } //resolve
+            ) //promise
+        }
+        llamadaAjaxTicker();
+        console.log ("Servicio mas rapido");
+        console.log ("Espera 2 servicios");
+        console.log ("servicio 1: ");
+        console.log ("servicio 2: ");
+
+
+    </script>
+
+</body>
+
+</html>

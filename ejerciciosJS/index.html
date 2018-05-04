@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        'use-strict';
+        console.log('EcmaScript6 | EC 2015');
+
+        var frutas = ['manzana', 'fresa', 'platano'];
+        frutas.forEach((elem, index) => {
+            console.log(index + ': ' + elem);
+        });
+
+        var miFuncion = (num1, num2) => num1 + num2;
+        console.log('Resultado: ' + miFuncion(5, 2));
+
+        (function() {
+            console.log(x); // x no está definida aún.
+            if (true) {
+                var x = "hola mundo";
+            }
+            console.log(x);
+            // Imprime "hola mundo", porque "var" hace que sea global a la función;
+        })();
+
+        var frutas = [{
+                "nombre": "Banana",
+                "precio": 3.15,
+                "calorias": 500,
+                "colores": ["amarillo", "negro"],
+                "oferta": true
+            },
+            {
+                "nombre": "Pera",
+                "precio": 2,
+                "calorias": 310,
+                "colores": ["verde", "amarillo"],
+                "oferta": false
+            },
+            {
+                "nombre": "Fresa",
+                "precio": 0.75,
+                "calorias": 100,
+                "colores": ["rosa", "roja"],
+                "oferta": true
+            }
+        ]
+        console.log(frutas);
+        sumaFrutas(frutas);
+
+        // Con 'reduce' se reduce un array a un solo valor
+        /*[0,1,2,3,4].reduce(function(valorAnterior, valorActual, indice, vector){
+            return valorAnterior + valorActual;
+        }, 0);*/
+        let precioReduce = frutas.map(f => f.precio).reduce((p, c) => (p + c));
+        console.log(`Precios acumulados (o total de precios): ${precioReduce} €`);
+
+        // Con 'map' se obtiene un array recorriendo un array
+        /*var nuevo_array = arr.map(function callback(currentValue, index, array) {
+            // Elemento devuelto de nuevo_array
+        }[, thisArg])*/
+        let soloPrecios = frutas.map(f => f.precio);
+        console.log(`Lista de precios: ${soloPrecios}`);
+
+        // Con 'filter' devuelve un array con los elementos que cumplen la condición
+        let totalPrecioOferta = frutas.filter(f => f.oferta).map(f => f.precio).reduce((p, c) => (p + c));
+        console.log(`Total precio de frutas en oferta: ${totalPrecioOferta} €`);
+
+
+
+
+
+        // Buscar 1. fruta con color verde
+        // CON UN .find(.find) ; Es menos correcto porque el 'find' anidado devuelve algo que no nos interesa guardar
+        /*let frutaVerde = frutas.find(
+                fruta => fruta.colores.find(
+                    color => color === 'verde'
+                )
+            );*/
+        let frutaVerde = frutas.find(fruta => fruta.colores.indexOf('verde') !== -1);
+        console.log("1. fruta verde: %o", frutaVerde);
+
+        // Buscar 1. fruta en oferta
+        let frutaOferta = frutas.find(fruta => fruta.oferta === true);
+        console.log("1. fruta en oferta: %o", frutaOferta);
+
+        // Mostrar total de calorias
+        let totalCalorias = frutas.map(f => f.calorias).reduce((p, c) => (p + c));
+        console.log(`Total de calorias: ${totalCalorias} calorias`);
+
+        // Mostrar nombres de frutas
+        let nombresFrutas = frutas.map(f => f.nombre);
+        console.log(`Frutas: ${nombresFrutas}`);
+
+        // TODO: Mostrar nombres de frutas en oferta
+        /*let frutasEnOferta = frutas.filter( f => f.oferta = true);
+        console.log(`Frutas: ${nombresFrutas}`);*/
+
+        // TODO: Listado de frutas en oferta
+
+
+
+        /**
+         * Suma el precio de las frutas insertas como parámetro y muestra el precio total
+         */
+        function sumaFrutas(frutas) {
+            let precioFrutas = 0;
+            frutas.forEach(fruta => precioFrutas += fruta.precio);
+            console.log(`Precio total de las frutas ${precioFrutas} €`);
+        }
+
+
+        // Llamada AJAX mediante Promise
+        /*function llamadaAjax() {
+            console.log('llamada Ajax');
+            return new Promise(
+                resolve => {
+                    setTimeout( function() {
+                        console.log('retorno de llamada Ajax');
+                        resolve(frutas);
+                    }, 5000);
+                } // END resolve (respuesta OK)
+            ) // END Promise
+        }
+
+        llamadaAjax().then(elem => console.log(elem));*/
+
+        function sumaAsincrona( a, b) {
+            return new Promise(
+                resolve => {
+                    setTimeout( () => resolve(a+b), 2000 );
+                },
+                error => {
+                    reject('Error: valores invalidos');
+                }
+            ) // END Promise
+        }
+
+        let p1 = sumaAsincrona(2,2);
+        p1.then( resul => console.log(resul))
+          .catch( error => console.log(error) );
+
+        let p2 = sumaAsincrona(5,5);
+        p2.then( resul => console.log(resul))
+          .catch( error => console.log(error) );
+
+        let p3 = sumaAsincrona(4,4);
+        p3.then( resul => console.log(resul))
+          .catch( error => console.log(error) );
+
+        // all --> Espera a que se cumplan todas las promesas
+        Promise.all([p1,p2,p3]).then( values => console.log("all: " + values) );
+
+        // race --> Primera Promise en terminar, se ejecuta; el resto se ignoran
+        Promise.race([p1,p2,p3]).then( firstPromise => console.log("race: " + firstPromise) );
+
+        /* Función asíncrona usando 'await' */
+        async function sumaEsperando() {
+
+            const p10 = await sumaAsincrona(6,6);
+            // tarda 2 seg en terminar p10
+            const p11 = await sumaAsincrona(9,9);
+            // tarda 2 seg en terminar p11
+            const p12 = await sumaAsincrona(5,5);
+            // tarda 2 seg en terminar p12
+
+            console.log("SUMATORIO (tarda 6seg): " + (p10 + p11 + p12));
+        }
+
+        sumaEsperando();
+
+
+
+
+
+    </script>
+</body>
+</html>

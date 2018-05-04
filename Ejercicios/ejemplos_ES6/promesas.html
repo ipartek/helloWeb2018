@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promesas</title>
+</head>
+<body>
+    <h1>ES6</h1>
+
+    <script>
+
+             /*
+* documentacion sobre promesas  https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promise
+*/
+
+
+function sumaAsincrona( a, b ){
+
+            return new Promise(
+                resolve=>{
+
+                    if ( a == -1 ){
+                        throw new Error('a == -1');
+                    }
+
+                    setTimeout(()=>resolve( a+b ), 2000);
+                },
+                error=>{
+                    reject("error valores invalidos");
+                }
+            )//Promise
+        }
+
+
+        let p4 = sumaAsincrona(4,4);
+        let p2 = sumaAsincrona(2,2);
+        let p3 = sumaAsincrona(5,5);
+
+
+        let pError = sumaAsincrona(-1,28);
+        pError.then( v => console.log(v) )
+              .catch( e => console.error(" peto promesa " +e));
+
+
+        /*
+        p2.then( v => console.log(v) );
+        p3.then( v => console.log(v) );
+        p4.then( v => console.log(v) );
+        */
+
+
+        //all -> Espera a que se cumplan todas las Promesas
+        Promise.all([p2,p3,p4]).then( values => console.log("ALL 2seg: " + values) );
+
+        //race -> Primera en terminar ejecuta then, el resto de promesas se ignora
+        Promise.race([p2,p3,p4]).then( firstPromise => console.log("RACE 2seg: " + firstPromise) );
+
+
+        /* funcion asyncrona usando await */
+
+
+        async function sumaEsperando(){
+
+
+            const p12 = await sumaAsincrona(6,6);
+            //se espera 2 segundos hasta terminar p12
+            const p18 = await sumaAsincrona(9,9);
+            //se espera 2 segundos hasta terminar p18
+            const p10 = await sumaAsincrona(5,5);
+            //se espera 2 segundos hasta terminar p10
+
+            console.log( "SUMATORIO 6seg: " + ( p12 + p18 + p10 ));
+
+        }
+
+        sumaEsperando();
+
+
+    </script>
+
+</body>
+</html>

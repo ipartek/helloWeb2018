@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Otro</title>
+</head>
+<body>
+   <h1>ES6</h1>
+   <script>
+        // Use strict
+        console.log("yeahhhhhhhhhhhhh");
+
+       var frutas = ['pera', 'manzana', 'kiwi'];
+       frutas.forEach(function(el){
+           console.log(el);
+       });
+
+       frutas.forEach( (el)=>{console.log(el);});
+
+       var suma = (num,num2)=>num+num2;
+
+       console.log(suma(5,3));
+
+       (function() {
+	   console.log(x); // x no está definida aún.
+        if(true) {
+    	   var x = "hola mundo";
+            }
+        console.log(x);
+        // Imprime "hola mundo", porque "var" hace que sea global
+        // a la función;
+        })();
+
+       var obj = { nombre: "Carlos", apellido: "Azaustre" };
+       var { nombre, apellido } = obj;
+       console.log(nombre); // "Carlos"
+
+       var frutas = [{
+                "nombre": "banana",
+                "precio": 3.15,
+                "calorias": 500,
+                "colores": ["amarillo", "negro"],
+                "oferta": true
+            },
+            {
+                "nombre": "pera",
+                "precio": 2,
+                "calorias": 350,
+                "colores": ["verde", "amarillo"],
+                "oferta": false
+            },
+            {
+                "nombre": "fresa",
+                "precio": 0.75,
+                "calorias": 100,
+                "colores": ["rosa", "roja"],
+                "oferta": true
+            }
+        ]
+
+       console.log(frutas);
+
+       let totalFrutas = 0;
+       frutas.forEach( fruta => totalFrutas += fruta.precio);
+       console.log(`Total precio frutas ${totalFrutas}` );
+
+       let totalPrecio = frutas.map( f=>f.precio).reduce((p,c)=> p+c);
+
+       console.log("totalPrecio" + " " + totalPrecio);
+       totalPrecioOferta = frutas.filter(f=>f.oferta).map(f=>f.precio).reduce((p,c)=>p+c);
+        console.log("totalPrecioOferta" + " " + totalPrecioOferta);
+
+       // Buscar primera fruta color verde
+
+       const frutaColor = frutas.find( fruta => fruta.colores === 'verde' );
+
+       console.log(frutaColor);
+
+       let primerFrutaVerde = frutas.find( f => f.colores.find( c => c === "verde"));
+
+        console.log("primerFrutaVerde %o" , primerFrutaVerde);
+
+       // Buscar primera fruta en oferta
+
+       const frutaOferta = frutas.find( fruta => fruta.oferta === true );
+
+       console.log(frutaOferta);
+
+
+       // Conseguir total de calorias
+        let totalCalorias = 0;
+       frutas.forEach( fruta => totalCalorias += fruta.calorias);
+       console.log(`Total calorias ${totalCalorias}` );
+
+       // Array de nombres de frutas
+
+          let arrayFrutasNombre = frutas.map( f => f.nombre );
+
+        console.log("arrayFrutasNombre %o" , arrayFrutasNombre);
+
+       // Array de nombres de frutas en oferta
+
+           let arrayFrutasNombreOferta = frutas.filter( f => f.oferta ).map( f => f.nombre );
+
+        console.log("arrayFrutasNombre %o" , arrayFrutasNombreOferta);
+
+    </script>
+
+</body>
+</html>

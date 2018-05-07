@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Otro</title>
+</head>
+
+<body>
+    <h1>Ajax htmls</h1>
+    <p>https://developer.mozilla.org/es/docs/Web/Guide/AJAX/Primeros_Pasos</p>
+    <script src="ajax.js"></script>
+    <script>
+        var id = -1;
+        let promesa = ajax('GET', 'http://localhost:8080/cancion');
+        promesa.then(data => console.log(data)).catch(error => console.warn(error));
+
+        //conseguir  detalle de la 2º cancion
+        let promesaDetalle = ajax('GET', 'http://localhost:8080/cancion');
+        promesaDetalle.then(data => {
+            //2ºcancion
+            let c2 = data[1];
+            //detalle 2 cancion
+            let p2 = ajax('GET', `http://localhost:8080/cancion/${c2.id}`);
+            console.log(c2);
+            console.log(c2.id);
+
+           /* p2.then(cancion2 => {
+                //modificar 2º cancion
+                const data= {
+                    "nombre": "Tesstingg"
+                };
+                console.log("Tesstingg");
+                let pModificar = ajax('PUT', `http://localhost:8080/cancion/${cancion2.id}`,data);
+                pModificar.then(cModificada => console.lot('cancion modificada'));
+            })*/
+
+            p2.then(cancion2 => {
+                //borrar cancion 2
+                let pBorrar = ajax('DELETE', `http://localhost:8080/cancion/${cancion2.id}`);
+                pBorrarr.then(cBorrada => console.lot('cancion BORRADA'));
+            });
+
+        }).catch(error => console.warn(error));
+
+        //eliminar la 2º cancion
+        //crear y mostra una cancion con nombre 'Nice for what'
+
+    </script>
+</body>
+
+</html>

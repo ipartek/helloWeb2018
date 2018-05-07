@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+
+<body>
+
+    <h1>Ajax HTML</h1>
+
+    <script src='ajax.js'></script>
+
+    <script>
+        let promesa = ajax('GET', 'http://localhost:8080/cancion');
+        console.log('GET, http://localhost:8080/cancion/');
+        let segCancionID = -1;
+
+        promesa.then(canciones => {
+                console.log('Canciones: %o', canciones);
+                segCancionID = canciones[1].id;
+                console.log(`ID de la 2.canción: ${segCancionID}`);
+
+                // Conseguir detalle de la 2.canción
+                let url2cancion = 'http://localhost:8080/cancion/' + segCancionID;
+                console.log('GET, ' + url2cancion);
+                let promGetCancion = ajax('GET', 'http://localhost:8080/cancion/' + segCancionID);
+
+                promGetCancion.then(
+                    data => {
+                        console.log('Detalle de la 2. canción: ', data);
+                    }).catch(error => console.warn(error));
+
+                // Modificar 2.canción a "Testing"
+                const nombre = "Testing" + new Date().getTime();
+                const body = {
+                    "nombre": nombre
+                };
+                let promPutCancion = ajax('PUT', 'http://localhost:8080/cancion/' + segCancionID, body);
+
+                // Comprobar que se ha cambiado el nombre de la 2.canción
+                promGetCancion = ajax('GET', 'http://localhost:8080/cancion/' + segCancionID);
+
+                promGetCancion.then(
+                        data => {
+                            console.log('Detalle de la 2. canción modificada: ', data);
+                        })
+                    .catch(error => console.warn(error));
+
+                // Eliminar 2. canción
+                promDelCancion = ajax('DELETE', 'http://localhost:8080/cancion/' + segCancionID);
+                console.log('DELETE, http://localhost:8080/cancion/' + segCancionID);
+
+                promDelCancion.then(
+                        data => {
+                            console.log('Data obtenida tras el DELETE: ', data);
+                        })
+                    .catch(error => console.warn(error));
+
+            })
+            .catch(error => console.warn(error));
+
+        // TODO: Crear y mostrar una canción con nombre "Nice For What"
+        const nuevaCancion = "Nice For What " + new Date().getTime();
+        const body = {
+            "nombre": nuevaCancion
+        };
+        let prmPostCancion = ajax('POST', 'http://localhost:8080/cancion/', body);
+        console.log('POST, http://localhost:8080/cancion/');
+
+        prmPostCancion.then(
+            newSong => {
+                console.log('Nueva canción: ', newSong);
+            }
+        ).catch(error => console.warn(error));
+    </script>
+</body>
+
+</html>
